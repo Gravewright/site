@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gravewright is an open-source virtual tabletop for tabletop RPGs, built for performance, extensibility, and control.">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Gravewright — Open-source virtual tabletop</title>
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Gravewright home">
+        <span class="brand-icon">
+          <img
+            src="https://raw.githubusercontent.com/Gravewright/gravewright/main/icon.svg"
+            alt=""
+            width="40"
+            height="40"
+            data-logo
+          >
+          <span class="brand-fallback" aria-hidden="true">G</span>
+        </span>
+        <span>Gravewright</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-nav>
+        <a href="#about">About</a>
+        <a href="#install">Install</a>
+        <a href="#sdk">SDK</a>
+        <a href="#contribute">Contribute</a>
+        <a class="nav-button" href="https://github.com/Gravewright/gravewright">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Gravewright v2.1.0-alpha</p>
+        <div class="hero-brand">
+          <span class="hero-icon">
+            <img
+              src="https://raw.githubusercontent.com/Gravewright/gravewright/main/icon.svg"
+              alt="Gravewright logo"
+              width="116"
+              height="116"
+              data-logo
+            >
+            <span class="hero-fallback" aria-hidden="true">G</span>
+          </span>
+          <h1>Gravewright</h1>
+        </div>
+        <p class="hero-lead">An open-source virtual tabletop for tabletop RPGs, built for performance, extensibility, and control.</p>
+        <p class="hero-meta">Self-hostable. Server-authoritative. SDK-driven. Package-ready.</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/Gravewright/gravewright/releases">View releases</a>
+          <a class="button button-secondary" href="https://github.com/Gravewright/gravewright/tree/main/docs">Documentation</a>
+        </div>
+
+        <div class="quick-links" aria-label="Project links">
+          <a href="https://github.com/Gravewright/gravewright">Core Platform ↗</a>
+          <a href="https://github.com/Gravewright/gravewright-5e-srd">Gravewright-5e-srd ↗</a>
+          <a href="https://github.com/Gravewright/gravewright/releases">Releases ↗</a>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs">Documentation ↗</a>
+          <a href="https://github.com/Gravewright/gravewright/issues">Issues ↗</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Core platform properties">
+        <div class="panel-topline">
+          <span>Gravewright focuses on:</span>
+          <span class="status"><i></i> Alpha</span>
+        </div>
+        <div class="platform-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h2>Performance</h2>
+              <p>Large maps and realtime collaboration.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h2>Extensibility</h2>
+              <p>Gravewright SDK and declarative packages.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h2>Control</h2>
+              <p>Hosting, data, rules, permissions, and gameplay experience.</p>
+            </div>
+          </article>
+          <article>
+            <span>04</span>
+            <div>
+              <h2>Open development</h2>
+              <p>Clear architecture, public documentation, and permissive API materials.</p>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section shell" id="about">
+      <div class="section-heading">
+        <p class="section-label">What is Gravewright?</p>
+        <h2>Gravewright is an open-source virtual tabletop platform for tabletop RPGs.</h2>
+      </div>
+      <div class="section-copy">
+        <p>It is designed for groups, game masters, ruleset creators, package authors, and developers who want a VTT that is fast, extensible, self-hostable, and transparent by design.</p>
+      </div>
+
+      <div class="focus-grid">
+        <article>
+          <h3>Performance</h3>
+          <p>Performance for large maps and realtime collaboration.</p>
+        </article>
+        <article>
+          <h3>Extensibility</h3>
+          <p>Extensibility through the Gravewright SDK and declarative packages.</p>
+        </article>
+        <article>
+          <h3>Control</h3>
+          <p>Control over hosting, data, rules, permissions, and gameplay experience.</p>
+        </article>
+        <article>
+          <h3>Open development</h3>
+          <p>Open development with clear architecture, public documentation, and permissive API materials.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="warning-section shell" aria-labelledby="alpha-title">
+      <div class="warning-icon" aria-hidden="true">!</div>
+      <div>
+        <p class="section-label">Warning</p>
+        <h2 id="alpha-title">Gravewright v2.1.0-alpha is an Alpha release.</h2>
+        <p>Use it for testing, experiments, one-shots, and short Alpha arcs.</p>
+        <p>It is not recommended for long-running campaigns yet. Database schemas, storage layout, SDK package contracts, realtime events, and public APIs may change between Alpha releases.</p>
+        <p>There is no guaranteed upgrade path between Alpha releases. Back up before updating.</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="install">
+      <div class="section-heading">
+        <p class="section-label">Install Guide and Demo</p>
+        <h2>New to Gravewright? Start with the install guide and demo video.</h2>
+      </div>
+      <div class="section-copy link-stack">
+        <a href="https://github.com/Gravewright/gravewright#install-guide-and-demo">Open the Gravewright install guide and demo ↗</a>
+        <a href="https://github.com/Gravewright/gravewright/releases">Download the latest release ↗</a>
+      </div>
+
+      <div class="install-layout">
+        <div class="install-copy">
+          <p class="section-label">Try Gravewright</p>
+          <h3>Gravewright is currently distributed as v2.1.0-alpha for local testing and experimentation.</h3>
+          <p>There is no stable desktop installer yet. The recommended way to try Gravewright is to download a GitHub release or clone the repository and run it locally.</p>
+          <div class="requirements">
+            <strong>Requirements</strong>
+            <span>Python 3.11 or newer</span>
+            <span>uv</span>
+          </div>
+        </div>
+
+        <div class="terminal" data-terminal>
+          <div class="terminal-header">
+            <span>Quick local setup</span>
+            <button type="button" data-copy="unix">Copy</button>
+          </div>
+          <pre><code data-code="unix">git clone https://github.com/Gravewright/gravewright.git
+cd gravewright
+cp .env.example .env
+uv sync
+chmod +x grave
+./grave doctor
+./grave run --open</code></pre>
+          <div class="terminal-footer">Then open: <code>http://127.0.0.1:8000</code></div>
+        </div>
+      </div>
+
+      <div class="install-layout windows-layout">
+        <div class="install-copy">
+          <p class="section-label">On Windows PowerShell:</p>
+          <p>Fallback command:</p>
+          <code>uv run python -m app.cli doctor</code><br>
+          <code>uv run python -m app.cli run --open</code>
+        </div>
+        <div class="terminal" data-terminal>
+          <div class="terminal-header">
+            <span>Windows PowerShell</span>
+            <button type="button" data-copy="windows">Copy</button>
+          </div>
+          <pre><code data-code="windows">git clone https://github.com/Gravewright/gravewright.git
+cd gravewright
+Copy-Item .env.example .env
+uv sync
+.\grave.bat doctor
+.\grave.bat run --open</code></pre>
+          <div class="terminal-footer">Fallback: <code>uv run python -m app.cli run --open</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="cli">
+      <div class="section-heading">
+        <p class="section-label">Grave CLI</p>
+        <h2>Gravewright includes a local operator CLI called <code>grave</code>.</h2>
+      </div>
+      <div class="terminal terminal-wide" data-terminal>
+        <div class="terminal-header">
+          <span>Common commands</span>
+          <button type="button" data-copy="cli">Copy</button>
+        </div>
+        <pre><code data-code="cli">grave doctor
+grave run --open
+grave backup -o backup.zip --include-assets --verify
+grave restore backup.zip --dry-run
+grave package list
+grave package validate data/packages/rulesets/my-rpg
+grave package install my-rpg --yes --enable
+grave campaign package activate &lt;campaign_id&gt; my-addon
+grave ruleset new my-rpg --name "My RPG" --sheets --rolls --combat --content
+grave addon new my-addon --name "My Addon" --js --settings
+grave lock -o grave.lock.json</code></pre>
+      </div>
+      <a class="text-link" href="https://github.com/Gravewright/gravewright/tree/main/docs">CLI documentation ↗</a>
+    </section>
+
+    <section class="section shell audiences" id="sdk">
+      <div class="audience-grid">
+        <article>
+          <h3>For Players and Game Masters</h3>
+          <p>Gravewright aims to provide a virtual tabletop that can be hosted and controlled by your own group, without depending on a closed platform.</p>
+          <ul>
+            <li>campaigns</li>
+            <li>maps and scenes</li>
+            <li>fog, tokens, measurements, pings, and markers</li>
+            <li>actors and items</li>
+            <li>sheets</li>
+            <li>journals and quests</li>
+            <li>chat and dice rolls</li>
+            <li>combat</li>
+            <li>permissions</li>
+            <li>realtime collaboration</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>For Ruleset Creators</h3>
+          <p>Rulesets are Gravewright SDK packages that define the base game system for a campaign.</p>
+          <ul>
+            <li>actor types</li>
+            <li>item types</li>
+            <li>schemas</li>
+            <li>declarative sheets</li>
+            <li>derived rules</li>
+            <li>dice and roll behavior</li>
+            <li>combat configuration</li>
+            <li>starter content packs</li>
+          </ul>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs/sdk">Gravewright SDK ↗</a>
+        </article>
+
+        <article>
+          <h3>For Addon and Package Developers</h3>
+          <p>Supported package kinds:</p>
+          <div class="tag-list" aria-label="Supported package kinds">
+            <span>ruleset</span>
+            <span>addon</span>
+            <span>library</span>
+            <span>theme</span>
+            <span>content</span>
+            <span>assets</span>
+          </div>
+          <p>Addon packages can add optional behavior, UI, plugins, settings, scene tools, overlays, content, themes, and browser runtime behavior through documented SDK capabilities.</p>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs/sdk">SDK documentation ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="contribute">
+      <div class="section-heading">
+        <p class="section-label">For Contributors</p>
+        <h2>Gravewright is early and actively evolving.</h2>
+      </div>
+      <div class="contribute-layout">
+        <div>
+          <p>Good contribution areas include:</p>
+          <ul class="plain-list">
+            <li>documentation</li>
+            <li>test coverage</li>
+            <li>UI/UX polish</li>
+            <li>accessibility</li>
+            <li>performance testing</li>
+            <li>SDK package examples</li>
+            <li>ruleset examples</li>
+            <li>addon examples</li>
+            <li>browser runtime feedback</li>
+            <li>backup/restore feedback</li>
+            <li>bug reports from one-shot testing</li>
+          </ul>
+        </div>
+        <div class="resource-card">
+          <a href="https://github.com/Gravewright/gravewright/blob/main/CONTRIBUTING.md">Contributing guide <span>↗</span></a>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs">Architecture <span>↗</span></a>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs">Testing <span>↗</span></a>
+          <a href="https://github.com/Gravewright/gravewright/blob/main/SECURITY.md">Security <span>↗</span></a>
+          <a href="https://github.com/Gravewright/gravewright/tree/main/docs/sdk">SDK documentation <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="status-section shell">
+      <div>
+        <p class="section-label">Project Status</p>
+        <h2>Gravewright is currently v2.1.0-alpha.</h2>
+        <p>Core gameplay, realtime transport, maps, actors, items, journals, permissions, SDK packages, package tooling, diagnostics, and public APIs are available for Alpha testing and are still evolving.</p>
+        <p>Breaking changes may happen between Alpha releases.</p>
+        <p><strong>Do not trust Alpha releases with irreplaceable campaign data.</strong></p>
+      </div>
+      <div>
+        <p class="section-label">Language</p>
+        <p>The primary project documentation is written in English.</p>
+        <p>Brazilian Portuguese documentation is also available under:</p>
+        <a class="button button-secondary" href="https://github.com/Gravewright/gravewright/tree/main/docs/pt-br">docs/pt-br/ ↗</a>
+      </div>
+    </section>
+
+    <section class="final-cta shell">
+      <img
+        src="https://raw.githubusercontent.com/Gravewright/gravewright/main/icon.svg"
+        alt="Gravewright logo"
+        width="72"
+        height="72"
+        data-logo
+      >
+      <div>
+        <h2>Build the table. Control the rules. Own the experience.</h2>
+      </div>
+      <a class="button button-primary" href="https://github.com/Gravewright/gravewright">Core Platform</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="brand footer-brand">
+        <span class="brand-icon">
+          <img
+            src="https://raw.githubusercontent.com/Gravewright/gravewright/main/icon.svg"
+            alt=""
+            width="34"
+            height="34"
+            data-logo
+          >
+          <span class="brand-fallback" aria-hidden="true">G</span>
+        </span>
+        <span>Gravewright</span>
+      </div>
+      <p>Open-source virtual tabletop.</p>
+      <p>© <span data-year></span> Gravewright</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>
