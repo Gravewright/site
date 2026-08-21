@@ -8,6 +8,7 @@ export const referenceText = {
     "sdk-capabilities-conteudo": "Capabilities: content, journals, and PDF",
     "sdk-capabilities-cena": "Capabilities: scenes and tokens",
     "sdk-capabilities-regras": "Capabilities: rules, sheets, and persistence",
+    "sdk-capabilities-automacao": "Capabilities: automation, interactions, and flows",
   },
   headings: {
     authorizes: "What it authorizes",

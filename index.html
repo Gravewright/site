@@ -36,7 +36,7 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-nav>
         <a href="#about">Why Gravewright</a>
-        <a href="#experience">Experience</a>
+        <a href="#release">Beta 3</a>
         <a href="wiki/index.html">Wiki</a>
         <a href="#install">Get Gravewright</a>
         <a href="#contribute">Contribute</a>
@@ -48,7 +48,7 @@
   <main id="main-content">
     <section class="hero shell" id="top">
       <div class="hero-copy">
-        <p class="eyebrow">Gravewright v1.0.0 Beta 1</p>
+        <p class="eyebrow">Gravewright v1.0.0 Beta 3 · SDK 1 RC 1</p>
         <div class="hero-brand">
           <span class="hero-icon">
             <img
@@ -66,7 +66,7 @@
         <p class="hero-meta">Build atmospheric scenes, bring your rules to life, and keep every player focused on the story.</p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.2/Gravewright-1.0.0-beta.2-win64.zip" aria-label="Download Gravewright Beta 1 for Windows">
+          <a class="button button-primary" href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.3/Gravewright-Windows-x64.zip" aria-label="Download Gravewright Beta 3 for Windows">
             Download for Windows
           </a>
           <a class="button button-secondary" href="#experience">
@@ -75,7 +75,7 @@
         </div>
 
         <div class="quick-links" aria-label="Project links">
-          <a href="https://github.com/Gravewright/gravewright/releases/tag/v1.0.0-beta.1">Beta 1 release ↗</a>
+          <a href="https://github.com/Gravewright/gravewright/releases/tag/v1.0.0-beta.3">Beta 3 release ↗</a>
           <a href="wiki/index.html">Documentation</a>
           <a href="https://github.com/Gravewright/gravewright-5e-srd">5e SRD ↗</a>
           <a href="https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright">Savage Worlds ↗</a>
@@ -121,6 +121,14 @@
       </aside>
     </section>
 
+    <section class="media-showcase shell" aria-label="Gravewright overview image">
+      <figure class="media-frame media-frame--hero">
+        <img src="assets/gravewright-at-the-table.webp"
+          alt="Gravewright game table showing a dungeon map, character tokens, lighting, layers, and the actor directory."
+          width="1914" height="906" fetchpriority="high" decoding="async" />
+      </figure>
+    </section>
+
     <section class="section shell" id="about">
       <div class="section-heading">
         <p class="section-label">Why Gravewright?</p>
@@ -159,6 +167,12 @@
         <p>Preparation should feel creative, play should feel effortless, and the software should never become the main character.</p>
       </div>
 
+      <figure class="media-frame">
+        <img src="assets/a-live-session-in-progress.webp"
+          alt="A live Gravewright session with a quest journal open beside the dungeon map and character tokens."
+          width="1914" height="906" loading="lazy" decoding="async" />
+      </figure>
+
       <div class="focus-grid beginner-grid">
         <article>
           <span class="step-number">FOR THE GM</span>
@@ -183,11 +197,45 @@
       <div class="warning-icon" aria-hidden="true">!</div>
       <div>
         <p class="section-label">Built for play, still growing</p>
-        <h2 id="beta-title">Beta 1 is ready to welcome more tables.</h2>
+        <h2 id="beta-title">Beta 3 is ready for broader testing.</h2>
         <p>Run a one-shot, explore a new system, or bring your campaign along while Gravewright continues to improve.</p>
         <p>Your feedback during Beta helps shape a more dependable and enjoyable first LTS release.</p>
         <p><strong>Keep verified backups of any campaign data you care about.</strong></p>
       </div>
+    </section>
+
+    <section class="section shell" id="release">
+      <div class="section-heading">
+        <p class="section-label">What is new</p>
+        <h2>Beta 3 brings package authoring and distribution into one coherent workflow.</h2>
+      </div>
+      <div class="section-copy">
+        <p>The operator CLI and the public SDK are certified in parity against SDK 1 RC 1. Packages still declare <code>sdkVersion: "1"</code>; RC status is release metadata.</p>
+      </div>
+      <figure class="media-frame">
+        <img src="assets/workflow.webp"
+          alt="Gravewright campaign dashboard with controls to create, join, import, open, and manage a table."
+          width="1914" height="906" loading="lazy" decoding="async" />
+      </figure>
+      <div class="focus-grid">
+        <article>
+          <h3>Author with confidence</h3>
+          <p>Scaffold all six package kinds with flags, a guided wizard, ruleset templates, dry runs, JSON output, validation, and Package Doctor.</p>
+        </article>
+        <article>
+          <h3>Publish by channel</h3>
+          <p>Marketplace v2 publishes Core and packages through <strong>stable</strong>, <strong>testing</strong>, and <strong>dev</strong>, with explicit provenance and verified artifacts.</p>
+        </article>
+        <article>
+          <h3>Ship content packs v2</h3>
+          <p>Indexed inline or lazy documents give actors, items, scenes, cards, decks, journals, and other content a consistent import format.</p>
+        </article>
+        <article>
+          <h3>Automate safely</h3>
+          <p>Stable JSON errors, bounded AI diagnostics, local refresh, and verified remote updates make tooling predictable without bypassing confirmation.</p>
+        </article>
+      </div>
+      <p class="beginner-next"><a class="text-link" href="wiki/pages/release-beta-3.html">Read the Beta 3 guide →</a></p>
     </section>
 
     <section class="section shell" id="install">
@@ -196,10 +244,10 @@
         <h2>Choose the packaged release unless you plan to develop Gravewright.</h2>
       </div>
       <div class="section-copy link-stack">
-        <a href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.2/Gravewright-1.0.0-beta.2-win64.zip">
+        <a href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.3/Gravewright-Windows-x64.zip">
           <span aria-hidden="true">⊞</span> Download Gravewright for Windows ↗
         </a>
-        <a href="https://github.com/Gravewright/gravewright/releases/tag/v1.0.0-beta.1">View the Beta 1 release notes ↗</a>
+        <a href="https://github.com/Gravewright/gravewright/releases/tag/v1.0.0-beta.3">View the Beta 3 release notes ↗</a>
         <a href="wiki/pages/instalacao.html">Open the step-by-step installation guide →</a>
       </div>
 
@@ -359,8 +407,8 @@ uv sync
     <section class="status-section shell">
       <div>
         <p class="section-label">Project Status</p>
-        <h2>Gravewright is currently v1.0.0 Beta 1.</h2>
-        <p>Beta 1 includes the main pieces expected from a general-purpose VTT: scenes, maps, dynamic vision, lighting, walls and doors, tokens, sheets, PDFs, combat, cards, chat, effects, permissions, campaign tools, and an extensible ruleset system.</p>
+        <h2>Gravewright is currently v1.0.0 Beta 3.</h2>
+        <p>Beta 3 includes the main pieces expected from a general-purpose VTT and certifies the CLI and package workflow against SDK 1 RC 1.</p>
         <p>The next stage is less about proving how many features Gravewright can have and more about making the whole experience dependable, polished, and easier to use.</p>
         <p><strong>Beta software can still change. Keep backups of important campaign data.</strong></p>
       </div>
@@ -383,7 +431,7 @@ uv sync
       <div>
         <h2>Build worlds. Run games. Own your table.</h2>
       </div>
-      <a class="button button-primary" href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.2/Gravewright-1.0.0-beta.2-win64.zip">Try Gravewright</a>
+      <a class="button button-primary" href="https://github.com/Gravewright/gravewright/releases/download/v1.0.0-beta.3/Gravewright-Windows-x64.zip">Try Gravewright Beta 3</a>
     </section>
   </main>
 

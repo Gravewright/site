@@ -12,6 +12,7 @@ const capabilityGroups = [
   ["sdk-capabilities-conteudo", "Capabilities: conteúdo, diários e PDF", ["content.", "journals.", "handouts.", "pdf."]],
   ["sdk-capabilities-cena", "Capabilities: cenas e tokens", ["scene.", "tokens."]],
   ["sdk-capabilities-regras", "Capabilities: regras, fichas e persistência", ["rules.", "sheets.", "settings", "storage.", "locales", "permissions."]],
+  ["sdk-capabilities-automacao", "Capabilities: automação, interação e fluxos", ["packages.", "campaign.members.", "automation.", "interactions.", "audio.", "sounds.", "navigation.", "input.", "workflows.", "gameplay.", "timelines."]],
 ];
 
 function capabilityGuidance(name) {
@@ -142,7 +143,7 @@ function minimalExample(name, methods) {
 
 function capabilityHref(name) {
   const group = capabilityGroups.find(([_slug, _title, prefixes]) => prefixes.some((prefix) => name === prefix || name.startsWith(prefix)));
-  return group ? `${group[0]}.html#${name.replace(/[^a-z0-9]+/g, "-")}` : "sdk-capabilities-runtime.html";
+  return group ? `${group[0]}.html#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` : "sdk-capabilities-runtime.html";
 }
 
 function capabilitySection(name, raw) {
@@ -167,7 +168,7 @@ const generatedCapabilityGuides = capabilityGroups.map(([slug, title, prefixes])
 const capabilityPageByName = new Map();
 for (const [slug, _title, prefixes] of capabilityGroups) {
   for (const [name] of allCapabilities.filter(([cap]) => prefixes.some((prefix) => cap === prefix || cap.startsWith(prefix)))) {
-    capabilityPageByName.set(name, `${slug}.html#${name.replace(/[^a-z0-9]+/g, "-")}`);
+    capabilityPageByName.set(name, `${slug}.html#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`);
   }
 }
 const capLink = (name) => `[\`${name}\`](${capabilityPageByName.get(name)})`;
@@ -240,4 +241,3 @@ export function buildCapabilityReference() {
     registrySource: capabilityRegistryResult.source,
   };
 }
-

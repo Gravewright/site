@@ -1,4 +1,5 @@
 const revisions = new Map([
+  ["SDK 1 es la línea estable.", "SDK 1 RC 1 es el candidato público congelado; los packages siguen declarando `sdkVersion: \"1\"`."],
   ["[!NOTA]", "[!NOTE]"],
   ["[!CONSEJO]", "[!TIP]"],
   ["[!ADVERTENCIA]", "[!WARNING]"],

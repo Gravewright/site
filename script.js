@@ -4,6 +4,46 @@ const nav = document.querySelector("[data-nav]");
 const toast = document.querySelector("[data-toast]");
 const year = document.querySelector("[data-year]");
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.documentElement.classList.add(reducedMotion ? "reduced-motion" : "has-motion");
+
+function setupOpeningEffects() {
+  const targets = document.querySelectorAll([
+    ".media-showcase",
+    ".section > .section-heading",
+    ".section > .section-copy",
+    ".section > .media-frame",
+    ".section > .focus-grid",
+    ".section > .install-layout",
+    ".section > .contribute-layout",
+    ".warning-section",
+    ".status-section",
+    ".final-cta",
+  ].join(","));
+
+  targets.forEach((element, index) => {
+    element.classList.add("reveal-item");
+    element.style.setProperty("--reveal-delay", `${(index % 3) * 55}ms`);
+  });
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    targets.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  }, { threshold: 0.12, rootMargin: "0px 0px -7%" });
+
+  targets.forEach((element) => observer.observe(element));
+}
+
+setupOpeningEffects();
+
 function setMenu(open) {
   if (!menuToggle || !nav) return;
   menuToggle.setAttribute("aria-expanded", String(open));

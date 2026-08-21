@@ -16,6 +16,7 @@ const groups = [
   ["sdk-capabilities-conteudo", ["content.", "journals.", "handouts.", "pdf."]],
   ["sdk-capabilities-cena", ["scene.", "tokens."]],
   ["sdk-capabilities-regras", ["rules.", "sheets.", "settings", "storage.", "locales", "permissions."]],
+  ["sdk-capabilities-automacao", ["packages.", "campaign.members.", "automation.", "interactions.", "audio.", "sounds.", "navigation.", "input.", "workflows.", "gameplay.", "timelines."]],
 ];
 
 const localeData = {
@@ -102,7 +103,7 @@ function relatedCapabilities(name) {
 
 function pageFor(name) {
   const group = groups.find(([_slug, prefixes]) => prefixes.some((prefix) => name === prefix || name.startsWith(prefix)));
-  return group ? `${group[0]}.html#${name.replace(/[^a-z0-9]+/g, "-")}` : "sdk-capabilities-runtime.html";
+  return group ? `${group[0]}.html#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` : "sdk-capabilities-runtime.html";
 }
 
 function example(name, methods, text) {

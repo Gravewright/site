@@ -116,8 +116,8 @@
       },
       {
         "slug": "pacotes-rulesets",
-        "sourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
-        "reviewedSourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
+        "sourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
+        "reviewedSourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
         "reviewed": true,
         "status": "current"
       },
@@ -164,6 +164,27 @@
         "status": "current"
       },
       {
+        "slug": "release-beta-3",
+        "sourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewedSourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "authoring-beta-3",
+        "sourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewedSourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "marketplace-updates",
+        "sourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewedSourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
         "slug": "sdk-mapa-de-poder",
         "sourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
         "reviewedSourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
@@ -172,50 +193,57 @@
       },
       {
         "slug": "sdk-capabilities-atores-itens",
-        "sourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
-        "reviewedSourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
+        "sourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
+        "reviewedSourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-assets-ui",
-        "sourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
-        "reviewedSourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
+        "sourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
+        "reviewedSourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-eventos",
-        "sourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
-        "reviewedSourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
+        "sourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
+        "reviewedSourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-jogo",
-        "sourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
-        "reviewedSourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
+        "sourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
+        "reviewedSourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-conteudo",
-        "sourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
-        "reviewedSourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
+        "sourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
+        "reviewedSourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-cena",
-        "sourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
-        "reviewedSourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
+        "sourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
+        "reviewedSourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-regras",
-        "sourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
-        "reviewedSourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
+        "sourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewedSourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "sdk-capabilities-automacao",
+        "sourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
+        "reviewedSourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
         "reviewed": true,
         "status": "current"
       }
@@ -335,8 +363,8 @@
       },
       {
         "slug": "pacotes-rulesets",
-        "sourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
-        "reviewedSourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
+        "sourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
+        "reviewedSourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
         "reviewed": true,
         "status": "current"
       },
@@ -383,6 +411,27 @@
         "status": "current"
       },
       {
+        "slug": "release-beta-3",
+        "sourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewedSourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "authoring-beta-3",
+        "sourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewedSourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "marketplace-updates",
+        "sourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewedSourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
         "slug": "sdk-mapa-de-poder",
         "sourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
         "reviewedSourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
@@ -391,50 +440,57 @@
       },
       {
         "slug": "sdk-capabilities-atores-itens",
-        "sourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
-        "reviewedSourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
+        "sourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
+        "reviewedSourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-assets-ui",
-        "sourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
-        "reviewedSourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
+        "sourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
+        "reviewedSourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-eventos",
-        "sourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
-        "reviewedSourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
+        "sourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
+        "reviewedSourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-jogo",
-        "sourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
-        "reviewedSourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
+        "sourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
+        "reviewedSourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-conteudo",
-        "sourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
-        "reviewedSourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
+        "sourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
+        "reviewedSourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-cena",
-        "sourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
-        "reviewedSourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
+        "sourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
+        "reviewedSourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-regras",
-        "sourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
-        "reviewedSourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
+        "sourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewedSourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "sdk-capabilities-automacao",
+        "sourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
+        "reviewedSourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
         "reviewed": true,
         "status": "current"
       }
@@ -554,8 +610,8 @@
       },
       {
         "slug": "pacotes-rulesets",
-        "sourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
-        "reviewedSourceHash": "sha256:0d297a1110289d9e5d1127fc883f8e02e6fdae055643bc95fc7a06b14deae389",
+        "sourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
+        "reviewedSourceHash": "sha256:6803b2adcff638da0a25f051cf72d6976d4224728cad544c29a3de98d967d7d0",
         "reviewed": true,
         "status": "current"
       },
@@ -602,6 +658,27 @@
         "status": "current"
       },
       {
+        "slug": "release-beta-3",
+        "sourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewedSourceHash": "sha256:4f78d034ecc88a7534084c5c85d258df450a6c1f813e083761c15e6855008182",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "authoring-beta-3",
+        "sourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewedSourceHash": "sha256:4556e51d58f1bd49465eb7e20e7f487f13f85fe523d3e831190d6baef3c254e2",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "marketplace-updates",
+        "sourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewedSourceHash": "sha256:6a2530a1e0c59ed5002a0c5235dd523bb208e163bc267b2b6a7a066288a77c74",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
         "slug": "sdk-mapa-de-poder",
         "sourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
         "reviewedSourceHash": "sha256:7830eeacdc04bb56dd2dbabf11e439c8ec00303e271338c8c16cb1237c09338d",
@@ -610,50 +687,57 @@
       },
       {
         "slug": "sdk-capabilities-atores-itens",
-        "sourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
-        "reviewedSourceHash": "sha256:b26ebb2783b75dd26190bb94cb7745ea284a3298f3921b1d810d2d003747d8a8",
+        "sourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
+        "reviewedSourceHash": "sha256:67b24462736ea246309c69c7279eff8b8995f6a43c6d684bcb7e89392fa42220",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-assets-ui",
-        "sourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
-        "reviewedSourceHash": "sha256:b371ae40e83ca06c97e4fd76a223dfa747a9e35af54caaf3e53e5c20553f2f31",
+        "sourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
+        "reviewedSourceHash": "sha256:47b093aaf333e51b196d7d1b3de224c77205ddba1bf3a617a2c5406eee1acbc6",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-eventos",
-        "sourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
-        "reviewedSourceHash": "sha256:9ca59070a13b4416d7833a1c02145fa652cf0365d4747c27b5621f9beec02005",
+        "sourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
+        "reviewedSourceHash": "sha256:c63a0a82d927661d7dd658e32ac64e66d2752b28e9ab9964b2fa8b951f4370ae",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-jogo",
-        "sourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
-        "reviewedSourceHash": "sha256:72079b1114848cc0883b4a69f0b323e97d6aee6705306d5eb7ea37077c05909a",
+        "sourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
+        "reviewedSourceHash": "sha256:5a3e14dd2f05d25d03694bddb1d3b6c9568c2aea8f48b60e1d4e8fd0df013325",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-conteudo",
-        "sourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
-        "reviewedSourceHash": "sha256:01253f8d020af653db0481f08ed08fcd748d02e51101dfb8030a15895f3b4bf8",
+        "sourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
+        "reviewedSourceHash": "sha256:88f70cd06e0048f5a20f779e176a32f8eba3072dc08386e2fed8565124f910c9",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-cena",
-        "sourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
-        "reviewedSourceHash": "sha256:847b3dfe736c80614d918405bf70b1e541a9f4054b2d6dc3b193acc883500a1a",
+        "sourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
+        "reviewedSourceHash": "sha256:1a792f0c0ec9048fb70815b448fb34f7ab72b4b09d6cdfbd61b17e6684b982dc",
         "reviewed": true,
         "status": "current"
       },
       {
         "slug": "sdk-capabilities-regras",
-        "sourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
-        "reviewedSourceHash": "sha256:44e6f326df75151351deb5082a0312689bc4f2cf0ef68c836fefc82ec61e80ad",
+        "sourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewedSourceHash": "sha256:090b53a873ee232dcb8b35e19424b4dde07a1d6d14647383d3d776a097652b5f",
+        "reviewed": true,
+        "status": "current"
+      },
+      {
+        "slug": "sdk-capabilities-automacao",
+        "sourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
+        "reviewedSourceHash": "sha256:fc5748ea7016ea8728e9bc5dc3ba99eb49559d8f794c5c8deeec1638b62181a0",
         "reviewed": true,
         "status": "current"
       }

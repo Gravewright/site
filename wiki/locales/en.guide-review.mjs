@@ -1,4 +1,5 @@
 const revisions = new Map([
+  ["SDK 1 is the stable line.", "SDK 1 RC 1 is the frozen public candidate; packages continue to declare `sdkVersion: \"1\"`."],
   ["virtual table", "virtual tabletop"],
   ["At checkout", "In a source checkout"],
   ["the door is dynamic", "the port is dynamic"],

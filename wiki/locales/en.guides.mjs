@@ -1,5 +1,6 @@
 // English wiki content. Edit translations here; the HTML generator contains no prose.
 import { reviewEnglishGuides } from "./en.guide-review.mjs";
+import { releaseGuides } from "./release-guides.mjs";
 
 const sourceGuides = [
   {
@@ -165,4 +166,4 @@ const sourceGuides = [
   }
 ];
 
-export const guides = reviewEnglishGuides(sourceGuides);
+export const guides = [...reviewEnglishGuides(sourceGuides), ...releaseGuides.en];

@@ -1,4 +1,6 @@
 // Conteúdo da wiki em português brasileiro.
+import { releaseGuides } from "./release-guides.mjs";
+
 export const guides = [
   {
     slug: "inicio", section: "Comece aqui", title: "Bem-vindo ao Gravewright",
@@ -677,7 +679,7 @@ Scripts acessam o SDK pelo objeto entregue em \`setup(sdk)\`. Não use imports d
 
 ## Compatibilidade
 
-SDK 1 é a linha estável. Prefira adições compatíveis e teste versões mínima e verificada declaradas no manifest.`
+SDK 1 RC 1 é o candidato público congelado; packages continuam declarando \`sdkVersion: "1"\`. Prefira adições compatíveis e teste versões mínima e verificada declaradas no manifest.`
   },
   {
     slug: "sdk-manifest", section: "SDK em profundidade", title: "Manifesto e ciclo de um pacote",
@@ -1039,5 +1041,6 @@ O PDF A4 vazio, scripts e runtime pdf.js fazem parte do core e devem entrar no G
 \`\`\`
 
 O resultado esperado é um pacote aprovado, compatível e sem warnings.`
-  }
+  },
+  ...releaseGuides["pt-br"],
 ];
