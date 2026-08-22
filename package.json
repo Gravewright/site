@@ -10,6 +10,6 @@
     "test": "npm run build:wiki && npm run check:site && npm run check:standalone"
   },
   "devDependencies": {
-    "marked": "18.0.9"
+    "marked": "18.0.10"
   }
 }
