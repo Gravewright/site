@@ -5,7 +5,7 @@ import { resolve, dirname, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = await realpath(resolve(dirname(fileURLToPath(import.meta.url)), '..'));
 const port = Number(process.env.PORT || 4173);
-const mime = {'.png':'image/png', '.xml':'application/xml; charset=utf-8', '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.svg':'image/svg+xml', '.webp':'image/webp', '.mp4':'video/mp4', '.vtt':'text/vtt; charset=utf-8', '.txt':'text/plain; charset=utf-8', '.md':'text/plain; charset=utf-8', '.json':'application/json'};
+const mime = {'.jpg':'image/jpeg', '.png':'image/png', '.xml':'application/xml; charset=utf-8', '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.svg':'image/svg+xml', '.webp':'image/webp', '.mp4':'video/mp4', '.vtt':'text/vtt; charset=utf-8', '.txt':'text/plain; charset=utf-8', '.md':'text/plain; charset=utf-8', '.json':'application/json'};
 const server = createServer(async (req, res) => {
   try {
     if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405, {Allow:'GET, HEAD'}).end(); return; }

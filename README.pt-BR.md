@@ -54,6 +54,6 @@ Licenciamento e atribuição do template estão em [THIRD_PARTY_NOTICES.md](THIR
 
 ## SEO
 
-Os metadados de SEO são gerados por `scripts/seo.mjs`: títulos e descrições por idioma, URLs canônicas, versões alternativas, Open Graph, cartões sociais com imagem grande e JSON-LD de WebSite/WebPage/SoftwareApplication. A capa do vídeo também é a imagem de compartilhamento. Atualize `content/media.json` ao trocá-la; as verificações conferem suas dimensões. O `sitemap.xml` lista as duas páginas públicas e o `robots.txt` aponta para ele.
+Os metadados de SEO são gerados por `scripts/seo.mjs`: títulos e descrições por idioma, URLs canônicas, versões alternativas, Open Graph, cartões sociais com imagem grande e JSON-LD de WebSite/WebPage/SoftwareApplication. O compartilhamento usa uma versão JPEG leve da capa (`assets/images/gravewright-social-v2.jpg`, 1200 × 676, cerca de 191 KB). Caminho e dimensões ficam em `scripts/seo.mjs`; o PNG original continua como capa do vídeo. As verificações exigem JPEG e tamanho abaixo de 300 KB. Use um novo nome de arquivo ao trocar a imagem social para evitar caches antigos da imagem. O `sitemap.xml` lista as duas páginas públicas e o `robots.txt` aponta para ele.
 
 Referências: [protocolo Open Graph](https://ogp.me/) e [dados estruturados de software do Google](https://developers.google.com/search/docs/appearance/structured-data/software-app).

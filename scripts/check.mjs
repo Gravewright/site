@@ -4,6 +4,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
 import { locales, download, release } from '../content/site.mjs';
+import { socialImage } from './seo.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const media = JSON.parse(await readFile(resolve(root, 'content/media.json'), 'utf8'));
 const exists = async path => { try { await access(resolve(root, path)); return true; } catch { return false; } };
@@ -29,7 +30,7 @@ for (const t of Object.values(locales)) {
   const canonical = `https://gravewright.com/${t.file === 'index.html' ? '' : t.file}`;
   assert(html.includes(`<link rel="canonical" href="${canonical}">`), 'Missing canonical URL');
   assert(html.includes(`<meta property="og:url" content="${canonical}">`));
-  const poster = media.find(item => item.id === 'session').poster;
+  const poster = socialImage.file;
   assert(html.includes(`<meta property="og:image" content="https://gravewright.com/${poster}">`));
   assert(html.includes(`<meta name="twitter:image" content="https://gravewright.com/${poster}">`));
   assert(html.includes('name="twitter:card" content="summary_large_image"'));
@@ -43,9 +44,11 @@ for (const t of Object.values(locales)) {
   assert.equal(webPage.inLanguage, t.lang);
   assert.equal(software.downloadUrl, download);
   assert.equal(software.inLanguage, 'en');
-  const png = await readFile(resolve(root, poster));
-  assert.equal(webPage.primaryImageOfPage.width, png.readUInt32BE(16));
-  assert.equal(webPage.primaryImageOfPage.height, png.readUInt32BE(20));
+  const preview = await readFile(resolve(root, poster));
+  assert.equal(preview.readUInt16BE(0), 0xffd8, 'Social preview must be JPEG');
+  assert(preview.length < 300000, 'Keep social preview under 300 KB');
+  assert.equal(webPage.primaryImageOfPage.width, socialImage.width);
+  assert.equal(webPage.primaryImageOfPage.height, socialImage.height);
   pages.set(t.file, { html, ids });
 }
 let links = 0;
