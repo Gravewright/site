@@ -1,0 +1,82 @@
+[
+  {
+    "id": "table",
+    "type": "image",
+    "file": "assets/images/table-overview.webp",
+    "width": 1911,
+    "height": 926,
+    "title": {
+      "en": "Gravewright at the table",
+      "pt": "Gravewright à mesa"
+    },
+    "alt": {
+      "en": "Gravewright tabletop showing a lava-filled dungeon, a large dragon token, character tokens, lighting and the tabletop toolbars.",
+      "pt": "Mesa do Gravewright com uma masmorra cercada por lava, um grande token de dragão, tokens de personagens, iluminação e barras de ferramentas."
+    },
+    "brief": "Capture the current Alpha 0.1.0 tabletop with a prepared scene, tokens and visible lighting. Use content you can share."
+  },
+  {
+    "id": "session",
+    "type": "video",
+    "file": "assets/videos/table-session.mp4",
+    "poster": "assets/images/table-session-cover.png",
+    "width": 1920,
+    "height": 1080,
+    "title": {
+      "en": "The Dragon’s Legacy · Battle showcase",
+      "pt": "The Dragon’s Legacy · Demonstração de batalha"
+    },
+    "alt": {
+      "en": "Gravewright battle showcase with a lava-filled dungeon, a dragon token, lighting and fog controls, and character movement, accompanied by orchestral music.",
+      "pt": "Demonstração do Gravewright com masmorra de lava, token de dragão, controles de iluminação e névoa e movimento de personagens, acompanhada por música orquestral."
+    },
+    "captions": {
+      "en": "assets/videos/table-session.en.vtt",
+      "pt": "assets/videos/table-session.pt-BR.vtt"
+    },
+    "transcripts": {
+      "en": "assets/videos/table-session.en.txt",
+      "pt": "assets/videos/table-session.pt-BR.txt"
+    },
+    "brief": "51.1-second battle edit from the supplied recording. The poster is an original illustrated cover showing a red dragon and a volcanic fortress, with the Gravewright title. Music attribution is included in the end card, transcript and third-party notices.",
+    "music": {
+      "title": "Volatile Reaction",
+      "artist": "Kevin MacLeod",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  {
+    "id": "sheet",
+    "type": "image",
+    "file": "assets/images/pdf-character-sheet.webp",
+    "width": 1600,
+    "height": 1000,
+    "title": {
+      "en": "Your character, close to the story",
+      "pt": "Seu personagem perto da história"
+    },
+    "alt": {
+      "en": "The original Seren Ashford PDF character sheet open in Gravewright, with editable health, energy, defense and attribute fields, abilities, equipment and notes.",
+      "pt": "Ficha PDF original de Seren Ashford aberta no Gravewright, com campos editáveis de vida, energia, defesa e atributos, habilidades, equipamentos e notas."
+    },
+    "brief": "Fresh capture of the real Alpha application using an original editable demo PDF in an isolated sample campaign. Source PDF: assets/demo/Seren-Ashford.pdf."
+  },
+  {
+    "id": "campaign",
+    "type": "image",
+    "file": "assets/images/campaign-dashboard.webp",
+    "width": 1600,
+    "height": 1000,
+    "title": {
+      "en": "A home for your campaigns",
+      "pt": "Um lugar para suas campanhas"
+    },
+    "alt": {
+      "en": "Gravewright campaign dashboard with The Verdant Vigil, The Drowned Crown and Ashfall Citadel, illustrated covers, participant icons and a control to create a campaign.",
+      "pt": "Painel do Gravewright com The Verdant Vigil, The Drowned Crown e Ashfall Citadel, capas ilustradas, ícones de participantes e controle para criar uma campanha."
+    },
+    "brief": "Fresh capture of the real Alpha dashboard using fictional campaigns and a sample account. New abbey, ocean-palace and volcanic-fortress illustrations were created for these demo campaigns."
+  }
+]

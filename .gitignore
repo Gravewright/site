@@ -1,0 +1,11 @@
+node_modules/
+test-results/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+
+# Temporary frame extraction; the video uses table-session-cover.png.
+/assets/images/table-session-first-frame.png

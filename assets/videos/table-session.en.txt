@@ -1,0 +1,14 @@
+GRAVEWRIGHT — THE DRAGON'S LEGACY | ALPHA 0.1.0
+Descriptive transcript. Duration: 51.1 seconds. No speech.
+
+00:00–00:08 — The Gravewright tabletop shows stone platforms and bridges surrounded by lava. A large dragon token occupies the center; smaller character tokens stand nearby. An opening title identifies Gravewright and the campaign. Intense orchestral battle music plays.
+00:08–00:14 — The effects menu opens over the scene with particle and weather options.
+00:14–00:30 — Lighting and visibility controls appear. The scene shifts between darker areas and illuminated zones around the characters and torches.
+00:30–00:41 — The view pulls back. Movement and route indicators appear as a character token is moved around the central stairs.
+00:41–00:46 — The map is visible again with the dragon, character tokens, lava and tabletop tools.
+00:46–00:51 — A dark end card reads GRAVEWRIGHT and THE DRAGON'S LEGACY | ALPHA 0.1.0, followed by the music attribution. The music fades out.
+
+Music: Volatile Reaction — Kevin MacLeod (incompetech.com).
+Creative Commons Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+Source: https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039
+Music adapted: excerpt, fades and level adjustment.
