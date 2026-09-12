@@ -51,3 +51,9 @@ npm run check:media      # exige também todas as mídias planejadas
 A verificação normal aceita placeholders. Todos os espaços de mídia estão preenchidos, incluindo novas capturas de uma ficha PDF original e de um painel com campanhas fictícias. A verificação completa confirma a presença dos arquivos necessários. Consulte as [fontes da demonstração](assets/demo/README.md). Depois de adicionar os arquivos, confira os vídeos, legendas sincronizadas, textos alternativos e reprodução no navegador.
 
 Licenciamento e atribuição do template estão em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## SEO
+
+Os metadados de SEO são gerados por `scripts/seo.mjs`: títulos e descrições por idioma, URLs canônicas, versões alternativas, Open Graph, cartões sociais com imagem grande e JSON-LD de WebSite/WebPage/SoftwareApplication. A capa do vídeo também é a imagem de compartilhamento. Atualize `content/media.json` ao trocá-la; as verificações conferem suas dimensões. O `sitemap.xml` lista as duas páginas públicas e o `robots.txt` aponta para ele.
+
+Referências: [protocolo Open Graph](https://ogp.me/) e [dados estruturados de software do Google](https://developers.google.com/search/docs/appearance/structured-data/software-app).

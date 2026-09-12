@@ -12,8 +12,8 @@ uv run --locked python main.py`;
 export const locales = {
   en: {
     lang: 'en', file: 'index.html', otherFile: 'pt-br.html', otherLabel: 'Português', docs: 'en', suffix: '',
-    title: 'Gravewright — Your world. Your table.',
-    description: 'An open-source virtual tabletop for your worlds, maps and PDF character sheets. Get Gravewright Alpha 0.1.0 and start with the Windows Runner.',
+    title: 'Gravewright — Open-Source Virtual Tabletop for RPGs',
+    description: 'Free, open-source virtual tabletop for RPGs with maps, lighting and PDF character sheets. Download Gravewright Alpha 0.1.0 with the Windows Runner.',
     skip: 'Skip to content', home: 'Gravewright home', navigation: 'Main navigation', menu: 'Toggle navigation',
     nav: ['The experience', 'Alpha 0.1.0', 'Get started', 'Contribute'],
     eyebrow: 'Open-source virtual tabletop · Alpha 0.1.0',
@@ -90,8 +90,8 @@ export const locales = {
   },
   pt: {
     lang: 'pt-BR', file: 'pt-br.html', otherFile: 'index.html', otherLabel: 'English', docs: 'pt-BR', suffix: '.pt-BR',
-    title: 'Gravewright — Seu mundo. Sua mesa.',
-    description: 'Uma mesa virtual open source para seus mundos, mapas e fichas PDF. Baixe Gravewright Alpha 0.1.0 e comece com o Runner para Windows.',
+    title: 'Gravewright — Mesa Virtual Open Source para RPG',
+    description: 'Mesa virtual gratuita e open source para RPG, com mapas, iluminação e fichas PDF. Baixe Gravewright Alpha 0.1.0 com o Runner para Windows.',
     skip: 'Pular para o conteúdo', home: 'Página inicial do Gravewright', navigation: 'Navegação principal', menu: 'Abrir ou fechar navegação',
     nav: ['A experiência', 'Alpha 0.1.0', 'Comece a jogar', 'Contribua'],
     eyebrow: 'Mesa virtual open source · Alpha 0.1.0',

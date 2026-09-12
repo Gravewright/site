@@ -26,6 +26,26 @@ for (const t of Object.values(locales)) {
     assert(item.alt.en && item.alt.pt && item.title.en && item.title.pt);
     assert(html.includes(`data-media="${item.id}" data-state="${await exists(item.file) ? 'ready' : 'placeholder'}"`), `Rebuild after changing ${item.file}`);
   }
+  const canonical = `https://gravewright.com/${t.file === 'index.html' ? '' : t.file}`;
+  assert(html.includes(`<link rel="canonical" href="${canonical}">`), 'Missing canonical URL');
+  assert(html.includes(`<meta property="og:url" content="${canonical}">`));
+  const poster = media.find(item => item.id === 'session').poster;
+  assert(html.includes(`<meta property="og:image" content="https://gravewright.com/${poster}">`));
+  assert(html.includes(`<meta name="twitter:image" content="https://gravewright.com/${poster}">`));
+  assert(html.includes('name="twitter:card" content="summary_large_image"'));
+  for (const lang of ['en', 'pt-BR', 'x-default']) {
+    assert(html.includes(`hreflang="${lang}" href="https://gravewright.com/`));
+  }
+  const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1]);
+  const webPage = schema['@graph'].find(item => item['@type'] === 'WebPage');
+  const software = schema['@graph'].find(item => item['@type'] === 'SoftwareApplication');
+  assert.equal(webPage.url, canonical);
+  assert.equal(webPage.inLanguage, t.lang);
+  assert.equal(software.downloadUrl, download);
+  assert.equal(software.inLanguage, 'en');
+  const png = await readFile(resolve(root, poster));
+  assert.equal(webPage.primaryImageOfPage.width, png.readUInt32BE(16));
+  assert.equal(webPage.primaryImageOfPage.height, png.readUInt32BE(20));
   pages.set(t.file, { html, ids });
 }
 let links = 0;

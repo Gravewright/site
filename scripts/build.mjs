@@ -3,6 +3,7 @@ import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
 import { locales, project, release, download, commands } from '../content/site.mjs';
+import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -53,10 +54,8 @@ for (const [locale, t] of Object.entries(locales)) {
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escape(t.title)}</title><meta name="description" content="${escape(t.description)}">
-  <meta name="theme-color" content="#0b0d10"><meta property="og:type" content="website">
-  <meta property="og:title" content="${escape(t.title)}"><meta property="og:description" content="${escape(t.description)}">
-  <meta property="og:locale" content="${locale === 'en' ? 'en_US' : 'pt_BR'}">
-  <link rel="alternate" hreflang="en" href="index.html"><link rel="alternate" hreflang="pt-BR" href="pt-br.html">
+  <meta name="theme-color" content="#0b0d10">
+  ${seoHead(locale, t, media, project, download)}
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
