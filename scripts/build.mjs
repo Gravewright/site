@@ -77,7 +77,7 @@ for (const [locale, t] of Object.entries(locales)) {
       <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#experience', t.explore, 'button button-secondary')}</div>
       <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(docs, t.documentation + ' ↗')}</div>
     </div>
-    <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> Alpha</span></div>
+    <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> 0.1.1</span></div>
       <div class="platform-list">${t.pillars.map(([title, copy], i) => `<article><span>0${i+1}</span><div><h2>${title}</h2><p>${copy}</p></div></article>`).join('')}</div>
     </aside>
   </section>
@@ -103,7 +103,7 @@ for (const [locale, t] of Object.entries(locales)) {
   <section class="section shell" id="contribute">${heading(t.contributeLabel, t.contributeTitle)}<div class="contribute-layout"><p class="contribution-copy">${t.contributeCopy}</p><div class="resource-card">${link(file('CONTRIBUTING'), t.contribute + ' ↗')}${link(docs, t.documentation + ' ↗')}${link(project + '/issues', t.issues + ' ↗')}${link(file('SECURITY'), t.security + ' ↗')}</div></div></section>
   <section class="final-cta shell"><span class="hero-icon">${logo}</span><div><p class="section-label">${t.finalLabel}</p><h2>${t.finalTitle}</h2></div>${link(download, t.download, 'button button-primary')}</section>
 </main>
-<footer class="site-footer"><div class="shell footer-inner"><div><a class="brand footer-brand" href="#top">Gravewright</a><p>${t.footer}</p></div><p>Alpha 0.1.0 · ${link(file('LICENSING'), locale === 'en' ? 'GPL-3.0-only + module permission' : 'GPL-3.0-only + permissão para módulos')}</p>${link('#top', t.top + ' ↑')}</div></footer>
+<footer class="site-footer"><div class="shell footer-inner"><div><a class="brand footer-brand" href="#top">Gravewright</a><p>${t.footer}</p></div><p>0.1.1 · ${link(file('LICENSING'), locale === 'en' ? 'GPL-3.0-only + module permission' : 'GPL-3.0-only + permissão para módulos')}</p>${link('#top', t.top + ' ↑')}</div></footer>
 <div class="toast" role="status" aria-live="polite" data-toast></div>
 </body></html>
 `;
