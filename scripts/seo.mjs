@@ -19,7 +19,7 @@ export function seoHead(locale, t, media, project, download) {
         primaryImageOfPage:{'@type':'ImageObject', url:image, width:socialImage.width, height:socialImage.height, caption:alt}},
       {'@type':'SoftwareApplication', '@id':`${origin}/#software`, name:'Gravewright', url:`${origin}/`,
         description:t.description, applicationCategory:'GameApplication', operatingSystem:'Windows, Linux, macOS',
-        softwareVersion:'0.1.1', inLanguage:'en', isAccessibleForFree:true,
+        softwareVersion:'0.1.2', inLanguage:'en', isAccessibleForFree:true,
         license:'https://spdx.org/licenses/GPL-3.0-only.html', downloadUrl:download, sameAs:project,
         image, screenshot:`${origin}/${media.find(item => item.id === 'table').file}`}
     ]

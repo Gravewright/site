@@ -2,7 +2,7 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Local, static website for **0.1.1**, based on the supplied Gravewright `repository-site` template. English is the primary page (`index.html`), with a complete Brazilian Portuguese page (`pt-br.html`). No deployment workflow is included. `CNAME` records the intended domain, `gravewright.com`.
+Local, static website for **0.1.2**, based on the supplied Gravewright `repository-site` template. English is the primary page (`index.html`), with a complete Brazilian Portuguese page (`pt-br.html`). No deployment workflow is included. `CNAME` records the intended domain, `gravewright.com`.
 
 ## Preview
 

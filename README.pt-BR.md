@@ -2,7 +2,7 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site estático e local da versão **0.1.1**, baseado no template `repository-site` fornecido. A página principal é em inglês (`index.html`), com uma versão completa em português brasileiro (`pt-br.html`). Não inclui workflow de implantação. O arquivo `CNAME` registra o domínio previsto, `gravewright.com`.
+Site estático e local da versão **0.1.2**, baseado no template `repository-site` fornecido. A página principal é em inglês (`index.html`), com uma versão completa em português brasileiro (`pt-br.html`). Não inclui workflow de implantação. O arquivo `CNAME` registra o domínio previsto, `gravewright.com`.
 
 ## Abrir localmente
 
