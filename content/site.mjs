@@ -1,7 +1,7 @@
 // Product copy is kept together so both static pages share the same structure.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const release = `${project}/releases/tag/v0.1.2`;
-export const download = `${project}/releases/download/v0.1.2/Gravewright-0.1.2-django.zip`;
+export const release = `${project}/releases/tag/v0.1.3`;
+export const download = `${project}/releases/download/v0.1.3/Gravewright-0.1.3-django.zip`;
 export const commands = `git clone https://github.com/Gravewright/gravewright.git
 cd gravewright
 uv sync --locked
@@ -13,10 +13,10 @@ export const locales = {
   en: {
     lang: 'en', file: 'index.html', otherFile: 'pt-br.html', otherLabel: 'Português', docs: 'en', suffix: '',
     title: 'Gravewright — Open-Source Virtual Tabletop for RPGs',
-    description: 'Free, open-source virtual tabletop for RPGs with maps, lighting and PDF character sheets. Download Gravewright 0.1.2 with the Windows Runner.',
+    description: 'Free, open-source virtual tabletop for RPGs with maps, lighting and PDF character sheets. Download Gravewright 0.1.3 with the Windows Runner.',
     skip: 'Skip to content', home: 'Gravewright home', navigation: 'Main navigation', menu: 'Toggle navigation',
-    nav: ['The experience', '0.1.2', 'Get started', 'Contribute'],
-    eyebrow: 'Open-source virtual tabletop · 0.1.2',
+    nav: ['The experience', '0.1.3', 'Get started', 'Contribute'],
+    eyebrow: 'Open-source virtual tabletop · 0.1.3',
     lead: 'Your worlds deserve more than a grid and a character sheet.',
     intro: 'Set the scene, bring your characters to life and keep the story moving. A tabletop in your browser. A world under your control.',
     download: 'Download for Windows', explore: 'Watch the battle showcase', notes: 'Release notes', documentation: 'Documentation',
@@ -45,8 +45,8 @@ export const locales = {
     ],
     sheetsLabel: 'Your characters', sheetsTitle: 'A familiar sheet. A place in the world.',
     sheetsCopy: 'The native Gravewright PDF System connects character actors, PDF sheets and field mapping with tokens on the map. Keep your character close to the story.',
-    releaseLabel: 'The current release', releaseTitle: 'Meet 0.1.2.',
-    releaseCopy: 'Version 0.1.2 adds Django apps to the marketplace, separates Windows installation from daily startup and improves updates with optional rollback copies.',
+    releaseLabel: 'The current release', releaseTitle: 'Meet 0.1.3.',
+    releaseCopy: 'Version 0.1.3 fixes local ZIP installation for modules and systems. Valid selected files now upload correctly instead of showing "Select a ZIP file."',
     releaseFeatures: [
       ['Install once, launch when you play', 'Install Windows.bat prepares tools, dependencies and your settings. It generates Gravewright Runner.bat for daily startup.'],
       ['Updates with recovery', 'Managed updates replace project files while preserving personal data. Keep an optional .old copy to restore the previous installation.'],
@@ -78,7 +78,7 @@ export const locales = {
       ['Where does the Runner keep my campaigns?', 'Under %LOCALAPPDATA%\\Gravewright\\data, including settings, database, media and logs. Stop the server and back up the whole data folder before replacing source files or applying updates.'],
       ['Is the application available in Portuguese?', 'The application UI currently supports English. The website and project documentation are available in English and Brazilian Portuguese.'],
       ['Can I install an update automatically?', 'Managed installations can install updates from Administration, with backups and recovery. Upgrading from the published 0.1.1 package requires a one-time launcher replacement; follow the release notes.'],
-      ['What should I know about 0.1.2?', 'Keep backups of important campaigns and check the user guide for current limits. The native PDF ruleset does not include a complete item editor or catalog.'],
+      ['What should I know about 0.1.3?', 'Keep backups of important campaigns and check the user guide for current limits. The native PDF ruleset does not include a complete item editor or catalog.'],
       ['Are browser modules isolated?', 'Browser modules run in the main page. Install code you trust; package signatures do not provide a sandbox.']
     ],
     contributeLabel: 'Help shape Gravewright', contributeTitle: 'Bring your experience to the table.',
@@ -91,10 +91,10 @@ export const locales = {
   pt: {
     lang: 'pt-BR', file: 'pt-br.html', otherFile: 'index.html', otherLabel: 'English', docs: 'pt-BR', suffix: '.pt-BR',
     title: 'Gravewright — Mesa Virtual Open Source para RPG',
-    description: 'Mesa virtual gratuita e open source para RPG, com mapas, iluminação e fichas PDF. Baixe Gravewright 0.1.2 com o Runner para Windows.',
+    description: 'Mesa virtual gratuita e open source para RPG, com mapas, iluminação e fichas PDF. Baixe Gravewright 0.1.3 com o Runner para Windows.',
     skip: 'Pular para o conteúdo', home: 'Página inicial do Gravewright', navigation: 'Navegação principal', menu: 'Abrir ou fechar navegação',
-    nav: ['A experiência', '0.1.2', 'Comece a jogar', 'Contribua'],
-    eyebrow: 'Mesa virtual open source · 0.1.2',
+    nav: ['A experiência', '0.1.3', 'Comece a jogar', 'Contribua'],
+    eyebrow: 'Mesa virtual open source · 0.1.3',
     lead: 'Seus mundos merecem mais que uma grade e uma ficha de personagem.',
     intro: 'Prepare a cena, dê vida aos personagens e deixe a história avançar. Uma mesa no navegador. Um mundo sob seu controle.',
     download: 'Baixar para Windows', explore: 'Assista à demonstração', notes: 'Notas da release', documentation: 'Documentação',
@@ -123,8 +123,8 @@ export const locales = {
     ],
     sheetsLabel: 'Seus personagens', sheetsTitle: 'Uma ficha conhecida. Um lugar no mundo.',
     sheetsCopy: 'O Gravewright PDF System nativo conecta personagens, fichas PDF e mapeamento de campos aos tokens no mapa. Deixe seu personagem perto da história.',
-    releaseLabel: 'A release atual', releaseTitle: 'Conheça a versão 0.1.2.',
-    releaseCopy: 'A versão 0.1.2 adiciona apps Django ao marketplace, separa a instalação Windows da inicialização diária e melhora as atualizações com cópia opcional para rollback.',
+    releaseLabel: 'A release atual', releaseTitle: 'Conheça a versão 0.1.3.',
+    releaseCopy: 'A versão 0.1.3 corrige a instalação de módulos e sistemas por ZIP local. Arquivos válidos selecionados agora são enviados corretamente, sem o erro "Selecione um arquivo ZIP."',
     releaseFeatures: [
       ['Instale e inicie quando for jogar', 'Install Windows.bat prepara ferramentas, dependências e configurações. Ele gera Gravewright Runner.bat para iniciar no dia a dia.'],
       ['Atualizações com recuperação', 'Atualizações gerenciadas substituem os arquivos do projeto e preservam os dados pessoais. Mantenha uma cópia .old opcional para restaurar a instalação anterior.'],
@@ -156,7 +156,7 @@ export const locales = {
       ['Onde o Runner guarda minhas campanhas?', 'Em %LOCALAPPDATA%\\Gravewright\\data, incluindo configurações, banco, mídia e logs. Encerre o servidor e copie toda a pasta de dados antes de substituir o código ou aplicar atualizações.'],
       ['A aplicação está disponível em português?', 'A interface da aplicação suporta inglês atualmente. O site e a documentação do projeto estão disponíveis em inglês e português brasileiro.'],
       ['Posso instalar uma atualização automaticamente?', 'Instalações gerenciadas podem atualizar pela Administração, com backup e recuperação. O pacote publicado 0.1.1 exige uma troca única do launcher; siga as notas da release.'],
-      ['O que preciso saber sobre a versão 0.1.2?', 'Mantenha backups das campanhas importantes e consulte as limitações no guia de uso. O sistema PDF nativo não inclui um editor ou catálogo completo de itens.'],
+      ['O que preciso saber sobre a versão 0.1.3?', 'Mantenha backups das campanhas importantes e consulte as limitações no guia de uso. O sistema PDF nativo não inclui um editor ou catálogo completo de itens.'],
       ['Os módulos do navegador são isolados?', 'Módulos de navegador executam na página principal. Instale código confiável; assinaturas de pacotes não fornecem isolamento.']
     ],
     contributeLabel: 'Ajude a construir o Gravewright', contributeTitle: 'Traga sua experiência para a mesa.',
