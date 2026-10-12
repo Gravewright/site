@@ -2,7 +2,7 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The copy focuses on campaign preparation, play and customization. The public download remains **0.1.3**; **0.2.0 Alpha** is presented as the upcoming release until its ZIP is published. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The copy focuses on campaign preparation, play and customization. The public download is **0.2.0 Alpha**. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
 
 ## Preview
 
@@ -31,7 +31,7 @@ Missing media render as designed placeholders, with the expected filename visibl
 
 | File | Purpose |
 | --- | --- |
-| `content/site.mjs` | English/Portuguese copy, public/upcoming versions, release URLs and source commands |
+| `content/site.mjs` | English/Portuguese copy, public version, release URLs and source commands |
 | `content/media.json` | Media paths, dimensions, titles, alternative text and recording briefs |
 | `scripts/build.mjs` | Shared page template; generates both HTML pages |
 | `styles.css` | Template styles and responsive/media additions |
@@ -41,7 +41,7 @@ Missing media render as designed placeholders, with the expected filename visibl
 
 Edit the sources and rebuild rather than editing the generated HTML. Both pages contain their text at build time and work without JavaScript. Documentation links point to the current Django project, rather than importing the obsolete legacy wiki. No external fonts, trackers or CDN scripts are used.
 
-After publishing VTT 0.2.0, update `publicVersion`, the upcoming-release copy and FAQs together, then rebuild. The download URL and structured-data version derive from `publicVersion`; do not advertise an unpublished ZIP as available. Both languages must describe the same release status and Translator requirement.
+When publishing a VTT release, update `publicVersion`, release copy and FAQs together, then rebuild. The download URL and structured-data version derive from `publicVersion`; verify that the public ZIP is available first. Both languages must describe the same release status and Translator requirement.
 
 ## Checks
 

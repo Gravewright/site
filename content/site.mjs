@@ -1,8 +1,7 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.1.3';
-export const upcomingVersion = '0.2.0';
+export const publicVersion = '0.2.0';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const commands = "git clone https://github.com/Gravewright/gravewright.git\ncd gravewright\nuv sync --locked\ncp -n .env.example .env\nuv run --locked python manage.py migrate\nuv run --locked python main.py";
@@ -23,7 +22,7 @@ export const locales = {
     "menu": "Toggle navigation",
     "nav": [
       "See it in action",
-      "What’s next",
+      "What’s new",
       "Get started",
       "Community"
     ],
@@ -34,7 +33,7 @@ export const locales = {
     "explore": "See Gravewright in action",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.1.3 · Windows x64 installer included · 0.2.0 Alpha coming next",
+    "downloadHint": "Available: 0.2.0 Alpha · Windows x64 installer included",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
     "pillars": [
@@ -99,9 +98,9 @@ export const locales = {
     "sheetsLabel": "Your characters, at hand",
     "sheetsTitle": "Bring the sheet your group already knows.",
     "sheetsCopy": "Use PDF character sheets with the Gravewright PDF System, map the fields you need and connect each character to a token. Keep the details within reach when the next decision comes.",
-    "releaseLabel": "Coming next",
+    "releaseLabel": "The latest Alpha",
     "releaseTitle": "More room to play. 0.2.0 Alpha.",
-    "releaseCopy": "The next Alpha brings independent system sheets, PDF combat, faster access to campaign content and a more consistent interface. Version 0.2.0 is prepared but not yet published; downloads still provide 0.1.3.",
+    "releaseCopy": "Version 0.2.0 brings independent system sheets, PDF combat, faster access to campaign content and a more consistent interface. Download the new Alpha and make room for your next session.",
     "releaseFeatures": [
       [
         "Follow the next turn",
@@ -181,7 +180,7 @@ export const locales = {
       ],
       [
         "Is 0.2.0 available to download?",
-        "Not yet. The 0.2.0 Alpha package has been prepared; the public download is still 0.1.3. Gravewright is in active Alpha development, so keep backups of important campaigns."
+        "Yes. The download includes Gravewright 0.2.0 Alpha and the Windows installer. Gravewright is in active Alpha development; keep backups of important campaigns and read the release notes before upgrading."
       ],
       [
         "Can I add my own systems and modules?",
@@ -232,7 +231,7 @@ export const locales = {
     "explore": "Veja o Gravewright em ação",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível: 0.1.3 · Instalador Windows x64 incluído · Próxima versão: 0.2.0 Alpha",
+    "downloadHint": "Disponível: 0.2.0 Alpha · Instalador Windows x64 incluído",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
     "pillars": [
@@ -297,9 +296,9 @@ export const locales = {
     "sheetsLabel": "Seus personagens à mão",
     "sheetsTitle": "Traga a ficha que seu grupo já conhece.",
     "sheetsCopy": "Use fichas PDF com o Gravewright PDF System, mapeie os campos de que precisa e vincule cada personagem a um token. Deixe os detalhes por perto para a próxima decisão.",
-    "releaseLabel": "Vem aí",
+    "releaseLabel": "A nova Alpha",
     "releaseTitle": "Mais espaço para jogar. 0.2.0 Alpha.",
-    "releaseCopy": "A próxima Alpha traz fichas independentes por sistema, combate no PDF System, acesso mais rápido ao conteúdo da campanha e uma interface mais coesa. A 0.2.0 está preparada, mas ainda não foi publicada; o download continua na 0.1.3.",
+    "releaseCopy": "A versão 0.2.0 traz fichas independentes por sistema, combate no PDF System, acesso mais rápido ao conteúdo da campanha e uma interface mais coesa. Baixe a nova Alpha e prepare sua próxima sessão.",
     "releaseFeatures": [
       [
         "Acompanhe a próxima jogada",
@@ -379,7 +378,7 @@ export const locales = {
       ],
       [
         "A 0.2.0 já está disponível para baixar?",
-        "Ainda não. O pacote 0.2.0 Alpha está preparado; o download público continua na 0.1.3. O Gravewright está em desenvolvimento Alpha, então mantenha backups das campanhas importantes."
+        "Sim. O download inclui o Gravewright 0.2.0 Alpha e o instalador Windows. O Gravewright está em desenvolvimento Alpha; mantenha backups das campanhas importantes e leia as notas da versão antes de atualizar."
       ],
       [
         "Posso adicionar meus próprios sistemas e módulos?",
