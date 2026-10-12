@@ -2,7 +2,7 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site estático e local da versão **0.1.3**, baseado no template `repository-site` fornecido. A página principal é em inglês (`index.html`), com uma versão completa em português brasileiro (`pt-br.html`). Não inclui workflow de implantação. O arquivo `CNAME` registra o domínio previsto, `gravewright.com`.
+Site de apresentação do Gravewright, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). Os textos destacam preparação de campanhas, jogo e personalização. O download público continua na **0.1.3**; a **0.2.0 Alpha** aparece como próxima versão até a publicação do ZIP. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
 
 ## Abrir localmente
 
@@ -31,7 +31,7 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 
 | Arquivo | Função |
 | --- | --- |
-| `content/site.mjs` | Textos em inglês/português, links da release e comandos |
+| `content/site.mjs` | Textos em inglês/português, versões pública/próxima, links da release e comandos |
 | `content/media.json` | Caminhos, dimensões, títulos, textos alternativos e sugestões de captura |
 | `scripts/build.mjs` | Template compartilhado que gera os dois HTMLs |
 | `styles.css` | Estilos do template e adaptações responsivas/de mídia |
@@ -40,6 +40,8 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 | `scripts/serve.mjs` | Servidor local com suporte a intervalos de bytes para vídeos |
 
 Edite os arquivos-fonte e gere novamente, em vez de alterar os HTMLs gerados. As duas páginas já contêm seus textos e funcionam sem JavaScript. A documentação aponta para o projeto Django atual, sem importar a wiki antiga. Não são usados fontes externas, rastreadores ou scripts de CDN.
+
+Após publicar o VTT 0.2.0, atualize `publicVersion`, os textos de próxima versão e as perguntas frequentes juntos e gere as páginas novamente. O link de download e a versão nos dados estruturados vêm de `publicVersion`; não anuncie um ZIP ainda não publicado como disponível. Os dois idiomas devem informar o mesmo estado da release e a necessidade do Translator para outros idiomas da interface.
 
 ## Verificações
 

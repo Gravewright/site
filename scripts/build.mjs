@@ -2,7 +2,7 @@
 import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import { locales, project, release, download, commands } from '../content/site.mjs';
+import { locales, project, release, download, commands, publicVersion } from '../content/site.mjs';
 import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
 
@@ -77,7 +77,7 @@ for (const [locale, t] of Object.entries(locales)) {
       <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#experience', t.explore, 'button button-secondary')}</div>
       <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(docs, t.documentation + ' ↗')}</div>
     </div>
-    <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> 0.1.3</span></div>
+    <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> Alpha</span></div>
       <div class="platform-list">${t.pillars.map(([title, copy], i) => `<article><span>0${i+1}</span><div><h2>${title}</h2><p>${copy}</p></div></article>`).join('')}</div>
     </aside>
   </section>
@@ -96,14 +96,14 @@ for (const [locale, t] of Object.entries(locales)) {
       <pre tabindex="0"><code data-code="source">${escape(commands)}</code></pre><div class="terminal-footer"><a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a></div></div>
     </div>
   </section>
-  <section class="section shell" id="extensions">${heading(t.extensionsLabel, t.extensionsTitle)}<div class="section-copy"><p>${t.extensionsCopy}</p><div class="quick-links">${link(doc('api'), t.api + ' ↗')}${link(doc('modules'), t.modules + ' ↗')}</div></div>
+  <section class="section shell" id="extensions">${heading(t.extensionsLabel, t.extensionsTitle)}<div class="section-copy"><p>${t.extensionsCopy}</p><div class="quick-links">${link('https://github.com/Gravewright/marketplace', t.marketplace + ' ↗')}${link(doc('api'), t.api + ' ↗')}${link(doc('modules'), t.modules + ' ↗')}</div></div>
     <div class="license-card"><span class="license-mark" aria-hidden="true">&lt;/&gt;</span><div><h3>${t.licenseTitle}</h3><p>${t.licenseCopy}</p>${link(file('LICENSING'), t.licensing + ' ↗', 'text-link')}</div></div>
   </section>
   <section class="section shell" id="questions">${heading(t.faqLabel, t.faqTitle)}<div class="faq-list">${t.faq.map(([q, a]) => `<details><summary>${escape(q)}</summary><p>${escape(a)}</p></details>`).join('')}</div></section>
   <section class="section shell" id="contribute">${heading(t.contributeLabel, t.contributeTitle)}<div class="contribute-layout"><p class="contribution-copy">${t.contributeCopy}</p><div class="resource-card">${link(file('CONTRIBUTING'), t.contribute + ' ↗')}${link(docs, t.documentation + ' ↗')}${link(project + '/issues', t.issues + ' ↗')}${link(file('SECURITY'), t.security + ' ↗')}</div></div></section>
   <section class="final-cta shell"><span class="hero-icon">${logo}</span><div><p class="section-label">${t.finalLabel}</p><h2>${t.finalTitle}</h2></div>${link(download, t.download, 'button button-primary')}</section>
 </main>
-<footer class="site-footer"><div class="shell footer-inner"><div><a class="brand footer-brand" href="#top">Gravewright</a><p>${t.footer}</p></div><p>0.1.3 · ${link(file('LICENSING'), locale === 'en' ? 'GPL-3.0-only + module permission' : 'GPL-3.0-only + permissão para módulos')}</p>${link('#top', t.top + ' ↑')}</div></footer>
+<footer class="site-footer"><div class="shell footer-inner"><div><a class="brand footer-brand" href="#top">Gravewright</a><p>${t.footer}</p></div><p>${publicVersion} · ${link(file('LICENSING'), locale === 'en' ? 'GPL-3.0-only + module permission' : 'GPL-3.0-only + permissão para módulos')}</p>${link('#top', t.top + ' ↑')}</div></footer>
 <div class="toast" role="status" aria-live="polite" data-toast></div>
 </body></html>
 `;
