@@ -2,15 +2,17 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.2.1 Alpha**. The site presents campaign preparation, maps, dedicated game-system sheets, PDF sheets and play at the table. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.2.1 Alpha**. The site presents shared tabletop tools: maps, tokens, measurement, dice, journals, campaign preparation and atmosphere. Groups choose compatible system extensions or PDF sheets for their games; rules and automations come from the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
 
 | Available product | Release | Details |
 | --- | --- | --- |
 | Gravewright VTT | [0.2.1 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.1) | Windows x64 installer and source distribution |
-| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Separate system for 2014/SRD 5.1 and 2024/SRD 5.2.1; dedicated character, monster and item sheets, SRD drag and drop, and automatic saving |
+| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Optional independent system shown as an example: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, and automatic saving |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Brazilian Portuguese interface translation and an API for extension translations |
 
-DnD 5e SRD requires VTT **0.2.1 or newer**. Install both the system and its matching **Server Rules 0.1.0** companion from the [Marketplace](https://github.com/Gravewright/marketplace). Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections; compendium content is currently in English. The VTT core stays independent of game rules.
+The main page leads with the universal VTT and its shared tools. The DnD sheet and compendium images remain in an optional system example, collapsed by default near the extensions section. PDF and system sheets are presented as choices; no particular ruleset is required by the platform.
+
+To use the DnD example, install both **DnD 5e SRD 0.1.0** and its matching **Server Rules 0.1.0** companion from the [Marketplace](https://github.com/Gravewright/marketplace) on VTT **0.2.1 or newer**. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections; compendium content is currently in English. These sheets, automatic saving and rules belong to that system. The VTT core stays independent of game rules.
 
 ## Preview
 
@@ -59,7 +61,7 @@ npm test                 # rebuild and check both pages, links, IDs and media st
 npm run check:media      # also require all planned media files
 ```
 
-The normal check accepts placeholders; the strict check requires every shared and localized asset. The current media set uses real VTT 0.2.1 captures, the published DnD 5e SRD 0.1.0 system and Translator 0.1.2: tabletop, character sheet, campaign dashboard and SRD compendium, plus a recorded product walkthrough. Both languages have screenshots, captions and descriptive transcripts. `durationSeconds` in the video metadata records the final edit's duration rather than a fixed marketing estimate.
+The normal check accepts placeholders; the strict check requires every shared and localized asset. The media set uses real VTT 0.2.1 captures and Translator 0.1.2. The universal walkthrough (`assets/videos/gravewright-universal-021-showcase.mp4`, 60 seconds, 1920 × 1080) focuses on maps, tokens, measurement, journals and combat, with a brief optional DnD 5e SRD 0.1.0 sheet/compendium example. Both languages have interface screenshots, captions and descriptive transcripts. Campaign names remain **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the scene is **Moonfall Abbey**. `durationSeconds` in the video metadata records the final edit's duration.
 
 Both dragon images are retained: the illustrated video poster and the earlier supplied tabletop capture (`assets/images/table-overview.webp`). The latter appears in a secondary expandable gallery, with a visible thumbnail, and is distinct from the new 0.2.1 captures. The social preview remains a derivative of the illustrated poster. The Moonfall Abbey map and Seraphina Vale portrait were generated specifically for the new demonstration. The original Seren Ashford PDF remains a tutorial source, rather than the website's character-sheet screenshot. See [demo sources, prompts and hashes](assets/demo/README.md) and [media credits](THIRD_PARTY_NOTICES.md). Review playback, seeking, synchronized captions, alt text and mobile readability in a browser after changing media.
 

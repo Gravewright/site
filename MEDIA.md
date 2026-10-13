@@ -10,34 +10,34 @@ All paths below are relative to this repository root. This list derives from `co
 
 **Important:** alternative text must match the final media. Revise it if the framing or demonstration changes. Use real captures of the current version with fictional data. Artwork provenance, prompts and hashes are in [assets/demo/README.md](assets/demo/README.md); credits and licenses are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Your next encounter, ready to play
+## Moonfall Abbey · Your next scene
 
-- Default / fallback file: `assets/images/table-overview-021.webp`
-- Localized file (English): `assets/images/table-overview-021.webp`
-- Localized file (Português (Brasil)): `assets/images/table-overview-021.pt-BR.webp`
+- Default / fallback file: `assets/images/table-overview-universal-021.webp`
+- Localized file (English): `assets/images/table-overview-universal-021.webp`
+- Localized file (Português (Brasil)): `assets/images/table-overview-universal-021.pt-BR.webp`
 - Dimensions: **1920 × 1080**
 - English description / alt: Gravewright 0.2.1 showing the original Moonfall Abbey map, character tokens and the current tabletop controls.
-- Portuguese description / alt: Gravewright 0.2.1 com o mapa original da Abadia de Moonfall, tokens de personagens e os controles atuais da mesa.
+- Portuguese description / alt: Gravewright 0.2.1 com o mapa original Moonfall Abbey, tokens de personagens e os controles atuais da mesa.
 
 
 Fresh English and Brazilian Portuguese captures of published VTT 0.2.1 in an isolated fictional campaign. The abbey map and character illustration were created for this demonstration.
 
-## Gravewright 0.2.1 · Product showcase
+## Gravewright 0.2.1 · A universal tabletop
 
-- Default / fallback file: `assets/videos/gravewright-021-showcase.mp4`
+- Default / fallback file: `assets/videos/gravewright-universal-021-showcase.mp4`
 - Dimensions: **1920 × 1080**
-- English description / alt: New recording of Gravewright 0.2.1 showing a prepared tabletop, the DnD 5e SRD sheet, compendium drag and drop, automatic saving and combat.
-- Portuguese description / alt: Nova gravação do Gravewright 0.2.1 mostrando uma mesa preparada, a ficha DnD 5e SRD, arraste do compêndio, salvamento automático e combate.
+- English description / alt: Gravewright universal VTT in use: maps, tokens, measuring, campaign notes, combat, dice and a brief optional system sheet example.
+- Portuguese description / alt: VTT universal Gravewright em uso: mapas, tokens, medição, anotações da campanha, combate, dados e um breve exemplo de ficha de sistema opcional.
 - Final edit duration: **60 s**
 
 
-New recording of real published VTT 0.2.1, signed DnD 5e SRD 0.1.0 and Translator 0.1.2. Existing illustrated dragon cover preserved unchanged; bilingual descriptive captions and transcripts accompany the recording.
+Real VTT 0.2.1 recording centered on the universal tabletop: maps, measuring, campaign notes, combat and chat. DnD 5e SRD 0.1.0 appears briefly as one optional system example. Approved artwork and both original dragon images preserved.
 
 - Video poster: `assets/images/table-session-cover.png`
-- English captions: `assets/videos/gravewright-021-showcase.en.vtt`
-- Portuguese captions: `assets/videos/gravewright-021-showcase.pt-BR.vtt`
-- English transcript: `assets/videos/gravewright-021-showcase.en.txt`
-- Portuguese transcript: `assets/videos/gravewright-021-showcase.pt-BR.txt`
+- English captions: `assets/videos/gravewright-universal-021-showcase.en.vtt`
+- Portuguese captions: `assets/videos/gravewright-universal-021-showcase.pt-BR.vtt`
+- English transcript: `assets/videos/gravewright-universal-021-showcase.en.txt`
+- Portuguese transcript: `assets/videos/gravewright-universal-021-showcase.pt-BR.txt`
 
 
 Video uses an `aria-label` and visible title because `<video>` does not support image-style `alt`. Use the description above to guide the transcript. The poster appears inside the player and shares its accessible context.
@@ -45,7 +45,7 @@ Video uses an `aria-label` and visible title because `<video>` does not support 
 
 Soundtrack: [Volatile Reaction — Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Preserve attribution in the end card, transcripts and third-party notices.
 
-## DnD 5e SRD · Seraphina Vale
+## System sheet example · Seraphina Vale (DnD 5e SRD)
 
 - Default / fallback file: `assets/images/dnd-character-sheet-010.webp`
 - Localized file (English): `assets/images/dnd-character-sheet-010.webp`
@@ -59,21 +59,21 @@ Native character window captured from the signed DnD 5e SRD 0.1.0 system in publ
 
 ## Your campaigns, together
 
-- Default / fallback file: `assets/images/campaign-dashboard-021.webp`
-- Localized file (English): `assets/images/campaign-dashboard-021.webp`
-- Localized file (Português (Brasil)): `assets/images/campaign-dashboard-021.pt-BR.webp`
+- Default / fallback file: `assets/images/campaign-dashboard-universal-021.webp`
+- Localized file (English): `assets/images/campaign-dashboard-universal-021.webp`
+- Localized file (Português (Brasil)): `assets/images/campaign-dashboard-universal-021.pt-BR.webp`
 - Dimensions: **1920 × 1080**
-- English description / alt: The current Gravewright dashboard with three fictional campaigns, new original covers and controls to create or join a table.
-- Portuguese description / alt: Painel atual do Gravewright com três campanhas fictícias, novas capas originais e controles para criar ou entrar em uma mesa.
+- English description / alt: Gravewright dashboard with Moonfall Vigil, The Wild Paths and Beyond the Mists, original cover artwork and campaigns using independent game systems.
+- Portuguese description / alt: Painel do Gravewright com Moonfall Vigil, The Wild Paths e Beyond the Mists, capas originais e campanhas com sistemas de jogo independentes.
 
 
-Fresh VTT 0.2.1 dashboard captures in both languages with fictional demo accounts; no live user campaigns or personal data.
+Real VTT 0.2.1 dashboard in both interface languages. Campaign names remain in English; the demonstration uses the included PDF System and an optional DnD 5e SRD system. All approved cover artwork is unchanged.
 
-## From the SRD to your character
+## Optional system example · DnD 5e SRD compendium
 
-- Default / fallback file: `assets/images/srd-compendium-010.webp`
-- Localized file (English): `assets/images/srd-compendium-010.webp`
-- Localized file (Português (Brasil)): `assets/images/srd-compendium-010.pt-BR.webp`
+- Default / fallback file: `assets/images/srd-compendium-universal-010.webp`
+- Localized file (English): `assets/images/srd-compendium-universal-010.webp`
+- Localized file (Português (Brasil)): `assets/images/srd-compendium-universal-010.pt-BR.webp`
 - Dimensions: **1920 × 1080**
 - English description / alt: DnD 5e SRD compendium beside Seraphina's character sheet, with searchable licensed entries ready to drag onto the sheet.
 - Portuguese description / alt: Compêndio DnD 5e SRD ao lado da ficha de Seraphina, com entradas licenciadas pesquisáveis prontas para arrastar para a ficha.

@@ -16,8 +16,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright — A Virtual Tabletop for Your RPG Campaign",
-    "description": "Bring your RPG campaign together with maps, character sheets, dice and atmosphere. A free, open-source virtual tabletop you host and make your own.",
+    "title": "Gravewright — A Universal Virtual Tabletop for RPGs",
+    "description": "A free, open-source universal VTT for your RPG campaigns. Bring maps, tokens, dice, journals and atmosphere together, then choose your systems and modules.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -28,15 +28,15 @@ export const locales = {
       "Get started",
       "Community"
     ],
-    "eyebrow": "Your RPG table · Free and open source · Alpha",
+    "eyebrow": "Universal VTT · Free and open source · Alpha",
     "lead": "Your world. Your players. Your next great session.",
-    "intro": "Bring your maps, character sheets, dice and campaign notes to one table. Host Gravewright yourself, invite your group through the browser and keep the adventure moving.",
+    "intro": "A universal virtual tabletop for the worlds you create. Bring maps, tokens, dice and campaign notes together, host your own table and choose the systems and tools that fit your group.",
     "download": "Get Gravewright for Windows",
     "explore": "See Gravewright in action",
     "notes": "Available release",
     "documentation": "Documentation",
     "downloadHint": "Available now: 0.2.1 Alpha · Windows x64 installer included",
-    "systemHint": "Also available: DnD 5e SRD 0.1.0 Alpha · 2014 and 2024 rules",
+    "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
     "pillars": [
@@ -57,9 +57,9 @@ export const locales = {
         "Host your campaigns and add the systems and modules that fit your group."
       ]
     ],
-    "aboutLabel": "Built around your campaign",
-    "aboutTitle": "Less time between the tools and the story.",
-    "aboutCopy": "Prepare the places your players will explore. Keep their characters and discoveries at hand. Return next session with your campaign ready to continue.",
+    "aboutLabel": "One table, many ways to play",
+    "aboutTitle": "Make room for your worlds.",
+    "aboutCopy": "Prepare the places your group will explore, organize its discoveries and set the mood for the next scene. Gravewright brings the shared tools of an RPG session together; installed systems provide their own sheets and rules.",
     "features": [
       [
         "Reveal the world at your pace",
@@ -80,7 +80,7 @@ export const locales = {
     ],
     "experienceLabel": "Gravewright in action · Real application footage",
     "experienceTitle": "From the scene to the next decision.",
-    "experienceCopy": "See the current Alpha at work: a map and its tokens, a DnD 5e SRD sheet, an item dragged from the compendium, combat and campaign notes. These are real screens from Gravewright 0.2.1.",
+    "experienceCopy": "Explore Moonfall Abbey, move tokens, measure distances, open campaign notes and follow the next turn. The recording shows the real VTT in use, with a brief example of an optional system sheet.",
     "galleryTitle": "Another world to explore",
     "galleryCopy": "Expand the preserved Dragon’s Legacy battle scene.",
     "roles": [
@@ -102,30 +102,36 @@ export const locales = {
     ],
     "sheetsLabel": "Your characters, at hand",
     "sheetsTitle": "A sheet that fits your game.",
-    "sheetsCopy": "Play with the dedicated sheets of DnD 5e SRD, or bring your own PDF with the Gravewright PDF System. Connect characters to tokens and keep the details you need within reach.",
+    "sheetsCopy": "Bring a familiar PDF with the Gravewright PDF System, or choose a compatible system with its own sheets. Connect characters to tokens and keep their details within reach while you play.",
     "sheetOptions": [
-      ["DnD 5e SRD", "Character, monster and item sheets with attributes, spells, equipment and resources. Changes save automatically; rolls go directly to chat."],
-      ["Your own PDF", "Bring a character sheet your group already uses, map its fields and connect the character to a token. Keep your preferred sheet at the table."]
+      [
+        "Your own PDF",
+        "Bring a character sheet your group already uses, map its fields and connect the character to a token."
+      ],
+      [
+        "System sheets",
+        "Installed systems can provide their own character, creature and item sheets, with the rules and automations they support."
+      ]
     ],
     "releaseLabel": "The latest Alpha",
     "releaseTitle": "Your next session starts with 0.2.1 Alpha.",
-    "releaseCopy": "The new VTT release brings native item windows, compendium access and the foundations for system-owned combat. DnD 5e SRD 0.1.0 Alpha is now available separately in the Marketplace, with its own sheets and rules.",
+    "releaseCopy": "Gravewright 0.2.1 Alpha expands the shared tabletop: native item windows, faster access to compendiums and a combat framework for independent systems. Prepare your campaign and choose the extensions that fit the way you play.",
     "releaseFeatures": [
       [
-        "Bring the right item to the sheet",
-        "Supported systems can place dragged compendium entries in the right collection. DnD 5e SRD handles weapons, spells, origins and more."
+        "Find what the session needs",
+        "Keep characters, items, journals and compendiums close to the table. Search campaign content and drag supported documents where you need them."
       ],
       [
-        "Keep your changes",
-        "DnD 5e SRD sheets save as you edit. Pending changes finish saving before the sheet closes, with visible errors when something needs attention."
+        "Keep your preferred sheet",
+        "Use mapped PDFs or dedicated system sheets. Installed systems define their own fields, calculations and saving behavior."
       ],
       [
-        "Stay with the encounter",
-        "Follow turns, resources and supported effects in the combat tracker. Each installed system provides its own rules."
+        "Follow the next turn",
+        "Track initiative and turns beside the scene. Installed systems can add their own resources, effects and combat rules."
       ],
       [
         "Choose your table’s language",
-        "Translator 0.1.2 offers reviewed Portuguese and Spanish interface catalogs. Each player keeps their own language preference."
+        "Translator 0.1.2 offers Portuguese and Spanish interface catalogs. Each player keeps their own language preference."
       ]
     ],
     "installLabel": "Start your campaign",
@@ -159,20 +165,43 @@ export const locales = {
     "selected": "Selected",
     "copiedMessage": "Commands copied to the clipboard.",
     "selectedMessage": "Clipboard unavailable. Commands selected for manual copying.",
-    "extensionsLabel": "A table that grows with you",
-    "extensionsTitle": "Choose the tools that fit your game.",
-    "extensionsCopy": "Choose your game system and add the modules that suit your group. Extensions bring their own sheets, content and tools to your Gravewright table.",
-    "systemLabel": "Available in the Marketplace",
+    "extensionsLabel": "A universal table, shaped by you",
+    "extensionsTitle": "Your system. Your tools. Your way to play.",
+    "extensionsCopy": "Gravewright provides the tabletop. Independent systems bring game-specific sheets and rules; modules add tools such as translations and 3D dice. Use a compatible system or mapped PDFs for your group’s game, and build your own extensions through the documented API.",
+    "systemLabel": "Optional system example · Available in the Marketplace",
     "systemTitle": "DnD 5e SRD",
     "systemVersion": "0.1.0 Alpha",
-    "systemCopy": "Choose 2014 or 2024 rules. Drag licensed SRD equipment, spells, origins and classes into a dedicated character sheet. Review required choices, then keep playing with automatic saving and supported resource calculations.",
-    "systemFacts": [["2,535", "SRD entries"], ["20", "Compendium packs"], ["2014 / 2024", "Selectable rules"]],
+    "systemCopy": "DnD 5e SRD is one independent system you can install in Gravewright. It adds dedicated sheets, licensed compendiums and supported automations for the 2014 and 2024 rules.",
+    "systemFacts": [
+      [
+        "2,535",
+        "SRD entries"
+      ],
+      [
+        "20",
+        "Compendium packs"
+      ],
+      [
+        "2014 / 2024",
+        "Selectable rules"
+      ]
+    ],
     "systemNote": "Partial SRD collections; compendium content is in English. Requires VTT 0.2.1+ and DnD 5e SRD Server Rules 0.1.0 for combat automation. Install both system packages from the Marketplace.",
     "systemAction": "Explore DnD 5e SRD",
     "systemDownload": "Get version 0.1.0",
     "extensionCards": [
-      ["Translator", "0.1.2", "Choose English, Brazilian Portuguese or Spanish for your interface. The official translation API also serves compatible systems and modules.", "https://github.com/Gravewright/translator"],
-      ["Gravewright 3D Dice", "0.1.1", "Bring physical 3D dice to supported rolls and choose your own dice colors, text and appearance.", "https://github.com/Gravewright/Gravewright-3D-Dice"]
+      [
+        "Translator",
+        "0.1.2",
+        "Choose English, Brazilian Portuguese or Spanish for your interface. The official translation API also serves compatible systems and modules.",
+        "https://github.com/Gravewright/translator"
+      ],
+      [
+        "Gravewright 3D Dice",
+        "0.1.1",
+        "See supported rolls as 3D dice and customize their colors, text and appearance.",
+        "https://github.com/Gravewright/Gravewright-3D-Dice"
+      ]
     ],
     "extensionAction": "Explore the module",
     "licenseTitle": "Open source, with room for independent creators.",
@@ -184,6 +213,10 @@ export const locales = {
     "faqLabel": "Before you start",
     "faqTitle": "A few things about your new table.",
     "faq": [
+      [
+        "Which RPG systems can I use?",
+        "Gravewright is a universal VTT. Use a compatible system extension for dedicated sheets and automations, or map PDF sheets for your group’s game. Available rules support depends on the system you install."
+      ],
       [
         "Is Gravewright free?",
         "Yes. Gravewright is free and open source. You host your installation and keep control of your campaign files. Third-party modules have their own licenses and terms."
@@ -202,7 +235,7 @@ export const locales = {
       ],
       [
         "Is 0.2.1 available to download?",
-        "Yes. Gravewright 0.2.1 Alpha is available now with the Windows installer. DnD 5e SRD 0.1.0 Alpha is a separate Marketplace system. Keep backups of important campaigns and read the release notes before upgrading."
+        "Yes. Gravewright 0.2.1 Alpha is available now with the Windows installer. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
       ],
       [
         "Can I play with DnD 5e SRD?",
@@ -221,7 +254,7 @@ export const locales = {
     "security": "Security policy",
     "finalLabel": "Make room for your next adventure",
     "finalTitle": "Your campaign has a place here.",
-    "footer": "Your RPG table. Your world to build.",
+    "footer": "A universal tabletop for the worlds you create.",
     "top": "Back to top",
     "mediaSoon": "Preview coming soon",
     "image": "Image",
@@ -229,7 +262,8 @@ export const locales = {
     "videoFallback": "Your browser cannot play this video.",
     "videoDownload": "Download the video",
     "transcript": "Read the transcript",
-    "musicCredit": "Music"
+    "musicCredit": "Music",
+    "systemDetails": "See this optional system in action"
   },
   "pt": {
     "lang": "pt-BR",
@@ -238,8 +272,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright — Uma Mesa Virtual para Sua Campanha de RPG",
-    "description": "Reúna sua campanha de RPG com mapas, fichas, dados e ambientação. Uma mesa virtual gratuita e open source, hospedada por você e feita para o seu grupo.",
+    "title": "Gravewright — Um VTT Universal para RPGs",
+    "description": "Um VTT universal, gratuito e open source para suas campanhas de RPG. Reúna mapas, tokens, dados, diários e ambientação e escolha seus sistemas e módulos.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -250,15 +284,15 @@ export const locales = {
       "Comece a jogar",
       "Comunidade"
     ],
-    "eyebrow": "Sua mesa de RPG · Gratuita e open source · Alpha",
+    "eyebrow": "VTT universal · Gratuito e open source · Alpha",
     "lead": "Seu mundo. Seu grupo. Sua próxima grande sessão.",
-    "intro": "Reúna mapas, fichas, dados e anotações da campanha em uma mesa. Hospede o Gravewright, convide o grupo pelo navegador e mantenha a aventura em movimento.",
+    "intro": "Uma mesa virtual universal para os mundos que você cria. Reúna mapas, tokens, dados e anotações, hospede sua mesa e escolha os sistemas e ferramentas que combinam com o grupo.",
     "download": "Baixar Gravewright para Windows",
     "explore": "Veja o Gravewright em ação",
     "notes": "Versão disponível",
     "documentation": "Documentação",
     "downloadHint": "Disponível agora: 0.2.1 Alpha · Instalador Windows x64 incluído",
-    "systemHint": "Também disponível: DnD 5e SRD 0.1.0 Alpha · Regras de 2014 e 2024",
+    "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
     "pillars": [
@@ -279,9 +313,9 @@ export const locales = {
         "Hospede suas campanhas e escolha os sistemas e módulos que combinam com seu grupo."
       ]
     ],
-    "aboutLabel": "Pensado para sua campanha",
-    "aboutTitle": "Menos distância entre as ferramentas e a história.",
-    "aboutCopy": "Prepare os lugares que os jogadores vão explorar. Tenha os personagens e suas descobertas à mão. Na próxima sessão, sua campanha estará pronta para continuar.",
+    "aboutLabel": "Uma mesa, muitas formas de jogar",
+    "aboutTitle": "Dê espaço aos seus mundos.",
+    "aboutCopy": "Prepare os lugares que o grupo vai explorar, organize suas descobertas e crie a atmosfera da próxima cena. O Gravewright reúne as ferramentas compartilhadas de uma sessão de RPG; os sistemas instalados trazem suas próprias fichas e regras.",
     "features": [
       [
         "Revele o mundo no seu ritmo",
@@ -302,7 +336,7 @@ export const locales = {
     ],
     "experienceLabel": "Gravewright em ação · Capturas reais do aplicativo",
     "experienceTitle": "Da cena à próxima decisão.",
-    "experienceCopy": "Veja a Alpha atual em uso: mapa e tokens, ficha do DnD 5e SRD, um item arrastado do compêndio, combate e anotações da campanha. São telas reais do Gravewright 0.2.1.",
+    "experienceCopy": "Explore Moonfall Abbey, mova tokens, meça distâncias, abra anotações da campanha e acompanhe o próximo turno. A gravação mostra o VTT real em uso, com um breve exemplo de ficha de um sistema opcional.",
     "galleryTitle": "Outro mundo para explorar",
     "galleryCopy": "Amplie a cena de batalha preservada de The Dragon’s Legacy.",
     "roles": [
@@ -324,30 +358,36 @@ export const locales = {
     ],
     "sheetsLabel": "Seus personagens à mão",
     "sheetsTitle": "A ficha que combina com seu jogo.",
-    "sheetsCopy": "Jogue com as fichas próprias do DnD 5e SRD ou traga seu PDF com o Gravewright PDF System. Vincule os personagens aos tokens e tenha os detalhes da próxima decisão sempre à mão.",
+    "sheetsCopy": "Traga um PDF conhecido com o Gravewright PDF System ou escolha um sistema compatível com fichas próprias. Vincule os personagens aos tokens e tenha seus detalhes à mão durante a sessão.",
     "sheetOptions": [
-      ["DnD 5e SRD", "Fichas de personagens, monstros e itens com atributos, magias, equipamentos e recursos. As alterações são salvas automaticamente; as rolagens vão direto para o chat."],
-      ["Seu próprio PDF", "Traga a ficha que seu grupo já usa, mapeie os campos e vincule o personagem a um token. Continue com sua ficha preferida dentro da mesa."]
+      [
+        "Seu próprio PDF",
+        "Traga a ficha que o grupo já usa, mapeie os campos e vincule o personagem a um token."
+      ],
+      [
+        "Fichas do sistema",
+        "Os sistemas instalados podem oferecer fichas próprias de personagens, criaturas e itens, com as regras e automações compatíveis."
+      ]
     ],
     "releaseLabel": "A nova Alpha",
     "releaseTitle": "Sua próxima sessão começa com a 0.2.1 Alpha.",
-    "releaseCopy": "A nova versão do VTT traz janelas nativas de itens, acesso a compêndios e a base para o combate de cada sistema. O DnD 5e SRD 0.1.0 Alpha já está disponível separadamente no Marketplace, com suas próprias fichas e regras.",
+    "releaseCopy": "O Gravewright 0.2.1 Alpha amplia as ferramentas da mesa: janelas nativas de itens, acesso mais rápido a compêndios e uma estrutura de combate para sistemas independentes. Prepare sua campanha e escolha as extensões que combinam com sua forma de jogar.",
     "releaseFeatures": [
       [
-        "Leve o item para a ficha",
-        "Sistemas compatíveis colocam as entradas arrastadas dos compêndios no lugar certo. O DnD 5e SRD recebe armas, magias, origens e muito mais."
+        "Encontre o que a sessão precisa",
+        "Tenha personagens, itens, diários e compêndios por perto. Pesquise o conteúdo da campanha e arraste documentos compatíveis para onde precisar."
       ],
       [
-        "Mantenha suas alterações",
-        "As fichas do DnD 5e SRD salvam enquanto você edita. Alterações pendentes terminam de salvar antes de fechar a ficha, com erros visíveis quando algo precisa de atenção."
+        "Use sua ficha preferida",
+        "Escolha PDFs mapeados ou fichas próprias de um sistema. Os sistemas instalados definem seus campos, cálculos e comportamento de salvamento."
       ],
       [
-        "Acompanhe o encontro",
-        "Veja turnos, recursos e efeitos compatíveis no rastreador de combate. Cada sistema instalado fornece suas próprias regras."
+        "Acompanhe o próximo turno",
+        "Controle iniciativa e turnos ao lado da cena. Os sistemas instalados podem acrescentar recursos, efeitos e regras próprias de combate."
       ],
       [
         "Escolha o idioma da mesa",
-        "O Translator 0.1.2 oferece catálogos revisados de interface em português e espanhol. Cada jogador mantém sua própria preferência de idioma."
+        "O Translator 0.1.2 oferece catálogos da interface em português e espanhol. Cada jogador mantém sua preferência de idioma."
       ]
     ],
     "installLabel": "Comece sua campanha",
@@ -381,20 +421,43 @@ export const locales = {
     "selected": "Selecionado",
     "copiedMessage": "Comandos copiados.",
     "selectedMessage": "Área de transferência indisponível. Comandos selecionados para copiar manualmente.",
-    "extensionsLabel": "Uma mesa que cresce com você",
-    "extensionsTitle": "Escolha as ferramentas do seu jogo.",
-    "extensionsCopy": "Escolha o sistema do seu jogo e adicione os módulos que combinam com o grupo. As extensões trazem fichas, conteúdo e ferramentas próprias para sua mesa Gravewright.",
-    "systemLabel": "Disponível no Marketplace",
+    "extensionsLabel": "Uma mesa universal, feita por você",
+    "extensionsTitle": "Seu sistema. Suas ferramentas. Sua forma de jogar.",
+    "extensionsCopy": "O Gravewright oferece a mesa virtual. Sistemas independentes trazem fichas e regras de cada jogo; módulos acrescentam ferramentas como traduções e dados 3D. Use um sistema compatível ou PDFs mapeados para o jogo do grupo e crie suas extensões com a API documentada.",
+    "systemLabel": "Exemplo de sistema opcional · Disponível no Marketplace",
     "systemTitle": "DnD 5e SRD",
     "systemVersion": "0.1.0 Alpha",
-    "systemCopy": "Escolha as regras de 2014 ou 2024. Arraste equipamentos, magias, origens e classes do SRD licenciado para a ficha do personagem. Confira as escolhas necessárias e continue jogando com salvamento automático e os cálculos de recursos compatíveis.",
-    "systemFacts": [["2.535", "Entradas do SRD"], ["20", "Compêndios"], ["2014 / 2024", "Regras à escolha"]],
+    "systemCopy": "DnD 5e SRD é um dos sistemas independentes que você pode instalar no Gravewright. Ele acrescenta fichas próprias, compêndios licenciados e automações compatíveis com as regras de 2014 e 2024.",
+    "systemFacts": [
+      [
+        "2.535",
+        "Entradas do SRD"
+      ],
+      [
+        "20",
+        "Compêndios"
+      ],
+      [
+        "2014 / 2024",
+        "Regras à escolha"
+      ]
+    ],
     "systemNote": "Coleções parciais do SRD; o conteúdo dos compêndios está em inglês. Requer VTT 0.2.1+ e DnD 5e SRD Server Rules 0.1.0 para as automações de combate. Instale os dois pacotes do sistema pelo Marketplace.",
     "systemAction": "Conheça o DnD 5e SRD",
     "systemDownload": "Baixar a versão 0.1.0",
     "extensionCards": [
-      ["Translator", "0.1.2", "Escolha inglês, português brasileiro ou espanhol para sua interface. A API oficial de tradução também atende sistemas e módulos compatíveis.", "https://github.com/Gravewright/translator"],
-      ["Gravewright 3D Dice", "0.1.1", "Use dados físicos em 3D nas rolagens compatíveis e escolha as cores, os textos e a aparência dos seus dados.", "https://github.com/Gravewright/Gravewright-3D-Dice"]
+      [
+        "Translator",
+        "0.1.2",
+        "Escolha inglês, português brasileiro ou espanhol para sua interface. A API oficial de tradução também atende sistemas e módulos compatíveis.",
+        "https://github.com/Gravewright/translator"
+      ],
+      [
+        "Gravewright 3D Dice",
+        "0.1.1",
+        "Veja as rolagens compatíveis em dados 3D e personalize suas cores, textos e aparência.",
+        "https://github.com/Gravewright/Gravewright-3D-Dice"
+      ]
     ],
     "extensionAction": "Conheça o módulo",
     "licenseTitle": "Open source, com espaço para criadores independentes.",
@@ -406,6 +469,10 @@ export const locales = {
     "faqLabel": "Antes de começar",
     "faqTitle": "Conheça sua nova mesa.",
     "faq": [
+      [
+        "Quais sistemas de RPG posso usar?",
+        "O Gravewright é um VTT universal. Use uma extensão de sistema compatível para ter fichas e automações próprias ou mapeie fichas PDF para o jogo do grupo. O suporte às regras depende do sistema instalado."
+      ],
       [
         "O Gravewright é gratuito?",
         "Sim. O Gravewright é gratuito e open source. Você hospeda sua instalação e mantém o controle dos arquivos da campanha. Módulos de terceiros têm suas próprias licenças e condições."
@@ -424,7 +491,7 @@ export const locales = {
       ],
       [
         "A 0.2.1 já está disponível para baixar?",
-        "Sim. O Gravewright 0.2.1 Alpha já está disponível com o instalador Windows. O DnD 5e SRD 0.1.0 Alpha é um sistema separado no Marketplace. Mantenha backups das campanhas importantes e leia as notas da versão antes de atualizar."
+        "Sim. O Gravewright 0.2.1 Alpha já está disponível com o instalador Windows. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
       ],
       [
         "Posso jogar com o DnD 5e SRD?",
@@ -443,7 +510,7 @@ export const locales = {
     "security": "Política de segurança",
     "finalLabel": "Abra espaço para sua próxima aventura",
     "finalTitle": "Sua campanha tem lugar aqui.",
-    "footer": "Sua mesa de RPG. Seu mundo para criar.",
+    "footer": "Uma mesa virtual universal para os mundos que você cria.",
     "top": "Voltar ao topo",
     "mediaSoon": "Prévia em breve",
     "image": "Imagem",
@@ -451,6 +518,7 @@ export const locales = {
     "videoFallback": "Seu navegador não consegue reproduzir este vídeo.",
     "videoDownload": "Baixar o vídeo",
     "transcript": "Ler a transcrição",
-    "musicCredit": "Música"
+    "musicCredit": "Música",
+    "systemDetails": "Veja este sistema opcional em uso"
   }
 };

@@ -2,15 +2,17 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site de apresentação do Gravewright, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.2.1 Alpha**. O site apresenta preparação de campanhas, mapas, fichas próprias de sistemas, fichas PDF e recursos para jogar. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
+Site de apresentação do Gravewright, um **VTT universal**, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.2.1 Alpha**. O site apresenta as ferramentas comuns da mesa: mapas, tokens, medição, dados, diários, preparação de campanhas e ambientação. O grupo escolhe extensões de sistemas compatíveis ou fichas PDF para seus jogos; as regras e automações vêm do sistema instalado. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
 
 | Produto disponível | Release | Detalhes |
 | --- | --- | --- |
 | Gravewright VTT | [0.2.1 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.1) | Instalador Windows x64 e distribuição do código-fonte |
-| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Sistema separado para 2014/SRD 5.1 e 2024/SRD 5.2.1; fichas de personagens, monstros e itens, arraste do SRD e salvamento automático |
+| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Sistema independente opcional mostrado como exemplo: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD e salvamento automático |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Tradução da interface para português brasileiro e API de tradução para extensões |
 
-O DnD 5e SRD exige VTT **0.2.1 ou superior**. Instale o sistema e o complemento **Server Rules 0.1.0** correspondente pelo [Marketplace](https://github.com/Gravewright/marketplace). Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado; esse conteúdo está em inglês. O core do VTT permanece independente das regras dos sistemas.
+A página principal apresenta primeiro o VTT universal e suas ferramentas comuns. As imagens da ficha e do compêndio DnD permanecem em um exemplo opcional de sistema, recolhido por padrão perto da seção de extensões. Fichas PDF e de sistemas são apresentadas como escolhas; a plataforma não exige um conjunto específico de regras.
+
+Para usar o exemplo DnD, instale **DnD 5e SRD 0.1.0** e o complemento **Server Rules 0.1.0** correspondente pelo [Marketplace](https://github.com/Gravewright/marketplace) no VTT **0.2.1 ou superior**. Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado; esse conteúdo está em inglês. Essas fichas, o salvamento automático e as regras pertencem ao sistema. O core do VTT permanece independente das regras dos sistemas.
 
 ## Abrir localmente
 
@@ -59,7 +61,7 @@ npm test                 # gera e verifica páginas, links, IDs e estados das m�
 npm run check:media      # exige também todas as mídias planejadas
 ```
 
-A verificação normal aceita placeholders; a completa exige todos os arquivos compartilhados e por idioma. As mídias atuais usam capturas reais do VTT 0.2.1, o sistema publicado DnD 5e SRD 0.1.0 e o Translator 0.1.2: mesa, ficha, painel de campanhas e compêndio SRD, além de uma demonstração gravada do produto. Há capturas, legendas e transcrições descritivas nos dois idiomas. `durationSeconds` nos metadados do vídeo registra a duração da edição final, sem fixar uma estimativa nos textos do produto.
+A verificação normal aceita placeholders; a completa exige todos os arquivos compartilhados e por idioma. As mídias usam capturas reais do VTT 0.2.1 e o Translator 0.1.2. A demonstração universal (`assets/videos/gravewright-universal-021-showcase.mp4`, 60 segundos, 1920 × 1080) destaca mapas, tokens, medição, diários e combate, com um breve exemplo opcional de ficha e compêndio do DnD 5e SRD 0.1.0. Há capturas da interface, legendas e transcrições descritivas nos dois idiomas. Os nomes das campanhas permanecem **Moonfall Vigil**, **The Wild Paths** e **Beyond the Mists** nas duas interfaces; a cena é **Moonfall Abbey**. `durationSeconds` nos metadados registra a duração da edição final.
 
 As duas imagens do dragão foram preservadas: a capa ilustrada do vídeo e a captura de mesa fornecida anteriormente (`assets/images/table-overview.webp`). A captura aparece em uma galeria secundária expansível, com miniatura visível, separada das novas capturas da 0.2.1. A imagem social permanece como uma versão da capa ilustrada. O mapa Moonfall Abbey e o retrato de Seraphina Vale foram gerados para a nova demonstração. O PDF original de Seren Ashford permanece como fonte para o tutorial, em vez de aparecer na captura de ficha do site. Consulte as [fontes, prompts e hashes](assets/demo/README.md) e os [créditos das mídias](THIRD_PARTY_NOTICES.md). Depois de alterar os arquivos, confira reprodução, avanço do vídeo, legendas sincronizadas, textos alternativos e leitura no celular.
 

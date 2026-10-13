@@ -753,6 +753,20 @@ h1 {
 .scene-gallery[open] .gallery-toggle::after { content: '−'; }
 .scene-gallery .media-frame { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; transform: none; }
 .scene-gallery .media-frame::after { display: none; }
+.system-example { margin-top: 34px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); overflow: hidden; }
+.system-example > summary { display: flex; align-items: center; gap: 21px; padding: 21px; cursor: pointer; list-style: none; }
+.system-example > summary::-webkit-details-marker { display: none; }
+.system-example > summary:focus-visible { outline-offset: -3px; }
+.system-example > summary > span:first-child { flex: 1; min-width: 0; }
+.system-example > summary .section-label { display: block; margin-bottom: 8px; font-size: .68rem; }
+.system-example > summary strong { display: block; font-size: 1.2rem; }
+.system-example-hint { display: block; margin-top: 5px; color: var(--muted); font-size: .86rem; }
+.system-example .gallery-toggle { color: var(--accent-bright); font-size: 1.5rem; }
+.system-example .gallery-toggle::after { content: '+'; }
+.system-example[open] > summary .gallery-toggle::after { content: '−'; }
+.system-example > .system-showcase { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; }
+.system-example > .media-frame { margin: 0 21px 21px; transform: none; }
+.system-example > .media-frame::after { display: none; }
 @keyframes torch-glow {
   0%, 100% { box-shadow: 0 0 22px rgba(255, 180, 68, .28), 0 8px 52px rgba(235, 109, 28, .19), 0 16px 90px rgba(192, 62, 15, .10); }
   28% { box-shadow: 0 -2px 29px rgba(255, 190, 78, .38), -4px 10px 64px rgba(245, 119, 30, .25), 0 20px 108px rgba(205, 68, 16, .14); }
@@ -835,6 +849,10 @@ h1 {
   .placeholder-scene { inset: 15% 0; }
 }
 @media (max-width: 480px) {
+  .system-example > summary { flex-wrap: wrap; gap: 13px; }
+  .system-example > summary > span:first-child { flex-basis: calc(100% - 34px); }
+  .system-example > summary .version-label { order: 2; }
+  .system-example > .media-frame { margin: 0 13px 13px; }
   .scene-gallery summary { gap: 13px; }
   .scene-gallery summary > img { width: 89px; height: 55px; }
   .scene-gallery summary strong + span { font-size: .78rem; }

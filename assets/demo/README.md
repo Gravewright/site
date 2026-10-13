@@ -1,20 +1,20 @@
 # Demo media sources / Fontes das mídias de demonstração
 
-The product screenshots and video show the real **Gravewright VTT 0.2.1** interface, with the published **DnD 5e SRD 0.1.0** system and **Translator 0.1.2**. They were captured in a browser using an isolated local database, fictional campaigns and demonstration accounts. Original map and portrait assets were loaded into the application before recording; the interface itself was not generated.
+The product screenshots and video show the real **Gravewright VTT 0.2.1** interface and **Translator 0.1.2**. Gravewright is a universal VTT: the main walkthrough presents maps, tokens, measurement, journals and combat. The published **DnD 5e SRD 0.1.0** system appears briefly as an optional extension example; its sheet and compendium screenshots are preserved in a collapsed example near the bottom of the page. They were captured in a browser using an isolated local database, fictional campaigns and demonstration accounts. Original map and portrait assets were loaded into the application before recording; the interface itself was not generated.
 
 | Media | English file | Portuguese file |
 | --- | --- | --- |
-| Tabletop | `../images/table-overview-021.webp` | `../images/table-overview-021.pt-BR.webp` |
-| DnD character sheet | `../images/dnd-character-sheet-010.webp` | `../images/dnd-character-sheet-010.pt-BR.webp` |
-| Campaign dashboard | `../images/campaign-dashboard-021.webp` | `../images/campaign-dashboard-021.pt-BR.webp` |
-| SRD compendium | `../images/srd-compendium-010.webp` | `../images/srd-compendium-010.pt-BR.webp` |
+| Tabletop | `../images/table-overview-universal-021.webp` | `../images/table-overview-universal-021.pt-BR.webp` |
+| Optional DnD sheet example | `../images/dnd-character-sheet-010.webp` | `../images/dnd-character-sheet-010.pt-BR.webp` |
+| Campaign dashboard | `../images/campaign-dashboard-universal-021.webp` | `../images/campaign-dashboard-universal-021.pt-BR.webp` |
+| Optional SRD compendium example | `../images/srd-compendium-universal-010.webp` | `../images/srd-compendium-universal-010.pt-BR.webp` |
 | Preserved Dragon’s Legacy scene | `../images/table-overview.webp` | Shared capture |
 
-The recorded walkthrough is `../videos/gravewright-021-showcase.mp4`. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. Exact capture dimensions and the final video duration are recorded in `content/media.json` at the site root. The preserved illustrated poster is `../images/table-session-cover.png`; the social preview is its `../images/gravewright-social-v3.jpg` derivative.
+The recorded universal walkthrough is `../videos/gravewright-universal-021-showcase.mp4`, 60 seconds at 1920 × 1080. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. Exact capture dimensions and the final video duration are recorded in `content/media.json` at the site root. The campaign names are **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the map/scene name is **Moonfall Abbey**. Proper names remain in English when interface controls are translated. The preserved illustrated poster is `../images/table-session-cover.png`; the social preview is its `../images/gravewright-social-v3.jpg` derivative.
 
 The earlier supplied Dragon’s Legacy tabletop capture (`../images/table-overview.webp`, 1911 × 926) is also preserved, with a visible thumbnail and an expandable full image. It is distinct from the new 0.2.1 captures and the illustrated dragon poster. No current application version is inferred from that earlier image.
 
-As novas capturas e o vídeo mostram o aplicativo real nas versões acima, com base isolada e dados fictícios. Há capturas de interface em inglês e português. O mapa e os retratos foram inseridos no VTT antes da gravação. Dimensões, caminhos e duração final ficam em `content/media.json`. Foram preservadas as duas imagens do dragão: a capa ilustrada e a captura de mesa anterior, exibida em galeria secundária sem atribuí-la à versão atual.
+As novas capturas e o vídeo mostram o VTT universal real, com base isolada e dados fictícios, destacando mapa, tokens, medição, diários e combate. O DnD 5e SRD é um exemplo opcional de extensão, com breve participação no vídeo e imagens da ficha e compêndio em uma seção recolhida por padrão. Há capturas de interface em inglês e português; os nomes Moonfall Vigil, The Wild Paths, Beyond the Mists e Moonfall Abbey permanecem em inglês nos dois idiomas. O mapa e os retratos foram inseridos no VTT antes da gravação. Dimensões, caminhos e duração final ficam em `content/media.json`. Foram preservadas as duas imagens do dragão: a capa ilustrada e a captura de mesa anterior, exibida em galeria secundária sem atribuí-la à versão atual.
 
 ## Demo source assets
 

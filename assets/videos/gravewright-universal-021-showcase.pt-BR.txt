@@ -1,0 +1,21 @@
+Gravewright 0.2.1 Alpha · Demonstração do VTT universal
+Transcrição descritiva · 60 segundos
+
+00:00:00–00:00:03  Gravewright 0.2.1 Alpha — Um VTT universal para RPGs.
+00:00:03–00:00:13  Explore Moonfall Abbey e mova os tokens pela cena.
+00:00:13–00:00:20  Meça distâncias na mesa ao planejar o próximo movimento.
+00:00:20–00:00:28  Reúna anotações e descobertas da campanha nos diários.
+00:00:28–00:00:36  Acompanhe a iniciativa e avance os turnos no rastreador de combate.
+00:00:36–00:00:39.600  Exemplo de sistema opcional: a ficha do DnD 5e SRD.
+00:00:39.600–00:00:47  Arraste um item do compêndio para a ficha do sistema compatível.
+00:00:47–00:00:56  Envie mensagens e role dados, com os resultados direto no chat.
+00:00:56–00:01:00  gravewright.com · Música: Volatile Reaction — Kevin MacLeod, CC BY 4.0.
+
+Gravação do aplicativo real: Gravewright VTT 0.2.1, com contas e campanhas fictícias. Os nomes das campanhas e dos mapas permanecem em inglês nos dois idiomas do site. O sistema opcional DnD 5e SRD 0.1.0 aparece brevemente como exemplo de fichas e regras independentes; o Translator 0.1.2 oferece a interface traduzida nas capturas que acompanham o vídeo. O Gravewright aceita sistemas compatíveis e fichas PDF mapeadas.
+
+Créditos da música
+Volatile Reaction — Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Alterações: excerto existente reutilizado, repetido, ajustado em volume e com entradas e saídas graduais. Sem narração.
