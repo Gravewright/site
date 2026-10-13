@@ -2,11 +2,11 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site de apresentação do Gravewright, um **VTT universal**, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.2.1 Alpha**. O site apresenta as ferramentas comuns da mesa: mapas, tokens, medição, dados, diários, preparação de campanhas e ambientação. O grupo escolhe extensões de sistemas compatíveis ou fichas PDF para seus jogos; as regras e automações vêm do sistema instalado. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
+Site de apresentação do Gravewright, um **VTT universal**, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.2.2 Alpha**. O site apresenta as ferramentas comuns da mesa: mapas, tokens, medição, dados, diários, preparação de campanhas e ambientação. O grupo escolhe extensões de sistemas compatíveis ou fichas PDF para seus jogos; as regras e automações vêm do sistema instalado. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
 
 | Produto disponível | Release | Detalhes |
 | --- | --- | --- |
-| Gravewright VTT | [0.2.1 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.1) | Instalador Windows x64 e distribuição do código-fonte |
+| Gravewright VTT | [0.2.2 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.2) | Instalador Windows x64 e distribuição do código-fonte |
 | DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Sistema independente opcional mostrado como exemplo: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD e salvamento automático |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Tradução da interface para português brasileiro e API de tradução para extensões |
 
