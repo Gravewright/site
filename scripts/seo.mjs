@@ -6,6 +6,8 @@ export const pageUrl = locale => `${origin}/${locale === 'en' ? '' : 'pt-br.html
 export function seoHead(locale, t, media, project, download) {
   const url = pageUrl(locale);
   const image = `${origin}/${socialImage.file}`;
+  const table = media.find(item => item.id === 'table');
+  const screenshot = table.files?.[locale] || table.file;
   const alt = locale === 'en'
     ? 'Gravewright — The Dragon’s Legacy: a red dragon above a fortress surrounded by lava.'
     : 'Gravewright — The Dragon’s Legacy: um dragão vermelho sobre uma fortaleza cercada por lava.';
@@ -22,7 +24,7 @@ export function seoHead(locale, t, media, project, download) {
         description:t.description, applicationCategory:'GameApplication', operatingSystem:'Windows, Linux, macOS',
         softwareVersion:publicVersion, inLanguage:'en', isAccessibleForFree:true,
         license:'https://spdx.org/licenses/GPL-3.0-only.html', downloadUrl:download, sameAs:project,
-        image, screenshot:`${origin}/${media.find(item => item.id === 'table').file}`}
+        image, screenshot:`${origin}/${screenshot}`}
     ]
   };
   return [

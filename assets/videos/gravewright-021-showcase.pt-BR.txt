@@ -1,0 +1,21 @@
+Gravewright 0.2.1 Alpha · Demonstração do produto
+Transcrição descritiva · 60 segundos
+
+00:00:00–00:00:03  Gravewright 0.2.1 Alpha — Sua mesa. Sua aventura.
+00:00:03–00:00:10  Explore a Abadia de Moonfall e mova os tokens pela mesa.
+00:00:10–00:00:19  Abra a ficha DnD 5e SRD. Edite um atributo; a ficha salva automaticamente.
+00:00:19–00:00:22  Busque uma adaga no compêndio licenciado do SRD.
+00:00:22–00:00:32  Arraste a adaga para a ficha. Ela aparece no inventário e é salva.
+00:00:32–00:00:38  Consulte magias preparadas, espaços de magia e recursos do personagem.
+00:00:38–00:00:47  Use o rastreador de combate para acompanhar a iniciativa e avançar o turno.
+00:00:47–00:00:56  Envie uma mensagem e role os dados. Os resultados aparecem direto no chat.
+00:00:56–00:01:00  gravewright.com · Música: Volatile Reaction — Kevin MacLeod, CC BY 4.0.
+
+Gravação do aplicativo real: VTT 0.2.1, DnD 5e SRD 0.1.0, Translator 0.1.2. Contas e campanha fictícias de demonstração; interface em inglês. O site inclui capturas da interface em português.
+
+Créditos da música
+Volatile Reaction — Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Alterações: excerto existente reutilizado, repetido, ajustado em volume e com entradas e saídas graduais. Sem narração.

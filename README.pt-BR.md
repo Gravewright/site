@@ -2,7 +2,15 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site de apresentação do Gravewright, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). Os textos destacam preparação de campanhas, jogo e personalização. O download público é a **0.2.0 Alpha**. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
+Site de apresentação do Gravewright, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.2.1 Alpha**. O site apresenta preparação de campanhas, mapas, fichas próprias de sistemas, fichas PDF e recursos para jogar. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
+
+| Produto disponível | Release | Detalhes |
+| --- | --- | --- |
+| Gravewright VTT | [0.2.1 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.1) | Instalador Windows x64 e distribuição do código-fonte |
+| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Sistema separado para 2014/SRD 5.1 e 2024/SRD 5.2.1; fichas de personagens, monstros e itens, arraste do SRD e salvamento automático |
+| Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Tradução da interface para português brasileiro e API de tradução para extensões |
+
+O DnD 5e SRD exige VTT **0.2.1 ou superior**. Instale o sistema e o complemento **Server Rules 0.1.0** correspondente pelo [Marketplace](https://github.com/Gravewright/marketplace). Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado; esse conteúdo está em inglês. O core do VTT permanece independente das regras dos sistemas.
 
 ## Abrir localmente
 
@@ -21,7 +29,7 @@ Abra **http://127.0.0.1:4173**. Pressione Ctrl+C para encerrar. Para outra porta
 
 O [MEDIA.pt-BR.md](MEDIA.pt-BR.md) lista todos os nomes de arquivo, textos alternativos nos dois idiomas, sugestões de captura, dimensões, capas, legendas e transcrições.
 
-1. Coloque os arquivos exatamente nos caminhos indicados.
+1. Coloque os arquivos exatamente nos caminhos indicados. As capturas podem ter arquivos separados por idioma em `files.en` e `files.pt`, usando `file` como alternativa compartilhada.
 2. Execute `npm run build` novamente e atualize a página.
 3. Quando terminar de adicionar as mídias, rode `npm run check:media`.
 
@@ -32,12 +40,13 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 | Arquivo | Função |
 | --- | --- |
 | `content/site.mjs` | Textos em inglês/português, versão pública, links da release e comandos |
-| `content/media.json` | Caminhos, dimensões, títulos, textos alternativos e sugestões de captura |
+| `content/media.json` | Caminhos compartilhados/por idioma, dimensões, títulos, textos alternativos, sugestões de captura e duração do vídeo |
 | `scripts/build.mjs` | Template compartilhado que gera os dois HTMLs |
 | `styles.css` | Estilos do template e adaptações responsivas/de mídia |
 | `script.js` | Menu móvel, troca de idioma mantendo a seção, botão de copiar e animações que respeitam movimento reduzido |
 | `assets/icon.svg` | Ícone original do template, sem alterações |
 | `scripts/serve.mjs` | Servidor local com suporte a intervalos de bytes para vídeos |
+| `scripts/check.mjs` | Verificações de páginas geradas, arquivos por idioma, metadados e acessibilidade |
 
 Edite os arquivos-fonte e gere novamente, em vez de alterar os HTMLs gerados. As duas páginas já contêm seus textos e funcionam sem JavaScript. A documentação aponta para o projeto Django atual, sem importar a wiki antiga. Não são usados fontes externas, rastreadores ou scripts de CDN.
 
@@ -50,7 +59,9 @@ npm test                 # gera e verifica páginas, links, IDs e estados das m�
 npm run check:media      # exige também todas as mídias planejadas
 ```
 
-A verificação normal aceita placeholders. Todos os espaços de mídia estão preenchidos, incluindo novas capturas de uma ficha PDF original e de um painel com campanhas fictícias. A verificação completa confirma a presença dos arquivos necessários. Consulte as [fontes da demonstração](assets/demo/README.md). Depois de adicionar os arquivos, confira os vídeos, legendas sincronizadas, textos alternativos e reprodução no navegador.
+A verificação normal aceita placeholders; a completa exige todos os arquivos compartilhados e por idioma. As mídias atuais usam capturas reais do VTT 0.2.1, o sistema publicado DnD 5e SRD 0.1.0 e o Translator 0.1.2: mesa, ficha, painel de campanhas e compêndio SRD, além de uma demonstração gravada do produto. Há capturas, legendas e transcrições descritivas nos dois idiomas. `durationSeconds` nos metadados do vídeo registra a duração da edição final, sem fixar uma estimativa nos textos do produto.
+
+As duas imagens do dragão foram preservadas: a capa ilustrada do vídeo e a captura de mesa fornecida anteriormente (`assets/images/table-overview.webp`). A captura aparece em uma galeria secundária expansível, com miniatura visível, separada das novas capturas da 0.2.1. A imagem social permanece como uma versão da capa ilustrada. O mapa Moonfall Abbey e o retrato de Seraphina Vale foram gerados para a nova demonstração. O PDF original de Seren Ashford permanece como fonte para o tutorial, em vez de aparecer na captura de ficha do site. Consulte as [fontes, prompts e hashes](assets/demo/README.md) e os [créditos das mídias](THIRD_PARTY_NOTICES.md). Depois de alterar os arquivos, confira reprodução, avanço do vídeo, legendas sincronizadas, textos alternativos e leitura no celular.
 
 Licenciamento e atribuição do template estão em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 

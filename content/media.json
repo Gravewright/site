@@ -2,43 +2,48 @@
   {
     "id": "table",
     "type": "image",
-    "file": "assets/images/table-overview.webp",
-    "width": 1911,
-    "height": 926,
+    "file": "assets/images/table-overview-021.webp",
+    "files": {
+      "en": "assets/images/table-overview-021.webp",
+      "pt": "assets/images/table-overview-021.pt-BR.webp"
+    },
+    "width": 1920,
+    "height": 1080,
     "title": {
-      "en": "Gravewright at the table",
-      "pt": "Gravewright à mesa"
+      "en": "Your next encounter, ready to play",
+      "pt": "Seu próximo encontro, pronto para jogar"
     },
     "alt": {
-      "en": "Gravewright tabletop showing a lava-filled dungeon, a large dragon token, character tokens, lighting and the tabletop toolbars.",
-      "pt": "Mesa do Gravewright com uma masmorra cercada por lava, um grande token de dragão, tokens de personagens, iluminação e barras de ferramentas."
+      "en": "Gravewright 0.2.1 showing the original Moonfall Abbey map, character tokens and the current tabletop controls.",
+      "pt": "Gravewright 0.2.1 com o mapa original da Abadia de Moonfall, tokens de personagens e os controles atuais da mesa."
     },
-    "brief": "Capture the current Alpha 0.1.0 tabletop with a prepared scene, tokens and visible lighting. Use content you can share."
+    "brief": "Fresh English and Brazilian Portuguese captures of published VTT 0.2.1 in an isolated fictional campaign. The abbey map and character illustration were created for this demonstration."
   },
   {
     "id": "session",
     "type": "video",
-    "file": "assets/videos/table-session.mp4",
+    "file": "assets/videos/gravewright-021-showcase.mp4",
     "poster": "assets/images/table-session-cover.png",
     "width": 1920,
     "height": 1080,
+    "durationSeconds": 60,
     "title": {
-      "en": "The Dragon’s Legacy · Battle showcase",
-      "pt": "The Dragon’s Legacy · Demonstração de batalha"
+      "en": "Gravewright 0.2.1 · Product showcase",
+      "pt": "Gravewright 0.2.1 · Demonstração do produto"
     },
     "alt": {
-      "en": "Gravewright battle showcase with a lava-filled dungeon, a dragon token, lighting and fog controls, and character movement, accompanied by orchestral music.",
-      "pt": "Demonstração do Gravewright com masmorra de lava, token de dragão, controles de iluminação e névoa e movimento de personagens, acompanhada por música orquestral."
+      "en": "New recording of Gravewright 0.2.1 showing a prepared tabletop, the DnD 5e SRD sheet, compendium drag and drop, automatic saving and combat.",
+      "pt": "Nova gravação do Gravewright 0.2.1 mostrando uma mesa preparada, a ficha DnD 5e SRD, arraste do compêndio, salvamento automático e combate."
     },
     "captions": {
-      "en": "assets/videos/table-session.en.vtt",
-      "pt": "assets/videos/table-session.pt-BR.vtt"
+      "en": "assets/videos/gravewright-021-showcase.en.vtt",
+      "pt": "assets/videos/gravewright-021-showcase.pt-BR.vtt"
     },
     "transcripts": {
-      "en": "assets/videos/table-session.en.txt",
-      "pt": "assets/videos/table-session.pt-BR.txt"
+      "en": "assets/videos/gravewright-021-showcase.en.txt",
+      "pt": "assets/videos/gravewright-021-showcase.pt-BR.txt"
     },
-    "brief": "51.1-second battle edit from the supplied recording. The poster is an original illustrated cover showing a red dragon and a volcanic fortress, with the Gravewright title. Music attribution is included in the end card, transcript and third-party notices.",
+    "brief": "New recording of real published VTT 0.2.1, signed DnD 5e SRD 0.1.0 and Translator 0.1.2. Existing illustrated dragon cover preserved unchanged; bilingual descriptive captions and transcripts accompany the recording.",
     "music": {
       "title": "Volatile Reaction",
       "artist": "Kevin MacLeod",
@@ -50,33 +55,77 @@
   {
     "id": "sheet",
     "type": "image",
-    "file": "assets/images/pdf-character-sheet.webp",
-    "width": 1600,
-    "height": 1000,
+    "file": "assets/images/dnd-character-sheet-010.webp",
+    "files": {
+      "en": "assets/images/dnd-character-sheet-010.webp",
+      "pt": "assets/images/dnd-character-sheet-010.pt-BR.webp"
+    },
+    "width": 1050,
+    "height": 1120,
     "title": {
-      "en": "Your character, close to the story",
-      "pt": "Seu personagem perto da história"
+      "en": "DnD 5e SRD · Seraphina Vale",
+      "pt": "DnD 5e SRD · Seraphina Vale"
     },
     "alt": {
-      "en": "The original Seren Ashford PDF character sheet open in Gravewright, with editable health, energy, defense and attribute fields, abilities, equipment and notes.",
-      "pt": "Ficha PDF original de Seren Ashford aberta no Gravewright, com campos editáveis de vida, energia, defesa e atributos, habilidades, equipamentos e notas."
+      "en": "Seraphina Vale's real DnD 5e SRD 0.1.0 character sheet with an original ranger portrait, abilities, skills, health, equipment and rest controls.",
+      "pt": "Ficha real de Seraphina Vale no DnD 5e SRD 0.1.0, com retrato original de patrulheira, atributos, perícias, vida, equipamento e descansos."
     },
-    "brief": "Fresh capture of the real Alpha application using an original editable demo PDF in an isolated sample campaign. Source PDF: assets/demo/Seren-Ashford.pdf."
+    "brief": "Native character window captured from the signed DnD 5e SRD 0.1.0 system in published VTT 0.2.1. Portuguese interface uses Translator 0.1.2."
   },
   {
     "id": "campaign",
     "type": "image",
-    "file": "assets/images/campaign-dashboard.webp",
-    "width": 1600,
-    "height": 1000,
+    "file": "assets/images/campaign-dashboard-021.webp",
+    "files": {
+      "en": "assets/images/campaign-dashboard-021.webp",
+      "pt": "assets/images/campaign-dashboard-021.pt-BR.webp"
+    },
+    "width": 1920,
+    "height": 1080,
     "title": {
-      "en": "A home for your campaigns",
-      "pt": "Um lugar para suas campanhas"
+      "en": "Your campaigns, together",
+      "pt": "Suas campanhas, reunidas"
     },
     "alt": {
-      "en": "Gravewright campaign dashboard with The Verdant Vigil, The Drowned Crown and Ashfall Citadel, illustrated covers, participant icons and a control to create a campaign.",
-      "pt": "Painel do Gravewright com The Verdant Vigil, The Drowned Crown e Ashfall Citadel, capas ilustradas, ícones de participantes e controle para criar uma campanha."
+      "en": "The current Gravewright dashboard with three fictional campaigns, new original covers and controls to create or join a table.",
+      "pt": "Painel atual do Gravewright com três campanhas fictícias, novas capas originais e controles para criar ou entrar em uma mesa."
     },
-    "brief": "Fresh capture of the real Alpha dashboard using fictional campaigns and a sample account. New abbey, ocean-palace and volcanic-fortress illustrations were created for these demo campaigns."
+    "brief": "Fresh VTT 0.2.1 dashboard captures in both languages with fictional demo accounts; no live user campaigns or personal data."
+  },
+  {
+    "id": "compendium",
+    "type": "image",
+    "file": "assets/images/srd-compendium-010.webp",
+    "files": {
+      "en": "assets/images/srd-compendium-010.webp",
+      "pt": "assets/images/srd-compendium-010.pt-BR.webp"
+    },
+    "width": 1920,
+    "height": 1080,
+    "title": {
+      "en": "From the SRD to your character",
+      "pt": "Do SRD para seu personagem"
+    },
+    "alt": {
+      "en": "DnD 5e SRD compendium beside Seraphina's character sheet, with searchable licensed entries ready to drag onto the sheet.",
+      "pt": "Compêndio DnD 5e SRD ao lado da ficha de Seraphina, com entradas licenciadas pesquisáveis prontas para arrastar para a ficha."
+    },
+    "brief": "Real native compendium and system sheet. SRD entries remain in English; interface controls are captured in both English and Portuguese."
+  },
+  {
+    "id": "dragon",
+    "type": "image",
+    "file": "assets/images/table-overview.webp",
+    "width": 1911,
+    "height": 926,
+    "title": {
+      "en": "The Dragon’s Legacy · A world to explore",
+      "pt": "The Dragon’s Legacy · Um mundo para explorar"
+    },
+    "alt": {
+      "en": "The preserved Gravewright tabletop capture of a lava-filled dungeon, a large dragon token and a party of adventurers.",
+      "pt": "Captura preservada da mesa do Gravewright com uma masmorra de lava, um grande token de dragão e um grupo de aventureiros."
+    },
+    "brief": "Original dragon tabletop image preserved unchanged at the user’s request. It illustrates an earlier tabletop interface; the other product captures show VTT 0.2.1."
   }
 ]

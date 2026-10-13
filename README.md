@@ -2,7 +2,15 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The copy focuses on campaign preparation, play and customization. The public download is **0.2.0 Alpha**. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.2.1 Alpha**. The site presents campaign preparation, maps, dedicated game-system sheets, PDF sheets and play at the table. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+
+| Available product | Release | Details |
+| --- | --- | --- |
+| Gravewright VTT | [0.2.1 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.1) | Windows x64 installer and source distribution |
+| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Separate system for 2014/SRD 5.1 and 2024/SRD 5.2.1; dedicated character, monster and item sheets, SRD drag and drop, and automatic saving |
+| Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Brazilian Portuguese interface translation and an API for extension translations |
+
+DnD 5e SRD requires VTT **0.2.1 or newer**. Install both the system and its matching **Server Rules 0.1.0** companion from the [Marketplace](https://github.com/Gravewright/marketplace). Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections; compendium content is currently in English. The VTT core stays independent of game rules.
 
 ## Preview
 
@@ -21,7 +29,7 @@ Open **http://127.0.0.1:4173**. Press Ctrl+C to stop. An alternate local port ca
 
 Read [MEDIA.md](MEDIA.md) for the complete list of filenames, bilingual alternative text, recording briefs, sizes, posters, captions and transcripts. Its [Portuguese version](MEDIA.pt-BR.md) contains the same instructions.
 
-1. Place the media at the exact paths listed there.
+1. Place the media at the exact paths listed there. Screenshots can supply separate English and Portuguese files through `files.en` and `files.pt`, with `file` as the shared fallback.
 2. Run `npm run build` again and refresh the preview.
 3. Run `npm run check:media` when all media are ready.
 
@@ -32,12 +40,13 @@ Missing media render as designed placeholders, with the expected filename visibl
 | File | Purpose |
 | --- | --- |
 | `content/site.mjs` | English/Portuguese copy, public version, release URLs and source commands |
-| `content/media.json` | Media paths, dimensions, titles, alternative text and recording briefs |
+| `content/media.json` | Shared/localized media paths, dimensions, titles, alternative text, recording briefs and video duration |
 | `scripts/build.mjs` | Shared page template; generates both HTML pages |
 | `styles.css` | Template styles and responsive/media additions |
 | `script.js` | Mobile menu, section-preserving language links, copy buttons and reduced-motion-aware reveals |
 | `assets/icon.svg` | Unchanged icon from the supplied template |
 | `scripts/serve.mjs` | Local preview server with video byte-range support |
+| `scripts/check.mjs` | Generated-page, localized-asset, metadata and accessibility checks |
 
 Edit the sources and rebuild rather than editing the generated HTML. Both pages contain their text at build time and work without JavaScript. Documentation links point to the current Django project, rather than importing the obsolete legacy wiki. No external fonts, trackers or CDN scripts are used.
 
@@ -50,7 +59,9 @@ npm test                 # rebuild and check both pages, links, IDs and media st
 npm run check:media      # also require all planned media files
 ```
 
-The normal check accepts placeholders. All current media slots are filled, including fresh screenshots of an original PDF character and a fictional campaign dashboard. The strict check verifies that every required asset is present. See [demo sources](assets/demo/README.md). Review the real recordings, timed captions, alt text and playback in a browser after adding them.
+The normal check accepts placeholders; the strict check requires every shared and localized asset. The current media set uses real VTT 0.2.1 captures, the published DnD 5e SRD 0.1.0 system and Translator 0.1.2: tabletop, character sheet, campaign dashboard and SRD compendium, plus a recorded product walkthrough. Both languages have screenshots, captions and descriptive transcripts. `durationSeconds` in the video metadata records the final edit's duration rather than a fixed marketing estimate.
+
+Both dragon images are retained: the illustrated video poster and the earlier supplied tabletop capture (`assets/images/table-overview.webp`). The latter appears in a secondary expandable gallery, with a visible thumbnail, and is distinct from the new 0.2.1 captures. The social preview remains a derivative of the illustrated poster. The Moonfall Abbey map and Seraphina Vale portrait were generated specifically for the new demonstration. The original Seren Ashford PDF remains a tutorial source, rather than the website's character-sheet screenshot. See [demo sources, prompts and hashes](assets/demo/README.md) and [media credits](THIRD_PARTY_NOTICES.md). Review playback, seeking, synchronized captions, alt text and mobile readability in a browser after changing media.
 
 Licensing and template attribution are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 

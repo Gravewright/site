@@ -1,0 +1,21 @@
+Gravewright 0.2.1 Alpha · Product showcase
+Descriptive transcript · 60 seconds
+
+00:00:00–00:00:03  Gravewright 0.2.1 Alpha — Your table. Your adventure.
+00:00:03–00:00:10  Explore Moonfall Abbey and move character tokens on the tabletop.
+00:00:10–00:00:19  Open the DnD 5e SRD sheet. Edit an ability score; the sheet saves automatically.
+00:00:19–00:00:22  Search the licensed SRD compendium for a dagger.
+00:00:22–00:00:32  Drag the dagger onto the sheet. It appears in the inventory and is saved.
+00:00:32–00:00:38  Review prepared spells, spell slots and character resources.
+00:00:38–00:00:47  Use the combat tracker to follow initiative and advance to the next turn.
+00:00:47–00:00:56  Send a message and roll dice. The results appear directly in chat.
+00:00:56–00:01:00  gravewright.com · Music: Volatile Reaction — Kevin MacLeod, CC BY 4.0.
+
+Real application recording: VTT 0.2.1, DnD 5e SRD 0.1.0, Translator 0.1.2. Fictional demonstration accounts and campaign; English interface. Portuguese interface screenshots accompany the video on the website.
+
+Music attribution
+Volatile Reaction — Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Changes: existing excerpt reused, looped, faded and volume-adjusted. No narration.

@@ -4,68 +4,100 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-All paths below are relative to the site directory. The `assets/images/` and `assets/videos/` folders already exist. Supply **3 images, 1 video, 1 poster, 2 caption files and 2 transcripts**.
+All paths below are relative to this repository root. This list derives from `content/media.json` and accompanies Gravewright **0.2.1 Alpha**. Dimensions, languages and duration must match the final files.
 
 **To replace:** copy files using the exact names, run `npm run build` and refresh. No HTML changes are needed. The build renders existing media and retains placeholders for missing files. To change filenames or alternative text, edit `content/media.json` and rebuild.
 
-**Important:** the alternative text below is prepared in advance and must match the final media. Revise it if the framing or demonstration changes. Capture the current version, not the legacy interface.
+**Important:** alternative text must match the final media. Revise it if the framing or demonstration changes. Use real captures of the current version with fictional data. Artwork provenance, prompts and hashes are in [assets/demo/README.md](assets/demo/README.md); credits and licenses are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Gravewright at the table
+## Your next encounter, ready to play
 
-- File: `assets/images/table-overview.webp`
-- Suggested dimensions: **1911 × 926**
-- English description / alt: Gravewright tabletop showing a lava-filled dungeon, a large dragon token, character tokens, lighting and the tabletop toolbars.
-- Portuguese description / alt: Mesa do Gravewright com uma masmorra cercada por lava, um grande token de dragão, tokens de personagens, iluminação e barras de ferramentas.
-
-
-Capture the current Alpha 0.1.0 tabletop with a prepared scene, tokens and visible lighting. Use content you can share.
-
-## The Dragon’s Legacy · Battle showcase
-
-- File: `assets/videos/table-session.mp4`
-- Suggested dimensions: **1920 × 1080**
-- English description / alt: Gravewright battle showcase with a lava-filled dungeon, a dragon token, lighting and fog controls, and character movement, accompanied by orchestral music.
-- Portuguese description / alt: Demonstração do Gravewright com masmorra de lava, token de dragão, controles de iluminação e névoa e movimento de personagens, acompanhada por música orquestral.
+- Default / fallback file: `assets/images/table-overview-021.webp`
+- Localized file (English): `assets/images/table-overview-021.webp`
+- Localized file (Português (Brasil)): `assets/images/table-overview-021.pt-BR.webp`
+- Dimensions: **1920 × 1080**
+- English description / alt: Gravewright 0.2.1 showing the original Moonfall Abbey map, character tokens and the current tabletop controls.
+- Portuguese description / alt: Gravewright 0.2.1 com o mapa original da Abadia de Moonfall, tokens de personagens e os controles atuais da mesa.
 
 
-51.1-second battle edit from the supplied recording. The poster is an original illustrated cover showing a red dragon and a volcanic fortress, with the Gravewright title. Music attribution is included in the end card, transcript and third-party notices.
+Fresh English and Brazilian Portuguese captures of published VTT 0.2.1 in an isolated fictional campaign. The abbey map and character illustration were created for this demonstration.
 
-- Video poster: `assets/images/table-session-cover.png` (1920 × 1080)
-- English captions: `assets/videos/table-session.en.vtt`
-- Portuguese captions: `assets/videos/table-session.pt-BR.vtt`
-- English transcript: `assets/videos/table-session.en.txt`
-- Portuguese transcript: `assets/videos/table-session.pt-BR.txt`
+## Gravewright 0.2.1 · Product showcase
+
+- Default / fallback file: `assets/videos/gravewright-021-showcase.mp4`
+- Dimensions: **1920 × 1080**
+- English description / alt: New recording of Gravewright 0.2.1 showing a prepared tabletop, the DnD 5e SRD sheet, compendium drag and drop, automatic saving and combat.
+- Portuguese description / alt: Nova gravação do Gravewright 0.2.1 mostrando uma mesa preparada, a ficha DnD 5e SRD, arraste do compêndio, salvamento automático e combate.
+- Final edit duration: **60 s**
+
+
+New recording of real published VTT 0.2.1, signed DnD 5e SRD 0.1.0 and Translator 0.1.2. Existing illustrated dragon cover preserved unchanged; bilingual descriptive captions and transcripts accompany the recording.
+
+- Video poster: `assets/images/table-session-cover.png`
+- English captions: `assets/videos/gravewright-021-showcase.en.vtt`
+- Portuguese captions: `assets/videos/gravewright-021-showcase.pt-BR.vtt`
+- English transcript: `assets/videos/gravewright-021-showcase.en.txt`
+- Portuguese transcript: `assets/videos/gravewright-021-showcase.pt-BR.txt`
 
 
 Video uses an `aria-label` and visible title because `<video>` does not support image-style `alt`. Use the description above to guide the transcript. The poster appears inside the player and shares its accessible context.
 
-## Your character, close to the story
 
-- File: `assets/images/pdf-character-sheet.webp`
-- Suggested dimensions: **1600 × 1000**
-- English description / alt: The original Seren Ashford PDF character sheet open in Gravewright, with editable health, energy, defense and attribute fields, abilities, equipment and notes.
-- Portuguese description / alt: Ficha PDF original de Seren Ashford aberta no Gravewright, com campos editáveis de vida, energia, defesa e atributos, habilidades, equipamentos e notas.
+Soundtrack: [Volatile Reaction — Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Preserve attribution in the end card, transcripts and third-party notices.
 
+## DnD 5e SRD · Seraphina Vale
 
-Fresh capture of the real Alpha application using an original editable demo PDF in an isolated sample campaign. Source PDF: assets/demo/Seren-Ashford.pdf.
-
-## A home for your campaigns
-
-- File: `assets/images/campaign-dashboard.webp`
-- Suggested dimensions: **1600 × 1000**
-- English description / alt: Gravewright campaign dashboard with The Verdant Vigil, The Drowned Crown and Ashfall Citadel, illustrated covers, participant icons and a control to create a campaign.
-- Portuguese description / alt: Painel do Gravewright com The Verdant Vigil, The Drowned Crown e Ashfall Citadel, capas ilustradas, ícones de participantes e controle para criar uma campanha.
+- Default / fallback file: `assets/images/dnd-character-sheet-010.webp`
+- Localized file (English): `assets/images/dnd-character-sheet-010.webp`
+- Localized file (Português (Brasil)): `assets/images/dnd-character-sheet-010.pt-BR.webp`
+- Dimensions: **1050 × 1120**
+- English description / alt: Seraphina Vale's real DnD 5e SRD 0.1.0 character sheet with an original ranger portrait, abilities, skills, health, equipment and rest controls.
+- Portuguese description / alt: Ficha real de Seraphina Vale no DnD 5e SRD 0.1.0, com retrato original de patrulheira, atributos, perícias, vida, equipamento e descansos.
 
 
-Fresh capture of the real Alpha dashboard using fictional campaigns and a sample account. New abbey, ocean-palace and volcanic-fortress illustrations were created for these demo campaigns.
+Native character window captured from the signed DnD 5e SRD 0.1.0 system in published VTT 0.2.1. Portuguese interface uses Translator 0.1.2.
+
+## Your campaigns, together
+
+- Default / fallback file: `assets/images/campaign-dashboard-021.webp`
+- Localized file (English): `assets/images/campaign-dashboard-021.webp`
+- Localized file (Português (Brasil)): `assets/images/campaign-dashboard-021.pt-BR.webp`
+- Dimensions: **1920 × 1080**
+- English description / alt: The current Gravewright dashboard with three fictional campaigns, new original covers and controls to create or join a table.
+- Portuguese description / alt: Painel atual do Gravewright com três campanhas fictícias, novas capas originais e controles para criar ou entrar em uma mesa.
+
+
+Fresh VTT 0.2.1 dashboard captures in both languages with fictional demo accounts; no live user campaigns or personal data.
+
+## From the SRD to your character
+
+- Default / fallback file: `assets/images/srd-compendium-010.webp`
+- Localized file (English): `assets/images/srd-compendium-010.webp`
+- Localized file (Português (Brasil)): `assets/images/srd-compendium-010.pt-BR.webp`
+- Dimensions: **1920 × 1080**
+- English description / alt: DnD 5e SRD compendium beside Seraphina's character sheet, with searchable licensed entries ready to drag onto the sheet.
+- Portuguese description / alt: Compêndio DnD 5e SRD ao lado da ficha de Seraphina, com entradas licenciadas pesquisáveis prontas para arrastar para a ficha.
+
+
+Real native compendium and system sheet. SRD entries remain in English; interface controls are captured in both English and Portuguese.
+
+## The Dragon’s Legacy · A world to explore
+
+- Default / fallback file: `assets/images/table-overview.webp`
+- Dimensions: **1911 × 926**
+- English description / alt: The preserved Gravewright tabletop capture of a lava-filled dungeon, a large dragon token and a party of adventurers.
+- Portuguese description / alt: Captura preservada da mesa do Gravewright com uma masmorra de lava, um grande token de dragão e um grupo de aventureiros.
+
+
+Original dragon tabletop image preserved unchanged at the user’s request. It illustrates an earlier tabletop interface; the other product captures show VTT 0.2.1.
 
 ## Formats and accessibility
 
-- Images and posters: WebP. Keep text legible, aspect ratios consistent and file sizes reasonable (ideally around 600 KB or less per screenshot without sacrificing readability).
-- Videos: MP4 with H.264 and AAC if audio is present; 1080p is sufficient. Enable `faststart` on export. Playback is not automatic and media uses `preload="none"`.
+- Interface screenshots: localized WebP files. Preserve the original artwork and illustrated poster PNGs; the social image uses JPEG. Keep text legible, aspect ratios consistent and screenshot file sizes reasonable.
+- Videos: MP4 with H.264 and AAC if audio is present; 1080p is sufficient. Enable `faststart` on export. Playback is not automatic and media uses `preload="none"`. Record the final duration as `durationSeconds`.
 - Captions: UTF-8 WebVTT in both languages, timed against the final recording. Include speech and relevant sounds.
 - Transcripts: UTF-8 text in both languages, including speech and visual actions needed to understand the demonstration.
-- For silent recordings, describe the actions in the text and explanatory captions. Do not leave fictional sample cues in the final caption files.
+- For silent recordings, describe the actions in text and explanatory captions. Do not leave fictional sample cues in the final caption files.
 
 ### Caption structure
 

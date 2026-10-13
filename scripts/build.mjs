@@ -2,7 +2,7 @@
 import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import { locales, project, release, download, commands, publicVersion } from '../content/site.mjs';
+import { locales, project, release, download, commands, publicVersion, dndProject, dndRelease } from '../content/site.mjs';
 import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
 
@@ -19,28 +19,38 @@ const steps = (items) => `<ol class="focus-grid beginner-grid setup-steps">${ite
 async function figure(id, locale, hero = false) {
   const item = media.find(item => item.id === id);
   const t = locales[locale];
-  const ready = await exists(item.file);
+  const mediaFile = item.files?.[locale] || item.file;
+  const ready = await exists(mediaFile);
   let visual;
   if (ready && item.type === 'image') {
-    visual = `<img src="${item.file}" alt="${escape(item.alt[locale])}" width="${item.width}" height="${item.height}" ${hero ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+    visual = `<img src="${mediaFile}" alt="${escape(item.alt[locale])}" width="${item.width}" height="${item.height}" ${hero ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
   } else if (ready) {
     const hasPoster = await exists(item.poster);
     const tracks = [];
     for (const [lang, path] of Object.entries(item.captions)) {
       if (await exists(path)) tracks.push(`<track kind="captions" src="${path}" srclang="${locales[lang].lang}" label="${lang === 'en' ? 'English' : 'Português (Brasil)'}"${lang === locale ? ' default' : ''}>`);
     }
-    visual = `<video controls playsinline preload="none" width="${item.width}" height="${item.height}" aria-label="${escape(item.alt[locale])}"${hasPoster ? ` poster="${item.poster}"` : ''}><source src="${item.file}" type="video/mp4">${tracks.join('')}<p>${escape(t.videoFallback)} ${link(item.file, t.videoDownload)}</p></video>`;
+    visual = `<video controls playsinline preload="none" width="${item.width}" height="${item.height}" aria-label="${escape(item.alt[locale])}"${hasPoster ? ` poster="${item.poster}"` : ''}><source src="${mediaFile}" type="video/mp4">${tracks.join('')}<p>${escape(t.videoFallback)} ${link(mediaFile, t.videoDownload)}</p></video>`;
   } else {
     // Missing assets are intentional. Do not request nonexistent URLs or show broken media controls.
     visual = `<div class="media-placeholder" role="img" aria-label="${escape(t.mediaSoon + '. ' + item.alt[locale])}" style="--media-ratio:${item.width}/${item.height}">
       <span class="placeholder-corner" aria-hidden="true">${item.type === 'video' ? '▶' : '◇'} ${escape(t[item.type])}</span>
       <div class="placeholder-scene" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="placeholder-copy" aria-hidden="true"><span class="section-label">${escape(t.mediaSoon)}</span><strong>${escape(item.title[locale])}</strong><code>${escape(item.file)}</code><small>${item.width} × ${item.height}${item.type === 'video' ? ' · MP4' : ' · WebP'}</small></div>
+      <div class="placeholder-copy" aria-hidden="true"><span class="section-label">${escape(t.mediaSoon)}</span><strong>${escape(item.title[locale])}</strong><code>${escape(mediaFile)}</code><small>${item.width} × ${item.height}${item.type === 'video' ? ' · MP4' : ' · WebP'}</small></div>
     </div>`;
   }
   const transcript = ready && item.type === 'video' && await exists(item.transcripts[locale]) ? ` ${link(item.transcripts[locale], t.transcript, 'text-link')}` : '';
   const music = ready && item.music ? `<small class="media-credit">${t.musicCredit}: ${link(item.music.url, item.music.title + ' — ' + item.music.artist)} · ${link(item.music.licenseUrl, item.music.license)}</small>` : '';
   return `<figure class="media-frame${hero ? ' media-frame--hero' : ''}" data-media="${id}" data-state="${ready ? 'ready' : 'placeholder'}">${visual}<figcaption><span>${escape(item.title[locale])}</span>${transcript}${music}</figcaption></figure>`;
+}
+
+async function sceneGallery(locale) {
+  const item = media.find(item => item.id === 'dragon');
+  if (!item) return '';
+  const t = locales[locale];
+  const path = item.files?.[locale] || item.file;
+  const preview = await exists(path) ? `<img src="${path}" alt="" width="${item.width}" height="${item.height}" loading="lazy" decoding="async">` : '';
+  return `<details class="scene-gallery"><summary>${preview}<span><strong>${escape(t.galleryTitle)}</strong><span>${escape(t.galleryCopy)}</span></span><span class="gallery-toggle" aria-hidden="true"></span></summary>${await figure('dragon', locale)}</details>`;
 }
 
 for (const [locale, t] of Object.entries(locales)) {
@@ -76,6 +86,7 @@ for (const [locale, t] of Object.entries(locales)) {
       <p class="hero-lead">${t.lead}</p><p class="hero-meta">${t.intro}</p>
       <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#experience', t.explore, 'button button-secondary')}</div>
       <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(docs, t.documentation + ' ↗')}</div>
+      ${link('#systems', t.systemHint, 'system-teaser')}
     </div>
     <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> Alpha</span></div>
       <div class="platform-list">${t.pillars.map(([title, copy], i) => `<article><span>0${i+1}</span><div><h2>${title}</h2><p>${copy}</p></div></article>`).join('')}</div>
@@ -84,9 +95,12 @@ for (const [locale, t] of Object.entries(locales)) {
   <div class="media-showcase shell">${await figure('table', locale, true)}</div>
   <section class="section shell" id="about">${heading(t.aboutLabel, t.aboutTitle)}<div class="section-copy"><p>${t.aboutCopy}</p></div>${cards(t.features)}</section>
   <section class="section shell" id="experience">${heading(t.experienceLabel, t.experienceTitle)}<div class="section-copy"><p>${t.experienceCopy}</p></div>
-    ${await figure('session', locale)}<div class="focus-grid beginner-grid">${t.roles.map(([label, title, copy]) => `<article><span class="step-number">${label}</span><h3>${title}</h3><p>${copy}</p></article>`).join('')}</div>
+    ${await figure('session', locale)}${await sceneGallery(locale)}<div class="focus-grid beginner-grid">${t.roles.map(([label, title, copy]) => `<article><span class="step-number">${label}</span><h3>${title}</h3><p>${copy}</p></article>`).join('')}</div>
   </section>
-  <section class="section shell" id="characters">${heading(t.sheetsLabel, t.sheetsTitle)}<div class="section-copy"><p>${t.sheetsCopy}</p></div>${await figure('sheet', locale)}</section>
+  <section class="section shell" id="characters">${heading(t.sheetsLabel, t.sheetsTitle)}<div class="section-copy"><p>${t.sheetsCopy}</p></div>
+    <div class="sheet-options">${t.sheetOptions.map(([title, copy]) => `<article><h3>${escape(title)}</h3><p>${escape(copy)}</p></article>`).join('')}</div>
+    ${await figure('sheet', locale)}
+  </section>
   <section class="section shell" id="release">${heading(t.releaseLabel, t.releaseTitle)}<div class="section-copy"><p>${t.releaseCopy}</p>${link(release, t.notes + ' ↗', 'text-link')}</div>${await figure('campaign', locale)}${cards(t.releaseFeatures)}</section>
   <section class="section shell" id="install">${heading(t.installLabel, t.installTitle)}<div class="section-copy"><p>${t.installCopy}</p><p class="requirements-line">${t.requirement}</p></div>
     ${steps(t.steps)}<div class="install-actions">${link(download, t.download, 'button button-primary')}${link(doc('windows-runner'), t.runnerGuide + ' ↗', 'text-link')}</div>
@@ -97,6 +111,15 @@ for (const [locale, t] of Object.entries(locales)) {
     </div>
   </section>
   <section class="section shell" id="extensions">${heading(t.extensionsLabel, t.extensionsTitle)}<div class="section-copy"><p>${t.extensionsCopy}</p><div class="quick-links">${link('https://github.com/Gravewright/marketplace', t.marketplace + ' ↗')}${link(doc('api'), t.api + ' ↗')}${link(doc('modules'), t.modules + ' ↗')}</div></div>
+    <article class="system-showcase" id="systems">
+      <div class="system-copy"><p class="section-label">${escape(t.systemLabel)}</p><div class="system-heading"><h3>${escape(t.systemTitle)}</h3><span class="version-label">${escape(t.systemVersion)}</span></div>
+        <p>${escape(t.systemCopy)}</p><div class="system-actions">${link(dndProject, t.systemAction + ' ↗', 'button button-primary')}${link(dndRelease, t.systemDownload + ' ↗', 'text-link')}</div>
+      </div>
+      <dl class="system-facts">${t.systemFacts.map(([value, label]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`).join('')}</dl>
+      <p class="system-note">${escape(t.systemNote)}</p>
+    </article>
+    ${media.some(item => item.id === 'compendium') ? await figure('compendium', locale) : ''}
+    <div class="extension-grid">${t.extensionCards.map(([title, version, copy, url]) => `<article><div class="extension-heading"><h3>${escape(title)}</h3><span class="version-label">${escape(version)}</span></div><p>${escape(copy)}</p>${link(url, t.extensionAction + ' ↗', 'text-link')}</article>`).join('')}</div>
     <div class="license-card"><span class="license-mark" aria-hidden="true">&lt;/&gt;</span><div><h3>${t.licenseTitle}</h3><p>${t.licenseCopy}</p>${link(file('LICENSING'), t.licensing + ' ↗', 'text-link')}</div></div>
   </section>
   <section class="section shell" id="questions">${heading(t.faqLabel, t.faqTitle)}<div class="faq-list">${t.faq.map(([q, a]) => `<details><summary>${escape(q)}</summary><p>${escape(a)}</p></details>`).join('')}</div></section>
