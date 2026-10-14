@@ -8,7 +8,7 @@ export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
 export const dndRelease = `${dndProject}/releases/tag/v0.1.0`;
 export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
 export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
-export const swadeVersion = '0.1.0';
+export const swadeVersion = '0.1.1';
 export const swadeRelease = `${swadeProject}/releases/tag/v${swadeVersion}`;
 export const commands = "git clone https://github.com/Gravewright/gravewright.git\ncd gravewright\nuv sync --locked\ncp -n .env.example .env\nuv run --locked python manage.py migrate\nuv run --locked python main.py";
 
@@ -195,15 +195,15 @@ export const locales = {
     "systemDownload": "Get version 0.1.0",
     "swadeLabel": "Optional compatibility package · Available in the Marketplace",
     "swadeDetails": "Explore sheets, item templates and automation",
-    "swadeCopy": "Free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
+    "swadeCopy": "One system package brings free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
     "swadeFacts": [
       ["13", "Empty item templates"],
       ["3", "Action-deck styles"],
       ["en / pt-BR / es", "Interface languages"]
     ],
-    "swadeNote": "No compendiums or rulebook text are included. Requires Gravewright 0.2.3 or newer and the matching Server Rules 0.1.0 package; see the repository for installation instructions. English is built in; Portuguese and Spanish use the official Translator module.",
+    "swadeNote": "No compendiums or rulebook text are included. Version 0.1.1 works on Gravewright 0.2.3. Install the single package from Systems and select it for your table. The GM runs its combat automation from the table. English is built in; Portuguese and Spanish use the official Translator module.",
     "swadeAction": "Explore the SWADE package",
-    "swadeDownload": "Get version 0.1.0",
+    "swadeDownload": "Get version 0.1.1",
     "extensionCards": [
       [
         "Translator",
@@ -255,6 +255,10 @@ export const locales = {
       [
         "Can I play with DnD 5e SRD?",
         "Yes. Install the system and its Server Rules companion from the Marketplace on VTT 0.2.1 or newer. Choose the 2014 or 2024 rules profile. It includes dedicated sheets and partial licensed SRD collections; it does not include every D&D book or official artwork."
+      ],
+      [
+        "How do I install the Savage Worlds compatibility package?",
+        "On VTT 0.2.3, install version 0.1.1 from Systems and select it when creating your table. Sheets, item templates, assets and automation belong to that one system package. The GM advances combat from the table; no separate rules module is required."
       ],
       [
         "Can I add my own systems and modules?",
@@ -462,15 +466,15 @@ export const locales = {
     "systemDownload": "Baixar a versão 0.1.0",
     "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
     "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
-    "swadeCopy": "Fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
+    "swadeCopy": "Um único pacote de sistema reúne fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
     "swadeFacts": [
       ["13", "Modelos vazios de itens"],
       ["3", "Estilos de baralho de ação"],
       ["en / pt-BR / es", "Idiomas da interface"]
     ],
-    "swadeNote": "O pacote não inclui compêndios nem textos do livro. Requer Gravewright 0.2.3 ou superior e o complemento Server Rules 0.1.0 correspondente; consulte as instruções de instalação no repositório. Inglês está disponível por padrão; português e espanhol usam o módulo oficial Translator.",
+    "swadeNote": "O pacote não inclui compêndios nem textos do livro. A versão 0.1.1 funciona no Gravewright 0.2.3. Instale o pacote único em Sistemas e selecione-o para a mesa. O mestre conduz as automações de combate pela mesa. Inglês está disponível por padrão; português e espanhol usam o módulo oficial Translator.",
     "swadeAction": "Conheça o pacote SWADE",
-    "swadeDownload": "Baixar a versão 0.1.0",
+    "swadeDownload": "Baixar a versão 0.1.1",
     "extensionCards": [
       [
         "Translator",
@@ -522,6 +526,10 @@ export const locales = {
       [
         "Posso jogar com o DnD 5e SRD?",
         "Sim. Instale o sistema e o complemento Server Rules pelo Marketplace no VTT 0.2.1 ou mais recente. Escolha as regras de 2014 ou 2024. O pacote inclui fichas próprias e coleções parciais licenciadas do SRD; não inclui todos os livros de D&D nem artes oficiais."
+      ],
+      [
+        "Como instalo o pacote de compatibilidade Savage Worlds?",
+        "No VTT 0.2.3, instale a versão 0.1.1 em Sistemas e selecione-a ao criar sua mesa. Fichas, modelos de itens, arquivos e automações pertencem a esse único pacote de sistema. O mestre avança o combate pela mesa; não há módulo separado de regras."
       ],
       [
         "Posso adicionar meus próprios sistemas e módulos?",
