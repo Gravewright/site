@@ -5,7 +5,7 @@ export const publicVersion = '0.2.3';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
-export const dndRelease = `${dndProject}/releases/tag/v0.1.0`;
+export const dndRelease = `${dndProject}/releases/tag/v0.1.1`;
 export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
 export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
 export const swadeVersion = '0.1.1';
@@ -174,7 +174,7 @@ export const locales = {
     "extensionsCopy": "Gravewright provides the tabletop. Independent systems bring game-specific sheets and rules; modules add tools such as translations and 3D dice. Use a compatible system or mapped PDFs for your group’s game, and build your own extensions through the documented API.",
     "systemLabel": "Optional system example · Available in the Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.0 Alpha",
+    "systemVersion": "0.1.1",
     "systemCopy": "DnD 5e SRD is one independent system you can install in Gravewright. It adds dedicated sheets, licensed compendiums and supported automations for the 2014 and 2024 rules.",
     "systemFacts": [
       [
@@ -190,9 +190,9 @@ export const locales = {
         "Selectable rules"
       ]
     ],
-    "systemNote": "Partial SRD collections; compendium content is in English. Requires VTT 0.2.1+ and DnD 5e SRD Server Rules 0.1.0 for combat automation. Install both system packages from the Marketplace.",
+    "systemNote": "Partial SRD collections; compendium content is in English. Version 0.1.1 works on VTT 0.2.3. Install one package from Systems: sheets, compendiums and combat automation stay together. The GM advances combat from the table.",
     "systemAction": "Explore DnD 5e SRD",
-    "systemDownload": "Get version 0.1.0",
+    "systemDownload": "Get version 0.1.1",
     "swadeLabel": "Optional compatibility package · Available in the Marketplace",
     "swadeDetails": "Explore sheets, item templates and automation",
     "swadeCopy": "One system package brings free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
@@ -254,7 +254,7 @@ export const locales = {
       ],
       [
         "Can I play with DnD 5e SRD?",
-        "Yes. Install the system and its Server Rules companion from the Marketplace on VTT 0.2.1 or newer. Choose the 2014 or 2024 rules profile. It includes dedicated sheets and partial licensed SRD collections; it does not include every D&D book or official artwork."
+        "Yes. On VTT 0.2.3, install DnD 5e SRD 0.1.1 from Systems and select it for your table. One package includes dedicated sheets, combat automation and partial licensed SRD collections. Choose the 2014 or 2024 rules profile. The GM advances combat from the table. Other D&D books and official artwork are not included."
       ],
       [
         "How do I install the Savage Worlds compatibility package?",
@@ -445,7 +445,7 @@ export const locales = {
     "extensionsCopy": "O Gravewright oferece a mesa virtual. Sistemas independentes trazem fichas e regras de cada jogo; módulos acrescentam ferramentas como traduções e dados 3D. Use um sistema compatível ou PDFs mapeados para o jogo do grupo e crie suas extensões com a API documentada.",
     "systemLabel": "Exemplo de sistema opcional · Disponível no Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.0 Alpha",
+    "systemVersion": "0.1.1",
     "systemCopy": "DnD 5e SRD é um dos sistemas independentes que você pode instalar no Gravewright. Ele acrescenta fichas próprias, compêndios licenciados e automações compatíveis com as regras de 2014 e 2024.",
     "systemFacts": [
       [
@@ -461,9 +461,9 @@ export const locales = {
         "Regras à escolha"
       ]
     ],
-    "systemNote": "Coleções parciais do SRD; o conteúdo dos compêndios está em inglês. Requer VTT 0.2.1+ e DnD 5e SRD Server Rules 0.1.0 para as automações de combate. Instale os dois pacotes do sistema pelo Marketplace.",
+    "systemNote": "Coleções parciais do SRD; o conteúdo dos compêndios está em inglês. A versão 0.1.1 funciona no VTT 0.2.3. Instale um único pacote em Sistemas: fichas, compêndios e automações de combate ficam juntos. O mestre avança o combate pela mesa.",
     "systemAction": "Conheça o DnD 5e SRD",
-    "systemDownload": "Baixar a versão 0.1.0",
+    "systemDownload": "Baixar a versão 0.1.1",
     "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
     "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
     "swadeCopy": "Um único pacote de sistema reúne fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
@@ -525,7 +525,7 @@ export const locales = {
       ],
       [
         "Posso jogar com o DnD 5e SRD?",
-        "Sim. Instale o sistema e o complemento Server Rules pelo Marketplace no VTT 0.2.1 ou mais recente. Escolha as regras de 2014 ou 2024. O pacote inclui fichas próprias e coleções parciais licenciadas do SRD; não inclui todos os livros de D&D nem artes oficiais."
+        "Sim. No VTT 0.2.3, instale DnD 5e SRD 0.1.1 em Sistemas e selecione-o para sua mesa. Um único pacote reúne fichas próprias, automações de combate e coleções parciais licenciadas do SRD. Escolha as regras de 2014 ou 2024. O mestre avança o combate pela mesa. Outros livros de D&D e artes oficiais não estão incluídos."
       ],
       [
         "Como instalo o pacote de compatibilidade Savage Worlds?",

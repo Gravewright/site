@@ -7,7 +7,7 @@ Site de apresentação do Gravewright, um **VTT universal**, com páginas em ing
 | Produto disponível | Release | Detalhes |
 | --- | --- | --- |
 | Gravewright VTT | [0.2.3 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.3) | Instalador Windows x64 e distribuição do código-fonte |
-| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Sistema independente opcional mostrado como exemplo: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD e salvamento automático |
+| DnD 5e SRD | [0.1.1](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.1) | Um pacote de sistema opcional: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD, salvamento automático e automações de combate |
 | Savage Worlds Compatibility Package for Gravewright | [0.1.1](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.1) | Um pacote de sistema com fichas gratuitas de personagens/NPCs, modelos vazios de itens, automações de SWADE e três estilos de baralho de ação; sem compêndios nem textos do livro |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Tradução da interface para português brasileiro e API de tradução para extensões |
 
@@ -15,7 +15,7 @@ A página principal apresenta primeiro o VTT universal e suas ferramentas comuns
 
 O [pacote de compatibilidade Savage Worlds](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) aparece junto do exemplo DnD, com links do repositório e da versão nos dois idiomas do site. A versão **0.1.1** funciona no **Gravewright 0.2.3 já publicado**. Instale o pacote completo em **Sistemas** e selecione-o para a mesa. Fichas, modelos, arquivos e automações ficam juntos no pacote do sistema; o mestre avança o combate pela mesa. Os usuários criam o conteúdo de suas campanhas; inglês está disponível por padrão, e português/espanhol usam o módulo oficial Translator.
 
-Para usar o exemplo DnD, instale **DnD 5e SRD 0.1.0** e o complemento **Server Rules 0.1.0** correspondente pelo [Marketplace](https://github.com/Gravewright/marketplace) no VTT **0.2.1 ou superior**. Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado; esse conteúdo está em inglês. Essas fichas, o salvamento automático e as regras pertencem ao sistema. O core do VTT permanece independente das regras dos sistemas.
+Para usar o exemplo DnD, instale **DnD 5e SRD 0.1.1** em **Sistemas** pelo [Marketplace](https://github.com/Gravewright/marketplace) no **VTT 0.2.3 já publicado** e selecione-o para sua mesa. Fichas, compêndios e automações pertencem a esse único pacote; o mestre avança o combate pela mesa. Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado, em inglês. O core e a release do VTT permanecem inalterados.
 
 ## Abrir localmente
 

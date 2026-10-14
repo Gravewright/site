@@ -7,7 +7,7 @@ Product website for Gravewright, a **universal virtual tabletop**, with English 
 | Available product | Release | Details |
 | --- | --- | --- |
 | Gravewright VTT | [0.2.3 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.3) | Windows x64 installer and source distribution |
-| DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Optional independent system shown as an example: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, and automatic saving |
+| DnD 5e SRD | [0.1.1](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.1) | One optional system package: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, automatic saving and combat automation |
 | Savage Worlds Compatibility Package for Gravewright | [0.1.1](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.1) | One system package with free character/NPC sheets, empty item templates, SWADE automation and three action-deck styles; no compendiums or rulebook text |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Brazilian Portuguese interface translation and an API for extension translations |
 
@@ -15,7 +15,7 @@ The main page leads with the universal VTT and its shared tools. The DnD sheet a
 
 The [Savage Worlds compatibility package](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) appears alongside the DnD example, with repository and release links in both website languages. Version **0.1.1** works on the released **Gravewright 0.2.3**. Install the complete package from **Systems** and select it for your table. Sheets, templates, assets and automation stay together in the system package; the GM advances combat from the table. Users create their own campaign content; English is built in, and Portuguese/Spanish use the official Translator module.
 
-To use the DnD example, install both **DnD 5e SRD 0.1.0** and its matching **Server Rules 0.1.0** companion from the [Marketplace](https://github.com/Gravewright/marketplace) on VTT **0.2.1 or newer**. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections; compendium content is currently in English. These sheets, automatic saving and rules belong to that system. The VTT core stays independent of game rules.
+To use the DnD example, install **DnD 5e SRD 0.1.1** from **Systems** in the [Marketplace](https://github.com/Gravewright/marketplace) on the released **VTT 0.2.3**, then select it for your table. Sheets, compendiums and automation belong to this one package; the GM advances combat from the table. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections in English. The VTT core and its release remain unchanged.
 
 ## Preview
 
