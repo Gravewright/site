@@ -3,7 +3,7 @@ import { readFile, access } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
-import { locales, download, release, publicVersion, dndProject, dndRelease } from '../content/site.mjs';
+import { locales, download, release, publicVersion, dndProject, dndRelease, swadeProject, swadeRelease } from '../content/site.mjs';
 import { socialImage } from './seo.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const media = JSON.parse(await readFile(resolve(root, 'content/media.json'), 'utf8'));
@@ -58,6 +58,7 @@ for (const [locale, t] of Object.entries(locales)) {
   assert(html.includes(`<html lang="${t.lang}"`));
   assert(html.includes(download) && html.includes(release));
   assert(html.includes(dndProject) && html.includes(dndRelease), 'Missing available DnD system links');
+  assert(html.includes(swadeProject) && html.includes(swadeRelease), 'Missing available Savage Worlds package links');
   assert(!/Beta 4|SDK 1 RC|v1\.0\.0-beta|PowerShell|127\.0\.0\.1:8000|wiki\/pages/.test(html));
   for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(/\balt="[^"]*"/.test(image[0]), 'Missing image alt');
   for (const video of html.matchAll(/<video\b[^>]*>/g)) {

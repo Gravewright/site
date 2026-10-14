@@ -2,15 +2,18 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.2.2 Alpha**. The site presents shared tabletop tools: maps, tokens, measurement, dice, journals, campaign preparation and atmosphere. Groups choose compatible system extensions or PDF sheets for their games; rules and automations come from the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.2.3 Alpha**. The site presents shared tabletop tools: maps, tokens, measurement, dice, journals, campaign preparation and atmosphere. Groups choose compatible system extensions or PDF sheets for their games; rules and automations come from the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
 
 | Available product | Release | Details |
 | --- | --- | --- |
-| Gravewright VTT | [0.2.2 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.2) | Windows x64 installer and source distribution |
+| Gravewright VTT | [0.2.3 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.2.3) | Windows x64 installer and source distribution |
 | DnD 5e SRD | [0.1.0 Alpha](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.0) | Optional independent system shown as an example: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, and automatic saving |
+| Savage Worlds Compatibility Package for Gravewright | [0.1.0](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.0) | Free character/NPC sheets, empty item templates, SWADE automation and three action-deck styles; no compendiums or rulebook text |
 | Translator | [0.1.2](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.2) | Brazilian Portuguese interface translation and an API for extension translations |
 
 The main page leads with the universal VTT and its shared tools. The DnD sheet and compendium images remain in an optional system example, collapsed by default near the extensions section. PDF and system sheets are presented as choices; no particular ruleset is required by the platform.
+
+The [Savage Worlds compatibility package](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) appears alongside the DnD example, with repository and release links in both website languages. It requires **Gravewright 0.2.3 or newer** and its matching **Server Rules 0.1.0** package. Users create their own campaign content; English is built in, and Portuguese/Spanish use the official Translator module.
 
 To use the DnD example, install both **DnD 5e SRD 0.1.0** and its matching **Server Rules 0.1.0** companion from the [Marketplace](https://github.com/Gravewright/marketplace) on VTT **0.2.1 or newer**. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections; compendium content is currently in English. These sheets, automatic saving and rules belong to that system. The VTT core stays independent of game rules.
 

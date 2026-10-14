@@ -2,7 +2,7 @@
 import { readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import { locales, project, release, download, commands, publicVersion, dndProject, dndRelease } from '../content/site.mjs';
+import { locales, project, release, download, commands, publicVersion, dndProject, dndRelease, swadeProject, swadeName, swadeVersion, swadeRelease } from '../content/site.mjs';
 import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
 
@@ -121,6 +121,15 @@ for (const [locale, t] of Object.entries(locales)) {
     </article>
     ${await figure('sheet', locale)}
     ${media.some(item => item.id === 'compendium') ? await figure('compendium', locale) : ''}
+    </details>
+    <details class="system-example" id="savage-worlds"><summary><span><span class="section-label">${escape(t.swadeLabel)}</span><strong>${escape(swadeName)}</strong><span class="system-example-hint">${escape(t.swadeDetails)}</span></span><span class="version-label">${escape(swadeVersion)}</span><span class="gallery-toggle" aria-hidden="true"></span></summary>
+    <article class="system-showcase">
+      <div class="system-copy"><p class="section-label">${escape(t.swadeLabel)}</p><div class="system-heading"><h3>${escape(swadeName)}</h3><span class="version-label">${escape(swadeVersion)}</span></div>
+        <p>${escape(t.swadeCopy)}</p><div class="system-actions">${link(swadeProject, t.swadeAction + ' ↗', 'button button-primary')}${link(swadeRelease, t.swadeDownload + ' ↗', 'text-link')}</div>
+      </div>
+      <dl class="system-facts">${t.swadeFacts.map(([value, label]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`).join('')}</dl>
+      <p class="system-note">${escape(t.swadeNote)}</p>
+    </article>
     </details>
     <div class="license-card"><span class="license-mark" aria-hidden="true">&lt;/&gt;</span><div><h3>${t.licenseTitle}</h3><p>${t.licenseCopy}</p>${link(file('LICENSING'), t.licensing + ' ↗', 'text-link')}</div></div>
   </section>

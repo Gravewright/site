@@ -1,11 +1,15 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.2.2';
+export const publicVersion = '0.2.3';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
 export const dndRelease = `${dndProject}/releases/tag/v0.1.0`;
+export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
+export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
+export const swadeVersion = '0.1.0';
+export const swadeRelease = `${swadeProject}/releases/tag/v${swadeVersion}`;
 export const commands = "git clone https://github.com/Gravewright/gravewright.git\ncd gravewright\nuv sync --locked\ncp -n .env.example .env\nuv run --locked python manage.py migrate\nuv run --locked python main.py";
 
 export const locales = {
@@ -35,7 +39,7 @@ export const locales = {
     "explore": "See Gravewright in action",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.2.2 Alpha · Windows x64 installer included",
+    "downloadHint": "Available now: 0.2.3 Alpha · Windows x64 installer included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -114,8 +118,8 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Your next session starts with 0.2.2 Alpha.",
-    "releaseCopy": "Gravewright 0.2.2 Alpha expands the shared tabletop: native item windows, faster access to compendiums and a combat framework for independent systems. Prepare your campaign and choose the extensions that fit the way you play.",
+    "releaseTitle": "Your next session starts with 0.2.3 Alpha.",
+    "releaseCopy": "Gravewright 0.2.3 Alpha improves native card decks, extension customization and window translations. Prepare your campaign and choose independent systems with their own sheets and automation.",
     "releaseFeatures": [
       [
         "Find what the session needs",
@@ -189,6 +193,17 @@ export const locales = {
     "systemNote": "Partial SRD collections; compendium content is in English. Requires VTT 0.2.1+ and DnD 5e SRD Server Rules 0.1.0 for combat automation. Install both system packages from the Marketplace.",
     "systemAction": "Explore DnD 5e SRD",
     "systemDownload": "Get version 0.1.0",
+    "swadeLabel": "Optional compatibility package · Available in the Marketplace",
+    "swadeDetails": "Explore sheets, item templates and automation",
+    "swadeCopy": "Free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
+    "swadeFacts": [
+      ["13", "Empty item templates"],
+      ["3", "Action-deck styles"],
+      ["en / pt-BR / es", "Interface languages"]
+    ],
+    "swadeNote": "No compendiums or rulebook text are included. Requires Gravewright 0.2.3 or newer and the matching Server Rules 0.1.0 package; see the repository for installation instructions. English is built in; Portuguese and Spanish use the official Translator module.",
+    "swadeAction": "Explore the SWADE package",
+    "swadeDownload": "Get version 0.1.0",
     "extensionCards": [
       [
         "Translator",
@@ -234,8 +249,8 @@ export const locales = {
         "Your campaigns stay on your host. The default Windows installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.2.2 available to download?",
-        "Yes. Gravewright 0.2.2 Alpha is available now with the Windows installer. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
+        "Is 0.2.3 available to download?",
+        "Yes. Gravewright 0.2.3 Alpha is available now with the Windows installer. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
       ],
       [
         "Can I play with DnD 5e SRD?",
@@ -291,7 +306,7 @@ export const locales = {
     "explore": "Veja o Gravewright em ação",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.2.2 Alpha · Instalador Windows x64 incluído",
+    "downloadHint": "Disponível agora: 0.2.3 Alpha · Instalador Windows x64 incluído",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -370,8 +385,8 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Sua próxima sessão começa com a 0.2.2 Alpha.",
-    "releaseCopy": "O Gravewright 0.2.2 Alpha amplia as ferramentas da mesa: janelas nativas de itens, acesso mais rápido a compêndios e uma estrutura de combate para sistemas independentes. Prepare sua campanha e escolha as extensões que combinam com sua forma de jogar.",
+    "releaseTitle": "Sua próxima sessão começa com a 0.2.3 Alpha.",
+    "releaseCopy": "O Gravewright 0.2.3 Alpha aprimora os baralhos nativos, a personalização de extensões e a tradução das janelas. Prepare sua campanha e escolha sistemas independentes com suas próprias fichas e automações.",
     "releaseFeatures": [
       [
         "Encontre o que a sessão precisa",
@@ -445,6 +460,17 @@ export const locales = {
     "systemNote": "Coleções parciais do SRD; o conteúdo dos compêndios está em inglês. Requer VTT 0.2.1+ e DnD 5e SRD Server Rules 0.1.0 para as automações de combate. Instale os dois pacotes do sistema pelo Marketplace.",
     "systemAction": "Conheça o DnD 5e SRD",
     "systemDownload": "Baixar a versão 0.1.0",
+    "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
+    "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
+    "swadeCopy": "Fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
+    "swadeFacts": [
+      ["13", "Modelos vazios de itens"],
+      ["3", "Estilos de baralho de ação"],
+      ["en / pt-BR / es", "Idiomas da interface"]
+    ],
+    "swadeNote": "O pacote não inclui compêndios nem textos do livro. Requer Gravewright 0.2.3 ou superior e o complemento Server Rules 0.1.0 correspondente; consulte as instruções de instalação no repositório. Inglês está disponível por padrão; português e espanhol usam o módulo oficial Translator.",
+    "swadeAction": "Conheça o pacote SWADE",
+    "swadeDownload": "Baixar a versão 0.1.0",
     "extensionCards": [
       [
         "Translator",
@@ -490,8 +516,8 @@ export const locales = {
         "As campanhas ficam no seu host. A instalação Windows padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.2.2 já está disponível para baixar?",
-        "Sim. O Gravewright 0.2.2 Alpha já está disponível com o instalador Windows. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
+        "A 0.2.3 já está disponível para baixar?",
+        "Sim. O Gravewright 0.2.3 Alpha já está disponível com o instalador Windows. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
       ],
       [
         "Posso jogar com o DnD 5e SRD?",
