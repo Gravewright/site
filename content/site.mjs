@@ -1,14 +1,14 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.2.3';
+export const publicVersion = '0.3.0';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
-export const dndRelease = `${dndProject}/releases/tag/v0.1.1`;
+export const dndRelease = `${dndProject}/releases/tag/v0.1.2`;
 export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
 export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
-export const swadeVersion = '0.1.1';
+export const swadeVersion = '0.1.2';
 export const swadeRelease = `${swadeProject}/releases/tag/v${swadeVersion}`;
 export const commands = "git clone https://github.com/Gravewright/gravewright.git\ncd gravewright\nuv sync --locked\ncp -n .env.example .env\nuv run --locked python manage.py migrate\nuv run --locked python main.py";
 
@@ -20,14 +20,14 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright — A Universal Virtual Tabletop for RPGs",
-    "description": "A free, open-source universal VTT for your RPG campaigns. Bring maps, tokens, dice, journals and atmosphere together, then choose your systems and modules.",
+    "title": "Gravewright 0.3.0 — Universal VTT with Map Builder",
+    "description": "Build maps, connect Smart Object nodes and play in a free, open-source universal VTT. Gravewright 0.3.0 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
     "menu": "Toggle navigation",
     "nav": [
-      "See it in action",
+      "Map Builder",
       "What’s new",
       "Get started",
       "Community"
@@ -35,11 +35,11 @@ export const locales = {
     "eyebrow": "Universal VTT · Free and open source · Alpha",
     "lead": "Your world. Your players. Your next great session.",
     "intro": "A universal virtual tabletop for the worlds you create. Bring maps, tokens, dice and campaign notes together, host your own table and choose the systems and tools that fit your group.",
-    "download": "Get Gravewright for Windows",
-    "explore": "See Gravewright in action",
+    "download": "Get Gravewright",
+    "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.2.3 Alpha · Windows x64 installer included",
+    "downloadHint": "Available now: 0.3.0 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,48 +118,48 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Your next session starts with 0.2.3 Alpha.",
-    "releaseCopy": "Gravewright 0.2.3 Alpha improves native card decks, extension customization and window translations. Prepare your campaign and choose independent systems with their own sheets and automation.",
+    "releaseTitle": "Create more with 0.3.0 Alpha.",
+    "releaseCopy": "Gravewright 0.3.0 brings Map Builder, visual Smart Object behaviors and Universal VTT import/export to the universal tabletop. Prepare editable maps, generate private scenes and update them as your campaign grows.",
     "releaseFeatures": [
       [
-        "Find what the session needs",
-        "Keep characters, items, journals and compendiums close to the table. Search campaign content and drag supported documents where you need them."
+        "Build maps in layers",
+        "Paint floors, shape walls and doors, and add objects, lights and effects in one workspace. Import a finished image when you already have a map."
       ],
       [
-        "Keep your preferred sheet",
-        "Use mapped PDFs or dedicated system sheets. Installed systems define their own fields, calculations and saving behavior."
+        "Connect Smart Objects",
+        "Use visual nodes to connect events, conditions and actions. Make doors, levers and lights respond to interactions in your scenes."
       ],
       [
-        "Follow the next turn",
-        "Track initiative and turns beside the scene. Installed systems can add their own resources, effects and combat rules."
+        "Transfer Universal VTT maps",
+        "Import .uvtt, .dd2vtt or .df2vtt as native scenes with walls, doors and lights. Export a current scene with its portable map data."
       ],
       [
-        "Choose your table’s language",
-        "Translator 0.1.2 offers Portuguese and Spanish interface catalogs. Each player keeps their own language preference."
+        "Keep preparing, keep your work",
+        "Projects save automatically and support Undo/Redo. Generate a GM-only scene, update it in place and activate it for players when ready."
       ]
     ],
     "installLabel": "Start your campaign",
     "installTitle": "Your first table is a few steps away.",
-    "installCopy": "Download Gravewright, run the Windows installer and create your first table in the browser. Use the generated Runner whenever you are ready to play.",
+    "installCopy": "Download the ZIP for Windows, Linux or macOS, run your platform’s installer and create your first table in the browser. Use the generated Runner whenever you are ready to play.",
     "steps": [
       [
         "Download Gravewright",
-        "Extract the complete ZIP into a writable folder. Keep its files together."
+        "Extract the complete ZIP into a writable folder. The same download includes installers for Windows, Linux and macOS; keep its files together."
       ],
       [
         "Set up your installation",
-        "Open Install Windows.bat and choose your settings. The installer downloads the tools it needs."
+        "Run Install Windows.bat, Install Linux.sh or Install macOS.command for your platform. The installer downloads the tools it needs and prepares your local installation."
       ],
       [
         "Create your first table",
-        "Open Gravewright Runner.bat, create your administrator account and start preparing your campaign. Keep the Runner open while you play."
+        "Start the generated Gravewright Runner for your platform, create your administrator account and prepare your campaign. Keep the Runner open while you play."
       ]
     ],
-    "requirement": "Windows 10 (1803+) or Windows 11 · x64 · Browser with WebGL",
+    "requirement": "Windows x64 · Linux · macOS · Browser with WebGL",
     "localTitle": "Ready to invite your group?",
-    "localCopy": "The Windows Runner starts a table on your own computer. To let players join over your network or the internet, follow the hosting guide to set up a shared server.",
+    "localCopy": "The Runner starts a table on your own computer. To let players join over your network or the internet, follow the hosting guide to set up a shared server.",
     "deployment": "Set up a shared table",
-    "runnerGuide": "Windows Runner guide",
+    "runnerGuide": "Installation and Runner guides",
     "sourceLabel": "More ways to host",
     "sourceTitle": "Run Gravewright your way.",
     "sourceCopy": "Prefer a server or a source checkout? Use Python 3.14 or newer and uv. The commands below use a POSIX shell and keep your existing configuration.",
@@ -174,7 +174,7 @@ export const locales = {
     "extensionsCopy": "Gravewright provides the tabletop. Independent systems bring game-specific sheets and rules; modules add tools such as translations and 3D dice. Use a compatible system or mapped PDFs for your group’s game, and build your own extensions through the documented API.",
     "systemLabel": "Optional system example · Available in the Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.1",
+    "systemVersion": "0.1.2",
     "systemCopy": "DnD 5e SRD is one independent system you can install in Gravewright. It adds dedicated sheets, licensed compendiums and supported automations for the 2014 and 2024 rules.",
     "systemFacts": [
       [
@@ -190,20 +190,29 @@ export const locales = {
         "Selectable rules"
       ]
     ],
-    "systemNote": "Partial SRD collections; compendium content is in English. Version 0.1.1 works on VTT 0.2.3. Install one package from Systems: sheets, compendiums and combat automation stay together. The GM advances combat from the table.",
+    "systemNote": "Partial SRD collections; compendium content is in English. Install DnD 5e SRD 0.1.2 as one package from Systems: sheets, compendiums and combat automation stay together. The GM advances combat from the table. Check the system’s installation guide for host requirements; its setup currently documents VTT 0.2.3.",
     "systemAction": "Explore DnD 5e SRD",
-    "systemDownload": "Get version 0.1.1",
+    "systemDownload": "Get version 0.1.2",
     "swadeLabel": "Optional compatibility package · Available in the Marketplace",
     "swadeDetails": "Explore sheets, item templates and automation",
     "swadeCopy": "One system package brings free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
     "swadeFacts": [
-      ["13", "Empty item templates"],
-      ["3", "Action-deck styles"],
-      ["en / pt-BR / es", "Interface languages"]
+      [
+        "13",
+        "Empty item templates"
+      ],
+      [
+        "3",
+        "Action-deck styles"
+      ],
+      [
+        "en / pt-BR / es",
+        "Interface languages"
+      ]
     ],
-    "swadeNote": "No compendiums or rulebook text are included. Version 0.1.1 works on Gravewright 0.2.3. Install the single package from Systems and select it for your table. The GM runs its combat automation from the table. English is built in; Portuguese and Spanish use the official Translator module.",
+    "swadeNote": "No compendiums or rulebook text are included. Install version 0.1.2 as one package from Systems and select it for your table. The GM runs its combat automation from the table. English is built in; Portuguese and Spanish use Translator. Check the package’s installation guide for host requirements; its setup currently documents VTT 0.2.3.",
     "swadeAction": "Explore the SWADE package",
-    "swadeDownload": "Get version 0.1.1",
+    "swadeDownload": "Get version 0.1.2",
     "extensionCards": [
       [
         "Translator",
@@ -238,7 +247,7 @@ export const locales = {
       ],
       [
         "How do players join?",
-        "Players join a shared server through their browser. The Windows Runner starts locally; use the hosting guide to make your installation available to your group."
+        "Players join a shared server through their browser. The Runner starts locally on Windows, Linux or macOS; use the hosting guide to make your installation available to your group."
       ],
       [
         "Can I use the interface in Portuguese or Spanish?",
@@ -246,19 +255,27 @@ export const locales = {
       ],
       [
         "Where are my campaigns stored?",
-        "Your campaigns stay on your host. The default Windows installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
+        "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.2.3 available to download?",
-        "Yes. Gravewright 0.2.3 Alpha is available now with the Windows installer. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
+        "Is 0.3.0 available to download?",
+        "Yes. Gravewright 0.3.0 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
+      ],
+      [
+        "What can I build with Map Builder?",
+        "Paint maps, organize layers and add walls, doors, objects, lights and effects. Connect Smart Object nodes for scene interactions. Projects save automatically; generate a GM-only scene or update its linked scene. Activating it for players is a separate action."
+      ],
+      [
+        "Can I import a map I already have?",
+        "Yes. Import a finished image as a Builder background, then add your own objects and behaviors. Import Universal VTT files as separate native scenes with their grid, walls, doors and lights. UVTT cannot reconstruct editable Builder layers; export uses the current native scene, not an unpublished project draft."
       ],
       [
         "Can I play with DnD 5e SRD?",
-        "Yes. On VTT 0.2.3, install DnD 5e SRD 0.1.1 from Systems and select it for your table. One package includes dedicated sheets, combat automation and partial licensed SRD collections. Choose the 2014 or 2024 rules profile. The GM advances combat from the table. Other D&D books and official artwork are not included."
+        "DnD 5e SRD 0.1.2 is available as one package from Systems. It includes dedicated sheets, combat automation and partial licensed SRD collections for the 2014 and 2024 profiles. Check its installation guide for host requirements; the guide currently documents VTT 0.2.3. Other D&D books and official artwork are not included."
       ],
       [
         "How do I install the Savage Worlds compatibility package?",
-        "On VTT 0.2.3, install version 0.1.1 from Systems and select it when creating your table. Sheets, item templates, assets and automation belong to that one system package. The GM advances combat from the table; no separate rules module is required."
+        "Get version 0.1.2 from Systems and select it for your table, following the package’s installation guide and host requirements. That guide currently documents VTT 0.2.3. Sheets, item templates, assets and automation belong to the same system package; no separate rules module is required."
       ],
       [
         "Can I add my own systems and modules?",
@@ -282,7 +299,41 @@ export const locales = {
     "videoDownload": "Download the video",
     "transcript": "Read the transcript",
     "musicCredit": "Music",
-    "systemDetails": "See this optional system in action"
+    "systemDetails": "See this optional system in action",
+    "builderLabel": "New in 0.3.0 · Map Builder",
+    "builderTitle": "Build the map. Connect what happens next.",
+    "builderCopy": "Paint your map or import finished artwork, organize its layers and connect Smart Object nodes for doors, lights and scene interactions. Projects save automatically while you prepare.",
+    "builderSteps": [
+      [
+        "Build your map",
+        "Paint floors, draw walls and place doors, objects, lights and effects. Use your own layers or import a finished map as the background."
+      ],
+      [
+        "Connect the nodes",
+        "Connect events, conditions and actions in the visual Smart Object editor. Create interactions for doors, levers and scene objects, then test their behavior."
+      ],
+      [
+        "Bring it to the table",
+        "Generate a GM-only scene or update the scene linked to your project. Activate it for players separately when you are ready."
+      ]
+    ],
+    "builderGuide": "Open the Map Builder guide",
+    "builderImportGuide": "Import and export Universal VTT",
+    "builderViewFull": "View full screenshot",
+    "runnerGuides": [
+      [
+        "Windows",
+        "windows-runner.md"
+      ],
+      [
+        "Linux",
+        "linux-runner.md"
+      ],
+      [
+        "macOS",
+        "macos-runner.md"
+      ]
+    ]
   },
   "pt": {
     "lang": "pt-BR",
@@ -291,14 +342,14 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright — Um VTT Universal para RPGs",
-    "description": "Um VTT universal, gratuito e open source para suas campanhas de RPG. Reúna mapas, tokens, dados, diários e ambientação e escolha seus sistemas e módulos.",
+    "title": "Gravewright 0.3.0 — VTT universal com Map Builder",
+    "description": "Crie mapas, conecte nodes de Objetos Inteligentes e jogue em um VTT universal gratuito e open source. Gravewright 0.3.0 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
     "menu": "Abrir ou fechar navegação",
     "nav": [
-      "Veja em ação",
+      "Map Builder",
       "Novidades",
       "Comece a jogar",
       "Comunidade"
@@ -306,11 +357,11 @@ export const locales = {
     "eyebrow": "VTT universal · Gratuito e open source · Alpha",
     "lead": "Seu mundo. Seu grupo. Sua próxima grande sessão.",
     "intro": "Uma mesa virtual universal para os mundos que você cria. Reúna mapas, tokens, dados e anotações, hospede sua mesa e escolha os sistemas e ferramentas que combinam com o grupo.",
-    "download": "Baixar Gravewright para Windows",
-    "explore": "Veja o Gravewright em ação",
+    "download": "Baixar Gravewright",
+    "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.2.3 Alpha · Instalador Windows x64 incluído",
+    "downloadHint": "Disponível agora: 0.3.0 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -389,48 +440,48 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Sua próxima sessão começa com a 0.2.3 Alpha.",
-    "releaseCopy": "O Gravewright 0.2.3 Alpha aprimora os baralhos nativos, a personalização de extensões e a tradução das janelas. Prepare sua campanha e escolha sistemas independentes com suas próprias fichas e automações.",
+    "releaseTitle": "Crie mais com a 0.3.0 Alpha.",
+    "releaseCopy": "O Gravewright 0.3.0 traz o Map Builder, comportamentos visuais de Objetos Inteligentes e importação/exportação Universal VTT para a mesa universal. Prepare mapas editáveis, gere cenas privadas e atualize-as conforme a campanha cresce.",
     "releaseFeatures": [
       [
-        "Encontre o que a sessão precisa",
-        "Tenha personagens, itens, diários e compêndios por perto. Pesquise o conteúdo da campanha e arraste documentos compatíveis para onde precisar."
+        "Construa mapas em camadas",
+        "Pinte pisos, forme paredes e portas e adicione objetos, luzes e efeitos em uma área de trabalho. Importe uma imagem pronta quando já tiver um mapa."
       ],
       [
-        "Use sua ficha preferida",
-        "Escolha PDFs mapeados ou fichas próprias de um sistema. Os sistemas instalados definem seus campos, cálculos e comportamento de salvamento."
+        "Conecte Objetos Inteligentes",
+        "Use nodes visuais para conectar eventos, condições e ações. Faça portas, alavancas e luzes responderem às interações das suas cenas."
       ],
       [
-        "Acompanhe o próximo turno",
-        "Controle iniciativa e turnos ao lado da cena. Os sistemas instalados podem acrescentar recursos, efeitos e regras próprias de combate."
+        "Transfira mapas Universal VTT",
+        "Importe .uvtt, .dd2vtt ou .df2vtt como cenas nativas com paredes, portas e luzes. Exporte uma cena atual com os dados portáteis do mapa."
       ],
       [
-        "Escolha o idioma da mesa",
-        "O Translator 0.1.2 oferece catálogos da interface em português e espanhol. Cada jogador mantém sua preferência de idioma."
+        "Continue criando e preserve seu trabalho",
+        "Os projetos são salvos automaticamente e aceitam Desfazer/Refazer. Gere uma cena exclusiva do mestre, atualize-a no mesmo lugar e ative-a para os jogadores quando estiver pronto."
       ]
     ],
     "installLabel": "Comece sua campanha",
     "installTitle": "Sua primeira mesa está a poucos passos.",
-    "installCopy": "Baixe o Gravewright, execute o instalador Windows e crie sua primeira mesa no navegador. Use o Runner gerado sempre que estiver pronto para jogar.",
+    "installCopy": "Baixe o ZIP para Windows, Linux ou macOS, execute o instalador da sua plataforma e crie a primeira mesa pelo navegador. Use o Runner gerado sempre que estiver pronto para jogar.",
     "steps": [
       [
         "Baixe o Gravewright",
-        "Extraia o ZIP completo para uma pasta com permissão de escrita. Mantenha os arquivos juntos."
+        "Extraia o ZIP completo para uma pasta com permissão de escrita. O mesmo download inclui instaladores para Windows, Linux e macOS; mantenha os arquivos juntos."
       ],
       [
         "Prepare sua instalação",
-        "Abra Install Windows.bat e escolha suas configurações. O instalador baixa as ferramentas necessárias."
+        "Execute Install Windows.bat, Install Linux.sh ou Install macOS.command conforme a plataforma. O instalador baixa as ferramentas necessárias e prepara a instalação local."
       ],
       [
         "Crie sua primeira mesa",
-        "Abra Gravewright Runner.bat, crie sua conta de administrador e comece a preparar a campanha. Mantenha o Runner aberto enquanto joga."
+        "Inicie o Gravewright Runner gerado para sua plataforma, crie a conta de administrador e prepare a campanha. Mantenha o Runner aberto enquanto joga."
       ]
     ],
-    "requirement": "Windows 10 (1803+) ou Windows 11 · x64 · Navegador com WebGL",
+    "requirement": "Windows x64 · Linux · macOS · Navegador com WebGL",
     "localTitle": "Pronto para convidar o grupo?",
-    "localCopy": "O Runner Windows inicia uma mesa no seu computador. Para receber jogadores pela rede ou pela internet, siga o guia de hospedagem e configure um servidor compartilhado.",
+    "localCopy": "O Runner inicia uma mesa no seu computador. Para receber jogadores pela rede ou pela internet, siga o guia de hospedagem e configure um servidor compartilhado.",
     "deployment": "Prepare uma mesa compartilhada",
-    "runnerGuide": "Guia do Runner para Windows",
+    "runnerGuide": "Guias de instalação e Runner",
     "sourceLabel": "Outras formas de hospedar",
     "sourceTitle": "Execute do seu jeito.",
     "sourceCopy": "Prefere um servidor ou uma cópia do código? Use Python 3.14 ou superior e uv. Os comandos abaixo usam um shell POSIX e preservam sua configuração existente.",
@@ -445,7 +496,7 @@ export const locales = {
     "extensionsCopy": "O Gravewright oferece a mesa virtual. Sistemas independentes trazem fichas e regras de cada jogo; módulos acrescentam ferramentas como traduções e dados 3D. Use um sistema compatível ou PDFs mapeados para o jogo do grupo e crie suas extensões com a API documentada.",
     "systemLabel": "Exemplo de sistema opcional · Disponível no Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.1",
+    "systemVersion": "0.1.2",
     "systemCopy": "DnD 5e SRD é um dos sistemas independentes que você pode instalar no Gravewright. Ele acrescenta fichas próprias, compêndios licenciados e automações compatíveis com as regras de 2014 e 2024.",
     "systemFacts": [
       [
@@ -461,20 +512,29 @@ export const locales = {
         "Regras à escolha"
       ]
     ],
-    "systemNote": "Coleções parciais do SRD; o conteúdo dos compêndios está em inglês. A versão 0.1.1 funciona no VTT 0.2.3. Instale um único pacote em Sistemas: fichas, compêndios e automações de combate ficam juntos. O mestre avança o combate pela mesa.",
+    "systemNote": "Coleções parciais do SRD; os compêndios estão em inglês. Instale DnD 5e SRD 0.1.2 como um único pacote em Sistemas: fichas, compêndios e automações de combate ficam juntos. O mestre avança o combate pela mesa. Confira os requisitos do host no guia de instalação do sistema; sua configuração ainda documenta o VTT 0.2.3.",
     "systemAction": "Conheça o DnD 5e SRD",
-    "systemDownload": "Baixar a versão 0.1.1",
+    "systemDownload": "Baixar a versão 0.1.2",
     "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
     "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
     "swadeCopy": "Um único pacote de sistema reúne fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
     "swadeFacts": [
-      ["13", "Modelos vazios de itens"],
-      ["3", "Estilos de baralho de ação"],
-      ["en / pt-BR / es", "Idiomas da interface"]
+      [
+        "13",
+        "Modelos vazios de itens"
+      ],
+      [
+        "3",
+        "Estilos de baralho de ação"
+      ],
+      [
+        "en / pt-BR / es",
+        "Idiomas da interface"
+      ]
     ],
-    "swadeNote": "O pacote não inclui compêndios nem textos do livro. A versão 0.1.1 funciona no Gravewright 0.2.3. Instale o pacote único em Sistemas e selecione-o para a mesa. O mestre conduz as automações de combate pela mesa. Inglês está disponível por padrão; português e espanhol usam o módulo oficial Translator.",
+    "swadeNote": "O pacote não inclui compêndios nem textos do livro. Instale a versão 0.1.2 como um único pacote em Sistemas e selecione-o para a mesa. O mestre conduz as automações de combate pela mesa. Inglês está disponível por padrão; português e espanhol usam o Translator. Confira os requisitos do host no guia de instalação do pacote; sua configuração ainda documenta o VTT 0.2.3.",
     "swadeAction": "Conheça o pacote SWADE",
-    "swadeDownload": "Baixar a versão 0.1.1",
+    "swadeDownload": "Baixar a versão 0.1.2",
     "extensionCards": [
       [
         "Translator",
@@ -509,7 +569,7 @@ export const locales = {
       ],
       [
         "Como os jogadores entram?",
-        "Os jogadores acessam um servidor compartilhado pelo navegador. O Runner Windows inicia localmente; siga o guia de hospedagem para disponibilizar sua instalação ao grupo."
+        "Os jogadores acessam um servidor compartilhado pelo navegador. O Runner inicia localmente no Windows, Linux ou macOS; siga o guia de hospedagem para disponibilizar sua instalação ao grupo."
       ],
       [
         "Posso usar a interface em português ou espanhol?",
@@ -517,19 +577,27 @@ export const locales = {
       ],
       [
         "Onde ficam minhas campanhas?",
-        "As campanhas ficam no seu host. A instalação Windows padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
+        "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.2.3 já está disponível para baixar?",
-        "Sim. O Gravewright 0.2.3 Alpha já está disponível com o instalador Windows. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
+        "A 0.3.0 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.0 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
+      ],
+      [
+        "O que posso criar com o Map Builder?",
+        "Pinte mapas, organize camadas e adicione paredes, portas, objetos, luzes e efeitos. Conecte nodes de Objetos Inteligentes para as interações da cena. Os projetos são salvos automaticamente; gere uma cena exclusiva do mestre ou atualize a cena vinculada ao projeto. Ativá-la para os jogadores é uma ação separada."
+      ],
+      [
+        "Posso importar um mapa que já tenho?",
+        "Sim. Importe uma imagem pronta como fundo do Builder e adicione seus objetos e comportamentos. Importe arquivos Universal VTT como cenas nativas separadas com grade, paredes, portas e luzes. UVTT não reconstrói camadas editáveis do Builder; a exportação usa a cena nativa atual, não um rascunho não publicado do projeto."
       ],
       [
         "Posso jogar com o DnD 5e SRD?",
-        "Sim. No VTT 0.2.3, instale DnD 5e SRD 0.1.1 em Sistemas e selecione-o para sua mesa. Um único pacote reúne fichas próprias, automações de combate e coleções parciais licenciadas do SRD. Escolha as regras de 2014 ou 2024. O mestre avança o combate pela mesa. Outros livros de D&D e artes oficiais não estão incluídos."
+        "DnD 5e SRD 0.1.2 está disponível como um único pacote em Sistemas. Ele reúne fichas próprias, automações de combate e coleções parciais licenciadas do SRD para os perfis de 2014 e 2024. Confira os requisitos do host no guia de instalação; o guia ainda documenta o VTT 0.2.3. Outros livros de D&D e artes oficiais não estão incluídos."
       ],
       [
         "Como instalo o pacote de compatibilidade Savage Worlds?",
-        "No VTT 0.2.3, instale a versão 0.1.1 em Sistemas e selecione-a ao criar sua mesa. Fichas, modelos de itens, arquivos e automações pertencem a esse único pacote de sistema. O mestre avança o combate pela mesa; não há módulo separado de regras."
+        "Obtenha a versão 0.1.2 em Sistemas e selecione-a para sua mesa, seguindo o guia de instalação e os requisitos do host do pacote. Esse guia ainda documenta o VTT 0.2.3. Fichas, modelos de itens, arquivos e automações pertencem ao mesmo pacote de sistema; não há módulo separado de regras."
       ],
       [
         "Posso adicionar meus próprios sistemas e módulos?",
@@ -553,6 +621,40 @@ export const locales = {
     "videoDownload": "Baixar o vídeo",
     "transcript": "Ler a transcrição",
     "musicCredit": "Música",
-    "systemDetails": "Veja este sistema opcional em uso"
+    "systemDetails": "Veja este sistema opcional em uso",
+    "builderLabel": "Novo na 0.3.0 · Map Builder",
+    "builderTitle": "Crie o mapa. Conecte o que acontece depois.",
+    "builderCopy": "Pinte seu mapa ou importe uma imagem pronta, organize as camadas e conecte nodes de Objetos Inteligentes para portas, luzes e interações da cena. Os projetos são salvos automaticamente enquanto você prepara a sessão.",
+    "builderSteps": [
+      [
+        "Construa seu mapa",
+        "Pinte pisos, desenhe paredes e adicione portas, objetos, luzes e efeitos. Use suas próprias camadas ou importe um mapa pronto como fundo."
+      ],
+      [
+        "Conecte os nodes",
+        "Conecte eventos, condições e ações no editor visual de Objetos Inteligentes. Crie interações para portas, alavancas e objetos da cena e teste seus comportamentos."
+      ],
+      [
+        "Leve para a mesa",
+        "Gere uma cena exclusiva do mestre ou atualize a cena vinculada ao projeto. Ative-a para os jogadores separadamente quando estiver pronto."
+      ]
+    ],
+    "builderGuide": "Abra o guia do Map Builder",
+    "builderImportGuide": "Importe e exporte Universal VTT",
+    "builderViewFull": "Ver captura completa",
+    "runnerGuides": [
+      [
+        "Windows",
+        "windows-runner.md"
+      ],
+      [
+        "Linux",
+        "linux-runner.md"
+      ],
+      [
+        "macOS",
+        "macos-runner.md"
+      ]
+    ]
   }
 };

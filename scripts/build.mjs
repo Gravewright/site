@@ -41,7 +41,8 @@ async function figure(id, locale, hero = false) {
   }
   const transcript = ready && item.type === 'video' && await exists(item.transcripts[locale]) ? ` ${link(item.transcripts[locale], t.transcript, 'text-link')}` : '';
   const music = ready && item.music ? `<small class="media-credit">${t.musicCredit}: ${link(item.music.url, item.music.title + ' — ' + item.music.artist)} · ${link(item.music.licenseUrl, item.music.license)}</small>` : '';
-  return `<figure class="media-frame${hero ? ' media-frame--hero' : ''}" data-media="${id}" data-state="${ready ? 'ready' : 'placeholder'}">${visual}<figcaption><span>${escape(item.title[locale])}</span>${transcript}${music}</figcaption></figure>`;
+  const fullSize = ready && id === 'builder' ? link(mediaFile, t.builderViewFull, 'text-link') : '';
+  return `<figure class="media-frame${hero ? ' media-frame--hero' : ''}" data-media="${id}" data-state="${ready ? 'ready' : 'placeholder'}">${visual}<figcaption><span>${escape(item.title[locale])}</span>${fullSize}${transcript}${music}</figcaption></figure>`;
 }
 
 async function sceneGallery(locale) {
@@ -75,7 +76,7 @@ for (const [locale, t] of Object.entries(locales)) {
   <a class="brand" href="#top" aria-label="${t.home}"><span class="brand-icon">${logo}</span><span>Gravewright</span></a>
   <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">${t.menu}</span></button>
   <nav class="main-nav" id="main-nav" aria-label="${t.navigation}" data-nav>
-    ${['experience','release','install','contribute'].map((id, i) => link('#' + id, t.nav[i])).join('')}
+    ${['map-builder','release','install','contribute'].map((id, i) => link('#' + id, t.nav[i])).join('')}
     <a class="language-link" href="${t.otherFile}" lang="${locale === 'en' ? 'pt-BR' : 'en'}" hreflang="${locale === 'en' ? 'pt-BR' : 'en'}" data-language>${t.otherLabel}</a>
     ${link(project, 'GitHub ↗', 'nav-button')}
   </nav>
@@ -84,13 +85,17 @@ for (const [locale, t] of Object.entries(locales)) {
   <section class="hero shell" id="top">
     <div class="hero-copy"><p class="eyebrow">${t.eyebrow}</p><div class="hero-brand"><span class="hero-icon">${logo}</span><h1>Gravewright</h1></div>
       <p class="hero-lead">${t.lead}</p><p class="hero-meta">${t.intro}</p>
-      <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#experience', t.explore, 'button button-secondary')}</div>
+      <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#map-builder', t.explore, 'button button-secondary')}</div>
       <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(docs, t.documentation + ' ↗')}</div>
       ${link('#extensions', t.systemHint, 'system-teaser')}
     </div>
     <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> Alpha</span></div>
       <div class="platform-list">${t.pillars.map(([title, copy], i) => `<article><span>0${i+1}</span><div><h2>${title}</h2><p>${copy}</p></div></article>`).join('')}</div>
     </aside>
+  </section>
+  <section class="section shell builder-feature" id="map-builder">${heading(t.builderLabel, t.builderTitle)}
+    <div class="section-copy"><p>${escape(t.builderCopy)}</p><div class="quick-links">${link(doc('map-builder'), t.builderGuide + ' ↗')}${link(doc('universal-vtt'), t.builderImportGuide + ' ↗')}</div></div>
+    ${await figure('builder', locale)}${cards(t.builderSteps, 'beginner-grid')}
   </section>
   <div class="media-showcase shell">${await figure('table', locale, true)}</div>
   <section class="section shell" id="about">${heading(t.aboutLabel, t.aboutTitle)}<div class="section-copy"><p>${t.aboutCopy}</p></div>${cards(t.features)}</section>
@@ -102,7 +107,7 @@ for (const [locale, t] of Object.entries(locales)) {
   </section>
   <section class="section shell" id="release">${heading(t.releaseLabel, t.releaseTitle)}<div class="section-copy"><p>${t.releaseCopy}</p>${link(release, t.notes + ' ↗', 'text-link')}</div>${await figure('campaign', locale)}${cards(t.releaseFeatures)}</section>
   <section class="section shell" id="install">${heading(t.installLabel, t.installTitle)}<div class="section-copy"><p>${t.installCopy}</p><p class="requirements-line">${t.requirement}</p></div>
-    ${steps(t.steps)}<div class="install-actions">${link(download, t.download, 'button button-primary')}${link(doc('windows-runner'), t.runnerGuide + ' ↗', 'text-link')}</div>
+    ${steps(t.steps)}<div class="install-actions">${link(download, t.download, 'button button-primary')}<div class="runner-guides"><span>${escape(t.runnerGuide)}</span><div class="quick-links">${t.runnerGuides.map(([name, page]) => link(doc(page.replace(/\.md$/, '')), name + ' ↗')).join('')}</div></div></div>
     <aside class="hosting-note"><h3>${t.localTitle}</h3><p>${t.localCopy}</p>${link(doc('deployment'), t.deployment + ' ↗', 'text-link')}</aside>
     <div class="install-layout"><div class="install-copy"><p class="section-label">${t.sourceLabel}</p><h3>${t.sourceTitle}</h3><p>${t.sourceCopy}</p></div>
       <div class="terminal"><div class="terminal-header"><span>${t.sourceHeader}</span><button type="button" data-copy="source">${t.copy}</button></div>

@@ -4,11 +4,21 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.2.3 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
+Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.3.0 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
 
 **Para substituir:** copie os arquivos com os nomes exatos, execute `npm run build` e atualize a página. Não é necessário editar HTML. O build mostra a mídia quando o arquivo existe e mantém o placeholder enquanto estiver ausente. Para trocar nomes ou textos alternativos, edite `content/media.json` e gere novamente.
 
 **Importante:** os textos alternativos precisam corresponder à mídia final. Revise-os se mudar o enquadramento ou a demonstração. Use capturas reais da versão atual, com dados fictícios. Procedência, prompts e hashes das artes estão em [assets/demo/README.md](assets/demo/README.md); créditos e licenças em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Map Builder 0.3.0 · Objetos Inteligentes e nodes conectados · Interface em inglês
+
+- Arquivo padrão / alternativa: `assets/images/map-builder-nodes-030.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: Gravewright 0.3.0 Map Builder showing Moonfall gate with five connected Smart Object nodes: interaction, a Closed state check, Opened and Closed actions, and the Gate torch light. Simulation highlights the active path. English interface.
+- Descrição / alt em português: Map Builder do Gravewright 0.3.0 com Moonfall gate e cinco nodes de Objeto Inteligente conectados: interação, verificação do estado Closed, ações Opened e Closed e a luz Gate torch. A simulação destaca o caminho ativo. Interface em inglês.
+
+
+Uma captura real da interface em inglês do Gravewright 0.3.0 publicado, compartilhada pelos dois idiomas do site com legenda e texto alternativo traduzidos. Moonfall Workshop é um projeto fictício descartável, com imagem sintética de porta e luz nativa, sem dados reais de campanhas nem arte de terceiros. O grafo aparece a 100% após Simulate, com os cinco nodes e suas conexões visíveis. A conversão WebP sem perdas preserva os pixels do print original. Procedência e hashes estão em assets/demo/README.md.
 
 ## Moonfall Abbey · Sua próxima cena
 

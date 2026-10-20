@@ -89,3 +89,48 @@ Created from scratch with the built-in image generation tool, without reference 
 ```text
 Use case: ads-marketing. Create an entirely new premium dark fantasy video thumbnail, landscape 16:9, full bleed. A colossal red dragon on the right, roaring with glowing embers in its jaws, wings framing a ruined black stone fortress above rivers of lava. Small adventurer silhouettes on a bridge convey scale. Cinematic painted realism, dramatic molten gold and crimson rim lighting, charcoal shadows, floating sparks, strong focal point, polished fantasy key art. Left third has controlled dark negative space with large beautifully typeset, extremely legible antique gold title exactly 'GRAVEWRIGHT', below it smaller ivory text exactly 'THE DRAGON’S LEGACY', and a small understated line 'ALPHA 0.1.0'. Keep typography safely inset from edges. Compose for immediate readability as a video cover at small size. Original illustration only: no screenshot, no tabletop map, no tokens, no software UI, no browser frame, no play button, no watermark. Do not reference or reuse any previous image.
 ```
+
+## Map Builder node editor — 0.3.0
+
+`../images/map-builder-nodes-030.webp` is a real **1920 × 1080** browser capture
+of the released [Gravewright 0.3.0](https://github.com/Gravewright/gravewright/releases/tag/v0.3.0),
+commit [`23ea61b8ef`](https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906),
+captured on 2026-10-20 with Microsoft Edge 155.0.4283.62.
+One English-interface image is shared by both site languages; its caption and
+alternative text are localized.
+
+The isolated **Moonfall Workshop** project uses fictional names, a synthetic
+128 × 32 solid-color door image (`#9a6844`) and a native light. No operator
+database, campaign, media or third-party artwork was reused. The disposable
+fixture comes from the published Map Builder browser harness. The graph was
+authored through the validated project API and displayed in the real editor.
+The window was resized using its native handle; Fit graph and Simulate were
+used without injected CSS, changed DOM text, generated UI or image composition.
+
+Five nodes and five connections are visible at **100%**: Moonfall gate's
+interaction checks whether it is Closed, branches to Opened or Closed, then
+enables Gate torch. Simulate highlights the open branch and leaves the saved
+project unchanged. All node bounds fit in the graph; the capture reported no
+page errors, failed requests or native dialogs. Only lossless WebP encoding was
+applied, and decoded pixels were compared with the original PNG.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| Original PNG, retained in the local capture evidence | `e73948e6925fbf54884be7b557647fe6d755247676fdf44d2f86bae62057a054` |
+| Published WebP | `2439b369603bf6f7f3d42210c1853df9b51be7f2bfe0ce5ce0d88b77a987bc36` |
+| Synthetic door PNG | `18a2df97ce891c34846f962066bb86e742717099fb53a6656fdd0d72a69663b3` |
+
+### Português — captura dos nodes da 0.3.0
+
+O print real de **1920 × 1080** mostra o editor de Objetos Inteligentes do
+Gravewright **0.3.0** publicado, no commit acima. Uma única imagem em inglês é
+compartilhada entre os idiomas, com legenda e texto alternativo traduzidos.
+A campanha descartável Moonfall Workshop usa nomes fictícios, uma imagem de
+porta sintética e uma luz nativa, sem dados reais nem arte de terceiros.
+
+Os cinco nodes e cinco conexões aparecem a **100%**: a interação em Moonfall
+gate verifica o estado Closed, escolhe Opened ou Closed e ativa Gate torch.
+Simulate destaca o ramo de abertura sem alterar o projeto salvo. A interface
+foi renderizada pelo aplicativo real, sem CSS ou texto visual injetados nem
+montagem. O WebP foi convertido sem perdas e seus pixels foram comparados com
+o PNG original. Os hashes acima registram a origem e o arquivo publicado.

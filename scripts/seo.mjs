@@ -6,8 +6,8 @@ export const pageUrl = locale => `${origin}/${locale === 'en' ? '' : 'pt-br.html
 export function seoHead(locale, t, media, project, download) {
   const url = pageUrl(locale);
   const image = `${origin}/${socialImage.file}`;
-  const table = media.find(item => item.id === 'table');
-  const screenshot = table.files?.[locale] || table.file;
+  const builder = media.find(item => item.id === 'builder');
+  const screenshot = builder.files?.[locale] || builder.file;
   const alt = locale === 'en'
     ? 'Gravewright — The Dragon’s Legacy: a red dragon above a fortress surrounded by lava.'
     : 'Gravewright — The Dragon’s Legacy: um dragão vermelho sobre uma fortaleza cercada por lava.';

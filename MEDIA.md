@@ -4,11 +4,21 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-All paths below are relative to this repository root. This list derives from `content/media.json` and accompanies Gravewright **0.2.3 Alpha**. Dimensions, languages and duration must match the final files.
+All paths below are relative to this repository root. This list derives from `content/media.json` and accompanies Gravewright **0.3.0 Alpha**. Dimensions, languages and duration must match the final files.
 
 **To replace:** copy files using the exact names, run `npm run build` and refresh. No HTML changes are needed. The build renders existing media and retains placeholders for missing files. To change filenames or alternative text, edit `content/media.json` and rebuild.
 
 **Important:** alternative text must match the final media. Revise it if the framing or demonstration changes. Use real captures of the current version with fictional data. Artwork provenance, prompts and hashes are in [assets/demo/README.md](assets/demo/README.md); credits and licenses are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Map Builder 0.3.0 · Smart Objects and connected nodes · English interface
+
+- Default / fallback file: `assets/images/map-builder-nodes-030.webp`
+- Dimensions: **1920 × 1080**
+- English description / alt: Gravewright 0.3.0 Map Builder showing Moonfall gate with five connected Smart Object nodes: interaction, a Closed state check, Opened and Closed actions, and the Gate torch light. Simulation highlights the active path. English interface.
+- Portuguese description / alt: Map Builder do Gravewright 0.3.0 com Moonfall gate e cinco nodes de Objeto Inteligente conectados: interação, verificação do estado Closed, ações Opened e Closed e a luz Gate torch. A simulação destaca o caminho ativo. Interface em inglês.
+
+
+One real English-interface browser capture of published Gravewright 0.3.0, shared by both site languages with localized captions and alt text. Moonfall Workshop is a disposable fictional project with a synthetic door image and a native light; no operator data or third-party artwork is used. The graph is shown at 100% zoom after Simulate, with all five nodes and wires visible. Lossless WebP encoding preserves the original screenshot pixels. See assets/demo/README.md for provenance and hashes.
 
 ## Moonfall Abbey · Your next scene
 

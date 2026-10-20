@@ -797,6 +797,13 @@ h1 {
 .setup-steps h3 { font-size: 1.12rem; }
 .setup-steps p { color: var(--muted); margin-bottom: 0; }
 .install-actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 28px; }
+.builder-feature { border-top-color: var(--accent); background: radial-gradient(ellipse at 50% 30%, var(--accent-soft), transparent 65%); }
+.builder-feature .section-heading h2 { color: var(--accent-bright); }
+.builder-feature .media-frame { border-radius: var(--radius); }
+.builder-feature .media-frame::after { display: none; }
+.builder-feature .focus-grid { margin-top: 32px; }
+.runner-guides { display: grid; gap: 8px; color: var(--muted); }
+.runner-guides .quick-links { margin: 0; }
 .hosting-note { padding: 28px 32px; border-left: 2px solid var(--accent); background: var(--accent-soft); border-radius: 0 12px 12px 0; }
 .hosting-note h3 { font-size: 1.2rem; margin-bottom: 12px; }
 .hosting-note p { color: var(--muted); max-width: 900px; }

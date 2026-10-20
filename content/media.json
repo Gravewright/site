@@ -1,5 +1,24 @@
 [
   {
+    "id": "builder",
+    "type": "image",
+    "file": "assets/images/map-builder-nodes-030.webp",
+    "width": 1920,
+    "height": 1080,
+    "title": {
+      "en": "Map Builder 0.3.0 · Smart Objects and connected nodes · English interface",
+      "pt": "Map Builder 0.3.0 · Objetos Inteligentes e nodes conectados · Interface em inglês"
+    },
+    "alt": {
+      "en": "Gravewright 0.3.0 Map Builder showing Moonfall gate with five connected Smart Object nodes: interaction, a Closed state check, Opened and Closed actions, and the Gate torch light. Simulation highlights the active path. English interface.",
+      "pt": "Map Builder do Gravewright 0.3.0 com Moonfall gate e cinco nodes de Objeto Inteligente conectados: interação, verificação do estado Closed, ações Opened e Closed e a luz Gate torch. A simulação destaca o caminho ativo. Interface em inglês."
+    },
+    "brief": {
+      "en": "One real English-interface browser capture of published Gravewright 0.3.0, shared by both site languages with localized captions and alt text. Moonfall Workshop is a disposable fictional project with a synthetic door image and a native light; no operator data or third-party artwork is used. The graph is shown at 100% zoom after Simulate, with all five nodes and wires visible. Lossless WebP encoding preserves the original screenshot pixels. See assets/demo/README.md for provenance and hashes.",
+      "pt": "Uma captura real da interface em inglês do Gravewright 0.3.0 publicado, compartilhada pelos dois idiomas do site com legenda e texto alternativo traduzidos. Moonfall Workshop é um projeto fictício descartável, com imagem sintética de porta e luz nativa, sem dados reais de campanhas nem arte de terceiros. O grafo aparece a 100% após Simulate, com os cinco nodes e suas conexões visíveis. A conversão WebP sem perdas preserva os pixels do print original. Procedência e hashes estão em assets/demo/README.md."
+    }
+  },
+  {
     "id": "table",
     "type": "image",
     "file": "assets/images/table-overview-universal-021.webp",

@@ -100,7 +100,7 @@ for (const [locale, t] of Object.entries(locales)) {
   assert.equal(software.downloadUrl, download);
   assert.equal(software.softwareVersion, publicVersion);
   assert.equal(software.inLanguage, 'en');
-  assert.equal(software.screenshot, `https://gravewright.com/${mediaFile(media.find(item => item.id === 'table'), locale)}`);
+  assert.equal(software.screenshot, `https://gravewright.com/${mediaFile(media.find(item => item.id === 'builder'), locale)}`);
   const preview = await readFile(resolve(root, poster));
   assert.equal(preview.readUInt16BE(0), 0xffd8, 'Social preview must be JPEG');
   assert(preview.length < 300000, 'Keep social preview under 300 KB');

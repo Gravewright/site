@@ -24,6 +24,21 @@ Changes shown here include selected compendium data converted into Gravewright d
 
 The new map, character portraits and illustrated poster are original demonstration assets described below. Wizards of the Coast or Foundry artwork was not used to create those illustrations. Application screenshots depict Gravewright's interface.
 
+## Map Builder 0.3.0 capture
+
+`assets/images/map-builder-nodes-030.webp` is one real browser capture of the
+published **Gravewright VTT 0.3.0** Map Builder and Smart Object node editor.
+It uses a disposable demonstration campaign with fictional names and synthetic
+objects. The English interface capture is shared by both site languages, with
+localized alternative text and captions. It is separate from the historical
+0.2.1 screenshots and recording above. The application interface and node
+connections were rendered by Gravewright, without generated or composited UI.
+
+See the application's [0.3.0 licensing policy](https://github.com/Gravewright/gravewright/blob/v0.3.0/LICENSING.md),
+[module permission](https://github.com/Gravewright/gravewright/blob/v0.3.0/LICENSE-EXCEPTION)
+and [third-party notices](https://github.com/Gravewright/gravewright/blob/v0.3.0/THIRD_PARTY_NOTICES.md).
+Capture details and hashes are recorded in [demo provenance](assets/demo/README.md).
+
 ## Original demonstration artwork
 
 The fictional Moonfall Abbey map (`assets/demo/moonfall-abbey-map.png`), Seraphina Vale portrait (`assets/demo/seraphina-vale.png`), Bram Ironwood portrait (`assets/demo/bram-ironwood.png`) and Abbey Sentinel portrait (`assets/demo/abbey-sentinel.png`) were created for this demonstration with the built-in image generation tool, each in one text-to-image call without reference images. They depict original fantasy places and characters. They were loaded into the real application before capturing screenshots and video; Bram and the Sentinel use the square portraits as actual token avatars. The application renders the token frames and interface.
@@ -41,6 +56,16 @@ See [demo provenance, generation prompts and SHA-256 hashes](assets/demo/README.
 ## Português
 
 O código novo, os textos e a documentação do site usam **GPL-3.0-only**. O template herdado e o ícone inalterado mantêm os termos **Apache-2.0**, com a licença e o aviso originais preservados. As dependências citadas no aviso histórico não estão incluídas neste site.
+
+`assets/images/map-builder-nodes-030.webp` é uma captura real do Map Builder e
+do editor de nodes de Objetos Inteligentes do **Gravewright VTT 0.3.0** publicado,
+em uma campanha de demonstração descartável, com nomes fictícios e objetos
+sintéticos. Um único print da interface em inglês é compartilhado pelas duas
+versões do site, com legenda e texto alternativo traduzidos. A interface e as
+conexões foram renderizadas pelo próprio Gravewright. A captura é separada das
+mídias históricas da 0.2.1 abaixo; sua procedência e seus hashes constam no
+[README das mídias](assets/demo/README.md), e os links da seção em inglês acima
+documentam a licença, a permissão para módulos e os avisos da aplicação 0.3.0.
 
 As novas capturas e o trecho do aplicativo no vídeo mostram o **Gravewright VTT 0.2.1** real, em uma base de demonstração isolada, com campanhas fictícias e **Translator 0.1.2**. O vídeo apresenta as ferramentas do VTT universal e um breve exemplo do sistema opcional **DnD 5e SRD 0.1.0**; as imagens da ficha e do compêndio permanecem em uma seção opcional recolhida por padrão. A interface foi capturada no navegador; cada idioma tem suas próprias capturas, mantendo os nomes fictícios das campanhas e mapas em inglês. A galeria secundária preserva a captura de mesa anterior de The Dragon’s Legacy, sem apresentá-la como captura nova da 0.2.1. O core do VTT usa sua licença e permissão para módulos; o código original do sistema usa **MIT**, enquanto o conteúdo derivado do SRD usa **CC BY 4.0**. Os links acima preservam as atribuições do SRD e das representações de dados adaptadas do Foundry. Os compêndios são coleções selecionadas do conteúdo licenciado.
 
