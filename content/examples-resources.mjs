@@ -1,5 +1,6 @@
 // Original, contract-based examples. The site renders these snippets; it never executes them.
 const fence = (language, code) => '\n```' + language + '\n' + code.trim() + '\n```\n';
+const copyablePrompts = markdown => markdown.replace(/^> (.+)$/gm, (_, prompt) => fence('text', prompt.replace(/\*\*/g, '')));
 const json = value => fence('json', JSON.stringify(value, null, 2));
 
 export const resourceSearchExamples = [
@@ -340,7 +341,7 @@ Use a target release supporting \`content.compendiums\`, available since VTT 0.2
       item_pack: pt ? 'Importa Beacon Rope como item gear, com length 10.' : 'Imports Beacon Rope as a gear item with length 10.',
       spell_pack: pt ? 'Importa Beacon Glow como item spell, com color blue. spell_pack é um alias de compatibilidade para item; o core não ganha regras de magia.' : 'Imports Beacon Glow as a spell item with color blue. spell_pack is an item compatibility alias; it does not add spell rules to the core.',
     }[pack.type];
-    return `## Sistema instalado: \`${pack.type}\`\n\n${describe}\n\n` +
+    return `## ${pt ? 'Sistema instalado' : 'Installed system'}: \`${pack.type}\`\n\n${describe}\n\n` +
       (pt ? 'Esta é uma coleção completa com um único pack; use-a sozinha ou combine packs no array packs do arquivo baixável.' : 'This is a complete single-pack collection; use it alone or combine packs in the downloadable collection packs array.') +
       json({ name: installedCompendiumCollection.name, packs: [pack] }) +
       (pt ? `**Valide:** confira \`${pack.entries[0].id}\` no pack do sistema e importe como GM. O diretório mostra \`kind: "${pack.type === 'actor_pack' ? 'actor' : 'item'}"\`; o documento importado usa \`type: "${pack.entries[0].type}"\`.` : `**Validate:** locate \`${pack.entries[0].id}\` in the system pack and import as GM. The directory shows \`kind: "${pack.type === 'actor_pack' ? 'actor' : 'item'}"\`; the imported document has \`type: "${pack.entries[0].type}"\`.`);
@@ -445,7 +446,7 @@ For local catalogs, missing campaigns or a wrong UUID hides the catalog. Cards/d
   return intro + manifest + '\n' + files + main + '\n' + installed + '\n\n' + limits + validate + '\n' + localIntro + wrapper + '\n' + localCases + '\n\n' + localSetup + installCode + '\n' + end;
 }
 
-export const resourceExampleArticles = [
+const resourceArticles = [
   {
     slug: 'examples-search-kinds', group: 'examples', sourcePaths: sourcePaths.search,
     en: { title: 'Search: all 7 kinds and the empty filter', summary: 'Eight concrete browser functions, quest versus journal categories, authorized recents and validation.', body: searchBody('en') },
@@ -467,3 +468,9 @@ export const resourceExampleArticles = [
     pt: { title: 'Packs de compêndio: 3 tipos instalados e 7 locais', summary: 'JSON original completo por tipo de pack, restrições reais do manifesto e arquivos de exemplo.', body: packBody('pt') },
   },
 ];
+
+export const resourceExampleArticles = resourceArticles.map(article => ({
+  ...article,
+  en: {...article.en, body: copyablePrompts(article.en.body)},
+  pt: {...article.pt, body: copyablePrompts(article.pt.body)},
+}));
