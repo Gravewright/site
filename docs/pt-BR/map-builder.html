@@ -1,0 +1,1661 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Referência do Map Builder | Gravewright</title><meta name="description" content="Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/map-builder.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/map-builder.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/map-builder.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/map-builder.html"><meta property="og:type" content="article"><meta property="og:title" content="Referência do Map Builder | Gravewright"><meta property="og:description" content="Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/map-builder.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Referência do Map Builder","description":"Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/map-builder.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/map-builder.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html" aria-current="page">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Referência do Map Builder</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Referência do projeto <span aria-hidden="true">/</span> 96 min de leitura</span><h1>Referência do Map Builder</h1><p class="kb-lead">Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento.</p></header><figure class="kb-screenshot"><a href="../../assets/wiki/map-builder-030.webp" aria-label="Abrir captura completa: O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês."><img src="../../assets/wiki/map-builder-030.webp" width="1440" height="900" alt="O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><p><a href="index.html">Documentação</a> · <a href="../en/map-builder.html">English</a> · <a href="universal-vtt.html">Universal VTT</a> · <a href="frontend.html">Frontend</a></p>
+<p>O Map Builder é a área do mestre da campanha para projetos de mapa editáveis.
+Desenhe com materiais ou importe uma imagem pronta, acrescente paredes, portas,
+objetos, luzes e efeitos nativos e depois gere ou atualize uma cena. O projeto
+continua editável separadamente da cena usada na mesa.</p>
+<p>Este guia descreve a implementação do Map Builder na revisão documentada
+da <strong>0.3.0</strong>. A
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/smart-objects-direction.md">direção dos Objetos Inteligentes</a> distingue as
+capacidades implementadas das propostas.</p>
+<h2 id="encontre-o-fluxo-adequado">Encontre o fluxo adequado</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Seu ponto de partida</th><th scope="col" style="text-align:left">Onde consultar</th></tr></thead><tbody><tr><td style="text-align:left">Construir uma sala nova</td><td style="text-align:left"><a href="#construir-a-primeira-sala">Construir a primeira sala</a></td></tr><tr><td style="text-align:left">Escolher entre tiles, pintura suave e imagem de mapa</td><td style="text-align:left"><a href="#escolher-como-comecar">Escolher como começar</a></td></tr><tr><td style="text-align:left">Organizar imagens, famílias e coleções</td><td style="text-align:left"><a href="#construir-mapas-maiores">Construir mapas maiores</a></td></tr><tr><td style="text-align:left">Organizar ou selecionar objetos do projeto</td><td style="text-align:left"><a href="#selecao-e-camadas-do-projeto">Seleção e camadas do projeto</a></td></tr><tr><td style="text-align:left">Recuperar um salvamento com falha ou conflito</td><td style="text-align:left"><a href="#salvamento-automatico">Salvamento automático</a>, depois <a href="#solucao-de-problemas">Solução de problemas</a></td></tr><tr><td style="text-align:left">Aplicar edições à mesma cena do jogo</td><td style="text-align:left"><a href="#atualizar-uma-cena-gerada">Atualizar uma cena gerada</a></td></tr><tr><td style="text-align:left">Adicionar alavanca, tocha, região ou comportamento temporizado</td><td style="text-align:left"><a href="#referencia-de-objetos-inteligentes">Referência de Objetos Inteligentes</a></td></tr><tr><td style="text-align:left">Importar/exportar um arquivo Universal VTT</td><td style="text-align:left"><a href="universal-vtt.html">Intercâmbio Universal VTT</a></td></tr><tr><td style="text-align:left">Integrar documentos do projeto ou operações HTTP</td><td style="text-align:left"><a href="#referencia-para-desenvolvimento">Referência para desenvolvimento</a></td></tr></tbody></table></div>
+<h2 id="acesso-do-mestre-e-pontos-de-entrada">Acesso do mestre e pontos de entrada</h2>
+<p>Abra <strong>Cenas</strong> na campanha e escolha <strong>Nova cena → Map Builder</strong>. A pasta de cenas
+selecionada acompanha o projeto e a primeira cena gerada. Somente um mestre atual
+da campanha pode abrir ou gerenciar projetos do Builder; jogadores e streamers
+não podem editá-los. Abrir o editor não muda a transmissão dos jogadores.</p>
+<p>Para retomar, use <strong>Painéis → Projetos</strong> ou clique com o botão direito em uma
+cena vinculada a um projeto e escolha <strong>Editar com MapBuilder</strong>. Ela tem o ícone
+de mapa vermelho no diretório do mestre. Uma cena importada como imagem comum
+ou por Universal VTT não tem projeto editável do Builder, a menos que tenha sido
+criada a partir de um projeto do Builder.</p>
+<h3 id="projeto-previa-e-cena-do-jogo">Projeto, prévia e cena do jogo</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Ação</th><th scope="col" style="text-align:left">Resultado</th><th scope="col" style="text-align:left">Efeito na cena do jogo</th></tr></thead><tbody><tr><td style="text-align:left">Editar, Desfazer/Refazer, salvamento automático ou <strong>Ctrl+S</strong></td><td style="text-align:left">Salvar o projeto editável</td><td style="text-align:left">Exige <strong>Gerar cena</strong> ou <strong>Atualizar cena</strong> para aplicar à mesa</td></tr><tr><td style="text-align:left"><strong>Prévia</strong></td><td style="text-align:left">Inspecionar a imagem com todas as camadas do projeto</td><td style="text-align:left">Não grava na cena; a edição pausa</td></tr><tr><td style="text-align:left"><strong>Simular</strong> no editor de Objeto Inteligente</td><td style="text-align:left">Acompanhar um grafo local</td><td style="text-align:left">Não executa efeitos no jogo</td></tr><tr><td style="text-align:left"><strong>Testar comportamento</strong></td><td style="text-align:left">Ensaiar pelo servidor e relatar alterações previstas</td><td style="text-align:left">O ensaio é revertido</td></tr><tr><td style="text-align:left"><strong>Gerar cena</strong></td><td style="text-align:left">Criar a primeira cena nativa do projeto, reservada ao mestre</td><td style="text-align:left">Abre para o mestre; preserva a transmissão anterior dos jogadores</td></tr><tr><td style="text-align:left"><strong>Atualizar cena</strong></td><td style="text-align:left">Aplicar o projeto à cena vinculada</td><td style="text-align:left">Clientes que veem essa cena recebem a atualização confirmada</td></tr><tr><td style="text-align:left"><strong>Ativar para jogadores</strong> no menu da cena</td><td style="text-align:left">Tornar a cena visível e transmiti-la</td><td style="text-align:left">Jogadores conectados passam a vê-la</td></tr></tbody></table></div>
+<h2 id="construir-a-primeira-sala">Construir a primeira sala</h2>
+<ol><li><p>Como mestre da campanha, escolha <strong>Nova cena → Map Builder</strong>. A pasta de cenas
+escolhida acompanha o projeto. Entrar não altera a cena atual nem a transmissão
+dos jogadores.</p></li><li><p>Informe o nome do mapa diretamente no cabeçalho. Abra
+<strong>Painéis → Configurações → Configuração do mapa</strong> para escolher dimensões,
+tamanho da célula e fundo.
+Volte a <strong>Camadas</strong> para renomear a <strong>Camada 1</strong> ou adicionar outra camada nomeada.</p></li><li><p>Comece com o chão sólido, parede simples e porta nativa padrão, ou escolha
+<strong>Importar</strong> na <strong>Biblioteca</strong> inferior para usar suas imagens. Na modal de importação, escolha
+os arquivos de imagem e seu tipo: <strong>Chão</strong>, <strong>Parede</strong>, <strong>Porta</strong> ou <strong>Objeto</strong>.
+Opcionalmente, associe as imagens a uma família de assets existente ou crie uma
+nova. Selecione uma imagem ou família na biblioteca para usar seu pincel.</p></li><li><p>Abra <strong>Painéis → Ferramentas</strong>. Com <strong>Chão</strong>, escolha pincel livre, retângulo,
+círculo ou polígono e pinte o chão. Trace paredes e portas arrastando entre os pontos
+de início e fim. A porta é um segmento independente e não exige uma parede.
+Sobrepor uma parede na mesma direção substitui esse trecho.</p></li><li><p>Use <strong>Selecionar</strong> para mover objetos e abra <strong>Painéis → Seleção</strong> para editar
+suas propriedades. Pressione <strong>E</strong> para apagar objetos. Paredes e portas são movidas
+e excluídas independentemente. Desfazer/refazer recupera edições, inclusive objetos
+removidos. Segure Espaço e arraste para mover a câmera; a roda muda o zoom e
+<strong>0</strong> enquadra o mapa.</p></li><li><p>As alterações são salvas automaticamente; o cabeçalho mostra seu estado.
+<strong>Painéis → Projetos</strong> lista os projetos salvos para reabri-los.
+<strong>Novo projeto</strong> aguarda as mudanças pendentes antes de iniciar um projeto vazio.</p></li><li><p>Escolha <strong>Gerar cena</strong>. O builder salva o projeto, renderiza a imagem, usa o
+fluxo nativo de fatiamento e cria uma nova cena reservada ao mestre nessa pasta.
+O mestre abre essa cena; os jogadores continuam na transmissão anterior. No
+menu de contexto da cena, <strong>Ativar para jogadores</strong> torna a cena visível e
+a transmite em uma operação, inclusive para jogadores já conectados.</p></li></ol>
+<p>No diretório <strong>Cenas</strong> do jogo, a cena vinculada a um projeto salvo mantém o mesmo
+ícone de mapa, em vermelho. Clique com o botão direito e escolha
+<strong>Editar com MapBuilder</strong>, junto da ação <strong>Editar</strong> normal, para reabrir
+diretamente esse projeto. Entrar no editor não altera a cena dos
+jogadores. Depois de editar, o botão principal do cabeçalho passa a ser
+<strong>Atualizar cena</strong> e aplica as mudanças à mesma cena, mantendo sua identidade e
+o vínculo com o projeto. Imagens importadas e cenas
+sem projeto vinculado mantêm os controles normais. O vínculo com o projeto fica
+visível somente para o mestre.</p>
+<h3 id="controles-da-area-de-trabalho">Controles da área de trabalho</h3>
+<p>O canvas ocupa o espaço abaixo do cabeçalho, com uma <strong>Biblioteca</strong> horizontal na
+parte inferior. <strong>Painéis → Ferramentas</strong> reúne ferramentas de desenho, material
+ativo, opções de pincel, camada ativa e encaixe na grade. Entre o nome editável
+do mapa e o histórico, o cabeçalho oferece <strong>Selecionar</strong>, <strong>Pintar</strong>, tamanho do
+pincel e <strong>Apagar</strong>. Em seguida ficam <strong>Desfazer</strong>, <strong>Refazer</strong>, estado do
+salvamento, <strong>Prévia</strong> e geração de cena. Controles de visualização e dimensões
+em células ficam abaixo do canvas.</p>
+<p><strong>Selecionar (V)</strong> permite Shift-clique e arrastar uma caixa de seleção para
+vários objetos. <strong>Pintar (F)</strong> retorna ao pincel livre de chão na operação de
+pintura, usando o material atual e selecionando <strong>Chão</strong> na biblioteca. Seu tamanho
+fica sincronizado com <strong>Ferramentas</strong>: em Tiles, 1–20 células com encaixe na
+grade ou 0,05–20 sem encaixe; Pintura sempre usa 0,05–20 células.
+<strong>[ / ]</strong> também ajusta o tamanho. O campo de tamanho fica disponível para o
+pincel livre de chão, inclusive sua borracha por área. <strong>Apagar (E)</strong> exclui um
+objeto inteiro ao clicar; use <strong>Apagar chão</strong>, em <strong>Ferramentas</strong>, para apagar
+apenas parte do chão.
+Os controles de edição pausam na Prévia ou durante uma operação que exige
+acesso exclusivo. O salvamento automático em segundo plano permite continuar
+editando.</p>
+<p>Com o pincel de chão ativo, segure <strong>Shift + botão esquerdo do mouse</strong> e arraste
+na horizontal para redimensioná-lo sem pintar. Arrastar para a direita aumenta
+o tamanho; para a esquerda diminui, com a área e o tamanho atualizados no ponto
+inicial. Solte para manter o tamanho ou pressione <strong>Escape</strong> para restaurá-lo.
+Funciona em Tiles e Pintura, inclusive na borracha por área; altera apenas a
+preferência do pincel, sem editar o mapa ou criar uma etapa de desfazer.</p>
+<p>O campo de nome no cabeçalho aplica e salva nomes válidos após uma breve pausa
+na digitação. <strong>Enter</strong> ou <strong>Escape</strong> devolve o foco ao canvas; desfazer reverte
+uma alteração de nome aceita. O campo fica sincronizado com <strong>Configurações</strong>.
+Os botões de histórico no cabeçalho usam <strong>Ctrl+Z</strong> para desfazer e <strong>Ctrl+Shift+Z</strong>
+ou <strong>Ctrl+Y</strong> para refazer.</p>
+<h3 id="biblioteca-e-barra-de-ferramentas">Biblioteca e barra de ferramentas</h3>
+<p>A barra da biblioteca oferece busca, <strong>Importar</strong>, categorias por tipo e acesso
+direto a <strong>Selecionar</strong>, <strong>Apagar</strong>, <strong>Mover vista</strong>, <strong>Objeto vazio</strong> e <strong>Região</strong>.
+Os pincéis de chão, parede, porta, objeto e luz ficam na mesma faixa; <strong>Efeitos</strong>
+mantém o seletor <strong>Partículas/Shaders</strong>. Esses atalhos fecham o painel auxiliar e
+devolvem o foco ao mapa. Em telas menores a faixa tem rolagem horizontal própria,
+inclusive pelo foco do teclado, sem mudar de posição ao trocar categorias.
+Busca, filtros, categorias e seta de recolher mantêm suas posições ao trocar
+para luzes ou efeitos; o espaço da importação permanece reservado quando ela
+fica oculta. Filtros sem resultados mostram uma mensagem. Os checkboxes usam o
+mesmo controle nativo compacto em configurações, camadas e propriedades, com
+ativação pelo rótulo e pela tecla Espaço.
+Sua seta recolhe os cards, mantendo a barra acessível. Ao entrar, <strong>Chão</strong> aparece
+destacado e a galeria mostra apenas imagens classificadas como Chão neste projeto. Clicar em
+<strong>Chão</strong>, <strong>Parede</strong>, <strong>Porta</strong> ou <strong>Objeto</strong> filtra a galeria e ativa a ferramenta
+correspondente. Escolher um preset de luz ou efeito nativo ativa sua ferramenta
+de posicionamento. O seletor de material em <strong>Ferramentas</strong> acompanha o pincel
+ativo e inclui sua aparência padrão.</p>
+<h3 id="selecao-e-camadas-do-projeto">Seleção e camadas do projeto</h3>
+<p><strong>Painéis</strong>, no canto superior direito do mapa, abre um painel auxiliar com as abas
+<strong>Ferramentas</strong>, <strong>Camadas</strong>, <strong>Seleção</strong>, <strong>Configurações</strong>, <strong>Projetos</strong> e <strong>Revisão</strong>. Fechar o painel
+mantém a biblioteca visível. Selecionar ou pintar não abre o painel automaticamente.
+As propriedades dos objetos ficam em <strong>Seleção</strong>. Selecione um elemento e edite
+<strong>Nome do elemento</strong> (ou <strong>Nome do objeto/Nome da região</strong>) para nomeá-lo sem
+alterar o arquivo da imagem. Chãos, paredes, portas, objetos, luzes, partículas,
+shaders e regiões aceitam nomes de até 120 caracteres. Pressione <strong>Enter</strong> ou
+saia do campo para aplicar e salvar automaticamente; <strong>Escape</strong> descarta a edição
+pendente do campo. Camadas, alvos de comportamento, escolhas de luz/porta e a
+rede da cena mostram os nomes definidos. Limpar um nome opcional restaura o
+rótulo normal; Objetos vazios, regiões e shaders mantêm um nome obrigatório.
+Desfazer/refazer e duplicação preservam os nomes. Renomear conserva a identidade
+do elemento e as conexões dos nós; <strong>Atualizar cena</strong> aplica o nome à cena
+existente. Dois cliques numa porta do
+mapa abrem seu editor de comportamento na
+modal <strong>Objeto Inteligente</strong>. <strong>Revisão</strong>
+mostra o resumo do projeto e a ação de gerar cena.</p>
+<p>O cabeçalho do painel mantém o nome do mapa visível. As seis abas identificadas
+ficam disponíveis em duas linhas, inclusive em telas estreitas, e cada aba guarda
+sua própria posição de rolagem. Use as setas para trocar de aba, <strong>Home/End</strong>
+para ir à primeira/última, e <strong>Escape</strong> fora de um campo de texto para fechar o
+painel. Fechar devolve o foco ao controle que o abriu e preserva a seleção;
+clicar na aba atual a mantém aberta.</p>
+<p><strong>Ferramentas</strong> coloca material atual, camada ativa e configurações do pincel
+antes da paleta compacta de ferramentas. Dureza e intensidade da Pintura aparecem
+juntas; a ajuda expansível reúne instruções e atalhos do pincel. <strong>Seleção</strong>
+oferece <strong>Selecionar no mapa</strong> quando não há objetos selecionados. <strong>Projetos</strong>
+mantém nomes longos legíveis, e <strong>Revisão</strong> agrupa mapa e contagem de objetos
+antes das ações da cena. Abrir painéis e navegar entre eles não altera o mapa.</p>
+<p><strong>Seleção</strong> coloca as propriedades editáveis antes das miniaturas de materiais
+para mudar a aparência do objeto selecionado. <strong>Camadas</strong> organiza camadas nomeadas
+do projeto: crie, renomeie,
+reordene, oculte ou bloqueie camadas e escolha a camada ativa para novos objetos.
+Mova os objetos selecionados entre camadas em <strong>Seleção</strong> ou com <strong>Mover para cá</strong>
+na camada de destino. A lista mostra primeiro a camada superior, com contagens
+e estados de ativa, oculta e bloqueada. <strong>Pintar em</strong>, em <strong>Ferramentas</strong>, troca a
+camada ativa. <strong>Selecionar</strong> seleciona os objetos editáveis de uma
+camada; <strong>Isolar</strong> a exibe sozinha temporariamente, incluindo luzes e efeitos
+nativos. <strong>Mostrar todas</strong> encerra o isolamento e mostra todas as camadas;
+<strong>Desbloquear todas</strong> remove seus bloqueios.</p>
+<h3 id="operacoes-de-camadas">Operações de camadas</h3>
+<p>Arraste a alça de uma camada ou use suas setas para mudar a posição. Expanda
+<strong>Conteúdo da camada</strong> para selecionar um objeto. <strong>Duplicar camada</strong> copia uma
+camada desbloqueada e desloca todo o conteúdo exatamente uma célula à direita e
+uma abaixo. A cópia aparece imediatamente acima da original, visível e
+desbloqueada, com novos IDs e referências remapeadas entre os Objetos
+Inteligentes copiados. A operação é recusada sem alterações se a cópia sair do
+mapa, sobrepuser portas ou exceder os limites do projeto. Duplicar ocupa uma etapa
+de desfazer.</p>
+<p><strong>Mesclar abaixo</strong> move uma camada visível e desbloqueada para a camada
+imediatamente inferior, também visível e desbloqueada. A ordem de pintura, as
+identidades dos objetos e as referências de Objetos Inteligentes são preservadas.
+Uma mesclagem ocupa uma etapa de desfazer. Uma camada com borrachas de terreno
+não pode ser mesclada sobre uma camada inferior com pisos, pois isso mudaria
+quais pisos essas borrachas afetam. Exclua uma camada vazia e desbloqueada
+após mover ou remover seus objetos, inclusive a última camada. Crie uma camada
+visível e desbloqueada antes de voltar a desenhar. Nomes,
+ordem, visibilidade e bloqueio são salvos com o projeto. Objetos de camadas
+ocultas ou bloqueadas não podem ser editados. Ocultar uma camada muda a vista
+do editor; a geração inclui todas as camadas do projeto.</p>
+<h3 id="previa">Prévia</h3>
+<p><strong>Prévia</strong> mantém o mapa no lugar e oculta grade, seleção, guias do pincel e
+contorno do mapa. O desenho e a edição de propriedades ficam pausados, enquanto
+mover a vista, ajustar o zoom, salvar e gerar cena continuam disponíveis.
+A prévia mostra temporariamente todas as camadas, inclusive as ocultas no
+editor. <strong>Voltar à edição</strong> restaura a visibilidade anterior e retoma a edição.</p>
+<h2 id="escolher-como-comecar">Escolher como começar</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Método</th><th scope="col" style="text-align:left">Quando usar</th><th scope="col" style="text-align:left">O que permanece editável</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Tiles</strong></td><td style="text-align:left">Salas em grade, materiais repetidos, formas precisas ou contornos definidos sem encaixe</td><td style="text-align:left">Imagens/formas concretas do chão, paredes e demais objetos do projeto</td></tr><tr><td style="text-align:left"><strong>Pintura</strong></td><td style="text-align:left">Transições suaves de terreno e mistura gradual de materiais</td><td style="text-align:left">Traços e suas máscaras, com os mesmos objetos e camadas do projeto</td></tr><tr><td style="text-align:left"><strong>Importar mapa pronto</strong></td><td style="text-align:left">PNG/JPEG/WebP/TIFF finalizado para traçar ou decorar</td><td style="text-align:left">Uma imagem de fundo e os objetos colocados sobre ela</td></tr><tr><td style="text-align:left"><strong>Importar Universal VTT</strong></td><td style="text-align:left"><code>.uvtt</code>, <code>.dd2vtt</code> ou <code>.df2vtt</code> com grade/paredes/portas/luzes</td><td style="text-align:left">Objetos nativos de cena; cria uma cena separada, não um projeto do Builder</td></tr></tbody></table></div>
+<p>Tiles e Pintura são modos do mesmo projeto; alterná-los preserva o trabalho
+existente. Um fundo de mapa pronto pode acompanhar qualquer um deles. Para
+formatos aceitos, avisos e limites de intercâmbio, siga o
+<a href="universal-vtt.html">guia do Universal VTT</a>.</p>
+<h2 id="tiles-e-pintura">Tiles e Pintura</h2>
+<p>O seletor de modo no cabeçalho alterna entre <strong>Tiles</strong> e <strong>Pintura</strong> no mesmo
+projeto. Projetos novos começam em Tiles. Mudar de modo preserva chão, paredes,
+portas, objetos nativos, camadas e câmera; a mudança ocupa um passo de desfazer
+e fica salva no projeto.</p>
+<p>Tiles usa materiais, tiles de imagem e famílias de assets.
+Com encaixe na grade, substitui as células cobertas; desligar o encaixe mantém
+o posicionamento e as formas contínuas. Pincéis, retângulos, círculos, polígonos,
+preenchimento, borracha por área e captura de material compartilham o mesmo
+projeto, camadas e histórico. Paredes, portas, objetos, luzes/efeitos nativos,
+prévia e geração de cenas continuam disponíveis nessa área de trabalho.</p>
+<p>Projetos novos começam com uma <strong>Camada 1</strong> vazia e renomeável. Ela pode misturar
+chão, paredes, portas, objetos e efeitos nativos; nenhuma camada é reservada a um
+tipo de objeto. Abra <strong>Painéis → Camadas</strong> para renomeá-la ou adicionar suas próprias
+camadas nomeadas. Importar assets, salvar e gerar um mapa vazio apenas com seu
+fundo continuam disponíveis. Projetos existentes mantêm suas camadas originais.</p>
+<h2 id="pintura-de-terreno">Pintura de terreno</h2>
+<p>Escolha <strong>Pintura</strong> no cabeçalho e selecione uma imagem ou família de chão na
+biblioteca. Arraste no mapa para misturar esse material ao chão existente com
+um pincel circular contínuo. A pintura de terreno usa posições fracionárias,
+independentemente do encaixe usado em Tiles; a visibilidade da grade continua
+sendo sua escolha. Voltar a Tiles restaura seus controles de encaixe sem
+converter os traços existentes.</p>
+<p>O campo de tamanho no cabeçalho e <strong>Painéis → Ferramentas</strong> compartilham o
+diâmetro do pincel, de 0,05 a 20 células. <strong>Dureza da borda (%)</strong> controla o
+centro sólido e a suavidade da borda externa. <strong>Intensidade do pincel (%)</strong>
+controla quanto cada carimbo acrescenta material. Segurar o ponteiro pressionado
+e parado continua acumulando material; passar pela área novamente aprofunda a
+mistura. As texturas preservam sua escala e orientação no mapa enquanto
+materiais diferentes se misturam.</p>
+<p>Em <strong>Ferramentas</strong>, escolha <strong>Operação → Apagar chão</strong> para uma borracha suave
+por área com o mesmo tamanho, dureza e intensidade. Ela apaga pisos anteriores
+da camada ativa, revelando camadas inferiores ou o fundo; outras camadas,
+paredes, portas e objetos nativos são preservados. Pintura adicionada depois
+não é afetada pela borracha anterior. <strong>Apagar (E)</strong> no cabeçalho continua
+excluindo um objeto inteiro.</p>
+<p>Cada gesto concluído ocupa uma etapa de desfazer. <strong>Escape</strong> cancela o traço
+ativo, inclusive a pintura acumulada com o ponteiro parado. Camadas bloqueadas
+ou ocultas não podem ser pintadas. A Prévia pausa a edição; salvar/reabrir,
+gerar e atualizar a cena vinculada preservam as máscaras suaves e as texturas
+misturadas.</p>
+<h2 id="importar-um-mapa-pronto">Importar um mapa pronto</h2>
+<p>Escolha <strong>Biblioteca → Importar → Importar mapa pronto</strong>, ou use a mesma ação em
+<strong>Painéis → Configurações</strong> ou <strong>Projetos</strong>. Envie uma imagem PNG, JPEG, WebP ou TIFF
+(até 25 MB), ou escolha uma imagem já existente nesta campanha. Defina largura e
+altura em células e tamanho da célula. Um projeto vazio sugere uma grade dentro
+dos limites a partir das dimensões da imagem; confira esses valores com a grade
+original do mapa.</p>
+<p>A imagem preenche o mapa uma única vez, abaixo de todas as camadas. Acrescente
+paredes, portas, objetos, luzes e comportamentos sobre ela. O fundo independe das
+categorias de pincel e não se repete como textura de chão. Substituí-lo mantém os
+objetos nas posições atuais; dimensões que deixariam objetos fora do mapa são
+recusadas. <strong>Remover imagem do mapa</strong> em Configurações retira o fundo sem excluir
+a imagem da campanha. Importação, substituição e remoção usam desfazer/refazer e
+salvamento automático, e aparecem nas cenas geradas ou atualizadas.</p>
+<h2 id="construir-mapas-maiores">Construir mapas maiores</h2>
+<h3 id="biblioteca-familias-e-colecoes">Biblioteca, famílias e coleções</h3>
+<p>Busque imagens pelo nome na biblioteca e escolha uma categoria para filtrar por
+tipo. Classificações, nomes, coleções e famílias opcionais pertencem ao projeto; esses
+rótulos não renomeiam imagens da campanha usadas em outros lugares.</p>
+<p><strong>Importar</strong> abre a modal de importação da aplicação. Escolha uma ou mais imagens,
+defina seu tipo como <strong>Chão</strong>, <strong>Parede</strong>, <strong>Porta</strong> ou <strong>Objeto</strong> e, opcionalmente,
+escolha ou crie uma família de assets. Você também pode escolher ou informar uma
+coleção. O tipo, a família e a coleção escolhidos valem para todos os arquivos
+desse envio. Luzes não usam assets de imagem e ficam fora desse fluxo de importação.</p>
+<p>Cada categoria mostra apenas as imagens deste projeto com o tipo selecionado.
+Imagens da campanha sem tipo no projeto continuam disponíveis em <strong>Imagens sem
+tipo</strong>, em <strong>Painéis → Ferramentas → Material</strong>. Selecione uma ali para atribuir
+o tipo da ferramenta ativa; seu card passa a aparecer na categoria correspondente.
+Essa classificação não altera a imagem da campanha nem seu uso em outro projeto.</p>
+<p>Use o filtro <strong>Coleção</strong> da biblioteca para mostrar uma coleção ou <strong>Todas as coleções</strong>.
+Abra <strong>Configurações da biblioteca</strong>, abaixo dos cards, para editar o nome, a
+coleção e o tipo da imagem selecionada neste projeto. Role
+dentro da biblioteca para alcançar esses controles; ela mantém a altura configurada.
+Coleções são nomes opcionais de até 80 caracteres, com espaços das bordas removidos.
+O card de uma família aparece quando ao menos um membro pertence à coleção
+selecionada; escolher a família continua pintando com todos os seus membros.</p>
+<p>Uma família de assets agrupa variações do mesmo material ou objeto, como três
+tiles de chão de masmorra. Os nomes de família pertencem a este projeto, têm
+espaços nas bordas removidos, devem conter de 1 a 80 caracteres e são comparados
+exatamente. Todas as imagens de uma família precisam ter o mesmo tipo.
+Selecione o card de uma família na biblioteca ou escolha a família no grupo
+de famílias do seletor de material para pintar com todos os seus membros.
+As imagens individuais continuam disponíveis para escolher uma variação específica.</p>
+<p>Dê dois cliques no card de uma imagem existente para abrir a modal de edição
+do asset e mudar seu nome, tipo, família ou coleção. Uma imagem já usada no mapa
+não pode mudar de tipo; envie uma cópia separada para usá-la com outro pincel. Adicionar ou remover
+um membro da família afeta as próximas pinturas; isso não troca imagens já pintadas.</p>
+<p><strong>Remover asset</strong> nessa modal pede confirmação na modal da aplicação e exclui a
+imagem da campanha inteira. A limpeza também alcança outros projetos salvos e
+cenas nativas que usam a imagem, preservando a geometria de chão, paredes e
+portas. Outras alterações não salvas no projeto atual são mantidas. Desfazer não
+recupera o arquivo excluído.</p>
+<h3 id="pinceis-de-tiles-borracha-e-amostragem">Pincéis de Tiles, borracha e amostragem</h3>
+<p>Em <strong>Tiles</strong>, a ferramenta de chão oferece cinco formas de desenhar:</p>
+<ul><li><p><strong>Pincel:</strong> arraste com um pincel quadrado ou redondo. Com o encaixe ligado, a
+pintura usa células; o carimbo redondo fica centralizado na célula do ponteiro,
+e o quadrado começa nela. Com o encaixe desligado, ambos seguem o ponteiro
+continuamente, centralizados nele, com tamanhos fracionários a partir de
+0,05 célula. Os traços conectam as posições sem deixar espaços. Uma guia mostra
+a área real. Use os botões de tamanho ou <strong>[ / ]</strong> para diminuir/aumentar o pincel.</p></li><li><p><strong>Retângulo:</strong> arraste entre cantos opostos para preencher uma área retangular.</p></li><li><p><strong>Círculo:</strong> pressione no centro e arraste para definir o raio.</p></li><li><p><strong>Polígono:</strong> clique em pelo menos três vértices e pressione <strong>Enter</strong> ou dê dois
+cliques para concluir. <strong>Concluir</strong> e <strong>Cancelar</strong> oferecem as mesmas ações na
+aba <strong>Ferramentas</strong>. Pressione <strong>Escape</strong> para cancelar a forma inacabada.</p></li><li><p><strong>Preenchimento (G):</strong> substitui células conectadas com o mesmo material e
+rotação na camada ativa. Variações da mesma família de chão contam como o mesmo
+material; espaços vazios formam sua própria região. A conexão usa as quatro
+células vizinhas.
+Com o encaixe desligado, a ferramenta vira <strong>Preencher forma</strong>: muda o material
+do chão clicado, preservando exatamente seu contorno e os recortes apagados.</p></li></ul>
+<p><strong>Encaixar na grade</strong> controla a geometria do chão e a posição do ponteiro.
+Desligado, retângulos usam cantos fracionários, círculos possuem contorno redondo
+suave, polígonos conservam os vértices desenhados e os traços seguem caminhos
+livres. Essas formas continuam livres ao salvar, reabrir e gerar a cena.
+A visibilidade da grade é uma configuração independente.</p>
+<p>Escolha <strong>Operação → Apagar chão</strong> para remover apenas a área coberta pelo pincel
+ou por uma forma. Outras camadas e tipos de objeto permanecem intactos. Apagar
+parte de um chão grande preserva seus trechos descobertos. Com o encaixe
+desligado, a borracha acompanha a mesma geometria livre do pincel e das formas.
+Ao recortar retângulos antigos por células, uma operação que deixaria fragmento
+menor que seu mínimo de 0,05 célula é rejeitada sem alterá-lo.
+Use <strong>Conta-gotas (I)</strong> ou <strong>Alt-clique</strong> num chão da camada ativa para
+reutilizar sua imagem específica e a rotação da textura. A captura retorna ao
+pincel de pintura. <strong>Apagar (E)</strong>, em <strong>Ferramentas</strong>, exclui um objeto inteiro ao
+clicar; <strong>Mover (H)</strong> desloca a vista.</p>
+<p>A pintura com encaixe preenche células da grade. Ao pintar material novo ou
+diferente, uma família sorteia um membro para cada célula e salva a referência
+dessa imagem em um tile de chão de 1 × 1.
+A pintura livre escolhe uma imagem específica para o traço ou forma inteira.
+As escolhas permanecem iguais durante a prévia do gesto, desfazer/refazer,
+reabertura e geração de cena. Famílias de paredes, portas e objetos sorteiam uma
+imagem a cada novo posicionamento. Cada traço ou forma completa ocupa uma etapa
+do histórico de desfazer.</p>
+<p>Em Tiles, pintar o mesmo chão novamente mantém a área como está, sem adicionar
+objetos ou uma etapa de desfazer. Variações existentes que pertencem à família escolhida
+mantêm suas imagens. Com encaixe ligado, cada célula igual é ignorada
+individualmente. Sem encaixe, um traço ou forma é ignorado quando toda sua área
+já tem o mesmo material, inclusive quando vários pisos dividem essa cobertura.
+Furos e outro material pintado sobre esse chão ainda precisam ser pintados.</p>
+<p>Um chão diferente substitui a área coberta na camada ativa, removendo o material
+antigo por baixo. Um traço livre que atravessa materiais iguais e diferentes
+substitui toda sua área. A geometria fora dessa área e o chão de outras camadas
+permanecem intactos. Abrir um projeto existente não reescreve seus pisos.
+O projeto mantém o limite combinado de 2.000
+objetos. Se um traço ou forma ultrapassaria esse limite, a operação inteira é
+rejeitada sem mudar o mapa.</p>
+<h3 id="luzes-efeitos-e-janelas-de-edicao-nativas">Luzes, efeitos e janelas de edição nativas</h3>
+<p><strong>Painéis → Ferramentas</strong> controla o tamanho do carimbo de chão, a espessura
+de paredes/portas, a orientação da textura do chão e as dimensões/rotação de objetos
+conforme a ferramenta ativa. Seu seletor de material também escolhe uma família,
+uma imagem da biblioteca ou a aparência padrão. <strong>Encaixar na grade</strong> ativa ou
+desativa o encaixe. <strong>Objeto</strong>, em <strong>Ferramentas</strong>, posiciona uma
+imagem dentro da caixa configurada, preservando sua proporção. <strong>Luzes</strong> na
+biblioteca oferece os presets <strong>Constante</strong>, <strong>Tocha</strong> e <strong>Pulso</strong> do VTT.
+Escolha um e clique no mapa para posicionar uma luz nativa. A Seleção expõe raios
+forte/fraco, cor, intensidade, animação, ângulo do cone, rotação, elevação e estado
+ativo. Posicionar luzes exige iluminação dinâmica ativa no servidor. Luzes não
+usam assets de imagem.</p>
+<p><strong>Efeitos</strong> oferece os perfis de partículas e os presets de shaders nativos do
+VTT. Escolha um e clique no mapa; depois ajuste suas propriedades em <strong>Seleção</strong>:
+tipo, densidade e escala de partículas ou raio, opacidade, intensidade, velocidade
+e modo de mistura de shaders, além de posição, rotação, cor, estado ativo e
+interação com a luz. Efeitos são objetos do projeto, com camadas, seleção,
+movimento, duplicação, rotação, exclusão e desfazer/refazer. Seu centro fica dentro
+do mapa; a área visual pode se estender a partir dele, como o raio de uma luz.</p>
+<p>As janelas de edição do jogo estão disponíveis dentro do builder. Dê dois
+cliques em uma parede, luz, emissor de partículas ou shader, ou use sua ação de
+edição em <strong>Seleção</strong>. As janelas de luzes e efeitos são os mesmos componentes
+usados na mesa: shaders incluem o editor GLSL completo, a biblioteca de presets
+e o assistente de prompt de IA; partículas e luzes expõem seus próprios
+controles nativos. O assistente copia instruções e recebe código colado; ele
+não contata um serviço de IA.</p>
+<p>Paredes e portas usam a janela <strong>Configurar parede/porta</strong> do jogo para
+aparência, bloqueios de movimento, visão, luz e som, limites de elevação e
+descoberta de portas secretas. Para uma porta, abra essa janela em <strong>Seleção</strong>;
+o clique duplo continua abrindo seu editor separado de comportamento de
+<strong>Objeto inteligente</strong>. Os ajustes da barreira física e os grafos de
+comportamento pertencem ao mesmo objeto e podem ser editados independentemente.</p>
+<p>Cada janela edita um rascunho privado do projeto e mostra localmente a prévia
+das mudanças compatíveis. <strong>Salvar</strong> aplica toda a edição como uma etapa de
+desfazer. <strong>Cancelar</strong>, fechar e <strong>Escape</strong> descartam o rascunho. Abrir ou mudar
+uma janela nunca edita a cena selecionada no jogo nem a cena dos jogadores.
+Salvar/reabrir e gerar preservam esses ajustes; aplicá-los a uma cena vinculada
+exige <strong>Atualizar cena</strong>.</p>
+<p>Em <strong>Efeitos</strong>, o seletor da biblioteca mostra <strong>Partículas</strong> ou <strong>Shaders</strong>,
+filtra a busca e ativa a ferramenta com seu último preset sem posicionar um objeto
+ou criar uma etapa de desfazer. Voltar a uma categoria de imagens restaura o filtro
+de coleção anterior.</p>
+<p>O canvas e a <strong>Prévia</strong> usam o renderizador animado nativo da mesa para essas
+luzes e efeitos, considerando paredes e aberturas de portas. A camada visual
+acompanha a câmera e a visibilidade do builder; a Prévia mostra temporariamente
+todas as camadas do projeto. Camadas de efeitos ocultas ou vazias liberam o
+renderizador. Ao gerar ou atualizar a cena, esses elementos continuam sendo
+objetos nativos dinâmicos, fora da imagem de fundo, e podem ser editados com as
+ferramentas normais do VTT.</p>
+<p>Com o encaixe na grade ativo, os gestos normais de parede seguem as bordas
+horizontais ou verticais das células e usam interseções inteiras. Pontas e bordas
+existentes próximas têm prioridade e podem ser fracionárias; prolongar uma ponta
+fracionária preserva essa âncora. Desative o encaixe para desenhar paredes diagonais
+ou usar coordenadas fracionárias. Com o encaixe ativo, mover uma seleção que contém
+paredes usa deslocamentos de células inteiras. Abrir um projeto salvo não realinha
+paredes ou portas existentes.
+Perto das bordas, um grupo com paredes para no último deslocamento inteiro
+permitido, sem usar uma sobra fracionária. Todos os objetos mantêm suas posições relativas.</p>
+<p>Com <strong>Selecionar</strong>, Shift e clique adiciona ou remove objetos individuais, e
+arrastar numa área vazia seleciona os objetos que interceptam o retângulo.
+<strong>Selecionar tudo</strong> inclui objetos editáveis de camadas visíveis e desbloqueadas.
+<strong>Duplicar</strong> e <strong>Girar</strong> atuam sobre toda a seleção; giros de 90 graus transformam
+chão e orientação da textura junto com paredes, portas, objetos e luzes. Mover
+um grupo usa um único deslocamento limitado às bordas para preservar posições
+relativas. Uma transformação inválida não muda nada, inclusive quando causaria
+sobreposição de portas. Cada operação ocupa uma etapa do histórico de desfazer.</p>
+<h2 id="encontros-e-nos-de-parede">Encontros e nós de parede</h2>
+<p>Selecione uma parede com <strong>Selecionar</strong> para mostrar os círculos das pontas e as
+alças de mais. Arrastar uma ponta move todas as paredes que compartilham aquele
+ponto na mesma camada editável, inclusive paredes com materiais ou espessuras
+diferentes. Portas mantêm sua própria geometria. Camadas bloqueadas ou ocultas
+não podem ser editadas por essas alças.</p>
+<p>O <strong>+</strong> central divide a parede em dois segmentos. Arraste-o para criar e mover
+o novo canto em um único gesto. O <strong>+</strong> ao lado de cada ponta prolonga a parede:
+arraste-o ou clique nele e depois no mapa para confirmar a nova ponta. Pontas e
+bordas editáveis próximas atraem a ponta; conectar a uma borda cria um nó em T
+compartilhado. Esse encaixe por proximidade também funciona com a grade desligada.</p>
+<p><strong>Escape</strong> cancela um arraste ou prolongamento armado. Cada movimento de nó,
+divisão ou prolongamento concluído ocupa um passo de desfazer. Pelo teclado,
+Enter ou Espaço ativa uma alça de mais; as setas movem uma ponta por uma célula
+com encaixe na grade ou por 0,1 célula sem ele. Shift usa uma célula inteira.
+Enter confirma um prolongamento armado na posição atual do ponteiro. Edições
+inválidas ou fora do mapa deixam o projeto intacto.</p>
+<p>Instruções de prolongamento e mensagens de recuperação aparecem no canto inferior
+esquerdo do canvas, alinhadas ao zoom. Em telas estreitas, as mensagens ficam acima
+dos controles de visualização e quebram linha sem cobrir seus botões.</p>
+<p>Cantos conectados e encontros em T usam a arte de parede unida no canvas, na
+<strong>Prévia</strong> e na imagem gerada. Segmentos colineares contíguos da mesma camada,
+imagem e espessura compartilham a origem e a direção da textura, preservando o
+padrão quando um segmento é invertido. Paredes isoladas mantêm a direção autoral.
+Aberturas de portas continuam livres. Esses encontros visuais não acrescentam
+paredes de colisão nem reescrevem pontos salvos ao abrir um projeto.</p>
+<h2 id="rotacao-de-portas">Rotação de portas</h2>
+<p>Selecione uma porta e escolha <strong>Ponto de ancoragem da rotação</strong> nas propriedades
+ou no editor do jogo: <strong>Início da porta</strong>, <strong>Centro da porta</strong> ou <strong>Fim da porta</strong>.
+O marcador da porta selecionada mostra o pivô. <strong>Girar</strong> mantém esse ponto fixo;
+portas existentes usam o centro por padrão. Com uma âncora explícita, abrir gira
+a imagem em 90° ao redor desse ponto e fechar restaura a imagem. <strong>Padrão (centro)</strong>
+mantém o comportamento original de ocultar a imagem ao abrir. Aparências ocultas
+explícitas do Blueprint continuam ocultas. Vários objetos giram em torno do
+centro da seleção. A escolha acompanha desfazer/refazer, salvamento automático,
+duplicação e atualizações da cena gerada, e também controla a rotação de uma
+porta individual com a ferramenta Selecionar do jogo.</p>
+<h2 id="objetos-vazios">Objetos vazios</h2>
+<p>Escolha <strong>Biblioteca → Objetos → Objeto vazio</strong>, ou <strong>Painéis → Ferramentas → Objeto
+vazio</strong>, e clique ou arraste para colocar um objeto sem imagem. Em Seleção, edite
+nome, tamanho, rotação e camada. Selecionar, mover, duplicar e selecionar vários
+funcionam como nos demais objetos.</p>
+<p>Dê dois cliques para editar os mesmos nós, estados, sinais e ações de Objeto
+Inteligente de um objeto comum. Os eventos apenas iniciam a sequência; os nós de
+lógica tomam as decisões. Use-o como controlador de luzes, sons e outros elementos
+sem colocar uma imagem. No jogo, ele vai diretamente para a camada <strong>GM</strong>. O
+mestre vê seu marcador sutil em todas as abas e o seleciona ou edita na aba
+<strong>GM</strong>. Continua editável no
+builder e é omitido dos dados de cena de jogadores/streamers. Cenas antigas
+recebem a mesma apresentação privada imediatamente, sem precisar gerar de novo.
+Edições nativas, cópias e atualizações mantêm o objeto no GM. Jogadores continuam
+disparando seus eventos de área ao mover tokens; ações de área/sinal com espera
+mantêm as permissões originais do jogador. Cliques diretos do jogador não o
+ativam. Ele não recebe imagem própria. O catálogo de nós é o
+mesmo para todos os tipos de elemento: <strong>Trocar imagem</strong> e <strong>Definir aparência</strong>
+podem controlar outro objeto por uma conexão explícita em <strong>Alvo</strong>. Nós visuais
+sem alvo compatível continuam editáveis e são ignorados com um diagnóstico na
+execução. Desfazer/refazer, salvamento
+automático e atualizações da cena mantêm sua identidade e seu comportamento.</p>
+<p>Para imagens comuns, alavancas e tochas, use <strong>Mover para camada de imagens do
+GM</strong> no menu de contexto para ocultá-las. Vá à aba <strong>GM</strong>, clique com o botão
+direito no objeto e escolha <strong>Mover para camada de imagens</strong> para devolvê-lo ao
+jogo. A aba <strong>Imagens</strong> edita imagens públicas; as privadas são selecionadas em
+GM. Devolver uma seleção mista mantém Objetos vazios no GM. Imagens privadas e
+marcadores de Objetos vazios continuam visíveis para o mestre com 55% de opacidade
+em todas as abas; desenhos privados também multiplicam sua opacidade original
+por 55%. Jogadores e streamers não recebem esses elementos privados. Trocar de
+aba atualiza os controles de edição sem reconstruir a cena renderizada.</p>
+<h2 id="salvamento-automatico">Salvamento automático</h2>
+<p>As edições do projeto são salvas automaticamente após uma breve pausa: nome do
+mapa, traços concluídos, objetos, camadas, configurações, desfazer e refazer.
+O cabeçalho mostra se há alterações aguardando, sendo salvas ou já salvas.
+Escritas em segundo plano conservam a seleção e o histórico e não interrompem
+a pintura. O botão de estado e <strong>Ctrl+S</strong> continuam disponíveis para sincronizar
+imediatamente.</p>
+<p>Os grafos dos Objetos Inteligentes também aplicam edições válidas automaticamente.
+Não há uma etapa manual de Salvar/Cancelar: <strong>Fechar</strong> ou <strong>Escape</strong> aguarda as
+edições válidas pendentes. Campos inválidos permanecem visíveis para correção e
+impedem o fechamento. Desfazer/refazer também é salvo. Abrir ou fechar um grafo
+atual sem mudanças não cria um blueprint vazio. Grafos de eventos removidos são
+descartados ao carregar dados anteriores.</p>
+<p>Uma resposta perdida repete a mesma operação lógica e seu UUID; uma escrita já
+confirmada não é aplicada de novo. Um conflito de revisão pausa o salvamento
+automático e conserva o rascunho local. <strong>Recarregar projeto salvo</strong> adota
+explicitamente a versão atual do servidor; <strong>Salvar uma cópia</strong> conserva o mapa
+local com outra identidade. Uma falha mantém as edições nesta aba e oferece
+controles de recuperação. Num conflito de Objeto Inteligente em jogo, novas
+escritas ficam pausadas até reabrir o editor com a versão atual; a revisão
+anterior nunca é substituída silenciosamente. <strong>Descartar alterações</strong> descarta apenas mudanças ainda
+não confirmadas. Recarregar esta aba recupera uma escrita incerta confirmando
+seu recibo original antes de enviar edições locais mais recentes. Rascunhos
+antigos sem o corpo dessa escrita pausam para recarregar ou copiar explicitamente.
+Se o carregamento inicial da biblioteca ou do projeto falhar, a edição permanece
+bloqueada e <strong>Tentar novamente</strong> recarrega sem criar um projeto vazio substituto.
+Corrigir ou desfazer uma edição rejeitada limpa a tentativa de salvamento
+rejeitada, evitando que recarregar a aba a trate como escrita incerta. Após
+reconectar, <strong>Tentar novamente</strong> no editor de Objeto Inteligente também retoma
+o salvamento pendente do projeto com o recibo original; conflitos de revisão
+continuam exigindo recuperação explícita.</p>
+<p>Voltar ao jogo aguarda as mudanças pendentes do projeto. Se o salvamento falhar,
+o editor permanece aberto para tentar novamente ou descartar explicitamente.
+Salvar automaticamente persiste a configuração; não gera uma cena nem executa
+ações do grafo. <strong>Gerar cena</strong> e <strong>Atualizar cena</strong> continuam sendo ações
+explícitas. Editar um elemento em jogo aplica a configuração do grafo ao dono e
+ao projeto vinculado pelas revisões existentes, sem acionar seu mecanismo.</p>
+<h2 id="atualizar-uma-cena-gerada">Atualizar uma cena gerada</h2>
+<p>Guarde o projeto para editar o mapa depois. <strong>Gerar cena</strong> cria a primeira cena;
+depois disso o botão principal do cabeçalho passa a ser <strong>Atualizar cena</strong>.
+Reabrir o projeto pelo diretório de cenas do jogo atualiza essa mesma cena, sem
+criar outra. O botão do cabeçalho e <strong>Painéis → Revisão → Atualizar cena</strong>
+substituem o fundo fatiado e os recursos gerados por este
+projeto na cena vinculada. Tokens, imagens, luzes, partículas, shaders, desenhos, névoa e outros
+conteúdos inseridos manualmente permanecem no lugar. Nome, pasta, visibilidade,
+transmissão e configuração do ambiente continuam sob controle do VTT. Portas
+nativas existentes conservam seu estado aberto/fechado/trancado durante a atualização.
+Luzes, partículas e shaders também conservam seu estado de ativação durante o jogo
+quando a configuração de ativação correspondente não mudou no projeto. Uma
+mudança intencional dessa configuração no projeto é aplicada na atualização.
+A descoberta de portas secretas segue a mesma regra: a descoberta durante o
+jogo é preservada enquanto o ajuste <code>discovered</code> de autoria não mudar; uma
+alteração intencional no projeto é aplicada na atualização.</p>
+<p>Ações autorizadas de Mover/Girar reconhecem a geometria nativa no histórico de
+propriedade, conservando a fonte editável; atualizar a cena reaplica posições e
+ângulos autorados. Outras edições nativas ainda produzem conflito. Configurações
+de interação durante o jogo são preservadas quando seu padrão autorado não muda;
+uma mudança intencional na autoria é aplicada na atualização. A ativação de região
+é conservada enquanto ativação/camada autoradas não mudam; uma mudança
+intencional na autoria vence. Atualizações de configuração
+recalculam a base de ocupação sem executar grafos de presença.</p>
+<p>Atualizações exigem as revisões atuais do projeto e da cena. Se outro editor
+alterar qualquer um deles, recarregue antes de tentar novamente. Se um objeto
+gerado foi modificado ou excluído diretamente no VTT, a atualização é interrompida
+para preservar esse trabalho. Resolva essa edição antes de atualizar ou use
+<strong>Salvar uma cópia</strong>, quando os controles de conflito oferecerem a opção, para
+preservar um projeto independente. Mantenha
+dimensões e tamanho da célula ao atualizar cenas com conteúdo inserido manualmente.
+Projetos existentes nas versões 1/2 podem adquirir histórico de propriedade se os
+IDs originalmente gerados, dados nativos e geometria da grade ainda corresponderem
+exatamente, permitindo apenas mudanças no estado das portas durante o jogo.
+Abrir o projeto verifica a possibilidade sem gravar; salvar registra a propriedade
+comprovada antes de substituir o projeto antigo. Sem essa comprovação, a cena
+legada vinculada não pode ser atualizada por este projeto. O builder nunca deduz
+propriedade pela proximidade ou semelhança visual dos objetos. Use um projeto novo
+ao criar uma cena independente. Os assets enviados continuam na biblioteca de
+imagens da campanha.</p>
+<h2 id="atalhos-de-teclado-e-ponteiro">Atalhos de teclado e ponteiro</h2>
+<p>Atalhos do mapa e das ferramentas valem quando o foco está fora de um campo ou
+texto editável. Os atalhos com <strong>Ctrl</strong> também aceitam <strong>Command</strong> no macOS.
+Editores modais têm seus próprios atalhos; uma operação exclusiva em andamento
+ou a Prévia pode desabilitar a edição.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Atalho</th><th scope="col" style="text-align:left">Ação</th></tr></thead><tbody><tr><td style="text-align:left"><strong>V / F / E</strong></td><td style="text-align:left">Selecionar / pincel de chão / apagar um objeto inteiro</td></tr><tr><td style="text-align:left"><strong>W / D / H</strong></td><td style="text-align:left">Ferramenta de parede / porta / mover vista</td></tr><tr><td style="text-align:left"><strong>Shift-clique</strong> ou caixa de seleção</td><td style="text-align:left">Adicionar/remover membros da seleção ou selecionar vários objetos</td></tr><tr><td style="text-align:left"><strong>Ctrl+A / Ctrl+D</strong></td><td style="text-align:left">Selecionar objetos editáveis / duplicar a seleção</td></tr><tr><td style="text-align:left"><strong>R</strong></td><td style="text-align:left">Girar a seleção em 90°; uma porta individual respeita o pivô configurado</td></tr><tr><td style="text-align:left"><strong>Delete / Backspace</strong></td><td style="text-align:left">Excluir a seleção</td></tr><tr><td style="text-align:left"><strong>Ctrl+Z / Ctrl+Shift+Z / Ctrl+Y</strong></td><td style="text-align:left">Desfazer / refazer</td></tr><tr><td style="text-align:left"><strong>Ctrl+S</strong></td><td style="text-align:left">Enviar ao servidor as alterações válidas pendentes do projeto</td></tr><tr><td style="text-align:left"><strong>[ / ]</strong></td><td style="text-align:left">Diminuir/aumentar o pincel de chão</td></tr><tr><td style="text-align:left"><strong>Shift + arrastar com o botão esquerdo</strong> com pincel de chão</td><td style="text-align:left">Redimensionar sem pintar; <strong>Escape</strong> restaura o tamanho anterior</td></tr><tr><td style="text-align:left"><strong>I</strong> ou <strong>Alt-clique</strong> em um chão</td><td style="text-align:left">Amostrar imagem e rotação da textura</td></tr><tr><td style="text-align:left"><strong>G</strong> em Tiles</td><td style="text-align:left">Preencher por balde com encaixe; preencher forma sem encaixe</td></tr><tr><td style="text-align:left"><strong>Enter</strong> ou dois cliques ao desenhar um polígono</td><td style="text-align:left">Concluir o polígono</td></tr><tr><td style="text-align:left"><strong>Escape</strong></td><td style="text-align:left">Cancelar um gesto ativo; nos demais casos sair da Prévia, limpar seleção ou fechar o painel em foco, conforme o contexto</td></tr><tr><td style="text-align:left"><strong>Espaço + arrastar</strong>, arrastar com o botão central ou Mover vista</td><td style="text-align:left">Mover a câmera</td></tr><tr><td style="text-align:left">Roda / <strong>+ / -</strong></td><td style="text-align:left">Ajustar o zoom no ponteiro / centro da área visível</td></tr><tr><td style="text-align:left"><strong>0 / Home</strong></td><td style="text-align:left">Enquadrar o mapa</td></tr><tr><td style="text-align:left">Setas com foco no canvas</td><td style="text-align:left">Mover a câmera</td></tr></tbody></table></div>
+<h2 id="limites-praticos">Limites práticos</h2>
+<p>O servidor valida esses limites; uma operação que excede um orçamento é
+recusada. O <a href="#operacoes-http-e-limites">contrato para desenvolvimento</a> lista
+limites adicionais de formas, renderização e Blueprints.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Recurso</th><th scope="col" style="text-align:left">Limite</th></tr></thead><tbody><tr><td style="text-align:left">Largura e altura do mapa</td><td style="text-align:left">1–200 células cada</td></tr><tr><td style="text-align:left">Tamanho da célula</td><td style="text-align:left">16–256 px</td></tr><tr><td style="text-align:left">Imagem do mapa gerado</td><td style="text-align:left">16.777.216 pixels, ou o limite menor configurado pelo host</td></tr><tr><td style="text-align:left">Camadas do projeto</td><td style="text-align:left">32</td></tr><tr><td style="text-align:left">Objetos combinados do projeto</td><td style="text-align:left">2.000 chãos, paredes, portas, objetos, luzes, partículas, shaders e regiões</td></tr><tr><td style="text-align:left">Objetos nativos gerados</td><td style="text-align:left">5.000, incluindo segmentos de parede e superfícies gerenciadas</td></tr><tr><td style="text-align:left">Imagens classificadas no projeto</td><td style="text-align:left">256</td></tr><tr><td style="text-align:left">Imagem enviada</td><td style="text-align:left">25 MB e 40 milhões de pixels decodificados</td></tr><tr><td style="text-align:left">Documento do projeto</td><td style="text-align:left">1 MB, com limites separados de contornos e trabalho do pincel</td></tr><tr><td style="text-align:left">Nomes</td><td style="text-align:left">120 caracteres para elementos; 80 para camadas, famílias e coleções</td></tr></tbody></table></div>
+<p>Largura, altura e tamanho da célula compartilham o limite da imagem: não é
+possível usar simultaneamente seus máximos individuais. Traços muito detalhados
+podem atingir os limites de forma ou pincel antes de preencher a contagem de
+objetos. Divida uma área densa em traços mais simples ou reduza suas dimensões,
+em vez de repetir a mesma edição recusada.</p>
+<h2 id="solucao-de-problemas">Solução de problemas</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Sintoma</th><th scope="col" style="text-align:left">O que conferir e fazer</th></tr></thead><tbody><tr><td style="text-align:left">Desenhar não produz efeito</td><td style="text-align:left">Saia da Prévia e escolha uma camada ativa visível e desbloqueada e uma ferramenta de desenho. Se não houver camadas, use <strong>Crie sua primeira camada</strong>.</td></tr><tr><td style="text-align:left">Uma imagem sumiu da categoria</td><td style="text-align:left">Confira o tipo no projeto e os filtros de busca/coleção. Imagens da campanha ainda sem tipo ficam em <strong>Ferramentas → Material</strong>.</td></tr><tr><td style="text-align:left">A pintura ficou suave ou o preenchimento mudou</td><td style="text-align:left">Confira <strong>Tiles/Pintura</strong>, encaixe, operação, dureza e intensidade. Apagar objeto e apagar área de chão são ferramentas separadas.</td></tr><tr><td style="text-align:left">Uma imagem nova de mapa desloca ou corta o trabalho</td><td style="text-align:left">Confira Largura/Altura em células e Tamanho da célula. A substituição mantém coordenadas; dimensões que excluiriam objetos são recusadas.</td></tr><tr><td style="text-align:left">Um TIFF não tem miniatura</td><td style="text-align:left">Alguns navegadores não mostram prévia de TIFF. O servidor continua validando uploads TIFF suportados; confira qualquer erro retornado.</td></tr><tr><td style="text-align:left">O salvamento fica pausado</td><td style="text-align:left">Corrija o campo destacado de configurações/propriedades/grafo ou desfaça a edição rejeitada. Campos inválidos do grafo também impedem fechar o editor.</td></tr><tr><td style="text-align:left">O salvamento falhou após perder a conexão</td><td style="text-align:left">Mantenha a aba atual e use <strong>Tentar novamente</strong> ao reconectar. Uma escrita incerta repete o recibo original; uma correção de validação usa uma nova operação.</td></tr><tr><td style="text-align:left">Apareceu um conflito de revisão</td><td style="text-align:left">Use <strong>Recarregar projeto salvo</strong> para adotar a versão do servidor ou <strong>Salvar uma cópia</strong> para preservar o rascunho local. Repetir Tentar novamente não atualiza silenciosamente uma revisão antiga.</td></tr><tr><td style="text-align:left">A atualização informou objeto gerado alterado/excluído</td><td style="text-align:left">Resolva a edição manual na cena antes de atualizar. Use os controles de recuperação/cópia oferecidos quando precisar de projeto independente; o projeto existente continua vinculado à cena.</td></tr><tr><td style="text-align:left">Os jogadores ainda veem o mapa antigo</td><td style="text-align:left">Confirme o sucesso de <strong>Gerar cena/Atualizar cena</strong> e confira qual cena é transmitida. Gerar uma cena privada não a ativa para jogadores.</td></tr><tr><td style="text-align:left">Camadas ocultas do editor aparecem na Prévia ou na cena</td><td style="text-align:left">Ocultar camadas ajuda a editar. Prévia e geração incluem todas as camadas; controle a privacidade durante o jogo pelas camadas GM/imagens da mesa.</td></tr><tr><td style="text-align:left">O comportamento não fez nada</td><td style="text-align:left">Confira evento inicial, ações explícitas, vínculos de Alvo, permissões de portas trancadas e pausa da automação. Use <strong>Testar comportamento</strong> e o Registro de automação para o diagnóstico.</td></tr><tr><td style="text-align:left">Remover asset afetou outro mapa</td><td style="text-align:left"><strong>Remover asset</strong> exclui o recurso da campanha. Para deixar de usar uma imagem só neste mapa, mude/remova seu posicionamento ou fundo. Desfazer não recupera o arquivo excluído.</td></tr></tbody></table></div>
+<h2 id="referencia-de-objetos-inteligentes">Referência de Objetos Inteligentes</h2>
+<p>Comece pelo elemento que deseja operar e conecte um evento inicial a ações
+explícitas. Um grafo vazio não alterna o estado implicitamente. A configuração
+do grafo salva automaticamente; a execução no jogo é uma ação separada.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Objetivo</th><th scope="col" style="text-align:left">Referência</th></tr></thead><tbody><tr><td style="text-align:left">Criar uma alavanca ou tocha vinculada</td><td style="text-align:left"><a href="#alavancas">Alavancas</a>, <a href="#tochas-compostas">Tochas compostas</a></td></tr><tr><td style="text-align:left">Disparar ações quando tokens entram/saem</td><td style="text-align:left"><a href="#regioes-e-placas-de-pressao">Regiões e placas de pressão</a>, <a href="#objetos-vazios">Objetos vazios</a></td></tr><tr><td style="text-align:left">Compartilhar condições ou coordenar objetos</td><td style="text-align:left"><a href="#condicoes-compostas">Condições compostas</a>, <a href="#variaveis-e-sinais-nomeados">Variáveis e sinais nomeados</a></td></tr><tr><td style="text-align:left">Esperar, contar ou limitar repetições</td><td style="text-align:left"><a href="#controles-de-execucao-persistentes">Controles persistentes</a>, <a href="#delay-persistente">Delay</a>, <a href="#temporizador-persistente">Temporizador</a></td></tr><tr><td style="text-align:left">Reutilizar ou inspecionar comportamento</td><td style="text-align:left"><a href="#modelos-reutilizaveis-de-comportamento">Modelos</a>, <a href="#rede-da-cena">Rede da cena</a>, <a href="#testar-comportamento-pelo-servidor">Ensaio no servidor</a></td></tr><tr><td style="text-align:left">Mudar uma superfície, apresentar mensagem ou mover o token responsável</td><td style="text-align:left"><a href="#superficies-dinamicas">Superfícies dinâmicas</a>, <a href="#mensagens-diarios-e-foco-da-camera">Mensagens/diários</a>, <a href="#teleporte-na-mesma-cena">Teleporte</a></td></tr></tbody></table></div>
+<p>A referência abaixo cobre o editor compartilhado de nós e os tipos de elemento
+suportados. A <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/smart-objects-direction.md">direção de desenvolvimento</a> registra
+propostas; não é uma lista de controles adicionais disponíveis neste código.</p>
+<h2 id="portas-como-objetos-inteligentes">Portas como Objetos Inteligentes</h2>
+<p>Cada elemento possui seu próprio blueprint. Portas, alavancas, tochas e regiões
+compartilham o editor, modelos reutilizáveis e a rede da cena do mestre.
+O editor usa o sistema de modais da aplicação e
+apresenta a caixa da instância real do elemento.</p>
+<p>Dê dois cliques numa porta editável no mapa do Map Builder para abrir <strong>Objeto
+Inteligente</strong>. A modal tem três áreas: a lista <strong>Eventos</strong> à esquerda, o canvas
+do grafo no centro e os ajustes de aparência e a <strong>Simulação</strong> à direita.
+Em telas estreitas elas se empilham.</p>
+<p>A caixa da instância mostra o nome e o estado atual real do elemento. Portas
+oferecem <strong>Ao interagir</strong> (<code>onInteract</code>) e <strong>Ao destruir</strong> (<code>onDestroy</code>).
+Objetos, incluindo alavancas, tochas e Empty Objects, também oferecem <strong>Ao entrar
+na área</strong> (<code>onAreaEnter</code>) e <strong>Ao sair da área</strong> (<code>onAreaExited</code>). Regiões oferecem
+<strong>Ao entrar na área</strong> (<code>onAreaEnter</code>), <strong>Ao sair
+da área</strong> (<code>onAreaExited</code>) e <strong>Ao destruir</strong>. Sinais nomeados oferecem <strong>Ao receber
+sinal</strong> (<code>onSignal</code>). A geometria e o estado inicial continuam em <strong>Seleção</strong>.</p>
+<p>Eventos apenas iniciam a sequência conectada. Eles não comparam valores,
+escolhem estados nem trocam imagens. Use nós de lógica para decisões e nós de
+ação para alterações. Um mecanismo com blueprint e grafo de interação vazio não
+faz nada ao ser acionado; não existe alternância automática.</p>
+<p>Para alternar uma alavanca por completo, conecte <strong>Ao interagir → Verificar
+estado: Desativada</strong>. Ligue <strong>Verdadeiro → Mudar estado: Ativada → Trocar imagem</strong>
+com a imagem ativa e <strong>Falso → Mudar estado: Desativada → Trocar imagem</strong> com a
+imagem inativa. As ações de estado e imagem pertencem à mesma sequência. Para
+uma tocha, use <strong>Normal/Girada</strong>; sua chama continua sendo uma ação independente.
+As condições leem o estado do início do evento, mesmo após uma ação de estado.
+<strong>Aparência padrão por estado</strong> continua como configuração visual opcional separada.</p>
+<p>Eventos de área iniciam para cada token elegível que atravessa a borda. A ocupação
+da região muda apenas na primeira chegada e na última saída; testar primeira ou
+última presença é responsabilidade dos nós de lógica. Regiões não possuem
+interação direta. Ajustes de configuração não iniciam sequências de jogo.</p>
+<p>Nos objetos, o tamanho e a rotação definidos no editor delimitam a área. Quando o
+centro de um token entra ou sai dessa caixa, o grafo correspondente começa,
+incluindo os dois eventos quando um movimento aceito atravessa toda a área.
+Esses eventos não alternam o estado nem trocam imagens. Use <strong>Contexto do evento</strong>
+para acessar o token e a quantidade de presenças, e nós de condição e ação para
+definir a resposta. Mover, redimensionar, girar ou importar objetos apenas
+atualiza a ocupação. <strong>Simular</strong> e <strong>Testar comportamento</strong> também aceitam os dois
+eventos de área dos objetos.</p>
+<p>Para reutilizar o comportamento de outro objeto, conecte o evento da área a
+<strong>Interagir com objeto</strong> e ligue uma <strong>Referência de elemento</strong> em seu <strong>Alvo</strong>.
+Essa ação executa explicitamente o grafo <strong>Ao interagir</strong> do alvo, incluindo as
+ações conectadas de estado, imagem, luz e som. <strong>Mudar estado</strong> altera apenas o
+estado; não chama outro evento nem repete as ações de imagem do alvo. Objetos
+nativos sem blueprint mantêm sua alternância normal; um grafo de interação
+autoral vazio não faz nada. As cadeias compartilham os limites, a transação e o
+recibo da operação. <strong>Testar comportamento</strong> ensaia a cadeia completa; o botão
+local <strong>Simular</strong> apenas lista a interação solicitada, sem executar outros grafos.
+A interação do alvo é enfileirada após as ações do evento de origem, como os
+sinais nomeados. Ela segue a lógica já configurada no alvo, inclusive alternância.</p>
+<p>O autosave salva as edições no projeto. Quando ele já está vinculado a uma cena,
+clique em <strong>Atualizar cena</strong> para aplicar os grafos alterados ao jogo. Apenas
+voltar ao jogo não atualiza essa cena. O indicador de salvamento e o editor de
+comportamento esclarecem essa diferença; a atualização mantém o ID da cena.</p>
+<p><strong>Ao receber sinal</strong> (<code>onSignal</code>) recebe um sinal nomeado de <strong>Emitir evento</strong> ou
+de um temporizador único com o mesmo nome. Selecione um sinal nomeado para exibir
+seu conector no nó da instância. O nome autoral do sinal permanece intacto. Não
+há um ID separado para expiração de temporizador: os grafos <code>signal:&lt;nome&gt;</code>
+existentes continuam sendo os receptores.</p>
+<p><strong>Ao destruir</strong> executa imediatamente antes de uma exclusão explícita no jogo,
+inclusive exclusão da seleção ou limpeza de uma camada nativa. Ele pode controlar
+outra luz, mudar outro elemento ou avisar um receptor de sinal enquanto o dono
+ainda existe. A remoção e seus efeitos usam a mesma transação; uma falha conserva
+o dono e reverte seus efeitos. Repetir o mesmo comando reutiliza seu recibo.
+Um comando pode remover até 32 donos com caminhos de destruição conectados.
+Apenas comandos nativos autorizados podem remover elementos. Com a automação
+pausada, o elemento é removido sem executar seu grafo de destruição.</p>
+<p>Remover um elemento no Builder, atualizar uma cena gerada, mudar a configuração
+ou excluir um asset ou uma campanha não executa esse evento de jogo.
+Temporizadores e esperas do elemento removido são cancelados. Para continuar
+ações mais tarde, envie um sinal a outro elemento que permanecerá na cena e
+agende o trabalho nele. <strong>Testar comportamento</strong> prevê a remoção e mostra
+<strong>Removido neste teste</strong>, conservando o mapa real, o projeto e seu histórico.</p>
+<p>Cada estado oferece três opções de aparência:</p>
+<ul><li><p><strong>Aparência nativa:</strong> usar o material da porta enquanto fechada ou trancada e
+ocultar sua imagem enquanto aberta.</p></li><li><p><strong>Imagem oculta:</strong> ocultar a imagem nesse estado, mantendo a geometria nativa.</p></li><li><p><strong>Usar imagem:</strong> escolher uma imagem do projeto classificada como <strong>Porta</strong> para
+esse estado, inclusive uma imagem para exibir enquanto aberta.</p></li></ul>
+<p><strong>Eventos</strong> oferece apenas os eventos de início disponíveis e sua quantidade de
+nós. Não existem filtros de estado no evento. Carregar dados anteriores descarta
+<code>onChange</code> e os grafos de entrada, saída e interação por estado; suas ações não
+são migradas. Elementos e arquivos de assets continuam no lugar. Recrie essas
+sequências em <strong>Ao interagir</strong>, num evento de área ou num sinal nomeado. A escolha
+de aparência continua independente do grafo selecionado.</p>
+<p>Cada evento ocupa uma linha no nó da instância, com seu conector à direita.
+O cabo sai horizontalmente desse conector. Arraste dele para iniciar seu ramo,
+mesmo quando outro evento estiver selecionado. Uma linha acompanha o ponteiro.
+Solte numa área vazia do
+canvas para abrir o seletor de nós naquela posição; escolher um tipo cria o nó
+e conecta o ramo. <strong>Adicionar nó</strong>, ou dois cliques numa área vazia do canvas,
+abre o mesmo seletor sem conexão. Digite no campo de busca para filtrar a lista:
+trechos encontrados no nome ou na descrição do nó aparecem primeiro, e letras
+digitadas na ordem dentro do nome do nó também encontram resultados, então <code>tcs</code> acha <strong>Tocar som</strong>. <strong>Enter</strong>
+escolhe o melhor resultado e as setas percorrem as opções. Ele
+oferece estas ações e condições:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Nó</th><th scope="col" style="text-align:left">Configuração</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Controlar luz</strong></td><td style="text-align:left">Escolher uma luz deste projeto e ativá-la ou desativá-la</td></tr><tr><td style="text-align:left"><strong>Tocar som</strong></td><td style="text-align:left">Escolher um som existente na campanha e definir volume de 0 a 1</td></tr><tr><td style="text-align:left"><strong>Mudar estado</strong></td><td style="text-align:left">Solicitar Fechada, Aberta ou Trancada pelo estado nativo da porta</td></tr><tr><td style="text-align:left"><strong>Verificar estado</strong></td><td style="text-align:left">Comparar o estado no início do evento e seguir Verdadeiro ou Falso; um valor ligado em <strong>Teste</strong> decide no lugar</td></tr><tr><td style="text-align:left"><strong>Trocar imagem</strong></td><td style="text-align:left">Trocar, ocultar ou restaurar a imagem ativa deste elemento ou do elemento/grupo conectado ao Alvo</td></tr><tr><td style="text-align:left"><strong>Interagir com objeto</strong></td><td style="text-align:left">Iniciar explicitamente Ao interagir no alvo, incluindo suas ações autorais de imagem, luz e som</td></tr><tr><td style="text-align:left"><strong>Sequência</strong></td><td style="text-align:left">Executar as saídas <strong>1</strong> a <strong>4</strong> uma após a outra, cada ramo por completo antes do seguinte</td></tr><tr><td style="text-align:left"><strong>Escolher caminho</strong></td><td style="text-align:left">Comparar um Valor tipado com os casos configurados e escolher um caso ou <strong>Padrão</strong></td></tr><tr><td style="text-align:left"><strong>Aleatório</strong></td><td style="text-align:left">Sortear um de dois a quatro caminhos de execução usando pesos inteiros</td></tr><tr><td style="text-align:left"><strong>Ler propriedade</strong></td><td style="text-align:left">Nó de valor: ler o <strong>Estado atual</strong> ou o <strong>Estado anterior</strong> que a porta acabou de deixar</td></tr><tr><td style="text-align:left"><strong>Comparar estado</strong></td><td style="text-align:left">Nó de valor: comparar um <strong>Valor</strong> de estado (o estado atual, sem conexão) com o escolhido e retornar Verdadeiro ou Falso</td></tr><tr><td style="text-align:left"><strong>Todas as condições</strong></td><td style="text-align:left">Nó de valor: Verdadeiro quando todas as condições booleanas conectadas são verdadeiras</td></tr><tr><td style="text-align:left"><strong>Qualquer condição</strong></td><td style="text-align:left">Nó de valor: Verdadeiro quando pelo menos uma condição booleana conectada é verdadeira</td></tr><tr><td style="text-align:left"><strong>Ler variável</strong></td><td style="text-align:left">Nó de valor: ler uma variável tipada deste elemento ou cena, usando o padrão configurado quando ausente</td></tr><tr><td style="text-align:left"><strong>Definir variável</strong></td><td style="text-align:left">Salvar um valor tipado neste elemento ou cena; um <strong>Valor</strong> conectado substitui o configurado</td></tr><tr><td style="text-align:left"><strong>Comparar valor</strong></td><td style="text-align:left">Nó de valor: comparar valores booleanos, números ou textos e retornar Verdadeiro ou Falso</td></tr><tr><td style="text-align:left"><strong>Emitir sinal</strong></td><td style="text-align:left">Enfileirar um evento nomeado para este elemento, um <strong>Alvo</strong> conectado ou receptores desta cena</td></tr><tr><td style="text-align:left"><strong>Referência de elemento</strong></td><td style="text-align:left">Nó de valor: escolher uma imagem nativa, porta ou região de presença; sua saída <strong>Elemento</strong> alimenta uma entrada <strong>Alvo</strong> compatível</td></tr><tr><td style="text-align:left"><strong>Grupo de elementos</strong></td><td style="text-align:left">Nó de valor: nomear uma lista ordenada de até 32 elementos, luzes ou sons e conectar sua saída tipada <strong>Alvos</strong></td></tr><tr><td style="text-align:left"><strong>Referência de luz</strong></td><td style="text-align:left">Nó de valor: conectar uma luz nativa a uma entrada <strong>Alvo</strong> compatível</td></tr><tr><td style="text-align:left"><strong>Referência de som</strong></td><td style="text-align:left">Nó de valor: conectar um som da campanha a uma entrada <strong>Alvo</strong> compatível</td></tr><tr><td style="text-align:left"><strong>Mover objeto</strong></td><td style="text-align:left">Mover cada alvo por um deslocamento X/Y em células</td></tr><tr><td style="text-align:left"><strong>Girar objeto</strong></td><td style="text-align:left">Somar um ângulo em torno do centro de cada alvo ou do ponto de ancoragem da porta</td></tr><tr><td style="text-align:left"><strong>Definir interação</strong></td><td style="text-align:left">Habilitar ou desabilitar a interação direta de jogadores com portas, alavancas e tochas</td></tr><tr><td style="text-align:left"><strong>Definir região</strong></td><td style="text-align:left">Habilitar ou desabilitar a detecção de presença de uma região</td></tr><tr><td style="text-align:left"><strong>Contexto do evento</strong></td><td style="text-align:left">Nó de valor: ler identidade da origem, dados do token, evento ou estado validados pelo servidor</td></tr><tr><td style="text-align:left"><strong>Revelar</strong></td><td style="text-align:left">Marcar uma porta secreta ou invisível como descoberta: esta porta, ou a porta conectada em <strong>Alvo</strong></td></tr><tr><td style="text-align:left"><strong>Definir barreira</strong></td><td style="text-align:left">Fazer esta porta, ou a porta conectada em <strong>Alvo</strong>, bloquear ou liberar movimento, visão, luz ou som (o som também pode atenuar)</td></tr><tr><td style="text-align:left"><strong>Controlar som</strong></td><td style="text-align:left">Parar um som da campanha que já toca na cena ou mudar seu volume</td></tr></tbody></table></div>
+<p><strong>Mudar estado</strong>, <strong>Trocar imagem</strong>, <strong>Interagir com objeto</strong>, <strong>Revelar</strong> e <strong>Ler propriedade</strong> têm uma entrada <strong>Alvo</strong> do tipo
+<strong>Elemento</strong> (laranja). Sem conexão, o alvo é o elemento editado; com uma Referência de
+elemento, é o elemento referenciado. Ações de estado e imagem são aplicadas
+diretamente na sequência atual; mudar o estado não inicia outro grafo.
+<strong>Interagir com objeto</strong> e <strong>Emitir evento</strong> enfileiram o grafo do alvo. A saída
+<strong>Próximo</strong> continua a sequência de origem antes desse grafo enfileirado executar,
+dentro do mesmo comando. Uma cadeia é limitada a 32 operações de elemento e 4
+no mesmo elemento. Os receptores de um sinal com escopo Cena usam um orçamento
+separado de 256 entregas, de modo que uma única transmissão pode alcançar muitos
+ouvintes; cada receptor ainda conta para as suas 4 operações. Ultrapassar
+qualquer limite faz o comando inteiro falhar sem persistir nada, e o registro de
+automação mostra a cadeia com o limite atingido: um elemento que executou mais
+de 4 vezes (cadeia que se repete), mais de 32 operações de elemento (cadeia
+longa) ou mais de 256 entregas de sinal de cena. Uma cadeia iniciada por
+um jogador nunca tranca nem destranca uma porta, a menos que o mestre ajuste a
+opção <strong>Trancas</strong> daquela ação <strong>Mudar estado</strong> para <strong>Jogadores podem trancar ou
+destrancar</strong>: aí uma alavanca operada por um jogador pode destrancar outra porta, e
+um grafo de interação numa porta trancada pode abri-la. Sem a opção, a operação é
+pulada e registrada. Mudanças de barreira são estado de jogo, como o estado da
+porta: atualizações de cena as conservam. Uma referência cuja porta foi excluída continua no grafo marcada como
+<strong>Porta ausente</strong>; a ação que precisa dela é pulada e registrada como <strong>Alvo
+ausente</strong>. <strong>Escolher no mapa</strong>, num nó Referência de elemento ou <strong>Controlar luz</strong>,
+afasta a modal: clique na porta ou luz no mapa do builder para escolhê-la, ou
+pressione <strong>Escape</strong> ou <strong>Cancelar</strong> para manter o alvo atual. Duplicar portas juntas aponta as referências copiadas para as cópias;
+referências a portas fora do grupo copiado mantêm o alvo.</p>
+<p>Nós de valor não possuem Entrada ou Próximo: são avaliados quando um nó executado
+lê seu valor. Seus conectores em losango indicam o tipo <strong>Estado</strong> (violeta) ou
+<strong>Verdadeiro ou Falso</strong> (ciano), com uma origem por entrada e tipos compatíveis.
+Por exemplo, conecte <strong>Ler propriedade: Estado atual → Comparar estado: Trancada
+→ Verificar estado · Teste</strong>, iniciando Verificar estado em <strong>Ao interagir</strong>.
+Seu ramo <strong>Verdadeiro</strong> pode mudar o estado e tocar o som de destrancar.
+<strong>Estado atual para simulação</strong> fornece o retrato inicial do teste local; não é
+um filtro ou parâmetro do evento.</p>
+<p><strong>Trocar imagem</strong> é uma ação de imagem na sequência. <strong>Mudar estado → Trocar
+imagem</strong> em <code>onInteract</code> aplica o estado solicitado e mantém a imagem escolhida.
+Para mudar a imagem de outro objeto a partir de uma área, conecte <strong>Ao entrar na
+área → Trocar imagem</strong>, escolha <strong>Usar imagem</strong> e ligue <strong>Referência de elemento
+→ Alvo</strong> ao objeto que deve mudar. O alvo não precisa ter um grafo de interação.
+Conecte <strong>Ao sair da área → Trocar imagem: Aparência nativa</strong> à mesma referência
+para restaurá-lo. Um Grupo de elementos pode mudar várias imagens juntas. Isso
+altera apenas a arte; não muda estado nem executa os eventos do alvo. Imagens
+comuns guardam imagem-base, camada e caixa de forma privada durante a troca;
+restaurar a aparência nativa remove a troca. Mover/redimensionar no jogo mantém
+essa caixa de restauração atualizada. Geometria autoral inalterada preserva a
+troca em <strong>Atualizar cena</strong>; mudanças manuais de geometria no jogo mantêm a
+proteção existente de conflito. Objetos vazios e regiões continuam sem imagem
+própria enquanto controlam outros elementos. Nós que precisam de recursos ficam
+disponíveis quando esses recursos existem.
+O evento não compara, alterna nem restaura imagens. Jogadores recebem apenas a
+aparência resultante.</p>
+<p>As luzes e os sons precisam existir no projeto ou na campanha para estarem
+disponíveis como alvos; caso contrário, o seletor mantém o tipo desativado e
+explica o motivo.</p>
+<p>Os sockets são os círculos nas bordas dos nós: a <strong>Entrada</strong> à esquerda e as
+saídas à direita, coloridas por saída (<strong>Próximo</strong> dourado, <strong>Verdadeiro</strong> verde,
+<strong>Falso</strong> vermelho; os conectores da porta usam a cor do estado). As conexões
+assumem a cor da sua origem.</p>
+<p>Conexões de valor também podem começar pela entrada: arraste <strong>Alvo</strong> até a saída
+<strong>Elemento</strong> de uma referência existente ou solte no espaço vazio para criar uma
+referência compatível. Clicar em <strong>Alvo</strong> abre o mesmo seletor filtrado. Escolha
+<strong>Referência de elemento</strong> e selecione o outro objeto no campo <strong>Elemento</strong> ou em
+<strong>Escolher no mapa</strong>. Essa ligação define o alvo; conecte o evento separadamente
+à <strong>Entrada</strong> da ação. <strong>Enter</strong> ou <strong>Espaço</strong> numa entrada de valor abre o seletor;
+<strong>Shift+Enter</strong> permite escolher uma saída compatível existente pelo teclado.
+Uma entrada já conectada mantém sua ligação até você removê-la.</p>
+<p>Arraste de uma saída até a <strong>Entrada</strong> de um nó existente para conectá-los
+diretamente. Cada saída pode iniciar outros ramos. Pressione <strong>Escape</strong>, clique
+fora do seletor ou solte fora do canvas para cancelar o ramo pendente; sem criar
+um nó, o grafo permanece inalterado. Clicar numa saída e depois numa <strong>Entrada</strong>
+continua disponível. Com o foco numa saída, <strong>Enter</strong> ou <strong>Espaço</strong> abre o mesmo
+seletor de nós. Para conectar a uma entrada existente pelo teclado, pressione
+<strong>Shift+Enter</strong> na saída, use <strong>Tab</strong> até a <strong>Entrada</strong> e pressione <strong>Enter</strong>.
+As ações
+continuam pela saída <strong>Próximo</strong>; uma condição possui saídas <strong>Verdadeiro</strong> e
+<strong>Falso</strong> separadas. A versão 2 admite vários ramos por saída, percorridos em
+profundidade na ordem gravada; um nó compartilhado executa uma vez por evento.
+Condições leem o estado no início do evento, e a última ação de estado percorrida
+define a solicitação desse grafo. Clique numa conexão para
+removê-la ou coloque o foco nela e pressione <strong>Delete</strong>. Excluir um nó pelo botão
+<strong>×</strong>, ou com <strong>Delete</strong> no cabeçalho focado, remove suas conexões. Arraste os
+cabeçalhos dos nós para organizar o grafo ou coloque o foco num cabeçalho e use
+as setas; Shift aumenta o deslocamento pelo teclado. As posições salvas começam
+na origem superior esquerda do grafo: mover um nó além dessa
+borda o mantém na borda e desloca os demais nós.</p>
+<p>Arraste uma área vazia do canvas ou use o botão do meio do mouse para mover a
+vista; a roda ou o gesto de pinça aplica zoom em torno do ponteiro. Com o foco no
+canvas, as setas movem a vista, <strong>+</strong> e <strong>−</strong> mudam o zoom e <strong>0</strong> enquadra o
+grafo. Os controles no canto inferior direito mostram o nível de zoom, que volta
+a 100% ao ser clicado, e <strong>Enquadrar grafo</strong> enquadra todos os nós. <strong>Desfazer</strong>
+e <strong>Refazer</strong> na barra da modal (<strong>Ctrl+Z</strong>, <strong>Ctrl+Shift+Z</strong> ou <strong>Ctrl+Y</strong>)
+percorrem edições de conexões, nós, parâmetros, posições e aparências; os
+resultados válidos são salvos automaticamente.</p>
+<p>Clique num cartão para selecioná-lo; Shift, Ctrl ou Cmd acrescenta ou remove
+cartões, e Shift+arrastar numa área vazia desenha um retângulo de seleção.
+<strong>Ctrl+A</strong> seleciona todos os cartões. Arrastar qualquer cabeçalho selecionado, ou
+usar as setas no cabeçalho focado, move a seleção inteira, e <strong>Delete</strong> remove os
+nós selecionados e suas conexões; o nó de evento permanece. <strong>Ctrl+C</strong> copia os nós
+selecionados com as conexões entre eles, <strong>Ctrl+V</strong> os cola no ponteiro, inclusive
+em outro evento ou porta enquanto a página estiver aberta, e <strong>Ctrl+D</strong> os duplica
+ao lado dos originais. Mover cartões além da borda superior ou esquerda do grafo
+os mantém na borda e desloca os demais nós em qualquer evento. O minimapa no canto
+inferior esquerdo mostra todos os cartões e a área visível; clique ou arraste nele
+para mover a vista.</p>
+<p>Por exemplo, conecte <strong>Ao interagir → Verificar estado: Fechada → Verdadeiro →
+Mudar estado: Aberta → Trocar imagem → Tocar som → Controlar luz</strong>. Escolha a
+imagem da porta aberta, um som e a luz da sala, deixando-a ativa. A interação
+inicia a sequência, a condição escolhe o ramo e as ações alteram porta, som e luz.</p>
+<p><strong>Simular</strong> destaca os nós e as conexões executados e lista suas ações em
+<strong>Simulação</strong>, localmente.
+Não opera a cena, toca áudio ou muda luzes. Edições válidas do blueprint são
+aplicadas e salvas automaticamente. <strong>Fechar</strong> aguarda as edições pendentes;
+não desfaz alterações confirmadas. Use desfazer/refazer para revisá-las.
+Campos inválidos precisam ser corrigidos antes de fechar.</p>
+<p>A porta gerada usa seu <code>door_state</code> nativo existente para colisão, visão,
+iluminação e propagação de som. O servidor valida alvos e limites do grafo e
+executa os efeitos dentro da transação e do recibo de comando existentes. Uma
+repetição da mesma operação não repete os efeitos. Ler, reconectar ou reabrir uma
+cena restaura sua aparência atual sem repetir ações. Uma solicitação de estado
+não inicia um novo evento; a interação é um evento de início separado. Jogadores conservam suas permissões de porta: uma
+interação configurada numa porta trancada pode executar seus efeitos, mas não
+pode destrancar a porta ou mudá-la para outro estado. Ações de luz exigem que a
+iluminação dinâmica esteja ativa.</p>
+<p>O mestre recebe os grafos; jogadores e streamers recebem somente a apresentação
+atual. O acesso às imagens acompanha a aparência visível desse estado, incluindo
+as regras existentes para portas secretas ou invisíveis ainda não descobertas.
+Duplicar uma porta conserva seu blueprint. Duplicar um grupo que contém uma luz
+referenciada faz a nova porta apontar para a luz copiada; copiar somente a porta
+mantém o alvo existente.</p>
+<h3 id="condicoes-compostas">Condições compostas</h3>
+<p><strong>Adicionar nó → Lógica</strong> inclui <strong>Todas as condições</strong> (<code>all</code>, AND) e
+<strong>Qualquer condição</strong> (<code>any</code>, OR). As quatro entradas booleanas <strong>A–D</strong> recebem
+resultados de <strong>Comparar estado</strong> ou de outro nó composto. Conecte de duas a
+quatro entradas; as sem conexão são ignoradas. Um rascunho com zero ou uma
+entrada conectada continua editável e retorna Falso. O nó mostra a quantidade
+de conexões e explica o mínimo. Ligue <strong>Resultado</strong> a <strong>Verificar estado →
+Teste</strong>, e o fio de execução do evento à <strong>Entrada</strong> desse Verificar estado.
+Nós compostos não possuem conectores de execução.</p>
+<p>Para uma passagem com três tochas, leia o <strong>Estado atual</strong> de cada tocha,
+compare com <strong>Girada</strong> e ligue os três resultados às entradas <strong>A</strong>, <strong>B</strong> e
+<strong>C</strong> de Todas. Para as outras tochas, use <strong>Referência de elemento → Ler
+propriedade · Alvo</strong>; sem Alvo conectado, Ler propriedade consulta a própria
+tocha editada. Ligue o ramo Verdadeiro de Verificar estado a uma ação Mudar
+estado com a porta da passagem como Alvo. Para fechar quando uma tocha retornar,
+ligue Falso a Fechada e consulte a regra em <strong>Ao interagir</strong> de cada tocha. Todas
+precisam da regra para que uma interação verifique a combinação. Condições leem o
+retrato inicial do evento; escolha explicitamente o ramo quando suas ações também
+giram essa tocha.</p>
+<p>All/Any consultam condições atuais, sem contar acionamentos nem esperar vários
+eventos. Girar a mesma tocha repetidamente não substitui outra tocha. Todas as
+entradas conectadas são avaliadas na ordem A–D, e um valor compartilhado é lido
+uma vez por evento. Simular mostra cada resultado; Automação registra isso
+durante o jogo para o mestre. Geração, cópias, atualização vinculada e arquivos
+de campanha conservam as conexões tipadas e remapeiam as referências. São nós
+da versão 2; blueprints antigos só mudam após edição explícita efetiva.</p>
+<h3 id="variaveis-e-sinais-nomeados">Variáveis e sinais nomeados</h3>
+<p><strong>Ler variável</strong> e <strong>Definir variável</strong> usam um nome que distingue maiúsculas de
+minúsculas, <strong>Escopo</strong> (<strong>Este elemento</strong> ou <strong>Cena</strong>) e <strong>Tipo de valor</strong> (<strong>Verdadeiro ou Falso</strong>,
+<strong>Número</strong> ou <strong>Texto</strong>). A memória de elemento pertence à porta, alavanca, tocha
+ou região editada; a memória de cena é compartilhada pelos elementos da cena.
+Ler variável retorna o <strong>Valor padrão</strong> configurado quando ainda não existe um
+valor salvo. Ler esse padrão não cria memória. Definir variável usa o valor
+configurado ou um Valor conectado do mesmo tipo. Falso, zero e texto vazio são
+valores válidos. Um nome conserva o tipo dentro de seu escopo; redefina a memória
+existente antes de mudar seu tipo.</p>
+<p>Conecte Ler variável a <strong>Comparar valor</strong>, e seu <strong>Resultado</strong> booleano a
+<strong>Verificar estado → Teste</strong>. Booleanos e textos oferecem Igual e Diferente;
+números também oferecem Menor, Menor ou igual, Maior e Maior ou igual. Sem
+conexão, Comparar valor lê Falso, 0 ou texto vazio conforme o tipo escolhido.
+Mudar o tipo de um nó remove as conexões de valor incompatíveis em uma etapa de
+desfazer; reconecte-as usando o novo tipo.</p>
+<p>Cada evento lê um retrato inicial da memória. As atribuições são aplicadas
+depois da avaliação do grafo: Ler variável no mesmo evento ainda consulta o
+valor inicial, enquanto o evento seguinte vê a atribuição. Em um puzzle
+persistente, uma interação pode definir o booleano de cena <code>PuzzleSolved</code> como
+Verdadeiro e emitir <code>PuzzleSolved</code>; o grafo receptor pode consultar essa
+variável e abrir uma passagem. O comando inteiro, com atribuições e ações dos
+receptores, é confirmado de forma atômica. Repetir a requisição não repete efeitos.</p>
+<p>Na lista de eventos, <strong>Ao receber sinal → Nome do sinal → Adicionar sinal</strong>
+cria um grafo receptor nomeado. <strong>Emitir sinal</strong> com escopo Este elemento executa-o
+neste elemento ou no elemento conectado em Alvo. Escopo Cena envia aos elementos
+da mesma cena que têm o grafo com aquele nome. Os receptores executam pela fila
+limitada de eventos depois que o evento emissor termina; sinais não atravessam
+cenas ou campanhas. O sinal sozinho não muda o estado de um elemento. Ele
+carrega seu nome, sem dados personalizados. Configure a mudança de estado
+desejada no grafo receptor.</p>
+<p>Nomes usam de 1 a 64 caracteres ASCII: começam com letra e continuam com letras,
+números, sublinhados, pontos ou hífens. Cada escopo guarda até 64 variáveis;
+números devem ser finitos entre −1.000.000 e 1.000.000, e textos têm até 256
+caracteres. Cada blueprint aceita até 16 grafos receptores nomeados. Esses nós
+e grafos exigem versão 2; blueprints existentes conservam a compatibilidade.</p>
+<p><strong>Variáveis da simulação</strong> fornece valores privados de prévia. Sem valores,
+a simulação usa os padrões e lista atribuições e emissões enfileiradas; ela não
+grava memória do jogo nem executa grafos receptores. Selecione um grafo nomeado
+para simular esse receptor separadamente. A visão <strong>Automação → Variáveis</strong> do
+mestre mostra a memória de cena e elementos. <strong>Redefinir variável</strong> remove
+somente aquela entrada, sem executar eventos; a próxima leitura usa seu padrão
+autorado. A redefinição verifica o valor exibido e recusa se ele mudou, exigindo
+atualização antes de tentar novamente. Jogadores e streamers não recebem memória
+de variáveis nem detalhes privados dos grafos.</p>
+<p>Reabrir a cena, atualizar pelo builder e os arquivos de campanha preservam a
+memória durante o jogo. Duplicar um elemento nativo inicia sua própria memória
+vazia; a memória da cena continua compartilhada. Editar um blueprint ou redefinir
+memória nunca emite um evento de jogo.</p>
+<h3 id="grupos-e-referencias-tipadas-de-recursos">Grupos e referências tipadas de recursos</h3>
+<p><strong>Adicionar nó → Valores → Grupo de elementos</strong> guarda um nome de 1 a 80
+caracteres e uma lista ordenada de 1 a 32 membros únicos. Escolha <strong>Elementos</strong>,
+<strong>Luzes</strong> ou <strong>Sons</strong> como tipo dos membros. Reordene ou substitua membros sem
+mudar suas identidades; remova mantendo pelo menos um. A saída tipada <strong>Alvos</strong>
+aplica ações compatíveis a cada membro na ordem. São listas explícitas salvas,
+sem busca dinâmica nem espera para que todos os membros disparem um evento.</p>
+<p>Referências e grupos de elementos podem incluir portas, alavancas, tochas,
+imagens nativas comuns e regiões de presença. Pixels de chão e paredes
+incorporados ao mapa ficam fora dessa lista. Imagens sem estado de Objeto
+Inteligente não retornam estado em <strong>Ler propriedade</strong>. Ler propriedade aceita
+um Elemento, sem combinar estados de um grupo. Ações de estado, chama, revelação,
+barreira, interação, região e sinais com escopo de elemento aceitam um Elemento
+ou grupo, aplicando somente capacidades compatíveis. O registro do mestre
+e <strong>Testar comportamento</strong> distinguem alvos ausentes de alvos existentes que
+não podem executar uma ação, identificando estes pelo nome. Um grupo misto
+continua aplicando a ação aos membros compatíveis; membros incompatíveis e
+ausentes são ignorados. As trilhas guardam essas identidades separadamente em
+<code>targetIds</code>, <code>unsupportedIds</code> e <code>missingIds</code>.</p>
+<p><strong>Referência de luz</strong> conecta uma luz nativa a <strong>Controlar luz</strong>, Mover objeto
+ou Girar objeto. <strong>Referência de som</strong> conecta um som da campanha a <strong>Tocar som</strong>
+ou <strong>Controlar som</strong>. Grupos de luzes e sons usam as respectivas portas Alvo
+tipadas, sem conexão com tipos de recurso incompatíveis. A luz/o som configurado
+na ação só funciona como reserva quando Alvo está desconectado. Uma referência
+conectada ausente é ignorada sem usar essa reserva ou o próprio elemento.</p>
+<p>Membros excluídos conservam seu UUID e aparecem como ausentes para reparo;
+excluir um membro não redireciona ações silenciosamente. Cópias remapeiam alvos
+copiados juntos e preservam alvos externos. Sons da campanha continuam sendo
+recursos compartilhados. Salvar, gerar, atualizar e os arquivos de campanha
+conservam a ordem do grupo e os valores autorados.
+Se a importação omitir áudio, atores ou tokens, as respectivas referências
+tipadas de som/membros de grupo e IDs dos filtros recebem UUIDs inertes novos.
+A mesma substituição é usada na fonte, nos objetos nativos e no histórico de
+propriedade, conservando esses alvos ausentes para reparo. Nomes e textos
+escalares autorados, inclusive os semelhantes a UUIDs, permanecem intactos.</p>
+<h3 id="movimento-rotacao-e-interacao-durante-o-jogo">Movimento, rotação e interação durante o jogo</h3>
+<p><strong>Mover objeto</strong> usa deslocamentos X/Y relativos em células, cada um de −1.000
+a 1.000. <strong>Girar objeto</strong> soma um ângulo de −36.000 a 36.000 graus em torno do
+centro de cada alvo; uma porta com <strong>Ponto de ancoragem da rotação</strong> gira em
+torno desse ponto. Sem Alvo, atuam no elemento proprietário; alvos conectados
+podem ser Elemento, Luz ou seus grupos tipados. Os validadores nativos de imagem,
+porta e luz continuam valendo. Regiões retangulares só giram em múltiplos de
+90 graus; geometria incompatível faz o comando falhar, sem aproximações. A
+imagem da tocha mantém sua luz e efeitos juntos. As transformações são imediatas,
+sem animação, e não mudam o estado do mecanismo por si sós.</p>
+<p>Transformações alteram a geometria nativa durante o jogo, conservando a fonte
+editável. O registro de propriedade reconhece transformações autorizadas pelo
+Blueprint, sem tratá-las sozinhas como conflito de edição manual. <strong>Atualizar
+cena</strong> reaplica posições e ângulos autorados; outras mudanças manuais conservam
+a proteção de conflitos existente.</p>
+<p><strong>Definir interação</strong> controla a ativação direta de uma porta, alavanca ou tocha
+por jogadores, inclusive o botão de chama. O padrão da fonte é habilitado; a
+configuração autorada fica em Seleção. Controles desabilitados não podem ser
+ativados por ponteiro ou teclado, e o servidor recusa requisições diretas
+forjadas. Mestres conservam a operação manual. Essa configuração não interrompe
+automações autoradas, sinais ou temporizadores; permissões e regras de tranca
+continuam valendo. O valor de interação durante o jogo sobrevive à atualização
+enquanto seu padrão autorado não muda; editar esse padrão aplica o novo valor.
+Também sobrevive a reconexões e arquivos de campanha.</p>
+<p><strong>Definir região</strong> altera a detecção de presença. Desabilitar limpa a ocupação
+silenciosamente; habilitar estabelece uma nova base sem eventos artificiais de
+entrada/saída. Sinais e trabalho agendado conservam seu ciclo normal. Mover ou
+girar a região também estabelece uma base silenciosa. Novos eventos de presença
+partem de comandos posteriores de token.</p>
+<h3 id="contexto-da-origem-do-evento">Contexto da origem do evento</h3>
+<p><strong>Contexto do evento</strong> fornece um <strong>Valor</strong> tipado escolhido por <strong>Campo do contexto</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Propriedade</th><th scope="col" style="text-align:left">Valor</th></tr></thead><tbody><tr><td style="text-align:left">Evento</td><td style="text-align:left">Texto que identifica o grafo em execução</td></tr><tr><td style="text-align:left">ID do elemento / ID do usuário / Nome do usuário de origem</td><td style="text-align:left">Elemento original e autor autenticado do comando</td></tr><tr><td style="text-align:left">ID do token / ID do personagem de origem</td><td style="text-align:left">Token original de presença e seu ator, ou texto vazio sem token</td></tr><tr><td style="text-align:left">Transição de presença / Contagem de ocupantes</td><td style="text-align:left">Entrada/saída original e quantidade após essa transição; texto vazio/0 nos demais casos</td></tr><tr><td style="text-align:left">Possui token de origem</td><td style="text-align:left">Booleano que pode alimentar Teste de uma condição</td></tr><tr><td style="text-align:left">Estado atual / Estado anterior</td><td style="text-align:left">Valores do retrato de estado deste evento</td></tr></tbody></table></div>
+<p>Conecte identidades de texto a Comparar valor ou Escolher caminho, a quantidade
+a comparações numéricas ou Possui token de origem diretamente a Teste. Os dados vêm
+de objetos validados pelo servidor. Sinais, Delay e Temporizador conservam a
+origem, usuário e token originais; não substituem pelo elemento receptor nem
+pelo mestre que inspecionou a fila. Evento/estado/anterior descrevem o evento
+avaliado. Delay conserva seu retrato inicial; o vencimento de Temporizador lê
+estado e variáveis atuais, mantendo a identidade original. Não existe entrada
+de dados personalizados arbitrários nos sinais.</p>
+<p>Campos de contexto da simulação são valores temporários de prévia. A simulação
+lista ações de grupo e leituras de contexto sem mover objetos do jogo, alterar
+configurações, guardar progresso ou executar receptores. Esses nós exigem
+Blueprint versão 2.</p>
+<h3 id="escolher-caminho-e-aleatorio-com-pesos">Escolher caminho e Aleatório com pesos</h3>
+<p><strong>Adicionar nó → Lógica → Escolher caminho</strong> seleciona um ramo por um <strong>Valor</strong>
+booleano, número ou texto. Um Valor conectado substitui o <strong>Valor padrão</strong>
+configurado; sem conexão, esse valor de reserva é usado. Leituras conservam o
+retrato inicial do evento, como os nós de variável e condição. Adicione de um
+a quatro casos com valores distintos do tipo escolhido; booleanos permitem
+somente Falso e Verdadeiro. A igualdade não converte valores: o texto <code>1</code> e o
+número <code>1</code> têm tipos diferentes, e textos distinguem maiúsculas de minúsculas.
+Falso, zero e texto vazio continuam sendo valores válidos.</p>
+<p>A saída <strong>Caso</strong> correspondente executa; <strong>Padrão</strong> executa quando nenhum caso
+corresponde. IDs dos casos ficam estáveis quando outro caso é removido,
+preservando as conexões restantes. Remover um caso também remove suas conexões.
+Mudar o tipo redefine o valor de reserva e os valores dos casos, remove fios
+de Valor incompatíveis e saídas dos casos descartados (booleanos conservam no
+máximo dois). Cada edição pode ser desfeita, com os valores e conexões anteriores.
+Uma saída escolhida sem conexão encerra esse ramo, sem seguir pelo Padrão.</p>
+<p>O editor abre espaço ao redor dos cartões de escolha que crescem, considerando
+seu tamanho real e os textos traduzidos. Mudanças de posição causadas por uma
+edição são salvas com o grafo e podem ser desfeitas. Abrir um grafo sem mudanças
+conserva suas coordenadas salvas.</p>
+<p><strong>Adicionar nó → Lógica → Aleatório</strong> possui de duas a quatro saídas <strong>Caminho</strong>.
+Cada peso é um inteiro de 0 a 1.000, e pelo menos um precisa ser positivo. Pesos
+1 e 3, por exemplo, dão chances de 25% e 75%. Zero desativa aquele caminho.
+O sorteio inclui todos os caminhos configurados, mesmo sem fio; um caminho
+sorteado sem conexão encerra o ramo sem sortear novamente. Adicionar ou remover
+o último caminho atualiza sua saída, e Desfazer restaura suas conexões. Um nó
+de escolha compartilhado executa uma vez quando ramos convergem no mesmo evento.</p>
+<p>Ambos exigem Blueprint versão 2. O registro de automação do mestre mostra o
+caso e o valor tipado lido, ou o caminho sorteado e seu peso. O servidor sorteia
+sob as mesmas permissões, transações e recibos das demais ações. Repetir a mesma
+operação lógica conserva o sorteio, inclusive após uma transação que falhou;
+repetir essa requisição não permite sortear novamente. Continuações de Delay
+preservam escolhas já realizadas, e cadeias de Delay/Temporizador carregam a
+sequência privada de sorteios sem reiniciá-la. Esses nós não criam entrada na
+memória dos controles persistentes. Projetos salvos, cópias nativas e arquivos
+de campanha conservam os valores de reserva e dos casos como conteúdo autorado,
+inclusive textos semelhantes a UUIDs.</p>
+<p><strong>Simular</strong> destaca um caminho escolhido. Aleatório sorteia localmente para a
+prévia; o jogo realiza seu próprio sorteio. A simulação não grava estado da
+cena nem executa receptores de sinais ou tarefas agendadas.</p>
+<h3 id="controles-de-execucao-persistentes">Controles de execução persistentes</h3>
+<p><strong>Adicionar nó → Lógica</strong> inclui <strong>Contador</strong>, <strong>Uma vez</strong> e <strong>Recarga</strong>. Cada nó
+possui uma Entrada de execução e dois ramos de execução, sem saídas de valor.
+Seu progresso privado pertence a este elemento e é identificado pelo evento e
+pelo ID do nó. Dois nós ou dois grafos receptores mantêm progresso independente,
+mesmo com a mesma configuração.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Nó</th><th scope="col" style="text-align:left">Comportamento</th></tr></thead><tbody><tr><td style="text-align:left">Contador</td><td style="text-align:left">Incrementa uma vez por visita no evento e escolhe <strong>Atingido</strong> quando a contagem é maior ou igual à <strong>Meta de ativações</strong>; nos demais casos escolhe <strong>Abaixo da meta</strong>. A meta é um inteiro de 1 a 1.000.000. A contagem para em 1.000.000, e Atingido continua ativo nas visitas seguintes.</td></tr><tr><td style="text-align:left">Uma vez</td><td style="text-align:left">Escolhe <strong>Primeira vez</strong> uma vez e depois <strong>Já utilizado</strong>, até o mestre redefinir o nó. Posicione antes dos efeitos que ele deve proteger.</td></tr><tr><td style="text-align:left">Recarga</td><td style="text-align:left">Escolhe <strong>Pronto</strong> na primeira visita ou após o prazo; nos demais casos escolhe <strong>Em recarga</strong>. <strong>Recarga em segundos</strong> aceita de 0,1 a 86.400 segundos. Tentativas bloqueadas conservam o prazo existente.</td></tr></tbody></table></div>
+<p>Para três acionamentos seguidos de uma recompensa única, conecte o evento ao
+Contador com meta 3, <strong>Atingido → Uma vez</strong> e depois
+<strong>Primeira vez → Mudar estado → Tocar som</strong>. Contar acionamentos de um elemento
+é diferente de consultar o estado atual de três tochas distintas com All/Any.
+Controles compartilhados executam uma vez quando ramos convergem no mesmo
+evento, como os demais nós de execução.</p>
+<p>Recarga usa o relógio UTC do servidor e guarda um prazo absoluto. A passagem do
+tempo não executa um grafo: outro evento autorizado precisa visitar o nó. Cada
+trecho de execução grava progresso e efeitos juntos; uma ação que falha reverte
+esse trecho, e repetir a mesma operação não consome outro acionamento. A espera
+usa o nó Delay separado, descrito abaixo.</p>
+<p>Os campos <strong>Prévia dos nós persistentes</strong> da simulação configuram a contagem antes do evento,
+se Uma vez já foi utilizado e os segundos restantes de Recarga. Cada <strong>Simular</strong>
+parte desses valores de prévia e informa o ramo escolhido; não lê nem altera o
+progresso salvo do jogo. Na mesa, a visão <strong>Automação → Memória dos nós</strong> do
+mestre lista os controles salvos. <strong>Redefinir nó</strong> remove somente aquela entrada,
+confere o valor exibido para evitar uma redefinição desatualizada e não executa
+eventos do jogo. A próxima visita parte do estado inicial do nó. Jogadores e
+streamers não recebem essa memória nem detalhes privados dos grafos.</p>
+<p>Reabrir a cena, reconectar, reiniciar o servidor, atualizar pelo builder e os
+arquivos de campanha preservam o progresso sem repetir eventos. Cópias nativas
+de elementos começam com memória de controle vazia. Mudar meta, duração, posição
+ou conexão conserva o progresso existente; uma nova duração vale após o prazo
+atual permitir outra ativação. Remover um nó/evento ou mudar seu tipo descarta
+aquela entrada. Esses controles exigem Blueprint versão 2.</p>
+<h3 id="delay-persistente">Delay persistente</h3>
+<p><strong>Adicionar nó → Lógica → Aguardar</strong> usa <strong>Espera em segundos</strong> (padrão 3), de
+0,1 a 86.400 segundos, antes de continuar pela saída <strong>Próximo</strong>. Exemplo:
+<strong>Alavanca girada → Mudar estado:
+Aberta → Aguardar: 3 segundos → Mudar estado: Fechada</strong>. O nó Aguardar (Delay)
+exige Blueprint versão 2.</p>
+<p>Ao alcançar Aguardar, todo o restante deste evento fica suspenso, incluindo ramos
+posteriores de Sequência, preservando a ordem de execução. Ações anteriores à
+espera são gravadas junto com a continuação persistente. Outras interações
+continuam disponíveis enquanto esse evento aguarda. O servidor retoma sem
+repetir o evento ou as ações anteriores. Fechar o editor, desconectar todos os
+navegadores ou reiniciar o servidor não descarta a continuação; esperas vencidas
+executam quando o servidor está disponível. Nenhuma transação de banco permanece
+aberta durante a espera.</p>
+<p>Estado, estado anterior, estados de elementos referenciados e leituras de
+variáveis conservam os valores do início do evento, inclusive quando a primeira
+leitura ocorre após a espera. Ações Definir variável já gravadas antes de Aguardar
+afetam eventos posteriores; as leituras neste evento conservam seu retrato
+original. Contador, Uma vez e Recarga consultam o progresso salvo atual quando
+a execução retoma.</p>
+<p><strong>Automação → Aguardando</strong> mostra ao mestre cada espera pendente, seu elemento,
+evento, autor e prazo. <strong>Cancelar espera</strong> remove a continuação restante sem
+desfazer efeitos já gravados nem disparar outro evento. O cancelamento confere
+o prazo exibido e exige atualização se a espera mudou. Pausar a automação da
+cena conserva esperas pendentes, inclusive vencidas, até <strong>Retomar automação</strong>.
+Sair ou ocultar uma cena não pausa sua automação por si só.</p>
+<p>Mudar comportamento, conexões ou duração no blueprint proprietário cancela a
+continuação pendente; mover apenas os cartões do grafo a conserva. Remover o
+proprietário ou um elemento alvo usado pela continuação cancela a espera.
+Referências ausentes de luz, som ou imagem em qualquer parte desse blueprint
+também cancelam, inclusive recursos usados somente antes da espera.
+Ao retomar, o servidor confere novamente a
+participação e o acesso atual do autor;
+uma promoção posterior não concede poderes extras à espera iniciada por um
+jogador. Um trecho retomado que falha não grava seus efeitos e registra um
+diagnóstico; efeitos gravados antes da espera permanecem.</p>
+<p>Delay e Temporizador compartilham uma fila de 64 tarefas pendentes por cena e
+256 por campanha. A cadeia original mantém seus limites entre esperas: 32
+operações de elemento, 256 entregas de sinal de cena, quatro operações por
+elemento e 1.024 ações, além de no
+máximo 32 retomadas temporizadas. Retomar uma continuação de Delay não consome
+outra operação de elemento. Continuações pendentes são trabalho
+privado de execução; exportações, snapshots e cópias de campanha não as levam.</p>
+<p><strong>Simular</strong> para no primeiro Aguardar alcançado, destaca a espera e informa sua
+duração. A prévia não avança o tempo, não agenda trabalho e não executa a
+continuação. Use uma cena real para verificar os efeitos adiados.</p>
+<h3 id="temporizador-persistente">Temporizador persistente</h3>
+<p><strong>Adicionar nó → Lógica → Temporizador</strong> controla uma contagem regressiva
+nomeada que executa uma vez. Seu <strong>Nome</strong> usa o mesmo formato ASCII dos sinais,
+com diferença entre maiúsculas e minúsculas: de 1 a 64 caracteres, começando com
+letra e seguindo com letras, números, sublinhados, pontos ou hífens. O nome
+pertence a este elemento; vários nós ou eventos dele podem controlar a mesma
+contagem. O temporizador não possui entrada Alvo nem controla diretamente outro
+elemento ou a cena inteira.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Ação</th><th scope="col" style="text-align:left">Comportamento</th></tr></thead><tbody><tr><td style="text-align:left">Iniciar temporizador</td><td style="text-align:left">Cria a contagem se estiver ausente. Se já estiver pendente, conserva sua identidade, prazo, autor original e limites de execução.</td></tr><tr><td style="text-align:left">Parar temporizador</td><td style="text-align:left">Cancela a contagem pendente com esse nome, sem disparar seu evento. Parar um temporizador ausente não produz efeito.</td></tr><tr><td style="text-align:left">Reiniciar temporizador</td><td style="text-align:left">Substitui a contagem e começa outra a partir de agora, usando o autor e os limites deste evento. Também inicia um temporizador ausente.</td></tr></tbody></table></div>
+<p>Iniciar e Reiniciar usam <strong>Duração em segundos</strong>, de 0,1 a 86.400 segundos
+(padrão 3). Parar não possui duração. <strong>Próximo</strong> executa imediatamente em todas
+as ações; o temporizador não suspende o evento emissor. Para fechar uma porta
+mais tarde, crie <strong>Ao receber sinal → CloseLater</strong>, conecte esse receptor a
+<strong>Mudar estado: Fechada</strong> e inicie um Temporizador chamado <code>CloseLater</code> pela
+interação. As demais ações conectadas podem executar imediatamente enquanto
+essa contagem está pendente.</p>
+<p>Ao vencer, o servidor envia <code>signal:CloseLater</code> somente ao elemento proprietário.
+É um novo evento: estado, estados referenciados e variáveis usam os valores do
+momento do vencimento; Contador, Uma vez e Recarga consultam o progresso salvo
+atual. Ele não repete o evento que iniciou o temporizador. Sem um grafo receptor
+correspondente, conclui sem efeitos; o editor mostra uma dica para adicioná-lo.
+Temporizador exige Blueprint versão 2. Não possui modo recorrente ou gatilho
+global.</p>
+<p><strong>Automação → Aguardando</strong> identifica cada Temporizador pelo nome, elemento,
+autor e prazo. O mestre pode <strong>Parar temporizador</strong> ou <strong>Reiniciar temporizador</strong>
+para contar novamente a partir de agora usando a duração salva. Ambos conferem
+a identidade e o prazo exibidos; pedidos desatualizados exigem atualização.
+Reiniciar pelo painel conserva o autor, o limite do papel original e os limites
+da cadeia, sem elevar os poderes de um temporizador iniciado por jogador.
+Nenhum desses controles dispara o evento de vencimento imediatamente.</p>
+<p>A fila persistente e o executor do servidor são compartilhados com Delay.
+Temporizadores sobrevivem a navegadores fechados e ao reinício do servidor;
+pausar a cena conserva-os pendentes até retomar. Mudanças de comportamento do
+blueprint, alvos/recursos necessários ausentes e perda de acesso cancelam sob a
+mesma política de Delay; mover cartões ou renomear o mapa os conserva. Ao vencer,
+o acesso atual do autor original é verificado novamente. Efeitos, conclusão e
+recibo são gravados juntos; uma falha reverte os efeitos desse vencimento e
+registra um diagnóstico. Efeitos anteriores já confirmados permanecem.</p>
+<p>Temporizador e Delay compartilham os limites de 64 tarefas pendentes por cena,
+256 por campanha e, na cadeia original, 32 retomadas temporizadas, 32 operações
+de elemento, 256 entregas de sinal de cena, quatro operações por elemento e
+1.024 ações. Um vencimento de
+Temporizador consome outra operação de elemento; uma continuação de Delay não.
+Reiniciar a contagem pelo grafo receptor conserva esses limites; não cria uma
+agenda recorrente ilimitada. Temporizadores ativos são trabalho privado e não
+entram em exportações, snapshots ou cópias de campanha.</p>
+<p><strong>Simular</strong> lista as ações de temporizador e segue por Próximo, sem iniciar uma
+contagem, avançar o tempo ou executar o receptor. Selecione o grafo do sinal
+nomeado para simular esse receptor separadamente e use uma cena real para
+verificar o vencimento.</p>
+<h3 id="testar-comportamento-pelo-servidor">Testar comportamento pelo servidor</h3>
+<p>Escolha <strong>Testar comportamento</strong> no Builder para ensaiar o documento atual,
+incluindo mudanças ainda não salvas. Selecione um elemento, um dos eventos
+definidos por ele e, opcionalmente, um <strong>Ator de teste</strong>. O servidor monta uma
+cena nativa temporária e executa o motor real, incluindo ações entre elementos,
+sinais, variáveis, efeitos nativos e transporte de token. A prévia aplica as
+mudanças devolvidas a uma cópia separada do mapa, sem alterar fonte, histórico
+de seleção ou projeto salvo. Não exige geração, renderização de imagem nem
+novos arquivos de mídia.
+O evento de início escolhido executa sobre a configuração atual, sem comparação
+implícita. O resultado mostra o estado do elemento antes do evento e depois que
+o teste se assenta, incluindo mudanças de presença causadas por teleporte ou
+movimento. Cada elemento alterado aparece pelo nome com fatos legíveis, como uma
+porta indo de <strong>Fechada</strong> para <strong>Aberta</strong>, uma região indo de <strong>Ocupada</strong> para
+<strong>Vazia</strong> com o token que saiu, ou um teleporte com token, destino e célula. Os
+valores armazenados ficam em <strong>Detalhes técnicos</strong>, recolhido.</p>
+<p>Na mesa, <strong>Automação → Elementos → Testar comportamento</strong> ensaia o elemento
+selecionado na cena atual. O <strong>Token de teste</strong> opcional precisa pertencer a essa
+cena; sua identidade e ator vêm do servidor. No rascunho do Builder, o ator
+escolhido da campanha fornece um token efêmero, centralizado na região
+selecionada quando aplicável. O teste usa as permissões do mestre. Não assume a
+identidade de um jogador nem substitui a verificação das permissões reais dele.</p>
+<p><strong>Executar teste</strong> mostra eventos e passos percorridos, estados previstos,
+variáveis, mudanças de áudio e destinos de tokens. Cada execução começa na
+configuração atual. <strong>Reiniciar teste</strong> limpa o resultado temporário; fechar a
+janela também descarta a prévia. O teste sempre reverte objetos, tokens,
+variáveis, memória dos nós, tarefas, registros e revisões. Não cria recibos nem
+entrega sons, mensagens, diários, movimentos de câmera ou notificações em tempo
+real. Uma cadeia com falha mostra o diagnóstico e não prevê efeitos parciais
+persistidos.</p>
+<p>Delay interrompe o percurso na espera, e ações de Temporizador aparecem com as
+mudanças previstas de agendamento. O tempo não avança e os receptores agendados
+não são disparados. Sem ator/token de teste, Teleporte é ignorado explicitamente
+com aviso, e as ações seguintes continuam. É possível ensaiar uma cena pausada
+sem mudar sua pausa. <strong>Simular</strong> continua disponível no editor do grafo para a
+prévia local já existente.</p>
+<h3 id="registro-de-automacao-durante-o-jogo">Registro de automação durante o jogo</h3>
+<p>Na mesa, a camada <strong>Paredes</strong> do mestre tem a ferramenta <strong>Automação</strong>, que abre
+uma janela flutuante com as execuções recentes dos blueprints de porta da cena
+atual, da mais nova para a mais antiga. Cada execução mostra o resultado
+(<strong>Concluída</strong>, <strong>Bloqueada pela tranca</strong> ou <strong>Fracassada</strong>), a hora, quem agiu, o
+estado antes e depois e cada evento executado com seus nós em ordem: o ramo que
+cada condição seguiu, os valores lidos e as ações com seus parâmetros. Uma falha
+mostra também o motivo, como um jogador recusado ou a iluminação dinâmica
+desativada, e conserva os passos alcançados antes dela; nenhum de seus efeitos
+persiste. <strong>Problemas</strong> oculta as execuções concluídas, e a mira faz um ping na
+porta no mapa sem transmiti-lo. A janela se atualiza conforme as execuções
+acontecem e fecha com <strong>Escape</strong>.</p>
+<p><strong>Elementos</strong> reúne controles com busca e filtro por tipo para portas, alavancas,
+tochas, regiões, imagens nativas e superfícies dinâmicas. Selecione um elemento
+para localizá-lo, editar seu comportamento ou testá-lo. Os controles se aplicam
+imediatamente à cena do jogo: abrir/fechar/trancar portas, alternar mecanismo ou
+chama, mostrar/ocultar arte, habilitar interação dos jogadores ou ativar uma
+região. Superfícies dinâmicas também oferecem escolha de material e <strong>Restaurar
+aparência original</strong>, conservando imagem gerada, máscara e colisão. Ocultar uma
+tocha também desativa sua luz e efeitos vinculados; mecanismo e chama continuam
+independentes.</p>
+<p>Luzes, emissores de partículas e shaders aparecem no mesmo painel, com filtros
+próprios por tipo. <strong>Editar configurações</strong> abre o editor nativo existente;
+alterações se aplicam apenas ao salvar, e Cancelar preserva a cena. Suas opções
+de ativação usam os mesmos comandos nativos autorizados e a conferência de
+revisão. Atualizações remotas renovam o painel, preservando um material escolhido
+antes de <strong>Aplicar material</strong>.</p>
+<p>Escolher o estado de uma porta o altera diretamente, sem iniciar um grafo.
+<strong>Executar interação</strong> inicia <code>onInteract</code>; alterar estado e imagem exige nós de
+ação. Um blueprint vazio não alterna alavanca ou tocha.</p>
+<p>Alterar uma região estabelece sua ocupação silenciosamente, sem criar
+eventos de chegada/saída. Esses controles são do mestre: a opção de interação
+dos jogadores não bloqueia o mestre. Comandos conferem a revisão exibida e usam
+recibos nas repetições; conflitos exigem atualização. O documento autoral do
+Builder é preservado. As redefinições existentes de variáveis e memória mantêm
+a conferência do valor esperado em seus respectivos painéis.</p>
+<p><strong>Pausar automação</strong> interrompe todos os grafos de elemento da cena. Interagir com
+um blueprint não muda seu estado nem executa ações, e o registro mostra
+<strong>Automação pausada</strong>. Objetos sem blueprint mantêm seus controles nativos;
+a configuração direta pelo mestre continua disponível. Jogadores perdem a
+exceção de interação em portas trancadas. <strong>Retomar automação</strong> restaura os grafos. Só mestres podem pausar,
+executar ou limpar; a pausa fica guardada nas configurações da cena.</p>
+<p>As execuções são diagnóstico, não conteúdo da campanha. O servidor as registra
+na mesma transação da operação da porta, ou depois do rollback no caso de falha;
+repetir a mesma requisição devolve seu recibo sem outra execução. Cada cena
+guarda as últimas 50 execuções, e as exportações não as incluem. Só mestres
+podem lê-las por <code>GET /api/maps/&lt;scene_id&gt;/automation</code> ou receber o aviso
+<code>maps.automation</code> pelo socket; jogadores e streamers não recebem nenhum dos dois.</p>
+<h3 id="alavancas">Alavancas</h3>
+<p>Posicione um <strong>Objeto</strong> com uma imagem classificada como <strong>Objeto</strong>, selecione-o
+e abra <strong>Painéis → Seleção</strong>. Escolha <strong>Comportamento → Alavanca</strong> e seu <strong>Estado
+inicial</strong>: <strong>Desativada</strong> ou <strong>Ativada</strong>. A imagem é obrigatória para essa alavanca
+com aparência; escolha <strong>Objeto vazio</strong> para um controlador sem imagem. Voltar o
+Comportamento para <strong>Nenhum</strong> remove o comportamento e seus grafos; desfazer no
+projeto os recupera.</p>
+<p>Dê dois cliques na alavanca ou escolha <strong>Editar comportamento</strong> para abrir
+<strong>Objeto Inteligente</strong>. Os conectores principais são <strong>Ao interagir</strong> e <strong>Ao
+destruir</strong>; use <strong>Verificar estado</strong> para escolher entre Ativada e Desativada,
+seguido das ações de estado e imagem na mesma sequência.
+Configure aparência nativa,
+imagem oculta ou outra imagem de <strong>Objeto</strong> independentemente por estado. Trocar
+imagens conserva a caixa e a rotação configuradas. Editar estado inicial e
+geometria configura o projeto sem executar eventos de jogo.</p>
+<p><strong>Referência de elemento</strong> permite escolher porta ou alavanca pela lista ou por
+<strong>Escolher no mapa</strong>. <strong>Mudar estado</strong> oferece os estados do alvo; portas e
+alavancas podem controlar umas às outras. O ramo de ativação de <strong>Ao interagir</strong>
+pode continuar em <strong>Mudar estado: Ativada → Mudar estado: Aberta</strong>, com uma
+referência à porta conectada no <strong>Alvo</strong> da última ação.
+Marque <strong>Jogadores podem trancar ou destrancar</strong> quando essa ação precisar
+destrancar a porta para um jogador. <strong>Ler propriedade</strong> e <strong>Comparar estado</strong>
+também podem consultar uma alavanca referenciada. <strong>Revelar</strong> e <strong>Definir
+barreira</strong> se aplicam a portas; ações incompatíveis são puladas com diagnóstico
+em <strong>Automação</strong>. Duplicar um grupo remapeia referências entre portas, alavancas
+e luzes copiadas, conservando alvos externos ao grupo.</p>
+<p>Na cena gerada no jogo, escolha <strong>Selecionar</strong> e a camada <strong>Jogo</strong>, depois dê dois
+cliques na alavanca visível para executar sua interação. O mestre também pode
+interagir na camada <strong>GM</strong>. Um clique seleciona; dois cliques no Map Builder
+abrem o editor de comportamento. A interação alterna o estado quando seu grafo
+solicita essa mudança, ou usa a alternância nativa quando não há um caminho
+compartilhado de interação conectado. Streamers continuam somente para leitura.
+Jogadores recebem apenas o estado e a imagem ativos. <strong>Automação</strong> lista portas
+e alavancas juntas; pausar a automação interrompe a execução dos grafos. Atualizações da cena
+conservam seu estado de jogo.</p>
+<h3 id="tochas-compostas">Tochas compostas</h3>
+<p>Coloque uma imagem de <strong>Objeto</strong>, selecione-a e escolha <strong>Comportamento → Tocha</strong>
+em <strong>Painéis → Seleção</strong>. O builder cria e vincula uma luz nativa; <strong>Componentes
+da tocha</strong> permite acrescentar partículas e um shader. <strong>Editar</strong> abre a mesma
+janela do jogo para cada componente, mantendo a tocha selecionada. Os componentes
+pertencem à camada da imagem e cada um pertence a uma única tocha.</p>
+<p><strong>Mecanismo → Normal/Girada</strong> e <strong>Chama acesa</strong> são independentes. Girada soma
+90 graus à orientação configurada, ao redor do centro da imagem, e acompanha
+os componentes. Apagar a chama desliga a luz e os efeitos sem mover o mecanismo;
+acendê-la restaura apenas os componentes configurados como ativos. As posições,
+raios e demais ajustes nativos continuam editáveis. Uma aparência de estado com
+imagem oculta também oculta a emissão dos componentes.</p>
+<p>Mover, girar, redimensionar ou trocar a camada da tocha acompanha seus componentes.
+Duplicar no builder cria componentes próprios e remapeia as referências internas
+dos Blueprints. Cada operação pode ser desfeita. Excluir a tocha exclui seus
+componentes; excluir um efeito opcional apenas o desvincula. Excluir sua luz
+obrigatória desfaz a composição, preservando a imagem e removendo os demais
+componentes. Remover o comportamento também preserva a imagem.</p>
+<p>Dois cliques ou <strong>Editar comportamento</strong> abrem o Blueprint da tocha. Conecte <strong>Ao
+interagir → Verificar estado: Normal → Verdadeiro → Mudar estado: Girada → Mudar
+estado: Aberta</strong>, com uma referência de porta no <strong>Alvo</strong> da última ação, para
+girar a tocha e abrir uma passagem. Acrescente imagem e outros efeitos nesse ramo. O nó <strong>Controlar chama</strong> acende/apaga esta tocha ou uma
+tocha ligada em <strong>Alvo</strong>, sem alterar seu mecanismo; portas e alavancas também
+podem usar esse nó. Ajustar a configuração no builder não executa eventos do jogo.</p>
+<p>Na cena do jogo, escolha <strong>Selecionar</strong> e a camada <strong>Jogo</strong>, depois dê dois cliques
+na imagem visível para executar sua interação e girar ou retornar o mecanismo
+quando configurado para isso. O mestre também pode interagir na camada <strong>GM</strong>.
+No Map Builder, dois cliques abrem o editor de comportamento. A ação de chama
+aparece ao passar o ponteiro ou focar a
+tocha pelo teclado; <strong>Enter/Espaço</strong> acionam os controles focados. Streamers
+permanecem somente para leitura. Jogadores recebem só a imagem, o mecanismo e a
+chama atuais; os vínculos privados e grafos ficam com o mestre. A janela
+<strong>Automação</strong> inclui tochas e suas ações. Salvar/reabrir, gerar, atualizar e os
+arquivos de campanha preservam a composição. Atualizar a cena conserva mecanismo
+e chama de jogo; mudanças manuais incompatíveis nos objetos nativos causam o
+conflito normal, sem sobrescrita silenciosa.</p>
+<h3 id="regioes-e-placas-de-pressao">Regiões e placas de pressão</h3>
+<p>Em <strong>Painéis → Ferramentas</strong>, escolha <strong>Região</strong> e arraste um retângulo sobre o
+mapa. Em <strong>Seleção</strong>, dê um nome, ajuste suas dimensões e camada, ative os
+gatilhos de presença ou limite a faixa de elevação. O retângulo é um guia do
+mestre; ele não aparece na imagem gerada, na prévia ou na projeção do jogador.</p>
+<p>Para criar uma placa, escolha a <strong>Porta controlada</strong> e <strong>Aplicar placa de
+pressão</strong>. Essa ação substitui explicitamente o Blueprint da região: o primeiro
+token abre a porta e o último a sair a fecha. Com dois tokens dentro, a saída de
+apenas um conserva a pressão. <strong>Editar comportamento</strong> e dois cliques abrem o
+editor normal de Blueprint para ações de som, luz, tocha e porta.</p>
+<p>Regiões possuem estados derivados <strong>Vazia</strong> e <strong>Ocupada</strong>. <strong>Ao entrar na área</strong>
+e <strong>Ao sair da área</strong> iniciam uma sequência para cada token elegível que atravessa
+o limite; esses eventos não comparam estado nem quantidade de ocupantes. Use
+<strong>Contexto do evento → Contagem de ocupantes</strong> e um nó de comparação para ações
+na primeira entrada (<code>1</code>) ou na última saída (<code>0</code>). O estado da região não pode
+ser definido manualmente nem alterado pelo nó Mudar estado.</p>
+<p>O servidor avalia o centro e a elevação do token ao longo do caminho validado.
+Um segmento que atravessa todo o retângulo entra e sai; a prévia de arraste não
+executa automação. Regiões sobrepostas são avaliadas de forma independente, na
+ordem de criação. Colocar, duplicar e remover tokens, ou mudar sua elevação,
+também atualiza a presença. Tokens ocultos ocupam espaço; seus IDs continuam
+privados. Movimentos bloqueados e ações com falha revertem o comando inteiro;
+repetir a mesma operação não repete efeitos. As ações conservam as permissões
+de quem moveu o token, incluindo as restrições de portas trancadas.</p>
+<p>Reabrir a cena não repete entradas. Editar ou ativar uma região, ou atualizar a
+cena vinculada, estabelece a ocupação atual sem inventar entradas. Por isso,
+alterar a configuração não aciona automaticamente a porta vinculada. O editor
+nativo de região do mestre mostra estado e quantidade de ocupantes; Automação
+registra o token que originou cada execução. Projetos e cenas aceitam até 128
+áreas de presença no total, somando regiões e objetos com grafos de área
+conectados. Eles também contam no limite normal de objetos.</p>
+<p><strong>Filtros de presença</strong> em Seleção e no editor nativo de região podem restringir
+IDs de tokens, IDs de atores, disposição (<strong>Aliado</strong>, <strong>Neutro</strong>, <strong>Hostil</strong>,
+<strong>Desconhecido</strong>) e visibilidade (<strong>Qualquer</strong>, <strong>Visível</strong>, <strong>Oculto</strong>). Cada
+lista de identidades aceita até 64 IDs únicos. Listas vazias não restringem.
+Membros da mesma lista usam OU; critérios diferentes usam E. Visibilidade
+consulta a configuração de token oculto, sem depender da névoa de guerra de um
+participante ou de suas permissões de controle. Tokens ocultos continuam
+elegíveis quando nenhum filtro de visibilidade os exclui.</p>
+<p>Só tokens correspondentes contam como ocupantes ou disparam presença. Editar
+filtros, geometria ou ativação recalcula a ocupação silenciosamente; comandos
+posteriores de token geram novas transições. Projetos sem filtros conservam o
+comportamento anterior. Filtros e ocupação continuam privados para o mestre;
+propriedade de ator/token e limites de cena/campanha são validados no servidor.
+Use Contexto do evento para ler token/ator e quantidade da ocorrência original,
+ou Definir região para mudar a detecção de presença por um grafo. Teleporte na
+mesma cena usa esse token validado, sem depender da seleção atual do navegador.</p>
+<h3 id="modelos-reutilizaveis-de-comportamento">Modelos reutilizáveis de comportamento</h3>
+<p>A biblioteca de modelos do editor de Objetos Inteligentes pertence à campanha e
+fica disponível somente para mestres. Salvar um modelo captura uma cópia
+independente do comportamento. Campos tipados de recursos viram vínculos nomeados
+para imagens, elementos, luzes, sons, diários e participantes; vínculos Self
+resolvem para a instância que recebe o modelo. Escolha parâmetros escalares para
+expor, como duração, volume, ativação ou mensagem. Texto autoral, nomes de sinais,
+valores de variáveis e identidades de grafos/nós conservam seu significado,
+inclusive quando o texto se parece com um UUID de recurso.</p>
+<p>Aplicar um modelo solicita seus vínculos e valores de parâmetros e cria um
+rascunho independente no editor atual. Revise os vínculos antes de aplicar;
+alterações válidas aplicadas são salvas automaticamente pelo projeto ou pela
+rede da cena. Alterar a biblioteca depois não atualiza instâncias existentes.
+Vínculos ausentes ou incompatíveis precisam ser resolvidos; o modelo não concede
+acesso a recursos de outra campanha. Arquivos de campanha preservam a biblioteca e
+sua definição tipada sem conservar identidades privadas de outra instância.</p>
+<h3 id="rede-da-cena">Rede da cena</h3>
+<p>Abra <strong>Rede da cena</strong> na janela Automação do mestre para inspecionar regras,
+referências e vínculos ausentes dos elementos da cena. Portas, alavancas, tochas
+e regiões abrem o editor existente de Objetos Inteligentes; imagens comuns e
+superfícies dinâmicas podem ser alvos sem receber um estado de mecanismo inventado.
+Planos internos de composição não aparecem como elementos editáveis.</p>
+<p>Salvar confere a revisão do objeto nativo e a do projeto vinculado. Para um
+elemento gerado, blueprint nativo, blueprint do projeto e retrato de propriedade
+daquele blueprint mudam na mesma transação. Alvos nativos tipados voltam às
+identidades de origem; nomes e textos autorais permanecem intactos. Elementos
+nativos independentes salvam somente sua definição nativa. Abrir a rede não cria
+outro armazenamento de grafos nem execução adicional. Um conflito exige recarregar;
+a operação não incorpora mudanças manuais de geometria sem relação com a regra.
+Reutilizar o UUID de requisição com outro conteúdo é rejeitado.</p>
+<h3 id="superficies-dinamicas">Superfícies dinâmicas</h3>
+<p>Selecione um chão ou parede e ative <strong>Superfície dinâmica</strong> antes de gerar/atualizar
+a cena. Projetos existentes mantêm o padrão estático. A arte dinâmica gerada usa
+planos de imagens nativas e máscaras limitadas, sem deixar os mesmos pixels no
+fundo rasterizado. Pintura, transparência, furos, borracha, recorte de parede e
+fase da textura preservam sua composição; planos internos e assets gerados ficam
+fora dos catálogos normais de imagens e alvos.</p>
+<p><strong>Definir visibilidade</strong> (<code>setVisibility</code>, <code>visible</code>) e <strong>Definir aparência</strong>
+(<code>setAppearance</code>, <code>assetId</code>) aceitam Self ou um alvo/conjunto conectado em Target.
+Superfícies dinâmicas mudam sua camada visível ou material sem refazer a imagem
+do mapa nem gravar arquivos durante o jogo. Imagens nativas comuns e a arte de
+portas/alavancas/tochas também aceitam a ação visual compatível. A arte com estado
+segue o ciclo existente de sprite e entrada em estado. Essas ações mudam a arte;
+use a ação Barreira separadamente quando colisão, visão, luz ou som também devem
+mudar. Somente imagens normais da campanha podem virar materiais; máscaras e arte
+composta geradas não podem ser reutilizadas como imagens de origem. Atualizações
+explícitas do projeto mantêm as verificações de propriedade e conflitos manuais.</p>
+<h3 id="mensagens-diarios-e-foco-da-camera">Mensagens, diários e foco da câmera</h3>
+<p>A versão 2 oferece <strong>Mostrar mensagem</strong>, <strong>Mostrar diário</strong> e <strong>Focar câmera</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Nó</th><th scope="col" style="text-align:left">Configuração salva</th></tr></thead><tbody><tr><td style="text-align:left"><code>showMessage</code></td><td style="text-align:left"><code>text</code> com 1–2.000 caracteres e conteúdo não vazio, mais <code>audience</code></td></tr><tr><td style="text-align:left"><code>showHandout</code></td><td style="text-align:left"><code>journalId</code> de um diário da campanha e <code>audience</code></td></tr><tr><td style="text-align:left"><code>cameraFocus</code></td><td style="text-align:left"><code>focusX</code> e <code>focusY</code> em células, cada um de 0 a 1.000, e <code>audience</code></td></tr></tbody></table></div>
+<p>O público pode ser o participante autenticado que originou o evento, os jogadores
+da campanha ou uma lista explícita de 1–64 participantes únicos. O servidor confere
+vínculo atual e acesso à cena de cada destinatário. Diários abrem a janela existente
+somente para quem já pode ler o recurso; apresentar não concede acesso permanente
+nem temporário. Mensagens exibem texto simples. A entrega ocorre após commit, com
+identidade própria para evitar duplicações no cliente; rollback e repetição de um
+recibo não reapresentam o conteúdo.</p>
+<p>As coordenadas da câmera são separadas de <code>x/y</code> do layout do nó. O servidor converte
+células em pixels e rejeita pontos fora do mapa. Foco só se aplica à cena atual do
+destinatário e respeita <strong>Preferências → Permitir foco da câmera por automação</strong>,
+desligado por padrão e salvo por perfil/dispositivo. Mensagens e diários autorizados
+podem aparecer enquanto outra cena é exibida. Nenhuma dessas ações muda a cena
+transmitida pela campanha.</p>
+<h3 id="teleporte-na-mesma-cena">Teleporte na mesma cena</h3>
+<p>Conecte o evento <strong>Token entrou</strong> de uma região a <strong>Teleporte</strong> e escolha uma
+região de presença na mesma cena como destino. O nó salvo é
+<code>teleport: { destinationId: &lt;UUID da região&gt; }</code>; token e ator vêm somente do
+Contexto do evento autenticado. Seleção do navegador e IDs enviados no conteúdo
+do comando não substituem o viajante. Uma interação sem token de origem não
+pode teleportar.</p>
+<p>O servidor confere acesso atual à cena, identidade/controle do ator, bloqueio e
+revisão do token, ativação/elevação do destino, limites do mapa e espaço para o
+tamanho do token. Escolhe a primeira posição inteira livre da grade dentro da
+região, percorrendo linhas de cima para baixo e colunas da esquerda para a direita.
+Outros tokens, inclusive ocultos, e paredes atravessando a área ocupada impedem a
+posição; paredes no trajeto saltado não impedem o teleporte. A busca tem limite de
+trabalho. Destino inválido ou cheio faz a transação atual falhar e preserva o token
+original sem deslocamento.</p>
+<p>A mesma instância conserva ator, dados vinculados/snapshot, condições, propriedade
+e configurações. Posição e revisões são gravadas com o recibo do comando lógico.
+Na mesa, o teleporte remove o objeto visual antigo do token e o recria no destino,
+sem animar o trajeto saltado. O token conserva identidade e seleção; confirmações
+duplicadas não repetem a recriação visual. Câmera e piso permanecem montados.
+Saída e chegada executam uma vez, sem acionar regiões apenas cruzadas pela linha
+do teleporte. A chegada pode executar som, luz e aparência. Uma trava privada e
+persistida de chegada impede novo teleporte automático a partir daquela região
+até o token sair; entrar de novo libera a rota. Cada token pode ser teleportado
+no máximo uma vez por comando lógico, inclusive entre regiões sobrepostas e
+sinais. As travas sobrevivem a reconexões, esperas e atualizações compatíveis da
+cena e não aparecem nas projeções para participantes.</p>
+<p>Delay/Temporizador conservam token/ator originais e o limite do papel, conferindo
+controle e destino atuais ao retomar. Trocar o ator da instância ou revogar acesso
+não redireciona essa identidade. Efeitos gravados antes da espera mantêm a semântica
+existente se o trecho posterior falhar. Transferência entre cenas (8B), viagem em
+grupo e políticas de acompanhamento/navegação (8C) continuam futuras; essa ação
+não altera seleção de cena nem transmissão.</p>
+<h3 id="limitacoes-atuais">Limitações atuais</h3>
+<p>Os Objetos Inteligentes cobrem portas, alavancas, tochas e regiões de presença;
+referências também alcançam imagens nativas comuns, luzes e sons da campanha.
+Grupos tipados são listas ordenadas explícitas. As conexões incluem seus tipos
+de recurso/conjunto, além de Estado, Verdadeiro ou Falso, Número e Texto.
+Ler propriedade ainda expõe só estado atual/anterior; Contexto do evento fornece
+metadados validados da origem. Sinais nomeados não carregam dados personalizados,
+e a simulação mostra um grafo por vez. O editor não tem comentários, grupos
+visuais de nós, reroutes nem
+desativar nós, e seu histórico de desfazer termina com a modal. O registro de
+automação guarda 50 execuções por cena para elementos com blueprint e executa
+diretamente a interação de portas, alavancas e tochas; eventos de região exigem
+comandos de token validados pelo servidor. Veja
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/smart-objects-direction.md#limitações-atuais-e-trabalho-pendente">Limitações atuais e trabalho pendente</a>
+para a lista completa e os próximos passos.</p>
+<h2 id="referencia-para-desenvolvimento">Referência para desenvolvimento</h2>
+<p>As seções seguintes descrevem documentos armazenados, projeções nativas,
+comandos HTTP e limites da execução. Para operações de uso, consulte os fluxos
+anteriores. O <a href="frontend.html#area-do-map-builder">guia de frontend</a> mapeia
+controladores e assets gerados; o <a href="testing.html">guia de testes</a> documenta os
+cenários isolados de regressão.</p>
+<h3 id="projeto-imagem-e-geometria-durante-o-jogo">Projeto, imagem e geometria durante o jogo</h3>
+<p><code>MapBuilderProject</code> pertence a uma campanha e contém pasta, projeto JSON versionado
+e referência à última cena gerada, além do histórico de propriedade da geração.
+Os endpoints conferem o vínculo de mestre em
+cada requisição. Rascunhos não são expostos a jogadores ou streamers. Exportações,
+clones e snapshots preservam projetos e remapeiam referências aos assets enviados.
+Exportar a última cena gerada como conteúdo inclui seu projeto editável.
+Clones remapeiam referências nativas de luzes, imagens e sons, preservando as
+identidades de origem do projeto. Quando o áudio é excluído de uma exportação de
+campanha, as cópias exportadas do projeto, dos objetos nativos e do histórico de
+propriedade removem os nós de som e reconectam suas continuações. As outras ações
+permanecem intactas; a campanha original não é alterada.</p>
+<p>A versão <code>3</code> do formato armazena <code>name</code>, <code>columns</code>, <code>rows</code>, <code>cellSize</code>, <code>background</code>
+e as listas <code>assets</code>, <code>layers</code>, <code>floors</code>, <code>walls</code>, <code>doors</code>, <code>decorations</code> e <code>lights</code>,
+além de listas opcionais <code>particles</code>, <code>shaders</code> e <code>regions</code>. Documentos antigos de versão 3
+podem omitir essas listas sem mudar na leitura.
+Uma lista <code>layers</code> vazia só é válida quando todas as listas de objetos estão
+vazias; salvar ou gerar esse projeto não acrescenta uma camada padrão.
+Cada objeto referencia um <code>layerId</code> existente; camadas possuem <code>id</code>, <code>name</code>,
+<code>visible</code> e <code>locked</code>. Chão permite rotação de textura em 0/90/180/270 graus.
+<code>backgroundImage: {assetId}</code> opcional referencia uma imagem da campanha sem depender
+dos assets de pincel e a estica abaixo das camadas. Decorações possuem caixa
+delimitadora e rotação; a imagem cabe nessa caixa preservando sua proporção. Um
+Objeto vazio é uma decoração com <code>empty: true</code>, <code>assetId: null</code>, <code>name</code> opcional e
+<code>lever: {state: &quot;off&quot; | &quot;on&quot;}</code> nativo. Seu blueprint opcional usa <code>kind: &quot;lever&quot;</code>,
+as aparências padrão dos estados herdam a original e ações de imagem não podem
+ter o dono como alvo. Luzes possuem coordenadas e raios forte/fraco em células,
+além das opções nativas de iluminação. Partículas e shaders usam os nomes e a
+validação das propriedades nativas, além de <code>id</code> e <code>layerId</code>. Seus <code>x/y</code> usam
+células do projeto e viram pixels nativos; raios de luz e <code>radius</code> de shader
+continuam em células (<code>radius: 0</code> cobre a cena). Nomes e código de shaders são
+conteúdo de autoria, preservado em clones e arquivos de campanha; identidades
+de objetos e referências de propriedade continuam sendo remapeadas.
+Entradas de região contêm <code>id</code>, <code>layerId</code>, <code>name</code>, <code>enabled</code>, o retângulo em
+células <code>x/y/width/height</code>, <code>vertical: {bottom, top}</code> opcional e <code>blueprint</code>
+opcional de versão 2 com <code>kind: &quot;region&quot;</code>. Os estados são <code>empty</code> e <code>occupied</code>;
+os grafos também aceitam <code>presence:enter</code> e <code>presence:exit</code>. O campo opcional
+<code>filters: {tokenIds, actorIds, dispositions, visibility}</code> guarda os seletores
+autorados; ocupação calculada e sua lista de tokens continuam só na execução.
+A geração usa
+IDs estáveis em <code>zones</code>, remapeia referências de Blueprint e conserva as regiões
+visíveis apenas ao mestre.
+Paredes e portas também podem guardar os campos nativos <code>presentation</code>,
+<code>behavior: {movement, vision, light, sound}</code>, <code>vertical: {bottom, top}</code> e
+<code>discovered</code>. Valores de elevação conservam as unidades de elevação dos tokens
+do jogo; <code>bottom/top: null</code> significa ausência de limite de elevação. A geração
+converte comportamento e elevação nos campos nativos de parede. Objetos antigos
+que omitem esses ajustes conservam seus padrões sem reescrever a origem.
+Portas e decorações podem guardar <code>interactionEnabled</code> booleano estrito;
+ausência mantém o padrão habilitado sem reescrever documentos antigos.
+<code>editingMode: &quot;tiles&quot; | &quot;paint&quot;</code> opcional escolhe a área de trabalho; a ausência
+usa Tiles sem reescrever projetos antigos. Traços de terreno podem armazenar
+<code>floor.brush: {operation, points, radius, hardness}</code>. Cada ponto contém
+coordenadas <code>[u, v, alpha]</code> normalizadas dentro da caixa do chão; <code>radius</code> contém
+os raios horizontal/vertical normalizados, <code>hardness</code> vai de 0 a 1 e <code>operation</code>
+é <code>paint</code> ou <code>erase</code>. A pintura acumula cobertura por composição sobre a anterior;
+a borracha retira cobertura dos pisos anteriores da mesma camada. Canvas e
+renderização do servidor usam a mesma representação do pincel.</p>
+<p><code>paint: {color, opacity}</code> existente no chão continua legível independentemente
+do pincel de terreno. Cor é hexadecimal de seis dígitos ou <code>null</code> para
+textura/material padrão; cor sólida exige <code>assetId: null</code>. Opacidade vai de 0 a
+1 e multiplica a transparência da textura e a cobertura da forma. Leitura e
+renderização mantêm geometria/estilos salvos; entradas sem <code>paint</code> mantêm sua
+saída existente.
+Chãos livres podem armazenar <code>shape: {contours, cuts}</code>. Cada entrada é um anel
+poligonal de pontos <code>[u, v]</code> normalizados dentro da caixa do chão; a área é a
+união dos contornos menos a união dos recortes, usando a regra par/ímpar dentro
+de cada anel. Entradas sem <code>shape</code> mantêm o formato retangular existente.
+Mover/redimensionar usa essa caixa; giros de 90 graus rotacionam a geometria
+normalizada junto com o chão.
+Classificações de assets podem conter
+<code>name</code>, <code>collection</code> e <code>family</code> opcional próprios do projeto. A string <code>family</code>
+acrescenta metadados à versão <code>3</code> sem alterar a versão do formato; projetos sem
+ela mantêm o comportamento existente. Os membros são definidos pelas entradas
+em <code>assets</code> com o mesmo tipo e nome de família. Objetos pintados conservam seu
+<code>assetId</code> específico; ler ou renderizar um projeto não sorteia outro membro.
+Coordenadas e espessuras usam
+células da grade; as coordenadas nativas geradas usam pixels. Cada objeto lógico
+possui um UUID. As portas guardam seus próprios pontos (<code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code>),
+espessura, imagem opcional e estado inicial, assim como as paredes possuem sua
+própria geometria. O campo opcional <code>blueprint</code> da porta amplia a versão <code>3</code> sem
+alterar a versão do formato. O blueprint atual usa o formato <code>2</code>, com <code>kind</code>, valores fixos de <code>states</code> e
+<code>graphs</code> opcionais. Portas, alavancas e tochas aceitam <code>interact</code> e <code>destroy</code>;
+regiões aceitam <code>presence:enter</code>, <code>presence:exit</code> e <code>destroy</code>. Receptores nomeados
+usam <code>signal:&lt;nome&gt;</code>. O nó de evento contém apenas seu ID exato e posição, com
+uma saída de execução <code>next</code>, sem filtro de estado ou comparação. Carregar um
+contêiner anterior promove seu formato e descarta <code>change</code>, <code>enter:&lt;estado&gt;</code>,
+<code>exit:&lt;estado&gt;</code> e <code>interact:&lt;estado&gt;</code>, sem converter ações nem remover elementos
+da cena ou arquivos de assets.</p>
+<p>Estados guardam a aparência padrão em <code>appearance</code> e <code>assetId</code> opcional. Nós
+armazenam ID, tipo, posição e parâmetros tipados. Conexões de execução exigem
+<code>kind: &quot;execution&quot;</code>, <code>from</code>, <code>to</code> e <code>output</code>, com ramos ordenados. Dados usam
+<code>kind: &quot;data&quot;</code> e a entrada <code>input</code>, com uma origem por entrada. Nós de valor não
+aceitam conexões de execução. Uma porta nativa pode ter <code>sprite</code> ativo definido
+por Trocar imagem; jogadores recebem somente a aparência resultante. Uma ação
+de estado não emite outro evento nem limpa automaticamente essa imagem. A caixa
+da instância projeta o objeto real, sem outro estado persistido.</p>
+<p>A saída de referência
+conserva o ID salvo <code>door</code>; seu tipo agora é <code>element</code>, preservando conexões
+existentes e aceitando os dois adaptadores.</p>
+<p>Uma decoração pode conter <code>lever: {&quot;state&quot;: &quot;off&quot;}</code> (ou <code>&quot;on&quot;</code>) e um blueprint
+opcional de versão <code>2</code>, <code>kind: &quot;lever&quot;</code>, com esses dois estados. Imagens por
+estado usam assets classificados como <code>decoration</code>; nós Trocar imagem aceitam
+qualquer imagem importada da campanha, incluindo materiais. Imagens
+nativas geradas conservam a caixa e os metadados da imagem-base nos dados
+privados da alavanca; projeções de participantes incluem apenas <code>lever.state</code>
+e a imagem ativa. Atualizações conservam o estado de jogo e detectam conflitos
+em alterações manuais na imagem gerada.
+Imagens comuns controladas por Trocar imagem usam um registro privado de
+restauração <code>spriteBase: {assetId, layer, width, height}</code>, com dimensões da caixa
+em pixels e aparência ativa <code>sprite</code>. Projeções de participantes omitem ambos.
+Edições nativas preservam ou adotam a caixa limitada; arquivos de campanha
+remapeiam o ID do asset e validam imagem ativa, ajuste e propriedade antes de
+confirmar a importação.
+Decorações geradas cujo ajuste exige escala fora da faixa do editor comum de
+imagens usam o mesmo registro de restauração, mantendo a caixa em pixels do
+projeto na geração, em edições nativas, na atualização da cena e em cópias da campanha.</p>
+<p>Os alvos de luz usam IDs de
+origem do projeto e são remapeados para IDs nativos da cena na geração. Portas sem
+esse campo conservam o comportamento existente. A classificação do asset pertence ao projeto e não muda a
+imagem da campanha para outros usos. As versões <code>1</code> e <code>2</code> continuam legíveis.
+O editor as converte para uma camada Base sem arredondar pontos; portas da versão
+<code>1</code> vinculadas a paredes são convertidas sem mover ou descartar portas. Apenas ler
+um projeto antigo não altera seu documento gravado nem sua revisão.</p>
+<p>Por padrão, a imagem contém fundo, texturas repetidas de chão e faixas de parede.
+Arte marcada como dinâmica usa a composição nativa separada descrita acima. A arte da
+parede usa a caixa dos pixels com alfa de pelo menos <code>8</code>, descartando as margens
+transparentes sem alterar a imagem enviada. A direção horizontal da imagem recortada
+acompanha a parede do início ao fim. Sua proporção define o comprimento de repetição
+na espessura configurada, mantendo as mesmas proporções em paredes horizontais,
+verticais e diagonais. As repetições conservam sua posição ao longo da parede
+original mesmo após as aberturas de portas. O editor e a imagem gerada usam esse
+mesmo posicionamento. Primeiro o chão e depois as faixas de parede seguem a ordem
+das camadas em cada etapa de pintura; reordenar camadas não intercala esses
+tipos de objeto. Decorações se tornam imagens nativas na
+camada de mapa; luzes, partículas e shaders permanecem objetos nativos editáveis,
+com suas animações e interação com a iluminação. Nenhum deles é incorporado à imagem de fundo,
+permitindo renderização e edição pelo VTT. Os intervalos
+na mesma direção ocupados por portas são retirados da imagem e das paredes nativas
+comuns, inclusive quando a porta atravessa vários segmentos de parede. Cada porta
+cria seu próprio segmento nativo com o comportamento normal de movimento, visão, luz e som.
+Sua imagem opcional é renderizada separadamente. Sem uma aparência definida pelo
+blueprint, ela aparece enquanto fechada ou trancada e desaparece quando aberta.
+Excluir essa imagem preserva a geometria da porta. Esse comportamento padrão não
+depende de um grafo de lógica.</p>
+<p>Excluir uma imagem da campanha remove suas classificações e referências de
+material dos projetos salvos, preservando a geometria com a aparência padrão.
+Outros membros de sua família de assets e seus posicionamentos existentes são preservados.
+As revisões dos projetos avançam para que editores abertos precisem recarregar
+antes de salvar novamente.
+Essa limpeza conhecida também atualiza o histórico de propriedade, permitindo
+atualizar a cena vinculada sem restaurar a arte excluída.
+Imagens de estado excluídas voltam à aparência nativa nos blueprints do projeto e
+da cena, assim como os nós Trocar imagem que as usavam; uma imagem ativa que a
+usava é removida. Ações Definir aparência que usam um material excluído são removidas
+e suas continuações de execução são reconectadas; referências de dados nunca viram
+conexões de execução. Excluir um som da campanha remove seus nós de som e reconecta suas
+continuações tanto no projeto atual quanto no snapshot gerado, incluindo as
+receitas de superfícies dinâmicas, permitindo importar cópias da campanha após
+a exclusão. Excluir uma luz nativa remove as referências afetadas das ações
+durante o jogo; excluir uma luz gerada continua causando o conflito normal de
+atualização da cena.</p>
+<p><code>builder_render.py</code> renderiza o projeto validado; <code>builder_services.py</code> usa o fluxo
+existente <code>tiling.generate_pyramid</code> e persiste metadados da cena, fatias, paredes e
+seleção particular do mestre em uma transação. A renderização acontece antes da
+transação de escrita; permissões, revisão e propriedade dos assets são conferidas
+novamente antes da publicação. Arquivos gravados por uma operação que falha são
+removidos. A notificação de atualização acontece após o commit.</p>
+<h3 id="recursos-de-execucao-e-atualizacao-da-cena">Recursos de execução e atualização da cena</h3>
+<p>A execução de eventos reutiliza os inventários de imagens, sons, luzes e
+blueprints somente dentro de um comando e depois os descarta. Estados mutáveis e
+propriedade dos recursos são verificados novamente nos comandos seguintes. O
+trajeto aceito do token é projetado uma vez por passagem de áreas, mantendo a
+ordem dos ouvintes e o cancelamento por teleporte. Eventos de várias áreas
+conservam todos os registros, publicando uma única invalidação do histórico após
+o commit. Rollback, permissões e recibos de repetição continuam no servidor.</p>
+<p>Mudanças confirmadas da cena chegam ao tabuleiro antes das atualizações
+dependentes de áudio/combate. Trocar uma imagem comum substitui sua textura no
+próprio objeto, mantendo a imagem anterior até a nova ficar pronta. Imagens
+inalteradas são reutilizadas, inclusive ao reconstruir luzes/geometria na mesma
+cena. A cena possui um cache limitado de texturas usadas recentemente e o libera
+ao trocar de cena/papel ou encerrar o tabuleiro. Apenas imagens da projeção atual
+autorizada para aquele usuário são carregadas.</p>
+<h3 id="operacoes-http-e-limites">Operações HTTP e limites</h3>
+<p>Todos os endpoints abaixo ficam em <code>/api/containers/&lt;campaign_id&gt;/map-builder</code>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Método e sufixo</th><th scope="col" style="text-align:left">Finalidade</th></tr></thead><tbody><tr><td style="text-align:left"><code>GET</code></td><td style="text-align:left">Resumos dos projetos, imagens/sons da campanha e limites atuais</td></tr><tr><td style="text-align:left"><code>GET /projects/&lt;project_id&gt;</code></td><td style="text-align:left">Ler o projeto editável e sua revisão</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;</code></td><td style="text-align:left">Criar ou salvar um projeto</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;/generate</code></td><td style="text-align:left">Gerar cena a partir da revisão salva</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;/update</code></td><td style="text-align:left">Atualizar a cena vinculada a partir da revisão salva</td></tr><tr><td style="text-align:left"><code>GET /templates</code></td><td style="text-align:left">Listar modelos de comportamento da campanha, exclusivos do mestre</td></tr><tr><td style="text-align:left"><code>GET /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Ler definição tipada e revisão do modelo</td></tr><tr><td style="text-align:left"><code>POST /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Criar/atualizar um modelo independente</td></tr><tr><td style="text-align:left"><code>DELETE /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Excluir um modelo conferindo sua revisão</td></tr><tr><td style="text-align:left"><code>GET /testing-catalog</code></td><td style="text-align:left">Opções de atores da campanha para ensaio, exclusivas do mestre</td></tr><tr><td style="text-align:left"><code>POST /test</code></td><td style="text-align:left">Ensaiar um documento não salvo sem salvá-lo nem gerar cena</td></tr></tbody></table></div>
+<p>Os endpoints da rede do mestre ficam em <code>/api/maps/&lt;scene_id&gt;/automation/network</code>
+(<code>GET</code>) e <code>/api/maps/&lt;scene_id&gt;/automation/network/&lt;element_id&gt;</code> (<code>POST</code>). Salvar
+leva <code>request_id</code>, <code>expected_version</code>, <code>expected_project_version</code> (ou <code>null</code> para
+elementos nativos independentes) e <code>blueprint</code>. Eles usam os recibos existentes e
+não publicam grafos privados para jogadores ou streamers.</p>
+<p>O ensaio do mestre usa <code>POST /api/maps/&lt;scene_id&gt;/automation/test/&lt;element_id&gt;</code>
+com <code>request_id</code>, <code>expected_version</code>, <code>event</code> e, opcionalmente, <code>tokenId</code> e um
+rascunho nativo <code>blueprint</code>. No Builder, aceita <code>request_id</code>, <code>document</code>,
+<code>elementId</code> da fonte, <code>event</code> e <code>actorId</code> opcional da campanha. Ambos devolvem
+passos privados, mudanças previstas, resumos de agendamento e avisos, e revertem
+a execução.</p>
+<p>Os controles do jogo usam <code>POST /api/maps/&lt;scene_id&gt;/automation/control/&lt;element_id&gt;</code>
+com <code>request_id</code>, <code>expected_version</code>, <code>action</code> e <code>value</code> (omita <code>value</code> para
+<code>interact</code>). As ações são <code>state</code>, <code>interact</code>, <code>flame</code>, <code>visibility</code>, <code>appearance</code>,
+<code>interaction</code> e <code>region</code>. Aparência <code>null</code> restaura a arte base de uma superfície
+gerenciada ou a aparência de estado de um elemento inteligente. Materiais devem
+ser assets comuns da campanha; máscaras geradas não são materiais reutilizáveis.</p>
+<p>Escritas levam um UUID <code>request_id</code> e um inteiro <code>expected_version</code>; projetos novos
+esperam versão <code>0</code>. Salvar também leva <code>folder_id</code> e <code>document</code>. Repetir a mesma
+operação lógica retorna seu recibo. Reutilizar o UUID com outro payload é rejeitado.
+Conflitos de revisão exigem reler o projeto atual; clientes não devem sobrescrever
+silenciosamente outra revisão salva. Atualizar também leva <code>expected_scene_version</code>.
+Seu manifesto de geração registra IDs, identidades de origem, tipos e dados dos objetos gerados; apenas
+esses recursos pertencentes ao projeto podem ser substituídos ou removidos.
+A atualização confere permissões, revisões, propriedade e dados gerados após
+renderizar, dentro da transação de publicação. Notificações ocorrem após o commit;
+fatias antigas são excluídas somente após a publicação bem-sucedida.</p>
+<p>Os limites incluem documento de 1 MB, 32 camadas do projeto, 2.000 objetos somando
+chão/parede/porta/decoração/luz/partícula/shader/região, 5.000 objetos nativos gerados,
+256 imagens classificadas, dimensões de 1–200 células e células de 16–256 px.
+A imagem também está limitada a 16.777.216 pixels ou ao limite do servidor, o
+que for menor; os limites dimensionais não podem ser usados todos ao mesmo tempo.
+A complexidade das superfícies pintadas tem um limite separado. Os uploads usam
+o endpoint de imagens da campanha e seus limites de 25 MB e 40 milhões de pixels
+decodificados.
+Formas livres permitem até 128 anéis de contorno/recorte por chão, 256 vértices
+por anel, 4.096 pontos por chão e 16.384 pontos por documento. Limites adicionais
+de área em pixels e arestas por linha de varredura limitam a geração da máscara;
+ultrapassá-los rejeita o gesto ou a operação do servidor por inteiro.
+Blueprints permitem até 32 nós e 64 conexões por grafo de evento, com no máximo
+128 nós entre os grafos de uma porta. Cada grafo exige um nó de evento
+correspondente; ciclos, referências a nós inexistentes e conexões duplicadas são rejeitados. Transições de estado e
+ações executadas também têm limites no servidor.</p>
+<h3 id="plano-de-entregas">Plano de entregas</h3>
+<p>Consulte a <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/smart-objects-direction.md">direção dos Objetos Inteligentes</a> para
+propostas de novos elementos, organização visual de nós, animação e transporte
+entre cenas/em grupo. Os comportamentos suportados e seus limites estão neste
+guia; planos futuros não alteram os contratos de projetos salvos, permissões
+ou pacotes de sistema.</p></div><details class="kb-more-screenshots"><summary>Mais capturas deste guia (1)</summary><figure class="kb-screenshot"><a href="../../assets/wiki/playtest-030.webp" aria-label="Abrir captura completa: O playtest seguro pré-visualiza um mecanismo de porta e relata as alterações previstas. Gravewright 0.3.0, interface em inglês."><img src="../../assets/wiki/playtest-030.webp" width="1440" height="900" alt="O playtest seguro pré-visualiza um mecanismo de porta e relata as alterações previstas. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>O playtest seguro pré-visualiza um mecanismo de porta e relata as alterações previstas. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure></details></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="macos-runner.html"><span>Anterior ←</span><strong>Instalador e Runner no macOS</strong></a><a href="universal-vtt.html"><span>Próximo →</span><strong>Importação e exportação Universal VTT</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/map-builder.md">docs/en/map-builder.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/map-builder.md">docs/pt-BR/map-builder.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#encontre-o-fluxo-adequado">Encontre o fluxo adequado</a></li><li><a href="#acesso-do-mestre-e-pontos-de-entrada">Acesso do mestre e pontos de entrada</a></li><li><a href="#construir-a-primeira-sala">Construir a primeira sala</a></li><li><a href="#escolher-como-comecar">Escolher como começar</a></li><li><a href="#tiles-e-pintura">Tiles e Pintura</a></li><li><a href="#pintura-de-terreno">Pintura de terreno</a></li><li><a href="#importar-um-mapa-pronto">Importar um mapa pronto</a></li><li><a href="#construir-mapas-maiores">Construir mapas maiores</a></li><li><a href="#encontros-e-nos-de-parede">Encontros e nós de parede</a></li><li><a href="#rotacao-de-portas">Rotação de portas</a></li><li><a href="#objetos-vazios">Objetos vazios</a></li><li><a href="#salvamento-automatico">Salvamento automático</a></li><li><a href="#atualizar-uma-cena-gerada">Atualizar uma cena gerada</a></li><li><a href="#atalhos-de-teclado-e-ponteiro">Atalhos de teclado e ponteiro</a></li><li><a href="#limites-praticos">Limites práticos</a></li><li><a href="#solucao-de-problemas">Solução de problemas</a></li><li><a href="#referencia-de-objetos-inteligentes">Referência de Objetos Inteligentes</a></li><li><a href="#portas-como-objetos-inteligentes">Portas como Objetos Inteligentes</a></li><li><a href="#referencia-para-desenvolvimento">Referência para desenvolvimento</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

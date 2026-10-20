@@ -5,6 +5,7 @@ import { resolve, dirname } from 'node:path';
 import { locales, project, release, download, commands, publicVersion, dndProject, dndRelease, swadeProject, swadeName, swadeVersion, swadeRelease } from '../content/site.mjs';
 import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
+import { buildKnowledge } from './build-knowledge.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const media = JSON.parse(await readFile(resolve(root, 'content/media.json'), 'utf8'));
@@ -55,8 +56,11 @@ async function sceneGallery(locale) {
 }
 
 for (const [locale, t] of Object.entries(locales)) {
-  const doc = (page) => `${project}/blob/main/docs/${t.docs}/${page}.md`;
-  const docs = `${project}/blob/main/docs/README${t.suffix}.md`;
+  const languagePath = locale === 'en' ? 'en' : 'pt-BR';
+  const doc = (page) => `docs/${languagePath}/${page}.html`;
+  const docs = `docs/${languagePath}/index.html`;
+  const wiki = `wiki/${languagePath}/index.html`;
+  const ai = `docs/${languagePath}/ai.html`;
   const file = (name) => `${project}/blob/main/${name}${t.suffix}.md`;
   const logo = '<img src="assets/icon.svg" alt="" width="40" height="40">';
   const html = `<!doctype html>
@@ -67,7 +71,7 @@ for (const [locale, t] of Object.entries(locales)) {
   <title>${escape(t.title)}</title><meta name="description" content="${escape(t.description)}">
   <meta name="theme-color" content="#0b0d10">
   ${seoHead(locale, t, media, project, download)}
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="knowledge.css">
   <script src="script.js" defer></script>
 </head>
 <body data-copy-label="${t.copy}" data-copied-label="${t.copied}" data-selected-label="${t.selected}" data-copied-message="${escape(t.copiedMessage)}" data-selected-message="${escape(t.selectedMessage)}">
@@ -76,7 +80,7 @@ for (const [locale, t] of Object.entries(locales)) {
   <a class="brand" href="#top" aria-label="${t.home}"><span class="brand-icon">${logo}</span><span>Gravewright</span></a>
   <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">${t.menu}</span></button>
   <nav class="main-nav" id="main-nav" aria-label="${t.navigation}" data-nav>
-    ${['map-builder','release','install','contribute'].map((id, i) => link('#' + id, t.nav[i])).join('')}
+    ${link('#map-builder', t.nav[0])}${link('#install', t.nav[2])}${link(wiki, 'Wiki')}${link(docs, 'Docs')}
     <a class="language-link" href="${t.otherFile}" lang="${locale === 'en' ? 'pt-BR' : 'en'}" hreflang="${locale === 'en' ? 'pt-BR' : 'en'}" data-language>${t.otherLabel}</a>
     ${link(project, 'GitHub ↗', 'nav-button')}
   </nav>
@@ -86,7 +90,7 @@ for (const [locale, t] of Object.entries(locales)) {
     <div class="hero-copy"><p class="eyebrow">${t.eyebrow}</p><div class="hero-brand"><span class="hero-icon">${logo}</span><h1>Gravewright</h1></div>
       <p class="hero-lead">${t.lead}</p><p class="hero-meta">${t.intro}</p>
       <div class="hero-actions">${link(download, t.download, 'button button-primary')}${link('#map-builder', t.explore, 'button button-secondary')}</div>
-      <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(docs, t.documentation + ' ↗')}</div>
+      <p class="download-hint">${t.downloadHint}</p><div class="quick-links">${link(release, t.notes + ' ↗')}${link(wiki, locale === 'en' ? 'Product wiki →' : 'Wiki do produto →')}${link(docs, locale === 'en' ? 'Developer docs →' : 'Docs para devs →')}</div>
       ${link('#extensions', t.systemHint, 'system-teaser')}
     </div>
     <aside class="hero-panel" aria-label="${t.panelAria}"><div class="panel-topline"><span>${t.panelLabel}</span><span class="status"><i></i> Alpha</span></div>
@@ -98,6 +102,11 @@ for (const [locale, t] of Object.entries(locales)) {
     ${await figure('builder', locale)}${cards(t.builderSteps, 'beginner-grid')}
   </section>
   <div class="media-showcase shell">${await figure('table', locale, true)}</div>
+  <section class="knowledge-entry shell" id="knowledge" aria-label="${locale === 'en' ? 'Wiki and documentation' : 'Wiki e documentação'}"><div class="kb-cards">
+    <a class="kb-card" href="${wiki}"><span class="kb-card-label">01 / ${locale === 'en' ? 'For your group' : 'Para o seu grupo'} ↗</span><h3>${locale === 'en' ? 'Learn the tabletop.' : 'Conheça a mesa.'}</h3><p>${locale === 'en' ? 'Installation, campaigns, maps and running a session. Step-by-step product guides with real screenshots.' : 'Instalação, campanhas, mapas e condução de sessões. Guias de produto com passo a passo e capturas reais.'}</p></a>
+    <a class="kb-card" href="${docs}"><span class="kb-card-label">02 / ${locale === 'en' ? 'For developers' : 'Para desenvolvedores'} ↗</span><h3>${locale === 'en' ? 'Build on Gravewright.' : 'Crie para o Gravewright.'}</h3><p>${locale === 'en' ? 'Architecture, development setup, APIs, SDK, tests and distribution. The project reference, directly on the site.' : 'Arquitetura, ambiente de desenvolvimento, APIs, SDK, testes e distribuição. A referência do projeto dentro do site.'}</p></a>
+    <a class="kb-card" href="${ai}"><span class="kb-card-label">03 / ${locale === 'en' ? 'Practical AI guides' : 'Guias práticos de IA'} ↗</span><h3>${locale === 'en' ? 'Use AI with context.' : 'Use IA com contexto.'}</h3><p>${locale === 'en' ? 'Copy prompts for creating extensions, investigating bugs and writing tests, with concrete validation steps.' : 'Copie prompts para criar extensões, investigar bugs e escrever testes, com passos concretos de validação.'}</p></a>
+  </div></section>
   <section class="section shell" id="about">${heading(t.aboutLabel, t.aboutTitle)}<div class="section-copy"><p>${t.aboutCopy}</p></div>${cards(t.features)}</section>
   <section class="section shell" id="experience">${heading(t.experienceLabel, t.experienceTitle)}<div class="section-copy"><p>${t.experienceCopy}</p></div>
     ${await figure('session', locale)}${await sceneGallery(locale)}<div class="focus-grid beginner-grid">${t.roles.map(([label, title, copy]) => `<article><span class="step-number">${label}</span><h3>${title}</h3><p>${copy}</p></article>`).join('')}</div>
@@ -149,3 +158,4 @@ for (const [locale, t] of Object.entries(locales)) {
   await writeFile(resolve(root, t.file), html);
   console.log(`Generated ${t.file}`);
 }
+await buildKnowledge(root);

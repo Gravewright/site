@@ -1,6 +1,6 @@
 // Validate the generated pages and report the exact media still needed by the author.
 import { readFile, access } from 'node:fs/promises';
-import { resolve, dirname } from 'node:path';
+import { resolve, dirname, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
 import { locales, download, release, publicVersion, dndProject, dndRelease, swadeProject, swadeRelease } from '../content/site.mjs';
@@ -109,12 +109,47 @@ for (const [locale, t] of Object.entries(locales)) {
   pages.set(t.file, { html, ids });
 }
 let links = 0;
+const knowledge = JSON.parse(await readFile(resolve(root, 'content/knowledge-manifest.json'), 'utf8'));
+const searchIndex = JSON.parse(await readFile(resolve(root, 'knowledge-search.json'), 'utf8'));
+assert.equal(knowledge.version, publicVersion, 'Project reference and public version differ');
+assert(/^[a-f0-9]{40}$/.test(knowledge.sourceRevision), 'Missing pinned project revision');
+assert(knowledge.pages.length > 60, 'Missing wiki/docs articles');
+for (const entry of knowledge.pages) {
+  const html = await readFile(resolve(root, entry.path), 'utf8');
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(ids.length, new Set(ids).size, `${entry.path}: duplicate IDs`);
+  assert.equal([...html.matchAll(/<h1(?:\s[^>]*)?>/g)].length, 1, `${entry.path}: expected one h1`);
+  assert(html.includes(`<html lang="${entry.locale === 'pt' ? 'pt-BR' : 'en'}"`));
+  assert(html.includes(`<link rel="canonical" href="https://gravewright.com/${entry.path}">`));
+  assert(html.includes('data-search') && html.includes('data-language'));
+  assert(!/<dialog\b|\balert\(/.test(html), `${entry.path}: unsupported modal`);
+  for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(/\balt="[^"]*"/.test(image[0]), `${entry.path}: image alt`);
+  if (!entry.hub) {
+    assert(html.includes('class="kb-prose"') && html.includes('class="kb-sources"'), `${entry.path}: missing article content/provenance`);
+    const indexed = searchIndex.find(item => item.url === entry.path);
+    assert(indexed?.text.length > 250, `${entry.path}: missing full-text search entry`);
+  }
+  pages.set(entry.path, { html, ids });
+}
+const productPages=knowledge.pages.filter(page=>page.area==='wiki' && !page.hub);
+assert(productPages.filter(page=>page.images>0).length > productPages.length/2, 'Most wiki guides should have relevant screenshots');
+const wikiMedia=JSON.parse(await readFile(resolve(root,'content/wiki-media.json'),'utf8'));
+assert.equal(new Set(wikiMedia.map(item=>item.id)).size,wikiMedia.length,'Duplicate wiki screenshot IDs');
+for(const item of wikiMedia){
+  assert(nonempty(item.file) && !item.file.includes('..') && !item.file.startsWith('/'),'Invalid wiki media path');
+  assert(await exists(item.file),`Missing wiki screenshot ${item.file}`);
+  assert(item.width>0 && item.height>0 && item.version===publicVersion,'Wiki screenshot version/dimensions');
+  for(const locale of ['en','pt']) assert(nonempty(item.alt?.[locale]) && nonempty(item.caption?.[locale]),`Missing ${locale} screenshot text`);
+}
+const sitemap=await readFile(resolve(root, 'sitemap.xml'), 'utf8');
+for(const path of pages.keys()) assert(sitemap.includes(`https://gravewright.com/${path==='index.html'?'':path}</loc>`), `Missing sitemap page ${path}`);
 for (const [name, { html, ids }] of pages) {
   for (const [, attr, target] of html.matchAll(/\b(href|src|poster)="([^"]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;
-    const [path, hash] = target.split('#');
+    const [rawPath, hash] = target.split('#');
+    const path=rawPath ? posix.normalize(posix.join(posix.dirname(name), decodeURI(rawPath))) : '';
     if (path) assert(await exists(path), `${name}: missing ${attr} ${path}`);
-    if (hash) assert((path ? pages.get(path)?.ids : ids)?.includes(hash), `${name}: missing anchor ${target}`);
+    if (hash) assert((path ? pages.get(path)?.ids : ids)?.includes(decodeURIComponent(hash)), `${name}: missing anchor ${target}`);
     links++;
   }
 }
@@ -145,7 +180,7 @@ for (const item of media) {
     }
   }
 }
-console.log(`Validated 2 pages, matching locale keys, ${links} local links/assets and ${media.length} media slots.`);
+console.log(`Validated ${pages.size} pages, matching locale keys, ${links} local links/assets and ${media.length} product media slots.`);
 if (missing.size) console.log(`\nMedia to supply (${missing.size} files):\n${[...missing].map(path => '  ' + path).join('\n')}`);
 if (process.argv.includes('--require-media') && missing.size) process.exitCode = 1;
 else console.log(missing.size ? '\nSite check passed with intentional placeholders.' : '\nSite check passed. All planned media are present.');

@@ -25,7 +25,26 @@ Esse destaque usa **uma única captura real da 0.3.0 com a interface em inglês 
 
 O download do core é o mesmo ZIP para os três sistemas: `Install Windows.bat`, `Install Linux.sh` e `Install macOS.command`. Os três guias de Runner vêm de `runnerGuides` nos textos por idioma.
 
-## Abrir localmente
+## Wiki do produto e documentação para devs
+
+O site inclui a wiki de produto em [`wiki/pt-BR/index.html`](wiki/pt-BR/index.html), a referência completa para desenvolvedores em [`docs/pt-BR/index.html`](docs/pt-BR/index.html) e os [guias práticos de IA](docs/pt-BR/ai.html). Cada página possui uma versão em inglês sob `en/`. A página inicial apresenta os dois públicos. Os artigos são gerados integralmente no build, com navegação por assunto, índice de títulos, fontes, troca de idioma, leitura relacionada e código/prompts copiáveis. A busca local pesquisa nas duas áreas e ignora acentos, sem chamadas a APIs externas.
+
+Os procedimentos do produto ficam em `content/wiki.mjs`; os fluxos de IA, em `content/ai-guides.mjs`. `content/wiki-media.json` associa capturas reais da aplicação aos artigos relevantes, com legenda, texto alternativo, versão e procedência. As miniaturas abrem a imagem completa. As capturas podem usar a interface em inglês com legendas em português; as legendas identificam o idioma da interface. Imagens históricas mantêm a versão original. Leia a [procedência das capturas](assets/wiki/README.md) antes de substituí-las.
+
+O Markdown técnico completo é uma cópia versionada dos guias públicos do projeto, sem depender do GitHub durante a leitura. Para atualizá-lo a partir de um checkout limpo, execute na pasta do site e depois revise o conteúdo e gere novamente:
+
+```sh
+node scripts/sync-project-docs.mjs --source /caminho/para/gravewright
+npm test
+```
+
+`content/reference/catalog.json` registra a revisão e a versão de origem. Os links de fonte apontam para essa revisão. `scripts/build-knowledge.mjs` renderiza a cópia com `scripts/markdown.mjs`, resolve links entre guias para os artigos locais e gera `knowledge-search.json`, o manifesto e o sitemap completo. Edite o Markdown no projeto principal primeiro, mantenha inglês e português alinhados e sincronize novamente. Revise os guias quando a versão pública mudar; a versão da cópia deve corresponder a `publicVersion`.
+
+Os bytes originais da cópia são preservados. Durante a renderização, `publicationCopy` alinha a redação histórica de empacotamento com a decisão atual do `AGENTS.md`: cada novo sistema de RPG é um único pacote instalável com interface, regras, recursos e traduções. Também atualiza a introdução anterior à publicação do Map Builder para descrever a revisão documentada. Revise essas adaptações editoriais explícitas ao sincronizar guias mais novos; assinaturas de APIs e avisos legais exatos são preservados.
+
+Os exemplos de IA explicam como fornecer contexto do repositório, manter sistemas em um único pacote, usar APIs públicas, proteger dados locais e validar o resultado. Os prompts são textos para o assistente do desenvolvedor; o site não envia dados do projeto para um provedor de IA nem promete que código gerado funciona.
+
+## Executar localmente
 
 Use Node.js 22 ou superior. **Não há dependências npm para instalar.**
 
@@ -53,6 +72,11 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 | Arquivo | Função |
 | --- | --- |
 | `content/site.mjs` | Textos em inglês/português, versão pública, links da release e comandos |
+| `content/wiki.mjs`, `content/ai-guides.mjs` | Procedimentos do produto e guias de desenvolvimento com IA nos dois idiomas |
+| `content/reference/` | Cópia completa da referência técnica e catálogo com revisão de origem |
+| `content/wiki-media.json`, `assets/wiki/` | Associação entre capturas e artigos, imagens reais e procedência |
+| `scripts/build-knowledge.mjs`, `scripts/markdown.mjs` | Páginas estáticas de conhecimento e renderização de Markdown |
+| `knowledge.css`, `knowledge.js` | Layouts da documentação e busca local no texto completo |
 | `content/media.json` | Caminhos compartilhados/por idioma, dimensões, títulos, textos alternativos, sugestões de captura e duração do vídeo |
 | `scripts/build.mjs` | Template compartilhado que gera os dois HTMLs |
 | `styles.css` | Estilos do template e adaptações responsivas/de mídia |
@@ -61,14 +85,14 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 | `scripts/serve.mjs` | Servidor local com suporte a intervalos de bytes para vídeos |
 | `scripts/check.mjs` | Verificações de páginas geradas, arquivos por idioma, metadados e acessibilidade |
 
-Edite os arquivos-fonte e gere novamente, em vez de alterar os HTMLs gerados. As duas páginas já contêm seus textos e funcionam sem JavaScript. A documentação aponta para o projeto Django atual, sem importar a wiki antiga. Não são usados fontes externas, rastreadores ou scripts de CDN.
+Edite os arquivos-fonte e gere novamente, em vez de alterar os HTMLs gerados. Todas as páginas já contêm seus textos e funcionam sem JavaScript. A referência acompanha o projeto Django atual e informa a revisão de origem. Não são usados fontes externas, rastreadores ou scripts de CDN.
 
 Ao publicar uma versão do VTT, atualize `publicVersion`, os textos da release e as perguntas frequentes juntos e gere as páginas novamente. O link de download e a versão nos dados estruturados vêm de `publicVersion`; confira antes se o ZIP público está disponível. Os dois idiomas devem informar o mesmo estado da release e a necessidade do Translator para outros idiomas da interface.
 
 ## Verificações
 
 ```sh
-npm test                 # gera e verifica páginas, links, IDs e estados das mídias
+npm test                 # testa o renderer, gera e verifica todas as páginas/links/mídias
 npm run check:media      # exige também todas as mídias planejadas
 ```
 
@@ -80,6 +104,6 @@ Licenciamento e atribuição do template estão em [THIRD_PARTY_NOTICES.md](THIR
 
 ## SEO
 
-Os metadados de SEO são gerados por `scripts/seo.mjs`: títulos e descrições por idioma, URLs canônicas, versões alternativas, Open Graph, cartões sociais com imagem grande e JSON-LD de WebSite/WebPage/SoftwareApplication. O compartilhamento usa uma versão JPEG leve da capa (`assets/images/gravewright-social-v3.jpg`, 1200 × 676, cerca de 258 KB). Caminho e dimensões ficam em `scripts/seo.mjs`; o PNG original continua como capa do vídeo. As verificações exigem JPEG e tamanho abaixo de 300 KB. Use um novo nome de arquivo ao trocar a imagem social para evitar caches antigos da imagem. O `sitemap.xml` lista as duas páginas públicas e o `robots.txt` aponta para ele.
+Os metadados de SEO são gerados por `scripts/seo.mjs` e `scripts/build-knowledge.mjs`: títulos e descrições por idioma, URLs canônicas, versões alternativas, Open Graph, cartões sociais com imagem grande e dados estruturados do produto, artigos e coleções. O compartilhamento usa uma versão JPEG leve da capa (`assets/images/gravewright-social-v3.jpg`, 1200 × 676, cerca de 258 KB). Caminho e dimensões ficam em `scripts/seo.mjs`; o PNG original continua como capa do vídeo. As verificações exigem JPEG e tamanho abaixo de 300 KB. Use um novo nome de arquivo ao trocar a imagem social para evitar caches antigos da imagem. O `sitemap.xml` lista todas as páginas públicas e o `robots.txt` aponta para ele.
 
 Referências: [protocolo Open Graph](https://ogp.me/) e [dados estruturados de software do Google](https://developers.google.com/search/docs/appearance/structured-data/software-app).

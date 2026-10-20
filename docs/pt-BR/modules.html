@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sistemas e módulos | Gravewright</title><meta name="description" content="Pacotes instaláveis, declaração de sistemas, ciclo do navegador, assinatura e contratos do SDK."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/modules.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/modules.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/modules.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/modules.html"><meta property="og:type" content="article"><meta property="og:title" content="Sistemas e módulos | Gravewright"><meta property="og:description" content="Pacotes instaláveis, declaração de sistemas, ciclo do navegador, assinatura e contratos do SDK."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/modules.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Sistemas e módulos","description":"Pacotes instaláveis, declaração de sistemas, ciclo do navegador, assinatura e contratos do SDK.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/modules.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/modules.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html" aria-current="page">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Sistemas e módulos</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Referência do projeto <span aria-hidden="true">/</span> 27 min de leitura</span><h1>Sistemas e módulos</h1><p class="kb-lead">Pacotes instaláveis, declaração de sistemas, ciclo do navegador, assinatura e contratos do SDK.</p></header><div class="kb-prose"><p><a href="index.html">Índice da documentação</a> · <a href="../en/modules.html">English</a> · <a href="api.html">Referência da API</a></p>
+<p>O Gravewright instala pacotes ZIP assinados com JavaScript para o navegador ou apps Django confiáveis, arquivos auxiliares e um manifesto JSON. O proprietário instala versões; o mestre escolhe módulos de navegador e substituições da interface para uma mesa. Apps Django são ativados separadamente para o servidor inteiro.</p>
+<p>A licença de módulos de terceiros está descrita na <a href="licensing.html">política de licenciamento</a>. O manifesto registra a licença escolhida pelo autor; a instalação não a altera.</p>
+<h2 id="compatibilidade-com-o-vtt">Compatibilidade com o VTT</h2>
+<p>O VTT <strong>0.2.1</strong> é a primeira release pública com o contrato de provedores
+<code>system.combat</code>, <code>content.compendiums</code> instaláveis, <code>api.ui.openModal</code> nativo e
+o ciclo de salvamento assíncrono ao fechar fichas documentados abaixo. São
+recursos adicionais do host; o contrato do SDK continua na versão <strong>1.0.0</strong>.
+A faixa de versão do SDK sozinha não distingue o VTT 0.2.0 do 0.2.1: pacotes
+que usam esses recursos devem documentar o VTT 0.2.1 como mínimo e verificar
+APIs opcionais do navegador antes de chamá-las. O VTT 0.2.0 já introduziu
+catálogos privados em <code>context.i18n</code>; o 0.2.1 também resolve os nomes traduzidos
+dos tipos de documento nos diretórios nativos.</p>
+<p>Regras, escolhas, layout das fichas e catálogos de tradução de jogos pertencem
+ao pacote do sistema instalado. O núcleo valida
+descritores, autorização e armazenamento sem interpretar regras de jogos.
+Veja as <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/releases/0.2.1.md">notas da 0.2.1</a> para instalação e atualização.</p>
+<h2 id="confianca-e-limites-da-instalacao">Confiança e limites da instalação</h2>
+<p>Módulos instalados executam como módulos ES na página principal da aplicação. Não há sandbox de iframe, Shadow DOM nem isolamento JavaScript por capacidades. O código pode interagir com a página e o ambiente do navegador. A assinatura autentica o publicador configurado e os bytes do arquivo; não comprova que o código é seguro. Configure chaves de publicadores cujo código você aceita executar nas sessões dos usuários.</p>
+<p>As interfaces suportadas verificam no servidor a participação do usuário autenticado na campanha, as permissões dos recursos, a revisão de ativação e o vínculo temporário de montagem, chamado de lease. Esse mecanismo não oferece execução Python, SQL nem carregamento de serviços no servidor. Integrações instaladas separadamente como código Django/Python são código confiável do servidor; veja a <a href="api.html#interface-python">API Python</a>.</p>
+<p>Pontos de entrada da implementação:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Arquivo</th><th scope="col" style="text-align:left">Responsabilidade</th></tr></thead><tbody><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/packages.py"><code>packages.py</code></a></td><td style="text-align:left">Assinaturas, validação ZIP, instalação imutável, revisões e armazenamento JSON</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/models.py"><code>models.py</code></a></td><td style="text-align:left">Versões instaladas, ativação por mesa, valores e leases</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/views.py"><code>views.py</code></a></td><td style="text-align:left">Rotas de proprietário/mestre, downloads, contexto, arquivos e chamadas validadas</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/frontend.py"><code>frontend.py</code></a></td><td style="text-align:left">API de domínio compartilhada e despacho autenticado</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/module-runtime.js"><code>module-runtime.js</code></a></td><td style="text-align:left">Importação, start/register/stop, montagem, substituição e limpeza</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/browser-bridge.js"><code>browser-bridge.js</code></a></td><td style="text-align:left">Arquivos, armazenamento, operações com lease e API de domínio</td></tr><tr><td style="text-align:left"><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/workspace.js"><code>workspace.js</code></a></td><td style="text-align:left">Conexão com as superfícies da mesa e reconciliação da ativação</td></tr></tbody></table></div>
+<h2 id="pacote-minimo-para-o-navegador">Pacote mínimo para o navegador</h2>
+<p>Crie esta pasta fora da árvore de fontes ou em um diretório de desenvolvimento ignorado pelo Git:</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">example.actor-counter/
+├── manifest.json
+├── main.js
+├── styles.css
+└── LICENSE.txt</code></pre></div>
+<p><code>manifest.json</code>:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-json">{
+  &quot;id&quot;: &quot;example.actor-counter&quot;,
+  &quot;name&quot;: &quot;Actor counter&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: { &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;, &quot;tested&quot;: &quot;1.0.0&quot; },
+  &quot;entry&quot;: &quot;main.js&quot;,
+  &quot;description&quot;: &quot;Shows the number of actors visible to the current user.&quot;,
+  &quot;author&quot;: &quot;Your name&quot;,
+  &quot;license&quot;: &quot;GPL-3.0-only&quot;
+}</code></pre></div>
+<p>Escolha sua licença real e inclua seu texto em <code>LICENSE.txt</code>. A licença da extensão não precisa corresponder ao valor ilustrativo acima; consulte a política de licenciamento. O schema rejeita campos desconhecidos e exige todos os campos mostrados. IDs precisam de pelo menos um ponto ou hífen, começar com letra minúscula e usar letras minúsculas/dígitos em seus componentes. Versões possuem três números, sem sufixos de pré-lançamento/build. Intervalos do SDK aceitam comparações separadas por espaços, como <code>&gt;=1.0.0 &lt;2.0.0</code>; não aceitam <code>^</code>, <code>~</code>, curingas ou <code>||</code>. O carregador verifica o SDK <strong>1.0.0</strong>; a API de domínio separada informa <strong>1.1.0</strong>.</p>
+<p><code>main.js</code>:</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">export default {
+  start({ styles }) {
+    styles.use(&quot;styles.css&quot;);
+  },
+
+  register({ register }) {
+    register(&quot;actor.directory&quot;, async ({ root, api, signal }) =&gt; {
+      const label = root.ownerDocument.createElement(&quot;p&quot;);
+      label.className = &quot;example-actor-counter&quot;;
+      root.append(label);
+
+      const render = actors =&gt; {
+        if (!signal.aborted) label.textContent = `Atores visíveis: ${actors.length}`;
+      };
+
+      render(await api.actors.list());
+      api.events.on(&quot;actors.changed&quot;, snapshot =&gt; render(snapshot.actors));
+    });
+  },
+
+  stop() {
+    // O host remove estilos, raízes, assinaturas de eventos e referências de API.
+  }
+};</code></pre></div>
+<p><code>styles.css</code>:</p>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-css">.gw-module-root[data-module-id=&quot;example.actor-counter&quot;] .example-actor-counter {
+  margin: 0.5rem;
+  font-weight: 600;
+}</code></pre></div>
+<p>Crie o ZIP com os arquivos na raiz, sem uma pasta extra envolvendo o pacote:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-sh">cd example.actor-counter
+python -m zipfile -c ../actor-counter-1.0.0.zip manifest.json main.js styles.css LICENSE.txt</code></pre></div>
+<p>O pacote está pronto para assinatura. Este repositório não possui endpoint para envio de pacotes sem assinatura nem servidor de desenvolvimento de módulos com recarga automática. Os <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/tests.py">testes de módulos</a> e a <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/tests/e2e/frontend_api.py">fixture de integração no navegador</a> mostram assinatura/instalação em ambientes isolados.</p>
+<h2 id="declarar-um-sistema-instalado">Declarar um sistema instalado</h2>
+<p>Um pacote também pode fornecer um sistema de campanha adicionando <code>system</code> ao manifesto:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-json">&quot;system&quot;: {
+  &quot;actorTypes&quot;: [
+    { &quot;id&quot;: &quot;character&quot;, &quot;label&quot;: &quot;Personagem&quot; },
+    { &quot;id&quot;: &quot;npc&quot;, &quot;label&quot;: &quot;Personagem do mestre&quot; }
+  ],
+  &quot;itemTypes&quot;: [{ &quot;id&quot;: &quot;gear&quot;, &quot;label&quot;: &quot;Equipamento&quot; }]
+}</code></pre></div>
+<p>Opcionalmente, declare a iniciativa usada pelo gerenciador de combate nativo:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-json">&quot;combat&quot;: { &quot;formula&quot;: &quot;1d20 + @combat.initiative&quot;, &quot;manualInput&quot;: &quot;number&quot; }</code></pre></div>
+<p>Esse objeto pertence a <code>system</code>. A fórmula tem até 120 caracteres e usa a
+gramática nativa de dados. Referências <code>@caminho.do.campo</code> consultam números
+finitos na ficha do ator ou no snapshot independente do token; campos ausentes
+valem zero, enquanto valores não numéricos são rejeitados. A ficha do sistema
+deve persistir os modificadores calculados. O gerenciador consulta a versão
+instalada selecionada para a mesa. <code>showRoll: false</code> oculta os controles nativos
+de rolar iniciativa. <code>manualInput</code> aceita <code>number</code> ou <code>text</code> e é
+usado se a configuração de uma cena desativar a fórmula. Não há execução de
+JavaScript ou Python fornecido pelo manifesto.
+Para regras dinâmicas do sistema, veja <a href="#provedores-de-combate-do-sistema">provedores de combate</a>.</p>
+<p>O ID e o título do sistema vêm de <code>id</code> e <code>name</code> do pacote. Cada pacote declara um sistema e não pode substituir uma identidade registrada por um provedor embutido. Declare pelo menos um tipo de ator; tipos de itens são opcionais. Os IDs dos tipos devem ser únicos em cada lista, começar com letra minúscula e conter apenas letras minúsculas, dígitos, sublinhados ou hífens (máximo de 80 caracteres). Cada lista aceita até 64 entradas, com rótulos de 1–120 caracteres.</p>
+<p>Os descritores de tipo aceitam <code>labelKey</code> (chave de tradução de até 120 caracteres)
+e <code>icon</code> (nome de ícone de até 80 caracteres). Os diretórios de atores e itens consultam
+<code>labelKey</code> no catálogo registrado pelo próprio pacote com <code>context.i18n.register</code>;
+na ausência da tradução, usam <code>label</code>. Os ícones disponíveis para itens incluem <code>Backpack</code>,
+<code>Sword</code>, <code>ShieldCheck</code>, <code>Scroll</code>, <code>Sparkle</code> e <code>User</code>; um nome indisponível usa o
+ícone padrão. Por exemplo, <code>{&quot;id&quot;:&quot;component&quot;,&quot;label&quot;:&quot;Component&quot;, &quot;labelKey&quot;:&quot;types.component&quot;,&quot;icon&quot;:&quot;Backpack&quot;}</code>. O core não mantém tabelas
+de nomes ou ícones por tipo de jogo. Consumidores de <code>i18n.onChange</code> também são
+atualizados quando o catálogo de seu namespace é registrado ou removido.</p>
+<p>Após a instalação assinada, o sistema aparece em Systems, <code>/api/rulesets</code> e no formulário de campanha. O catálogo usa a versão instalada compatível e não revogada mais recente de cada pacote, comparando os números da versão. Módulos comuns sem <code>system</code> continuam disponíveis em Installed modules. Campanhas existentes podem manter um sistema indisponível ao editar seus detalhes, mas ele não pode ser escolhido para uma nova campanha.</p>
+<p>Salvar uma mesa com um sistema instalado seleciona seus tipos e ativa seu pacote de interface. A versão exata já ativa é preservada; trocar o sistema remove o pacote anterior e mantém os demais módulos e preferências de interface. A mesa usa os tipos da versão exata ativada, ou da versão instalada mais recente quando nenhuma está ativada. Os dados dos atores mantêm a estrutura nativa existente; dados específicos do módulo usam as APIs de documentos e armazenamento de módulos. Instalar outra versão não muda automaticamente a versão ativada na mesa.</p>
+<h2 id="provedores-de-combate-do-sistema">Provedores de combate do sistema</h2>
+<p>O core não seleciona perfis de regras de jogos. Uma extensão de servidor
+confiável registra callbacks para o ID do próprio sistema em <code>AppConfig.ready()</code>:</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-python">from api.combat import register_provider
+
+register_provider(&#39;publisher.starship&#39;,
+                  prepare_initiative=prepare_initiative,
+                  advance_effects=advance_effects)</code></pre></div>
+<p><code>prepare_initiative(formula, data, *, conditions=())</code> recebe cópias isoladas e
+retorna <code>(formula, data)</code>. O parser nativo de dados avalia a fórmula retornada
+e valida o resultado numérico; ele não conhece os modificadores do sistema.
+<code>advance_effects(data, event)</code> altera uma cópia limitada da ficha e retorna
+<code>True</code> quando precisa persistir. Nomes de campos, ativação de equipamentos,
+recursos, condições e relógios de efeitos pertencem ao sistema. Sem provedor,
+os efeitos da ficha permanecem intocados. Registrar outro sistema não afeta o
+selecionado; registros conflitantes para um mesmo ID impedem a inicialização.</p>
+<p>O evento contém <code>phase</code> (<code>start</code>/<code>end</code>), <code>roundBoundary</code>, <code>isCurrent</code>, <code>periodic</code>,
+<code>actorType</code>, <code>tokenId</code>/<code>actorId</code>/<code>conditions</code> da origem do evento e
+<code>ownerTokenId</code>/<code>ownerActorId</code> do documento recebido. Tokens vinculados compartilham
+um documento de ator; tokens independentes recebem seu próprio snapshot.
+<code>documentKey</code> é uma tupla opaca de identidade; <code>clockKeys</code> é um conjunto
+compartilhado pelas fases de um comando para o sistema evitar contagem repetida.
+Turnos pulados recebem <code>periodic=False</code>; voltar no combate não executa esses
+callbacks.</p>
+<p>O host conserva permissões, limites do encontro, transações, limites de JSON,
+revisões, recibos contra repetição e publicação. Falhas no callback desfazem o
+comando. Callbacks devem evitar efeitos externos, pois a transação não consegue
+desfazê-los. São extensões Python confiáveis, ativadas pelo proprietário através
+do mecanismo existente de pacotes Django, sem imports solicitados pelo manifesto
+do navegador. Cada novo sistema de RPG deve usar um único pacote de sistema instalável e as
+APIs de automação suportadas pela versão solicitada do host. Esta release não
+permite que um manifesto de sistema de navegador também declare um app Django.
+Registre requisitos de servidor sem suporte como limitações; não crie um
+complemento instalado separadamente nem exija uma atualização do host para
+resolver uma tarefa de pacote de sistema. O contrato de provedores Python
+continua como referência de integrações confiáveis de servidor. Declare <code>&quot;requiresProvider&quot;: true</code> em <code>system.combat</code>
+quando precisar desse backend: ações de combate falham claramente se ele estiver
+ausente, em vez de usar regras incompletas. O VTT não contém regras substitutas
+específicas de jogos.</p>
+<h2 id="catalogo-assinado-e-ativacao">Catálogo assinado e ativação</h2>
+<p>O marketplace usa o catálogo do publicador configurado pelo proprietário do host; não há feed público embutido. Módulos instalados são carregados de <code>/api/module-packages</code> independentemente do catálogo remoto e de sua configuração. Atualizar o marketplace descarta os resultados remotos anteriores antes de carregar o catálogo atual e consulta novamente os pacotes instalados após revogações assinadas ou instalação.</p>
+<p><code>GET /api/marketplace/status</code>, exclusivo do proprietário, verifica a configuração local sem contatar o publicador nem gravar arquivos de pacotes. Retorna HTTP 200 com <code>catalogConfigured</code>, <code>trustedKeysConfigured</code>, <code>ready</code>, <code>sdk</code> e <code>errors</code> (lista de <code>{field, code}</code>, com <code>field</code> igual a <code>catalog</code> ou <code>keys</code>). Os booleanos indicam configuração local válida, não disponibilidade do publicador. <code>ready</code> só é verdadeiro quando a URL HTTPS é válida e o arquivo de confiança contém ao menos uma chave válida. Falhas de configuração retornam HTTP 503 nas consultas ao catálogo e nas instalações, com <code>{ &quot;error&quot;: &quot;&lt;code&gt;&quot; }</code>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Código</th><th scope="col" style="text-align:left">Ação do proprietário</th></tr></thead><tbody><tr><td style="text-align:left"><code>marketplace_catalog_missing</code></td><td style="text-align:left">Configure a URL HTTPS do catálogo JSON do publicador.</td></tr><tr><td style="text-align:left"><code>marketplace_catalog_invalid</code></td><td style="text-align:left">Corrija a URL; credenciais, portas inválidas e fragmentos são rejeitados.</td></tr><tr><td style="text-align:left"><code>marketplace_keys_missing</code></td><td style="text-align:left">Configure o caminho do arquivo de chaves públicas confiáveis.</td></tr><tr><td style="text-align:left"><code>marketplace_keys_unreadable</code></td><td style="text-align:left">Verifique se o arquivo existe e se o servidor pode lê-lo.</td></tr><tr><td style="text-align:left"><code>marketplace_keys_invalid</code></td><td style="text-align:left">Corrija o objeto JSON, os IDs ou as chaves públicas Ed25519 em base64.</td></tr><tr><td style="text-align:left"><code>marketplace_keys_empty</code></td><td style="text-align:left">Adicione ao menos uma chave de publicador confiável.</td></tr></tbody></table></div>
+<p>Reinicie o host após alterar variáveis de ambiente; edições no arquivo de chaves configurado são lidas na próxima requisição. Falha de rede/publicador continua como <code>unavailable</code> (503), dados inválidos de catálogo/pacote como <code>invalid_data</code> (400), e assinaturas inválidas ou não confiáveis como <code>permission_denied</code> (403). Falhas na configuração de confiança nunca desabilitam a verificação de assinaturas.</p>
+<p>Configure <code>GRAVEWRIGHT_MARKETPLACE_URL</code> com a URL HTTPS de um catálogo JSON e <code>GRAVEWRIGHT_MARKETPLACE_KEYS_FILE</code> com um arquivo JSON no formato <code>{ &quot;id-da-chave&quot;: &quot;chave-publica-Ed25519-de-32-bytes-em-base64&quot; }</code>. Mantenha chaves privadas fora dos pacotes distribuídos e catálogos públicos. O catálogo é uma lista de registros:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-json">[
+  {
+    &quot;id&quot;: &quot;example.actor-counter&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;sdk&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;download&quot;: &quot;https://your-publisher.example/actor-counter-1.0.0.zip&quot;,
+    &quot;sha256&quot;: &quot;&lt;64 caracteres hexadecimais minusculos&gt;&quot;,
+    &quot;keyId&quot;: &quot;publisher-key&quot;,
+    &quot;signature&quot;: &quot;&lt;assinatura Ed25519 em base64&gt;&quot;
+  }
+]</code></pre></div>
+<p>Substitua os exemplos por valores reais. A assinatura abrange todos os campos exceto <code>signature</code>, inclusive <code>status</code> quando presente, serializados com chaves ordenadas, separadores compactos, escape ASCII e sem NaN. Todos os valores do registro devem ser strings ASCII. Exemplo equivalente em código com Django inicializado:</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-python">import base64
+import hashlib
+from gravewright.modules.packages import canonical
+
+# archive: bytes finais do ZIP; private_key: Ed25519PrivateKey do publicador.
+# record: registro acima, sem o campo signature.
+record[&quot;sha256&quot;] = hashlib.sha256(archive).hexdigest()
+record[&quot;signature&quot;] = base64.b64encode(private_key.sign(canonical(record))).decode(&quot;ascii&quot;)</code></pre></div>
+<p>Publique o arquivo e o catálogo por HTTPS, configure a chave pública e instale a versão na tela Marketplace do proprietário. Um mestre ativa o módulo em Settings → Extensions da mesa. A rota HTTP de instalação recebe somente <code>id</code> e <code>version</code>, consulta o catálogo configurado e verifica o ZIP selecionado. Ela não aceita uma URL arbitrária de arquivo enviada na requisição.</p>
+<p>Como alternativa inteiramente local, o proprietário pode usar <strong>Instalar de ZIP</strong> na mesma modal. Esse fluxo não consulta o marketplace nem exige catálogo ou chaves de publicador: o envio local é a decisão explícita de confiança do proprietário. O ZIP ainda passa pelas mesmas validações de manifesto, compatibilidade, caminhos, tipos de arquivo, cotas e conteúdo executável. Na seção Sistemas ele deve declarar <code>system</code>; na seção Módulos ele não pode declará-lo. Como JavaScript de módulos roda na origem da aplicação, instale somente arquivos confiáveis.</p>
+<p>A instalação verifica digest, identidade e intervalo SDK do manifesto, arquivo de entrada, nomes, tipos de entrada e bytes extraídos. Os limites são 64 MiB compactados, 256 MiB expandidos, 4.096 entradas e 64 módulos ativos por mesa. Caminhos não podem atravessar diretórios nem conter barras invertidas, escapes percentuais, pontuação de URL ou NUL. Links simbólicos, entradas criptografadas, nomes duplicados sem distinção de maiúsculas, extensões não permitidas e cabeçalhos reconhecidos de executáveis nativos são rejeitados. As extensões permitidas estão em <code>ModulePackages.install</code>; textos de licença precisam de <code>.txt</code> ou <code>.md</code>, pois arquivos sem extensão são rejeitados.</p>
+<p>Por padrão, os arquivos ZIP ficam em <code>MEDIA_ROOT/modules/archives/</code> e os pacotes extraídos em <code>MEDIA_ROOT/modules/packages/&lt;id&gt;/&lt;version&gt;/&lt;digest&gt;/</code>. Defina, por exemplo, <code>GRAVEWRIGHT_MODULES_ROOT=/srv/gravewright/modulos</code> no <code>.env</code> para apontar outra pasta; caminhos relativos partem da raiz do projeto e a mudança exige reiniciar o host. O banco guarda manifestos e a origem confiada de cada instalação. Não é possível substituir uma versão com outros bytes. Ativação e acesso autenticado a arquivos verificam novamente o conteúdo; publique uma nova versão em vez de editar arquivos extraídos.</p>
+<p>A ativação recebe <code>{modules, replacements, expectedRevision}</code>. <code>modules</code> relaciona IDs a versões exatas, <code>replacements</code> relaciona superfícies a IDs, e <code>expectedRevision</code> deve corresponder ao último <code>moduleSetRevision</code> lido (<code>&quot;0&quot;</code> inicialmente). Uma revisão antiga resulta em <code>conflict</code>. Alterações geram nova revisão e notificam a mesa. Clientes também consultam periodicamente e reconciliam ao reconectar.</p>
+<p>Um registro assinado com <code>status: &quot;revoked&quot;</code> revoga uma versão instalada quando o catálogo é consultado, remove suas ativações e preferências de substituição e altera as revisões afetadas. A revogação depende dessa consulta; não é um push permanente do publicador. Reverter para outra versão instalada altera o código, sem reverter os dados persistidos do módulo.</p>
+<h2 id="ciclo-de-vida-e-montagem">Ciclo de vida e montagem</h2>
+<p>O arquivo de entrada exporta por padrão um objeto com as funções <code>start</code>, <code>register</code> e <code>stop</code>. O runtime rejeita o membro antigo <code>execute</code>.</p>
+<ol><li><p>Referências antigas são invalidadas antes da reconciliação de uma revisão nova.</p></li><li><p>O runtime importa cada pacote, executa e aguarda <code>start(moduleContext)</code> e chama <code>register(registrationContext)</code> uma vez.</p></li><li><p><code>register</code> precisa ser síncrono. Ele declara callbacks de montagem, que podem ser assíncronos. Registrar um domínio duas vezes gera <code>conflict</code>; domínio desconhecido ou registro depois do retorno de <code>register</code> gera <code>invalid_data</code>.</p></li><li><p>Cada superfície correspondente recebe raiz própria, contexto congelado, sinal de cancelamento, API, arquivos/estilos/armazenamento e <code>onDispose</code>. Superfícies de cena também recebem identificadores da cena; <code>scene.overlay</code> oferece conversão de coordenadas.</p></li><li><p>Remover uma superfície, sair da mesa, trocar cena/substituição/revisão ou perder acesso invalida os ciclos correspondentes. A limpeza cancela o sinal primeiro, executa callbacks em ordem inversa e limita cada limpeza assíncrona a cinco segundos. <code>stop</code> acontece depois da limpeza, inclusive quando <code>start</code> falha após o registro interno do módulo para encerramento.</p></li></ol>
+<p>O contexto de <code>start</code> fornece <code>api</code>, <code>assets</code>, <code>styles</code>, <code>storage</code>, <code>signal</code> e <code>onDispose</code>, sem raiz visual nem cena. Blocos de montagem adicionam <code>root</code>, <code>context</code>, <code>host</code>, <code>events</code> e eventualmente <code>viewport</code>. O registro recebe <code>register</code> e uma API cujo <code>ui.register</code> encaminha à mesma fase síncrona. Use o <code>register</code> fornecido para declarar superfícies do módulo.</p>
+<p>Não reutilize a API de uma montagem na próxima. Operações pendentes ou referências descartadas falham com <code>stale_context</code>. Adicione listeners com <code>{ signal }</code> e registre a limpeza de timers, observers ou recursos externos em <code>onDispose</code>. Cancelar no cliente não desfaz escrita já confirmada no servidor. Falhas de início/registro encerram a ativação e restauram a interface nativa; falhas de montagem são reportadas e restauram a superfície nativa quando a substituição selecionada falha.</p>
+<h2 id="superficies-disponiveis">Superfícies disponíveis</h2>
+<p>O <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/registry.json">registro e os schemas de contexto</a> definem nomes e formatos:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Superfície</th><th scope="col" style="text-align:left">Finalidade / contexto adicional</th></tr></thead><tbody><tr><td style="text-align:left"><code>actor.directory</code></td><td style="text-align:left">Lista de atores</td></tr><tr><td style="text-align:left"><code>actor.sheet</code></td><td style="text-align:left">Ficha de ator; <code>actorId</code></td></tr><tr><td style="text-align:left"><code>token.sheet</code></td><td style="text-align:left">Ficha de token; ator/token e contexto da cena</td></tr><tr><td style="text-align:left"><code>item.directory</code></td><td style="text-align:left">Lista de itens</td></tr><tr><td style="text-align:left"><code>item.sheet</code></td><td style="text-align:left">Ficha de item; <code>itemId</code></td></tr><tr><td style="text-align:left"><code>journal.sheet</code></td><td style="text-align:left">Documento; <code>journalId</code></td></tr><tr><td style="text-align:left"><code>scene.directory</code></td><td style="text-align:left">Lista de mapas/cenas</td></tr><tr><td style="text-align:left"><code>scene.controls</code></td><td style="text-align:left">Controles da cena atual</td></tr><tr><td style="text-align:left"><code>scene.overlay</code></td><td style="text-align:left">Sobreposição limitada à área visível da cena</td></tr><tr><td style="text-align:left"><code>chat.log</code></td><td style="text-align:left">Área de chat</td></tr><tr><td style="text-align:left"><code>combat.tracker</code></td><td style="text-align:left">Combate da cena atual</td></tr><tr><td style="text-align:left"><code>preferences</code></td><td style="text-align:left">Preferências da mesa</td></tr><tr><td style="text-align:left"><code>table.interface</code></td><td style="text-align:left">Área da mesa</td></tr></tbody></table></div>
+<p><code>augment</code> é o padrão e mantém o conteúdo nativo. <code>replace</code> o oculta durante a montagem selecionada. Uma única candidata é escolhida automaticamente; candidatas concorrentes exigem preferência explícita da mesa. Extensões em modo augment continuam sendo montadas. O CSS é compartilhado, portanto prefixe seus seletores. Raízes de sobreposição não interceptam entrada por padrão; habilite-a somente nos elementos interativos do módulo.</p>
+<p>Coordenadas usam pixels lógicos da cena: origem superior esquerda, x para direita, y para baixo e âncora dos tokens no centro. <code>viewport.sceneToViewport({x,y})</code> e <code>viewport.viewportToScene({x,y})</code> convertem pixels CSS da área visível, independentemente da densidade de pixels. Use a identidade da cena montada, não a seleção global de mapas.</p>
+<p>A API global <code>gravewright.ui</code> também oferece <code>app.shell</code> e <code>inside.content</code>; são superfícies da página do host, não domínios aceitos pelo runtime de pacotes assinados. Veja a <a href="frontend.html">arquitetura do frontend</a>.</p>
+<h2 id="arquivos-persistencia-e-eventos">Arquivos, persistência e eventos</h2>
+<p>Use <code>assets.url(path)</code>, <code>assets.text(path)</code>, <code>assets.json(path)</code> ou <code>assets.bytes(path)</code> com caminhos relativos ao pacote. <code>styles.use(path)</code> instala CSS e retorna um callback de remoção, também chamado automaticamente no descarte. Esses helpers não oferecem acesso arbitrário à rede como parte do SDK suportado.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Armazenamento</th><th scope="col" style="text-align:left">Escopo</th><th scope="col" style="text-align:left">Política de escrita</th></tr></thead><tbody><tr><td style="text-align:left"><code>storage.local</code></td><td style="text-align:left">Origem do navegador + ID do módulo; sem separação por mesa/usuário</td><td style="text-align:left">JSON local, 256 KiB por valor</td></tr><tr><td style="text-align:left"><code>storage.user</code></td><td style="text-align:left">Módulo + mesa + usuário autenticado</td><td style="text-align:left">JSON persistente do próprio usuário</td></tr><tr><td style="text-align:left"><code>storage.table</code></td><td style="text-align:left">Módulo + mesa</td><td style="text-align:left">Membros leem; mestre escreve</td></tr></tbody></table></div>
+<p>Valores persistentes têm limite de 256 KiB e cada namespace persistente, 4 MiB. Chaves têm no máximo 240 caracteres. <code>get</code> retorna <code>{value, revision}</code> ou <code>null</code>; <code>list(prefix)</code> retorna pares chave/revisão. Crie com <code>expectedRevision: null</code>; atualize/exclua com a revisão exata retornada por <code>get</code> ou <code>set</code>:</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">const previous = await storage.user.get(&quot;panel-settings&quot;);
+const saved = await storage.user.set(&quot;panel-settings&quot;, { collapsed: true }, {
+  expectedRevision: previous?.revision ?? null
+});
+await storage.user.delete(&quot;panel-settings&quot;, { expectedRevision: saved.revision });</code></pre></div>
+<p>Ao receber <code>conflict</code>, leia novamente e decida como combinar alterações. Os valores sobrevivem à desativação e atualização; versione e migre seu próprio JSON. Armazenamento local não é apropriado para dados privados em navegador compartilhado, pois o namespace do módulo é comum entre contas.</p>
+<p>Prefira <code>api.events.on(&quot;actors.changed&quot;, handler)</code> e outros eventos de domínio para obter estados autorizados. O <code>events.on</code> antigo do bloco expõe <code>actor.created</code>, <code>actor.updated</code>, <code>actor.deleted</code> e <code>scene.viewport.changed</code>. A ponte atual infere eventos de ator comparando listas visíveis: estados iniciais/repetidos e mudanças de visibilidade podem parecer criação, atualização ou exclusão. São sinais para atualizar dados, não auditoria de mutações. Releia após reconectar e não dependa deles para executar efeitos exatamente uma vez. Cancele a assinatura com o retorno de <code>on</code> ou aguarde a limpeza da montagem.</p>
+<h2 id="verificacao">Verificação</h2>
+<p>Na raiz do repositório:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-sh">uv run --locked python manage.py test gravewright.modules gravewright.table.tests.test_frontend_api gravewright.table.tests.test_public_api
+node --test tests/modules/*.test.mjs
+uv run --locked python tests/e2e/frontend_api.py
+uv run --locked python tests/e2e/table_modules.py</code></pre></div>
+<p>Os testes de navegador precisam das dependências de desenvolvimento e do navegador Playwright instalado; veja <a href="testing.html">testes</a>. Exercite ativação/desativação, falha de montagem, troca de cena, perda de participação, reconexão, revisões antigas de armazenamento e visões de mestre/jogador. Schemas e testes existentes são referências concretas; este checkout não inclui pacote SDK TypeScript nem verificador automático de compatibilidade entre versões principais.</p>
+<h3 id="pacotes-de-idioma-para-a-instalacao">Pacotes de idioma para a instalação</h3>
+<p>O manifesto pode declarar <code>locales</code>, associando cada idioma a <code>{ &quot;name&quot;: &quot;Português (Brasil)&quot;, &quot;path&quot;: &quot;locales/pt-BR.json&quot; }</code>. Cada catálogo é um objeto JSON de textos originais e traduções, preservando marcadores como <code>{name}</code>. O inglês pertence ao host e não pode ser sobrescrito. Um pacote não pode combinar <code>system</code> e <code>locales</code>. Pacotes de idiomas não podem conter Python.</p>
+<p>O proprietário ativa os idiomas em Módulos instalados. A rota <code>POST /api/module-packages/activation</code> recebe <code>{ &quot;id&quot;: &quot;gravewright.translator&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;enabled&quot;: true }</code> e verifica o arquivo assinado. Somente um pacote de idiomas fica ativo por instalação. A configuração de módulos por campanha rejeita esses pacotes e a lista de extensões da mesa os omite.</p>
+<p>Com o pacote ativo, cada usuário escolhe seu idioma nas configurações internas da conta, armazenado em <code>UserPreference.locale</code>. Um cookie assinado permite manter o idioma na tela de entrada; outra conta autenticada não herda a preferência desse cookie. Desativar ou revogar o pacote remove o seletor e restaura o inglês no próximo carregamento. Páginas já abertas precisam ser recarregadas.</p>
+<p>A tradução abrange dicionários da aplicação, textos literais dos templates e controles criados no navegador. Rótulos reativos são traduzidos antes do processamento pelo Datastar para evitar disputa entre observadores. Nomes, mensagens, conteúdo editável, PDFs e interfaces arbitrárias de terceiros não são traduzidos.</p>
+<p>O app Django do <a href="https://github.com/Gravewright/translator">Translator</a> extrai e mantém os catálogos e gera o ZIP portátil. Ele não precisa estar instalado no Django após a instalação pelo marketplace. O relatório <code>VALIDATION.md</code> registra os testes offline e online. A pré-release v0.1.0 exige as alterações do host presentes neste checkout de desenvolvimento.</p>
+<h3 id="biblioteca-de-pacotes-e-instalacao">Biblioteca de pacotes e instalação</h3>
+<p>A área interna possui bibliotecas separadas de <strong>Sistemas</strong> e <strong>Módulos</strong>, com visualização em grade/lista, busca e paginação. <strong>Instalar sistema</strong> ou <strong>Instalar módulo</strong> abre o catálogo configurado em uma janela filtrada por categoria. O sistema PDF integrado continua visível sem configuração remota. A biblioteca instalada não consulta o catálogo; os diagnósticos aparecem ao abrir a janela de instalação. Links antigos com <code>section=marketplace</code> levam à biblioteca de módulos.</p>
+<p>Novos registros assinados devem incluir <code>&quot;type&quot;: &quot;system&quot;</code> ou <code>&quot;type&quot;: &quot;module&quot;</code>. O campo participa da assinatura e deve corresponder ao manifesto do ZIP: sistemas declaram <code>system</code>. Valores inválidos e divergências são rejeitados. Registros antigos sem tipo continuam válidos e são tratados como módulos antes da instalação; depois, o manifesto instalado determina a categoria. Publicadores de sistemas devem incluir o tipo assinado para que o pacote apareça corretamente antes de ser instalado.</p>
+<p>Registros do catálogo aceitam <code>tags</code>: até 24 textos Unicode únicos, sem espaços nas extremidades, não vazios e com até 64 caracteres. As tags integram a assinatura e geram categorias na modal de instalação, separadas pelo tipo de pacote. Pacotes sem tags continuam aparecendo em Todos os pacotes.</p>
+<p>A modal recebe progresso real via NDJSON de <code>POST /api/marketplace/install</code>, solicitando <code>Accept: application/x-ndjson</code>. As etapas são <code>catalog</code>, <code>download</code> (bytes recebidos e total quando conhecido), <code>verify</code>, <code>complete</code> e <code>error</code>. A conclusão só é enviada após verificar e instalar o arquivo. Downloads sem tamanho informado exibem progresso indeterminado e contagem de bytes. O retorno JSON tradicional permanece disponível. Desconectar o navegador não desfaz uma instalação em andamento; atualize a biblioteca para conferir o resultado.</p>
+<h3 id="personalizacao-opcional-por-usuario">Personalização opcional por usuário</h3>
+<p>Um módulo ativo pode exportar <code>customize(context)</code> junto aos métodos obrigatórios
+do ciclo de vida. A lista de extensões mostra <strong>Personalizar</strong> imediatamente antes
+de Desativar (ou sozinho para jogadores). O callback recebe os mesmos assets,
+armazenamento e ciclo de vida de <code>start</code>; não ganha novas permissões. Use
+<code>storage.user</code> para preferências pessoais e feche as modais e libere os recursos
+em <code>onDispose</code>. O host fornece apenas o botão; o módulo mantém sua interface,
+assets e validação. Módulos sem esse callback continuam funcionando normalmente.</p>
+<h3 id="apps-django-instalados-explicitamente">Apps Django instalados explicitamente</h3>
+<p>O marketplace também aceita registros assinados com <code>&quot;type&quot;: &quot;django&quot;</code>. Eles
+aparecem em <strong>Módulos</strong>, identificados como <strong>Django · Server</strong>. Também é possível
+usar <strong>Instalar de ZIP</strong>. A instalação valida e extrai o pacote; o botão de
+ativação executa o código confiável e reinicia o servidor. Esse fluxo exige o
+Runner ou <code>main.py</code>, além do <code>uv</code>, sem editar o <code>.env</code> manualmente.</p>
+<p>Mantenha os campos habituais de identidade, SDK, descrição, autor e licença,
+omita <code>entry</code>, <code>system</code> e <code>locales</code>, e acrescente:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-json">&quot;django&quot;: {
+  &quot;apps&quot;: [&quot;my_extension.apps.MyExtensionConfig&quot;],
+  &quot;requirements&quot;: [&quot;some-library==1.2.3&quot;]
+}</code></pre></div>
+<p>O ZIP deve conter <code>my_extension/__init__.py</code>, fontes Python, migrações, templates
+e arquivos estáticos. <code>requirements</code> é opcional e aceita apenas <code>nome==versão</code>,
+sem URLs, caminhos locais, extras ou opções do instalador. As dependências vêm
+do índice Python configurado e não podem substituir versões fixadas pelo core.
+Use nomes de importação e labels Django exclusivos. Um AppConfig pode declarar
+<code>gravewright_urlconf</code>; o app deve verificar autenticação, CSRF e permissões.</p>
+<p>A ativação prepara outro ambiente Python, valida o Django, salva banco e arquivos,
+aplica migrações, coleta arquivos estáticos e reinicia. Em caso de falha, restaura
+o ambiente, a seleção de módulos e os dados anteriores. Uma única operação de
+servidor pode executar por vez. A seleção fica em
+<code>MEDIA_ROOT/modules/server-apps.json</code> (ou na pasta de módulos configurada),
+continua após atualizações do core e tem suas dependências reinstaladas nelas.
+Desativar reinicia sem carregar o app; não desfaz migrações nem apaga seus dados.
+Versões revogadas não podem ser ativadas; apps já em execução devem ser
+desativados pelo proprietário. Fontes Python não são servidos pela rota de
+arquivos de navegador nem oferecidos como módulos por mesa.</p>
+<p>A configuração abaixo continua disponível para fontes gerenciados pelo operador:</p>
+<p>O operador pode instalar um app Python confiável no ambiente do servidor e definir
+<code>GRAVEWRIGHT_SERVER_APPS</code> com seu caminho de importação (separado por vírgulas para
+vários apps). O AppConfig pode declarar <code>gravewright_urlconf</code> para registrar suas
+rotas. Cada app deve verificar autenticação, CSRF e permissões nativas. O marketplace
+de JavaScript não instala nem ativa código Python por esse mecanismo. Ao recriar o
+ambiente Python, reinstale essas dependências gerenciadas separadamente.</p>
+<p>As linhas de itens nativas fornecem o formato de arraste
+<code>application/x-gravewright-item</code>, com <code>{id, tableId}</code>. Resolva o identificador pela
+API autenticada antes de copiar o item para uma ficha; o conteúdo do arraste não
+concede acesso ao documento.</p>
+<p>Para apps mantidos em repositórios separados, configure
+<code>GRAVEWRIGHT_SERVER_APP_PATHS</code> com as pastas raiz dos pacotes (<code>:</code> no Linux/macOS,
+<code>;</code> no Windows). Caminhos relativos partem da raiz do VTT. Esses caminhos
+explicitamente confiáveis continuam disponíveis após sincronizar o ambiente;
+as dependências dos apps ainda precisam ser instaladas. Os pacotes permanecem
+fora do repositório do VTT.</p>
+<p>O checkout já traz uma pasta padrão para esses apps: <code>extensions/django</code>,
+definida por <code>GRAVEWRIGHT_DJANGO_MODULES_ROOT</code>. Ela é acrescentada ao <code>sys.path</code>
+quando existe, de modo que um pacote colocado diretamente nela só precisa do seu
+caminho de importação em <code>GRAVEWRIGHT_SERVER_APPS</code>; entradas explícitas de
+<code>GRAVEWRIGHT_SERVER_APP_PATHS</code> têm precedência sobre ela. Os fontes de módulos de
+navegador têm a pasta padrão correspondente <code>extensions/api</code>
+(<code>GRAVEWRIGHT_API_MODULES_ROOT</code>), que serve apenas para autoria e documentação —
+os pacotes assinados instalados continuam em <code>MEDIA_ROOT/modules</code>. Uma pasta
+configurada que não existe impede a inicialização; apagar as pastas padrão sem
+configurá-las é suportado. O git ignora o conteúdo das duas pastas, para que as
+extensões fiquem fora deste repositório.</p>
+<p><a href="ethical-module-porting.html">Porte ético de módulos</a></p>
+<p>As substituições de <code>actor.sheet</code> e <code>token.sheet</code> controlam o <strong>corpo inteiro da
+janela</strong>. A base fornece a barra de título, mover, destacar, minimizar, fechar,
+permissões e identidade do documento. As abas de PDF, Token e Notas pertencem
+apenas ao módulo integrado PDF System. Sistemas terceiros não carregam seu
+controlador, seus modelos nem seus estilos. O módulo integrado registra sua
+definição, implementação de ficha e validação de dados pelo AppConfig. Mesas PDF
+existentes mantêm o identificador e os dados, sem conversão.</p>
+<p>Pacotes de sistema assinados podem fornecer fichas por tipo de ator:</p>
+<div class="code-block"><div class="code-toolbar"><span>js</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-js">register(&quot;actor.sheet&quot;, {
+  mode: &quot;replace&quot;,
+  types: [&quot;hero&quot;],
+  mount({ root, context, api, signal }) {
+    // Desenhe a ficha inteira, incluindo as abas próprias do sistema.
+    // context contém actorId, actorType, systemId e canEdit.
+    // Leia com api.actors.sheet(...) e salve com api.actors.saveSheet(...).
+  }
+});</code></pre></div>
+<p>Sem <code>types</code>, a ficha atende todos os tipos. Listas de tipos sem sobreposição
+permitem várias fichas na mesma superfície. Uma substituição escolhida na mesa
+tem prioridade; depois, a ficha do sistema da campanha prevalece sobre outros
+módulos. Tokens reutilizam a ficha de ator do sistema, com <code>tokenId</code> e <code>sceneId</code>
+no contexto, salvo quando o pacote registra uma substituição <code>token.sheet</code>
+compatível com o tipo.</p>
+<p>Dados de atores e cópias independentes de tokens de sistemas terceiros mantêm
+seu formato JSON próprio. A base verifica tamanho, segurança do JSON, acesso e
+revisões sem inserir campos de PDF. As propriedades opcionais <code>token</code> e <code>bars</code>
+continuam fornecendo informações visuais para a cena; sem elas, a cena usa
+valores neutros sem modificar os dados armazenados.</p>
+<p>Antes de fechar, a janela emite <code>gravewright:sheet-flush</code>. O módulo pode chamar
+<code>event.detail.waitUntil(promise)</code> durante o evento para aguardar gravações. Uma
+rejeição mantém a janela aberta e mostra o erro. Registre o evento em
+<code>root.closest(&#39;.gw-window&#39;)</code>, usando o <code>signal</code> da montagem. Cada ficha controla
+as gravações ao trocar suas próprias abas. O módulo PDF continua emitindo
+<code>gravewright:sheet-flush</code> e <code>gravewright:sheet-refresh</code> nas trocas de suas abas.</p>
+<p>Fichas de item também preservam a barra de título e emitem
+<code>gravewright:sheet-flush</code> antes de fechar. Registre o evento em
+<code>root.closest(&#39;.item-sheet&#39;)</code>; <code>event.detail.waitUntil(promise)</code> aguarda
+gravações, inclusive ao pressionar ESC. Uma rejeição mantém o item aberto.
+A perda de acesso fecha a janela imediatamente, sem aguardar novas escritas.</p>
+<h2 id="compendios-fornecidos-por-um-pacote-de-sistema">Compêndios fornecidos por um pacote de sistema</h2>
+<p>Um sistema de navegador pode declarar até 16 coleções JSON no manifesto:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-json">&quot;content&quot;: {&quot;compendiums&quot;: [&quot;compendiums/entities.json&quot;, &quot;compendiums/gear.json&quot;]}</code></pre></div>
+<p>Os caminhos devem ser relativos ao pacote e terminar em <code>.json</code>. Caminhos
+absolutos, travessia de diretórios, URLs e links simbólicos para fora do pacote
+aprovado são rejeitados. Cada coleção admite até 8 MiB, 64 compêndios e 20.000
+entradas no total. Cada entrada admite 256 KiB; o JSON admite até 24 níveis de
+aninhamento. O conteúdo é JSON declarativo, e o campo <code>data</code> pertence ao
+provedor. O núcleo não executa expressões nem busca recursos externos a partir
+desses campos:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-16">Copiar</button></div><pre><code data-code="code-16" class="language-json">{
+  &quot;name&quot;: &quot;Equipamentos de exemplo&quot;,
+  &quot;packs&quot;: [{
+    &quot;id&quot;: &quot;equipamentos&quot;, &quot;label&quot;: &quot;Equipamentos&quot;, &quot;type&quot;: &quot;item_pack&quot;,
+    &quot;entries&quot;: [{
+      &quot;id&quot;: &quot;kit-exploracao&quot;, &quot;name&quot;: &quot;Kit de exploração&quot;, &quot;type&quot;: &quot;gear&quot;,
+      &quot;systemId&quot;: &quot;autor.sistema-exemplo&quot;,
+      &quot;data&quot;: {&quot;revision&quot;: &quot;original&quot;, &quot;description&quot;: &quot;Texto simples&quot;}
+    }]
+  }]
+}</code></pre></div>
+<p>Os tipos de compêndio aceitos são <code>actor_pack</code>, <code>item_pack</code> e <code>spell_pack</code>.
+Toda entrada deve usar o <code>systemId</code> do próprio fornecedor e um tipo registrado
+em <code>system.actorTypes</code> ou <code>system.itemTypes</code>. IDs de compêndio são únicos na
+coleção; IDs de entrada são únicos no compêndio. IDs aceitam letras ASCII,
+números, ponto, sublinhado, dois-pontos e hífen, até 120 caracteres, começando
+com letra ou número. Nomes e rótulos admitem até 120 caracteres. Mantenha os IDs
+e caminhos relativos estáveis nas atualizações para preservar permissões e
+referências.</p>
+<p>A instalação valida as declarações e os arquivos. A interface nativa mostra
+essas coleções apenas nas mesas que usam a versão exata, ativa, fixada,
+aprovada e não revogada desse sistema. Cada leitura confere os arquivos
+instalados com o ZIP aprovado; editar um arquivo não autoriza novo conteúdo.
+A coleção não declara IDs de mesas: a base vincula o acesso internamente.
+Por padrão, os compêndios são privados do mestre. As concessões de leitura e
+os padrões de papel existentes controlam a visibilidade para jogadores;
+importar documentos continua sendo uma ação do mestre. A base trata <code>data</code>
+como JSON opaco e conserva os campos do fornecedor, sem interpretar revisões
+ou regras de jogo. Atualize a base para uma versão com suporte a
+<code>content.compendiums</code> antes de instalar um pacote com essa declaração opcional.</p>
+<p>Os JSON declarados como coleções não são servidos pelas URLs genéricas de
+arquivos do pacote. Leia e importe suas entradas pela API de compêndios da
+mesa, que verifica o sistema ativo e as permissões de leitura atuais.</p>
+<p>Use <code>api.compendiums.state()</code> para obter os IDs de compêndios e entradas
+visíveis. <code>api.compendiums.read({packId, id})</code> continua retornando uma entrada;
+<code>api.compendiums.read({packId, ids: [id1, id2]})</code> retorna <code>{entries: [...]}</code> com
+os mesmos documentos, na ordem pedida. O lote aceita de 1 a 100 IDs únicos;
+não combine <code>id</code> com <code>ids</code>. IDs inválidos ou duplicados geram <code>invalid_data</code>;
+uma entrada ausente falha o lote inteiro com <code>not_found</code>, sem resposta parcial.
+Compêndios nativos conservam seus documentos completos; compêndios criados
+na mesa conservam o envelope individual com <code>kind</code>, <code>data</code> e <code>version</code>.</p>
+<p>Cada leitura revalida a associação à mesa, as permissões e, para coleções
+instaladas, a versão ativa e sua integridade. Leitura não cria recibos de
+mutação nem publica <code>compendiums.changed</code>; reutilizar um ID de requisição não
+conserva acesso após revogação. Um papel somente de leitura pode ler quando
+possui uma concessão válida, mas continua sem permissão para importar.</p>
+<p>O índice inicial contém apenas metadados dos compêndios e os campos <code>id</code>,
+<code>name</code>, <code>kind</code>, <code>type</code> e <code>version</code> de cada entrada. Ele não inclui o corpo dos
+documentos nem arquivos de transferência. <code>type</code> é o tipo registrado pelo
+fornecedor, sem categoria de regras definida pela base; <code>spell_pack</code> é um tipo
+de compêndio mantido por compatibilidade que encaminha documentos de item,
+sem acrescentar regras de magia. Documentos completos são carregados por
+leituras individuais ou em lote autorizadas. Coleções instaladas usam o mesmo
+cache limitado e verificado para qualquer fornecedor ou tipo de documento.
+Permissões, seleção de pacote e revogação são verificadas a cada requisição e
+nunca ficam no cache do conteúdo. Importações legadas de atores sem tipo usam
+o padrão declarado pelo sistema, como a criação de atores, sem um tipo fixo
+definido pela base.</p>
+<h2 id="modais-de-modulos">Modais de módulos</h2>
+<p>Use <code>api.ui.openModal(element, {nested = true, canClose = () =&gt; true})</code> para
+janelas de módulos. O método monta o componente de modal compartilhado do
+Gravewright de forma síncrona e retorna o mesmo elemento, com os métodos
+<code>close()</code>, <code>suspend()</code> e <code>resume()</code>. Passe um <code>section</code>, <code>div</code> ou <code>form</code> criado
+no documento do host. Elementos HTML nativos <code>dialog</code> e elementos de outro
+documento são rejeitados. A base adiciona <code>table-modal-window</code>, mantém o foco
+na modal, desativa o fundo, restaura o foco ao fechar e trata Escape. O módulo
+fornece conteúdo, nome acessível, traduções e botão de fechar; a modal não ganha
+uma barra de título móvel automaticamente.</p>
+<div class="code-block"><div class="code-toolbar"><span>js</span><button type="button" data-copy="code-17">Copiar</button></div><pre><code data-code="code-17" class="language-js">mount({root, api, signal}) {
+  const doc = root.ownerDocument;
+  const panel = doc.createElement(&#39;section&#39;);
+  panel.setAttribute(&#39;aria-label&#39;, &#39;Detalhes&#39;); // Use sua tradução.
+  const close = doc.createElement(&#39;button&#39;);
+  close.type = &#39;button&#39;;
+  close.textContent = &#39;Fechar&#39;; // Use sua tradução.
+  panel.append(close);
+  const modal = api.ui.openModal(panel);
+  close.addEventListener(&#39;click&#39;, () =&gt; modal.close(), {signal});
+}</code></pre></div>
+<p><code>nested: true</code> preserva a modal anterior abaixo da nova; fechar a filha restaura
+a anterior. Use <code>nested: false</code> para solicitar o fechamento da modal anterior.
+<code>canClose</code> é uma verificação síncrona para Escape; chamadas explícitas a
+<code>close()</code> continuam sob controle do módulo. <code>close()</code> emite
+<code>gravewright:sheet-flush</code>: registre o evento no elemento retornado e chame
+<code>event.detail.waitUntil(promise)</code> durante o evento para aguardar gravações
+pendentes. Uma rejeição mantém a modal aberta. <code>suspend()</code> oculta a modal
+temporariamente para interações como escolher um ponto no mapa; <code>resume()</code>
+restaura sua exibição.</p>
+<p>A API pertence ao ciclo de vida da ativação ou superfície. O descarte força
+o fechamento da modal, mesmo com uma gravação pendente, e libera o foco e o
+estado do fundo. O fechamento normal libera a limpeza do ciclo de vida
+imediatamente. Abrir após o descarte gera <code>stale_context</code>; abrir um elemento
+já montado gera <code>conflict</code>. O helper está disponível em <code>start</code>, <code>customize</code>,
+registro e callbacks de superfícies. <code>api.ui.register</code> conserva seu
+comportamento restrito à fase de registro.</p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="api.html"><span>Anterior ←</span><strong>Referência da API pública</strong></a><a href="frontend.html"><span>Próximo →</span><strong>Arquitetura do frontend</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/modules.md">docs/en/modules.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/modules.md">docs/pt-BR/modules.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#compatibilidade-com-o-vtt">Compatibilidade com o VTT</a></li><li><a href="#confianca-e-limites-da-instalacao">Confiança e limites da instalação</a></li><li><a href="#pacote-minimo-para-o-navegador">Pacote mínimo para o navegador</a></li><li><a href="#declarar-um-sistema-instalado">Declarar um sistema instalado</a></li><li><a href="#provedores-de-combate-do-sistema">Provedores de combate do sistema</a></li><li><a href="#catalogo-assinado-e-ativacao">Catálogo assinado e ativação</a></li><li><a href="#ciclo-de-vida-e-montagem">Ciclo de vida e montagem</a></li><li><a href="#superficies-disponiveis">Superfícies disponíveis</a></li><li><a href="#arquivos-persistencia-e-eventos">Arquivos, persistência e eventos</a></li><li><a href="#verificacao">Verificação</a></li><li><a href="#compendios-fornecidos-por-um-pacote-de-sistema">Compêndios fornecidos por um pacote de sistema</a></li><li><a href="#modais-de-modulos">Modais de módulos</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

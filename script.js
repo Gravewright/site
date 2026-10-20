@@ -34,7 +34,8 @@ updateHeader();
 
 // Keep the reader at the same section when changing language.
 document.querySelector('[data-language]').addEventListener('click', event => {
-  if (location.hash) event.currentTarget.hash = location.hash;
+  // Knowledge headings are translated and can have different anchor names.
+  if (location.hash && !document.body.classList.contains('knowledge-page')) event.currentTarget.hash = location.hash;
 });
 
 if (!motion.matches && 'IntersectionObserver' in window) {

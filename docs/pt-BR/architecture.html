@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Arquitetura | Gravewright</title><meta name="description" content="Camadas de execução, serviços de domínio, permissões e persistência."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/architecture.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/architecture.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/architecture.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/architecture.html"><meta property="og:type" content="article"><meta property="og:title" content="Arquitetura | Gravewright"><meta property="og:description" content="Camadas de execução, serviços de domínio, permissões e persistência."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/architecture.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Arquitetura","description":"Camadas de execução, serviços de domínio, permissões e persistência.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/architecture.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/architecture.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html" aria-current="page">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Arquitetura</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Referência do projeto <span aria-hidden="true">/</span> 12 min de leitura</span><h1>Arquitetura</h1><p class="kb-lead">Camadas de execução, serviços de domínio, permissões e persistência.</p></header><div class="kb-prose"><p><a href="index.html">Documentação</a> · <a href="../en/architecture.html">English</a> · <a href="code-map.html">Mapa do código</a></p>
+<p>Gravewright é uma mesa virtual de RPG construída com Django. O servidor controla os
+dados das campanhas, permissões, validação de comandos e resultados persistidos.
+Jinja2 renderiza a estrutura da aplicação e fragmentos HTML; JavaScript no navegador
+implementa a mesa interativa. Django Channels vincula cada conexão da mesa a uma
+campanha.</p>
+<p>Este documento descreve a implementação deste repositório. Para executá-la, consulte
+<a href="getting-started.html">Primeiros passos</a>; para localizar arquivos, use o
+<a href="code-map.html">mapa do código</a>. Autores de extensões também devem consultar a
+<a href="api.html">referência da API</a> e o <a href="modules.html">guia de módulos</a>.</p>
+<h2 id="divisoes-da-aplicacao-em-execucao">Divisões da aplicação em execução</h2>
+<div class="code-block"><div class="code-toolbar"><span>mermaid</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-mermaid">flowchart TD
+    Browser[Navegador: páginas Jinja2 e JavaScript] --&gt;|HTTP| HTTP[Views Django]
+    Browser --&gt;|WebSocket da campanha| WS[TableConsumer]
+    Extension[Integração Python confiável] --&gt; API[Pacote api]
+    HTTP --&gt; Services[Serviços de domínio]
+    WS --&gt; Services
+    API --&gt; Services
+    Services --&gt; DB[(SQLite: conteúdo, sessões, recibos)]
+    HTTP --&gt; Files[(Armazenamento de mídia Django)]
+    Services --&gt; Files
+    Services --&gt;|Após commit| Dispatch[Despacho de eventos]
+    Dispatch --&gt; Channels[Camada Channels]
+    Channels --&gt; WS
+    Dispatch --&gt; Signal[Sinal dentro do processo]
+    WS --&gt;|Estado específico do destinatário| Browser</code></pre></div>
+<ul><li><p><code>config/asgi.py</code> inicializa Django e encaminha HTTP e WebSocket.
+<code>config/proxy.py</code> restaura esquemas encaminhados por pares confiáveis antes do
+roteamento. A pilha do socket verifica a origem antes de resolver a sessão Django.</p></li><li><p><code>config/urls.py</code> reúne as rotas dos apps. Caminhos HTTP iniciados por <code>/api/</code> são
+rotas de views; o diretório <code>api/</code> da raiz é uma <strong>interface de importação Python</strong>.</p></li><li><p><code>gravewright/&lt;domínio&gt;/services.py</code> contém a maior parte das regras de negócio.
+Alguns fluxos de upload, mídia e administração ficam nas próprias views ou em
+auxiliares; uma alteração deve ser acompanhada desde sua rota ou mensagem real.</p></li><li><p><code>gravewright/realtime/consumers.py</code> cuida do transporte, inscrições e estado
+temporário da conexão. Chama serviços síncronos com <code>database_sync_to_async</code>; a
+avaliação de dados usa <code>asyncio.to_thread</code> para o trabalho mais custoso.</p></li><li><p><code>gravewright/realtime/dispatch.py</code> agenda invalidações de recursos, entrega de
+chat e sinais para extensões Python após o commit.</p></li></ul>
+<p>O banco padrão é SQLite com <code>transaction_mode=&#39;IMMEDIATE&#39;</code>. Os serviços expressam a
+serialização com transações atômicas e bloqueios de campanha ou vínculo. SQLite não
+implementa <code>SELECT FOR UPDATE</code> por linha; a transação de escrita controla a
+concorrência. Alterar os limites dessas transações muda o comportamento.</p>
+<p>A configuração padrão de produção exige uma camada Channels com Redis. A camada em memória
+serve para um único processo de desenvolvimento e para o <a href="windows-runner.html">executor local</a>;
+não entrega eventos entre processos. Redis transporta eventos; conteúdo, sessões e registros de presença ficam
+no banco. Consulte <a href="configuration.html">Configuração</a>.</p>
+<p>A verificação de origem WebSocket usa <code>GRAVEWRIGHT_PUBLIC_ORIGIN</code> quando configurada
+e exige que Host da requisição e Origin do navegador correspondam ao esquema,
+domínio e porta efetiva. Sem ela, usa o esquema ASGI <code>ws</code>/<code>wss</code>, assumindo HTTP quando
+ausente. Fixar a origem pública permite TLS direto no Daphne mesmo quando seu
+adaptador WebSocket omite <code>scheme</code>. O <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/config/proxy.py">adaptador de proxy</a>
+aceita um único valor válido de <code>X-Forwarded-Proto</code> apenas de um par conectado em
+<code>TRUSTED_PROXIES</code>, restaurando o esquema para HTTP e WebSockets. Veja
+<a href="deployment.html">Implantação</a> para TLS, confiança em proxies e arquivos estáticos.</p>
+<h2 id="identidade-e-autorizacao">Identidade e autorização</h2>
+<p>Existem dois sistemas de papéis independentes:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Escopo</th><th scope="col" style="text-align:left">Papéis</th><th scope="col" style="text-align:left">Significado</th></tr></thead><tbody><tr><td style="text-align:left">Conta do servidor (<code>accounts.User</code>)</td><td style="text-align:left"><code>owner</code>, <code>participant</code></td><td style="text-align:left">Administração do servidor e configuração inicial. Uma restrição do banco permite um proprietário.</td></tr><tr><td style="text-align:left">Campanha (<code>campaigns.Membership</code>)</td><td style="text-align:left"><code>gm</code>, <code>player</code>, <code>streamer</code></td><td style="text-align:left">Acesso a uma mesa específica e aos seus recursos.</td></tr></tbody></table></div>
+<p>O proprietário do servidor cria campanhas e recebe um vínculo de mestre (<code>gm</code>) ao
+criar uma. Os recursos verificam o vínculo na campanha, sem pressupor que um papel
+do servidor concede acesso a todas as mesas. Atores e itens também usam mapas de
+permissões por usuário; diários usam registros <code>Access</code> e regras de visibilidade.</p>
+<p><code>journals.services.member()</code> é compartilhado por vários domínios. Recarrega o vínculo
+de um usuário ativo e verifica a validade de acesso de streamers. <code>api.Context</code>
+contém somente UUIDs normalizados de campanha e usuário: construí-lo não concede
+permissões nem armazena papéis em cache. Os serviços públicos recebem identificadores
+e resolvem novamente o vínculo.</p>
+<p>A autorização WebSocket também relê a sessão no banco, o backend de autenticação
+configurado e o hash de autenticação de sessão do usuário. Verifica vínculos ao
+receber comandos, nos manipuladores de entrega e durante heartbeats. Remover um
+participante, expirar um link de streamer ou invalidar uma sessão afeta conexões
+existentes conforme essas verificações voltam a ocorrer.</p>
+<p>Streamers têm acesso somente de leitura. O consumidor permite um conjunto limitado
+de mensagens de sincronização, busca, viewport e heartbeat; os pontos de escrita
+também os rejeitam. Controles no navegador são conveniências, não a autorização.</p>
+<p><strong>A visibilidade de cenas exige duas condições para quem não é mestre:</strong> a cena deve
+ter <code>visibility=&#39;players&#39;</code> e ser o <code>Broadcast</code> atual da campanha. Marcar uma cena
+inativa como visível não a torna acessível. A mesma resolução protege manifestos,
+blocos de imagem, tokens e chat associado à cena.</p>
+<p>O comando explícito <code>maps.activate</code> do mestre define a visibilidade para jogadores
+e a transmissão na mesma transação. A mudança de visibilidade avança a revisão
+da cena; ativar uma cena já visível mantém sua revisão. Gerar no Map Builder
+e navegar em particular não publicam a cena.</p>
+<h2 id="comandos-tentativas-repetidas-e-revisoes">Comandos, tentativas repetidas e revisões</h2>
+<p>A maioria dos comandos persistentes de recursos da mesa segue esta sequência:</p>
+<ol><li><p>Interpretar a operação solicitada e o UUID da requisição.</p></li><li><p>Iniciar uma transação atômica, bloquear a campanha e recarregar o vínculo.</p></li><li><p>Verificar permissão de escrita e procurar um recibo já confirmado.</p></li><li><p>Validar o conteúdo, o escopo do recurso e a revisão aplicável.</p></li><li><p>Alterar os modelos e registrar o resultado com o UUID da requisição.</p></li><li><p>Agendar notificações após o commit e retornar a confirmação.</p></li></ol>
+<p>A ordem exata e a repetição variam por domínio; siga o serviço responsável. Uploads
+e operações administrativas nem sempre utilizam esse protocolo de recibos.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Registro de identidade</th><th scope="col" style="text-align:left">Usado por</th><th scope="col" style="text-align:left">Comportamento da repetição</th></tr></thead><tbody><tr><td style="text-align:left"><code>maps.Receipt</code></td><td style="text-align:left">Mapas, atores, tokens, itens, combate, cartas, áudio e compêndios</td><td style="text-align:left">Compartilham <code>(campaign, user, request_id)</code>. A maioria retorna o resultado salvo; tokens recompõem o estado visível e filtram os IDs criados anteriormente.</td></tr><tr><td style="text-align:left"><code>journals.Receipt</code></td><td style="text-align:left">Comandos de diários</td><td style="text-align:left">Recibos próprios de diários; alguns resultados exigem verificações adicionais de acesso.</td></tr><tr><td style="text-align:left"><code>chat.Message</code> e <code>dice.Submission</code></td><td style="text-align:left">Chat e dados</td><td style="text-align:left">A identidade da mensagem evita registros duplicados; a reserva de dados impede rolar novamente.</td></tr></tbody></table></div>
+<p>Gere um <strong>UUID novo para cada comando lógico novo</strong> e reutilize-o somente para
+repetir o mesmo comando. Não reutilize, por exemplo, o UUID de um comando de ator em
+um comando de áudio: ambos compartilham a tabela de recibos. Em geral, os recibos não
+comparam a ação ou o conteúdo repetido com o original.</p>
+<p>Identidade da requisição e revisão do recurso resolvem problemas distintos. O UUID
+evita duplicação; campos como <code>version</code>, <code>sheetVersion</code> e <code>expectedVersion</code> detectam
+edições com estado desatualizado. Um conflito exige atualizar os dados e escolher
+explicitamente uma nova edição, não apenas trocar o número da versão.</p>
+<p><code>transaction.on_commit()</code> evita notificações sobre alterações revertidas. O despacho
+usa callbacks robustos, mas não oferece uma fila durável: uma alteração confirmada
+pode permanecer mesmo se sua notificação falhar. Clientes devem sincronizar novamente
+pelos endpoints ou inscrições de estado. Manipuladores Python de <code>resource_changed</code>
+são callbacks confiáveis dentro do processo; não são tarefas duráveis entre processos
+nem uma sandbox para código não confiável.</p>
+<h2 id="comportamento-dos-dominios">Comportamento dos domínios</h2>
+<h3 id="campanhas-e-contas">Campanhas e contas</h3>
+<p>Os serviços de contas renovam a identidade da sessão no login, limitam o trabalho de
+hash de senha em paralelo e armazenam janelas de tentativas sob hashes autenticados
+dos endereços IP. Os serviços de campanhas controlam capas, códigos de convite e
+remoção armazenados como hash, limites de resgate e remoção de participantes. Links
+de streamer criam uma identidade visitante específica com validade e revogação.
+A interface Inside reúne esses fluxos em <code>web/inside.py</code>.</p>
+<h3 id="atores-fichas-pdf-e-tokens">Atores, fichas PDF e tokens</h3>
+<p>Um <code>Actor</code> é a fonte reutilizável do personagem. <code>pdf_system/schema.py</code> normaliza a
+ficha, incluindo referências a PDFs, campos, barras, configurações de token e efeitos
+ativos. Metadados do ator e dados da ficha têm contadores de revisão distintos.</p>
+<p>Um <code>Token</code> posiciona o ator em uma cena. Tokens vinculados usam <code>Actor.data</code>; tokens
+desvinculados usam <code>snapshot</code> e <code>sheet_version</code> próprios. A primeira colocação é
+vinculada. Colocar o mesmo ator novamente converte as colocações vinculadas em
+snapshots e cria outro snapshot; duplicar também gera um snapshot independente. O
+salvamento da ficha precisa atingir a fonte correta e invalidar os tokens vinculados
+afetados.</p>
+<p>Movimentar um token verifica controle, bloqueio, revisão, limites do mapa e, para
+quem não é mestre, interseções com paredes. Pré-visualizações de arraste são
+coordenadas temporárias validadas pelas mesmas regras. Elas não salvam a posição
+final; o comando persistente <code>move</code> faz isso. Cada destinatário recebe novamente uma
+versão filtrada dessas prévias, que são descartadas se a versão do token mudou.</p>
+<h3 id="mapas-e-camadas-das-cenas">Mapas e camadas das cenas</h3>
+<p>Uploads de cenas validam a imagem e os limites configurados de bytes, dimensões,
+pixels e quantidade de blocos; depois geram uma pirâmide de blocos WebP sem perdas.
+<code>Scene</code> armazena metadados da imagem, <code>SceneState</code> guarda documentos do ambiente da
+cena e <code>SceneObject</code> registra objetos tipados, como paredes, luzes, imagens,
+marcadores e zonas.</p>
+<p><code>maps/objects.py</code> coordena comandos de objetos e projeções de camadas. Auxiliares
+especializados tratam desenhos, efeitos, imagens, propriedade de marcadores e
+geometria de zonas. O estado é preparado para cada destinatário: imagens na camada
+do mestre e desenhos privados são filtrados; barreiras secretas ou invisíveis ainda
+não descobertas perdem a apresentação de porta interativa. A geometria das paredes
+ainda é transmitida quando necessária ao recorte de visibilidade; portanto, o
+renderizador não esconde toda a geometria do mestre do cliente.</p>
+<p><code>realtime/scene_stream.py</code> valida dimensões e gerações do viewport, agenda sugestões
+de blocos com orçamentos limitados e rejeita versões de cena antigas. Amostras do
+viewport do mestre passam por Channels para preditores de pré-carregamento por
+jogador. WebSocket agenda o carregamento; os bytes das imagens continuam em recursos
+HTTP autenticados.</p>
+<h3 id="diarios-e-materiais-apresentados">Diários e materiais apresentados</h3>
+<p>Diários combinam JSON específico do tipo com concessões explícitas de acesso.
+<code>documents.py</code> valida conteúdo estruturado e filtra blocos do mestre; <code>data.py</code>
+normaliza os formatos; <code>types.py</code> trata comportamentos como quadros e missões.
+Edições de jogadores preservam conteúdo oculto do mestre e não podem associar
+arquivos arbitrários. <code>presentations.py</code> emite e resolve tickets vinculados ao
+destinatário, sem tornar públicos os arquivos originais.</p>
+<h3 id="chat-e-dados">Chat e dados</h3>
+<p>O histórico combina mensagens da mesa e da cena selecionada ou transmitida,
+filtrando visibilidade e destinatários. Há comandos para sussurros, mensagens ao
+mestre e ações narrativas. A moderação remove o conteúdo e mantém a identidade da
+mensagem, evitando que uma repetição a recrie. Anexos de cartas no chat capturam
+faces públicas imutáveis, em vez de apontar para um baralho que pode mudar depois.</p>
+<p>Os dados usam <code>dice/engine.py</code> e a gramática Python nativa: análise, compilação e
+validação, seguidas da execução de um plano limitado. A compilação não consome
+aleatoriedade. O fluxo persistente reserva um <code>Submission</code>, avalia fora da transação
+do banco, verifica novamente a autorização e confirma um <code>Message</code> com o resultado
+e destinatários definidos. Uma repetição bem-sucedida recupera o resultado salvo;
+uma reserva expirada ou interrompida exige outra requisição, sem rolar novamente de
+forma silenciosa. A função pura <code>api.dice.evaluate</code> não persiste nem publica dados.
+Consulte a <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/grammar/ARCHITECTURE.pt-BR.md">arquitetura da gramática</a>
+e a <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/grammar/notation/GRAMMAR.pt-BR.md">especificação da notação</a>
+disponíveis em português.</p>
+<h3 id="itens-combate-cartas-audio-e-compendios">Itens, combate, cartas, áudio e compêndios</h3>
+<p>Esses cinco domínios usam <code>table/domain.py</code> para vínculos, transações e recibos. Seus
+auxiliares internos <code>state(who, ...)</code> e <code>command(who, ...)</code> pressupõem esse ponto de
+entrada; integrações usam os wrappers públicos ou <code>api.resources</code>.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Domínio</th><th scope="col" style="text-align:left">Responsabilidade e restrição relevante</th></tr></thead><tbody><tr><td style="text-align:left">Itens</td><td style="text-align:left">Documentos versionados com permissões por usuário. A implementação PDF nativa atualmente não retorna tipos de item; a criação comum fica indisponível até que essa capacidade seja implementada.</td></tr><tr><td style="text-align:left">Combate</td><td style="text-align:left">Encontro da cena, iniciativa, turno atual e histórico limitado. Mudanças de ordem preservam a identidade do combatente; a progressão pode avançar efeitos nos documentos dos atores.</td></tr><tr><td style="text-align:left">Cartas</td><td style="text-align:left">Definições reutilizáveis e instâncias mutáveis; zonas de compra, mão, cena e descarte, propriedade e visibilidade. O controle do mestre não revela automaticamente a face oculta de outro jogador.</td></tr><tr><td style="text-align:left">Áudio</td><td style="text-align:left">Uploads, playlists, reprodução e trilhas sonoras. O estado calcula posições pelo horário do servidor e ganho espacial pelos tokens controlados e paredes acústicas. A entrega HTTP do arquivo tem autorização própria.</td></tr><tr><td style="text-align:left">Compêndios</td><td style="text-align:left">Pacotes da campanha e acesso ao catálogo nativo. Arquivos portáteis capturam um grafo permitido de dependências e importam documentos e arquivos para uma campanha de sistema compatível.</td></tr></tbody></table></div>
+<p>O auxiliar declarativo de fórmulas em <code>combat/formula_engine.py</code> é distinto da
+gramática de dados do chat. A iniciativa atual chama <code>dice.engine.evaluate</code>; alterar
+um interpretador não altera automaticamente o outro.</p>
+<p>O PDF System fornece seus próprios padrões de combate e cálculo de iniciativa
+pelo registro de sistemas. A fórmula padrão é <code>1d20 + @initiative</code>; a variável
+<code>@initiative</code> lê o valor canônico <code>init</code> alimentado pelo mapeamento do PDF.
+Tokens vinculados usam a ficha do personagem; tokens independentes usam sua
+cópia. A API de combate permite fórmulas por cena e rolagens antes do início.
+O gerenciador do PDF System oferece iniciativa numérica manual, sem controles
+de rolagem ou fórmula. Tokens são adicionados pelo menu de contexto. Alterações
+na ordem preservam o combatente do turno atual. Outros sistemas não herdam
+essas regras do PDF System. Os tokens atual e próximo recebem indicadores
+expansivos verde e amarelo, também usados na lateral do gerenciador.</p>
+<p>Condições de tokens aceitam <code>duration: {type: &quot;turns&quot; | &quot;rounds&quot;, value: 1..10000, expires: &quot;start&quot; | &quot;end&quot;}</code> opcional. O servidor inicializa
+<code>remaining</code>; turnos seguem o token afetado e rodadas seguem as mudanças de rodada
+do combate. Apenas tokens participantes daquela cena avançam. Condições expiradas
+são removidas; permanentes continuam. Voltar turnos e encerrar o combate não
+alteram os contadores. Recibos evitam contagem duplicada em reenvios. Os dois modos
+de condições exibem o tempo restante e o momento de expiração nos tooltips.</p>
+<p>O diretório nativo de compêndios filtra os metadados localmente por nome, tipo de
+documento e coleção. A prévia busca somente a entrada autorizada selecionada e
+exibe texto na modal compartilhada. O mestre pode importar pela entrada, pela
+prévia ou arrastando ao diretório correspondente. O arrasto informa campanha,
+compêndio, entrada e tipo; o destino confere esses dados no catálogo visível antes
+de usar o comando de importação autorizado existente. Jogadores podem visualizar
+compêndios acessíveis, mas não importar. Arquivos e dependências continuam usando
+o mecanismo de importação existente.</p>
+<h2 id="arquivos-portateis-e-administracao">Arquivos portáteis e administração</h2>
+<p><code>administration/archives.py</code> define explicitamente os modelos de conteúdo permitidos.
+Exportações incluem documento de conteúdo, manifesto com hashes e arquivos opcionais.
+Exportações portáteis removem permissões específicas de usuários e omitem chat;
+snapshots também incluem registros de acesso e chat para restauração. Importações
+em campanha nova e mesclagens remapeiam identificadores e caminhos de arquivos.
+Restaurações na mesma campanha preservam identificadores e substituem o conteúdo
+nativo, mantendo participantes, códigos e histórico de snapshots. Esses arquivos
+não são backups completos do servidor: contas, sessões, configurações e pacotes
+instalados são dados operacionais separados.</p>
+<p>A importação valida caminhos, tamanho do ZIP, tamanho descompactado, modelos, campos
+e hashes antes de criar conteúdo. Adicionar um modelo ou relacionamento de arquivo
+exige revisar a seleção, o grafo de dependências e as regras de importação, além da
+definição do modelo.</p>
+<p><code>administration/updates.py</code> consulta metadados de versões de código-fonte do
+repositório configurado e armazena o estado em cache. <code>administration/automatic_updates.py</code>
+encaminha atualizações solicitadas pelo proprietário ao supervisor, que substitui
+arquivos e gerencia backup, migrações, reinício e recuperação. O mesmo supervisor
+ativa apps Django do marketplace em ambientes Python isolados.
+Preferências do servidor e auditoria usam modelos separados; recursos
+habilitados dependem da configuração. Leia <a href="deployment.html">Implantação</a> e
+<a href="development.html">Desenvolvimento</a> antes de ampliar esses fluxos.</p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="getting-started.html"><span>Anterior ←</span><strong>Primeiros passos</strong></a><a href="code-map.html"><span>Próximo →</span><strong>Mapa do código</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/architecture.md">docs/en/architecture.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/architecture.md">docs/pt-BR/architecture.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#divisoes-da-aplicacao-em-execucao">Divisões da aplicação em execução</a></li><li><a href="#identidade-e-autorizacao">Identidade e autorização</a></li><li><a href="#comandos-tentativas-repetidas-e-revisoes">Comandos, tentativas repetidas e revisões</a></li><li><a href="#comportamento-dos-dominios">Comportamento dos domínios</a></li><li><a href="#arquivos-portateis-e-administracao">Arquivos portáteis e administração</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

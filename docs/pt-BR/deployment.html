@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Implantação | Gravewright</title><meta name="description" content="Hospedagem, segurança, proxies reversos, backups e recuperação operacional."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/deployment.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/deployment.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/deployment.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/deployment.html"><meta property="og:type" content="article"><meta property="og:title" content="Implantação | Gravewright"><meta property="og:description" content="Hospedagem, segurança, proxies reversos, backups e recuperação operacional."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/deployment.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Implantação","description":"Hospedagem, segurança, proxies reversos, backups e recuperação operacional.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/deployment.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/deployment.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html" aria-current="page">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Implantação</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Referência do projeto <span aria-hidden="true">/</span> 12 min de leitura</span><h1>Implantação</h1><p class="kb-lead">Hospedagem, segurança, proxies reversos, backups e recuperação operacional.</p></header><div class="kb-prose"><p><a href="index.html">Documentação</a> · <a href="../en/deployment.html">English</a></p>
+<p>Este guia cobre a implantação em servidores. Para uma instalação Windows usada apenas no próprio computador, use o <a href="windows-runner.html">Gravewright Runner</a>, que administra o armazenamento pessoal e um perfil local com um único processo.</p>
+<h2 id="https-e-websockets">HTTPS e WebSockets</h2>
+<p>Gravewright oferece páginas HTTPS e WebSockets seguros (WSS). Configure <code>GRAVEWRIGHT_PUBLIC_ORIGIN</code> com a origem acessada pelo navegador, como <code>https://vtt.example.com</code>. O <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/realtime/security.py">SameOriginWebSocketMiddleware</a> usa essa origem para validar o <code>Origin</code> do navegador e o <code>Host</code> da requisição, incluindo a porta efetiva. Isso também funciona com Daphne <strong>4.2.3</strong>, cujo escopo WebSocket omite <code>scheme</code>.</p>
+<p>Atrás de um proxy reverso que termina TLS, o <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/config/proxy.py">TrustedProxySchemeMiddleware</a> restaura o esquema HTTP/HTTPS ou WS/WSS antes de encaminhar a requisição pelo roteador ASGI. Aceita exatamente um cabeçalho <code>X-Forwarded-Proto: http</code> ou <code>https</code> apenas quando o endereço do par conectado pertence a <code>TRUSTED_PROXIES</code>. Valores de origem não confiável, duplicados, separados por vírgula ou malformados mantêm o esquema original. Assim, Django reconhece HTTPS corretamente nas verificações CSRF e nas respostas HSTS.</p>
+<p>A origem pública define uma origem permitida; não cria um listener TLS nem concede permissões. WebSockets da mesa continuam exigindo host permitido, uma única origem válida e correspondente, sessão válida e autorização na campanha. Sem origem pública configurada, a verificação WebSocket usa o esquema ASGI <code>ws</code>/<code>wss</code>; esquema ausente assume HTTP local. Portanto, TLS direto no Daphne exige a origem pública HTTPS. Apenas <code>DJANGO_SECURE_COOKIES=true</code> não a fornece.</p>
+<h2 id="configuracao-de-execucao">Configuração de execução</h2>
+<p>Use um checkout versionado e uma conta com escrita no banco e no armazenamento privado. Configure <code>DJANGO_SECRET_KEY</code> persistente e privada, <code>DJANGO_DEBUG=false</code>, hosts explícitos, origem pública e URL do Redis. A origem deve ser HTTP(S), sem caminho ou barra final. HTTPS ativa cookies de sessão/CSRF seguros e HSTS nas configurações.</p>
+<p>Gere a chave localmente e guarde em configuração protegida, mantendo-a entre reinicializações:</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-bash">uv run --locked python -c &#39;import secrets; print(secrets.token_urlsafe(64))&#39;</code></pre></div>
+<p>Não publique o valor gerado em issue, commit ou log compartilhado. Veja <a href="configuration.html">configuração</a> para limites, caminhos e prioridade das variáveis.</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-bash">uv sync --locked --no-dev
+uv run --locked --no-dev python manage.py migrate --noinput
+uv run --locked --no-dev python manage.py collectstatic --noinput
+uv run --locked --no-dev python manage.py check --deploy
+uv run --locked --no-dev daphne -b 127.0.0.1 -p 3000 config.asgi:application</code></pre></div>
+<p>Esses comandos pressupõem os valores de produção configurados e pastas existentes. <code>check --deploy</code> pode indicar decisões pendentes de configuração; verifique também o endereço público conforme descrito abaixo. O último comando usa HTTP em loopback atrás do proxy TLS. <code>main.py</code> usa o <code>runserver</code> de desenvolvimento; <code>config.wsgi</code> não atende WebSockets.</p>
+<h2 id="proxy-reverso-nginx">Proxy reverso Nginx</h2>
+<p>Para Nginx e Daphne no mesmo servidor, defina estes valores na configuração protegida da aplicação, junto com sua <code>DJANGO_SECRET_KEY</code> privada:</p>
+<div class="code-block"><div class="code-toolbar"><span>dotenv</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-dotenv">DJANGO_DEBUG=false
+DJANGO_ALLOWED_HOSTS=vtt.example.com
+GRAVEWRIGHT_PUBLIC_ORIGIN=https://vtt.example.com
+TRUSTED_PROXIES=127.0.0.1/32
+GRAVEWRIGHT_REDIS_URL=redis://127.0.0.1:6379/0</code></pre></div>
+<p>Use o comando Daphne em loopback acima <strong>sem <code>--proxy-headers</code></strong>. Essa opção substitui o endereço do par conectado antes da verificação do Gravewright e conflita com a confiança em proxies controlada pela aplicação. <code>TRUSTED_PROXIES</code> controla a resolução do IP encaminhado e o adaptador de esquema ASGI. Confie apenas nos endereços dos proxies que podem conectar ao Daphne e mantenha a porta interna privada. Em contêineres, substitua loopback pelo endereço real do proxy imediato ou por uma rede confiável de escopo restrito.</p>
+<p>O exemplo Nginx abaixo pertence ao contexto <code>http</code>. Substitua domínio, arquivos existentes de certificado/chave e caminho absoluto do checkout antes de ativá-lo. O limite de 100 MiB no corpo da requisição é um exemplo operacional; ajuste aos uploads e à capacidade do servidor. As diretivas TLS e o upgrade WebSocket seguem o <a href="https://nginx.org/en/docs/http/configuring_https_servers.html">guia HTTPS do Nginx</a> e o <a href="https://nginx.org/en/docs/http/websocket.html">guia de proxy WebSocket</a>.</p>
+<div class="code-block"><div class="code-toolbar"><span>nginx</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-nginx">map $http_upgrade $gravewright_connection_upgrade {
+    default upgrade;
+    &#39;&#39;      close;
+}
+
+server {
+    listen 80;
+    server_name vtt.example.com;
+    return 308 https://vtt.example.com$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name vtt.example.com;
+
+    ssl_certificate /etc/letsencrypt/live/vtt.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/vtt.example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    client_max_body_size 100m;
+
+    location /static/ {
+        alias /srv/gravewright/staticfiles/;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $http_host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $gravewright_connection_upgrade;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Forwarded &quot;&quot;;
+        proxy_set_header X-Forwarded-Host &quot;&quot;;
+        proxy_set_header X-Forwarded-Port &quot;&quot;;
+        proxy_buffering off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+}</code></pre></div>
+<p><code>Host $http_host</code> preserva a porta usada pelo navegador; Nginx encaminha <code>Origin</code> sem alterações. O proxy substitui os valores de encaminhamento confiáveis, sem acrescentar dados enviados pelo cliente. Consulte a <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_set_header">configuração de cabeçalhos do proxy Nginx</a>. Para uma porta pública diferente de 443, inclua-a em <code>GRAVEWRIGHT_PUBLIC_ORIGIN</code>, no listener TLS e no destino do redirecionamento. <code>DJANGO_ALLOWED_HOSTS</code> contém nomes de host sem portas.</p>
+<p>Nginx redireciona HTTP para HTTPS; este checkout não ativa o redirecionamento SSL global do Django. Instale um certificado válido e configure sua renovação, valide a configuração com <code>nginx -t</code> e recarregue Nginx pelo gerenciador de serviços. Após alterações, confira login, cookies de sessão/CSRF com Secure, HSTS em uma resposta da aplicação e conexão autenticada da mesa com status <code>101</code> por WSS. Verifique duas sessões e a rejeição de origem WebSocket externa. O teste automatizado de TLS direto e proxy está descrito em <a href="testing.html">testes</a>.</p>
+<h2 id="arquivos-estaticos-e-armazenamento-privado">Arquivos estáticos e armazenamento privado</h2>
+<p>Sirva <code>/static/</code> a partir de <code>staticfiles/</code>, gerado por <code>collectstatic</code>. Recursos atendidos por views próprias, inclusive módulos de frontend, continuam dependendo das rotas da aplicação. Com debug desativado, o Django não serve automaticamente os arquivos coletados pelo handler estático de desenvolvimento.</p>
+<p>Mantenha <code>MEDIA_ROOT</code> privado: mapas, PDFs, diários, áudio, cartas e pacotes de módulos são atendidos por rotas protegidas. Um alias público <code>/media/</code> ignoraria as verificações. Faça backup do armazenamento junto com o banco. Coleções opcionais em <code>data/vtt/compendiums/</code> também precisam de backup.</p>
+<p>Configure limites de upload e timeouts do servidor externo. O limite padrão de bytes de mapa é 50 GiB, enquanto pixels decodificados, dimensões e quantidade de tiles têm limites separados; aceitar muitos bytes não significa que haverá memória suficiente para processar o arquivo.</p>
+<h3 id="uploads-de-mapas-grandes">Uploads de mapas grandes</h3>
+<p>A geração do mapa continua síncrona dentro da requisição de upload. Ela executa fora do loop de eventos, mas um mapa grande ou a espera por outro mapa pode ultrapassar o timeout de resposta do proxy reverso. Dimensione <code>proxy_read_timeout</code> com base nos tempos de processamento observados; os <code>300s</code> do exemplo não garantem o processamento de qualquer imagem. Um timeout do proxy pode desconectar quem enviou o arquivo enquanto o servidor continua processando; confira a lista de cenas antes de tentar novamente.</p>
+<p>Para mapas maiores, instale as dependências opcionais do libvips no ambiente que executa o servidor e aumente <code>GRAVEWRIGHT_MAP_MAX_PIXELS</code> somente conforme necessário. Nos comandos de implantação por código-fonte acima, use <code>uv sync --locked --no-dev --extra vips</code>; mantenha o extra nas sincronizações seguintes. Os instaladores nativos e a preparação de atualizações gerenciadas selecionam as dependências padrão sem esse extra. <code>GRAVEWRIGHT_MAP_TILER=vips</code> faz a falta de suporte nativo impedir a inicialização; <code>auto</code> recorre ao Pillow, cujo teto separado <code>GRAVEWRIGHT_MAP_PILLOW_MAX_PIXELS</code> tem padrão de 64 milhões de pixels. Consulte <a href="configuration.html#geracao-de-tiles-e-imagens-grandes">configuração</a> antes de aumentar qualquer teto.</p>
+<p>A geração é serializada por processo; vários workers ASGI ainda podem somar uso de memória e disco. Libvips processa mapas comuns em faixas, enquanto rotações e alguns codecs exigem recursos adicionais. Reserve espaço com permissão de escrita em <code>data/runner/tmp/</code> dentro da instalação para a fonte codificada, o conjunto completo de tiles preparados e os arquivos temporários nativos, além do armazenamento final de mídia. Overrides explícitos da raiz do Runner ou da pasta temporária de uploads Django mantêm a prioridade documentada. Meça formatos, transparências e orientações representativos no servidor de destino antes de elevar limites; essa mudança não acrescenta processamento em segundo plano nem uma cota global de memória.</p>
+<h2 id="esperas-persistentes-do-blueprint">Esperas persistentes do Blueprint</h2>
+<p>A aplicação ASGI inicia automaticamente o executor de Delay quando o reactor do
+Daphne começa. Isso inclui o Runner habitual; não exige comando separado nem
+navegador conectado. Outros hosts ASGI precisam ativar lifespan de início e
+encerramento. WSGI não fornece esse ciclo de vida. Comandos comuns de
+gerenciamento do Django não iniciam o executor. O sinalizador de manutenção
+existente do atualizador conserva a fila durante a verificação de saúde do
+servidor até confirmar ou reverter a atualização.</p>
+<p>Aplique as migrações antes da inicialização. Continuações pendentes ficam no
+mesmo banco privado da cena, sobrevivem ao reinício dos processos e ficam
+disponíveis ao vencer o prazo. Automação pausada na cena as conserva pendentes
+até retomar. O executor consulta a cada 250 ms, em lotes de 20; a execução depende
+da carga e da disponibilidade. O encerramento aguarda a transação atual terminar.
+Se o processo terminar durante uma transação, a continuação não gravada permanece
+pendente para uma tentativa futura. Consulte os logs do servidor para falhas de
+banco e <strong>Automação → Aguardando</strong> para trabalho pendente.</p>
+<p>Cada processo ASGI pode manter seu executor; transações do banco serializam a
+tomada das tarefas e os efeitos, evitando aplicação duplicada entre executores
+concorrentes. <code>GRAVEWRIGHT_AUTOMATION_WORKER_ENABLED=false</code> desativa o executor
+daquele processo sem apagar esperas. Exportações, snapshots e clones de campanha
+omitem continuações pendentes; um backup completo do banco as inclui. Assim, um
+banco restaurado pode retomar trabalho vencido na inicialização. Use a opção de
+executor desativado ao inspecionar uma cópia de recuperação, antes de ativar sua
+automação de forma intencional. Veja
+<a href="configuration.html#executor-de-delay-do-blueprint">configuração</a> e
+<a href="map-builder.html#delay-persistente">Delay persistente</a>.</p>
+<h2 id="varios-processos">Vários processos</h2>
+<p>Todos os workers precisam compartilhar banco, arquivos, chave secreta, configuração de confiança dos módulos e camada Redis. As configurações padrão do servidor exigem <code>GRAVEWRIGHT_REDIS_URL</code> com debug desativado, mesmo em um único processo. O executor local possui um perfil separado e não pode ser usado para essa implantação. Channels em memória não entrega eventos entre workers.</p>
+<p>SQLite é o banco configurado e usa transações <code>IMMEDIATE</code>. Redis entrega eventos; não substitui o banco nem mantém um registro durável da partida. Vários processos ainda compartilham a disputa por escrita do SQLite; o código não fornece configuração PostgreSQL nem afirma suportar armazenamento distribuído horizontalmente. Dimensione com base em cargas observadas.</p>
+<p>Use um gerenciador de serviços para supervisionar ASGI e Redis, guardar logs e encerrar processos adequadamente. Após mudanças de hospedagem, teste duas sessões, visibilidade de mestre/jogador, uploads, reconexão WebSocket e reinício de workers.</p>
+<h2 id="backup-e-restauracao">Backup e restauração</h2>
+<p>Exportações são pacotes portáveis de conteúdo; snapshots são pontos de recuperação da campanha. Nenhum deles é um backup completo da instância. Exportações omitem ou ajustam vínculos, proprietários e parte do histórico privado; o estado de instalação de módulos está fora do grafo exportado. Consulte <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/administration/archives.py">archives.py</a>.</p>
+<p>Para um backup completo consistente:</p>
+<ol><li><p>Interrompa escritas, incluindo todos os processos ASGI e processos de manutenção.</p></li><li><p>Copie o banco SQLite configurado e arquivos journal/WAL associados, se existirem, toda a mídia privada, coleções opcionais e configurações/chaves de confiança necessárias. Também é possível usar a operação de backup do SQLite, coordenada com a cópia dos arquivos.</p></li><li><p>Registre a versão correspondente do código, o lock file e as licenças. Proteja segredos separadamente e restrinja acesso ao backup.</p></li><li><p>Restaure primeiro em uma pasta separada, ajustando os caminhos. Verifique login, uma campanha, uploads representativos e módulos antes de direcionar usuários para ela.</p></li></ol>
+<p>Não copie somente <code>db.sqlite3</code> da raiz nem restaure código antigo sobre banco já migrado para uma versão nova. Teste rollback com banco e arquivos correspondentes, sem presumir que migrações sejam reversíveis.</p>
+<h2 id="atualizacoes-e-servicos-opcionais">Atualizações e serviços opcionais</h2>
+<p>Ao atualizar o pacote publicado 0.1.1 pela Administração, o supervisor antigo
+continua executando. Pare o Runner, extraia o ZIP 0.1.2 sobre a pasta original e
+execute o novo instalador usando a mesma pasta de dados pessoais. Essa troca
+única habilita apps Django e a nova substituição de arquivos. Preserve os dados
+pessoais e a pasta <code>updates</code> durante a transição.</p>
+<p>A descoberta usa <code>GRAVEWRIGHT_RELEASES_REPOSITORY</code>, com padrão <code>Gravewright/gravewright</code>; um valor vazio a desativa. Artefatos Django compatíveis exigem metadados SHA-256. Instalações iniciadas pelo Runner ou <code>main.py</code> permitem atualizar pela Administração, com substituição de arquivos, migrações, reinício e recuperação. Servidores ASGI iniciados diretamente exigem atualização pelo operador.</p>
+<p>O marketplace usa catálogo HTTPS e arquivo local de chaves públicas Ed25519 confiáveis. URL vazia deixa a descoberta online sem configuração. Revise autores e código antes de instalar módulos, pois executam na origem da aplicação. Veja <a href="modules.html">módulos</a>.</p>
+<p>O e-mail usa o backend de console do Django. Texto e publicação da política de privacidade são administrados pelo operador; ativar uma opção não fornece política preenchida nem serviço de e-mail. Considere também licenças das dependências, servidor Redis, navegador e imagem de contêiner efetivamente distribuídos; consulte <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/THIRD_PARTY_NOTICES.pt-BR.md">avisos de terceiros</a>.</p>
+<h3 id="atualizacoes-pela-interface-windows-linux-e-macos">Atualizações pela interface: Windows, Linux e macOS</h3>
+<p>O início normal por <code>main.py</code> e pelo Gravewright Runner ativa o supervisor
+por padrão. No Windows, o <code>Gravewright Runner.bat</code> mantém seu funcionamento
+habitual. No Linux e macOS, <code>uv run --locked python main.py</code> também inicia o
+fluxo de atualização; <code>--dev</code> é reservado ao desenvolvimento com autoreload.
+Não é necessário iniciar um modo especial para usar o botão de atualização.</p>
+<p>Em Administração → Atualizações, verifique a versão e clique
+em <strong>Instalar atualização</strong>. O download, validação SHA-256,
+preparação de dependências, backup, migrações, reinício e recuperação são
+controlados por essa tela nos três sistemas operacionais. A modal de progresso
+mostra a etapa confirmada e o tempo decorrido. A porcentagem do download usa
+os bytes recebidos; as outras etapas usam um indicador de atividade.
+Mantenha o Runner aberto durante a instalação. As conexões de mesa são
+interrompidas durante a troca; as consultas ficam mais espaçadas enquanto
+o servidor está indisponível e pausam com a página oculta ou sem conexão.
+A página recarrega após o servidor confirmar que a versão esperada está rodando.</p>
+<p>O pacote <code>Gravewright-VERSAO-django.zip</code> deve ter digest SHA-256 publicado no
+GitHub, versão superior e os arquivos do supervisor. O repositório padrão é
+<code>Gravewright/gravewright</code>; uma configuração explicitamente vazia desabilita a
+consulta. A release inicial <code>0.1.0-alpha.0</code>, anterior ao supervisor, não pode
+aplicar atualizações: é necessário distribuir este inicializador atualizado
+para habilitar o fluxo da interface nessa instalação antiga.</p>
+<p>A atualização substitui os arquivos na pasta original do projeto, incluindo <code>Install Windows.bat</code>, scripts, assets e o runner gerado. Arquivos da versão anterior que não existem na release nova são removidos. <code>.env</code>, ambientes Python, caches e diretórios de dados/extensões locais são preservados. As dependências da versão nova são preparadas isoladamente antes da substituição.</p>
+<p>A opção <strong>Manter cópia .old para rollback</strong> vem marcada. Após o sucesso, cria uma pasta interna, por exemplo <code>data/updates/retained/Gravewright-0.2.3.old</code>, com o código anterior e os snapshots de banco, mídia e outros dados em <code>.gravewright-rollback</code>. Se já existir uma cópia, uma nova recebe um identificador no nome; nenhuma cópia anterior é sobrescrita. Desmarcar elimina a cópia temporária após o sucesso. Durante a instalação sempre existe recuperação temporária: falhas de migração, substituição ou inicialização restauram código, inicializadores e dados. Uma transação interrompida é recuperada na próxima inicialização.</p>
+<p>Para restaurar uma cópia retida, encerre o Runner e execute com o Python da instalação (o caminho aparece no BAT gerado):</p>
+<div class="code-block"><div class="code-toolbar"><span>bat</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-bat">&quot;CAMINHO_DO_PYTHON\python.exe&quot; -X utf8 scripts\rollback_update.py &quot;data\updates\retained\Gravewright-0.2.3.old&quot;</code></pre></div>
+<p>A restauração também retorna banco e mídia ao momento do backup; alterações feitas depois dele serão perdidas. Preserve a pasta de estado e os ambientes de atualização junto da cópia <code>.old</code>, pois ela referencia o Python anterior. Checkouts Git com alterações locais continuam bloqueados contra atualização. Não execute outro servidor contra o mesmo banco durante atualização ou restauração.</p>
+<p>O Runner guarda versões, backups e <code>update.log</code> em <code>data/updates/</code> dentro da
+pasta descompactada. O inicializador por <code>main.py</code> também mantém seu estado em
+<code>data/updates/</code> dentro do projeto, no Windows, Linux e macOS. Nenhum estado padrão
+do atualizador é compartilhado em AppData, HOME ou XDG. Preserve <code>data/</code> e reserve
+espaço para os ambientes e as cópias <code>.old</code> retidas.</p>
+<p>O workflow <code>Automatic updates</code> testa Windows, Linux e macOS nativamente.
+Para reproduzir, execute <code>uv run python tests/e2e/automatic_updates.py</code> e
+<code>uv run python tests/e2e/automatic_updates.py --runner</code>; ambos usam dados
+temporários, HTTPS local e falhas deliberadas de migração e inicialização.</p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="configuration.html"><span>Anterior ←</span><strong>Configuração</strong></a><a href="windows-runner.html"><span>Próximo →</span><strong>Instalador e Runner no Windows</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/deployment.md">docs/en/deployment.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/deployment.md">docs/pt-BR/deployment.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#https-e-websockets">HTTPS e WebSockets</a></li><li><a href="#configuracao-de-execucao">Configuração de execução</a></li><li><a href="#proxy-reverso-nginx">Proxy reverso Nginx</a></li><li><a href="#arquivos-estaticos-e-armazenamento-privado">Arquivos estáticos e armazenamento privado</a></li><li><a href="#esperas-persistentes-do-blueprint">Esperas persistentes do Blueprint</a></li><li><a href="#varios-processos">Vários processos</a></li><li><a href="#backup-e-restauracao">Backup e restauração</a></li><li><a href="#atualizacoes-e-servicos-opcionais">Atualizações e serviços opcionais</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

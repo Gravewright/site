@@ -2,6 +2,12 @@
 
 New site code, copy and documentation are licensed under **GPL-3.0-only**; see [LICENSE](LICENSE). These terms do not replace the separate licenses of the template, music, application or SRD content described below.
 
+## Product wiki and developer reference
+
+The product wiki and AI workflow guides are original Gravewright documentation under GPL-3.0-only. `content/reference/` reproduces the public English and Portuguese project documentation from the Gravewright repository at the revision recorded in `content/reference/catalog.json`. The source project is GPL-3.0-only with the Gravewright Independent Module Permission; its exact licensing notices are retained in the reference snapshot and linked to their original files. This documentation copy does not change the licensing of independent extension packages.
+
+The new `assets/wiki/` screenshots show the real Gravewright 0.3.0 interface in a disposable demonstration campaign. They use synthetic data and assets already published for the site, with no operator files, proprietary catalogs or rulebook text. Interface language, provenance and asset sources are documented in [assets/wiki/README.md](assets/wiki/README.md). These captures are separate from the historical 0.2.1 media below and retain their own version captions.
+
 ## Inherited template
 
 This site adapts the Gravewright `repository-site` template supplied with the legacy repository. Its dark/gold palette, grid background, header, cards, media frames and base responsive styles were retained and extended. Product copy, bilingual pages, navigation, clipboard behavior, media rendering and accessibility checks were updated for the current product.

@@ -1,0 +1,311 @@
+[
+  {
+    "id": "campaigns",
+    "file": "assets/wiki/campaigns-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The campaign dashboard with three original example campaigns. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de campanhas com três campanhas originais de exemplo. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The campaign dashboard with three original example campaigns. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de campanhas com três campanhas originais de exemplo. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "getting-started",
+      "campaigns",
+      "installation"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "tabletop",
+    "file": "assets/wiki/tabletop-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "A real tabletop with the Moonfall Abbey map and three actor tokens. Gravewright 0.3.0, English interface.",
+      "pt": "Mesa real com o mapa da Abadia de Moonfall e três tokens de atores. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "A real tabletop with the Moonfall Abbey map and three actor tokens. Gravewright 0.3.0, English interface.",
+      "pt": "Mesa real com o mapa da Abadia de Moonfall e três tokens de atores. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tabletop",
+      "tokens",
+      "universal-vtt"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "scenes",
+    "file": "assets/wiki/scenes-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The scene directory groups the broadcast scene and private scenes in a folder. Gravewright 0.3.0, English interface.",
+      "pt": "O diretório de cenas organiza a cena transmitida e cenas privadas em uma pasta. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The scene directory groups the broadcast scene and private scenes in a folder. Gravewright 0.3.0, English interface.",
+      "pt": "O diretório de cenas organiza a cena transmitida e cenas privadas em uma pasta. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "scenes",
+      "tabletop",
+      "permissions"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "actors",
+    "file": "assets/wiki/actors-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The actor directory contains an original company, portraits and reusable PDF templates. Gravewright 0.3.0, English interface.",
+      "pt": "O diretório de atores reúne um grupo original, retratos e modelos de PDF reutilizáveis. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The actor directory contains an original company, portraits and reusable PDF templates. Gravewright 0.3.0, English interface.",
+      "pt": "O diretório de atores reúne um grupo original, retratos e modelos de PDF reutilizáveis. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "actors",
+      "character-sheets",
+      "tokens"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "pdf-sheet",
+    "file": "assets/wiki/pdf-sheet-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The bundled PDF system displays an original character sheet. Gravewright 0.3.0, English interface.",
+      "pt": "O sistema PDF integrado exibe uma ficha de personagem original. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The bundled PDF system displays an original character sheet. Gravewright 0.3.0, English interface.",
+      "pt": "O sistema PDF integrado exibe uma ficha de personagem original. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "character-sheets",
+      "actors",
+      "pdf-system"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "journals",
+    "file": "assets/wiki/journals-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "An original journal entry with chapter navigation and sharing controls. Gravewright 0.3.0, English interface.",
+      "pt": "Uma anotação original com navegação por capítulos e controles de compartilhamento. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "An original journal entry with chapter navigation and sharing controls. Gravewright 0.3.0, English interface.",
+      "pt": "Uma anotação original com navegação por capítulos e controles de compartilhamento. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "journals",
+      "quests",
+      "roll-tables",
+      "handouts"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "combat",
+    "file": "assets/wiki/combat-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The encounter tracker shows the current turn, initiative order and actor resources. Gravewright 0.3.0, English interface.",
+      "pt": "O rastreador de combate exibe o turno atual, a iniciativa e recursos dos atores. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The encounter tracker shows the current turn, initiative order and actor resources. Gravewright 0.3.0, English interface.",
+      "pt": "O rastreador de combate exibe o turno atual, a iniciativa e recursos dos atores. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "combat",
+      "tokens",
+      "character-sheets"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "chat-dice",
+    "file": "assets/wiki/chat-dice-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "Chat combines table messages with a public dice result. Gravewright 0.3.0, English interface.",
+      "pt": "O chat combina mensagens da mesa com uma rolagem pública de dados. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Chat combines table messages with a public dice result. Gravewright 0.3.0, English interface.",
+      "pt": "O chat combina mensagens da mesa com uma rolagem pública de dados. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "chat-dice",
+      "dice",
+      "chat"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "library",
+    "file": "assets/wiki/library-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The campaign asset library centralizes reusable images and documents. Gravewright 0.3.0, English interface.",
+      "pt": "A biblioteca da campanha centraliza imagens e documentos reutilizáveis. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The campaign asset library centralizes reusable images and documents. Gravewright 0.3.0, English interface.",
+      "pt": "A biblioteca da campanha centraliza imagens e documentos reutilizáveis. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "actors",
+      "character-sheets",
+      "audio"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "audio",
+    "file": "assets/wiki/audio-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The audio workspace contains synthetic tracks and a reusable playlist. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de áudio contém faixas sintéticas e uma lista de reprodução reutilizável. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The audio workspace contains synthetic tracks and a reusable playlist. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de áudio contém faixas sintéticas e uma lista de reprodução reutilizável. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "audio",
+      "media"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "cards",
+    "file": "assets/wiki/cards-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "A synthetic card deck is ready for tabletop draws. Gravewright 0.3.0, English interface.",
+      "pt": "Um baralho sintético está pronto para compras de cartas na mesa. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "A synthetic card deck is ready for tabletop draws. Gravewright 0.3.0, English interface.",
+      "pt": "Um baralho sintético está pronto para compras de cartas na mesa. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "cards",
+      "tabletop"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "extensions",
+    "file": "assets/wiki/extensions-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The extensions workspace provides package installation and marketplace access. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de extensões oferece instalação de pacotes e acesso ao marketplace. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The extensions workspace provides package installation and marketplace access. Gravewright 0.3.0, English interface.",
+      "pt": "O painel de extensões oferece instalação de pacotes e acesso ao marketplace. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "systems-modules"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "map-builder",
+    "file": "assets/wiki/map-builder-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface.",
+      "pt": "O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface.",
+      "pt": "O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "map-builder"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "blueprints",
+    "file": "assets/wiki/blueprints-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "A door blueprint connects interaction, a light, a message and a state change. Gravewright 0.3.0, English interface.",
+      "pt": "Um blueprint de porta conecta interação, luz, mensagem e mudança de estado. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "A door blueprint connects interaction, a light, a message and a state change. Gravewright 0.3.0, English interface.",
+      "pt": "Um blueprint de porta conecta interação, luz, mensagem e mudança de estado. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "smart-objects",
+      "ai-map-blueprint"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "playtest",
+    "file": "assets/wiki/playtest-030.webp",
+    "width": 1440,
+    "height": 900,
+    "alt": {
+      "en": "The safe playtest previews a door mechanism and reports its predicted changes. Gravewright 0.3.0, English interface.",
+      "pt": "O playtest seguro pré-visualiza um mecanismo de porta e relata as alterações previstas. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The safe playtest previews a door mechanism and reports its predicted changes. Gravewright 0.3.0, English interface.",
+      "pt": "O playtest seguro pré-visualiza um mecanismo de porta e relata as alterações previstas. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "smart-objects",
+      "map-builder",
+      "ai-map-blueprint"
+    ],
+    "version": "0.3.0",
+    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  }
+]

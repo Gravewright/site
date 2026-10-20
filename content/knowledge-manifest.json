@@ -1,0 +1,700 @@
+{
+  "version": "0.3.0",
+  "sourceRevision": "23ea61b8efb566cad0e3359489b0dad45e214906",
+  "pages": [
+    {
+      "path": "wiki/en/index.html",
+      "locale": "en",
+      "area": "wiki",
+      "hub": true
+    },
+    {
+      "path": "docs/en/index.html",
+      "locale": "en",
+      "area": "docs",
+      "hub": true
+    },
+    {
+      "path": "docs/en/ai.html",
+      "locale": "en",
+      "area": "docs",
+      "hub": true
+    },
+    {
+      "path": "wiki/en/getting-started.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "getting-started",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/installation.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "installation",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/campaigns.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "campaigns",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/permissions.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "permissions",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/tabletop.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "tabletop",
+      "images": 3
+    },
+    {
+      "path": "wiki/en/scenes.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "scenes",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/actors.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "actors",
+      "images": 3
+    },
+    {
+      "path": "wiki/en/character-sheets.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "character-sheets",
+      "images": 3
+    },
+    {
+      "path": "wiki/en/tokens.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "tokens",
+      "images": 3
+    },
+    {
+      "path": "wiki/en/chat-dice.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "chat-dice",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/journals.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "journals",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/audio.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "audio",
+      "images": 2
+    },
+    {
+      "path": "wiki/en/cards.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "cards",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/combat.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "combat",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/compendiums.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "compendiums",
+      "images": 0
+    },
+    {
+      "path": "wiki/en/systems-modules.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "systems-modules",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/map-builder.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "map-builder",
+      "images": 2
+    },
+    {
+      "path": "wiki/en/smart-objects.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "smart-objects",
+      "images": 2
+    },
+    {
+      "path": "wiki/en/universal-vtt.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "universal-vtt",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/backups-updates.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "backups-updates",
+      "images": 0
+    },
+    {
+      "path": "docs/en/getting-started.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "getting-started",
+      "images": 1
+    },
+    {
+      "path": "docs/en/architecture.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "architecture",
+      "images": 0
+    },
+    {
+      "path": "docs/en/code-map.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "code-map",
+      "images": 0
+    },
+    {
+      "path": "docs/en/development.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "development",
+      "images": 0
+    },
+    {
+      "path": "docs/en/api.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "api",
+      "images": 0
+    },
+    {
+      "path": "docs/en/modules.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "modules",
+      "images": 0
+    },
+    {
+      "path": "docs/en/frontend.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "frontend",
+      "images": 0
+    },
+    {
+      "path": "docs/en/testing.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "testing",
+      "images": 0
+    },
+    {
+      "path": "docs/en/configuration.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "configuration",
+      "images": 0
+    },
+    {
+      "path": "docs/en/deployment.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "deployment",
+      "images": 0
+    },
+    {
+      "path": "docs/en/windows-runner.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "windows-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/en/linux-runner.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "linux-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/en/macos-runner.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "macos-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/en/map-builder.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "map-builder",
+      "images": 2
+    },
+    {
+      "path": "docs/en/universal-vtt.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "universal-vtt",
+      "images": 1
+    },
+    {
+      "path": "docs/en/user-guide.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "user-guide",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ethical-module-porting.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ethical-module-porting",
+      "images": 0
+    },
+    {
+      "path": "docs/en/contributing.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "contributing",
+      "images": 0
+    },
+    {
+      "path": "docs/en/licensing.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "licensing",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-create-system.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-create-system",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-create-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-create-module",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-server-integration.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-server-integration",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-map-blueprint.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-map-blueprint",
+      "images": 2
+    },
+    {
+      "path": "docs/en/ai-debug-bug.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-debug-bug",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-write-tests.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-write-tests",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-translate-extension.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-translate-extension",
+      "images": 0
+    },
+    {
+      "path": "docs/en/ai-contribute-core.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "ai-contribute-core",
+      "images": 0
+    },
+    {
+      "path": "wiki/pt-BR/index.html",
+      "locale": "pt",
+      "area": "wiki",
+      "hub": true
+    },
+    {
+      "path": "docs/pt-BR/index.html",
+      "locale": "pt",
+      "area": "docs",
+      "hub": true
+    },
+    {
+      "path": "docs/pt-BR/ai.html",
+      "locale": "pt",
+      "area": "docs",
+      "hub": true
+    },
+    {
+      "path": "wiki/pt-BR/getting-started.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "getting-started",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/installation.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "installation",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/campaigns.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "campaigns",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/permissions.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "permissions",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/tabletop.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "tabletop",
+      "images": 3
+    },
+    {
+      "path": "wiki/pt-BR/scenes.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "scenes",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/actors.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "actors",
+      "images": 3
+    },
+    {
+      "path": "wiki/pt-BR/character-sheets.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "character-sheets",
+      "images": 3
+    },
+    {
+      "path": "wiki/pt-BR/tokens.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "tokens",
+      "images": 3
+    },
+    {
+      "path": "wiki/pt-BR/chat-dice.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "chat-dice",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/journals.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "journals",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/audio.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "audio",
+      "images": 2
+    },
+    {
+      "path": "wiki/pt-BR/cards.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "cards",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/combat.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "combat",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/compendiums.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "compendiums",
+      "images": 0
+    },
+    {
+      "path": "wiki/pt-BR/systems-modules.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "systems-modules",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/map-builder.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "map-builder",
+      "images": 2
+    },
+    {
+      "path": "wiki/pt-BR/smart-objects.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "smart-objects",
+      "images": 2
+    },
+    {
+      "path": "wiki/pt-BR/universal-vtt.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "universal-vtt",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/backups-updates.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "backups-updates",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/getting-started.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "getting-started",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/architecture.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "architecture",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/code-map.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "code-map",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/development.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "development",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/api.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "api",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/modules.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "modules",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/frontend.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "frontend",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/testing.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "testing",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/configuration.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "configuration",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/deployment.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "deployment",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/windows-runner.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "windows-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/linux-runner.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "linux-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/macos-runner.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "macos-runner",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/map-builder.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "map-builder",
+      "images": 2
+    },
+    {
+      "path": "docs/pt-BR/universal-vtt.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "universal-vtt",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/user-guide.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "user-guide",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ethical-module-porting.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ethical-module-porting",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/contributing.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "contributing",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/licensing.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "licensing",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-create-system.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-create-system",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-create-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-create-module",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-server-integration.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-server-integration",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-map-blueprint.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-map-blueprint",
+      "images": 2
+    },
+    {
+      "path": "docs/pt-BR/ai-debug-bug.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-debug-bug",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-write-tests.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-write-tests",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-translate-extension.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-translate-extension",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/ai-contribute-core.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "ai-contribute-core",
+      "images": 0
+    }
+  ]
+}

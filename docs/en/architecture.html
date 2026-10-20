@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Architecture | Gravewright</title><meta name="description" content="Runtime boundaries, domain services, permissions and persistence."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/architecture.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/architecture.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/architecture.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/architecture.html"><meta property="og:type" content="article"><meta property="og:title" content="Architecture | Gravewright"><meta property="og:description" content="Runtime boundaries, domain services, permissions and persistence."><meta property="og:url" content="https://gravewright.com/docs/en/architecture.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Architecture","description":"Runtime boundaries, domain services, permissions and persistence.","inLanguage":"en","url":"https://gravewright.com/docs/en/architecture.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/architecture.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html" aria-current="page">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>Architecture</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Project reference <span aria-hidden="true">/</span> 11 min read</span><h1>Architecture</h1><p class="kb-lead">Runtime boundaries, domain services, permissions and persistence.</p></header><div class="kb-prose"><p><a href="index.html">Documentation</a> · <a href="../pt-BR/architecture.html">Português</a> · <a href="code-map.html">Code map</a></p>
+<p>Gravewright is a Django virtual tabletop. The server owns campaign data, permissions,
+command validation and persisted results. Jinja2 renders the application shell and
+HTML fragments; browser JavaScript runs the interactive tabletop. Django Channels
+connects each table socket to one campaign.</p>
+<p>This document describes the implementation in this repository. For commands to run
+it, see <a href="getting-started.html">Getting started</a>; for file-level navigation, see the
+<a href="code-map.html">code map</a>. Extension authors should also read the
+<a href="api.html">API reference</a> and <a href="modules.html">module guide</a>.</p>
+<h2 id="runtime-boundaries">Runtime boundaries</h2>
+<div class="code-block"><div class="code-toolbar"><span>mermaid</span><button type="button" data-copy="code-1">Copy</button></div><pre><code data-code="code-1" class="language-mermaid">flowchart TD
+    Browser[Browser: Jinja2 pages and JavaScript] --&gt;|HTTP| HTTP[Django views]
+    Browser --&gt;|Campaign WebSocket| WS[TableConsumer]
+    Extension[Trusted Python integration] --&gt; API[api package]
+    HTTP --&gt; Services[Domain services]
+    WS --&gt; Services
+    API --&gt; Services
+    Services --&gt; DB[(SQLite: content, sessions, receipts)]
+    HTTP --&gt; Files[(Django media storage)]
+    Services --&gt; Files
+    Services --&gt;|After commit| Dispatch[Realtime dispatch]
+    Dispatch --&gt; Channels[Channels layer]
+    Channels --&gt; WS
+    Dispatch --&gt; Signal[In-process change signal]
+    WS --&gt;|Recipient-specific state| Browser</code></pre></div>
+<ul><li><p><code>config/asgi.py</code> starts Django and routes HTTP and WebSocket traffic.
+<code>config/proxy.py</code> restores forwarded schemes from trusted socket peers before
+routing. The socket stack checks the browser origin before resolving the session.</p></li><li><p><code>config/urls.py</code> composes app URL modules. HTTP paths beginning with <code>/api/</code> are
+view routes; the top-level <code>api/</code> directory is a <strong>Python import interface</strong>.</p></li><li><p><code>gravewright/&lt;domain&gt;/services.py</code> contains most business rules. Some upload,
+media and administration workflows live directly in view/helper modules, so a
+change should be traced through its actual URL or socket entry point.</p></li><li><p><code>gravewright/realtime/consumers.py</code> handles transport, subscriptions and transient
+connection state. It invokes synchronous services through
+<code>database_sync_to_async</code>; expensive dice evaluation uses <code>asyncio.to_thread</code>.</p></li><li><p><code>gravewright/realtime/dispatch.py</code> schedules committed resource invalidations,
+chat delivery and trusted Python extension signals.</p></li></ul>
+<p>The default database is SQLite with <code>transaction_mode=&#39;IMMEDIATE&#39;</code>. Services express
+serialization with atomic transactions and campaign/membership locks. SQLite does
+not implement row-level <code>SELECT FOR UPDATE</code>; its write transaction controls
+concurrency. Treat changes to transaction boundaries as behavioral changes.</p>
+<p>Standard production settings require a Redis Channels layer. The in-memory layer is used
+for one development process and by the dedicated <a href="windows-runner.html">local runner</a>;
+it cannot carry notifications between workers. Redis
+is the event transport, while campaign content, sessions and presence leases remain
+in the database. See <a href="configuration.html">Configuration</a>.</p>
+<p>The WebSocket origin check uses <code>GRAVEWRIGHT_PUBLIC_ORIGIN</code> when configured and
+requires both the request Host and browser Origin to match its scheme, domain and
+effective port. Without it, the check uses the ASGI <code>ws</code>/<code>wss</code> scheme, defaulting to
+HTTP when absent. Pinning the public origin supports direct TLS with Daphne even
+when its WebSocket adapter omits <code>scheme</code>. The
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/config/proxy.py">proxy adapter</a> accepts one valid <code>X-Forwarded-Proto</code> value
+only from a socket peer in <code>TRUSTED_PROXIES</code>, restoring the scheme for both HTTP and
+WebSockets. See <a href="deployment.html">Deployment</a> for TLS, proxy trust and static serving.</p>
+<h2 id="identity-and-authorization">Identity and authorization</h2>
+<p>There are two independent role systems:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Scope</th><th scope="col" style="text-align:left">Roles</th><th scope="col" style="text-align:left">Meaning</th></tr></thead><tbody><tr><td style="text-align:left">Host account (<code>accounts.User</code>)</td><td style="text-align:left"><code>owner</code>, <code>participant</code></td><td style="text-align:left">Host administration and account bootstrap. A database constraint permits one owner.</td></tr><tr><td style="text-align:left">Campaign (<code>campaigns.Membership</code>)</td><td style="text-align:left"><code>gm</code>, <code>player</code>, <code>streamer</code></td><td style="text-align:left">Access to a particular table and its resources.</td></tr></tbody></table></div>
+<p>The host owner creates campaigns and receives a GM membership for a new campaign.
+Resource access checks campaign membership rather than assuming that a host role
+grants access to every table. Actors/items additionally use per-user permission
+maps; journals use <code>Access</code> rows and visibility rules.</p>
+<p><code>journals.services.member()</code> is shared across several domains. It reloads an active
+user&#39;s membership and checks streamer expiration. <code>api.Context</code> holds normalized
+campaign/user UUIDs only: constructing one does not grant authority or cache roles.
+Public service entry points receive identifiers and resolve membership again.</p>
+<p>WebSocket authorization also rereads the live database session, its configured auth
+backend and the user&#39;s session authentication hash. It checks membership when
+receiving commands, in delivery handlers and during heartbeats. Removing a member,
+expiring a streamer link or invalidating a session therefore affects existing
+connections as they are rechecked.</p>
+<p>Streamer access is read-only. The socket consumer permits a limited set of sync,
+search, viewport and heartbeat messages; write boundaries also reject streamers.
+Client-side controls are a convenience, not the permission boundary.</p>
+<p><strong>Scene visibility has two requirements for non-GMs:</strong> the scene must have
+<code>visibility=&#39;players&#39;</code> and be the campaign&#39;s current <code>Broadcast</code>. Marking an inactive
+scene visible does not make it readable. The same lookup protects manifests, tiles,
+tokens and scene-context chat.</p>
+<p>The GM&#39;s explicit <code>maps.activate</code> command sets player visibility and the broadcast
+in the same transaction. A visibility change advances the scene revision;
+activating an already player-visible scene keeps its revision. Map Builder
+generation and private navigation do not publish a scene.</p>
+<h2 id="commands-retries-and-revisions">Commands, retries and revisions</h2>
+<p>Most persistent tabletop resource commands follow this sequence:</p>
+<ol><li><p>Parse the requested operation and request UUID.</p></li><li><p>Start an atomic transaction, lock the campaign and reload membership.</p></li><li><p>Check write permission and look for a previously committed receipt.</p></li><li><p>Validate the operation&#39;s payload, resource scope and relevant revision.</p></li><li><p>Change models and record the result under the request UUID.</p></li><li><p>Register post-commit notifications and return the acknowledgement.</p></li></ol>
+<p>The exact order and replay behavior vary by domain; follow the owning service.
+Uploads and administrative operations do not all use this receipt protocol.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Identity store</th><th scope="col" style="text-align:left">Used by</th><th scope="col" style="text-align:left">Retry behavior</th></tr></thead><tbody><tr><td style="text-align:left"><code>maps.Receipt</code></td><td style="text-align:left">Maps, actors, tokens, items, combat, cards, audio, compendiums</td><td style="text-align:left">Shared <code>(campaign, user, request_id)</code> namespace. Most return the saved result; tokens rebuild visible state and filter saved created IDs.</td></tr><tr><td style="text-align:left"><code>journals.Receipt</code></td><td style="text-align:left">Journal commands</td><td style="text-align:left">Journal-specific result receipts; additional access checks apply to particular results.</td></tr><tr><td style="text-align:left"><code>chat.Message</code> and <code>dice.Submission</code></td><td style="text-align:left">Chat and dice</td><td style="text-align:left">Message identity prevents duplicate delivery records; dice claims prevent rerolling.</td></tr></tbody></table></div>
+<p>Generate a <strong>fresh UUID for each new logical command</strong> and reuse it only to retry
+that same command. In particular, do not reuse a UUID between an actor command and
+an audio command: they share the same receipt table. Receipts do not generally
+compare the retried action or payload with the original one.</p>
+<p>Request identity and resource revision solve different problems. The request UUID
+deduplicates a command; fields such as <code>version</code>, <code>sheetVersion</code> and
+<code>expectedVersion</code> detect a stale editor. A conflict requires refreshed state and an
+explicitly chosen new edit, not blindly changing a version number.</p>
+<p><code>transaction.on_commit()</code> prevents subscribers from being notified of rolled-back
+changes. Dispatch uses robust callbacks and does not provide a durable event queue:
+a committed mutation can survive a delivery failure. Clients should resynchronize
+through state endpoints/subscriptions. Python <code>resource_changed</code> handlers are
+trusted in-process callbacks; they are neither cross-process durable jobs nor an
+untrusted-code sandbox.</p>
+<h2 id="domain-behavior">Domain behavior</h2>
+<h3 id="campaigns-and-accounts">Campaigns and accounts</h3>
+<p>Account services rotate sessions on login, bound expensive password hashing and
+store shared attempt windows under keyed hashes of client IP addresses. Campaign
+services manage covers, hashed invitation/removal codes, redemption limits and
+member removal. Streamer links create a dedicated guest identity with expiration
+and revocation checks. The Inside interface composes these workflows in
+<code>web/inside.py</code>.</p>
+<h3 id="actors-pdf-sheets-and-tokens">Actors, PDF sheets and tokens</h3>
+<p>An <code>Actor</code> is the reusable character source. <code>pdf_system/schema.py</code> normalizes its
+sheet document, including PDF asset references, field values, bars, token settings
+and active effects. Actor metadata and sheet data have separate revision counters.</p>
+<p>A <code>Token</code> places an actor in a scene. Linked tokens use <code>Actor.data</code>; unlinked tokens
+use their own <code>snapshot</code> and <code>sheet_version</code>. The first placement is linked. Placing
+the same actor again converts existing linked placements into snapshots and creates
+another snapshot; duplication also creates an independent snapshot. Sheet saves
+must target the correct source and invalidate affected linked tokens.</p>
+<p>Token movement checks control, locked state, revision, map bounds and, for non-GMs,
+wall intersections. Drag previews are ephemeral coordinates validated by the same
+movement rules. A preview does not save the final position; the persistent <code>move</code>
+command does that. Outgoing previews are filtered again for each recipient and
+discarded when their token version no longer matches.</p>
+<h3 id="maps-and-scene-layers">Maps and scene layers</h3>
+<p>Scene uploads validate the source image and configured byte/dimension/pixel/tile
+limits, then generate a pyramid of lossless WebP tiles. <code>Scene</code> stores raster
+metadata; <code>SceneState</code> stores scene-wide environment documents; <code>SceneObject</code>
+stores typed objects such as walls, lights, images, markers and zones.</p>
+<p><code>maps/objects.py</code> coordinates object commands and layer projections. Specialized
+helpers cover drawings/effects/images, marker ownership and zone geometry. State is
+projected for the recipient: GM-layer images and private drawings are filtered;
+undiscovered secret/invisible barriers lose interactive door presentation. Wall
+geometry is still transmitted when needed for visibility clipping, so do not
+describe the renderer as hiding all GM geometry from the client.</p>
+<p><code>realtime/scene_stream.py</code> validates viewport dimensions and generations, schedules
+tile hints with bounded budgets and rejects stale scene versions. GM viewport
+samples travel through Channels to per-player prefetch brokers. WebSocket messages
+schedule loading; the actual raster bytes remain authenticated HTTP resources.</p>
+<h3 id="journals-and-handouts">Journals and handouts</h3>
+<p>Journals combine type-specific JSON with explicit grants. <code>documents.py</code> validates
+structured content and filters GM blocks; <code>data.py</code> normalizes document shapes;
+<code>types.py</code> handles behavior such as boards and quests. Player edits preserve hidden
+GM content and cannot link arbitrary assets. <code>presentations.py</code> issues and resolves
+recipient-bound handout tickets rather than making the underlying files public.</p>
+<h3 id="chat-and-dice">Chat and dice</h3>
+<p>Chat history combines table-level messages and the selected/current broadcast scene,
+then filters visibility and recipients. Supported message commands include whispers,
+GM messages and emotes. Moderation removes content while retaining message identity
+so a retry cannot recreate removed messages. Card chat attachments capture immutable
+public faces instead of referencing a later-mutated deck.</p>
+<p>Dice use <code>dice/engine.py</code> and the native Python grammar: parse, compile/validate,
+then execute a bounded plan. Compilation consumes no randomness. The persistence
+flow reserves a <code>Submission</code>, evaluates outside the database transaction, rechecks
+authorization, and commits a <code>Message</code> with its result and fixed recipient audience.
+A successful retry retrieves the stored result; an expired/interrupted claim
+requires a new request rather than silently rerolling. The pure <code>api.dice.evaluate</code>
+entry point does not persist or publish anything. See the existing
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/grammar/ARCHITECTURE.md">grammar architecture</a> and
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/grammar/notation/GRAMMAR.md">notation specification</a>.</p>
+<h3 id="items-combat-cards-audio-and-compendiums">Items, combat, cards, audio and compendiums</h3>
+<p>These five domains use <code>table/domain.py</code> for membership, transactions and receipts.
+Their internal <code>state(who, ...)</code> and <code>command(who, ...)</code> helpers expect that boundary;
+external callers use the public wrappers or <code>api.resources</code>.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Domain</th><th scope="col" style="text-align:left">Responsibility and important boundary</th></tr></thead><tbody><tr><td style="text-align:left">Items</td><td style="text-align:left">Versioned item documents with per-user grants. The native PDF implementation currently returns no item types, so ordinary item creation is unavailable until that capability is implemented.</td></tr><tr><td style="text-align:left">Combat</td><td style="text-align:left">A scene&#39;s encounter, initiative, current turn and bounded turn history. Turn order changes preserve combatant identity; progression can advance effects on actor documents.</td></tr><tr><td style="text-align:left">Cards</td><td style="text-align:left">Reusable definitions and mutable deck instances; draw/hand/scene/discard zones, ownership and face visibility. A GM&#39;s control permission does not automatically expose another player&#39;s hidden face.</td></tr><tr><td style="text-align:left">Audio</td><td style="text-align:left">Track uploads, playlists, playback transport and soundtrack scheduling. State projects positions using server time and spatial gain using controlled listener tokens and acoustic walls. HTTP file delivery remains separately authorized.</td></tr><tr><td style="text-align:left">Compendiums</td><td style="text-align:left">Campaign packs and native content catalog access. Portable bundles capture an allowlisted dependency graph and import documents/assets into a compatible campaign system.</td></tr></tbody></table></div>
+<p>The older declarative formula helper in <code>combat/formula_engine.py</code> is distinct from
+the chat dice grammar. Current combat initiative calls <code>dice.engine.evaluate</code>;
+changing one engine does not automatically change the other.</p>
+<p>The bundled PDF System supplies its own combat defaults and initiative evaluator
+through the system registry. Its default formula is <code>1d20 + @initiative</code>, where
+<code>@initiative</code> reads the PDF mapping&#39;s canonical <code>init</code> value. Linked tokens use
+the actor sheet; independent tokens use their snapshot. The combat API supports
+per-scene formulas and rolls before combat starts. The PDF System tracker exposes
+manual numeric initiative, without roll or formula controls. Tokens are added
+through their context menu. Reordering during combat preserves the current
+combatant. Other systems do not inherit these PDF rules. Current and next tokens
+have green and yellow expanding indicators, mirrored in the tracker sidebar.</p>
+<p>Token conditions accept an optional <code>duration: {type: &quot;turns&quot; | &quot;rounds&quot;, value: 1..10000, expires: &quot;start&quot; | &quot;end&quot;}</code>. The server initializes <code>remaining</code>;
+turn clocks follow the affected token, and round clocks follow encounter round
+boundaries. Only participating tokens in that scene advance. Expired conditions
+are removed; permanent conditions remain. Backward navigation and stopping combat
+do not change clocks. Retry receipts prevent duplicate ticking. Both condition
+layouts show remaining time and expiry phase in their tooltips.</p>
+<p>The native compendium directory filters its metadata locally by name, document
+kind and collection. Previews fetch only the selected authorized entry and display
+plain text in the shared modal. GMs can import from the entry, preview, or by
+dragging to the matching document directory. Drag payloads carry campaign, pack,
+entry and kind; the receiver verifies them against its visible catalog before
+using the existing authorized import command. Players can preview readable packs
+but cannot import. Imports retain the existing archive and dependency handling.</p>
+<h2 id="archives-and-host-administration">Archives and host administration</h2>
+<p><code>administration/archives.py</code> explicitly allowlists native content models. Exports
+include a content document, checksummed manifest and optional files. Portable exports
+remove user-specific permissions and omit chat; snapshots additionally include
+access/chat records for restoration. New-campaign imports and merges remap resource
+identifiers and file paths. Restoration into the same campaign preserves resource
+identifiers and replaces native content while retaining members, codes and snapshot
+history. These archives are not complete host backups: accounts, sessions, host
+settings and installed packages are separate operational state.</p>
+<p>Import validates paths, archive size, expanded size, model/field allowlists and
+checksums before creating content. Adding a model or file relationship requires
+reviewing the archive selection, dependency graph and import rules, not only the
+model definition.</p>
+<p><code>administration/updates.py</code> discovers configured source release metadata and caches
+status. <code>administration/automatic_updates.py</code> hands owner-requested updates to
+<code>scripts/update_supervisor.py</code>, which replaces project files and manages backup,
+migration, restart and recovery. The same supervisor activates marketplace Django
+apps in isolated Python environments. Host preferences and audit
+records are separate models; feature toggles come from configuration. See
+<a href="deployment.html">Deployment</a> and <a href="development.html">Development</a> before extending
+these workflows.</p></div></article><nav class="kb-pagination" aria-label="Continue reading"><a href="getting-started.html"><span>Previous ←</span><strong>Getting started</strong></a><a href="code-map.html"><span>Next →</span><strong>Code map</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-debug-bug.html">How to use AI to investigate a bug</a><a href="ai-contribute-core.html">How to use AI to contribute to the core</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/architecture.md">docs/en/architecture.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/architecture.md">docs/pt-BR/architecture.md</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#runtime-boundaries">Runtime boundaries</a></li><li><a href="#identity-and-authorization">Identity and authorization</a></li><li><a href="#commands-retries-and-revisions">Commands, retries and revisions</a></li><li><a href="#domain-behavior">Domain behavior</a></li><li><a href="#archives-and-host-administration">Archives and host administration</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

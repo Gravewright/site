@@ -1,0 +1,348 @@
+{
+  "sourceRevision": "23ea61b8efb566cad0e3359489b0dad45e214906",
+  "version": "0.3.0",
+  "articles": [
+    {
+      "slug": "getting-started",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/getting-started.md",
+        "docs/pt-BR/getting-started.md"
+      ],
+      "en": {
+        "title": "Getting started",
+        "summary": "Installation, prerequisites, first launch and source checkout setup.",
+        "file": "content/reference/en/getting-started.md"
+      },
+      "pt": {
+        "title": "Primeiros passos",
+        "summary": "Instalação, pré-requisitos, primeira execução e preparação do código-fonte.",
+        "file": "content/reference/pt/getting-started.md"
+      }
+    },
+    {
+      "slug": "architecture",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/architecture.md",
+        "docs/pt-BR/architecture.md"
+      ],
+      "en": {
+        "title": "Architecture",
+        "summary": "Runtime boundaries, domain services, permissions and persistence.",
+        "file": "content/reference/en/architecture.md"
+      },
+      "pt": {
+        "title": "Arquitetura",
+        "summary": "Camadas de execução, serviços de domínio, permissões e persistência.",
+        "file": "content/reference/pt/architecture.md"
+      }
+    },
+    {
+      "slug": "code-map",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/code-map.md",
+        "docs/pt-BR/code-map.md"
+      ],
+      "en": {
+        "title": "Code map",
+        "summary": "Find the files and domain responsible for each application workflow.",
+        "file": "content/reference/en/code-map.md"
+      },
+      "pt": {
+        "title": "Mapa do código",
+        "summary": "Encontre os arquivos e o domínio responsáveis por cada fluxo da aplicação.",
+        "file": "content/reference/pt/code-map.md"
+      }
+    },
+    {
+      "slug": "development",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/development.md",
+        "docs/pt-BR/development.md"
+      ],
+      "en": {
+        "title": "Development",
+        "summary": "Development workflow, migrations, generated contracts and release preparation.",
+        "file": "content/reference/en/development.md"
+      },
+      "pt": {
+        "title": "Desenvolvimento",
+        "summary": "Fluxo de desenvolvimento, migrações, contratos gerados e preparação de releases.",
+        "file": "content/reference/pt/development.md"
+      }
+    },
+    {
+      "slug": "api",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/api.md",
+        "docs/pt-BR/api.md"
+      ],
+      "en": {
+        "title": "Public API reference",
+        "summary": "Python API, browser domain API, SDK operations, payloads and error contracts.",
+        "file": "content/reference/en/api.md"
+      },
+      "pt": {
+        "title": "Referência da API pública",
+        "summary": "API Python, API de domínio do navegador, operações do SDK, payloads e erros.",
+        "file": "content/reference/pt/api.md"
+      }
+    },
+    {
+      "slug": "modules",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/modules.md",
+        "docs/pt-BR/modules.md"
+      ],
+      "en": {
+        "title": "Systems and modules",
+        "summary": "Installable packages, system declarations, browser lifecycle, signing and SDK contracts.",
+        "file": "content/reference/en/modules.md"
+      },
+      "pt": {
+        "title": "Sistemas e módulos",
+        "summary": "Pacotes instaláveis, declaração de sistemas, ciclo do navegador, assinatura e contratos do SDK.",
+        "file": "content/reference/pt/modules.md"
+      }
+    },
+    {
+      "slug": "frontend",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/frontend.md",
+        "docs/pt-BR/frontend.md"
+      ],
+      "en": {
+        "title": "Frontend architecture",
+        "summary": "Jinja2, Datastar, native JavaScript, PixiJS, styles and asset preparation.",
+        "file": "content/reference/en/frontend.md"
+      },
+      "pt": {
+        "title": "Arquitetura do frontend",
+        "summary": "Jinja2, Datastar, JavaScript nativo, PixiJS, estilos e preparação de assets.",
+        "file": "content/reference/pt/frontend.md"
+      }
+    },
+    {
+      "slug": "testing",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/testing.md",
+        "docs/pt-BR/testing.md"
+      ],
+      "en": {
+        "title": "Testing",
+        "summary": "Django, node:test, Playwright and native validation with disposable data.",
+        "file": "content/reference/en/testing.md"
+      },
+      "pt": {
+        "title": "Testes",
+        "summary": "Django, node:test, Playwright e validação nativa com dados descartáveis.",
+        "file": "content/reference/pt/testing.md"
+      }
+    },
+    {
+      "slug": "configuration",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/configuration.md",
+        "docs/pt-BR/configuration.md"
+      ],
+      "en": {
+        "title": "Configuration",
+        "summary": "Installation-local configuration, execution profiles and environment settings.",
+        "file": "content/reference/en/configuration.md"
+      },
+      "pt": {
+        "title": "Configuração",
+        "summary": "Configuração local à instalação, perfis de execução e variáveis de ambiente.",
+        "file": "content/reference/pt/configuration.md"
+      }
+    },
+    {
+      "slug": "deployment",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/deployment.md",
+        "docs/pt-BR/deployment.md"
+      ],
+      "en": {
+        "title": "Deployment",
+        "summary": "Hosting, security, reverse proxies, backups and operational recovery.",
+        "file": "content/reference/en/deployment.md"
+      },
+      "pt": {
+        "title": "Implantação",
+        "summary": "Hospedagem, segurança, proxies reversos, backups e recuperação operacional.",
+        "file": "content/reference/pt/deployment.md"
+      }
+    },
+    {
+      "slug": "windows-runner",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/windows-runner.md",
+        "docs/pt-BR/windows-runner.md"
+      ],
+      "en": {
+        "title": "Windows installer and Runner",
+        "summary": "Native Windows preparation, portable tools, startup and recovery.",
+        "file": "content/reference/en/windows-runner.md"
+      },
+      "pt": {
+        "title": "Instalador e Runner no Windows",
+        "summary": "Preparação nativa no Windows, ferramentas portáteis, execução e recuperação.",
+        "file": "content/reference/pt/windows-runner.md"
+      }
+    },
+    {
+      "slug": "linux-runner",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/linux-runner.md",
+        "docs/pt-BR/linux-runner.md"
+      ],
+      "en": {
+        "title": "Linux installer and Runner",
+        "summary": "Native Linux preparation, portable tools, dependencies and platform limits.",
+        "file": "content/reference/en/linux-runner.md"
+      },
+      "pt": {
+        "title": "Instalador e Runner no Linux",
+        "summary": "Preparação nativa no Linux, ferramentas portáteis, dependências e limites da plataforma.",
+        "file": "content/reference/pt/linux-runner.md"
+      }
+    },
+    {
+      "slug": "macos-runner",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/macos-runner.md",
+        "docs/pt-BR/macos-runner.md"
+      ],
+      "en": {
+        "title": "macOS installer and Runner",
+        "summary": "Native macOS preparation, portable tools, startup and platform support.",
+        "file": "content/reference/en/macos-runner.md"
+      },
+      "pt": {
+        "title": "Instalador e Runner no macOS",
+        "summary": "Preparação nativa no macOS, ferramentas portáteis, execução e plataformas suportadas.",
+        "file": "content/reference/pt/macos-runner.md"
+      }
+    },
+    {
+      "slug": "map-builder",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/map-builder.md",
+        "docs/pt-BR/map-builder.md"
+      ],
+      "en": {
+        "title": "Map Builder reference",
+        "summary": "Builder workflows, Smart Objects, automation, supported limits and developer contracts.",
+        "file": "content/reference/en/map-builder.md"
+      },
+      "pt": {
+        "title": "Referência do Map Builder",
+        "summary": "Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento.",
+        "file": "content/reference/pt/map-builder.md"
+      }
+    },
+    {
+      "slug": "universal-vtt",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/universal-vtt.md",
+        "docs/pt-BR/universal-vtt.md"
+      ],
+      "en": {
+        "title": "Universal VTT import and export",
+        "summary": "Import/export workflows, coordinates, limits and authorization.",
+        "file": "content/reference/en/universal-vtt.md"
+      },
+      "pt": {
+        "title": "Importação e exportação Universal VTT",
+        "summary": "Fluxos de importação e exportação, coordenadas, limites e autorização.",
+        "file": "content/reference/pt/universal-vtt.md"
+      }
+    },
+    {
+      "slug": "user-guide",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/user-guide.md",
+        "docs/pt-BR/user-guide.md"
+      ],
+      "en": {
+        "title": "Application workflow reference",
+        "summary": "Complete project guide to campaign preparation and tabletop tools.",
+        "file": "content/reference/en/user-guide.md"
+      },
+      "pt": {
+        "title": "Referência dos fluxos da aplicação",
+        "summary": "Guia completo do projeto para preparar campanhas e usar as ferramentas da mesa.",
+        "file": "content/reference/pt/user-guide.md"
+      }
+    },
+    {
+      "slug": "ethical-module-porting",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/ethical-module-porting.md",
+        "docs/pt-BR/ethical-module-porting.md"
+      ],
+      "en": {
+        "title": "Ethical module porting",
+        "summary": "Licenses, content rights and mapping an integration to the owning domains.",
+        "file": "content/reference/en/ethical-module-porting.md"
+      },
+      "pt": {
+        "title": "Portabilidade ética de módulos",
+        "summary": "Licenças, direitos sobre conteúdo e integração com os domínios responsáveis.",
+        "file": "content/reference/pt/ethical-module-porting.md"
+      }
+    },
+    {
+      "slug": "contributing",
+      "group": "reference",
+      "sourcePaths": [
+        "CONTRIBUTING.md",
+        "CONTRIBUTING.pt-BR.md"
+      ],
+      "en": {
+        "title": "Contributing",
+        "summary": "Contribution conventions, licensing, review and validation requirements.",
+        "file": "content/reference/en/contributing.md"
+      },
+      "pt": {
+        "title": "Contribuição",
+        "summary": "Convenções de contribuição, licenciamento, revisão e validação.",
+        "file": "content/reference/pt/contributing.md"
+      }
+    },
+    {
+      "slug": "licensing",
+      "group": "reference",
+      "sourcePaths": [
+        "LICENSING.md",
+        "LICENSING.pt-BR.md"
+      ],
+      "en": {
+        "title": "Licensing",
+        "summary": "Project licensing, independent module permission and third-party obligations.",
+        "file": "content/reference/en/licensing.md"
+      },
+      "pt": {
+        "title": "Licenciamento",
+        "summary": "Licenciamento do projeto, permissão para módulos independentes e obrigações de terceiros.",
+        "file": "content/reference/pt/licensing.md"
+      }
+    }
+  ]
+}

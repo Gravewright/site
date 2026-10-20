@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Frontend architecture | Gravewright</title><meta name="description" content="Jinja2, Datastar, native JavaScript, PixiJS, styles and asset preparation."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/frontend.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/frontend.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/frontend.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/frontend.html"><meta property="og:type" content="article"><meta property="og:title" content="Frontend architecture | Gravewright"><meta property="og:description" content="Jinja2, Datastar, native JavaScript, PixiJS, styles and asset preparation."><meta property="og:url" content="https://gravewright.com/docs/en/frontend.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Frontend architecture","description":"Jinja2, Datastar, native JavaScript, PixiJS, styles and asset preparation.","inLanguage":"en","url":"https://gravewright.com/docs/en/frontend.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/frontend.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html" aria-current="page">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>Frontend architecture</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Project reference <span aria-hidden="true">/</span> 38 min read</span><h1>Frontend architecture</h1><p class="kb-lead">Jinja2, Datastar, native JavaScript, PixiJS, styles and asset preparation.</p></header><div class="kb-prose"><p><a href="index.html">Documentation index</a> · <a href="../pt-BR/frontend.html">Português</a> · <a href="api.html">API reference</a></p>
+<p>The application renders Jinja2 HTML on the server, uses Datastar for reactive signals and fragment updates, and runs JavaScript controllers for interactive workspaces. The game board uses PixiJS and a separate source/build pipeline. There is no single application-wide SPA build step.</p>
+<h2 id="follow-a-page-from-its-template">Follow a page from its template</h2>
+<p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/web/jinja2/gravewright_web/base.html"><code>base.html</code></a> loads the shared stylesheet, vendored Datastar, and <code>gravewright_modules/frontend-api.js</code>, which creates <code>window.gravewright</code>. The <code>/inside</code> workspace and game table extend that shell. <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/jinja2/gravewright_table/page.html"><code>table/page.html</code></a> composes feature templates and loads table, map, journal, actor, dice and module controllers.</p>
+<p>Useful areas to inspect:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Location</th><th scope="col" style="text-align:left">Purpose</th></tr></thead><tbody><tr><td style="text-align:left"><code>gravewright/web/jinja2/</code></td><td style="text-align:left">Shared shell, Inside pages and reusable HTML</td></tr><tr><td style="text-align:left"><code>gravewright/accounts/jinja2/</code></td><td style="text-align:left">Authentication and initial account setup templates</td></tr><tr><td style="text-align:left"><code>gravewright/web/static/gravewright_web/css/</code></td><td style="text-align:left">Design tokens, base styles and component classes</td></tr><tr><td style="text-align:left"><code>gravewright/web/static/gravewright_web/inside/</code></td><td style="text-align:left">Inside account/campaign/admin controllers and styles</td></tr><tr><td style="text-align:left"><code>gravewright/web/static/gravewright_web/windows.js</code></td><td style="text-align:left">Movable/resizable window behavior</td></tr><tr><td style="text-align:left"><code>gravewright/table/static/gravewright_table/realtime.js</code></td><td style="text-align:left">Socket connection, subscriptions, authenticated fragments and event dispatch</td></tr><tr><td style="text-align:left"><code>gravewright/modules/static/gravewright_modules/</code></td><td style="text-align:left">Public browser API, signed-module runtime, transport and lifecycle</td></tr><tr><td style="text-align:left"><code>gravewright/maps/frontend/</code></td><td style="text-align:left">Editable board, wall, token, lighting, selection and tool sources</td></tr><tr><td style="text-align:left"><code>gravewright/maps/static/gravewright_maps/workspace.js</code></td><td style="text-align:left">Native map workspace integration</td></tr><tr><td style="text-align:left"><code>gravewright/pdf_system/frontend/</code></td><td style="text-align:left">Editable PDF mapping/controller sources</td></tr><tr><td style="text-align:left">App-specific <code>jinja2/</code>, <code>static/</code>, and <code>messages.json</code></td><td style="text-align:left">Domain UI, styling and text catalogs</td></tr></tbody></table></div>
+<p>Templates carry IDs and <code>data-*</code> attributes that native controllers and extension surfaces depend on. Changing one may affect the corresponding controller, Datastar signals, and module attachment. Check all three before renaming selectors or replacing an entire panel.</p>
+<h3 id="map-builder-workspace">Map Builder workspace</h3>
+<p><code>GET /game/&lt;campaign_id&gt;/map-builder</code> renders
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/jinja2/gravewright_maps/builder.html"><code>maps/builder.html</code></a>
+through <code>maps/builder.py</code>. It checks current GM membership and validates the
+optional <code>folder</code> query against that campaign. The new-scene chooser performs
+normal same-tab navigation; the builder uses the base shell with its own
+<code>static/gravewright_maps/builder/</code> controllers, without mounting table runtime,
+scene subscriptions or the table workspace. Native effects use the dedicated
+preview described below.</p>
+<p>The table&#39;s scene directory reads the optional <code>builderProjectId</code> from the GM
+projection of <code>maps.services.state()</code>. It is resolved in one campaign-scoped ID
+query from the project&#39;s current scene link; non-GM projections do not include
+it. Linked scenes keep the same compact row and map icon, colored with <code>--danger</code>,
+and add <strong>Edit with MapBuilder</strong> beside the normal edit action in the context
+menu. Shift+F10 or the context-menu key opens the menu from a focused scene.
+Menus render in the directory&#39;s document, including detached windows; the edit
+action opens the editor in the main game tab. The project endpoint
+rechecks GM membership and campaign ownership on load.</p>
+<p><code>native-effects.js</code> is a builder adapter to the same light, particle and shader
+catalogs as the tabletop. Its small eager <code>builder-catalog.js</code> bundle supplies
+presets without starting WebGL; <code>builder-native.js</code> loads lazily for visible
+sources. The editable entries are <code>frontend/native/builder-catalog.js</code> and
+<code>frontend/native/builder-preview.js</code>. The latter reuses <code>PixiBoardRenderer</code> and
+<code>SceneLayers</code> on a transparent overlay synchronized to the SVG camera and wall
+geometry. Hidden/empty layers, page hiding and disposal release rendering and
+animation resources. Native effects remain separate from the generated raster.</p>
+<p><code>frontend/native/builder-editors.js</code> hosts the same <code>LightEditor</code> and
+<code>EffectEditor</code> widgets used by the game against a detached builder draft. Its
+<code>builder-editor-model.js</code> adapter maps the builder&#39;s light radius names and
+resolves compact preset references for GLSL editing without expanding an
+unchanged source. Transactional widget footers are enabled only in this host;
+the game&#39;s existing autosave behavior remains available to its normal host.
+Draft validation and preview never call scene commands. Saving returns one
+candidate to <code>workspace.js</code>, which checks editability and commits one project
+history step. Cancel/close disposes preview timers, shader validation and any
+nested prompt, preserving the project and live scene.</p>
+<p><code>static/gravewright_maps/wall-editor.js</code> and the <code>wall_editor.html</code> template
+share the wall configuration window with the table&#39;s wall controller.
+Its builder host writes optional native presentation, channel, elevation and
+discovery settings to the source wall/door. Door and lever Smart Object behavior
+windows remain separate from physical wall configuration.</p>
+<p><code>builder/torch-model.js</code> binds a decoration to native light/effect source rows.
+Mechanism state and flame illumination are independent; preview projects the
+mechanism&#39;s quarter turn and gates enabled components without rewriting source
+coordinates. <code>model.js</code> expands composed selections once for transforms and
+duplication, while <code>object-removal.js</code> reconciles ownership and Blueprint light
+references atomically. Component editor buttons reuse <code>builder-editors.js</code> and
+retain the selected parent. On the table, <code>lever-controls.js</code> hosts both lever
+and torch interactions, and <code>image-components.js</code> projects linked render nodes
+through image/selection previews without recreating GPU resources. The domain&#39;s
+<code>torches.py</code> validates scene-local ownership, applies authoritative transforms
+and flame gating, and keeps native group operations within map transactions.</p>
+<p>Entry is read-only. The Studio&#39;s <code>workspace.js</code> composes the editor controllers,
+navigation and drawing gestures. Its directly served sibling modules own these
+boundaries:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Module under <code>static/gravewright_maps/builder/</code></th><th scope="col" style="text-align:left">Responsibility</th></tr></thead><tbody><tr><td style="text-align:left"><code>project-persistence.js</code></td><td style="text-align:left">Draft recovery/storage, HTTP/CSRF, receipt identities and the save queue</td></tr><tr><td style="text-align:left"><code>workspace-library.js</code></td><td style="text-align:left">Campaign asset catalog, brush choices and material controls</td></tr><tr><td style="text-align:left"><code>workspace-import.js</code></td><td style="text-align:left">Asset import/edit modals and their listener lifetime</td></tr><tr><td style="text-align:left"><code>inspector-controller.js</code></td><td style="text-align:left">Selection properties and region/torch configuration</td></tr><tr><td style="text-align:left"><code>layer-controller.js</code></td><td style="text-align:left">Layer controls, contents, selection and drag listeners</td></tr><tr><td style="text-align:left"><code>canvas-renderer.js</code></td><td style="text-align:left">SVG artwork, selection overlays and disposable terrain/wall caches</td></tr></tbody></table></div>
+<p>Controllers receive explicit state and callbacks rather than importing the
+workspace or sharing globals. Persistence tests import its public factory;
+they do not extract function text from <code>workspace.js</code>. A disposed save owner
+cannot write a late acknowledgement over a recovered draft.
+<code>model.js</code> owns cell-space geometry and undo history, and <code>viewport.js</code> owns the
+independent SVG camera. Camera listeners, pointer capture,
+requests and resize observation end on <code>pagehide</code>; history restoration remounts
+the editor. <code>builder_services.py</code> owns campaign-scoped project revisions, retry
+receipts, validation, scene generation and updates. See <a href="map-builder.html">Map Builder</a> for
+the source schema, native geometry and raster boundaries.</p>
+<p><code>newDocument()</code> creates one empty, generically named layer with a fresh UUID;
+the controller localizes its initial <strong>Layer 1</strong> name. It creates no layers by
+object type. Schema-3 normalization preserves authored layers, including an
+empty layer list after removing the final empty layer. The server accepts that
+list only with no objects, and empty-map generation renders just the background.
+Version-1/2 upgrades retain their existing Base-layer conversion.</p>
+<p>All element kinds accept an authored <code>name</code> of up to 120 characters. Optional
+names stay omitted on unnamed legacy rows; regions and shaders retain their
+required names. The inspector supplies the existing Empty Object label for
+older unnamed controllers. <code>element_names.py</code> validates type, whitespace,
+length and NUL at the server boundary. Native edits, scene generation and linked
+updates preserve labels without replacing UUIDs or Blueprint targets. Static
+floor artwork remains baked; a dynamic surface carries its source name on the
+native image. The Selection inspector owns one name field per selected element,
+and layers, behavior catalogs and light/door choices prefer authored labels.</p>
+<p>The library&#39;s persistent tool strip exposes its additional controls through
+<code>data-builder-dock-tool</code>; existing panel tool selectors remain distinct. Tool
+changes flush the focused property before returning focus to the canvas. The
+strip scrolls independently on narrow screens and keeps a stable layout when
+the native light/effect library replaces the asset cards.</p>
+<p>The header mode selector honors optional <code>editingMode: &quot;tiles&quot; | &quot;paint&quot;</code>;
+omission defaults to Tiles without changing the source. Tiles and terrain
+Painting share layers, native objects, camera and project history. Existing
+<code>floor.paint</code> color/opacity still renders independently through SVG and the
+raster, multiplying shape coverage, texture alpha and opacity. Selecting the
+new terrain brush does not reinterpret those earlier styles or convert existing
+geometry. Floors retain their layer and transform contracts.
+SVG and Pillow use different antialiasing at coincident contour/cut boundaries;
+pixel comparisons keep interiors exact and isolate that subpixel boundary band.</p>
+<p><code>floor-painter.js</code> owns transient floor gestures and commits one complete edit.
+<code>model.js</code> supplies swept brush footprints, family-aware flood fill, material
+sampling and atomic floor subtraction. <code>floor-geometry.js</code> supplies continuous
+contours and excluded cuts when snapping is disabled, along with shape-aware hit
+testing and source/raster budgets. The server validates the same optional floor
+shape contract and rasterizes its union-minus-cuts mask with bounded antialiasing.
+Preview fragments retain stable UUIDs;
+no-op strokes do not consume undo steps. <code>layer-model.js</code> counts layer contents
+and moves or merges them while preserving object identities and paint order.
+Layer duplication reuses atomic object duplication with an exact one-cell
+offset on both axes, new IDs and remapped internal Smart Object references.
+Bounds, global door overlap and project limits can reject the entire copy.
+Isolation is an editor filter; project visibility and native generation retain
+their existing semantics. Drawing controls belong to the auxiliary panel&#39;s
+<strong>Tools</strong> tab, leaving the canvas space available when the panel is closed.</p>
+<p>The <strong>Panels</strong> launcher opens the drawer&#39;s six linked tabs in a three-column
+grid. Each tab retains its own scroll position; the heading and tabs stay visible
+above the scrolling content. Arrow keys, Home and End navigate the tabs, while
+closing the drawer returns focus to its opener. Active brush settings precede
+the compact tool palette, and detailed brush help is a separate disclosure.
+Panel navigation and scrolling do not change the saved project or its history.</p>
+<p>Tiles repainting compares the topmost floor material before replacing coverage.
+An unchanged cell or completely matching free stroke retains its source rows
+without rerolling eligible family variants or adding history. Coverage accounts
+for the union of several floors and their cuts; another material above them
+blocks a match. Snapped gestures filter matching cells independently. Mixed free
+gestures replace their complete footprint, keeping geometry outside it. Coverage
+proofs have a bounded geometry work budget and reject atomically when it is
+exceeded. Terrain Painting uses its own radial brush representation rather than
+the earlier flat <code>floor.paint</code> opacity composition.</p>
+<h3 id="map-builder-terrain-painting">Map Builder terrain painting</h3>
+<p><code>terrain-painter.js</code> owns a transient circular gesture, distance-spaced dabs and
+50 ms stationary accumulation. It commits one <code>floor.brush</code> row per completed
+gesture and clears its timer on cancel, completion and disposal. The workspace
+owns pointer capture, shared brush size, mode controls, history and rendering;
+switching tools or modes cancels an active stroke. Tiles continues using
+<code>floor-painter.js</code> and its existing no-op and replacement semantics.</p>
+<p><code>terrain-brush.js</code> and <code>maps/terrain_brush.py</code> evaluate the same radial kernel at
+absolute raster pixel centers. Hardness defines an inner plateau with linear
+falloff to the radius; dab alpha accumulates with bounded integer source-over
+rounding. The source stores local normalized points, horizontal/vertical radii,
+hardness and paint/erase operation in the floor box. Texture sampling retains
+the existing map-space phase and rotation, while the brush supplies coverage.</p>
+<p>An erase row applies destination-out only to earlier floors on its own layer.
+SVG nests the accumulated layer under its mask; Pillow keeps a separate RGBA
+surface for that layer. Later paint is outside the earlier eraser&#39;s scope.
+Merging an upper layer with erasers into a lower layer containing floors is
+refused, retaining that isolation.
+<code>terrain-render.js</code> caches disposable alpha-mask images by source signature and
+releases them on pruning/disposal; they are not campaign image assets. Limits
+bound dabs per stroke/document and the actual per-dab pixel work before raster
+allocation, and reject an oversized operation atomically.</p>
+<p>The <a href="https://megasploot.github.io/DungeondraftModdingAPI/reference/TerrainBrush/">Dungeondraft TerrainBrush reference</a>
+and <a href="https://megasploot.github.io/DungeondraftModdingAPI/reference/Terrain/">Terrain reference</a>
+informed the separation between brush size/intensity and the terrain surface.
+Gravewright implements and persists its own radial brush contract.</p>
+<p>Shift and a left-button drag resize the floor brush using horizontal screen
+distance (40 pixels per cell). The anchored live guide follows Tiles snapping
+or the continuous terrain radius. Completion updates only editor preferences;
+Escape restores the previous size without a source/history write.</p>
+<p><code>builder/region-model.js</code> authors named rectangles in cells and the explicit
+door pressure-plate preset. Regions share selection, layers, duplication and
+project undo, but are absent from the raster and player preview. <code>regions.py</code>
+derives private occupancy from validated token commands in their transaction;
+<code>zones.py</code> establishes a silent baseline for authored edits. The native
+<code>features/regions</code> modal displays GM state/count and edits zone settings.</p>
+<p><code>blueprint-editor.js</code> edits a door, lever, torch or region&#39;s private draft through the shared <code>mountModal</code>
+helper; <code>blueprint-model.js</code> validates connections and simulates the selected
+event locally. The editor is native DOM/SVG without a graph library: nodes stay
+focusable elements on a translated and scaled plane, and native scrolling caused
+by focus is folded into that camera. Its own undo history covers only the open
+draft and ends with the modal. Saving applies one undo operation to the project. Generated doors
+keep the native <code>door_state</code>, while lever images keep <code>lever.state</code>;
+<code>blueprint_runtime.py</code> executes effects inside the
+existing map command transaction and receipt, which also records a GM-only
+run for <code>automation-log.js</code>, the table&#39;s Automation window. Lights and sounds use their current
+domains and realtime transport. Audience projections include only the active
+appearance, keeping graphs and inactive images private to the GM.</p>
+<p><code>blueprint-templates.js</code> captures campaign-owned reusable snapshots, replacing
+only typed resource fields with bindings and exposing allowlisted scalar
+parameters. Applying a resolved copy is one draft undo operation; it creates
+no live dependency on the template. <code>scene-network.js</code> derives relationships
+from these same element-owned graphs, renders at most 40 cards per page and
+opens their existing editor. <code>blueprint_network.py</code> saves native rules with
+object/project revisions and a payload-bound receipt, atomically translating
+owned references back to the Builder source. The overview never executes rules.</p>
+<p><code>builder_dynamic.py</code> promotes explicitly marked floors/walls to masked native
+image planes, leaving ordinary maps baked. Ordered paint/erase groups preserve
+floor alpha; <code>surface-material.js</code> samples replacement materials in the original
+texture frame and <code>surface-group.js</code> composes them on invalidation, outside the
+frame loop. Generated images belong to their scene and stay outside the asset
+library. Visibility and material actions mutate runtime state without creating
+files. Limits bound promoted surfaces, generated pixels, bytes and cache work.
+Preparation serializes dynamic/base raster work and releases each PNG buffer
+after storing an operation-owned artifact, before opening the write transaction.
+Repeated wall-material actions share a bounded request-local crop cache.
+Archive import validates the new surface metadata, aggregate buffer budgets and
+scene ownership of generated artwork/masks. Asset delivery enforces that ownership
+again for non-GM viewers; the renderer budgets all group buffers before allocation.</p>
+<p><code>blueprint_world.py</code> validates presentation audiences and same-scene transport
+inside the existing command transaction. Recipient-filtered
+<code>automation.presentation</code> events are sent after commit and rechecked at delivery.
+<code>automation-presentation.js</code> displays authored text with <code>textContent</code>, opens the
+native journal window and deduplicates recent event IDs. Camera focus applies
+only to the viewed scene and requires a per-profile/device preference, off by
+default. Teleport uses the original authenticated trigger token, validates a
+free whole-token footprint inside the destination region and queues arrival
+presence after the current object cache is persisted. A durable arrival gate
+prevents return loops until the token leaves the region; scene navigation and
+party membership are unchanged.</p>
+<p>Blueprint V2 <code>all</code>/<code>any</code> are pure Boolean values with inputs <code>a</code>–<code>d</code> and <code>result</code>.
+Connected inputs evaluate in fixed order without short circuit; fewer than two
+returns False. Shared nodes are memoized only within the current event. Both
+Python and JavaScript enforce Boolean wires, one source per input and graph
+cycle/size limits. The palette groups the nodes under Logic, and the card shows
+connected-input count; simulation and the GM log display evaluated results.</p>
+<p>Blueprint V2 <code>elementGroup</code> is a pure typed ordered set: <code>name</code> (1–80 characters),
+<code>memberType</code> (<code>element</code>, <code>light</code>, <code>sound</code>) and 1–32 unique UUID <code>targetIds</code>.
+Its <code>targets</code> output becomes <code>elementset</code>, <code>lightset</code> or <code>soundset</code>.
+<code>lightReference.targetId</code> outputs <code>light: light</code>; <code>soundReference.trackId</code> outputs
+<code>sound: sound</code>. Legacy <code>reference</code> retains its <code>door: element</code> output ID and also
+addresses ordinary live images, whose state is null. Baked walls/floors remain
+outside this contract. <code>acceptsDataType(port, type)</code> handles <code>acceptedTypes</code> on
+Target ports: element actions accept an element/set, light and sound actions
+their corresponding resource/set, transforms an element/light or either set.
+Get property remains single-element. A connected Target overrides the legacy
+resource binding or Self; stale UUIDs stay connected and are skipped/logged,
+never silently redirected. Group order is explicit and each expanded action
+counts against the existing action budget.</p>
+<p><code>move</code> stores finite <code>dx</code>/<code>dy</code> offsets in cells, each bounded by ±1,000; <code>rotate</code>
+stores finite relative <code>degrees</code> bounded by ±36,000. <code>blueprint_actions.py</code> uses
+native image, door, light and region validators inside the command transaction.
+Rotation uses each target&#39;s own center, and presence rectangles require multiples
+of 90 degrees. Linked torch components follow the image. Authorized transforms
+acknowledge owned geometry without changing the source; scene update reapplies
+authored transforms, preserving conflict protection for unrelated manual edits.
+<code>setInteraction.enabled</code> and <code>setRegion.enabled</code> are strict Booleans. The former
+gates direct player requests and pointer/keyboard/torch-flame controls while GMs
+retain manual override; it does not gate authored automation. The public native
+projection carries <code>interactionEnabled</code>; omitted authored flags retain the enabled
+default. Runtime interaction flags survive update while their authored defaults
+are unchanged; an explicit authored change wins. Runtime region enabled state
+is preserved while source enabled/layer settings stay unchanged; authored changes
+win and quietly baseline occupancy. Native copies and campaign archives retain
+configuration; UUID remapping touches typed references/group members, not authored
+scalar strings. Deleting a legacy resource action bridges only execution edges;
+data wires never become execution wires, and stale new refs/groups remain inert.</p>
+<p>Archive import uses <code>remap_omitted_bindings</code> for new sound references/sound-group
+members and presence-filter actor/token IDs when their records are omitted.
+A model/UUID lookup allocates one fresh inert UUID per missing identity and reuses
+it in project documents, native data and generation manifests. Imported links
+remain inert until replacement resources are chosen; names, event/group labels and authored scalar
+text are preserved, including text that happens to resemble a UUID.</p>
+<p><code>eventContext.property</code> selects a readonly typed <code>value</code>. Text properties are
+<code>event</code>, <code>sourceId</code>, <code>userId</code>, <code>userName</code>, <code>tokenId</code>, <code>actorId</code> and <code>presence</code>;
+<code>count</code> is an integer from 0 to 1,000,000, <code>hasToken</code> is Boolean, and <code>state</code>/
+<code>previous</code> carry State. <code>blueprint_context.py</code> builds original trigger metadata
+from authenticated users and validated region/token objects. Signals and durable
+jobs preserve it. Event/state/previous are always set by the evaluator for the
+current graph snapshot; Delay keeps its saved snapshot, while Timer takes fresh
+event state with the original trigger metadata. Missing token/actor IDs are empty,
+count defaults to zero and hasToken derives from token presence. Arbitrary
+payload/role fields are rejected. The optional <code>context.eventContext</code> simulation
+fixture is private preview data and cannot write server identity or trigger effects.</p>
+<p>Presence filters live in optional source <code>region.filters</code> and native
+<code>zone.region.filters</code>: <code>tokenIds</code>/<code>actorIds</code> (up to 64 unique UUIDs each),
+<code>dispositions</code> (<code>friendly</code>, <code>neutral</code>, <code>hostile</code>, <code>unknown</code>) and <code>visibility</code>
+(<code>any</code>, <code>visible</code>, <code>hidden</code>). Lists are OR and criteria are AND; empty lists do
+not restrict. Hidden state is the token flag, independent of ownership or vision.
+The pure shared <code>static/gravewright_maps/region-filters.js</code> is re-exported by the
+Builder and native region models. <code>normalizeRegionFilters</code> fills editor defaults
+without mutating source; omitted filters remain omitted in legacy documents.
+Server <code>regions.py</code> validates identity ownership and computes occupancy/events
+from accepted token commands. Configuration or runtime region enable/transform
+changes quietly baseline occupancy, suppressing synthetic presence events.
+Disabling presence does not cancel unrelated named signals or scheduled work.
+The native editor uses the current scene token catalog and a cancellable GM
+actor-catalog request, discarding late work on close. Filter configuration and
+occupant identities remain private.</p>
+<p>Blueprint V2 also implements <code>getVariable</code>, <code>setVariable</code>, <code>compareValue</code> and
+<code>emitEvent</code>. Variable nodes store <code>scope</code> (<code>element</code>/<code>scene</code>), <code>name</code>, <code>valueType</code>
+(<code>boolean</code>/<code>number</code>/<code>text</code>) and a typed <code>default</code> or <code>value</code>; comparisons store
+<code>valueType</code>, <code>operator</code> and <code>expected</code>. <code>dataInputs</code>/<code>dataOutputs</code> derive the Value
+port type from the node. Retyping removes incompatible wires in one undo step.
+<code>signal:&lt;name&gt;</code> graph keys are named receiving events; emitters queue them for
+Self, an Element Target or listeners in the same scene. Signals carry no payload.
+Graphs remain version 2, without top-level variable declarations or runtime memory.</p>
+<p><code>blueprint_variables.py</code> validates names, types, definitions and private stores:
+64 entries per scope, ASCII names up to 64 characters beginning with a letter,
+finite numbers bounded by ±1,000,000, text up to 256 characters and 16 receiving
+graphs per blueprint. Element stores use <code>SceneObject.data.automationVariables</code>;
+scene stores use <code>Scene.settings.automationVariables</code>, both <code>{name: {type, value}}</code>.
+Type conflicts reject a command rather than coercing saved values. Each event
+reads one initial snapshot; queued assignments are visible to the next event,
+including signal receivers. Failures roll back memory and other effects together.</p>
+<p><code>simulateGraph</code> accepts an optional sixth argument
+<code>{variables: {element: {...}, scene: {...}}}</code>. It validates private preview memory
+and returns assignments/emissions as actions without writing it or executing
+receivers. The modal&#39;s Simulation variables controls configure only this preview.
+The GM-only automation response includes <code>variables</code>, and its Variables view can
+send <code>automation/reset-variable</code> through the normal command service with scope,
+name, optional <code>elementId</code> and the displayed <code>{type, value}</code> as <code>expected</code>.
+Reset compares that entry, removes only it and triggers no graph; conflicts need
+a refresh. Standard scene, player and streamer projections omit private stores.
+Linked updates and campaign archives preserve runtime memory, while native
+element duplication clears its own store without clearing shared scene memory.</p>
+<p>Blueprint V2 <code>switch</code> and <code>random</code> are execution controls with dynamic ports,
+without per-node <code>automationMemory</code>. Switch stores <code>valueType</code>, typed fallback
+<code>value</code> and one to four exact <code>{id, value}</code> cases. Case IDs are unique members of
+<code>case1</code>–<code>case4</code>, and case values are unique within the selected Boolean/number/text
+type; Boolean permits at most two. Scalar limits match variables. Value input
+type derives from <code>valueType</code>. Strict equality selects one configured case ID or
+<code>default</code>, using the fallback only when Value is disconnected. Connected reads
+use the event snapshot. Retyping resets values, prunes incompatible Value wires
+and discarded cases in one undo step; removing one case preserves all surviving
+IDs and their wires.</p>
+<p>Random stores two to four <code>weights</code>: integers from 0 to 1,000 with positive sum.
+Its ports are <code>branch1</code> through the configured count. The draw covers the total
+weight of all configured outputs, including disconnected ones. A zero weight
+cannot win; a disconnected selected branch ends the path without another draw.
+<code>executionOutputs(node)</code> returns dynamic descriptors and <code>nodeOutputs(node)</code>
+derives their IDs. Choice nodes execute once per graph traversal, and the result
+<code>decisions</code> records selected port strings alongside existing Boolean decisions.
+The GM log records Switch&#39;s input type/value/output and Random&#39;s output,
+selected weight and total. Audience projections do not expose private choices.</p>
+<p>The runtime derives each draw using an HMAC under the installation&#39;s private
+server key over request UUID, root-event ordinal, chain draw ordinal, element, event and node ID,
+then uses an isolated generator for the configured weight total. It does not
+consume or reset process-global RNG state. A receipt retry does not execute
+again; retrying a rolled-back logical command uses the same draw identity.
+Delay continuations preserve selected outputs and the visited-node set; both
+Delay and Timer carry the private <code>budget.randomRoot</code> and <code>budget.randomDraws</code>
+ordinals across segments; legacy jobs default both to zero. Token movement and
+actor/folder deletion keep the original command context, distinguishing separate
+presence-event roots without resetting their sequence on nested calls.
+Invalid private state is rejected,
+and ordinary permissions, transaction rollback and chain limits still apply.
+Authored Switch fallback/case values survive project generation, native copying
+and archive reference rewriting as content, including UUID-like text.</p>
+<p>Local <code>simulateGraph</code> accepts <code>context.randomDraw(nodeId, total)</code>, returning an
+integer in <code>[0, total)</code>, or uses <code>Math.random</code> for this preview. Only reached
+Random nodes sample; validation rejects out-of-range/coerced samples. Preview
+choices do not consume the server&#39;s draw sequence, write runtime memory, execute
+signal receivers or resume scheduled work.</p>
+<p>Blueprint V2 <code>counter</code>, <code>once</code> and <code>cooldown</code> are execution controls with one
+Input and <code>true</code>/<code>false</code> branches; they have no value ports. Counter&#39;s integer
+<code>target</code> is 1–1,000,000; count increments before comparison and saturates at
+1,000,000. Once stores only <code>true</code> after its first visit. Cooldown&#39;s finite
+<code>seconds</code> is 0.1–86,400; an allowed visit stores integer UTC milliseconds
+<code>now + ceil(seconds * 1000)</code>, and a blocked visit keeps its deadline. The runtime
+supplies server time, while pure evaluation defaults to zero. Elapsing time
+alone never starts an event; scheduled continuation uses the separate Delay node.</p>
+<p><code>blueprint_memory.py</code> validates and reconciles the private
+<code>SceneObject.data.automationMemory</code> store, shaped
+<code>{event: {nodeId: {type, value}}}</code> with at most 128 rows. Memory is distinct from
+typed variables and belongs to one element. Removing an event/node or changing
+its type prunes progress; parameter, layout and connection edits preserve it.
+An edited cooldown duration takes effect at its next allowed activation, keeping
+the current deadline. Progress participates in the command transaction and
+receipt, so failures roll it back and retries do not repeat it. Linked updates
+and campaign archives preserve it; native copies clear it. Audience projections
+omit the store for every role outside the GM-only automation response.</p>
+<p><code>validateBlueprintMemory</code> and <code>reconcileBlueprintMemory</code> mirror those rules in
+the pure model. <code>simulateGraph</code> additionally accepts <code>{memory, now}</code> in its sixth
+argument, clones/reconciles that memory and returns <code>memory</code> and branch
+<code>decisions</code> for control graphs. The modal&#39;s Persistent node preview inputs supply temporary
+starting values for each simulation. The automation response&#39;s <code>memory.elements</code>
+feeds the GM&#39;s Node memory view; <code>automation/reset-memory</code> takes <code>elementId</code>,
+<code>event</code>, <code>nodeId</code> and the displayed <code>{type, value}</code> as <code>expected</code>. Reset compares
+and removes that row without emitting events, with a refresh required on conflict.</p>
+<p>Blueprint V2 <code>delay</code> is an execution control with Input and Next, finite
+<code>seconds</code> from 0.1 to 86,400 and no value ports or <code>automationMemory</code> entry.
+<code>simulateGraph</code> returns <code>delay: {nodeId, seconds}</code> at the first reached wait and
+stops the entire remaining event traversal, including later Sequence branches.
+Its trace includes the Delay and its actions include only preceding effects;
+the browser neither schedules work nor simulates a continuation.</p>
+<p>The server stores a private <code>AutomationDelay</code> checkpoint in the transaction that
+commits the preceding effects. Its DFS pending stack, visited execution nodes,
+memoized pure values and original event snapshots survive restarts, keeping
+Sequence order and preventing replay at convergent nodes. State, previous state,
+reference states and typed variables retain their original event snapshot even
+when first read after a wait; control-node memory is read live on resume. Claim,
+effects, completion and the continuation receipt commit atomically. Chain budgets
+span every segment: 32 element operations, 256 scene-signal deliveries, four
+operations per element, 1,024
+actions and 32 timed resumptions. Delay and Timer share 64 pending jobs per scene
+and 256 per campaign.
+Resuming a continuation does not consume a new element-operation slot.</p>
+<p><code>blueprint_delays.py</code> validates semantic identity and referenced targets/resources,
+rechecks current membership/access without promoting the original role, and records
+cancellation/failure. Missing element targets used by the continuation cancel it;
+missing light, sound or image bindings anywhere in the owning blueprint also
+cancel it, even when used only before suspension. Blueprint behavior changes
+cancel pending work;
+x/y card movement does not. Scene pause preserves overdue work until resume. A server
+background worker processes due rows independently of HTTP/browser activity;
+no transaction remains open while waiting. Continuations are omitted from
+campaign content archives and copies, and from audience projections.
+The queue retains at most 50 finished rows per scene for private diagnostics.</p>
+<p>The GM-only automation response&#39;s <code>delays</code> list feeds the Waiting view. A
+normal <code>automation/cancel-delay</code> command sends <code>delayId</code> and displayed
+<code>expectedDueAt</code>, compares that pending row and cancels without changing game
+state or firing a graph. A conflict requires refresh.</p>
+<p>Blueprint V2 <code>timer</code> is an execution control with Input/Next, no value ports and
+no <code>automationMemory</code> entry. Its exact authored fields are <code>name</code> and <code>action</code>
+(<code>start</code>, <code>stop</code> or <code>restart</code>), with finite <code>seconds</code> from 0.1 to 86,400 required
+only for start/restart and absent for stop. Names use the signal/variable ASCII
+format and are case-sensitive. <code>simulateGraph</code> queues a cloned timer action and
+immediately follows Next; it never advances a countdown or runs its receiver.
+Timers reached before a Delay remain queued, while those after it await the
+server continuation. The modal hides duration for Stop and warns when the owning
+blueprint has no <code>signal:name</code> receiving graph, without rejecting that draft.</p>
+<p><code>AutomationDelay</code> also stores timer jobs with <code>kind=&quot;timer&quot;</code> and <code>name</code>. A
+database constraint allows one pending timer per element/name; distinct nodes
+and graphs on that element control the same named job. <code>control_timer</code> applies
+actions in authored order within the command transaction. Start keeps an
+existing row&#39;s identity, deadline, actor and budget; Stop cancels it without
+emitting; Restart creates a replacement under the current event&#39;s actor and
+budget. Each action continues the graph immediately. Capacity or later-action
+failure rolls back timer operations with the other effects.</p>
+<p>The same durable worker delivers expiry as a fresh <code>signal:name</code> on the owner,
+reading current state, references and variables instead of a saved event
+snapshot. A missing receiver completes without effects. Actor/access checks,
+semantic-edit/resource cancellation, pause/resume, private projections and
+archive/copy exclusion follow Delay&#39;s policy. Expiry effects, completion and
+receipt commit atomically, retaining chain budgets across worker runs. Timer
+expiry consumes an element operation; resuming a Delay checkpoint does not.
+Both consume the shared 32 timed-resumption budget, and per-element limits bound
+graphs that rearm timers. There is no repeating/global timer mode.</p>
+<p>The GM <code>delays</code> projection marks timers with <code>kind: &quot;timer&quot;</code> and <code>name</code>. Waiting
+renders named expiry rows and adds Stop timer and Restart timer controls. Stop
+uses <code>automation/cancel-delay</code>; <code>automation/restart-timer</code> takes <code>delayId</code> and
+<code>expectedDueAt</code>, checks the displayed pending row and creates a replacement due
+after its stored duration. This GM restart preserves the original actor, role
+ceiling and chain budget. Both controls require refresh on stale work and emit
+no immediate gameplay event.</p>
+<p>Lever decorations share the adapter registry and typed element references.
+<code>features/images/ui/lever-controls.js</code> handles native double-click interaction
+before mixed selection, with role/tool/layer checks, a pending-command guard
+and listener disposal. Geometry/configuration edits do not run their graphs.</p>
+<p><code>floor-painter.js</code> coordinates freehand brush, rectangle, circle and polygon
+gestures without registering events. It captures the document and brush options
+at the start, then retains each cell&#39;s image and object ID across previews.
+<code>model.js</code> enumerates the shape&#39;s cells and applies floor replacement atomically;
+<code>workspace.js</code> handles input and commits each completed gesture once to undo
+history. Cancellation or an object-limit failure preserves the source document.</p>
+<p>The Studio has a full-width canvas and a horizontal asset library below it.
+The existing auxiliary drawer&#39;s <strong>Tools</strong> tab contains the tool buttons, material,
+brush settings, active layer and snap toggle. These controls retain their
+existing <code>data-builder-*</code> hooks and listeners without duplicated DOM controls.
+The header contains the quick map-name input, Select/Paint/Erase shortcuts and
+a brush-size input, then undo/redo before the save status button, preview and
+scene generation. The quick controls use their own hooks and share the existing
+tool and brush state with Tools. Paint restores the freehand floor brush and
+paint operation and selects the Floor library category; Erase retains whole-object
+erasure. The size mirrors Tools and is enabled for the freehand floor brush,
+including floor area erasure. It retains the snapped 1–20 and unsnapped
+0.05–20-cell limits and bracket shortcuts. Selection retains Shift-click and box
+selection. Preview and pending
+requests disable these editing controls. The quick name mirrors Settings: Enter
+or blur commits one history operation, Escape cancels the draft, and Ctrl+S
+commits the current name before saving. History shortcuts remain Ctrl+Z,
+Ctrl+Shift+Z and Ctrl+Y.
+The library keeps search, import, collection and type filters accessible when its cards
+are collapsed. Its initial Floor highlight shows all available campaign images;
+choosing a Floor, Wall, Door or Object category also activates its drawing tool.
+Choosing a native light/effect preset activates its placement tool. The material
+selector in Tools follows the active brush and includes individual images, asset families
+and its default appearance. Family cards also appear in the library. Import uses
+the standard application modal to choose files, image type and an optional family;
+double-clicking an image card opens its type and family editor. Lights
+show placement instructions without becoming an image asset classification.
+Panels, at the upper right of the canvas, opens the same auxiliary drawer with
+tools, layers, selection, settings, projects and review. The drawer starts closed; selection and
+painting do not open it. Closing that drawer leaves the library accessible.
+Existing property and setup forms remain in these panels, and hidden legacy DOM
+hooks preserve controller compatibility. Object properties stay in Selection;
+this layout adds no properties modal. Components remains planned. Review shows
+a summary, generation and the linked-scene update action. View controls and
+dimensions in cells sit at the bottom of the canvas. Drawer,
+library and view state belong to the editor rather than the project document;
+they must not change the generated scene. Named project layers
+are different: their order, names, visibility and locks are persisted in schema 3,
+along with floor orientation, decorations, lights and project-local asset metadata.
+Layer handles support drag reordering alongside the arrow controls. Expandable
+contents lists select individual objects without changing the canvas layout.
+The optional asset <code>family</code> field stays in schema 3; its members share one image
+type. Floor painting saves a concrete <code>assetId</code> for each 1 × 1 cell, so preview,
+undo/redo, reopening and generation preserve the chosen family variations.
+Visibility and locking control hit testing and edits, but generation includes
+every project layer. <code>model.js</code> applies group moves, duplication and rotation
+atomically, retaining exact quarter turns and legacy door endpoints. Preview
+disables editing, hides editing guides and
+temporarily shows every layer, restoring previous visibility on exit. It does
+not change the camera or the source document; save and generation remain available.
+Rasterization contains floors and wall strips; native images, lights and door art
+remain live objects. The layer order preserves the existing raster passes: all
+floors precede all wall strips. Native objects retain their VTT rendering
+contracts. Generation records resource ownership on the project. Updating
+the linked scene replaces only those resources and its tiles, preserving manual
+content and live door state. Project/scene revisions and original object data are
+checked again in the write transaction; conflicting VTT edits stop the update.
+The table reloads a history-cached document on <code>pageshow.persisted</code> because
+its game renderer and module lifetimes have already been disposed.</p>
+<h3 id="map-builder-wall-networks">Map Builder wall networks</h3>
+<p><code>builder/wall-edit.js</code> owns atomic node moves, splitting, extension and endpoint
+connection on schema-three wall center lines. Shared nodes are derived from
+coincident endpoints in one editable layer, regardless of material or thickness.
+Adding or extending a wall onto an editable edge splits that edge to form a T
+node. Doors remain independent source objects. Failed bounds, minimum-length or
+resource checks leave the document and allocated fragment IDs unchanged.</p>
+<p><code>builder/wall-controls.js</code> owns pointer and keyboard gestures for the selected
+wall. The workspace commits each finished operation once; cancellation restores
+the pre-gesture document. SVG endpoint, midpoint and extension controls retain
+their screen size as the camera zooms. Their focus targets are restored after
+rendering; Preview, busy state and layer permissions disable editing. Armed
+extension uses a separate preview marker and returns focus to the viewport.</p>
+<p><code>builder/wall-joins.js</code> and <code>maps/wall_joins.py</code> derive the matching artwork mesh
+after door intervals are removed. Corners use a miter limited to four times the
+larger half-thickness, with a bevel fallback. Compatible contiguous collinear
+runs share a canonical frame; isolated walls keep their authored frame. Compatible
+legacy collinear spans are deduplicated for rendering. A wall&#39;s polygons form one
+coverage mask, preserving artwork alpha without applying it twice at its own
+joins. Layers remain separate, and door openings are never bridged by a join.
+The mesh is presentation data: source coordinates, IDs and native collision
+center lines retain their existing persistence contract.</p>
+<h2 id="shared-dimensions-and-design-tokens">Shared dimensions and design tokens</h2>
+<p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/web/static/gravewright_web/css/tokens.css"><code>tokens.css</code></a> defines the shared visual values. Fixed dimensional tokens use plain <code>px</code> values. Reuse existing tokens when they fit the component, and introduce a new shared value only when it is needed across components. The Fibonacci scale and its audit script have been retired; core CSS uses the spacing, radius and typography rules below instead of <code>--fib-*</code> or <code>--step-*</code>.</p>
+<p>Use <code>--space-*</code> for padding, margins and gaps, including their shorthand, logical and row/column forms. When migrating a fixed length, choose the nearest value in this scale; on a tie, choose the smaller value. Preserve the sign of negative margins. The token suffix counts four-pixel steps, with separate names for zero, one and two pixels:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Token</th><th scope="col" style="text-align:left">Value</th></tr></thead><tbody><tr><td style="text-align:left"><code>--space-0</code></td><td style="text-align:left"><code>0</code></td></tr><tr><td style="text-align:left"><code>--space-px</code></td><td style="text-align:left"><code>1px</code></td></tr><tr><td style="text-align:left"><code>--space-half</code></td><td style="text-align:left"><code>2px</code></td></tr><tr><td style="text-align:left"><code>--space-1</code></td><td style="text-align:left"><code>4px</code></td></tr><tr><td style="text-align:left"><code>--space-2</code></td><td style="text-align:left"><code>8px</code></td></tr><tr><td style="text-align:left"><code>--space-3</code></td><td style="text-align:left"><code>12px</code></td></tr><tr><td style="text-align:left"><code>--space-4</code></td><td style="text-align:left"><code>16px</code></td></tr><tr><td style="text-align:left"><code>--space-5</code></td><td style="text-align:left"><code>20px</code></td></tr><tr><td style="text-align:left"><code>--space-6</code></td><td style="text-align:left"><code>24px</code></td></tr><tr><td style="text-align:left"><code>--space-7</code></td><td style="text-align:left"><code>28px</code></td></tr><tr><td style="text-align:left"><code>--space-8</code></td><td style="text-align:left"><code>32px</code></td></tr><tr><td style="text-align:left"><code>--space-10</code></td><td style="text-align:left"><code>40px</code></td></tr><tr><td style="text-align:left"><code>--space-12</code></td><td style="text-align:left"><code>48px</code></td></tr><tr><td style="text-align:left"><code>--space-14</code></td><td style="text-align:left"><code>56px</code></td></tr><tr><td style="text-align:left"><code>--space-16</code></td><td style="text-align:left"><code>64px</code></td></tr></tbody></table></div>
+<p>The former <code>--space-9</code> value of 34px is replaced by <code>--space-8</code> at 32px. Border radii use these shared names:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Token</th><th scope="col" style="text-align:left">Value</th></tr></thead><tbody><tr><td style="text-align:left"><code>--radius-sm</code></td><td style="text-align:left"><code>4px</code></td></tr><tr><td style="text-align:left"><code>--radius-md</code></td><td style="text-align:left"><code>8px</code></td></tr><tr><td style="text-align:left"><code>--radius-lg</code></td><td style="text-align:left"><code>12px</code></td></tr><tr><td style="text-align:left"><code>--radius-xl</code></td><td style="text-align:left"><code>16px</code></td></tr><tr><td style="text-align:left"><code>--radius-pill</code></td><td style="text-align:left"><code>999px</code></td></tr><tr><td style="text-align:left"><code>--radius-circle</code></td><td style="text-align:left"><code>50%</code></td></tr></tbody></table></div>
+<p>Host interface CSS must render text at <strong>12px or larger</strong>. Check effective sizes from inherited styles, relative units and font shorthands as well as explicit <code>font-size</code>. The existing <code>--text-3xs</code>, <code>--text-2xs</code> and <code>--text-xs</code> names remain available at 12px. Authored text in PDFs and drawings, and scene labels scaled by the camera, retain their authored sizes.</p>
+<p>Widths, heights and other component geometry keep their required dimensions. A value specific to one component may use a local <code>px</code> literal; reserve shared <code>--size-*</code> tokens for values reused across components. Responsive geometry can still use relative units and layout expressions such as <code>calc()</code> and <code>clamp()</code> where needed.</p>
+<h2 id="native-state-and-realtime">Native state and realtime</h2>
+<p>Native UI code calls the shared domain API where implemented and still has dedicated HTTP/socket adapters for specialized flows such as uploads, board subscriptions and rendered fragments. The public browser API does not replace every native transport.</p>
+<p>The realtime controller connects the current table&#39;s authenticated WebSocket, tracks subscriptions and reconnect state, and dispatches <code>gravewright:*</code> browser events. The server sends user-authorized projections and rendered HTML; private actor data, chat audiences and scene visibility are enforced before delivery. Insert user-provided text with <code>textContent</code>. Existing HTML fragment insertion is for HTML rendered by the trusted server templates, not arbitrary module or chat text.</p>
+<p><code>gravewright:api-event</code> is the internal adapter event consumed by the domain API; <code>api.changed</code> notifications trigger fresh authorized reads. Public integrations should use <code>api.events.on(...)</code> as documented in <a href="api.html#domain-events">API events</a>, rather than copying the native socket command protocol. Subscriptions are not a durable change stream: reconnect and reread current state. Creating <code>gravewright.forTable(...)</code> alone does not open a socket.</p>
+<p>The native item and compendium directories sort copies of visible entries by
+their displayed names using the active locale; stored document order and IDs
+stay unchanged. Compendium packs, filters and previews use compact rows and
+content-sized default windows, with internal scrolling for long content. Manual
+window layouts retain the shared drag, resize, minimize and reset controls. GMs
+can create the first compendium from the empty directory; read access does not
+expose import or permission controls. System-owned item editors remain in their
+packages and use the existing host contracts. Repeated item projections preserve
+open action menus and focus; document or permission changes invalidate them.</p>
+<h2 id="sources-and-generated-assets">Sources and generated assets</h2>
+<p>Most app-specific JavaScript files under <code>static/</code> are directly served source. Some files there are committed build outputs. In particular, <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/scripts/build.cjs"><code>maps/scripts/build.cjs</code></a> bundles the following:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Editable entry/source</th><th scope="col" style="text-align:left">Generated destination</th></tr></thead><tbody><tr><td style="text-align:left"><code>maps/frontend/widgets/game-board/ui/board.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/vendor/board.js</code> and named <code>runtime/</code> modules</td></tr><tr><td style="text-align:left"><code>maps/frontend/shared/rendering/render-profile.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/render-profile.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/native/tools.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/tools.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/native/builder-catalog.js</code>, <code>builder-preview.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/builder-catalog.js</code>, <code>builder-native.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/native/builder-editors.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/builder-editors.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/native/table-modules.js</code></td><td style="text-align:left"><code>table/static/gravewright_table/media-workspace.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/features/walls/{ui,model}/walls.js</code></td><td style="text-align:left"><code>maps/static/gravewright_maps/walls/</code></td></tr><tr><td style="text-align:left">Scene-layer sources and lighting profiles</td><td style="text-align:left"><code>maps/static/gravewright_maps/sources/</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/calibration.js</code>, <code>directory.js</code></td><td style="text-align:left">Corresponding map static model/controller files</td></tr><tr><td style="text-align:left"><code>maps/frontend/shared/lib/dom/tree-drag.js</code></td><td style="text-align:left"><code>actors/static/gravewright_actors/tree-drag.js</code></td></tr><tr><td style="text-align:left"><code>maps/frontend/features/tokens/ui/controller.js</code></td><td style="text-align:left"><code>tokens/static/gravewright_tokens/controller.js</code></td></tr><tr><td style="text-align:left"><code>pdf_system/frontend/controller.js</code></td><td style="text-align:left"><code>pdf_system/static/gravewright_pdf_system/controller.js</code></td></tr></tbody></table></div>
+<p>Paths in this table are relative to <code>gravewright/</code>. Edit the source and rebuild these destinations. Do not make one-off fixes in minified board chunks or vendored libraries.</p>
+<p>Tools, the board, Builder catalogs, editors and preview retain their public
+entry URLs while importing named ES modules from <code>gravewright_maps/runtime/</code>,
+following the source&#39;s feature paths. Shared modules have one browser identity;
+PixiJS and its unsafe-eval adapter are emitted once as <code>vendor/pixi.js</code>. Preview
+and editor imports stay lazy, and the visibility worker keeps its relative
+resource URL plus the existing public worker entry. The Runner manifest includes
+every emitted module and license notice. Ship the complete generated graph.
+This layout uses more small requests while avoiding repeated bundled copies;
+artifact sizes alone do not establish a browser performance improvement.</p>
+<p>From the repository root:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-1">Copy</button></div><pre><code data-code="code-1" class="language-sh">npm ci --include=dev --prefix gravewright/maps/frontend
+npm run build --prefix gravewright/maps/frontend
+npm test --prefix gravewright/maps/frontend</code></pre></div>
+<p>The build uses the locked PixiJS and esbuild dependencies in <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/frontend/package-lock.json"><code>maps/frontend/package-lock.json</code></a>, targets ES2022, and keeps <code>/static/*</code> imports external. A shared render-profile module stays external so all features use the same runtime profile. The build also collects package license/notice files and writes <code>vendor/packages.json</code>; retain those outputs when redistributing built assets. It explicitly rejects including Vue packages.</p>
+<h3 id="windows-runner-preparation">Windows runner preparation</h3>
+<p>The <a href="windows-runner.html">Gravewright Runner</a> reuses verified Node.js/npm inside data/runner, or downloads its managed copy into that installation when necessary. Its CMD batch file calls <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/scripts/prepare_frontend.py"><code>scripts/prepare_frontend.py</code></a> in <code>--plan</code> mode to check package versions, fingerprints and a real esbuild operation. A matching healthy dependency installation can be reused even on first launch. The batch file itself executes <code>npm ci --include=dev --include=optional</code> when dependencies need installation, and the existing <code>npm run build</code> for the first preparation or an invalidated build. It then calls the helper in <code>--record</code> mode to verify and save the completed output state. esbuild is required during preparation even though Python development dependencies are omitted from normal runner installation.</p>
+<p>The plan returns exit code <code>0</code> for current assets, <code>10</code> for npm installation plus build, or <code>11</code> for build only. The batch launcher handles these decisions explicitly. Both helper modes accept <code>--node</code>, <code>--npm-cli</code> and <code>--state-dir</code>; the helper&#39;s default mode remains available to perform complete preparation in developer scripts and regression tests.</p>
+<p>The npm project remains <code>gravewright/maps/frontend</code>; its ignored <code>node_modules/</code> is installed there and generated static assets are written to the destinations above. These outputs are committed application assets, so a source change followed by runner preparation can produce a version-control diff. Review and include the appropriate generated outputs and notices when contributing frontend changes.</p>
+<p>Preparation state stays inside the extracted project under <code>data/runner/frontend/&lt;source-location-hash&gt;/state.json</code>. Managed tools and npm/uv caches are also local to this installation. Dependency checks include the package files and selected Node/npm versions. Build checks include editable sources, the build script and hashes of generated outputs. The batch file requests an output manifest, including vendor notices, from <code>build.cjs</code> through its optional <code>GRAVEWRIGHT_BUILD_MANIFEST</code> process variable. A later launch skips a valid unchanged build; changed inputs or missing/modified outputs cause preparation again. A failed build stops launcher startup instead of serving an unverified frontend. <code>collectstatic</code> then copies the prepared public assets to the project-local data/staticfiles directory.</p>
+<p>The module domain-method registry has its own generation command:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-2">Copy</button></div><pre><code data-code="code-2" class="language-sh">uv run --locked python scripts/generate_frontend_api.py</code></pre></div>
+<p>This generates only <code>modules/static/gravewright_modules/frontend-contract.js</code> from <code>contracts/frontend.json</code>. The original SDK&#39;s <code>generated.js</code> and JSON schemas are separate artifacts; this script does not regenerate them. <code>collectstatic</code> gathers deployable assets but does not run either JavaScript build.</p>
+<h2 id="board-layers-and-resource-lifetimes">Board layers and resource lifetimes</h2>
+<p>The <code>maps/frontend/</code> tree separates entity models, feature models/UI, shared utilities, and the game-board widget. The board widget coordinates rendering, input, tile scheduling/cache/prefetch, native layers, vision polygons, lighting and shaders. Feature code contains walls, tokens, drawings, measurements, effects, and selection. Algorithm tests live beside the relevant models and are bundled by <code>maps/scripts/test_models.cjs</code> for Node&#39;s test runner.</p>
+<p>Use one consistent coordinate system across controllers and renderer calls: logical scene pixels, top-left origin, token centers as anchors. Camera pan/zoom converts scene positions into CSS viewport coordinates; device pixel ratio affects rendering resolution. Mixing these units causes selection, token and lighting misalignment. The extension overlay API exposes explicit conversion helpers instead of exposing the PixiJS renderer.</p>
+<p>Async work belongs to a page, board, module activation, or individual mount. <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/lifetime.js"><code>Lifetime</code></a> cancels API calls and disposes subscriptions; map source code has its own shared lifecycle helpers. Add/remove listeners and observers with their owner. Release rendering resources and pending work during board teardown or scene changes. A listener or cached API handle that outlives its owner can update the next scene with old data.</p>
+<p>Updates to the current scene preserve camera pan/zoom, token art and mounted
+layers, including revisions caused by teleport automation. Only a scene change
+resets the camera. Raster revisions refresh existing tile keys by URL and keep
+the previous decoded tiles visible until replacements are ready; superseded
+requests cannot paint an older revision. A failed replacement retains its current
+art while the bounded retry runs. Region occupancy and geometry refresh their own
+overlay, keeping unrelated floor, light and shader resources mounted.</p>
+<p>Token acknowledgements and realtime snapshots can carry native
+<code>teleports: [{id, version}]</code> metadata, filtered against the recipient&#39;s visible
+tokens and their exact revisions. The token workspace remembers each accepted
+teleport revision across normal reads. It bypasses movement interpolation and
+recreates only that token&#39;s Pixi object at its destination; repeated delivery
+keeps the same replacement. Logical identity, selection and sheet data remain
+unchanged, and older asynchronous art loads cannot restore an earlier object.</p>
+<p>Successful token commands apply the authorized token snapshot in their
+acknowledgement. They do not issue another token GET or request scene layers;
+committed scene changes arrive through the existing realtime subscription.
+Failures and version conflicts still reload authoritative state. A movement
+with no displacement and no traversed path does not save or enter the busy
+state. Paths that leave and return to the same position remain real operations
+so region entry/exit automation is preserved.</p>
+<p>The token workspace saves silently, including when a confirmation takes longer.
+Pending commands keep the interaction guard for concurrent edits. Errors and
+route instructions remain immediate; there is no saving notice or notice timer.
+Unchanged status text is not rewritten on every paint.</p>
+<p>Local token previews reuse the static scene key and image reconciliation while
+their immutable scene inputs remain the same. They do not walk all native image
+transforms or reconstruct the component-origin index on every frame. A new image
+snapshot still reconciles its transforms and artwork; changed walls, effects,
+scene identity and role still invalidate their owning resources.</p>
+<p>Movement notifications refresh scene layers and tokens without rebuilding the
+unchanged actor directory or combat panel. Actor/combat edits and other token
+commands retain the relevant notifications. Paired layer/token notifications
+deliver spatial audio once through the token refresh; independent layer edits
+still refresh audio. Live authorization and extension change hooks remain in place.</p>
+<p>Same-scene teleport advances token revisions, not scene metadata or raster
+revisions. Its layer/token notifications carry region and appearance changes
+without requesting a new scene manifest or changing existing tile URLs. Repeated
+portals therefore retain the decoded floors and raster textures already loaded.</p>
+<h3 id="native-image-updates">Native image updates</h3>
+<p><code>SceneImageArt</code> reconciles ordinary image textures independently of the static
+scene key. A source change keeps the sprite and its previous art until the new
+texture is decoded; late results cannot overwrite newer state or a closed scene.
+Current art survives same-scene light/geometry rebuilds. Composed surfaces and
+grouped floors use a separate cache with the same lifecycle. Unchanged composites
+rebind synchronously during effect rebuilds; material replacement retains current
+art until decoding completes. Changed masks, geometry, group membership or
+visibility revoke obsolete coverage immediately. Composition closes all input
+bitmaps, including failed and cancelled loads, and publishes no partial floor.
+Each art cache retains at most eight idle textures and 16 MiB of idle decoded
+RGBA data, evicting the least recently used entries. Scene/role changes and disposal abort
+pending loads and release textures/bitmaps. Only art in the authorized projection
+is requested; inactive appearances are not prefetched.</p>
+<p>Token-art references wait for a pending unload of the same URL before loading
+again. Pixi&#39;s loader can otherwise return its old cached texture while unloading
+is about to destroy it. Independent URLs remain concurrent. Dispose applications
+with explicit <code>removeView: true, releaseGlobalResources: false</code> options: boolean
+<code>true</code> also releases process-wide pools still used by other boards and previews.
+Scene-owned textures and renderer resources still end with their owner.</p>
+<p>GM-private images and Empty Object markers remain visible at 55% opacity in all
+workspaces, with selection and interaction restricted to GM. Private drawings
+multiply their authored opacity by the same factor. Server projections still
+exclude private elements from player/streamer clients.</p>
+<p>Realtime delivery sends committed <code>maps.layers</code> and <code>tokens.state</code> before their
+dependent audio/combat refreshes. Every delivery retains its own authorization
+check. Token-triggered changes may share the same scene revision; never discard
+snapshots solely because that revision is equal.</p>
+<h3 id="lighting-and-vision-work">Lighting and vision work</h3>
+<p><code>SceneLayers</code> calculates light occlusion once for each static scene key and
+reuses those polygons for masks, the light atlas and the GM darkness veil.
+<code>createVisibilityContext</code> shares wall indices and keeps at most eight filtered
+subsets for finite ranges or elevation. Preserve the original ray arithmetic
+and wall membership: changing a BVH can change rounding at coincident endpoints.</p>
+<p>Torch and pulse frames update additive Pixi sprites over immutable falloff
+textures. Shaders receive a GPU render texture; only particles that respond to
+light request CPU samples, capped at eight samples per second. Profiles keep
+their existing animation rates. A scene owns the texture pool and releases it
+after shader bindings, the atlas and sprite layers.</p>
+<p>Vision changes coalesce once per animation frame. Scenes with at least 128 wall
+segments use the same-origin module worker emitted as <code>vendor/visibility-worker.js</code>;
+smaller scenes and unavailable workers use the same geometry synchronously.
+The worker keeps one active job and the latest pending snapshot, transferring
+coordinate buffers. Native observers carry a <code>sourceId</code> so movement can retain
+the last completed view while the next calculation runs. Selection, range,
+elevation, cone and preview changes revoke that view immediately; wall and scene
+changes terminate the old worker. Never reuse visibility across those boundaries
+or quantize the configured vision range or token positions.
+Pending movement retains the existing veil texture until a result arrives;
+unrestricted GM vision reuses its static veil without repainting on token moves.</p>
+<p>Compare full frames and completed worker jobs when profiling. Queuing work is
+not completion, and headless software WebGL results do not establish hardware
+GPU performance. Rebuild both board and worker entries together with the normal
+asset build.</p>
+<h2 id="extending-the-interface">Extending the interface</h2>
+<p>The host&#39;s <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/surface-registry.js"><code>SurfaceRegistry</code></a> accepts <code>gravewright.ui.register(domain, declaration)</code> and returns an unregister function. It supports registered table surfaces plus <code>app.shell</code> and <code>inside.content</code>. A mount receives <code>{root, context, api, signal, onDispose}</code>. It gets a fresh lifetime and a dedicated root; failed mounts are cleaned up, and replaced native elements have their previous visibility restored. This global registry permits one replacement per domain.</p>
+<p>Installed signed packages use <code>ModuleRuntime</code> instead. Its registrations are synchronous during module activation, its calls carry module identity/lease/revision, and competing replacements are chosen using table preferences. Use the module&#39;s <code>register</code> callback for installed packages; global UI registration is for host-page integrations and has different ownership/selection rules. Full examples and supported names are in <a href="modules.html">modules</a>.</p>
+<h2 id="frontend-verification">Frontend verification</h2>
+<p>Run the checks affected by the source you changed:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-3">Copy</button></div><pre><code data-code="code-3" class="language-sh">node --test tests/modules/*.test.mjs tests/effects/*.test.mjs
+npm test --prefix gravewright/maps/frontend
+uv run --locked python tests/e2e/frontend_api.py</code></pre></div>
+<p>For rendering or interaction changes, use relevant scenarios under <code>tests/e2e/</code>, including <code>mixed_selection.py</code>, <code>token_routes.py</code>, <code>light_rendering.py</code>, <code>effect_geometry.py</code>, <code>effect_pixels.py</code>, <code>map_prefetch.py</code> and <code>realtime.py</code>. The browser harness and dependencies are explained in <a href="testing.html">testing</a>. Test player and GM sessions where behavior is permission-dependent, and check disposal/reconnect when adding subscriptions. Keep labels and message catalogs aligned with the application&#39;s supported languages.</p></div></article><nav class="kb-pagination" aria-label="Continue reading"><a href="modules.html"><span>Previous ←</span><strong>Systems and modules</strong></a><a href="testing.html"><span>Next →</span><strong>Testing</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-create-system.html">How to use AI to create an RPG system</a><a href="ai-create-module.html">How to use AI to create a browser module</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/frontend.md">docs/en/frontend.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/frontend.md">docs/pt-BR/frontend.md</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#follow-a-page-from-its-template">Follow a page from its template</a></li><li><a href="#shared-dimensions-and-design-tokens">Shared dimensions and design tokens</a></li><li><a href="#native-state-and-realtime">Native state and realtime</a></li><li><a href="#sources-and-generated-assets">Sources and generated assets</a></li><li><a href="#board-layers-and-resource-lifetimes">Board layers and resource lifetimes</a></li><li><a href="#extending-the-interface">Extending the interface</a></li><li><a href="#frontend-verification">Frontend verification</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

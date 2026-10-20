@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Testes | Gravewright</title><meta name="description" content="Django, node:test, Playwright e validação nativa com dados descartáveis."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/testing.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/testing.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/testing.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/testing.html"><meta property="og:type" content="article"><meta property="og:title" content="Testes | Gravewright"><meta property="og:description" content="Django, node:test, Playwright e validação nativa com dados descartáveis."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/testing.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Testes","description":"Django, node:test, Playwright e validação nativa com dados descartáveis.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/testing.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/testing.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html" aria-current="page">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Testes</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Referência do projeto <span aria-hidden="true">/</span> 34 min de leitura</span><h1>Testes</h1><p class="kb-lead">Django, node:test, Playwright e validação nativa com dados descartáveis.</p></header><div class="kb-prose"><p><a href="index.html">Documentação</a> · <a href="../en/testing.html">English</a></p>
+<p>Execute na raiz após <code>uv sync --locked</code>. O projeto usa Django/unittest para Python, o executor nativo do Node para JavaScript e scripts Playwright independentes para navegador. Não há <code>npm test</code> na raiz nem executor pytest configurado.</p>
+<h3 id="limitacoes-conhecidas-no-windows">Limitações conhecidas no Windows</h3>
+<ul><li><p>O Windows limita caminhos a 260 caracteres. Os cenários do Map Builder instalam
+um módulo de fixture dentro da pasta de saída; um <code>--output</code> longo, como um
+aninhado na pasta temporária do usuário, faz essa instalação falhar com &quot;Invalid
+module archive&quot;. Use a saída padrão em <code>data/</code> ou outro caminho curto.</p></li><li><p><code>tests/e2e/escape_windows.py</code> não inicia servidor próprio. Ele precisa de
+<code>ownership_server.py</code> em <code>127.0.0.1:30002</code> e de <code>data/permissions-review-seed.json</code>
+dessa fixture.</p></li></ul>
+<h2 id="ambiente-local-controlado">Ambiente local controlado</h2>
+<p>Os testes carregam <code>.env</code> quando uma variável do processo não a substitui. Para testes HTTP locais, use um shell com estes valores em vez de herdar origem HTTPS de produção ou Redis externo:</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-bash">export DJANGO_DEBUG=true
+export DJANGO_ALLOWED_HOSTS=&#39;127.0.0.1,localhost,[::1],testserver&#39;
+export GRAVEWRIGHT_PUBLIC_ORIGIN=&#39;&#39;
+export DJANGO_SECURE_COOKIES=false
+export GRAVEWRIGHT_REDIS_URL=&#39;&#39;
+export TRUSTED_PROXIES=&#39;&#39;
+export GRAVEWRIGHT_MARKETPLACE_URL=&#39;&#39;
+export GRAVEWRIGHT_MARKETPLACE_KEYS_FILE=&#39;&#39;
+export GRAVEWRIGHT_RELEASES_REPOSITORY=&#39;&#39;</code></pre></div>
+<p>Isso altera apenas o shell, não o <code>.env</code>. Fixtures de navegador normalmente substituem banco e arquivos por diretórios temporários. Cada cenário pode sobrescrever configurações específicas.</p>
+<h2 id="python">Python</h2>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-bash">uv run --locked python manage.py check
+uv run --locked python manage.py makemigrations --check --dry-run
+uv run --locked python manage.py test config gravewright --noinput</code></pre></div>
+<p>O executor usa explicitamente <code>data/test-gravewright.sqlite3</code>, em arquivo, para testar locks do SQLite. <code>--noinput</code> autoriza substituir esse banco de testes caso já exista. Não aponte para dados importantes nem execute suítes simultâneas no mesmo caminho. Alterar <code>GRAVEWRIGHT_DATABASE</code> não altera o nome explícito desse banco de testes. Testes que escrevem arquivos geralmente criam armazenamento temporário; use <code>GRAVEWRIGHT_MEDIA_ROOT</code> descartável como proteção adicional ao executar a suíte inteira.</p>
+<p>Exemplos focados:</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-bash">uv run --locked python manage.py test config gravewright.accounts gravewright.realtime --noinput
+uv run --locked python manage.py test gravewright.table.tests.test_frontend_api gravewright.modules --noinput
+uv run --locked python manage.py test gravewright.dice --noinput</code></pre></div>
+<p>As verificações de release para apps Django e atualizações gerenciadas incluem:</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-bash">uv run --locked python tests/e2e/django_marketplace.py
+uv run --locked python tests/e2e/automatic_updates.py --runner</code></pre></div>
+<p>Esses cenários usam dados isolados e verificam dependências, rotas Django,
+recuperação de falhas de migração, preservação nas atualizações e rollback <code>.old</code>.</p>
+<h2 id="javascript">JavaScript</h2>
+<p>Use Node.js atual com módulos ES nativos e <code>node:test</code>; estes comandos foram verificados com Node 24. Não é necessário instalar pacotes na raiz para esses testes.</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-bash">node --test tests/modules/*.test.mjs tests/effects/*.test.mjs</code></pre></div>
+<p>Para incluir todos os testes JavaScript junto ao código, este lançador Python evita globs recursivos específicos do shell:</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-bash">uv run --locked python - &lt;&lt;&#39;PY&#39;
+from pathlib import Path
+import subprocess
+files = sorted(str(p) for base in (&#39;gravewright&#39;, &#39;tests&#39;)
+               for p in Path(base).rglob(&#39;*&#39;)
+               if p.name.endswith((&#39;.test.js&#39;, &#39;.test.mjs&#39;)))
+subprocess.run([&#39;node&#39;, &#39;--test&#39;, *files], check=True)
+PY</code></pre></div>
+<p>A cobertura inclui ciclos de vida e contratos de módulos, parsing de shaders, entradas do tabuleiro, agendamento de tiles, visibilidade, paredes, seleção, rotas de tokens e mapeamento PDF. Testes de geometria/modelos não substituem a conferência da renderização real na GPU.</p>
+<p>Os testes de módulos cobrem uploads multipart de imagens de cartas na
+inicialização, duração de ativação, permissões nativas e operações canceladas.
+A suíte Django <code>gravewright.modules.test_card_assets</code> também verifica validação
+de imagens, reutilização de recursos, isolamento de mesas e limpeza após falha.</p>
+<h2 id="cenarios-no-navegador">Cenários no navegador</h2>
+<p><code>uv run --locked python tests/e2e/door_rotation_anchor.py</code> verifica a escolha do
+pivô da porta, rotação, desfazer, imagem ao abrir/fechar, editor compartilhado de
+paredes e configurações salvas em inglês, português e espanhol, em larguras de
+desktop e celular. Usa uma campanha isolada e aceita <code>--output</code> e
+<code>--browser-executable</code>.</p>
+<div class="code-block"><div class="code-toolbar"><span>bash</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-bash">uv run --locked playwright install chromium
+uv run --locked python tests/e2e/authentication.py
+uv run --locked python tests/e2e/realtime.py
+uv run --locked python tests/e2e/frontend_api.py
+uv run --locked python tests/e2e/https.py
+uv run --locked python tests/e2e/runner.py
+uv run --locked python tests/web/window_i18n_browser.py</code></pre></div>
+<p>O teste independente de janelas serve apenas arquivos estáticos do host e
+confere os controles em inglês, português e espanhol, incluindo liberação dos
+listeners e preservação dos textos do usuário. Não carrega campanha ou banco.</p>
+<p><code>uv run --locked python tests/e2e/board_scene_refresh.py</code> verifica atualizações
+da mesma cena com WebGL real, imagens sintéticas e respostas de tiles atrasadas.
+Confere continuidade da câmera e das imagens, novas tentativas de substituição,
+requisições superadas, mudanças da grade e trocas de cena sem carregar dados de
+campanhas. Os diagnósticos usam um diretório exclusivo em <code>data/runner/</code>;
+<code>--workdir</code>, <code>--browser-executable</code> e <code>--node</code> selecionam uma saída isolada e
+ambientes de execução existentes.</p>
+<p><code>uv run --locked python tests/e2e/scene_layer_continuity.py</code> confere superfícies
+de piso e grupos de pintura/apagadores durante entrada/saída de regiões, luzes,
+escuridão, trocas de material atrasadas, remoção e mudanças de cena/papel.
+Amostra pixels reais da GPU entre quadros e serve apenas imagens sintéticas,
+com as mesmas opções de saída local e ambientes do cenário de atualização do tabuleiro.</p>
+<p><code>uv run --locked python tests/e2e/token_teleport_presentation.py</code> verifica que o
+teleporte destrói e recria somente o objeto visual do token no destino, enquanto
+movimentos normais continuam interpolados. Os casos WebGL sintéticos cobrem
+atualizações duplicadas, identidade da seleção e da ficha, imagens atrasadas ou
+superadas, descarte e preservação dos recursos da câmera/piso. Usa as mesmas
+opções de saída local e ambientes dos demais cenários de renderização independentes.</p>
+<p><code>uv run --locked python tests/e2e/token_saving.py</code> abre o tabuleiro nativo com
+atores sintéticos em uma campanha descartável e controla as respostas de tokens
+para verificar confirmações silenciosas rápidas/lentas, movimentos sem deslocamento,
+desfazer, movimentos em grupo, conflitos, estados mais recentes, teleporte e
+descarte. Registra leituras de tokens, atualizações de camadas e mutações do DOM
+do aviso; movimentos confirmados devem usar sua resposta e falhas devem
+ressincronizar. <code>--output</code> e <code>--browser-executable</code> selecionam resultados isolados
+e um navegador existente. <code>--baseline-dir</code> pode servir assets de tokens salvos
+anteriormente para comparação sem alterar os arquivos da aplicação.</p>
+<p><code>uv run --locked python tests/e2e/mapbuilder_ingame_performance.py</code> gera uma cena
+representativa do MapBuilder e executa movimentos reais pelo transporte nativo
+WebSocket com dois clientes de navegador. Mede confirmação e apresentação do
+estado autorizado, vazão de movimentos sequenciais, intervalos entre quadros,
+atividade de recursos GPU e tráfego, incluindo trocas de sprite por região e
+teleporte. Capturas de tela ficam fora dos intervalos medidos. Usa dados de
+campanha descartáveis e aceita <code>--output</code> e <code>--browser-executable</code>. As opções
+<code>--baseline-dir</code> e <code>--backend-source</code> carregam assets públicos e código do servidor
+salvos apenas na fixture isolada para comparação antes/depois. A suíte Django
+<code>gravewright.realtime.tests.test_token_refresh_cost</code> verifica o custo das
+notificações, estabilidade da projeção de atores, áudio independente e revogação
+de acesso durante a entrega.</p>
+<p>No Linux, o Playwright pode precisar de bibliotecas do sistema; <code>uv run --locked playwright install --with-deps chromium</code> também as instala e pode exigir privilégios administrativos. Os cenários iniciam servidores próprios em portas temporárias e criam dados fictícios. A maioria usa configurações de desenvolvimento e grava diagnósticos em <code>test-results/</code>; os cenários HTTPS e do executor usam configurações específicas descritas abaixo. Execute em sequência: vários compartilham <code>test-results/migration-closure/</code>.</p>
+<p><code>tests/e2e/compendium_server.py --fixture &lt;diretório-novo-vazio&gt;</code> inicia uma
+fixture descartável em localhost com sistema de navegador, catálogos de idiomas
+e compêndios sintéticos. Repita <code>--archive &lt;sistema.zip&gt;</code> para revisar sistemas
+locais reais; nenhum dado do operador é reutilizado. Execute
+<code>tests/e2e/compendium_layout.py --seed &lt;fixture&gt;/seed.json [--browser-executable &lt;chromium&gt;]</code> para verificar layouts desktop, 390px e 320px,
+ordenação em en/pt-BR/es, busca sem distinção de acentos, filtros de tipo/pacote,
+prévias e foco nativo por teclado, importações independentes, recuperação de
+falhas de importação, permissões, acesso somente para leitura e criação do
+primeiro pacote. Os resultados ficam em <code>test-results/compendiums/</code> por padrão.
+Em outra fixture nova, <code>tests/e2e/item_directory_layout.py --seed &lt;fixture&gt;/seed.json --output &lt;diretório-de-resultados&gt; [--browser-executable &lt;chromium&gt;]</code> verifica a densidade do diretório nativo de
+itens, ordenação de itens/pastas/tipos, busca, menus pelo teclado, duplicação,
+movimentação e controles de leitura. Encerre cada servidor pertencente ao teste
+depois da execução.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Alteração</th><th scope="col" style="text-align:left">Cenários pertinentes</th></tr></thead><tbody><tr><td style="text-align:left">Contas e campanhas</td><td style="text-align:left"><code>authentication.py</code>, <code>inside.py</code>, <code>campaign_controls.py</code></td></tr><tr><td style="text-align:left">Alertas de atualização do VTT</td><td style="text-align:left"><code>update_notification.py</code>; testes Django em <code>gravewright.administration.test_update_notifications</code></td></tr><tr><td style="text-align:left">Progresso de atualização e reconexão após reinício</td><td style="text-align:left"><code>update_progress.py</code> (atualizações simuladas e isoladas; não substitui arquivos da aplicação)</td></tr><tr><td style="text-align:left">Nome completo e notas da versão instalada</td><td style="text-align:left"><code>release_presentation.py</code>; testes Django em <code>gravewright.administration.test_release_presentation</code></td></tr><tr><td style="text-align:left">Tempo real e permissões</td><td style="text-align:left"><code>realtime.py</code>, <code>lighting_realtime.py</code>, <code>map_prefetch.py</code></td></tr><tr><td style="text-align:left">HTTPS, WSS e confiança em proxies</td><td style="text-align:left"><code>https.py</code>; testes Django em <code>config</code> e <code>gravewright.realtime</code></td></tr><tr><td style="text-align:left">Executor Windows local</td><td style="text-align:left"><code>runner.py</code>; testes Django em <code>config.test_runner</code> e <code>config.test_frontend_preparation</code>; workflow do executor CMD Windows</td></tr><tr><td style="text-align:left">Tabuleiro, tokens e fichas PDF</td><td style="text-align:left"><code>maps.py</code>, <code>tokens_pdf.py</code>, <code>token_routes.py</code>, <code>mixed_selection.py</code></td></tr><tr><td style="text-align:left">Map Builder</td><td style="text-align:left"><code>map_builder.py</code>, <code>map_builder_studio.py</code>, <code>map_builder_expansion.py</code>; Django <code>gravewright.maps.tests.test_builder_projects</code>, <code>test_builder_expansion</code>, <code>test_builder_update</code>, <code>test_builder_render_expansion</code>, <code>test_builder_door_art</code> e <code>gravewright.administration.test_builder_archives</code></td></tr><tr><td style="text-align:left">Efeitos e renderização</td><td style="text-align:left"><code>effects.py</code>, <code>effect_editor.py</code>, <code>effect_pixels.py</code>, <code>light_rendering.py</code></td></tr><tr><td style="text-align:left">Diários e dados</td><td style="text-align:left"><code>journals.py</code>, <code>journal_types.py</code>, <code>dice.py</code>, <code>dice_validation.py</code></td></tr><tr><td style="text-align:left">SDK e módulos de mesa</td><td style="text-align:left"><code>frontend_api.py</code>, <code>table_modules.py</code>, <code>management.py</code>, <code>marketplace.py</code>, <code>modal_flush.py</code></td></tr><tr><td style="text-align:left">Áudio e chat</td><td style="text-align:left"><code>audio_lifecycle.py</code>, <code>chat_controls.py</code></td></tr></tbody></table></div>
+<p>O cenário de expansão do Map Builder cria sua campanha sintética, banco e mídia
+num diretório de saída novo dentro da instalação e encerra seu servidor ao sair:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-sh">uv run --locked python tests/e2e/map_builder_expansion.py</code></pre></div>
+<p>As opções <code>--output &lt;diretorio-novo-vazio&gt;</code> e <code>--browser-executable &lt;chromium&gt;</code>
+escolhem os diagnósticos e um navegador existente. Ele verifica camadas e
+metadados da biblioteca salvos, pincéis/encaixe, transformações de grupos,
+decorações/luzes nativas, atualização segura de cenas com conteúdo manual,
+conflitos de revisão e layouts localizados e responsivos do Estúdio. <code>--large-only</code>
+mede seleção e movimento de grupo com 1.000 objetos sintéticos de chão, registrando
+os tempos observados sem um limite de duração. Os testes
+do modelo geométrico executam diretamente com
+<code>node --test gravewright/maps/static/gravewright_maps/builder/model.test.mjs</code>.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_wall_art.py</code> verifica a arte de
+paredes com uma faixa transparente sintética. Compara pixels do navegador e da
+imagem gerada, encaixe nas bordas da grade, movimento e desfazer, diagonais livres,
+recortes de portas e coordenadas fracionárias salvas. Aceita as mesmas opções de
+saída/navegador acima; Django <code>gravewright.maps.tests.test_builder_wall_art</code> cobre
+os casos especiais da rasterização.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_collections.py</code> verifica importação,
+edição, cancelamento, remoção e filtros de coleções do projeto, inclusive famílias
+com membros em coleções diferentes. Também arrasta um grupo de parede/objeto junto
+a uma borda fracionária e verifica os layouts em inglês, português e espanhol a
+320/390 px. Os cenários do Estúdio e da expansão usam a modal atual de importação,
+tiles de chão de uma célula e painéis auxiliares visíveis, inclusive <strong>Projetos → Novo projeto</strong>.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_asset_removal.py</code> verifica o botão
+de remover assets da campanha, confirmação/cancelamento, falhas e respostas
+perdidas, preservação de edições não salvas e desfazer, conflitos de revisão,
+limpeza de cenas/projetos dependentes e modais desktop/móveis localizadas. Usa
+as mesmas opções isoladas de saída e navegador.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_scene_directory.py</code> verifica o ícone
+vermelho da cena e a edição pelo MapBuilder no menu de contexto, navegação normal
+de cenas, preservação da transmissão, acesso pelo teclado e layouts localizados
+em painéis estreitos. Usa as mesmas opções isoladas de saída e navegador.
+<code>gravewright.maps.tests.test_builder_scene_directory</code> cobre isolamento de
+campanha e papel, vínculo atual do projeto e consultas limitadas no diretório.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_player_broadcast.py</code> mantém um jogador
+conectado enquanto o mestre gera uma cena privada no MapBuilder e usa
+<strong>Ativar para jogadores</strong> no diretório, sem editar a visibilidade separadamente.
+Verifica a entrega ao vivo e após recarregar por pixels do chão e das imagens,
+tiles e assets públicos, e pela exclusão de imagens do mestre, blueprints e
+projetos de origem. Usa as mesmas opções isoladas de saída e navegador.
+<code>gravewright.maps.tests.test_builder_player_activation</code> cobre revisões de ativação,
+repetições, rollback, leitura por streamer e limites de autorização.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_native_effects.py</code> verifica as
+predefinições nativas de luzes, partículas e shaders no builder, edição de
+propriedades, pixels de prévia animados, salvamento/reabertura, catálogos
+desktop/móveis localizados, cena nativa para mestre/jogador, propriedade dos
+objetos e estados ativos na atualização e descarte do renderizador. A cobertura
+do servidor fica em <code>gravewright.maps.tests.test_builder_effects</code>; as opções de
+navegador e o isolamento são os mesmos dos outros cenários do builder.</p>
+<p><code>uv run --locked python tests/e2e/pixi_board_lifetime.py</code> compila as fontes locais
+do renderizador e verifica pixels reais da GPU ao liberar e readquirir a imagem
+de um token imediatamente e ao fechar outro tabuleiro. Confere máscaras
+circulares, redimensionamento e descarte independente sem Django ou dados de
+campanha. Use <code>--workdir &lt;diretorio-de-saida&gt;</code>, <code>--node &lt;executavel-node&gt;</code> e
+<code>--browser-executable &lt;chromium&gt;</code> para escolher ferramentas locais e diagnósticos;
+as dependências de compilação do frontend precisam estar instaladas. Os testes
+unitários de referências de imagens também exercitam essa corrida pelo loader
+real do Pixi.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_render_lifetime.py</code> exercita
+teletransportes recíprocos por áreas de presença com imagem de token compartilhada,
+visão dinâmica, luzes com máscaras, partículas e shaders nas telas de mestre e
+jogador. Confere exceções do navegador e a continuidade da animação na GPU após
+teletransportes repetidos, ocultação/exibição, teste nativo de comportamento e
+redimensionamento. Usa a fixture isolada do builder e as mesmas opções
+<code>--output</code>/<code>--browser-executable</code>.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_torches.py</code> exercita uma tocha
+composta da configuração no builder à interação real na mesa. Verifica janelas
+de componentes nativos, chama/mecanismo independentes, transformações, cópias,
+camadas e exclusão/desfazer do conjunto, ações de porta/chama no Blueprint,
+layouts estreitos traduzidos, teclado/ponteiro do jogador, transformações
+nativas da imagem e recusa de streamer. Usa arte sintética e os isolamentos de
+campanha, banco, mídia, porta e saída do cenário compartilhado. A cobertura de
+domínio fica em <code>gravewright.maps.tests.test_torches</code>; testes puros dos modelos
+do builder e das imagens nativas verificam vínculos, transformações afins,
+referências ausentes e IDs de cópia.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_composite_conditions.py</code> constrói
+All/Any pelo editor real de Blueprint, verifica simulação sem escrita, conexões
+tipadas salvas e layouts desktop/celular traduzidos; depois testa uma passagem
+com três tochas como jogador e muda a regra para Any por atualização vinculada.
+Usa arte sintética e a fixture isolada do builder. Testes do servidor ficam em
+<code>gravewright.maps.tests.test_blueprint_logic</code>; o modelo puro verifica tabelas de
+verdade, composição, avaliação completa, referências ausentes e limites de
+versão/tipo/ciclo.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_variables_signals.py</code> configura
+variáveis tipadas de elemento/cena e grafos receptores nomeados pelo editor real.
+Verifica simulação privada, mudança de tipo e desfazer, sinais por alvo e por
+cena a partir de interações reais do jogador, recibos, reconexão, atualizações
+vinculadas, projeções privadas e a visão de variáveis/redefinição do mestre.
+Layouts em inglês, português e espanhol usam arte sintética e os mesmos
+isolamentos de campanha, banco, mídia, porta e navegador. A cobertura de domínio
+fica em <code>gravewright.maps.tests.test_blueprint_variables</code>; o modelo puro verifica
+valores falsos/zero/vazio, retrato inicial, portas tipadas, memória inválida,
+limites de sinais e compatibilidade de versão. Testes de arquivo de campanha e
+duplicação nativa cobrem preservação de progresso e memória própria das cópias.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_choices.py</code> configura Escolher
+caminho e Aleatório com pesos pelo editor real, com conexões de Valor tipadas,
+controles de casos/caminhos, correção de valores duplicados, Desfazer/Refazer,
+Cancelar e simulação local. Verifica layouts desktop/celular traduzidos sem
+interseção dos cartões de escolha e ações do jogador, caminhos escolhidos pelo servidor,
+recibos, privacidade, atualizações vinculadas e interações agendadas na cena
+isolada. Testes de domínio em <code>gravewright.maps.tests.test_blueprint_choices</code>
+cobrem casos tipados e pesos estritos, saídas Padrão/desconectadas, um sorteio na
+convergência, sorteios privados estáveis nas repetições inclusive após reversão,
+permissões, trilhas do mestre, continuações de Delay, leituras atuais do
+Temporizador, posições antigas/privadas dos sorteios, eventos de presença em
+lote/trajeto, exclusão de personagens e pastas recursivas e valores autorados
+na reescrita de arquivos. Testes puros em <code>builder/blueprint-choices.test.mjs</code>
+cobrem portas dinâmicas estáveis, valores falso/zero/vazio/Unicode, retratos
+imutáveis, definições e sorteios inválidos, limites dos intervalos de pesos,
+escolhas não alcançadas/convergentes, ordem com Delay e composição com controles.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_capabilities.py</code> exercita grupos,
+referências tipadas, transformações, ações de interação/região e Contexto do
+evento pelo editor real, com assets sintéticos e campanha, banco, mídia, porta
+e navegador isolados. Verifica autoria, simulação temporária, layouts traduzidos,
+fonte salva e efeitos/permissões nativos durante o jogo.
+<code>gravewright.maps.tests.test_blueprint_capabilities</code> cobre grupos ordenados
+tipados, referências de luz/som, alvos ausentes/incompatíveis, transformações
+nativas e componentes de tocha, configuração de interação, identidade original
+por sinais e trabalho temporizado, reversão/recibos, atualização de cenas e
+remapeamento em arquivos/cópias. <code>gravewright.maps.tests.test_region_filters</code>
+cobre predicados E/OU, mudanças de ocultação/disposição, propriedade de IDs,
+bases silenciosas de configuração, ativação de regiões durante o jogo,
+supressão de presença por comando, sincronização das entradas atuais e filtros
+preservados/remapeados em atualizações e arquivos.
+<code>builder/blueprint-capabilities.test.mjs</code> verifica conexões de conjuntos tipados,
+limites de grupos/ações, padrões/tipos de contexto, simulação sob demanda, cópias,
+referências ausentes preservadas e conexão somente de execução após exclusão.
+Testes de região usam o mesmo helper de filtros nativo e verificam correspondência,
+normalização e omissões legadas; testes de interação de alavanca verificam
+controles desabilitados, teclado desatualizado, oclusão e operação pelo mestre.
+Execute também os cenários reais de cena/navegador para conferir visualmente
+geometria, permissões e ocupação filtrada.</p>
+<p>Os cenários de modelos reutilizáveis, rede e mundo dinâmico são
+<code>tests/e2e/map_builder_templates.py</code>, <code>map_builder_network.py</code> e
+<code>map_builder_world.py</code>. Usam as mesmas opções de isolamento/execução do navegador
+e dados sintéticos. Modelos verificam vínculos tipados, limites de parâmetros,
+cópias independentes e Aplicar/Desfazer/Refazer/Cancelar pelo editor real. A rede
+verifica edição do proprietário existente e relações filtradas; o mundo cobre
+arte promovida, mudanças de material/visibilidade, públicos de apresentação,
+preferências de câmera e transporte de token na mesma cena. Execute-os como
+cenários de navegador: simulação pura não verifica entrega nem renderização nativa.</p>
+<p>As suítes de servidor focadas são <code>gravewright.maps.tests.test_blueprint_templates</code>,
+<code>test_blueprint_network</code>, <code>test_builder_dynamic</code>, <code>test_blueprint_world</code>, <code>test_surface_archives</code> e
+<code>gravewright.realtime.tests.test_automation_presentations</code>. Cobrem propriedade
+de recursos, recibos vinculados ao conteúdo, conflitos de revisão, salvamento
+atômico da fonte/cena, reversão, remapeamento em arquivos, propriedade de máscaras,
+orçamentos agregados de superfícies, travas de chegada persistentes e destinatários
+autorizados. A cobertura JavaScript pura fica junto
+dos modelos em <code>blueprint-templates.test.mjs</code>, <code>network-model.test.mjs</code>,
+<code>blueprint-presentation.test.mjs</code>, <code>dynamic-surfaces.test.mjs</code> e junto dos helpers
+nativos de imagem. Reconstrua o tabuleiro ao alterar esses helpers.</p>
+<p>O ensaio pelo motor real e os controles do jogo possuem cobertura de servidor em
+<code>gravewright.maps.tests.test_blueprint_testing</code> e
+<code>gravewright.maps.tests.test_scene_controls</code>. Execute essas suítes com banco e
+mídia descartáveis, conforme a configuração acima. O ensaio verifica vínculos
+da fonte não salva, contexto autenticado de token, superfícies apenas com
+metadados, evento exato escolhido, sinais, avisos de tempo, repetição
+determinística e reversão completa de dados, recibos, arquivos e entregas após
+commit. Os controles verificam isolamento de mestre/jogador/streamer, revisões,
+recibos vinculados ao conteúdo, distinção entre estado e interação, componentes
+da tocha, ocupação silenciosa de regiões, restauração de material e preservação
+do projeto autoral durante atualização vinculada.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_playtest.py</code> exercita as APIs
+públicas e os controles reais de ensaio do Builder e da cena com dados
+sintéticos. Compara snapshots da campanha/banco/mídia e observa um jogador
+conectado para detectar entrega acidental de apresentação. Os testes JavaScript
+ficam em <code>builder/playtest-model.test.mjs</code>, <code>builder/run-format.test.mjs</code> (resumos
+de passos e mudanças compartilhados com o registro de automação) e
+<code>scene-controls.test.mjs</code>. O ensaio
+no servidor não avança o agendador: confira vencimentos reais de Delay e
+Temporizador nos cenários separados abaixo.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_universal_vtt.py</code> exercita a escolha
+de importação nativa, avisos, repetição após perda de confirmação, cancelamento
+da exportação, download e reimportação de geometria/luzes. Confere permissões de
+mestre/jogador/streamer e os layouts de importação/exportação em inglês,
+português e espanhol a 1440px e 390px, com imagem gerada e campanha descartável.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_region_filters.py</code> verifica falha
+e repetição do catálogo de atores, ausência legada ao abrir e limpar filtros,
+salvar/Desfazer/Refazer, IDs ausentes de token inertes e Cancelar/Salvar nativos.
+As formas isoladas do Builder e editor nativo usam nomes longos autorados em
+inglês, português e espanhol a 1440px e 390px, conferindo acesso aos controles,
+tamanho de texto, overflow e configuração sem eventos artificiais de automação.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_persistent_gates.py</code> configura
+Contador, Uma vez e Recarga pelo editor real de Blueprint, verifica a memória
+temporária da simulação e os layouts desktop/celular traduzidos; depois exercita
+interações do jogador, recibos, reconexão, atualizações vinculadas, projeções
+privadas e a redefinição de memória dos nós pelo mestre. Usa arte sintética e a
+fixture compartilhada com campanha/banco/mídia/navegador isolados. A cobertura de
+domínio em <code>gravewright.maps.tests.test_blueprint_controls</code> verifica progresso
+persistente, reversão atômica, reconciliação, cópias/arquivos e Recarga pelo
+relógio do servidor. A cobertura pura em <code>builder/blueprint-controls.test.mjs</code>
+verifica ramos por meta, saturação, primeiro uso, prazo exato de Recarga,
+tentativas bloqueadas, isolamento por evento, convergência, entradas imutáveis
+e limites estritos de memória/tempo. Esses cenários validam Recarga por eventos.
+A espera persistente tem um cenário separado abaixo.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_delay.py</code> configura Delay pelo
+editor real de Blueprint e verifica simulação que suspende sem agendar,
+conexões tipadas salvas e layouts desktop/celular em inglês, português e
+espanhol. Em uma cena real, verifica ações adiadas de porta, a visão Aguardando
+do mestre e cancelamento, pausa/retomada, navegadores desconectados e recuperação
+após reiniciar o servidor ASGI. A fixture compartilhada isola campanha, banco,
+mídia, portas e saída, sem tocar na fila do operador. Testes puros em
+<code>builder/blueprint-delay.test.mjs</code> cobrem suspensão do evento inteiro, ordem de
+Sequência/ramificação, convergência, entradas lidas sob demanda, memória dos
+controles, eventos nomeados, imutabilidade, limites de duração e compatibilidade
+de versão.
+<code>gravewright.maps.tests.test_blueprint_delays</code> cobre continuações privadas,
+retomada ordenada, valores originais do evento e memória atual dos controles,
+recibos, reversão por trecho, permissões do autor/cena, cancelamento por edição
+de comportamento, projeções privadas, limites de fila/arquivo/cópia, esperas em
+série, executores SQLite concorrentes e limites da cadeia entre esperas.
+<code>gravewright.maps.tests.test_delay_worker</code> verifica início
+automático pelo host, processamento sem navegador, encerramento seguro, executor
+desativado, diagnóstico de erros, liberação das conexões e suspensão durante a
+manutenção do atualizador gerenciado.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_timer.py</code> configura ações nomeadas
+Iniciar/Parar/Reiniciar Temporizador e seus receptores de sinal pelo editor real,
+verifica execução imediata de Próximo e simulação sem contagem regressiva e
+inspeciona layouts desktop/celular em inglês, português e espanhol. Sua cena
+real isolada exercita ações do jogador e recibos, projeções privadas,
+parar/reiniciar e controles desatualizados do mestre, preservação em atualizações
+vinculadas, leitura atual de variáveis ao vencer, pausa/retomada, navegadores
+fechados e recuperação após reiniciar o ASGI. Não reutiliza dados nem a fila do
+operador. Testes de domínio em
+<code>gravewright.maps.tests.test_blueprint_timers</code> cobrem validação tipada,
+preservação de identidade/prazo/autor, ordem de iniciar/parar/reiniciar, autoridade
+do reinício pelo mestre, recibos, reversão, capacidade compartilhada com Delay,
+limites herdados de tempo/elemento, cancelamento, arquivos/cópias e executores
+concorrentes. Os testes puros em <code>builder/blueprint-timer.test.mjs</code> cobrem
+validação estrita de ação/duração/nome/versão, continuação imediata, receptores
+separados de vencimento, ordem com Delay, nós não alcançados/convergentes e
+dados autorados/de prévia imutáveis.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_library_controls.py</code> verifica a
+posição estável da barra entre materiais, luzes e catálogos de partículas/shaders,
+filtros com nomes longos, busca e recolhimento, com galeria vazia e mídia
+sintética. Confere alinhamento compacto dos checkboxes e ativação por clique ou
+Espaço em configurações, camadas e propriedades de luz, tocha e região, em inglês,
+português e espanhol, no desktop e celular. Usa a fixture isolada do builder.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_regions.py</code> exercita retângulos
+nomeados, a placa ligada à porta e o editor real de Blueprint, layouts estreitos
+traduzidos, dois tokens de jogador, primeira chegada/última saída, ocupação
+nativa privada, atualização/reabertura da cena e editor nativo de região do
+mestre. Usa os mesmos isolamentos de campanha, banco, mídia, porta e navegador.
+Testes de domínio ficam em <code>gravewright.maps.tests.test_regions</code>; os modelos de
+região do builder e da mesa cobrem geometria, referências tipadas e cópias/camadas.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_native_editors.py</code> exercita as
+mesmas janelas de luzes, partículas, shaders e paredes/portas usadas no jogo.
+Verifica rascunhos privados, cancelar/Escape, uma etapa de desfazer por
+salvamento, GLSL completo, biblioteca de presets e assistente de prompt interno,
+canais/elevação de barreiras, arraste de janelas, foco e presets pelo teclado,
+salvar/reabrir e geração/atualização nativa. Também abre essas janelas na mesa
+real do jogo para conferir seu host normal. Cenas
+ativas permanecem intactas até uma ação explícita de gerar/atualizar. Layouts
+desktop em inglês/português e 390px em português/espanhol conferem foco, controles
+traduzidos e ações de salvar acessíveis. Usa as mesmas opções isoladas de
+campanha, saída e navegador.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_native_effects_occlusion.py</code>
+compara pixels reais da prévia em paredes sólidas e portas fechadas/abertas.
+Também verifica diagnósticos de GLSL inválido e preset ausente, recuperação,
+shaders personalizados que ignoram o uniforme de intensidade e descarte do
+renderizador enquanto o documento está oculto.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_refinements.py</code> verifica a área e o
+cursor do pincel redondo, atalhos de tamanho, borracha por área, célula inicial do
+preenchimento, captura de material e cancelamento de polígonos pelo teclado.
+Exercita seleção, transferência, isolamento, criação durante o isolamento,
+bloqueios e mesclagens seguras de camadas, incluindo desfazer, reabrir e atualizar
+cenas nativas preservando identidades e ativação das luzes durante o jogo.
+Layouts em inglês, português e espanhol cobrem desktop e celular, inclusive
+ações das camadas após rolagem e recorte do estado da camada ativa.
+As operações puras de geometria e camadas têm cobertura nas suítes <code>node:test</code>
+junto ao código do builder.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_custom_layers.py</code> verifica a camada
+inicial única, vazia e renomeável, a remoção da última camada vazia, criação
+explícita, mistura de tipos de objeto, conteúdo expansível e restrições de
+seleção. Exercita duplicação com deslocamento de uma célula, novas identidades e
+referências remapeadas de Objetos Inteligentes, reordenação por arraste real,
+desfazer, filtro visível de coleção, salvar/reabrir e gerar. Os layouts cobrem
+inglês, português e espanhol, inclusive telas móveis estreitas. No servidor,
+<code>gravewright.maps.tests.test_builder_layers</code> verifica salvar/reabrir sem camadas,
+geração apenas com fundo, atualização que preserva objetos manuais da cena,
+rejeição de objetos órfãos nos sete tipos e compatibilidade com projetos existentes.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_clean_layout.py</code> verifica o canvas
+ampliado, controles de desenho na aba Ferramentas do painel existente e a
+identidade única dos controles. Exercita o nome do mapa no cabeçalho, aplicação
+com Enter/saída do campo, cancelamento com Escape, desfazer/refazer e salvamento
+do nome que está digitado. Também verifica as categorias da biblioteca ativando
+ferramentas e layouts localizados de desktop/celular, preservando os dados do
+projeto e dos objetos nativos.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_header_tools.py</code> verifica os atalhos
+Selecionar/Pintar/Apagar do cabeçalho, seleção com Shift e por caixa, movimento
+de grupo e desfazer. Confere Pintar restaurando o pincel de chão sem trocar o
+material, áreas reais do pincel, tamanho sincronizado com Ferramentas e atalhos
+de colchetes, geometria fracionária sem encaixe e exclusão de objetos inteiros.
+Interceptar o salvamento e ativar a Prévia verificam a desativação dos controles
+de edição. Layouts em inglês, português e espanhol exercitam os controles em
+larguras de desktop e celular.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_tiles_only.py</code> mantém a regressão
+de Tiles apesar do nome histórico do arquivo. Confere projetos Tiles padrão
+intactos, preserva geometria, cor/opacidade e objetos nativos de projetos antigos
+e gera os pixels esperados antes de escolher Tiles explicitamente para novas
+edições. Novos gestos Tiles mantêm células com encaixe e formas contínuas com
+o encaixe desligado. Cobre ferramentas de chão, camadas e layouts localizados
+no desktop/celular, com as mesmas opções isoladas de campanha, saída e navegador.
+<code>gravewright.maps.tests.test_builder_paint_modes</code> mantém a
+cobertura do servidor para ler e renderizar metadados de pintura já salvos.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_floor_repaint.py</code> verifica a
+repintura de chão com e sem encaixe. Confere a preservação dos registros de
+origem, IDs, ordem, revisão salva e histórico de desfazer, variações de famílias,
+cobertura pela união de pisos e substituição sem chão antigo escondido por
+baixo. Furos, outras camadas, projetos salvos, prévias e pixels gerados mantêm
+a cobertura esperada. Testes unitários de modelo, pincel e geometria também
+cobrem a recusa atômica nos limites de geometria.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_editor_panels.py</code> verifica os seis
+painéis do editor, vínculos entre abas e painéis, navegação por setas, restauração
+do foco e posições independentes de rolagem sem alterar documento ou revisão.
+Exercita estados vazios, edição real de propriedades e desfazer, controles de
+pincel Tiles/Pintura e prévia de Shift-arrastar, filtros de efeitos nativos e
+controles de edição pausados na Prévia. Nomes sintéticos longos de mapa, imagem e
+camada cobrem inglês/português no desktop e português/espanhol em 390px e 320px.
+Usa a mesma fixture descartável e opções de saída/navegador dos demais cenários.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_terrain_paint.py</code> exercita o seletor
+Tiles/Pintura do cabeçalho e o pincel circular de terreno com texturas sintéticas
+assimétricas. Um cálculo independente do kernel radial e da composição por
+camada confere bordas suaves, dureza, acúmulo parado de intensidade, mistura de
+materiais e borracha suave, inclusive camadas protegidas e pintura posterior à
+borracha. Gestos reais exercitam desfazer em um passo, Escape, bloqueios,
+posições fracionárias e a otimização Tiles sem alteração. Shift e arrastar
+conferem a área e o tamanho do pincel ao vivo sem mudar origem/revisão, em
+Pintura e Tiles com/sem encaixe. Compara a região de
+terreno do SVG real com tiles gerados e atualizados, confere a origem exata ao
+salvar/reabrir e preserva dados nativos de parede/porta/luz, estado da porta em
+jogo e paredes manuais da cena. Capturas focadas em inglês/português/espanhol
+no desktop/celular inspecionam os controles reais de modo e pincel. Usa a mesma
+fixture descartável e opções de saída/navegador dos demais testes do builder.
+Kernel, limites e raster têm cobertura focada em
+<code>gravewright.maps.tests.test_builder_terrain_brush</code>,
+<code>builder/terrain-brush.test.mjs</code> e <code>builder/terrain-painter.test.mjs</code>.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_smart_walls.py</code> verifica a arte de
+paredes e seus nós editáveis com uma faixa sintética assimétrica e margens
+transparentes. Compara uma parede contínua com segmentos colineares e pontas
+invertidas, testa encontros L/T e aberturas de portas e compara a cobertura da
+Prévia com os tiles gerados. Gestos reais exercitam movimento de nó compartilhado,
+encaixe, bloqueio de camada, preservação das portas, divisão pelo meio, arraste de
+canto, prolongamento sobre outra parede e desfazer em um passo. Inclui foco de
+teclado, cancelamento com Escape, arraste por toque no celular com zoom,
+salvar/reabrir e gerar. Usa as mesmas opções isoladas de saída e navegador dos
+outros cenários do Map Builder. A cobertura JavaScript focada fica em
+<code>builder/wall-edit.test.mjs</code> e <code>builder/wall-joins.test.mjs</code>, junto às fontes.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_free_paint.py</code> verifica traços
+fracionários sem encaixe, círculos suaves, retângulos e polígonos, borracha por
+área contínua, preenchimento da forma exata, guias e transformações dos contornos
+e furos. Compara a área renderizada pelo SVG do editor com os tiles da cena
+gerada, incluindo salvar/reabrir e voltar às células com encaixe. Validação do
+servidor, máscaras par/ímpar, transparência, fase da textura e limites de recursos
+ficam em <code>gravewright.maps.tests.test_builder_free_paint</code>.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_asset_types.py</code> verifica categorias
+exatas na biblioteca após importação com tipo, salvamento automático,
+recarregamento e abertura em outra aba. Confere Pintar e o filtro de Material,
+troca do tipo de um asset existente e classificação de uma imagem anterior da
+campanha pelo Material, sem regravar recursos da campanha. Imagens e estado são
+descartáveis.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_autosave.py</code> exercita a persistência
+automática do projeto sem clicar em Salvar: digitação, desenho, desfazer/refazer,
+confirmações atrasadas durante um traço, repetição de recibo após resposta perdida,
+recarregamento com escrita confirmada no servidor e rascunho desfeito mais recente,
+falha de carregamento inicial/tentativa, conflitos de revisão com
+cópia/recarregamento e conclusão ao navegar. Os Objetos
+Inteligentes verificam aplicação automática do grafo, campos inválidos, estado
+localizado em desktop/celular, configuração nativa e do projeto e proteção contra
+revisão antiga sem executar ações de jogo. Usa estado descartável e imagens
+geradas. Os cenários anteriores de Salvar/Cancelar manual nos Objetos Inteligentes
+descrevem o fluxo anterior da modal; este cenário verifica o contrato automático.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_lifecycle_events.py</code> configura
+<code>onDestroy</code> pelo editor real e verifica conectores de região/sinal por capacidade,
+layouts localizados em desktop/celular e previsão da remoção sob rollback
+completo. Travessias reais de tokens de jogador verificam eventos por token e
+mudanças de ocupação na primeira chegada/última saída. A remoção nativa verifica
+permissões, pausa, rollback de cadeias com falha, efeitos por sinal entre elementos
+e recibos idempotentes; o projeto autoral permanece intacto. Banco, mídia e saída
+são isolados.</p>
+<p><code>tests/e2e/map_builder_events.py</code> é anterior ao contrato simplificado de eventos
+de início. Use o cenário focado abaixo para o fluxo atual de interação.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_event_origins.py</code> verifica eventos
+básicos sem comparações ou filtros de estado, origem visível dos cabos em dois
+níveis de zoom, layouts em inglês/português/espanhol e dois cliques reais na cena
+com <strong>Selecionar</strong> na camada <strong>Jogo</strong>. Configura a sequência completa de
+<code>onInteract</code> com Verificar estado, Mudar estado e Trocar imagem; verifica
+salvamento automático, desfazer/refazer, reabertura, teste pelo servidor e
+interação nativa; e confirma que sequências vazias ou apenas de imagem não
+alternam implicitamente. Também verifica o descarte de grafos removidos no
+carregamento, sem remover elementos ou assets. A fixture isola campanha, banco,
+mídia, porta e saída com arte sintética. Testes de servidor em
+<code>gravewright.maps.tests.test_blueprint_state_sprite</code> exercitam ações explícitas
+de estado e imagem, condições com retrato inicial e recibos de repetição.</p>
+<p>O contrato atual de eventos no servidor é coberto por <code>test_blueprint_events</code>,
+<code>test_blueprint_base_events</code> e <code>test_blueprint_references</code>. Suas fixtures usam
+eventos de início e nós explícitos de estado/condição; a execução entre elementos
+usa sinais nomeados. A cobertura inclui descarte de grafos removidos, validação
+de UUID e tipos nos grafos ativos, permissões de tranca, limites de cadeias,
+rollback completo e recibos de repetição. <code>test_blueprint_testing</code> também verifica
+que o mestre pode ensaiar uma cena pausada sem alterar a pausa salva: ações
+normais, destruição e falhas inesperadas mantêm o jogo pausado e não persistem
+efeitos do ensaio.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_object_areas.py</code> verifica conectores
+de área em objetos, tochas e Empty Objects, simulação local, ensaio com rollback,
+travessias de tokens de jogador autorizado e ocupação privada. Inclui limites
+rotacionados e travessias completas, com layouts desktop e móveis traduzidos.
+As suítes de servidor <code>test_object_areas</code> e <code>test_object_area_integration</code> cobrem
+eventos por token, ações explícitas, pausa, movimentos bloqueados, edição de
+geometria, atualização de cena, importação, contagens, limites de áreas e rollback.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_target_connections.py</code> verifica a
+ligação de ações de área de um Empty Object a outros objetos por <strong>Alvo</strong>,
+arrastando nos dois sentidos em diferentes níveis de zoom, seleção de nós
+compatíveis, teclado e cancelamento, autosave, ensaio e entrada real de token.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_area_live_sync.py</code> verifica um Empty
+Object interagindo explicitamente com uma alavanca que possui ações de estado,
+imagem e luz. O jogador arrasta um token para dentro, para fora e de volta; os
+estados recebidos, controles, pixels da imagem e luz se atualizam nas telas de
+mestre e jogador sem recarregar. A fixture também diferencia autosave do projeto
+e aplicação do novo grafo de saída por <strong>Atualizar cena</strong>.
+<code>test_blueprint_interact_action</code> cobre alvos nativos e autorais, grupos tipados,
+componentes de tocha, trancas, limites, rollback, repetição, ensaio e contexto de
+token após espera.</p>
+<p>A matriz finita de combinações de Objetos Inteligentes é verificada em três
+camadas:</p>
+<ul><li><p><code>tests/fixtures/map_builder_connections.json</code> define 28 produtores de valor e
+38 variantes consumidoras, incluindo nós sem entrada Alvo. Tanto
+<code>gravewright.maps.tests.test_blueprint_connection_matrix</code> quanto
+<code>builder/blueprint-connection-matrix.test.mjs</code> verificam os 1.064 pares com
+os mesmos tipos esperados. Também exigem que toda porta de valor registrada
+apareça na fixture. Conexões recusadas preservam o grafo; as aceitas passam
+pela validação completa e recusam um segundo fio de valor na mesma entrada.</p></li><li><p><code>gravewright.maps.tests.test_blueprint_action_matrix</code> verifica 362 casos de
+ação, tipo de alvo e referência/grupo, incluindo todos os estados graváveis,
+interação nativa e autoral, luzes, sons, referências ausentes/de outra cena e
+grupos mistos. Confere efeitos e identidades separadas dos alvos atendidos,
+ausentes e incompatíveis. <code>test_blueprint_event_matrix</code> verifica 387 casos de
+proprietário/evento/estado, controles, permissões, pausa, públicos,
+temporizador/espera e presença com dois tokens. Eventos apenas iniciam fluxos;
+mudar estado não executa implicitamente a interação de outro objeto.</p></li><li><p><code>uv run --locked python tests/e2e/map_builder_combination_matrix.py</code> exercita
+131 casos no navegador real: referências/grupos tipados nos dois sentidos de
+conexão, criação de nós em ambos os sentidos, adaptação de booleanos/números/
+textos, composição de lógica, eventos disponíveis, recursos indisponíveis,
+cancelamento, desfazer atômico, autosave, recarregamento e atualização da mesma
+cena. Um ensaio no servidor identifica pelo nome um alvo existente
+incompatível. Usa assets sintéticos e a fixture compartilhada com campanha,
+banco, mídia, porta, saída e navegador isolados.</p></li></ul>
+<p>Essas matrizes cobrem os contratos enumerados, sem garantir todos os grafos
+autorais possíveis. Execute também as suítes de comportamento acima para
+cadeias maiores e sincronização ao vivo entre mestre e jogador.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_sprite_targets.py</code> verifica o
+catálogo completo de nós em portas, alavancas, tochas, Objetos vazios e regiões.
+Configura entrada/saída da área de um Objeto vazio diretamente em <strong>Trocar
+imagem</strong>, com uma imagem comum ligada ao <strong>Alvo</strong>, sem grafo de interação no
+alvo. Movimentos reais do token de jogador conferem a imagem recebida e os pixels
+renderizados nas telas de mestre e jogador, além de autosave/recarregamento,
+remapeamento de referências, atualização da mesma cena, movimento/redimensionamento
+nativo e restauração. Mudanças manuais de geometria mantêm a proteção de conflito
+na atualização. Usa a fixture descartável compartilhada e arte sintética.
+<code>gravewright.maps.tests.test_blueprint_sprite_targets</code> cobre referências e grupos
+tipados, todos os tipos de proprietário e modos visuais, restauração privada da
+imagem-base, edições nativas, exclusão de recursos, remapeamento/validação de
+arquivos, rollback e recibos de repetição.
+<code>builder/blueprint-sprite-targets.test.mjs</code> verifica os contratos de catálogo e
+recursos de imagem; a matriz de conexões inclui a entrada Alvo tipada de sprite.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_gm_layers.py</code> verifica que Objetos
+vazios só podem ser editados em GM, imagens públicas podem ir ao GM e voltar pelo
+menu de contexto, e controladores ocultos continuam disparando ações de área com
+movimentos reais dos tokens de jogador. Confere imagens comuns, alavancas, tochas
+e trocas ativas de sprite nas duas telas, dados privados, geração, atualização
+da fonte e recarregamento. <code>gravewright.maps.tests.test_empty_gm_layer</code> verifica
+roteamento nativo, privacidade na leitura de cenas antigas, recusa de comandos de
+jogador, atualização vinculada e manutenção dos conflitos de geometria manual.
+Os testes dos modelos de camada e interação conferem seleção por aba, seleção
+mista e controles de teclado antigos.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_element_names.py</code> confere os campos
+de nome dos oito tipos de elemento, salvamento automático, reabertura,
+desfazer/refazer, duplicação e rótulos de referências. Cria Objetos vazios e
+regiões diretamente pela faixa de ferramentas da biblioteca, verifica acesso
+por teclado e layouts traduzidos em desktop/390/320 px, e gera/atualiza a cena
+vinculada sem substituir identidades ou UUIDs de alvos.
+<code>gravewright.maps.tests.test_builder_element_names</code> cobre validação, Unicode,
+elementos antigos sem nome, edições nativas, superfícies dinâmicas e falhas
+atômicas de gravação.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_event_latency.py</code> mede entrada/saída
+real de tokens em áreas e interação direta em uma cena com 52 imagens sintéticas
+nas telas do GM e do jogador. Registra desde soltar o mouse ou interagir até o
+primeiro pixel WebGL correspondente, confirmações/projeções do socket e contagens
+de busca/decodificação/envio de imagens à GPU. Consultas por screenshot ficam fora
+do intervalo medido. Compare execuções na mesma máquina e fixture; os tempos são
+observações, não limites de aprovação. O cenário também confere marcadores de
+Objetos vazios, imagens e desenhos privados sutis entre abas, edição restrita a
+GM e privacidade dos dados do jogador. Aceita as opções usuais <code>--output</code> novo e
+<code>--browser-executable</code>. Os testes do modelo de imagens cobrem reutilização,
+remoção limitada, falhas, resultados atrasados e descarte;
+<code>gravewright.realtime.tests.test_scene_update_priority</code> verifica entrega por
+socket real antes de áudio bloqueado, ordem após commit e autorização atual.</p>
+<p><code>gravewright.maps.tests.test_blueprint_performance</code> mede comandos reais de domínio
+com dados sintéticos. Confere consultas limitadas aos inventários, projeção de
+trajetos, efeitos de estado/imagem/luz, atualização de metadados e propriedade
+no comando seguinte, limpeza após falhas e uma notificação do histórico depois
+do commit. Para registrar consultas SQL e tempos, defina
+<code>GRAVEWRIGHT_EVENT_BENCHMARK_OUTPUT</code> como um arquivo JSON explícito em uma pasta
+de testes dentro da instalação e execute a suíte com banco/mídia descartáveis
+conforme a configuração acima. Testes normais executam uma amostra; o modo de
+medição executa cinco cadeias de oito objetos e três entradas em dezesseis áreas.
+Cada amostra usa um UUID de recibo novo e faz rollback ao terminar; as asserções
+de efeitos ficam fora do intervalo medido. O intervalo inclui autorização,
+recibos, SQL e serialização síncrona, sem a gravação final da transação em disco,
+entrega pela rede ou renderização no navegador. Na fixture sintética medida,
+as consultas caíram de 101 para 42 na cadeia e de 286 para 174 na entrada em
+áreas. Os tempos dependem da máquina e não são limites de aprovação dos testes.</p>
+<p><code>uv run --locked python tests/e2e/map_builder_blueprints.py</code> verifica a modal
+Objeto Inteligente da porta, cancelamento do rascunho, conexões, simulação local,
+desfazer, projetos salvos e layouts móveis localizados. Também abre clientes de
+mestre e jogador para verificar estado nativo, arte ativa, sincronização de luz
+e áudio, repetição de comandos, permissões de portas trancadas, a janela
+Automação do mestre, atualização da cena e limpeza de imagens. Usa as mesmas opções isoladas de saída e navegador.
+A validação e a compatibilidade em Python estão em <code>test_blueprints</code>,
+<code>test_blueprint_data_nodes</code>, <code>test_automation_runs</code>, <code>test_blueprint_references</code>, <code>test_builder_blueprints</code> e <code>test_blueprint_compatibility</code> sob
+<code>gravewright.maps.tests</code>; testes dos grafos do editor executam com
+<code>node --test gravewright/maps/static/gravewright_maps/builder/blueprint-model.test.mjs</code>.
+<code>uv run --locked python tests/e2e/map_builder_levers.py</code> verifica a ativação do
+comportamento de alavanca, editor de dois estados e imagens de objeto, referências
+e simulação, salvamento/reabertura, layouts desktop/móveis localizados, geração
+e dois cliques reais do jogador destrancando uma porta. Confere a projeção da
+imagem ativa e o registro privado de Automação com estado isolado e assets
+sintéticos. <code>gravewright.maps.tests.test_levers</code> cobre interação nativa, repetição
+de comandos, cadeias limitadas e reversão, papéis, atualizações, exclusão de
+imagens e arquivos de campanha.
+<code>tests/e2e/map_builder_blueprint_assets.py</code> cobre os bloqueios de tipo de imagens
+usadas somente em estados, precisão do volume salvo e cópia nativa sem imagem
+base na porta.
+<code>tests/e2e/map_builder_instance_nodes.py</code> verifica duas instâncias reais de porta,
+seus conectores com verbos, aparência por estado independente, estado nativo e isolamento do
+rascunho, salvamento legado sem alterações, conversão explícita após edição e
+layouts localizados com teclado em telas pequenas. Usa as mesmas opções
+isoladas de saída e navegador.</p>
+<p><code>tests/e2e/map_builder_drag_connections.py</code> exercita arraste de conexões com mouse
+e toque reais, seletor de nós no ponto de soltura, conexões diretas a entradas,
+vários ramos, conexões de valor tipadas, cancelamento e rejeição de ciclos. Verifica conexões salvas e
+reabertas, posicionamento com zoom e arraste da vista e layouts móveis localizados.
+Usa as mesmas opções isoladas de saída e navegador.</p>
+<p>Alguns cenários aceitam <code>--original /caminho/da/referencia</code> para comparação opcional de pixels com <code>dist/frontend</code> de outro checkout. Esse checkout não é necessário para testes comuns. <code>reference_tokens.cjs</code> é uma ferramenta auxiliar de comparação, não parte do comando de testes unitários Node.</p>
+<p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/tests/e2e/https.py"><code>tests/e2e/https.py</code></a> executa o Daphne instalado com TLS direto e atrás de um proxy TLS temporário. Verifica criação de conta no navegador, cookies <code>__Host-</code> com Secure, HSTS, rejeição CSRF, entrada/chat por WSS autenticado e recarga da página. Handshakes TLS verificam a rejeição de origens WebSocket ausentes, externas, HTTP e com porta incorreta. O cenário gera certificados temporários e usa caminhos isolados de banco/mídia, configurações de segurança de produção, um handler estático de teste e uma camada Channels em memória. Exige as dependências Python fixadas e o Chromium do Playwright acima; não precisa de Redis externo nem Nginx. Preserva o armazenamento de certificados do sistema e os dados da aplicação e grava diagnósticos em <code>test-results/https/</code>. Isso testa o contrato de transporte da aplicação; verifique a configuração Nginx e o certificado implantados conforme o <a href="deployment.html">guia de implantação</a>.</p>
+<p><code>tests/e2e/realtime_processes.py</code> inicia especificamente um contêiner Docker temporário <code>redis:7-alpine</code> e dois processos ASGI. Exige acesso ao Docker e disponibilidade de rede/imagem; remove seu próprio contêiner ao terminar. É separado das suítes padrão Django/Node.</p>
+<h2 id="validacao-do-executor-windows">Validação do executor Windows</h2>
+<p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/tests/e2e/runner.py"><code>tests/e2e/runner.py</code></a> inicia o executor Python real com dados pessoais temporários e sem Redis. Verifica configuração inicial, estáticos coletados, segurança HTTP, mensagens autenticadas entre duas sessões WebSocket, rejeição de porta ocupada e persistência de configuração, sessão, campanha, chat e mídia após reiniciar. Também confere que o <code>.env</code> do projeto é preservado após reiniciar e os dados de desenvolvimento existentes permanecem intactos. O cenário exige as dependências de desenvolvimento e o Chromium do Playwright acima; a inicialização comum do executor não exige isso.</p>
+<p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/config/test_frontend_preparation.py"><code>config/test_frontend_preparation.py</code></a> cobre reaproveitamento/instalação de dependências, mudanças nos fontes e saídas, pacotes ausentes ou executável esbuild quebrado, novas tentativas após falha no build, estado corrompido e preparação concorrente. Também verifica a passagem entre os modos <code>--plan</code>/<code>--record</code> usados pelo arquivo em lote, dependências incompletas e manifestos inválidos, sem executar instalação/build npm nesses modos do helper. Esses testes com subprocessos controlados fazem parte da suíte Django normal e não substituem um build npm real. Execute a suíte específica com <code>uv run --locked python manage.py test config.test_frontend_preparation --noinput</code>.</p>
+<p>O <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/.github/workflows/windows-runner.yml">workflow Windows</a> usa CMD para executar <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/tests/windows/runner.py"><code>tests/windows/runner.py</code></a>. Em qualquer sistema operacional, sua verificação do código confere que scripts e referências do launcher antigo estão ausentes:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-sh">python tests/windows/runner.py --source-check</code></pre></div>
+<p>No Windows, execute o cenário nativo completo a partir da raiz do código:</p>
+<div class="code-block"><div class="code-toolbar"><span>bat</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-bat">python tests\windows\runner.py</code></pre></div>
+<p>O cenário cria um checkout temporário com espaços, pontuação e Unicode e executa o BAT real sem override de diretório de dados. uv, Python, Node/npm, caches e temporários gerenciados ficam em <code>data/runner/</code>; estado e logs ficam em <code>data/</code>. Um perfil AppData legado fictício contém o ponteiro de outra instalação, e snapshots comprovam que ele permanece intacto. A reinstalação offline também ignora ferramentas externas compatíveis no PATH. O teste lê o atalho pelo COM do Windows, confere falha sem pausa para porta inválida e verifica criação/reutilização do <code>.env</code>, preservação de <code>.venv</code>, locks Python/npm, configuração e <code>PATH</code> do usuário/máquina/processo pai. Assets gerados são preparados apenas no checkout descartável.</p>
+<p>O mesmo cenário executa os testes unitários de preparação do frontend e o cenário do servidor Python real no Chromium. <code>--skip-browser</code> omite a instalação das dependências de testes de navegador e o cenário no navegador, mantendo as verificações do arquivo em lote. Diagnósticos são salvos em <code>test-results/windows-runner/</code>. Código, ambiente e dados de campanha temporários são removidos ao terminar o cenário.</p>
+<p>Use <code>&quot;Install Windows.bat&quot; --check --no-pause --data-dir &quot;&lt;diretório-temporário-de-dados&gt;&quot;</code> para uma preparação manual pelo arquivo em lote que termina sem servir requisições. Isso ainda instala dependências ausentes, compila recursos quando necessário e aplica migrações. A existência do workflow não significa que seus jobs já passaram para uma versão; apenas <code>--source-check</code> não valida a execução nativa do arquivo em lote.</p>
+<p>Antes de publicar um pacote Windows, execute esse workflow e verifique a inicialização comum com dois cliques, abertura automática do navegador, Ctrl+C e fechamento do console em um computador Windows. O <a href="windows-runner.html">guia do executor</a> descreve o modo de diagnóstico com diretório de dados isolado. Testes no Linux ou em outro sistema verificam o ambiente Python naquele sistema, não o CMD nem os atalhos nativos do Windows.</p>
+<p>Ao relatar resultados, informe comandos, versões e falhas. Um cenário que não conseguiu abrir o navegador não é um teste aprovado.</p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="frontend.html"><span>Anterior ←</span><strong>Arquitetura do frontend</strong></a><a href="configuration.html"><span>Próximo →</span><strong>Configuração</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/testing.md">docs/en/testing.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/testing.md">docs/pt-BR/testing.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#ambiente-local-controlado">Ambiente local controlado</a></li><li><a href="#python">Python</a></li><li><a href="#javascript">JavaScript</a></li><li><a href="#cenarios-no-navegador">Cenários no navegador</a></li><li><a href="#validacao-do-executor-windows">Validação do executor Windows</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

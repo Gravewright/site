@@ -8,6 +8,7 @@
     "check": "node scripts/check.mjs",
     "check:media": "node scripts/check.mjs --require-media",
     "start": "node scripts/serve.mjs",
-    "test": "npm run build && npm run check"
+    "sync:docs": "node scripts/sync-project-docs.mjs",
+    "test": "node --test scripts/*.test.mjs && npm run build && npm run check"
   }
 }

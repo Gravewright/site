@@ -25,7 +25,26 @@ This feature uses **one real 0.3.0 screenshot with the English interface and vis
 
 The core download is one ZIP for all three platforms: `Install Windows.bat`, `Install Linux.sh` and `Install macOS.command`. The three Runner guide links come from `runnerGuides` in the locale content.
 
-## Preview
+## Product wiki and developer documentation
+
+The site includes a product wiki at [`wiki/en/index.html`](wiki/en/index.html), a complete developer reference at [`docs/en/index.html`](docs/en/index.html), and [practical AI guides](docs/en/ai.html). Every page has a Brazilian Portuguese counterpart under `pt-BR/`. The home page links to both audiences. Articles render fully at build time, with a topic sidebar, heading links, source provenance, language switching, related reading and copyable code/prompts. Local full-text search covers both areas and ignores accents; it makes no external API calls.
+
+Product procedures live in `content/wiki.mjs`; AI workflows live in `content/ai-guides.mjs`. `content/wiki-media.json` maps real application screenshots to relevant articles, with captions, alternative text, version and provenance. Full-size images open from their thumbnails. Screenshots can use the English interface with Portuguese captions; their captions identify the interface language. Historical images retain their original version labels. Read [screenshot provenance](assets/wiki/README.md) before replacing them.
+
+The complete technical Markdown is a checked-in snapshot of the public project guides, rather than a runtime GitHub dependency. To update it from a clean source checkout, run the following from the site directory, then review the content and rebuild:
+
+```sh
+node scripts/sync-project-docs.mjs --source /path/to/gravewright
+npm test
+```
+
+`content/reference/catalog.json` records the source revision and version. Source links point to that revision. `scripts/build-knowledge.mjs` renders the snapshot with `scripts/markdown.mjs`, resolves documentation links to local articles, and generates `knowledge-search.json`, the knowledge manifest and the complete sitemap. Edit source Markdown in the main project first, keep English and Portuguese aligned, and sync again. Review copied guides whenever the public version changes; keep the snapshot version aligned with `publicVersion`.
+
+The original snapshot bytes remain intact. During rendering, `publicationCopy` aligns historical module packaging wording with the current `AGENTS.md` decision: each new RPG system is one installable package containing its interface, rules, assets and translations. It also updates Map Builder's pre-publication introduction to describe the documented revision. Review these explicit editorial adaptations when syncing newer source guides; API signatures and exact legal notices are preserved.
+
+AI examples explain how to provide repository context, keep systems in one package, use public APIs, protect local data and validate the result. Prompts are plain text for a developer's assistant; the website does not send project data to an AI provider or promise that generated code works.
+
+## Run locally
 
 Use Node.js 22 or newer. There are **no npm dependencies to install**.
 
@@ -53,6 +72,11 @@ Missing media render as designed placeholders, with the expected filename visibl
 | File | Purpose |
 | --- | --- |
 | `content/site.mjs` | English/Portuguese copy, public version, release URLs and source commands |
+| `content/wiki.mjs`, `content/ai-guides.mjs` | Product procedures and AI development guides in both languages |
+| `content/reference/` | Complete technical reference snapshot and pinned source catalog |
+| `content/wiki-media.json`, `assets/wiki/` | Screenshot-to-article mapping, real images and provenance |
+| `scripts/build-knowledge.mjs`, `scripts/markdown.mjs` | Static knowledge pages and Markdown rendering |
+| `knowledge.css`, `knowledge.js` | Documentation layouts and local full-text search |
 | `content/media.json` | Shared/localized media paths, dimensions, titles, alternative text, recording briefs and video duration |
 | `scripts/build.mjs` | Shared page template; generates both HTML pages |
 | `styles.css` | Template styles and responsive/media additions |
@@ -61,14 +85,14 @@ Missing media render as designed placeholders, with the expected filename visibl
 | `scripts/serve.mjs` | Local preview server with video byte-range support |
 | `scripts/check.mjs` | Generated-page, localized-asset, metadata and accessibility checks |
 
-Edit the sources and rebuild rather than editing the generated HTML. Both pages contain their text at build time and work without JavaScript. Documentation links point to the current Django project, rather than importing the obsolete legacy wiki. No external fonts, trackers or CDN scripts are used.
+Edit the sources and rebuild rather than editing the generated HTML. All pages contain their text at build time and work without JavaScript. The reference follows the current Django project, with pinned source links. No external fonts, trackers or CDN scripts are used.
 
 When publishing a VTT release, update `publicVersion`, release copy and FAQs together, then rebuild. The download URL and structured-data version derive from `publicVersion`; verify that the public ZIP is available first. Both languages must describe the same release status and Translator requirement.
 
 ## Checks
 
 ```sh
-npm test                 # rebuild and check both pages, links, IDs and media states
+npm test                 # renderer tests, rebuild and check every page/link/media
 npm run check:media      # also require all planned media files
 ```
 
@@ -80,6 +104,6 @@ Licensing and template attribution are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_N
 
 ## SEO
 
-SEO metadata is generated by `scripts/seo.mjs`: localized titles and descriptions, canonical URLs, language alternates, Open Graph, large-image social cards and WebSite/WebPage/SoftwareApplication JSON-LD. Sharing uses a lightweight JPEG derivative of the video cover (`assets/images/gravewright-social-v3.jpg`, 1200 × 676, about 258 KB). Its path and dimensions are in `scripts/seo.mjs`; the original PNG remains the video poster. The checks enforce JPEG format and a 300 KB size budget. Use a new filename when replacing a social image to avoid stale image caches. `sitemap.xml` lists both public pages and `robots.txt` points crawlers to it.
+SEO metadata is generated by `scripts/seo.mjs` and `scripts/build-knowledge.mjs`: localized titles and descriptions, canonical URLs, language alternates, Open Graph, large-image social cards and structured data for the product, articles and collections. Sharing uses a lightweight JPEG derivative of the video cover (`assets/images/gravewright-social-v3.jpg`, 1200 × 676, about 258 KB). Its path and dimensions are in `scripts/seo.mjs`; the original PNG remains the video poster. The checks enforce JPEG format and a 300 KB size budget. Use a new filename when replacing a social image to avoid stale image caches. `sitemap.xml` lists all public pages and `robots.txt` points crawlers to it.
 
 Reference: [Open Graph protocol](https://ogp.me/) and [Google software application structured data](https://developers.google.com/search/docs/appearance/structured-data/software-app).

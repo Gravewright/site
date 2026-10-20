@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Map Builder reference | Gravewright</title><meta name="description" content="Builder workflows, Smart Objects, automation, supported limits and developer contracts."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/map-builder.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/map-builder.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/map-builder.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/map-builder.html"><meta property="og:type" content="article"><meta property="og:title" content="Map Builder reference | Gravewright"><meta property="og:description" content="Builder workflows, Smart Objects, automation, supported limits and developer contracts."><meta property="og:url" content="https://gravewright.com/docs/en/map-builder.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Map Builder reference","description":"Builder workflows, Smart Objects, automation, supported limits and developer contracts.","inLanguage":"en","url":"https://gravewright.com/docs/en/map-builder.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/map-builder.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html" aria-current="page">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>Map Builder reference</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Project reference <span aria-hidden="true">/</span> 89 min read</span><h1>Map Builder reference</h1><p class="kb-lead">Builder workflows, Smart Objects, automation, supported limits and developer contracts.</p></header><figure class="kb-screenshot"><a href="../../assets/wiki/map-builder-030.webp" aria-label="Open full screenshot: Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface."><img src="../../assets/wiki/map-builder-030.webp" width="1440" height="900" alt="Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface." loading="lazy" decoding="async"></a><figcaption>Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface. · Open full screenshot ↗</figcaption></figure><div class="kb-prose"><p><a href="index.html">Documentation</a> · <a href="../pt-BR/map-builder.html">Português</a> · <a href="universal-vtt.html">Universal VTT</a> · <a href="frontend.html">Frontend</a></p>
+<p>Map Builder is the campaign GM&#39;s workspace for editable map projects. Draw a map
+from materials or import a finished image, add native walls, doors, objects,
+lights and effects, then generate or update a scene. The project remains editable
+separately from the scene used at the table.</p>
+<p>This guide describes the Map Builder implementation in the documented
+<strong>0.3.0</strong> source revision. The
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/smart-objects-direction.md">Smart Objects design direction</a> distinguishes
+implemented capabilities from proposals.</p>
+<h2 id="find-the-right-workflow">Find the right workflow</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Your starting point</th><th scope="col" style="text-align:left">Where to go</th></tr></thead><tbody><tr><td style="text-align:left">Build a new room</td><td style="text-align:left"><a href="#build-the-first-room">Build the first room</a></td></tr><tr><td style="text-align:left">Choose between grid tiles, soft painting and a map image</td><td style="text-align:left"><a href="#choose-a-starting-method">Choose a starting method</a></td></tr><tr><td style="text-align:left">Organize images, families and collections</td><td style="text-align:left"><a href="#build-larger-maps">Build larger maps</a></td></tr><tr><td style="text-align:left">Organize or select project objects</td><td style="text-align:left"><a href="#selection-and-project-layers">Selection and project layers</a></td></tr><tr><td style="text-align:left">Recover a failed or conflicting save</td><td style="text-align:left"><a href="#automatic-saving">Automatic saving</a>, then <a href="#troubleshooting">Troubleshooting</a></td></tr><tr><td style="text-align:left">Apply edits to the same game scene</td><td style="text-align:left"><a href="#update-a-generated-scene">Update a generated scene</a></td></tr><tr><td style="text-align:left">Add a switch, torch, region or timed behavior</td><td style="text-align:left"><a href="#smart-object-reference">Smart Object reference</a></td></tr><tr><td style="text-align:left">Import/export a Universal VTT file</td><td style="text-align:left"><a href="universal-vtt.html">Universal VTT interchange</a></td></tr><tr><td style="text-align:left">Integrate with source documents or HTTP operations</td><td style="text-align:left"><a href="#developer-reference">Developer reference</a></td></tr></tbody></table></div>
+<h2 id="gm-access-and-entry-points">GM access and entry points</h2>
+<p>Open the campaign&#39;s <strong>Scenes</strong> directory and choose <strong>New scene → Map Builder</strong>.
+The selected scene folder is retained for the project and its first generated
+scene. Only a current campaign GM can open or manage Builder projects; players
+and streamers cannot edit them. Opening the editor does not switch the players&#39;
+broadcast.</p>
+<p>To resume, use <strong>Panels → Projects</strong>, or right-click a scene linked to a project
+and choose <strong>Edit with MapBuilder</strong>. The linked scene has the red map icon in
+the GM&#39;s directory. A scene imported as an ordinary image or through Universal
+VTT has no editable Builder source unless it was created from a Builder project.</p>
+<h3 id="project-preview-and-game-scene">Project, preview and game scene</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Action</th><th scope="col" style="text-align:left">Result</th><th scope="col" style="text-align:left">Effect on the game scene</th></tr></thead><tbody><tr><td style="text-align:left">Edit, Undo/Redo, automatic saving or <strong>Ctrl+S</strong></td><td style="text-align:left">Save the editable project</td><td style="text-align:left">Requires <strong>Generate scene</strong> or <strong>Update scene</strong> to apply to the table</td></tr><tr><td style="text-align:left"><strong>Preview</strong></td><td style="text-align:left">Inspect artwork with every project layer shown</td><td style="text-align:left">No scene write; editing pauses</td></tr><tr><td style="text-align:left"><strong>Simulate</strong> in a Smart Object editor</td><td style="text-align:left">Trace one local graph</td><td style="text-align:left">No gameplay effects</td></tr><tr><td style="text-align:left"><strong>Test behavior</strong></td><td style="text-align:left">Rehearse through the server and report predicted changes</td><td style="text-align:left">The rehearsal is rolled back</td></tr><tr><td style="text-align:left"><strong>Generate scene</strong></td><td style="text-align:left">Create the project&#39;s first native, GM-only scene</td><td style="text-align:left">Opens it for the GM; the previous player broadcast remains</td></tr><tr><td style="text-align:left"><strong>Update scene</strong></td><td style="text-align:left">Apply project changes to the linked scene</td><td style="text-align:left">Clients viewing that scene receive the committed update</td></tr><tr><td style="text-align:left"><strong>Activate for players</strong> in the scene context menu</td><td style="text-align:left">Make the scene player-visible and broadcast it</td><td style="text-align:left">Connected players switch to it</td></tr></tbody></table></div>
+<h2 id="build-the-first-room">Build the first room</h2>
+<ol><li><p>As the campaign GM, choose <strong>New scene → Map Builder</strong>. The selected scene
+folder carries into the project. Entering does not change the current scene
+or the players&#39; broadcast.</p></li><li><p>Enter the map name directly in the header. Open
+<strong>Panels → Settings → Map settings</strong> to choose dimensions, cell size and background.
+Return to <strong>Layers</strong> to rename <strong>Layer 1</strong> or add another named layer.</p></li><li><p>Start with the default solid floor, plain wall and native door, or choose
+<strong>Import</strong> in the bottom <strong>Library</strong> for your own artwork. In the import modal,
+choose image files and their type: <strong>Floor</strong>, <strong>Wall</strong>, <strong>Door</strong> or <strong>Object</strong>. Optionally
+assign them to an existing asset family or create a new one. Select an image
+or family in the library to use its brush.</p></li><li><p>Open <strong>Panels → Tools</strong>. With <strong>Floor</strong>, choose freehand brush, rectangle,
+circle or polygon and paint the floor. Draw walls and doors by dragging
+between their start and end points. A door is an independent segment and
+needs no existing wall. Drawing it over a collinear wall replaces that span.</p></li><li><p>Use <strong>Select</strong> to move objects and open <strong>Panels → Selection</strong> to edit their
+properties. Press <strong>E</strong> to erase objects. Walls and doors move and delete independently.
+Undo/redo restores edits, including removed objects. Space-drag moves the view;
+the wheel changes zoom, and <strong>0</strong> fits the map.</p></li><li><p>Changes save automatically; the header shows their status.
+<strong>Panels → Projects</strong> lists saved projects so you can reopen them.
+<strong>New project</strong> waits for pending changes before starting a blank project.</p></li><li><p>Choose <strong>Generate scene</strong>. The builder saves the source, renders the image,
+runs the native tile pipeline and creates a new GM-only scene in that folder.
+The GM opens that scene; players remain on their existing broadcast. In the
+scene&#39;s context menu, <strong>Activate for players</strong> makes it player-visible and
+broadcasts it in one operation, including to players already connected.</p></li></ol>
+<p>In the game&#39;s <strong>Scenes</strong> directory, a scene linked to a saved builder project
+keeps the same map icon, colored red. Right-click it and choose
+<strong>Edit with MapBuilder</strong>, alongside the normal <strong>Edit</strong> action, to reopen that
+project directly. Entering the editor does not change the
+players&#39; scene. After editing, the primary header action becomes <strong>Update scene</strong>
+and applies changes to that same scene, keeping its identity and project link.
+Imported images and scenes without
+a linked source keep their normal controls. Project links are visible only to
+the GM.</p>
+<h3 id="workspace-controls">Workspace controls</h3>
+<p>The canvas fills the space below the header, with a horizontal <strong>Library</strong> along
+the bottom. <strong>Panels → Tools</strong> contains drawing tools, the active material,
+brush options, the active layer and grid snapping. Between the editable map name
+and history, the header provides <strong>Select</strong>, <strong>Paint</strong>, brush size and <strong>Erase</strong>.
+<strong>Undo</strong>, <strong>Redo</strong>, save status, <strong>Preview</strong> and scene generation follow them.
+View controls and map dimensions in cells sit below the canvas.</p>
+<p><strong>Select (V)</strong> supports Shift-click and dragging a selection box for multiple
+objects. <strong>Paint (F)</strong> returns to the floor&#39;s freehand brush in paint operation,
+using its current material and selecting <strong>Floor</strong> in the library. Its size stays
+synchronized with <strong>Tools</strong>: in Tiles, 1–20 cells with grid snapping or 0.05–20
+without it; Painting always uses 0.05–20 cells. <strong>[ / ]</strong> also adjusts the
+size. The size field is available for the freehand floor brush, including its
+area eraser. <strong>Erase (E)</strong> deletes a whole clicked object; use <strong>Erase floor</strong> in
+<strong>Tools</strong> to erase only part of a floor. Editing controls pause in Preview or
+while an operation requiring exclusive access is running. Background automatic
+saving keeps editing available.</p>
+<p>With the floor brush active, hold <strong>Shift + left mouse button</strong> and drag
+horizontally to resize it without painting. Drag right to increase the size or
+left to decrease it; the anchored footprint and size update as you drag.
+Release to keep the size or press <strong>Escape</strong> to restore it. This works in Tiles
+and Painting, including area erasure; it changes only the brush preference,
+without editing the map or adding an undo step.</p>
+<p>The header&#39;s name field applies and saves valid names after a short typing pause.
+<strong>Enter</strong> or <strong>Escape</strong> returns focus to the canvas; Undo reverts an accepted name
+change. The name stays synchronized with <strong>Settings</strong>. Header history
+buttons use <strong>Ctrl+Z</strong> to undo and <strong>Ctrl+Shift+Z</strong> or <strong>Ctrl+Y</strong> to redo.</p>
+<h3 id="library-and-tool-strip">Library and tool strip</h3>
+<p>The library toolbar provides search, <strong>Import</strong>, type categories and direct
+<strong>Select</strong>, <strong>Erase</strong>, <strong>Pan</strong>, <strong>Empty Object</strong> and <strong>Region</strong> tools. Floor,
+wall, door, object and light brushes stay in the same strip; <strong>Effects</strong> keeps
+the <strong>Particles/Shaders</strong> selector. These shortcuts close the auxiliary panel
+and return focus to the map. On smaller screens the strip has its own horizontal
+scrolling, including keyboard focus, without shifting when categories change.
+Search, filters, categories and the collapse arrow keep their positions when
+switching to native lights or effects; the hidden import action retains its slot.
+Empty filtered results show a message. Checkboxes use the same compact native
+control across settings, layers and object properties, with label and Space-key activation.
+Its arrow collapses the asset cards while leaving the toolbar accessible. On entry,
+<strong>Floor</strong> is highlighted and the gallery shows only images classified as Floor in
+this project.
+Clicking <strong>Floor</strong>, <strong>Wall</strong>, <strong>Door</strong> or <strong>Object</strong> filters the gallery and
+activates that drawing tool. Choosing a native light or effect preset activates
+its placement tool. The material selector in <strong>Tools</strong> follows the active brush
+and includes its default appearance.</p>
+<h3 id="selection-and-project-layers">Selection and project layers</h3>
+<p><strong>Panels</strong>, at the upper right of the map, opens an auxiliary panel with <strong>Tools</strong>,
+<strong>Layers</strong>, <strong>Selection</strong>, <strong>Settings</strong>, <strong>Projects</strong> and <strong>Review</strong> tabs. The panel can be closed
+without hiding the library. Selecting or painting does not open the panel automatically.
+Object properties stay in <strong>Selection</strong>.
+Select one element and edit <strong>Element name</strong> (or <strong>Object name/Region name</strong>)
+to name it independently of its image file. Floors, walls, doors, decorations,
+lights, particles, shaders and regions support names of up to 120 characters.
+Press <strong>Enter</strong> or leave the field to apply and save automatically; <strong>Escape</strong>
+discards the field&#39;s pending edit. Layers, behavior targets, light/door choices
+and the scene network display authored names. Clearing an optional name restores
+the normal label; Empty Objects, regions and shaders keep a required name.
+Undo/Redo and duplication preserve names. Renaming keeps the element&#39;s identity
+and node connections; <strong>Update scene</strong> applies it to the existing scene.
+Double-click a door on the map to open its <strong>Smart object</strong> behavior editor in
+a modal. <strong>Review</strong> shows a project summary
+and scene generation action.</p>
+<p>The panel heading keeps the current map name visible. Its six labeled tabs
+remain available in two rows, including on narrow screens, while each tab keeps
+its own scroll position. Use the arrow keys to move between tabs, <strong>Home/End</strong>
+to reach the first/last tab, and <strong>Escape</strong> outside a text field to close the
+panel. Closing restores focus to the control that opened it and preserves the
+selection; clicking the current tab keeps it open.</p>
+<p><strong>Tools</strong> places the current material, active layer and brush settings before
+the compact tool palette. Painting&#39;s hardness and intensity appear together;
+expanded help contains the brush instructions and shortcuts. <strong>Selection</strong>
+provides a <strong>Select on map</strong> action when nothing is selected. <strong>Projects</strong> keeps
+long project names readable, and <strong>Review</strong> groups the map and object counts
+before the scene actions. Opening and navigating panels does not edit the map.</p>
+<p><strong>Selection</strong> places editable properties before the material thumbnails used
+to change the selected object&#39;s appearance. <strong>Layers</strong> organizes named project
+layers: create, rename, reorder,
+hide or lock them, and choose the active layer for new objects. Move selected
+objects between layers in <strong>Selection</strong> or with <strong>Move here</strong> on the destination
+layer. The list shows the top layer first, with counts and active/hidden/locked
+states. <strong>Paint on</strong> in <strong>Tools</strong> changes the active layer. <strong>Select</strong> selects
+editable objects in a layer; <strong>Solo</strong> temporarily
+isolates it, including its native lights and effects. <strong>Show all</strong> ends isolation
+and reveals all layers; <strong>Unlock all</strong> removes their locks.</p>
+<h3 id="layer-operations">Layer operations</h3>
+<p>Drag a layer&#39;s reorder handle or use its arrows to change its position. Expand
+<strong>Layer contents</strong> to select an individual object. <strong>Duplicate layer</strong> copies an
+unlocked layer and offsets all its contents exactly one cell right and one cell
+down. The copy appears immediately above the original, visible and unlocked,
+with new object IDs and remapped references between copied Smart Objects. The
+operation is refused without changes if the copy would leave the map, overlap
+doors or exceed project limits. Duplication is one undo step.</p>
+<p><strong>Merge down</strong> moves a visible, unlocked layer into its adjacent visible,
+unlocked lower layer. Paint order, object identities and Smart Object references
+are preserved. A merge is one undo step. A layer containing terrain erasers
+cannot be merged over a lower layer with floors, because that would change
+which floors those erasers affect. Delete an empty, unlocked layer after
+moving or removing its objects, including the final layer. Create a visible,
+unlocked layer before drawing again. Layer names, order, visibility
+and locks are saved with the project. Objects on hidden or locked layers cannot
+be edited. Hiding a layer changes the editor view; generation includes every
+project layer.</p>
+<h3 id="preview">Preview</h3>
+<p><strong>Preview</strong> keeps the map in place and hides the grid, selection, brush guides
+and map outline. Drawing and property editing pause, while pan, zoom, save
+and scene generation remain available. Preview temporarily shows all layers,
+including those hidden in the editor. <strong>Back to editing</strong> restores their
+previous visibility and resumes editing.</p>
+<h2 id="choose-a-starting-method">Choose a starting method</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Method</th><th scope="col" style="text-align:left">Use it for</th><th scope="col" style="text-align:left">What remains editable</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Tiles</strong></td><td style="text-align:left">Grid rooms, repeated materials, precise shapes or unsnapped hard edges</td><td style="text-align:left">Concrete floor images/shapes, walls and other project objects</td></tr><tr><td style="text-align:left"><strong>Painting</strong></td><td style="text-align:left">Soft terrain transitions and gradual material blending</td><td style="text-align:left">Brush strokes and their masks, with the same project objects and layers</td></tr><tr><td style="text-align:left"><strong>Import ready-made map</strong></td><td style="text-align:left">A finished PNG/JPEG/WebP/TIFF to trace or decorate</td><td style="text-align:left">One background image plus the objects you place over it</td></tr><tr><td style="text-align:left"><strong>Import Universal VTT</strong></td><td style="text-align:left">A <code>.uvtt</code>, <code>.dd2vtt</code> or <code>.df2vtt</code> containing grid/wall/door/light data</td><td style="text-align:left">Native scene objects; this creates a separate scene rather than a Builder project</td></tr></tbody></table></div>
+<p>Tiles and Painting are modes of the same project; switching modes preserves
+existing work. A ready-made background can be used with either mode. For file
+format support, warnings and interchange limits, follow the
+<a href="universal-vtt.html">Universal VTT guide</a>.</p>
+<h2 id="tiles-and-painting">Tiles and Painting</h2>
+<p>The header&#39;s mode selector switches between <strong>Tiles</strong> and <strong>Painting</strong> in the
+same project. New projects start in Tiles. Changing modes preserves existing
+floors, walls, doors, native objects, layers and camera; the mode change is one
+undo step and is saved with the project.</p>
+<p>Tiles uses materials, image tiles and asset families.
+Grid snapping replaces covered cells; disabling snapping retains continuous
+placement and shapes. Brushes, rectangles, circles, polygons, fill, area erasure
+and sampling share the same project, layers and undo history. Walls, doors,
+objects, native lights/effects, preview and scene generation remain available
+in this workspace.</p>
+<p>New projects start with one empty, renameable <strong>Layer 1</strong>. It can mix floors,
+walls, doors, objects and native effects; no layers are assigned to object types.
+Open <strong>Panels → Layers</strong> to rename it or add your own named layers. Importing assets,
+saving and generating an empty map with only its background remain available.
+Existing projects retain their authored layers.</p>
+<h2 id="terrain-painting">Terrain Painting</h2>
+<p>Choose <strong>Painting</strong> in the header and select a floor image or family from the
+library. Drag on the map to blend that material with the existing floor using a
+continuous circular brush. Terrain painting uses fractional positions regardless
+of the Tiles snapping setting; grid visibility remains your display choice.
+Returning to Tiles restores its snapping controls without converting existing
+strokes.</p>
+<p>The header size field and <strong>Panels → Tools</strong> share the brush diameter, from 0.05
+to 20 cells. <strong>Edge hardness (%)</strong> controls the solid center and the softness of
+the outer edge. <strong>Brush intensity (%)</strong> controls how strongly each brush dab
+adds material. Holding the pointer down while stationary continues building up
+the material; passing over an area again blends it further. Textures retain
+their map-space scale and orientation while different materials mix.</p>
+<p>In <strong>Tools</strong>, choose <strong>Operation → Erase floor</strong> for a soft area eraser using the
+same size, hardness and intensity. It clears earlier floors on the active layer,
+revealing lower layers or the background; other layers, walls, doors and native
+objects are preserved. New paint added afterward is unaffected by that earlier
+eraser. The header&#39;s <strong>Erase (E)</strong> still deletes an entire object.</p>
+<p>Each completed terrain gesture is one undo step. <strong>Escape</strong> cancels the active
+stroke, including accumulated paint while holding still. Locked or hidden layers
+cannot be painted. Preview pauses editing; save/reopen, generation and linked
+scene updates preserve the soft masks and mixed textures.</p>
+<h2 id="import-a-finished-map">Import a finished map</h2>
+<p>Choose <strong>Library → Import → Import ready-made map</strong>, or use the same action in
+<strong>Panels → Settings</strong> or <strong>Projects</strong>. Upload one PNG, JPEG, WebP or TIFF image
+(up to 25 MB), or choose an image already in this campaign. Set its width and
+height in cells and cell size. An empty project suggests a bounded grid from the
+image dimensions; check these values against the map&#39;s authored grid.</p>
+<p>The image fills the map once beneath all layers. Add walls, doors, objects, lights
+and behaviors over it. It is independent of brush categories and is never tiled
+as a floor texture. Replacing it keeps existing objects in place; dimensions that
+would put objects outside the map are rejected. <strong>Remove map image</strong> in Settings
+removes the background without deleting its campaign image. Import, replacement
+and removal use Undo/Redo and automatic saving, and appear in generated or updated
+scenes.</p>
+<h2 id="build-larger-maps">Build larger maps</h2>
+<h3 id="library-families-and-collections">Library, families and collections</h3>
+<p>Search the library by image name and choose a type category to filter it. Asset
+classifications and optional names, collections and families belong to the project;
+they do not rename campaign images used elsewhere.</p>
+<p><strong>Import</strong> opens the application&#39;s import modal. Choose one or more images, set
+their type to <strong>Floor</strong>, <strong>Wall</strong>, <strong>Door</strong> or <strong>Object</strong>, and optionally choose or
+create an asset family. You can also choose or enter a collection. The chosen
+type, family and collection apply to all files in that upload. Lights do not use
+image assets and are outside this import workflow.</p>
+<p>Each type category shows only that project&#39;s images of the selected type.
+Campaign images without a project type remain available under <strong>Unclassified
+images</strong> in <strong>Panels → Tools → Material</strong>. Select one there to assign the active
+tool&#39;s type; its card then appears in the matching category. This classification
+does not change the campaign image or its use in another project.</p>
+<p>Use the library&#39;s <strong>Collection</strong> filter to show one collection or <strong>All collections</strong>.
+Open <strong>Library settings</strong> below the asset cards to edit
+the selected image&#39;s project name, collection and type. Scroll within the dock
+to reach these controls; the dock keeps its configured height. Collections are
+optional names of up to 80 characters, with surrounding spaces removed. A family
+card appears when at least one member belongs to the selected collection; choosing
+the family still paints with all its members.</p>
+<p>An asset family groups variations of the same material or object, such as three
+dungeon floor tiles. Family names belong to this project, are trimmed, must
+contain 1–80 characters, and are matched exactly. All images in a family must
+have the same type. Select a family card in the library or choose the family
+under the material selector&#39;s family group to paint with all its members.
+Individual images remain selectable when you want a specific variation.</p>
+<p>Double-click an existing image card to open the asset editing modal and change
+its name, type, family or collection. An image already used on the map cannot
+change type; upload a separate copy to use it with another brush. Adding or removing a family member
+affects future painting; it does not replace images already painted.</p>
+<p><strong>Remove asset</strong> in this modal asks for confirmation in the application&#39;s modal,
+then deletes the image from the whole campaign. This also cleans up dependent
+saved projects and native scenes, preserving floor, wall and door geometry.
+Other unsaved changes in the current project are retained. Undo cannot restore
+the deleted file.</p>
+<h3 id="tiles-brushes-erasing-and-sampling">Tiles brushes, erasing and sampling</h3>
+<p>In <strong>Tiles</strong>, the floor tool has five drawing options:</p>
+<ul><li><p><strong>Brush:</strong> drag with a square or round brush. With snapping enabled, it paints
+cells; the round stamp is centered on the pointer&#39;s cell and the square stamp
+starts there. With snapping disabled, both brushes follow the pointer
+continuously, centered on it, with fractional sizes from 0.05 cells. Strokes
+connect pointer positions without gaps. A hover guide shows the actual area.
+Use the size buttons or <strong>[ / ]</strong> to decrease/increase the brush size.</p></li><li><p><strong>Rectangle:</strong> drag between opposite corners to fill a rectangular area.</p></li><li><p><strong>Circle:</strong> press at the center and drag to set the radius.</p></li><li><p><strong>Polygon:</strong> click at least three vertices, then press <strong>Enter</strong> or double-click
+to finish. <strong>Finish</strong> and <strong>Cancel</strong> offer the same actions in <strong>Tools</strong>.
+Press <strong>Escape</strong> to cancel the unfinished shape.</p></li><li><p><strong>Bucket fill (G):</strong> replace connected cells with the same material and rotation
+on the active layer. Variants of one floor family count as the same material;
+empty space forms its own region. Connections use the four neighboring cells.
+With snapping disabled, this tool becomes <strong>Fill shape</strong>: it changes the
+clicked floor&#39;s material while retaining its exact outline and erased holes.</p></li></ul>
+<p><strong>Snap to the grid</strong> controls floor geometry as well as pointer positions.
+With it disabled, rectangles use fractional corners, circles have smooth round
+outlines, polygons retain their drawn vertices and brush strokes follow free
+paths. These shapes remain free geometry when saving, reopening or generating
+the scene. Grid visibility is an independent display setting.</p>
+<p>Choose <strong>Operation → Erase floor</strong> to remove only the covered floor area using
+the brush or a shape. Other layers and object types remain intact. Erasing a
+large floor preserves its uncovered pieces. With snapping disabled, the eraser
+follows the same free geometry as the brush and shapes. When cutting legacy
+rectangles by grid cells, an operation that would leave a fragment below their
+0.05-cell minimum is rejected without changing it.
+<strong>Sample (I)</strong> or <strong>Alt-click</strong> a floor on the active layer to reuse its concrete
+image and texture rotation. Sampling returns to the paint brush. In <strong>Tools</strong>,
+<strong>Erase (E)</strong> deletes a whole clicked object, while <strong>Pan (H)</strong> moves the view.</p>
+<p>Snapped floor painting fills grid cells. For new or different material, a family
+chooses one member at random for each cell and saves that concrete image
+reference in a 1 × 1 floor tile.
+Free painting chooses one concrete image for the complete stroke or shape. The choices
+remain stable through the gesture preview, undo/redo, reopening and scene
+generation. Families for walls, doors and objects choose an image for each new
+placement. Each complete stroke or shape is one undo step.</p>
+<p>In Tiles, painting the same floor again leaves the covered area unchanged,
+without adding objects or an undo step. Existing eligible family variants keep their images.
+With snapping enabled, each matching cell is skipped independently. Without
+snapping, a stroke or shape is ignored when its complete area already has the
+same material, including coverage shared by several floors. Holes and another
+material painted above that floor still need painting.</p>
+<p>A different floor replaces the covered area on the active layer, removing the
+old material underneath. A free stroke crossing matching and different materials
+replaces its complete footprint. Geometry outside that footprint and floors on
+other layers remain intact. Opening an existing project does not rewrite its
+floors. The project still has a combined limit of
+2,000 objects. If a stroke or shape would exceed that limit, the whole operation
+is rejected without changing the map.</p>
+<h3 id="native-lights-effects-and-editing-windows">Native lights, effects and editing windows</h3>
+<p><strong>Panels → Tools</strong> controls floor stamp size, wall/door
+thickness, floor texture orientation and object dimensions/rotation for the active
+tool. Its material selector also chooses a family, a library image or the default
+appearance. <strong>Snap to the grid</strong> toggles snapping. <strong>Object</strong> in <strong>Tools</strong>
+places an image inside its configured bounding box while preserving the image&#39;s
+aspect ratio. <strong>Lights</strong> in the library offers the VTT&#39;s <strong>Steady</strong>, <strong>Torch</strong> and
+<strong>Pulse</strong> presets. Choose one and click the map to place a native light. Selection
+exposes bright/dim radii, color, intensity, animation, cone angle, rotation,
+elevation and enabled state. Light placement requires the host&#39;s dynamic lighting
+feature. Lights do not use image assets.</p>
+<p><strong>Effects</strong> offers the VTT&#39;s native particle profiles and shader presets. Choose a
+preset and click the map, then use <strong>Selection</strong> to adjust its native properties:
+particle type, density and scale, or shader radius, opacity, intensity, speed and
+blend mode, plus position, rotation, color, enabled state and light interaction.
+Effects are project objects with layers, selection, movement, duplication,
+rotation, deletion and undo/redo. Their centers stay inside the map; their visible
+extent can reach beyond that center, like a light&#39;s radius.</p>
+<p>The game&#39;s editing windows are available inside the builder. Double-click a
+wall, light, particle emitter or shader, or use its edit action in <strong>Selection</strong>.
+The light and effect windows are the same components used at the table: shaders
+include the full GLSL editor, preset library and AI prompt helper; particles and
+lights expose their own native controls. The prompt helper copies instructions
+and accepts pasted code; it does not contact an AI service.</p>
+<p>Walls and doors use the game&#39;s <strong>Configure wall/door</strong> window for presentation,
+movement, vision, light and sound blocking, elevation limits and secret-door
+discovery. For a door, use <strong>Selection</strong> to open that window; double-clicking
+still opens its separate <strong>Smart object</strong> behavior editor. Physical barrier
+settings and behavior graphs belong to the same object and can be edited
+independently.</p>
+<p>Each window edits a private project draft and previews its supported changes
+locally. <strong>Save</strong> applies the complete edit as one undo step. <strong>Cancel</strong>, close
+and <strong>Escape</strong> discard it. Opening or changing a window never edits the selected
+game scene or the players&#39; scene. Save/reopen and generation preserve these
+settings; applying them to a linked scene requires <strong>Update scene</strong>.</p>
+<p>In <strong>Effects</strong>, the library selector shows <strong>Particles</strong> or <strong>Shaders</strong>, filters
+the search and arms that tool with its last preset without placing an object or
+adding an undo step. Returning to an image category restores the previous
+collection filter.</p>
+<p>The canvas and <strong>Preview</strong> use the tabletop&#39;s native animated renderer for these
+lights and effects, including walls and door openings. The overlay follows the
+builder camera and layer visibility; Preview temporarily shows all project
+layers. Hidden or empty effect layers release their renderer. These elements
+remain dynamic native objects when generating or updating the scene, outside
+the raster background. They can be edited afterward with the VTT&#39;s normal tools.</p>
+<p>With grid snapping enabled, ordinary wall gestures follow horizontal or vertical
+cell boundaries and use whole-cell intersections. Nearby existing endpoints and
+edges take priority and may be fractional; extending from an existing fractional
+endpoint preserves that anchor. Turn snapping off to draw diagonal walls or use
+fractional coordinates. Moving a selection containing walls uses whole-cell offsets while
+snapping is enabled. Opening a saved project does not realign existing walls or doors.
+Near map edges, a group containing walls stops at the last permitted whole-cell
+offset instead of using a fractional remainder. All objects keep their relative positions.</p>
+<p>With <strong>Select</strong>, Shift-click adds or removes individual objects, and dragging
+an empty area selects objects intersecting the rectangle. <strong>Select all</strong> includes
+editable objects on visible, unlocked layers. <strong>Duplicate</strong> and <strong>Rotate</strong> apply
+to the whole selection; quarter turns rotate floors and their texture orientation
+along with walls, doors, objects and lights. A group move uses a single clamped
+offset to preserve relative positions. An invalid transform changes nothing,
+including when it would overlap another door. Each operation is one undo step.</p>
+<h2 id="wall-joins-and-editable-nodes">Wall joins and editable nodes</h2>
+<p>Select one wall with <strong>Select</strong> to show its endpoint circles and plus handles.
+Dragging an endpoint moves every wall sharing that point in the same editable
+layer, including walls with different materials or thicknesses. Doors keep their
+own geometry. A locked or hidden layer cannot be edited through these handles.</p>
+<p>The middle <strong>+</strong> divides the wall into two segments. Drag it to create and move
+the new corner in one gesture. The <strong>+</strong> beside either endpoint extends the wall:
+drag it, or click it and then click the map to confirm the new endpoint. Nearby
+editable endpoints and edges attract the endpoint; connecting to an edge creates
+a shared T node. This proximity snapping also works with grid snapping off.</p>
+<p><strong>Escape</strong> cancels a drag or armed extension. Each completed node move, split or
+extension is one undo step. Focus a handle with the keyboard: Enter or Space
+activates a plus, and arrow keys move an endpoint by one cell with grid snapping
+on, or 0.1 cell with it off; Shift uses a whole cell. Enter confirms an armed
+extension at the current pointer position. Invalid or out-of-bounds edits leave
+the source unchanged.</p>
+<p>Extension prompts and recovery messages appear at the lower left of the canvas,
+aligned with the zoom controls. On narrow screens, messages sit above the view
+controls and wrap without covering their buttons.</p>
+<p>Connected corners and T junctions use joined wall artwork in the canvas,
+<strong>Preview</strong> and generated image. Contiguous collinear segments with the same
+layer, image and thickness share a texture origin and direction, preserving the
+pattern when a segment is reversed. Isolated walls retain their authored
+direction. Door openings remain clear. These visual joins do not add collision
+walls or rewrite saved endpoints when opening a project.</p>
+<h2 id="door-rotation">Door rotation</h2>
+<p>Select one door and choose <strong>Rotation anchor point</strong> in its properties or game
+editor: <strong>Start of door</strong>, <strong>Center of door</strong> or <strong>End of door</strong>. The marker on the
+selected door shows its pivot. <strong>Rotate</strong> keeps that point fixed; existing doors
+default to the center. With an explicit anchor, opening rotates the image 90°
+around that point and closing restores it. <strong>Default (center)</strong> retains the
+original behavior of hiding the image when open. Explicit Blueprint hidden
+appearances remain hidden. Multiple objects rotate around their selection&#39;s center.
+The choice follows Undo/Redo, automatic saving, duplication and generated scene
+updates, and also controls rotation of a single door with the game&#39;s Select tool.</p>
+<h2 id="empty-objects">Empty Objects</h2>
+<p>Choose <strong>Library → Objects → Empty Object</strong>, or <strong>Panels → Tools → Empty Object</strong>,
+then click or drag to place an image-free object. In Selection, edit its name,
+size, rotation and layer. Selection, moving, duplication and multiple selection
+work like other objects.</p>
+<p>Double-click it to edit the same Smart Object nodes, states, signals and actions
+as an ordinary object. Events only start the sequence; logic nodes make decisions.
+Use it as a controller for lights, sounds and other elements without placing an
+image. In the game, it is placed directly on the <strong>GM</strong> layer. The GM sees its
+faint marker on every tab, and selects or edits it on the <strong>GM</strong> tab. It remains
+editable in the builder,
+and is omitted from player/streamer scene data. Older scenes receive the same
+private presentation immediately, without requiring regeneration. Native edits,
+copies and scene updates keep it on GM. Players still trigger its authored area
+events by moving their tokens; delayed area/signal actions keep their original
+player permissions. Direct player clicks cannot activate it. It cannot receive
+its own image. The node catalog is the same for every
+element kind: <strong>Change sprite</strong> and <strong>Set appearance</strong> can control another object
+through an explicit <strong>Target</strong> connection. Visual nodes without a compatible
+target remain editable drafts and are skipped with a diagnostic when executed.
+Undo/Redo, automatic saving and scene updates keep
+its identity and behavior.</p>
+<p>For ordinary images, levers and torches, use <strong>Move to GM image layer</strong> in the
+context menu to hide them. Switch to <strong>GM</strong>, right-click the object and choose
+<strong>Move to image layer</strong> to return it to the game. The <strong>Images</strong> tab edits public
+images; private images are selected on GM. Returning a mixed selection leaves
+Empty Objects on GM. Private images and Empty Object markers remain visible to
+the GM at 55% opacity across tabs; private drawings also multiply their authored
+opacity by 55%. Players and streamers receive none of these private elements.
+Changing tabs updates editing controls without rebuilding the rendered scene.</p>
+<h2 id="automatic-saving">Automatic saving</h2>
+<p>Project edits save automatically after a short pause: map name, completed brush
+strokes, object and layer edits, settings, Undo and Redo. The header shows whether
+changes are waiting, saving or saved. Background writes preserve the current
+selection and history and do not interrupt drawing. The status button and
+<strong>Ctrl+S</strong> remain available to synchronize immediately.</p>
+<p>Smart Object graphs also apply valid edits automatically. There is no manual
+Save/Cancel step: <strong>Close</strong> or <strong>Escape</strong> waits for pending valid edits. Invalid
+fields remain visible for correction and block closing. Undo/Redo changes are
+also saved. Opening or closing an unchanged current graph does not create an
+empty blueprint. Removed event graphs are discarded when older data is loaded.</p>
+<p>A lost response retries the same logical operation and UUID, so a confirmed write
+is not repeated. A revision conflict pauses automatic saving and preserves the
+local draft. <strong>Reload saved project</strong> explicitly adopts the current server
+version; <strong>Save a copy</strong> preserves the local map under a new identity. Failed
+saving keeps edits in the current tab and offers recovery controls. In a live
+Smart Object conflict, further writes pause until the editor is reopened with
+the current version; its stale revision guard is never replaced silently.
+<strong>Discard changes</strong> discards
+only changes that have not been acknowledged. Reloading this tab recovers an
+uncertain write by confirming its original receipt before sending newer local
+edits. Older drafts without that write&#39;s body pause for explicit reload or copy.
+If the initial library or project load fails, editing stays blocked and <strong>Retry</strong>
+reloads it without creating an empty replacement project.
+Correcting or undoing a rejected edit clears that rejected save attempt, so
+reloading does not report it as an uncertain write. After reconnecting, <strong>Retry</strong>
+in a Smart Object editor also resumes the pending project save with its original
+receipt; revision conflicts still require explicit recovery.</p>
+<p>Returning to the game waits for pending project changes. If saving fails, the
+editor stays open so the GM can retry or explicitly discard. Automatic saving
+persists configuration; it does not generate a scene or execute graph actions.
+<strong>Generate scene</strong> and <strong>Update scene</strong> remain explicit actions. Editing a live
+element applies its graph configuration to that owner and linked source through
+their existing revision checks, without operating the mechanism.</p>
+<h2 id="update-a-generated-scene">Update a generated scene</h2>
+<p>Keep the project to edit the map later. <strong>Generate scene</strong> creates its first
+scene; afterward the primary header action becomes <strong>Update scene</strong>. Reopening
+the project from the game&#39;s scene directory updates that same scene rather than
+creating another one. The header action and <strong>Panels → Review → Update scene</strong>
+replace the tiled background and the resources generated
+by this project in its linked scene. Manually placed tokens, images, lights,
+particles, shaders, drawings, fog and other scene content remain in place. Scene name, folder,
+visibility, broadcast and environment settings remain VTT choices. Existing
+native doors keep their live open/closed/locked state during an update.
+Lights, particles and shaders also retain their live enabled state when the
+corresponding authored enabled setting has not changed. An intentional change
+to that setting in the project applies on update.
+Secret-door discovery follows the same rule: runtime discovery is preserved
+while the authored <code>discovered</code> setting stays unchanged; an intentional project
+change is applied on update.</p>
+<p>Authorized Move/Rotate actions acknowledge their native geometry in ownership
+history while leaving the editable source unchanged; updating the scene reapplies
+authored positions and angles. Unrelated native edits still conflict. Runtime
+interaction settings are preserved when their authored default is unchanged,
+and an intentional authored change applies on update. Region enabled state stays
+live while authored enabled/layer settings remain unchanged; an intentional
+authored change wins. Configuration updates quietly baseline
+occupancy rather than firing presence graphs.</p>
+<p>Updates require both current project and scene revisions. If another editor
+changes either, reload before trying again. If a generated object was modified
+or deleted directly in the VTT, the update stops instead of overwriting that
+work. Resolve that edit before updating, or use <strong>Save a copy</strong> when the
+conflict controls offer it to preserve an independent project. Keep map dimensions
+and cell size unchanged when the scene contains manually placed content. Existing version
+1/2 projects can acquire ownership history if their original generated IDs,
+native data and grid geometry still match exactly, allowing only live door-state
+changes. Opening the project checks eligibility without writing; saving records
+the proven ownership before replacing its old source. Without that proof, the
+legacy linked scene cannot be updated from this project. The builder never
+infers ownership from nearby or visually similar objects. Use a new project when
+authoring an independent scene. Uploaded image assets remain in the campaign library.</p>
+<h2 id="keyboard-and-pointer-shortcuts">Keyboard and pointer shortcuts</h2>
+<p>Map and tool shortcuts apply when focus is outside an input or editable text.
+<strong>Ctrl</strong> shortcuts also accept <strong>Command</strong> on macOS. Modal editors have their
+own shortcuts; a running exclusive operation or Preview can disable editing.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Shortcut</th><th scope="col" style="text-align:left">Action</th></tr></thead><tbody><tr><td style="text-align:left"><strong>V / F / E</strong></td><td style="text-align:left">Select / floor paint brush / erase a whole object</td></tr><tr><td style="text-align:left"><strong>W / D / H</strong></td><td style="text-align:left">Wall / door / pan tool</td></tr><tr><td style="text-align:left"><strong>Shift-click</strong> or drag a selection box</td><td style="text-align:left">Add/remove selection members or select several objects</td></tr><tr><td style="text-align:left"><strong>Ctrl+A / Ctrl+D</strong></td><td style="text-align:left">Select editable objects / duplicate the selection</td></tr><tr><td style="text-align:left"><strong>R</strong></td><td style="text-align:left">Rotate the selection by 90°; a single door honors its configured pivot</td></tr><tr><td style="text-align:left"><strong>Delete / Backspace</strong></td><td style="text-align:left">Delete the selection</td></tr><tr><td style="text-align:left"><strong>Ctrl+Z / Ctrl+Shift+Z / Ctrl+Y</strong></td><td style="text-align:left">Undo / redo</td></tr><tr><td style="text-align:left"><strong>Ctrl+S</strong></td><td style="text-align:left">Flush valid project changes to the server</td></tr><tr><td style="text-align:left"><strong>[ / ]</strong></td><td style="text-align:left">Decrease/increase floor brush size</td></tr><tr><td style="text-align:left"><strong>Shift + left-drag</strong> with a floor brush</td><td style="text-align:left">Resize the brush without painting; <strong>Escape</strong> restores its previous size</td></tr><tr><td style="text-align:left"><strong>I</strong> or <strong>Alt-click</strong> on a floor</td><td style="text-align:left">Sample its image and texture rotation</td></tr><tr><td style="text-align:left"><strong>G</strong> in Tiles</td><td style="text-align:left">Bucket fill with snapping; Fill shape without snapping</td></tr><tr><td style="text-align:left"><strong>Enter</strong> or double-click while drawing a polygon</td><td style="text-align:left">Finish the polygon</td></tr><tr><td style="text-align:left"><strong>Escape</strong></td><td style="text-align:left">Cancel an active gesture; otherwise exit Preview, clear selection or close the focused panel as applicable</td></tr><tr><td style="text-align:left"><strong>Space + drag</strong>, middle-button drag or Pan</td><td style="text-align:left">Move the camera</td></tr><tr><td style="text-align:left">Wheel / <strong>+ / -</strong></td><td style="text-align:left">Zoom around the pointer / viewport center</td></tr><tr><td style="text-align:left"><strong>0 / Home</strong></td><td style="text-align:left">Fit the map</td></tr><tr><td style="text-align:left">Arrow keys with canvas focus</td><td style="text-align:left">Move the camera</td></tr></tbody></table></div>
+<h2 id="practical-limits">Practical limits</h2>
+<p>The server validates these limits; an operation exceeding a budget is rejected.
+The <a href="#http-operations-and-limits">developer contract</a> lists additional shape,
+rendering and Blueprint limits.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Resource</th><th scope="col" style="text-align:left">Limit</th></tr></thead><tbody><tr><td style="text-align:left">Map width and height</td><td style="text-align:left">1–200 cells each</td></tr><tr><td style="text-align:left">Cell size</td><td style="text-align:left">16–256 px</td></tr><tr><td style="text-align:left">Generated map raster</td><td style="text-align:left">16,777,216 pixels, or the host&#39;s lower configured limit</td></tr><tr><td style="text-align:left">Project layers</td><td style="text-align:left">32</td></tr><tr><td style="text-align:left">Combined project objects</td><td style="text-align:left">2,000 floors, walls, doors, decorations, lights, particles, shaders and regions</td></tr><tr><td style="text-align:left">Generated native objects</td><td style="text-align:left">5,000, including wall segments and managed surfaces</td></tr><tr><td style="text-align:left">Classified project images</td><td style="text-align:left">256</td></tr><tr><td style="text-align:left">Uploaded image</td><td style="text-align:left">25 MB and 40 million decoded pixels</td></tr><tr><td style="text-align:left">Project document</td><td style="text-align:left">1 MB, with separate contour and brush-work budgets</td></tr><tr><td style="text-align:left">Names</td><td style="text-align:left">120 characters for elements; 80 for layers, families and collections</td></tr></tbody></table></div>
+<p>Width, height and cell size share the raster budget: their individual maximums
+cannot all be used at once. Highly detailed strokes can reach shape or brush
+budgets before the object count is full. Separate a dense area into simpler
+strokes or reduce its dimensions rather than repeatedly submitting the same
+rejected edit.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Symptom</th><th scope="col" style="text-align:left">Check and next action</th></tr></thead><tbody><tr><td style="text-align:left">Drawing does nothing</td><td style="text-align:left">Leave Preview; choose a visible, unlocked active layer and a drawing tool. If no layer remains, choose <strong>Create your first layer</strong>.</td></tr><tr><td style="text-align:left">An image is absent from its category</td><td style="text-align:left">Check its project type and the search/collection filter. Unclassified campaign images are available in <strong>Tools → Material</strong>.</td></tr><tr><td style="text-align:left">Soft painting is unexpected, or the fill tool changed</td><td style="text-align:left">Check <strong>Tiles/Painting</strong>, snapping, brush operation, hardness and intensity. Object erasure and floor-area erasure are separate tools.</td></tr><tr><td style="text-align:left">A new map image moves or crops existing work</td><td style="text-align:left">Check Width/Height in cells and Cell size. Replacements keep object coordinates; dimensions that would exclude objects are rejected.</td></tr><tr><td style="text-align:left">A TIFF has no thumbnail</td><td style="text-align:left">Some browsers cannot preview TIFF. The server still validates supported TIFF uploads; inspect any returned upload error.</td></tr><tr><td style="text-align:left">Saving stays blocked</td><td style="text-align:left">Correct the highlighted settings/property/graph field, or undo the rejected edit. Graph fields with invalid values also block closing.</td></tr><tr><td style="text-align:left">Saving fails after a connection loss</td><td style="text-align:left">Keep the current tab and use <strong>Retry</strong> after reconnecting. Retrying an uncertain write keeps its original receipt; correcting validation uses a new operation.</td></tr><tr><td style="text-align:left">A revision conflict appears</td><td style="text-align:left">Use <strong>Reload saved project</strong> to adopt the server version or <strong>Save a copy</strong> to preserve the local draft. Repeated Retry does not rebase a stale revision.</td></tr><tr><td style="text-align:left">Update reports a changed/deleted generated object</td><td style="text-align:left">Resolve the manual scene edit before updating. Use the offered recovery/copy controls when an independent project is needed; the existing project remains linked to its scene.</td></tr><tr><td style="text-align:left">Players still see the old map</td><td style="text-align:left">Confirm that <strong>Generate scene/Update scene</strong> succeeded, then verify which scene is broadcast. Generating a private scene does not activate it for players.</td></tr><tr><td style="text-align:left">Hidden editor layers appear in Preview or the scene</td><td style="text-align:left">Layer hiding is an editing aid. Preview and generation include all project layers; control live privacy through the game&#39;s GM/image layers.</td></tr><tr><td style="text-align:left">Behavior did nothing</td><td style="text-align:left">Check its starting event, explicit actions, Target bindings, player lock permissions and automation pause state. Use <strong>Test behavior</strong> and the Automation log for diagnostics.</td></tr><tr><td style="text-align:left">Asset removal affects another map</td><td style="text-align:left"><strong>Remove asset</strong> deletes the campaign resource. To stop using an image in one map, change/remove that placement or background instead. Undo cannot restore the deleted file.</td></tr></tbody></table></div>
+<h2 id="smart-object-reference">Smart Object reference</h2>
+<p>Start with the element you want to operate, then connect one starting event to
+explicit actions. An empty graph does not create an implicit toggle. Graph
+configuration saves automatically; gameplay execution is a separate action.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Goal</th><th scope="col" style="text-align:left">Reference</th></tr></thead><tbody><tr><td style="text-align:left">Make a switch or linked torch</td><td style="text-align:left"><a href="#levers">Levers</a>, <a href="#composed-torches">Composed torches</a></td></tr><tr><td style="text-align:left">Trigger actions when tokens enter/leave</td><td style="text-align:left"><a href="#regions-and-pressure-plates">Regions and pressure plates</a>, <a href="#empty-objects">Empty Objects</a></td></tr><tr><td style="text-align:left">Share conditions or coordinate objects</td><td style="text-align:left"><a href="#composite-conditions">Composite conditions</a>, <a href="#variables-and-named-signals">Variables and named signals</a></td></tr><tr><td style="text-align:left">Wait, count or restrict repetition</td><td style="text-align:left"><a href="#persistent-execution-controls">Persistent execution controls</a>, <a href="#persistent-delay">Delay</a>, <a href="#persistent-timer">Timer</a></td></tr><tr><td style="text-align:left">Reuse or inspect behavior</td><td style="text-align:left"><a href="#reusable-behavior-templates">Templates</a>, <a href="#scene-network">Scene network</a>, <a href="#test-behavior-through-the-server">Server rehearsal</a></td></tr><tr><td style="text-align:left">Change a surface, present a message or move the triggering token</td><td style="text-align:left"><a href="#dynamic-surfaces">Dynamic surfaces</a>, <a href="#messages-handouts-and-camera-focus">Messages/handouts</a>, <a href="#same-scene-teleport">Teleport</a></td></tr></tbody></table></div>
+<p>The following reference covers the shared node editor and its supported element
+adapters. The <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/smart-objects-direction.md">design direction</a> records proposals;
+it is not a list of additional controls available in this checkout.</p>
+<h2 id="door-smart-objects">Door Smart Objects</h2>
+<p>Each element owns its blueprint. Doors, levers, torches and presence regions share
+the editor, reusable behavior templates and the GM&#39;s scene network view.
+The editor uses the application&#39;s existing modal system and shows the actual
+element instance.</p>
+<p>Double-click an editable door on the Map Builder canvas to open <strong>Smart object</strong>.
+The modal has three areas: the <strong>Events</strong> list on the left, the graph canvas in
+the middle, and appearance settings and <strong>Simulation</strong> on the right. These areas
+stack on narrow screens.</p>
+<p>The instance node shows the element&#39;s name and actual current state. Doors
+offer <strong>On interaction</strong> (<code>onInteract</code>) and <strong>On destroy</strong> (<code>onDestroy</code>).
+Objects, including levers, torches and Empty Objects, also offer <strong>On area enter</strong>
+(<code>onAreaEnter</code>) and <strong>On area exit</strong> (<code>onAreaExited</code>). Regions offer
+<strong>On area enter</strong> (<code>onAreaEnter</code>), <strong>On area exit</strong>
+(<code>onAreaExited</code>) and <strong>On destroy</strong>. Named signals provide <strong>On signal</strong>
+(<code>onSignal</code>). Geometry and the initial state remain editable in <strong>Selection</strong>.</p>
+<p>Events only start their connected sequence. They do not compare values, choose
+a state or change the image. Use logic nodes for decisions and action nodes for
+changes. A mechanism with a blueprint and an empty interaction graph does
+nothing when activated; it has no automatic toggle.</p>
+<p>For a complete lever toggle, connect <strong>On interaction → Check state:
+Deactivated</strong>. Connect <strong>True → Change state: Activated → Change sprite</strong> with
+the active image, and <strong>False → Change state: Deactivated → Change sprite</strong> with
+the inactive image. Both state and image actions belong to this same sequence.
+For a torch, use <strong>Normal/Turned</strong>; its flame remains an independent action.
+Conditions read the state at the start of the event, even after a state action.
+<strong>Default appearance by state</strong> remains a separate optional visual setting.</p>
+<p>Area events start for every eligible token crossing the boundary. The region&#39;s
+occupancy changes only on first arrival and last departure; first/last tests
+belong in logic nodes. A region has no direct interaction port. Editing
+configuration does not start gameplay sequences.</p>
+<p>For an object, its authored size and rotation define the area. A token&#39;s center
+entering or leaving that box starts the corresponding graph, including both events
+when an accepted movement passes completely through the area. Area events do not
+toggle the object or change its image. Use <strong>Event context</strong> for the triggering
+token and presence count, and explicit condition/action nodes for the response.
+Moving, resizing, rotating or importing objects quietly refreshes membership.
+<strong>Simulate</strong> and <strong>Test behavior</strong> also support both object area events.</p>
+<p>To reuse another object&#39;s configured behavior, connect the area&#39;s event to
+<strong>Interact with object</strong>, then connect an <strong>Element reference</strong> to its <strong>Target</strong>.
+This explicitly runs that target&#39;s <strong>On interaction</strong> graph, including connected
+state, sprite, light and sound actions. <strong>Change state</strong> changes only the state;
+it does not call another event or replay the target&#39;s sprite actions. Native
+objects without a blueprint keep their normal toggle, while an authored empty
+interaction graph does nothing. Interaction chains share the existing limits,
+transaction and retry receipt. <strong>Test behavior</strong> rehearses the complete chain;
+local <strong>Simulate</strong> lists the requested interaction without running other graphs.
+The target interaction is queued after the source event&#39;s actions, like named
+signals. It follows the target&#39;s existing logic, including any authored toggle.</p>
+<p>Autosave stores edits in the project. When the project is linked to a scene,
+click <strong>Update scene</strong> to apply changed graphs to the game. Returning to the game
+alone does not update that scene. The save status and behavior editor state this
+distinction; updates keep the same scene ID.</p>
+<p><strong>On signal</strong> (<code>onSignal</code>) receives a named signal from <strong>Emit event</strong> or a
+one-shot timer with the same name. Select a named signal to expose its port on
+the instance node. The authored signal name remains unchanged. There is no
+separate timer-expiry event ID: existing <code>signal:&lt;name&gt;</code> graphs remain the
+receivers.</p>
+<p><strong>On destroy</strong> runs immediately before an explicit in-game deletion, including
+selection deletion or clearing a native layer. It can switch another light,
+change another element or notify a named signal receiver while the owner still
+exists. Removal and its effects share one transaction; a failed graph keeps the
+owner and rolls back its effects. Retrying the same command reuses its receipt.
+One command can remove at most 32 owners with connected destruction handlers.
+Only authorized native editing commands remove elements. Paused automation
+removes the element without executing its destruction graph.</p>
+<p>Removing an element in the Builder, updating a generated scene, changing
+configuration or deleting an asset or campaign does not execute this gameplay
+event. Timers and waits owned by a removed element are cancelled. For effects
+that must continue later, send a signal to another surviving element and schedule
+the work there. <strong>Test behavior</strong> predicts the removal and shows <strong>Removed for
+this test</strong>, while keeping the real map, project and history intact.</p>
+<p>Each state has three appearance options:</p>
+<ul><li><p><strong>Native appearance:</strong> use the door&#39;s material while closed or locked and hide
+its image while open.</p></li><li><p><strong>Hidden image:</strong> hide the image in that state, retaining the native geometry.</p></li><li><p><strong>Use image:</strong> choose a project image classified as <strong>Door</strong> for that state,
+including an image to display while open.</p></li></ul>
+<p><strong>Events</strong> offers only the supported starting events and their node counts.
+There are no event-level state filters. Loading earlier data discards <code>onChange</code>
+and state-specific entry, exit and interaction graphs; it does not migrate their
+actions. Elements and asset files remain in place. Rebuild those sequences under
+<strong>On interaction</strong>, an area event or a named signal. Appearance selection remains
+independent of the chosen graph.</p>
+<p>Each event occupies one row on the instance node, with its socket on the right.
+Its cable leaves horizontally from that socket. Drag from an event port to start
+that event&#39;s branch, even when another event is selected. A line follows the
+pointer. Release it on empty canvas
+to open the node chooser at that position; choosing a type creates the node and
+connects it to the branch. <strong>Add node</strong>, or a double-click on empty canvas, opens
+the same chooser without a connection. Type in its search field to filter the
+list: text found in a node&#39;s name or description ranks first, and letters typed in
+order within the node name also match, so
+<code>pls</code> finds <strong>Play sound</strong>. <strong>Enter</strong> picks the best match and the arrow keys
+move between options.
+It offers these actions and conditions:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Node</th><th scope="col" style="text-align:left">Configuration</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Set light</strong></td><td style="text-align:left">Choose a light in this project and enable or disable it</td></tr><tr><td style="text-align:left"><strong>Play sound</strong></td><td style="text-align:left">Choose an existing campaign sound and set its volume from 0 to 1</td></tr><tr><td style="text-align:left"><strong>Change state</strong></td><td style="text-align:left">Request Closed, Opened or Locked through the native door state</td></tr><tr><td style="text-align:left"><strong>Check state</strong></td><td style="text-align:left">Compare the state at the beginning of the event and follow True or False; a connected <strong>Test</strong> value decides instead</td></tr><tr><td style="text-align:left"><strong>Change sprite</strong></td><td style="text-align:left">Change, hide or restore the live image of this element or an element/group connected to Target</td></tr><tr><td style="text-align:left"><strong>Interact with object</strong></td><td style="text-align:left">Explicitly start the target&#39;s On interaction behavior, including its authored image, light and sound actions</td></tr><tr><td style="text-align:left"><strong>Sequence</strong></td><td style="text-align:left">Run outputs <strong>1</strong> to <strong>4</strong> one after another, each branch completely before the next</td></tr><tr><td style="text-align:left"><strong>Switch</strong></td><td style="text-align:left">Match a typed Value against configured cases and choose one case or <strong>Default</strong></td></tr><tr><td style="text-align:left"><strong>Random</strong></td><td style="text-align:left">Choose one of two to four execution branches using integer weights</td></tr><tr><td style="text-align:left"><strong>Get property</strong></td><td style="text-align:left">Value node: read the <strong>Current state</strong> or the <strong>Previous state</strong> the door just left</td></tr><tr><td style="text-align:left"><strong>Compare state</strong></td><td style="text-align:left">Value node: compare a state <strong>Value</strong> (the current state when unconnected) with the chosen one and output True or False</td></tr><tr><td style="text-align:left"><strong>All conditions</strong></td><td style="text-align:left">Value node: True when every connected Boolean condition is True</td></tr><tr><td style="text-align:left"><strong>Any condition</strong></td><td style="text-align:left">Value node: True when at least one connected Boolean condition is True</td></tr><tr><td style="text-align:left"><strong>Get variable</strong></td><td style="text-align:left">Value node: read a typed variable belonging to this element or scene, using the configured default when absent</td></tr><tr><td style="text-align:left"><strong>Set variable</strong></td><td style="text-align:left">Save a typed value in this element or scene; a connected <strong>Value</strong> replaces the configured value</td></tr><tr><td style="text-align:left"><strong>Compare value</strong></td><td style="text-align:left">Value node: compare Boolean, number or text values and output True or False</td></tr><tr><td style="text-align:left"><strong>Emit event</strong></td><td style="text-align:left">Queue a named event for this element, a connected <strong>Target</strong>, or matching listeners in this scene</td></tr><tr><td style="text-align:left"><strong>Element reference</strong></td><td style="text-align:left">Value node: choose a live image, door or presence region; its <strong>Element</strong> output feeds a compatible <strong>Target</strong> input</td></tr><tr><td style="text-align:left"><strong>Element group</strong></td><td style="text-align:left">Value node: name an ordered list of up to 32 elements, lights or sounds and connect its typed <strong>Targets</strong> output</td></tr><tr><td style="text-align:left"><strong>Light reference</strong></td><td style="text-align:left">Value node: connect a native light to a compatible <strong>Target</strong> input</td></tr><tr><td style="text-align:left"><strong>Sound reference</strong></td><td style="text-align:left">Value node: connect a campaign sound to a compatible <strong>Target</strong> input</td></tr><tr><td style="text-align:left"><strong>Move object</strong></td><td style="text-align:left">Move each target by an X/Y offset in cells</td></tr><tr><td style="text-align:left"><strong>Rotate object</strong></td><td style="text-align:left">Add an angle around each target&#39;s own center or a door&#39;s rotation anchor</td></tr><tr><td style="text-align:left"><strong>Set interaction</strong></td><td style="text-align:left">Enable or disable direct player interaction with doors, levers and torches</td></tr><tr><td style="text-align:left"><strong>Set region</strong></td><td style="text-align:left">Enable or disable presence detection for a region</td></tr><tr><td style="text-align:left"><strong>Event context</strong></td><td style="text-align:left">Value node: read trusted trigger identity, token metadata, event or state</td></tr><tr><td style="text-align:left"><strong>Reveal</strong></td><td style="text-align:left">Mark a secret or invisible door as discovered: this door, or the door connected to <strong>Target</strong></td></tr><tr><td style="text-align:left"><strong>Set barrier</strong></td><td style="text-align:left">Make this door, or the door connected to <strong>Target</strong>, block or let through movement, vision, light or sound (sound can also attenuate)</td></tr><tr><td style="text-align:left"><strong>Control sound</strong></td><td style="text-align:left">Stop a campaign sound already playing in the scene, or change its volume</td></tr></tbody></table></div>
+<p><strong>Change state</strong>, <strong>Change sprite</strong>, <strong>Interact with object</strong>, <strong>Reveal</strong> and <strong>Get property</strong> have a <strong>Target</strong> input of type
+<strong>Element</strong> (orange). Without a connection the target is the edited element; with an
+Element reference it is the referenced element. State and visual actions apply
+directly in the current sequence; a state change does not start another graph.
+<strong>Interact with object</strong> and <strong>Emit event</strong> queue the target&#39;s graph. Their
+<strong>Next</strong> output continues the source sequence before that queued graph runs,
+within the same command. A chain is limited to 32 element
+operations and 4 on the same element. Receivers of a Scene-scope signal use a
+separate budget of 256 deliveries, so one broadcast can reach many listeners;
+each receiver still counts toward its 4 operations. Exceeding any bound fails
+the whole command without persisting anything, and the automation log shows the
+chain with the bound that was reached: an element that ran more than 4 times
+(a repeating chain), more than 32 element operations (a long chain) or more than
+256 scene-signal deliveries. A chain started by a player never locks or unlocks a door unless the
+GM sets that <strong>Change state</strong> action&#39;s <strong>Locks</strong> option to <strong>Players may lock or
+unlock</strong>: then a lever operated by a player can unlock another door, and an
+interaction graph on a locked door can open it. Without the option the operation
+is skipped and logged. Barrier changes are play state, like the door state: scene
+updates keep them. A reference whose door was deleted stays in the
+graph marked <strong>Missing door</strong>; the action that needs it is skipped and logged as
+<strong>Missing target</strong>. <strong>Pick on map</strong>, on an Element reference or <strong>Set light</strong>
+node, steps the modal aside: click the door or light on the builder map to choose
+it, or press <strong>Escape</strong> or <strong>Cancel</strong> to keep the current target. Duplicating doors together points copied references at the
+copies; references to doors outside the copied group keep their target.</p>
+<p>Value nodes have no Input or Next; they are evaluated when an executed node reads
+them. Their diamond sockets carry a type, <strong>State</strong> (violet) or <strong>True or False</strong>
+(cyan), with one source per input. For example, connect <strong>Get property: Current
+state → Compare state: Locked → Check state · Test</strong>, and start Check state from
+<strong>On interaction</strong>. Its <strong>True</strong> branch can change the state and play an unlock
+sound. <strong>Current state for simulation</strong> supplies the initial snapshot for a local
+test; it is not a filter or parameter on the event.</p>
+<p><strong>Change sprite</strong> is an image action in the sequence. <strong>Change state → Change
+sprite</strong> in <code>onInteract</code> applies the requested state and keeps the chosen image.
+To change another object&#39;s image from an area, connect <strong>On area enter → Change
+sprite</strong>, select <strong>Use image</strong>, and connect <strong>Element reference → Target</strong> to the
+object that should change. The target does not need an interaction graph. Connect
+<strong>On area exit → Change sprite: Native appearance</strong> to the same reference to
+restore it. An Element group can change several images together. This changes
+artwork only; it does not change state or run the target&#39;s events. Ordinary images
+retain their base image, layer and box privately while overridden; restoring
+their native appearance removes the override. Native move/resize keeps that
+restoration box in sync. Unchanged authored geometry preserves the override on
+<strong>Update scene</strong>; native manual geometry changes retain the existing conflict
+guard. Empty Objects and regions remain image-free while controlling other
+elements. Nodes that need resources become available when those resources exist.
+The event itself does not compare, toggle or restore an image. Players receive
+only the resulting appearance.</p>
+<p>Lights and sounds must already exist in the project or campaign to be available
+as targets; otherwise the chooser keeps the type disabled and explains why. Other
+node types use the same catalog for every element kind.</p>
+<p>Sockets are the circles on node edges: the <strong>Input</strong> on the left and outputs on
+the right, colored by output (<strong>Next</strong> gold, <strong>True</strong> green, <strong>False</strong> red; door
+ports identify their starting event). Connections take the color of their source.
+Drag from an output to an existing node&#39;s <strong>Input</strong> to connect them directly.</p>
+<p>Value connections can also start at the input: drag <strong>Target</strong> to an existing
+reference&#39;s <strong>Element</strong> output, or release on empty canvas to create a compatible
+reference. Clicking <strong>Target</strong> opens the same filtered chooser. Select <strong>Element
+reference</strong>, then choose the other object in its <strong>Element</strong> field or with
+<strong>Pick on map</strong>. This creates the target connection; connect the event separately
+to the action&#39;s <strong>Input</strong>. <strong>Enter</strong> or <strong>Space</strong> on a value input opens the
+chooser; <strong>Shift+Enter</strong> lets you select an existing compatible output with the
+keyboard. An already connected input keeps its connection until you remove it.</p>
+<p>Each output can start another branch. Press <strong>Escape</strong>, click outside the chooser
+or release outside the canvas to cancel the pending branch; creating no node
+leaves the graph unchanged. Clicking an output and then an <strong>Input</strong> remains
+available. With an output focused, <strong>Enter</strong> or <strong>Space</strong> opens the same node
+chooser. To connect to an existing input using the keyboard, press
+<strong>Shift+Enter</strong> on the output, use <strong>Tab</strong> to reach the <strong>Input</strong>, then press
+<strong>Enter</strong>. Actions continue
+through <strong>Next</strong>; a condition has separate <strong>True</strong> and <strong>False</strong> outputs. Version 2
+accepts multiple branches per output, evaluated depth-first in stored order; a
+shared node executes once per event. Conditions read the event&#39;s initial state,
+and action nodes execute in the stored sequence.
+Click a connection to remove it, or focus it and
+press <strong>Delete</strong>. Deleting a node with its <strong>×</strong> button, or with <strong>Delete</strong> on its
+focused header, removes its connections. Drag node headers to arrange the graph,
+or focus a header and use the arrow keys; Shift increases the keyboard movement.
+Saved positions start at the graph&#39;s top-left origin: moving a
+node past that edge keeps it on the edge and shifts the other nodes instead.</p>
+<p>Drag empty canvas or use the middle mouse button to pan; the wheel or a pinch
+zooms around the pointer. With the canvas focused, the arrow keys pan, <strong>+</strong> and
+<strong>−</strong> zoom and <strong>0</strong> frames the graph. The controls at the bottom right show the
+zoom level, which resets to 100% when clicked, and <strong>Fit graph</strong> frames all nodes.
+<strong>Undo</strong> and <strong>Redo</strong> in the modal toolbar (<strong>Ctrl+Z</strong>, <strong>Ctrl+Shift+Z</strong> or
+<strong>Ctrl+Y</strong>) step through edits, including connections, nodes, parameters,
+positions and appearances; valid results save automatically.</p>
+<p>Click a card to select it; Shift, Ctrl or Cmd adds or removes cards, and
+Shift+drag on empty canvas draws a selection rectangle. <strong>Ctrl+A</strong> selects every
+card. Dragging any selected header, or the arrow keys on its focused header, moves
+the whole selection, and <strong>Delete</strong> removes the selected nodes and their
+connections; the event node stays. <strong>Ctrl+C</strong> copies the selected nodes with the
+connections between them, <strong>Ctrl+V</strong> pastes them at the pointer, also into another
+event or door while the page stays open, and <strong>Ctrl+D</strong> duplicates them beside
+the originals. Moving cards past the graph&#39;s top or left edge keeps them on the
+edge and shifts the other nodes in every event. The minimap at the bottom left
+shows all cards and the visible area; click or drag it to move the view.</p>
+<p>For example, connect <strong>On interaction → Check state: Closed → True → Change
+state: Opened → Change sprite → Play sound → Set light</strong>. Choose the open-door
+image, a sound and the room&#39;s light, leaving the light enabled. The interaction
+starts the sequence, the condition chooses a branch and the actions change the
+door, sound and light.</p>
+<p><strong>Simulate</strong> highlights the executed nodes and connections and lists their actions
+under <strong>Simulation</strong> locally. It does not operate the scene, play audio or change
+lights. Valid blueprint edits apply and save automatically. <strong>Close</strong> waits for
+pending edits; it does not undo acknowledged changes. Use Undo/Redo to revise
+them. Invalid fields must be corrected before closing.</p>
+<p>The generated door uses its existing native <code>door_state</code> for collision, vision,
+lighting and sound propagation. The server validates targets and graph limits,
+then executes effects inside the existing transaction and command receipt. A
+retry cannot repeat the effects. Reading, reconnecting or reopening a scene
+restores its current appearance without replaying actions. A state request does
+not start a new event; interaction is a separate starting event.
+Players retain their existing door permissions: a configured interaction on a
+locked door may play its effects, but cannot unlock the door or change it to
+another state. Light actions require dynamic lighting to be enabled.</p>
+<p>The GM receives the graphs; players and streamers receive only the current
+presentation. Image delivery follows that state&#39;s visible appearance, including
+the existing rules for undiscovered secret or invisible doors. Duplicating a door
+preserves its blueprint. Duplicating a group with a targeted light remaps the new
+door to the copied light; a door copied alone keeps the existing target.</p>
+<h3 id="composite-conditions">Composite conditions</h3>
+<p><strong>Add node → Logic</strong> includes <strong>All conditions</strong> (<code>all</code>, AND) and <strong>Any condition</strong>
+(<code>any</code>, OR). Their four Boolean inputs <strong>A–D</strong> accept <strong>Compare state</strong> results
+or another composite node. Connect two to four inputs; unconnected inputs are
+ignored. A draft with zero or one connected input remains editable and evaluates
+False. The node shows its connection count and explains the minimum.
+Connect <strong>Result</strong> to <strong>Check state → Test</strong>, and connect the event&#39;s execution
+wire to that Check state&#39;s <strong>Input</strong>. Composite nodes have no execution sockets.</p>
+<p>For a three-torch passage, read each torch&#39;s <strong>Current state</strong>, compare it with
+<strong>Turned</strong>, and connect those three results to All&#39;s <strong>A</strong>, <strong>B</strong> and <strong>C</strong>.
+Use <strong>Element reference → Get property · Target</strong> for the other torches; an
+unconnected Get property Target reads the edited torch itself. Route the Check
+state&#39;s True branch to a Change state action targeting the passage door. To close
+it again when a torch returns, route False to Closed and evaluate the same rule
+in each torch&#39;s <strong>On interaction</strong> sequence. Each torch needs the rule so an
+interaction checks the combination. Conditions read the initial event snapshot;
+choose the branch explicitly when its actions also turn that torch.</p>
+<p>All/Any evaluate current conditions, without counting activations or waiting for
+several events. Repeatedly turning one torch cannot replace another torch.
+Every connected input is evaluated in A–D order, and shared value nodes are read
+once per event. Simulate shows each result; the GM&#39;s Automation log records it
+during play. Generation, duplication, linked updates and campaign archives keep
+the typed connections and remap referenced elements. These are version-2 nodes;
+older blueprints are unchanged until an explicit meaningful edit.</p>
+<h3 id="variables-and-named-signals">Variables and named signals</h3>
+<p><strong>Get variable</strong> and <strong>Set variable</strong> use a case-sensitive name, <strong>Scope</strong>
+(<strong>This element</strong> or <strong>Scene</strong>) and <strong>Value type</strong> (<strong>True or False</strong>, <strong>Number</strong> or <strong>Text</strong>).
+Element memory belongs to the edited door, lever, torch or region; scene memory
+is shared by the scene&#39;s elements. Get variable returns its <strong>Default value</strong>
+when nothing has been stored. Reading a default does not create stored memory.
+Set variable uses its configured value or a connected Value of the same type.
+False, zero and empty text are valid values. A name keeps the same type within
+its scope; reset existing memory before changing its type.</p>
+<p>Connect Get variable to <strong>Compare value</strong>, then its Boolean <strong>Result</strong> to
+<strong>Check state → Test</strong>. Boolean and text comparisons offer Equals and Not equals;
+numbers also offer Less than, Less than or equal, Greater than and Greater than
+or equal. An unconnected Compare value reads False, 0 or empty text for its
+selected type. Changing a node&#39;s type removes incompatible value wires as one
+undo step, so reconnect them with the new type.</p>
+<p>Each event reads an initial snapshot of memory. Assignments are applied after
+that graph is evaluated: a Get variable in the same event still reads its
+initial value, while the next event sees the assignment. For a persistent puzzle,
+an interaction can set a scene Boolean <code>PuzzleSolved</code> to True, then emit
+<code>PuzzleSolved</code>; a receiving graph can read that variable and open a passage.
+The complete command, including assignments and receiving actions, commits
+atomically. Repeating its request does not repeat effects.</p>
+<p>In the event list, <strong>On signal → Signal name → Add signal</strong> creates a named
+receiving graph. <strong>Emit event</strong> with This element scope runs it on this element or
+the element connected to Target. Scene scope sends it to elements in the same
+scene that have that named graph. Receivers run from the bounded event queue
+after the sending event finishes; signals do not cross scenes or campaigns.
+A signal alone does not change an element&#39;s state. It carries its name, without
+custom payloads. Configure any desired state change in the receiving graph.</p>
+<p>Names use 1–64 ASCII characters, beginning with a letter, followed by letters,
+digits, underscores, dots or hyphens. Each scope stores at most 64 variables;
+numbers must be finite and between −1,000,000 and 1,000,000, and text is limited
+to 256 characters. Each blueprint has at most 16 named receiving graphs. These
+nodes and graphs require version 2; existing blueprints keep their compatibility.</p>
+<p><strong>Simulation variables</strong> supplies private preview values. Simulation uses defaults
+when omitted and lists queued assignments and emissions; it neither writes game
+memory nor executes receiving graphs. Select a named graph to simulate that
+receiver separately. The GM&#39;s <strong>Automation → Variables</strong> view shows stored scene
+and element memory. <strong>Reset variable</strong> removes only that entry, without running
+events; the next read uses its authored default. A reset checks the displayed
+value and refuses if it changed, requiring a refresh before trying again.
+Players and streamers receive neither variable memory nor private graph details.</p>
+<p>Reopening a scene, linked builder updates and campaign archives preserve live
+memory. Duplicating a native element starts its own memory empty; scene memory
+remains shared. Editing a blueprint or resetting memory never emits a gameplay
+event.</p>
+<h3 id="groups-and-typed-resource-references">Groups and typed resource references</h3>
+<p><strong>Add node → Values → Element group</strong> stores a name of 1–80 characters and an
+ordered list of 1–32 unique members. Choose <strong>Elements</strong>, <strong>Lights</strong> or <strong>Sounds</strong>
+as its member type. Reorder or replace members without changing their identities;
+remove a member while keeping at least one. The typed <strong>Targets</strong> output applies
+compatible actions to each listed member in order. These are explicit saved
+lists, not live searches or a rule that all members must have fired an event.</p>
+<p>Element references and groups can include doors, levers, torches, ordinary live
+images and presence regions. Baked floor and wall pixels are outside this list.
+Images without a Smart Object state return no state from <strong>Get property</strong>.
+Get property accepts a single Element; it does not combine group states.
+State, flame, reveal, barrier, interaction, region and element-scoped signal
+actions accept an Element or element group, applying only supported capabilities.
+The GM log and <strong>Test behavior</strong> distinguish missing targets from existing
+targets that cannot perform an action, identifying the latter by name. A mixed
+group still applies the action to compatible members; incompatible and missing
+members are skipped. Execution traces keep these identities separately as
+<code>targetIds</code>, <code>unsupportedIds</code> and <code>missingIds</code>.</p>
+<p><strong>Light reference</strong> connects a native light to <strong>Set light</strong>, Move object or
+Rotate object. <strong>Sound reference</strong> connects a campaign sound to <strong>Play sound</strong>
+or <strong>Control sound</strong>. Light and sound groups use the corresponding typed Target
+ports; they cannot be connected to an unrelated resource type. The configured
+light/sound in an action remains its fallback only when Target is disconnected.
+A connected missing reference is skipped without using that fallback or Self.</p>
+<p>Deleted members keep their UUID and appear as missing for repair; deleting a
+member does not silently redirect actions. Copies remap targets copied together
+and preserve external targets. Campaign sounds remain shared resources. Save,
+generation, linked updates and archives preserve group order and authored values.
+If an import omits audio, actors or tokens, their corresponding typed sound
+references/group members and presence-filter IDs receive fresh inert UUIDs.
+The same replacement is reused across project source, native objects and ownership
+history, keeping those targets unavailable for repair. Names and authored scalar
+text, including UUID-like text, stay unchanged.</p>
+<h3 id="move-rotate-and-interaction-during-play">Move, rotate and interaction during play</h3>
+<p><strong>Move object</strong> uses relative X/Y cell offsets, each from −1,000 to 1,000.
+<strong>Rotate object</strong> adds an angle from −36,000 to 36,000 degrees around each
+target&#39;s own center; a door with a <strong>Rotation anchor point</strong> pivots on that
+anchor. Without Target, these act on the owning element; connected
+targets may be an Element, Light or their typed groups. Native image/door/light
+validators still apply. Presence rectangles rotate only in multiples of 90
+degrees; incompatible geometry fails the command rather than approximating it.
+Torch images keep their linked light/effects together. These are immediate
+transforms, without animation, and do not change a mechanism&#39;s state by themselves.</p>
+<p>Transforms change live native geometry, preserving the editable source. Linked
+ownership records recognize authorized Blueprint transforms, so they alone do
+not cause a manual-edit conflict. <strong>Update scene</strong> reapplies authored positions
+and angles; unrelated manual edits retain their existing conflict protection.</p>
+<p><strong>Set interaction</strong> controls direct player activation of a door, lever or torch,
+including the torch&#39;s flame button. The source default is enabled; the authored
+setting is available in Selection. Disabled controls cannot be activated by
+pointer or keyboard, and the server refuses forged direct requests. GMs retain
+manual override. This gate does not stop authored automation, signals or timers;
+normal action permissions and lock rules still apply. A live interaction flag
+survives a linked update while its authored default is unchanged; changing the
+authored default applies the new setting. It also survives reconnect and archives.</p>
+<p><strong>Set region</strong> changes presence detection. Disabling quietly clears occupancy;
+enabling establishes a fresh baseline without synthetic entry/exit events.
+Signals and scheduled work keep their normal lifecycle. Moving or rotating a
+region also establishes a quiet baseline. Use later token commands for new
+presence events.</p>
+<h3 id="trigger-context">Trigger context</h3>
+<p><strong>Event context</strong> supplies one typed <strong>Value</strong> selected by <strong>Context field</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Property</th><th scope="col" style="text-align:left">Value</th></tr></thead><tbody><tr><td style="text-align:left">Event</td><td style="text-align:left">Text identifying the graph currently running</td></tr><tr><td style="text-align:left">Triggering element ID / user ID / user name</td><td style="text-align:left">Original source element and authenticated command actor</td></tr><tr><td style="text-align:left">Triggering token ID / actor ID</td><td style="text-align:left">Original presence token and its actor, or empty text without a token</td></tr><tr><td style="text-align:left">Presence transition / Occupancy count</td><td style="text-align:left">Original entry/exit transition and count after that transition; empty text/0 otherwise</td></tr><tr><td style="text-align:left">Has triggering token</td><td style="text-align:left">Boolean suitable for a Condition&#39;s Test input</td></tr><tr><td style="text-align:left">Current state / Previous state</td><td style="text-align:left">State values for this graph&#39;s event snapshot</td></tr></tbody></table></div>
+<p>Connect identity text to Compare value or Switch, count to numeric comparisons,
+or Has triggering token directly to Test. Trigger metadata comes from validated
+server objects. Signals, Delay and Timer keep the original source, user and token
+metadata; they do not substitute the receiving element or the GM who inspected
+the queue. Event/state/previous describe the event being evaluated. Delay retains
+its original event snapshot; a Timer expiry takes fresh state/variable snapshots
+while keeping original trigger identity. No arbitrary signal payload is accepted.</p>
+<p>Simulation context fields are temporary preview values. Simulation lists group
+actions and context reads without moving game objects, changing flags, storing
+progress or running receiving graphs. These nodes require Blueprint version 2.</p>
+<h3 id="switch-and-weighted-random">Switch and weighted Random</h3>
+<p><strong>Add node → Logic → Switch</strong> selects one path by a Boolean, number or text
+<strong>Value</strong>. A connected Value replaces the configured <strong>Default value</strong>; without
+a connection, that fallback is used. Reads use the event&#39;s initial snapshot,
+like variable and condition nodes. Add one to four cases with distinct values
+of the selected type; Boolean cases are limited to False and True. Equality
+does not convert values: text <code>1</code> and number <code>1</code> are different types, and text
+comparison is case-sensitive. False, zero and empty text remain valid values.</p>
+<p>The matching <strong>Case</strong> output runs; <strong>Default</strong> runs when none matches. Case IDs
+remain stable when another case is removed, preserving the remaining wires.
+Removing a case also removes its wires. Changing the value type resets the
+fallback and case values, removes incompatible Value wires and any discarded
+case outputs (at most two remain for Boolean). Each edit can be undone with
+its previous values and connections. An unconnected selected output ends that
+path; it does not fall through to Default.</p>
+<p>The editor makes room around expanded choice cards using their rendered size,
+including translated text. Layout changes caused by editing save with the graph
+and can be undone. Opening an unchanged graph preserves its saved coordinates.</p>
+<p><strong>Add node → Logic → Random</strong> has two to four <strong>Branch</strong> outputs. Each weight is
+an integer from 0 to 1,000, and at least one must be positive. For example,
+weights 1 and 3 give 25% and 75% chances. Zero disables that branch. The draw
+includes every configured branch, even if it has no wire; an unconnected chosen
+branch ends the path without drawing again. Adding or removing the last branch
+updates its output, and Undo restores its wires. A shared choice node runs once
+when execution branches reconverge within the same event.</p>
+<p>Both nodes require Blueprint version 2. The GM automation log shows the selected
+case and typed input, or selected random branch and weight. Random is selected
+on the server under the same permissions, transactions and operation receipts
+as other actions. Retrying the same logical operation preserves its draw,
+including after a failed transaction; it cannot reroll by repeating that request.
+Delay continuations preserve choices already made, and Delay/Timer chains carry
+the private draw sequence forward without resetting it. These nodes add no
+persistent gate-memory entry. Saved projects, native copies and campaign archives
+preserve authored fallbacks and case values as content, including UUID-like text.</p>
+<p><strong>Simulate</strong> highlights one selected path. Random draws locally for the preview;
+the game makes its own choice. Neither simulation writes scene state nor runs
+signal receivers or scheduled work.</p>
+<h3 id="persistent-execution-controls">Persistent execution controls</h3>
+<p><strong>Add node → Logic</strong> includes <strong>Counter</strong>, <strong>Once</strong> and <strong>Cooldown</strong>. Each has
+one execution Input and two execution branches; these nodes do not expose value
+outputs. Their private progress belongs to this element and is identified by
+the event and node ID. Two nodes or two receiving graphs keep separate progress,
+even when they have the same configuration.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Node</th><th scope="col" style="text-align:left">Behavior</th></tr></thead><tbody><tr><td style="text-align:left">Counter</td><td style="text-align:left">Increment once per event visit, then choose <strong>Reached</strong> when the count is at least the <strong>Activation target</strong>; otherwise choose <strong>Below target</strong>. The target is an integer from 1 to 1,000,000. Count saturates at 1,000,000, and Reached stays active on later visits.</td></tr><tr><td style="text-align:left">Once</td><td style="text-align:left">Choose <strong>First time</strong> once, then <strong>Already used</strong> until the GM resets this node. Place it before the effects it protects.</td></tr><tr><td style="text-align:left">Cooldown</td><td style="text-align:left">Choose <strong>Ready</strong> on the first visit or after its deadline; otherwise choose <strong>Cooling down</strong>. <strong>Cooldown seconds</strong> accepts 0.1–86,400 seconds. Blocked attempts keep the existing deadline.</td></tr></tbody></table></div>
+<p>For three activations followed by one reward, connect the event to Counter with
+target 3, <strong>Reached → Once</strong>, then <strong>First time → Change state → Play sound</strong>.
+Counting activations of one element differs from checking the current states of
+three distinct torches with All/Any. Shared controls execute once when branches
+reconverge during one event, like other execution nodes.</p>
+<p>Cooldown uses the server&#39;s UTC clock and persists an absolute deadline. Elapsing
+time does not run a graph: another authorized event must visit the node. Each
+execution segment commits progress and effects together; a failed action rolls
+back that segment, and retrying the same operation does not consume another
+activation. Waiting uses the separate Delay node described below.</p>
+<p>The simulation&#39;s <strong>Persistent node preview</strong> fields configure the count before the event,
+whether Once was already used, and the seconds remaining for Cooldown. Each
+<strong>Simulate</strong> starts from those preview values and reports the selected branch;
+it does not read or change stored game progress. During play, the GM&#39;s
+<strong>Automation → Node memory</strong> view lists the stored controls. <strong>Reset node</strong>
+removes only that entry, checks the value shown to prevent stale resets, and
+runs no gameplay event. The next visit starts from the node&#39;s unused state.
+Players and streamers receive neither this memory nor private graph details.</p>
+<p>Reopening a scene, reconnecting, server restart, linked builder updates and
+campaign archives preserve progress without replaying events. Native element
+copies start with empty control memory. Changing a target, duration, position
+or connection preserves existing progress; a changed duration applies after the
+current deadline next permits activation. Removing a node/event or changing its
+type discards that entry. These controls require Blueprint version 2.</p>
+<h3 id="persistent-delay">Persistent Delay</h3>
+<p><strong>Add node → Logic → Delay</strong> uses <strong>Wait seconds</strong> (default 3), from 0.1 to
+86,400 seconds, before continuing from <strong>Next</strong>. For example:
+<strong>Lever turned → Change state: Open → Delay: 3
+seconds → Change state: Closed</strong>. Delay requires Blueprint version 2.</p>
+<p>A reached Delay suspends the rest of this event, including later Sequence
+branches, preserving their execution order. Actions before the wait commit
+together with its saved continuation. Other interactions can still run while
+this event waits. The continuation resumes on the server without repeating the
+event or earlier actions. Closing the editor, disconnecting every browser or
+restarting the server does not discard it; overdue work runs when the server is
+available. No database transaction remains open during the wait.</p>
+<p>State, previous state, referenced element states and variable reads retain the
+snapshot taken when this event began, including values first read after the
+wait. Set variable actions already committed before the wait affect later
+events; reads in this event keep its original snapshot. Counter, Once and
+Cooldown consult their current stored progress when execution resumes.</p>
+<p><strong>Automation → Waiting</strong> shows the GM each pending wait, its element, event,
+actor and due time. <strong>Cancel wait</strong> removes the remaining continuation without
+undoing effects already committed or firing another event. Cancellation checks
+the displayed due time and requires a refresh if the wait changed. Pausing
+scene automation keeps pending waits, including overdue ones, until <strong>Resume
+automation</strong>. Leaving or hiding a scene does not itself pause its automation.</p>
+<p>Changing the owning blueprint&#39;s behavior, connections or duration cancels its
+pending continuation; moving graph cards alone preserves it. Removing the owner
+or an element target used by the continuation cancels the wait. Missing light,
+sound or image bindings anywhere in the owning blueprint also cancel it,
+including resources used only before the wait. At resume, the server checks the
+original actor&#39;s current
+membership and access again;
+later promotion grants no extra authority to a player-started wait. A resumed
+segment that fails commits none of its effects and records a diagnostic, while
+effects committed before the wait remain.</p>
+<p>Delay and Timer share a queue of 64 pending jobs per scene and 256 per campaign.
+A root chain keeps its existing limits across waits: 32 element operations, 256
+scene-signal deliveries, four operations per element and 1,024 actions, plus at
+most 32 timed resumptions.
+Resuming a Delay continuation does not consume another element-operation slot.
+Pending continuations are private runtime work; campaign exports, snapshots and
+copies do not carry them.</p>
+<p><strong>Simulate</strong> stops at the first reached Delay, highlights that wait and reports
+its duration. The preview never advances time, schedules work or runs the
+continuation. Use an actual scene to verify delayed effects.</p>
+<h3 id="persistent-timer">Persistent Timer</h3>
+<p><strong>Add node → Logic → Timer</strong> controls a named, one-shot countdown. Its <strong>Name</strong>
+uses the same case-sensitive ASCII format as a signal: 1–64 characters, starting
+with a letter, then letters, digits, underscores, dots or hyphens. The name
+belongs to this element; several nodes or events on that element can control
+the same countdown. A timer has no Target input and does not address another
+element or the whole scene.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Action</th><th scope="col" style="text-align:left">Behavior</th></tr></thead><tbody><tr><td style="text-align:left">Start timer</td><td style="text-align:left">Create the countdown if it is absent. If it is already pending, preserve its identity, deadline, original actor and execution budget.</td></tr><tr><td style="text-align:left">Stop timer</td><td style="text-align:left">Cancel the matching pending countdown without firing its event. Stopping an absent timer has no effect.</td></tr><tr><td style="text-align:left">Restart timer</td><td style="text-align:left">Replace the countdown and start a new one from now, using this event&#39;s actor and execution budget. It also starts an absent timer.</td></tr></tbody></table></div>
+<p>Start and Restart use <strong>Timer seconds</strong>, from 0.1 to 86,400 seconds (default 3).
+Stop has no duration. <strong>Next</strong> runs immediately for every action; the timer does
+not suspend the sending event. To close a door later, create <strong>On signal →
+CloseLater</strong>, connect that receiver to <strong>Change state: Closed</strong>, then start a
+Timer named <code>CloseLater</code> from the interaction. Other connected actions can run
+immediately while that countdown is pending.</p>
+<p>At expiry the server sends <code>signal:CloseLater</code> only to its owning element. This
+is a fresh event: state, referenced states and variable reads use the values at
+expiry, while Counter, Once and Cooldown use their current stored progress. It
+does not repeat the event that started the timer. Without a matching receiving
+graph, the timer completes without effects; the editor shows a hint to add one.
+Timer requires Blueprint version 2. It has no repeating mode or global trigger.</p>
+<p><strong>Automation → Waiting</strong> identifies each Timer by name, owning element, actor
+and expiry time. The GM can use <strong>Stop timer</strong>, or <strong>Restart timer</strong> to count
+again from now using the saved duration. Both check the displayed identity and
+deadline; stale requests require refresh. A GM restart preserves the original
+actor, role ceiling and chain budget, so it cannot elevate a player-started
+timer. Neither control fires the expiry event immediately.</p>
+<p>The durable queue and server worker are shared with Delay. Timers survive
+closed browsers and server restart; scene pause keeps them pending until resume.
+Blueprint behavior changes, missing required targets/resources and loss of access
+cancel them under the same policy as Delay; moving graph cards or renaming the
+map preserves them. At expiry the original actor&#39;s current access is checked
+again. Effects, completion and the receipt commit together; failure rolls back
+that expiry&#39;s effects and records a diagnostic. Earlier committed effects remain.</p>
+<p>Timers and Delays share the 64-per-scene/256-per-campaign pending limits and
+the original chain&#39;s 32 timed resumptions, 32 element operations, 256 scene-signal
+deliveries, four operations per element and 1,024 actions. A Timer expiry consumes a new element operation;
+a Delay continuation does not. Rearming from a receiving graph keeps those
+limits, so this is not an unbounded repeating scheduler. Running timers are
+private work and do not enter campaign exports, snapshots or copies.</p>
+<p><strong>Simulate</strong> lists timer actions and follows Next, without starting a countdown,
+advancing time or executing its receiver. Select the named signal graph to
+simulate that receiver separately, and use a real scene to verify expiry.</p>
+<h3 id="test-behavior-through-the-server">Test behavior through the server</h3>
+<p>Choose <strong>Test behavior</strong> in the Builder to rehearse the current unsaved document.
+The selected starting event runs against the current configuration without an
+implicit comparison. The result shows the element&#39;s state before the event and
+after the test settles, including presence changes caused by a teleport or move.
+Each changed element is listed by name with readable facts, such as a door going
+from <strong>Closed</strong> to <strong>Opened</strong>, a region going from <strong>Occupied</strong> to <strong>Empty</strong> with
+the token that left, or a teleport naming the token, destination and cell.
+Raw stored values remain under a collapsed <strong>Technical details</strong> entry.
+Select an element, one of its defined events and, optionally, a <strong>Test actor</strong>.
+The server builds a temporary native scene and runs the real engine, including
+cross-element actions, signals, variables, native effects and token transport.
+The preview applies the returned changes to a separate copy of the map. It does
+not change the source, selection history or saved project. No generation, image
+rendering or new media files are needed.</p>
+<p>In the table&#39;s <strong>Automation → Elements</strong> panel, <strong>Test behavior</strong> rehearses the
+selected live element against the current scene. An optional <strong>Test token</strong> must
+belong to that scene; its actor and identity come from the server. In a Builder
+draft, the selected campaign actor supplies an ephemeral token, centered in the
+selected region when applicable. Tests run with the GM&#39;s permissions. They do
+not impersonate a player or replace checking a player&#39;s actual permissions.</p>
+<p><strong>Run test</strong> shows the executed events and steps, predicted state changes,
+variables, audio changes and token destinations. Every run starts from the
+current configuration. <strong>Reset test</strong> clears the temporary result; closing the
+window also discards the preview. Tests always roll back scene objects, tokens,
+variables, node memory, jobs, logs and revisions. They create no receipts and
+deliver no sounds, messages, handouts, camera moves or realtime notifications.
+A failed chain shows its diagnostic and predicts no committed partial effects.</p>
+<p>Delay stops traversal at the wait, and Timer actions are listed with their
+predicted scheduling changes. Time does not advance and scheduled receivers do
+not fire. Without a test actor/token, Teleport is explicitly skipped with a
+warning while later actions continue. A paused scene can be rehearsed without
+changing its pause flag. <strong>Simulate</strong> remains available in the graph editor for
+the existing local graph-only preview.</p>
+<h3 id="automation-log-during-play">Automation log during play</h3>
+<p>On the table, the GM&#39;s <strong>Walls</strong> layer has an <strong>Automation</strong> tool that opens a
+floating window with the current scene&#39;s recent door blueprint runs, newest
+first. Each run shows its outcome (<strong>Completed</strong>, <strong>Blocked by the lock</strong> or
+<strong>Failed</strong>), time, who acted, the state before and after, and every executed
+event with its nodes in order: the branch each condition took, the values read
+and the actions with their parameters. A failure also shows its reason, such as
+a refused player or disabled dynamic lighting, and keeps the steps reached before
+it; none of its effects persist. <strong>Problems</strong> hides completed runs, and the
+crosshair pings the door on the map without broadcasting the ping. The window
+updates as runs happen and closes with <strong>Escape</strong>.</p>
+<p><strong>Elements</strong> provides searchable, type-filtered controls for doors, levers,
+torches, regions, native images and dynamic surfaces. Select an element to
+locate it, edit its behavior or test it. Controls apply immediately to the live
+scene: open/close/lock a door, toggle a mechanism or flame, show/hide artwork,
+enable player interaction or enable a region. Dynamic surfaces also offer a
+material choice and <strong>Restore original appearance</strong>, preserving their generated
+base image, mask and collision. Hiding a torch also gates its owned light and
+effects; its mechanism and flame remain independent.</p>
+<p>Lights, particle emitters and shaders appear in the same panel, with their own
+type filters. <strong>Edit settings</strong> opens their existing native editor; changes apply
+only when saved, and Cancel preserves the scene. Their enabled switches use the
+same authorized native commands and revision checks. Remote updates refresh the
+panel while preserving a material selected before <strong>Apply material</strong>.</p>
+<p>Selecting a door state changes it directly without starting a graph. <strong>Run
+interaction</strong> starts <code>onInteract</code>; state and image changes require action nodes.
+An empty blueprint does not toggle a lever or torch. Region changes
+establish occupancy quietly, without inventing arrival/departure events. These
+are GM controls: player interaction flags do not block the GM. Commands check the
+displayed object revision and use receipts for retries; a conflict requires a
+refresh. They preserve the authored Builder document. Existing variable and node
+memory resets keep their expected-value checks in their respective panels.</p>
+<p><strong>Pause automation</strong> stops every element graph in the scene. Interacting with a
+blueprint does not change its state or execute actions, and the log records
+<strong>Automation paused</strong>. Objects without a blueprint retain their native controls;
+direct GM configuration remains available. Players lose the interaction exception
+at locked doors. <strong>Resume automation</strong>
+restores the graphs. Only GMs can pause, run or clear; the paused flag is kept
+in the scene settings.</p>
+<p>Runs are diagnostics, not campaign content. The server records them in the same
+transaction as the door operation, or after the rollback for a failure; a retry
+of the same request returns its receipt without another run. Each scene keeps its
+last 50 runs, and archives do not export them. Only GMs can read them through
+<code>GET /api/maps/&lt;scene_id&gt;/automation</code> or receive the <code>maps.automation</code> socket
+notice; players and streamers receive neither.</p>
+<h3 id="levers">Levers</h3>
+<p>Place an <strong>Object</strong> with an image classified as <strong>Object</strong>, select it and open
+<strong>Panels → Selection</strong>. Set <strong>Behavior → Lever</strong> and choose its <strong>Initial state</strong>:
+<strong>Deactivated</strong> or <strong>Activated</strong>. An image is required for this artwork-based
+lever; choose <strong>Empty Object</strong> for an image-free controller. Setting Behavior back to
+<strong>None</strong> removes its behavior and graphs; project undo restores them.</p>
+<p>Double-click the lever or choose <strong>Edit behavior</strong> to open <strong>Smart object</strong>. Its
+main ports are <strong>On interaction</strong> and <strong>On destroy</strong>; use <strong>Check state</strong> inside
+the graph to choose between Activated and Deactivated, then add the state and
+image actions to each branch. Configure native appearance,
+a hidden image or another <strong>Object</strong>
+image independently for each state. Changing images preserves the authored box
+and rotation. Initial-state and geometry edits configure the project without
+executing gameplay events.</p>
+<p><strong>Element reference</strong> can select a door or lever by list or <strong>Pick on map</strong>.
+<strong>Change state</strong> offers the target&#39;s supported states; doors and levers can
+control each other. The activation branch of <strong>On interaction</strong> can continue
+through <strong>Change state: Activated → Change state: Opened</strong>, with a door reference
+in the last action&#39;s <strong>Target</strong>. Enable <strong>Players
+may lock or unlock</strong> when this action must unlock that door for a player.
+<strong>Get property</strong> and <strong>Compare state</strong> can also read a referenced lever.
+<strong>Reveal</strong> and <strong>Set barrier</strong> apply to doors; unsupported actions are skipped
+with a diagnostic in <strong>Automation</strong>. Copying a group remaps references between
+its copied doors, levers and lights, preserving references outside the group.</p>
+<p>On the generated game scene, choose <strong>Select</strong> and the <strong>Game</strong> layer, then
+double-click the visible lever to run its interaction. The GM can also interact
+on the <strong>GM</strong> layer. A single click selects it; double-clicking in the Map Builder
+opens its behavior editor instead. The interaction toggles the state when its
+graph requests that change. An empty blueprint does not toggle; a mechanism
+without a blueprint retains native interaction. Streamers remain read-only. Players receive only its current
+state and active image. <strong>Automation</strong>
+lists doors and levers together; pausing automation stops graph execution. Scene updates preserve its live state.</p>
+<h3 id="composed-torches">Composed torches</h3>
+<p>Place an <strong>Object</strong> image, select it and choose <strong>Behavior → Torch</strong> in
+<strong>Panels → Selection</strong>. The builder creates a linked native light; <strong>Torch
+components</strong> can add particles and a shader. <strong>Edit</strong> opens the game&#39;s own
+window for each component while keeping the torch selected. Components share
+the image&#39;s project layer and each belongs to exactly one torch.</p>
+<p><strong>Mechanism → Normal/Turned</strong> and <strong>Flame lit</strong> are independent. Turned adds
+90 degrees to the authored orientation around the image&#39;s center, carrying its
+components. Extinguishing the flame disables light and effects without moving
+the mechanism; lighting it restores only components configured as enabled.
+Positions, radii and other native settings remain editable. A state appearance
+with a hidden image also hides the components&#39; emission.</p>
+<p>Moving, rotating, resizing or changing the torch&#39;s layer carries its components.
+Builder duplication creates independent components and remaps internal Blueprint
+references. Each operation supports undo. Deleting the torch deletes its
+components; deleting an optional effect only detaches that effect. Deleting its
+required light dissolves the composition, preserving the image and removing its
+remaining components. Removing the behavior also preserves the image.</p>
+<p>Double-click or choose <strong>Edit behavior</strong> to open the torch&#39;s Blueprint. Connect
+<strong>On interaction → Check state: Normal → True → Change state: Turned → Change
+state: Opened</strong>, with a door reference in the last action&#39;s <strong>Target</strong>, to turn the
+torch and open a passage. Add its image and other effects in the same branch. <strong>Set flame</strong> lights/extinguishes this torch or a torch
+connected to <strong>Target</strong>, preserving its mechanism; doors and levers can also
+use this node. Builder configuration edits do not execute gameplay events.</p>
+<p>In the game scene, choose <strong>Select</strong> and the <strong>Game</strong> layer, then double-click
+the visible image to run its interaction and turn or return the mechanism when
+configured to do so. The GM can also interact on the <strong>GM</strong> layer. In the Map
+Builder, double-click opens the behavior editor. Its flame action appears on
+pointer hover or keyboard focus;
+<strong>Enter/Space</strong> activate focused controls. Streamers remain read-only. Players
+receive only the active image, mechanism and flame; private links and graphs
+remain GM-only. <strong>Automation</strong> includes torches and their actions. Save/reopen,
+generation, updates and campaign archives preserve the composition. Updating
+the scene preserves live mechanism and flame state; incompatible manual edits
+to native objects cause the normal conflict without silent replacement.</p>
+<h3 id="regions-and-pressure-plates">Regions and pressure plates</h3>
+<p>In <strong>Panels → Tools</strong>, choose <strong>Region</strong> and drag a rectangle over the map.
+Use <strong>Selection</strong> to name it, resize it, choose its layer, enable presence
+triggers or restrict its elevation range. The rectangle is a GM guide; it is
+absent from the raster, builder preview and player scene projection.</p>
+<p>For a pressure plate, choose a <strong>Controlled door</strong> and <strong>Apply pressure plate</strong>.
+This explicitly replaces the region&#39;s Blueprint: the first token opens the door
+and the last token leaving closes it. With two tokens inside, removing only one
+does not release the plate. <strong>Edit behavior</strong> and double-click open the normal
+Blueprint editor for custom sound, light, torch and door actions.</p>
+<p>Regions have derived <strong>Empty</strong> and <strong>Occupied</strong> states. <strong>On area enter</strong> and
+<strong>On area exit</strong> start a sequence for every eligible token crossing the boundary;
+these events do not compare state or occupant count. Use <strong>Event context →
+Occupancy count</strong> and a comparison node for first-entry (<code>1</code>) or last-exit (<code>0</code>)
+actions. Region state cannot be set manually or changed by a Change state node.</p>
+<p>The server evaluates the token&#39;s center and elevation along its validated path.
+A segment crossing the entire rectangle enters and exits it; a preview drag
+does not run automation. Overlapping regions evaluate independently in creation
+order. Token placement, duplication, removal and elevation changes also update
+presence. Hidden tokens still occupy space; their IDs remain private.
+Blocked moves and failed actions roll back the whole command, and retries do
+not repeat effects. Actions retain the moving user&#39;s existing permissions,
+including locked-door restrictions.</p>
+<p>Reopening a scene does not replay entry events. Editing or enabling a region,
+or updating its linked scene, establishes current occupancy without synthetic
+entry events. Changing configuration therefore does not automatically operate
+the linked door. The native GM region editor shows state and occupant count;
+the Automation window records the actual instigating token for each run.
+Source documents and scenes allow up to 128 presence areas in total: regions plus
+objects with connected area-event graphs. They also count in the normal object limit.</p>
+<p><strong>Presence filters</strong> in Selection and the native region editor can restrict token
+IDs, actor IDs, disposition (<strong>Friendly</strong>, <strong>Neutral</strong>, <strong>Hostile</strong>, <strong>Unknown</strong>)
+and visibility (<strong>Any</strong>, <strong>Visible</strong>, <strong>Hidden</strong>). Each identity list accepts up
+to 64 unique IDs. Empty lists impose no restriction. Members within one list
+use OR; different criteria use AND. Visibility checks the token&#39;s hidden setting,
+not a participant&#39;s fog-of-war view or control permissions. Hidden tokens remain
+eligible when no visibility filter excludes them.</p>
+<p>Only matching tokens count as occupants or fire presence events. Editing filters,
+geometry or enabled state quietly recomputes occupancy; later authoritative token
+commands generate new transitions. Existing projects with no filters retain
+their previous behavior. Filters and occupancy remain private to GMs; actor/token
+ownership and scene/campaign boundaries are validated on the server. Use Event
+context to inspect the triggering token/actor and original count, or Set region
+to change presence detection from a graph. Same-scene Teleport uses that verified
+trigger token; it does not use the browser&#39;s current selection.</p>
+<h3 id="reusable-behavior-templates">Reusable behavior templates</h3>
+<p>The Smart Object editor&#39;s template library belongs to the campaign and is available
+only to GMs. Saving a template captures an independent snapshot of the behavior.
+Typed resource positions become named bindings for images, elements, lights,
+sounds, handouts and participants; Self bindings resolve to the receiving instance.
+Choose scalar parameters to expose, such as a duration, volume, flag or message.
+Authored text, signal names, variable values and graph/node identities keep their
+meaning, including text that resembles a resource UUID.</p>
+<p>Applying a template asks for its bindings and parameter values, then creates an
+independent draft in the current editor. Review bindings before applying; valid
+applied changes save automatically through the project or scene-network flow.
+Changing the library entry later does not update
+existing instances. Missing or incompatible bindings must be resolved; a template
+does not grant access to another campaign&#39;s resources. Campaign archives preserve
+the library and its typed definition without retaining another instance&#39;s private
+resource identities.</p>
+<h3 id="scene-network">Scene network</h3>
+<p>Open <strong>Scene network</strong> from the GM&#39;s Automation window to inspect the scene&#39;s
+element-owned rules, references and missing bindings. Doors, levers, torches and
+presence regions open their existing Smart Object editor; ordinary images and
+dynamic surfaces can be targets without acquiring an invented mechanism state.
+Generated internal composition planes are not offered as editable elements.</p>
+<p>Saving checks both the native object&#39;s revision and the linked project&#39;s revision.
+For a generated element, the native blueprint, authored source blueprint and that
+blueprint&#39;s ownership snapshot update in one transaction. Typed native targets are
+mapped back to source identities; authored labels and text remain unchanged.
+Standalone native elements save only their native definition. Viewing the network
+creates no second graph store or additional execution. A conflict requires refresh;
+the operation never adopts unrelated manual geometry changes. Reusing a request UUID
+with another payload is rejected.</p>
+<h3 id="dynamic-surfaces">Dynamic surfaces</h3>
+<p>Select a floor or wall and enable <strong>Dynamic surface</strong> before generating/updating
+the scene. Existing projects keep their static default. Generated dynamic artwork
+uses native image planes and bounded masks instead of retaining the same pixels
+in the background raster. Paint, transparency, holes, erasers, wall crop and texture
+phase preserve their composition; internal planes and generated assets stay out of
+the ordinary asset/target catalogs.</p>
+<p><strong>Set visibility</strong> (<code>setVisibility</code>, <code>visible</code>) and <strong>Set appearance</strong>
+(<code>setAppearance</code>, <code>assetId</code>) accept Self or a connected element/group Target.
+Dynamic surfaces change their visible layer or material without rebaking the map
+or writing runtime files. Ordinary live images and door/lever/torch artwork also
+support the compatible visual action. Stateful artwork follows its existing sprite
+and state-entry lifecycle. These actions change artwork; use the separate Barrier
+action when collision, vision, light or sound blocking should change too.
+Only ordinary campaign images can become materials; generated masks and composite
+artwork cannot be reused as source assets. Explicit source updates keep the
+documented ownership and manual-conflict checks.</p>
+<h3 id="messages-handouts-and-camera-focus">Messages, handouts and camera focus</h3>
+<p>Version 2 provides <strong>Show message</strong>, <strong>Show handout</strong> and <strong>Camera focus</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Node</th><th scope="col" style="text-align:left">Saved settings</th></tr></thead><tbody><tr><td style="text-align:left"><code>showMessage</code></td><td style="text-align:left"><code>text</code> with 1–2,000 nonblank characters and <code>audience</code></td></tr><tr><td style="text-align:left"><code>showHandout</code></td><td style="text-align:left">Existing campaign <code>journalId</code> and <code>audience</code></td></tr><tr><td style="text-align:left"><code>cameraFocus</code></td><td style="text-align:left"><code>focusX</code> and <code>focusY</code> in cells, each 0–1,000, and <code>audience</code></td></tr></tbody></table></div>
+<p>Audience is the authenticated triggering participant, the campaign&#39;s players, or
+an explicit list of 1–64 unique participants. The server validates current membership
+and scene access for each recipient. Handouts open the existing journal window only
+for recipients who already have read access; presentation creates no permanent or
+temporary grant. Messages display plain text. Delivery occurs after commit, with
+one presentation identity for client deduplication; rollback and receipt replay
+do not repeat it.</p>
+<p>Camera coordinates are separate from the node&#39;s layout <code>x/y</code>. The server converts
+cells to scene pixels and rejects points outside the map. Camera requests apply
+only to the recipient&#39;s current scene and respect <strong>Preferences → Allow automation
+camera focus</strong>, which is off by default and stored per profile/device. Messages and
+authorized handouts can be shown while another scene is being viewed. None of these
+actions changes the campaign&#39;s broadcast scene.</p>
+<h3 id="same-scene-teleport">Same-scene teleport</h3>
+<p>Connect a region&#39;s <strong>On area enter</strong> event to <strong>Teleport</strong> and select a destination
+presence region in the same scene. The saved node is
+<code>teleport: { destinationId: &lt;region UUID&gt; }</code>; token and actor identities come only
+from the authenticated Event Context. Browser selection and payload token IDs cannot
+replace the traveler. Direct interactions with no triggering token cannot teleport.</p>
+<p>The server rechecks current scene access, actor identity/control, token lock and
+revision, destination activation/elevation, map bounds and footprint capacity.
+It chooses the first free integer-grid placement inside the destination, scanning
+rows from top to bottom and columns from left to right. Other tokens, including
+hidden ones, and walls through the destination footprint block placement; walls
+along the skipped route do not. Search work is bounded. An invalid or full
+destination fails the current transaction and leaves the original token unchanged.</p>
+<p>The same token retains its actor, linked/snapshot data, conditions, ownership and
+settings. Its placement and revisions commit with the logical command receipt.
+On the tabletop, teleport removes the token&#39;s old visual object and creates it
+at the destination without animating the skipped distance. The token keeps its
+identity and selection; duplicate acknowledgements do not repeat the visual
+replacement. The camera and floor stay mounted.
+Departure and arrival run once, without firing regions merely crossed by the
+teleport line. Arrival can run sound, light and appearance actions. A private,
+persisted arrival gate blocks an automatic onward/return teleport from that region
+until the token leaves; re-entering enables that route again. One token can be
+teleported at most once per logical command, including overlapping regions and
+signals. Gates survive reconnects, waits and compatible scene updates and are
+never included in participant projections.</p>
+<p>Delay/Timer retain the original token/actor identity and role ceiling, then recheck
+current control and destination when resuming. A reassigned actor or revoked access
+cannot redirect that identity. Effects committed before a wait retain their usual
+semantics if the later segment fails. Cross-scene transfer (8B), group travel and
+participant-following/navigation policies (8C) remain future work; this action never
+changes scene selection or broadcast.</p>
+<h3 id="current-limitations">Current limitations</h3>
+<p>Smart Objects cover doors, levers, torches and presence regions; references also
+reach ordinary live images, native lights and campaign sounds. Typed groups are
+explicit ordered lists. Value wires include their resource/set types alongside
+State, True or False, Number and Text. Get property still exposes only current or
+previous state; Event context supplies trusted trigger metadata. Named signals
+carry no custom payload, and simulation previews one graph at a time. The editor
+has no comments, visual node groups, reroutes or node bypass, and its
+undo history ends with the modal. The automation log keeps 50 runs per scene for
+elements with a blueprint. Direct interaction runs apply to doors, levers and torches;
+region events require authoritative token commands. See
+<a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/smart-objects-direction.md#current-limitations-and-pending-work">Current limitations and pending work</a>
+for the full list and the next steps.</p>
+<h2 id="developer-reference">Developer reference</h2>
+<p>The sections below describe stored documents, native projections, HTTP commands
+and execution boundaries. For user operations, use the workflows above. The
+<a href="frontend.html#map-builder-workspace">frontend guide</a> maps controllers and generated
+assets; the <a href="testing.html">testing guide</a> documents isolated regression scenarios.</p>
+<h3 id="source-raster-and-live-geometry">Source, raster and live geometry</h3>
+<p><code>MapBuilderProject</code> belongs to one campaign and contains its folder, versioned
+JSON source, last generated scene reference and generation ownership history.
+Project endpoints recheck GM
+membership on every request. They do not expose drafts to players or streamers.
+Campaign exports, clones and snapshots preserve projects and remap references to
+uploaded assets. Exporting the latest generated scene as content includes its
+editable project.
+Clones remap native light, image and sound references while preserving authored
+source identities. When audio is excluded from a campaign export, its exported
+source, native objects and ownership history omit legacy sound action nodes and reconnect their
+continuations. Other blueprint actions remain intact; the original campaign is
+unchanged.</p>
+<p>Schema version <code>3</code> stores <code>name</code>, <code>columns</code>, <code>rows</code>, <code>cellSize</code>, <code>background</code>,
+and the <code>assets</code>, <code>layers</code>, <code>floors</code>, <code>walls</code>, <code>doors</code>, <code>decorations</code> and <code>lights</code>
+lists, plus optional <code>particles</code>, <code>shaders</code> and <code>regions</code> lists. Older version-3 documents
+can omit those lists without changing on read. An empty <code>layers</code> list is
+valid only when every object list is empty; saving or generating it adds no
+default layer. Every object references an existing <code>layerId</code>; layers contain <code>id</code>, <code>name</code>,
+<code>visible</code> and <code>locked</code>. Floors support 0/90/180/270-degree texture rotation.
+Optional <code>backgroundImage: {assetId}</code> references one campaign image independently
+of brush assets and stretches it beneath the authored layers. Decorations contain
+a bounding box and rotation; their images use contain-fit. An Empty Object is a
+decoration with <code>empty: true</code>, <code>assetId: null</code>, optional <code>name</code>, and a native
+<code>lever: {state: &quot;off&quot; | &quot;on&quot;}</code>. Its optional blueprint uses <code>kind: &quot;lever&quot;</code>, all
+default state appearances inherit, and image actions cannot target the owner.
+Lights contain cell-space coordinates and bright/dim radii plus native light
+settings. Particle and shader entries use native property names and validation,
+plus <code>id</code> and <code>layerId</code>. Their <code>x/y</code> use project cells and become native pixels;
+light radii and shader <code>radius</code> remain cells (<code>radius: 0</code> covers the scene).
+Shader names and source remain authored content through campaign cloning and
+archives; object identities and ownership references still remap.
+Region entries contain <code>id</code>, <code>layerId</code>, <code>name</code>, <code>enabled</code>, the cell-space rectangle
+<code>x/y/width/height</code>, optional <code>vertical: {bottom, top}</code> and optional version-2
+<code>blueprint</code> with <code>kind: &quot;region&quot;</code>. Their states are <code>empty</code> and <code>occupied</code>;
+graphs also accept <code>presence:enter</code> and <code>presence:exit</code>. Optional
+<code>filters: {tokenIds, actorIds, dispositions, visibility}</code> stores authored selectors;
+computed occupancy and its token-membership ledger remain runtime-only.
+Generation uses stable native <code>zones</code>
+IDs, remaps Blueprint references and keeps regions GM-only.
+Walls and doors may additionally store native <code>presentation</code>,
+<code>behavior: {movement, vision, light, sound}</code>, <code>vertical: {bottom, top}</code> and
+<code>discovered</code>. Elevation values retain the game&#39;s token-elevation units;
+<code>bottom/top: null</code> means no elevation limit. Generation flattens behavior and
+elevation into the native wall fields. Older objects that omit these settings
+retain their existing defaults without a source rewrite.
+Doors and decorations optionally store strict Boolean <code>interactionEnabled</code>;
+absence retains the enabled default without rewriting older documents.
+Optional <code>editingMode: &quot;tiles&quot; | &quot;paint&quot;</code> selects the workspace; an omitted value
+defaults to Tiles without rewriting an older source. Terrain strokes optionally
+store <code>floor.brush: {operation, points, radius, hardness}</code>. Each point contains
+normalized <code>[u, v, alpha]</code> coordinates inside the floor box, <code>radius</code> contains
+normalized horizontal/vertical radii, <code>hardness</code> ranges from 0 to 1, and
+<code>operation</code> is <code>paint</code> or <code>erase</code>. Paint uses source-over coverage; erase removes
+coverage from earlier floors on the same layer. The same brush representation
+is used by the canvas and server rasterization.</p>
+<p>Existing floor <code>paint: {color, opacity}</code> remains readable independently of the
+terrain brush. Color is six-digit hex or <code>null</code> for a
+texture/default material; solid color requires <code>assetId: null</code>. Opacity ranges
+from 0 to 1 and multiplies texture alpha and shape coverage. Reading and
+rendering retain stored geometry/styles; rows without <code>paint</code> retain their
+existing output.
+Free floors optionally store <code>shape: {contours, cuts}</code>. Each entry is a polygon
+ring of normalized <code>[u, v]</code> points inside the floor&#39;s bounding box; coverage is
+the union of contours minus the union of cuts, with even-odd fill inside each
+ring. Shape-free rows retain the existing rectangular format. Moving/resizing
+uses that box, and quarter turns rotate the normalized geometry with the floor.
+Asset classifications may have a project-local <code>name</code>, <code>collection</code>
+and optional <code>family</code>. The <code>family</code> string adds metadata to version <code>3</code> without
+changing the schema version; projects without it retain their existing behavior.
+Membership derives from entries in <code>assets</code> with the same type and family name.
+Painted objects retain their concrete <code>assetId</code>; reading or rendering a project
+does not choose another family member.
+Coordinates and thicknesses
+use grid cells; generated native coordinates use pixels. Every logical object
+has a UUID. Doors store their own endpoints (<code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code>), thickness,
+optional image and initial state, just as walls have their own geometry. An
+optional door <code>blueprint</code> extends schema version <code>3</code> without changing its version.
+The current blueprint format is version <code>2</code>, with an element <code>kind</code>, fixed
+state-value definitions and optional <code>graphs</code>. Doors, levers and torches accept
+<code>interact</code> and <code>destroy</code>; regions accept <code>presence:enter</code>, <code>presence:exit</code> and
+<code>destroy</code>. Named receivers use <code>signal:&lt;name&gt;</code>. Event nodes carry only their exact
+event ID and layout, and expose one execution output, <code>next</code>; they have no state
+filter or comparison parameter. Loading older containers promotes their format
+and discards <code>change</code>, <code>enter:&lt;state&gt;</code>, <code>exit:&lt;state&gt;</code> and <code>interact:&lt;state&gt;</code> graphs,
+without converting their actions or removing scene elements and asset files.</p>
+<p>States store default <code>appearance</code> and optional <code>assetId</code>. Nodes store their ID,
+type, layout position and typed parameters; execution edges require
+<code>kind: &quot;execution&quot;</code> and <code>from</code>, <code>to</code>, <code>output</code>. Ordered fan-out is supported.
+Typed value edges use <code>kind: &quot;data&quot;</code> and target <code>input</code>, with one source per input.
+Pure value nodes accept no execution edges. A native door may also carry a live
+<code>sprite</code> set by Change sprite. It is play state like <code>door_state</code>: audiences
+receive only the resulting appearance. A state action does not emit another
+event or automatically clear that sprite. The instance node projects the real
+object without storing a second current state.</p>
+<p>A reference&#39;s saved
+output ID remains <code>door</code>; its value type is now <code>element</code>, preserving existing
+connections while accepting compatible live element references.</p>
+<p>A decoration may carry <code>lever: {&quot;state&quot;: &quot;off&quot;}</code> (or <code>&quot;on&quot;</code>) and an optional
+version <code>2</code>, <code>kind: &quot;lever&quot;</code> blueprint with those two states.
+Change sprite nodes can use any imported campaign image, including materials.
+State appearances use assets classified as <code>decoration</code>. Generated native
+images keep their box and base-image metadata in private lever data; participant
+projections include only <code>lever.state</code> and the active image. Scene updates keep
+live state and detect conflicts in manual changes to the generated image.
+Ordinary images controlled by Change sprite use a private
+<code>spriteBase: {assetId, layer, width, height}</code> restoration record, with pixel box
+dimensions and a live <code>sprite</code> appearance. Participant projections omit both.
+Native edits preserve or adopt the bounded box; campaign archives remap its asset
+ID and validate the active image, fit and ownership before committing an import.
+Generated decorations whose fitted scale exceeds the ordinary image editor&#39;s
+range use the same restoration record, retaining their authored pixel box through
+generation, native edits, scene updates and campaign copies.
+Source light targets use authored IDs and are remapped to native scene IDs during
+generation. Doors without this field retain their existing behavior. Asset
+classification belongs to the project rather than changing the campaign image
+for all other uses. Versions <code>1</code> and <code>2</code> remain readable. The editor upgrades them
+to one Base layer without rounding endpoints; version <code>1</code> wall-linked doors are
+converted without moving or discarding them. Merely reading an old project does
+not change its stored document or revision.</p>
+<p>By default, the raster contains the background, repeated floor textures and wall strips.
+Artwork explicitly marked dynamic uses the separate native composition described above.
+Wall artwork uses the bounding box of pixels with alpha at least <code>8</code>, discarding
+transparent padding without altering the uploaded image. The cropped image&#39;s
+horizontal direction follows the wall from start to end. Its aspect ratio sets
+the repeat length at the configured wall thickness, so horizontal, vertical and
+diagonal walls show the same proportions. Repeats keep their position along the
+original wall across door openings. The editor and generated image use this same
+placement.
+Floors and then wall strips follow project layer order within each paint pass;
+layer reordering does not interleave those object types.
+Decorations become native map-layer images; lights, particles and shaders remain
+native editable objects with their animation and lighting behavior.
+Neither is baked into the raster, so the native VTT can render and edit them.
+Collinear wall intervals occupied by doors are omitted from both the raster and
+ordinary native walls, even when a door spans several wall segments. Each door
+creates its own native segment, with its normal movement,
+vision, light and sound behavior. Its optional image is rendered separately.
+Without a blueprint appearance override, it appears while closed or locked and
+disappears when open. Deleting that image preserves the native door&#39;s geometry.
+This default behavior requires no object behavior graph.</p>
+<p>Deleting a campaign image removes its classifications and material references
+from saved projects, preserving their geometry with the default appearance.
+Other members of its asset family and their existing placements are preserved.
+Project revisions advance so open editors must refresh before saving again.
+This known asset cleanup also updates ownership history, so the linked scene
+can still be updated without restoring deleted artwork.
+Deleted state images revert to native appearance in source and native blueprints,
+as do Change sprite nodes that used them; a live sprite using the image is cleared.
+Set appearance actions using a deleted material are removed and their execution
+continuations reconnected; connected data references never become execution wires.
+Deleting a campaign sound removes its sound nodes and reconnects their
+continuations in both the current source and the generated snapshot, including
+dynamic-surface recipes, so campaign copies remain importable after deletion.
+Deleting a native light removes the affected live action references;
+deleting a generated light still causes the normal scene-update conflict.</p>
+<p><code>builder_render.py</code> rasterizes the validated document; <code>builder_services.py</code>
+uses the existing <code>tiling.generate_pyramid</code> pipeline and persists scene metadata,
+tiles, walls and the GM&#39;s private selection in one transaction. Rendering occurs
+before the write transaction; permissions, source revision and asset ownership
+are checked again before publication. Storage written for a failed operation is
+removed. Realtime invalidation happens after commit.</p>
+<h3 id="runtime-resources-and-scene-refresh">Runtime resources and scene refresh</h3>
+<p>Event execution reuses read-only asset, sound, light and blueprint inventories
+within one command, then discards them. Mutable states and ownership are checked
+again on later commands. A token&#39;s accepted path is projected once for an area
+pass, preserving listener order and teleport cancellation. Multiple area events
+retain all their history entries while publishing one history invalidation after
+commit. Rollback, permission checks and retry receipts remain authoritative.</p>
+<p>Committed scene changes reach the board before dependent audio/combat refreshes.
+Changing an ordinary image replaces its texture in place, retaining the previous
+art until the replacement is ready. Unchanged art is reused, including across
+light/geometry rebuilds within the same scene. The scene owns a bounded cache of
+recently used textures and releases it on scene/role changes and disposal. It
+loads only art in the viewer&#39;s current authorized scene projection.</p>
+<h3 id="http-operations-and-limits">HTTP operations and limits</h3>
+<p>All endpoints below are under <code>/api/containers/&lt;campaign_id&gt;/map-builder</code>:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Method and suffix</th><th scope="col" style="text-align:left">Purpose</th></tr></thead><tbody><tr><td style="text-align:left"><code>GET</code></td><td style="text-align:left">Project summaries, campaign image/sound metadata and current limits</td></tr><tr><td style="text-align:left"><code>GET /projects/&lt;project_id&gt;</code></td><td style="text-align:left">Read the editable source and revision</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;</code></td><td style="text-align:left">Create or save a project</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;/generate</code></td><td style="text-align:left">Generate a scene from the saved revision</td></tr><tr><td style="text-align:left"><code>POST /projects/&lt;project_id&gt;/update</code></td><td style="text-align:left">Update the linked scene from the saved revision</td></tr><tr><td style="text-align:left"><code>GET /templates</code></td><td style="text-align:left">List this campaign&#39;s GM-owned behavior templates</td></tr><tr><td style="text-align:left"><code>GET /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Read a typed template definition and revision</td></tr><tr><td style="text-align:left"><code>POST /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Create/update a snapshot template</td></tr><tr><td style="text-align:left"><code>DELETE /templates/&lt;template_id&gt;</code></td><td style="text-align:left">Delete a template with its expected revision</td></tr><tr><td style="text-align:left"><code>GET /testing-catalog</code></td><td style="text-align:left">GM-only campaign actor choices for rehearsal</td></tr><tr><td style="text-align:left"><code>POST /test</code></td><td style="text-align:left">Rehearse an unsaved document without saving or generating it</td></tr></tbody></table></div>
+<p>The GM scene-network endpoints are <code>/api/maps/&lt;scene_id&gt;/automation/network</code>
+(<code>GET</code>) and <code>/api/maps/&lt;scene_id&gt;/automation/network/&lt;element_id&gt;</code> (<code>POST</code>). A save
+carries <code>request_id</code>, <code>expected_version</code>, <code>expected_project_version</code> (or <code>null</code>
+for standalone native elements) and <code>blueprint</code>. They use the existing command
+receipts and publish no private graphs to players or streamers.</p>
+<p>GM rehearsal uses <code>POST /api/maps/&lt;scene_id&gt;/automation/test/&lt;element_id&gt;</code> with
+<code>request_id</code>, <code>expected_version</code>, <code>event</code>, and optional <code>tokenId</code> and native
+<code>blueprint</code> draft. Builder rehearsal instead accepts <code>request_id</code>, <code>document</code>,
+source <code>elementId</code>, <code>event</code> and optional campaign <code>actorId</code>. Both return private
+traces, predicted changes, scheduling summaries and warnings, then roll back.</p>
+<p>Live controls use <code>POST /api/maps/&lt;scene_id&gt;/automation/control/&lt;element_id&gt;</code>
+with <code>request_id</code>, <code>expected_version</code>, <code>action</code> and <code>value</code> (omit <code>value</code> for
+<code>interact</code>). Actions are <code>state</code>, <code>interact</code>, <code>flame</code>, <code>visibility</code>, <code>appearance</code>,
+<code>interaction</code> and <code>region</code>. A <code>null</code> appearance restores a managed surface&#39;s
+base artwork or an intelligent element&#39;s state appearance. Material choices
+must be ordinary campaign assets; generated masks are not reusable materials.</p>
+<p>Writes carry a UUID <code>request_id</code> and integer <code>expected_version</code>; new projects
+expect version <code>0</code>. Save also carries <code>folder_id</code> and <code>document</code>. Retrying the
+same logical request returns its receipt. Reusing that UUID for a different
+payload is rejected. A revision conflict requires rereading the current project;
+clients must not silently overwrite another saved revision. Update also carries
+<code>expected_scene_version</code>. Its generation manifest records generated object IDs,
+authored source identities, kinds and data; only those owned resources can be
+replaced or removed. An update
+rechecks permissions, revisions, ownership and generated data after rendering,
+inside the publication transaction. Notifications occur after commit, and
+superseded tile files are removed only after successful publication.</p>
+<p>Limits include a 1 MB source document, 32 project layers, 2,000 combined
+floor/wall/door/decoration/light/particle/shader/region objects, 5,000 generated native objects,
+256 classified images, dimensions of 1–200 cells and cell sizes of 16–256 px.
+The output is also limited to 16,777,216 pixels or the configured server limit,
+whichever is smaller; the dimension limits cannot all be used simultaneously.
+Painted surface complexity is bounded separately. Uploads reuse the campaign
+image endpoint and its 25 MB / 40 million decoded pixel limits.
+Free-floor geometry allows up to 128 contour/cut rings per floor, 256 vertices per
+ring, 4,096 points per floor and 16,384 points per document. Additional pixel-area
+and edge/scan-line budgets bound mask rendering; exceeding a limit rejects the
+whole gesture or server operation.
+Blueprints allow up to 32 nodes and 64 connections per event graph, with at most
+128 nodes across a door&#39;s graphs. Each graph requires one matching event node;
+cycles, references to missing graph nodes and duplicate connections are rejected. State transitions and executed
+actions are also bounded on the server.</p>
+<h3 id="delivery-plan">Delivery plan</h3>
+<p>Use the <a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/smart-objects-direction.md">Smart Objects design direction</a> for proposed
+adapters, visual node organization, animation and cross-scene/group transport.
+The supported behaviors and their limits are documented in this guide; future
+plans do not change saved project, permission or system-package contracts.</p></div><details class="kb-more-screenshots"><summary>More screenshots for this guide (1)</summary><figure class="kb-screenshot"><a href="../../assets/wiki/playtest-030.webp" aria-label="Open full screenshot: The safe playtest previews a door mechanism and reports its predicted changes. Gravewright 0.3.0, English interface."><img src="../../assets/wiki/playtest-030.webp" width="1440" height="900" alt="The safe playtest previews a door mechanism and reports its predicted changes. Gravewright 0.3.0, English interface." loading="lazy" decoding="async"></a><figcaption>The safe playtest previews a door mechanism and reports its predicted changes. Gravewright 0.3.0, English interface. · Open full screenshot ↗</figcaption></figure></details></article><nav class="kb-pagination" aria-label="Continue reading"><a href="macos-runner.html"><span>Previous ←</span><strong>macOS installer and Runner</strong></a><a href="universal-vtt.html"><span>Next →</span><strong>Universal VTT import and export</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/map-builder.md">docs/en/map-builder.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/map-builder.md">docs/pt-BR/map-builder.md</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#find-the-right-workflow">Find the right workflow</a></li><li><a href="#gm-access-and-entry-points">GM access and entry points</a></li><li><a href="#build-the-first-room">Build the first room</a></li><li><a href="#choose-a-starting-method">Choose a starting method</a></li><li><a href="#tiles-and-painting">Tiles and Painting</a></li><li><a href="#terrain-painting">Terrain Painting</a></li><li><a href="#import-a-finished-map">Import a finished map</a></li><li><a href="#build-larger-maps">Build larger maps</a></li><li><a href="#wall-joins-and-editable-nodes">Wall joins and editable nodes</a></li><li><a href="#door-rotation">Door rotation</a></li><li><a href="#empty-objects">Empty Objects</a></li><li><a href="#automatic-saving">Automatic saving</a></li><li><a href="#update-a-generated-scene">Update a generated scene</a></li><li><a href="#keyboard-and-pointer-shortcuts">Keyboard and pointer shortcuts</a></li><li><a href="#practical-limits">Practical limits</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#smart-object-reference">Smart Object reference</a></li><li><a href="#door-smart-objects">Door Smart Objects</a></li><li><a href="#developer-reference">Developer reference</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

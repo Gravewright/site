@@ -1,0 +1,230 @@
+# Implantação e backups
+
+[Documentação](../README.pt-BR.md) · [English](../en/deployment.md)
+
+Este guia cobre a implantação em servidores. Para uma instalação Windows usada apenas no próprio computador, use o [Gravewright Runner](windows-runner.md), que administra o armazenamento pessoal e um perfil local com um único processo.
+
+## HTTPS e WebSockets
+
+Gravewright oferece páginas HTTPS e WebSockets seguros (WSS). Configure `GRAVEWRIGHT_PUBLIC_ORIGIN` com a origem acessada pelo navegador, como `https://vtt.example.com`. O [SameOriginWebSocketMiddleware](../../gravewright/realtime/security.py) usa essa origem para validar o `Origin` do navegador e o `Host` da requisição, incluindo a porta efetiva. Isso também funciona com Daphne **4.2.3**, cujo escopo WebSocket omite `scheme`.
+
+Atrás de um proxy reverso que termina TLS, o [TrustedProxySchemeMiddleware](../../config/proxy.py) restaura o esquema HTTP/HTTPS ou WS/WSS antes de encaminhar a requisição pelo roteador ASGI. Aceita exatamente um cabeçalho `X-Forwarded-Proto: http` ou `https` apenas quando o endereço do par conectado pertence a `TRUSTED_PROXIES`. Valores de origem não confiável, duplicados, separados por vírgula ou malformados mantêm o esquema original. Assim, Django reconhece HTTPS corretamente nas verificações CSRF e nas respostas HSTS.
+
+A origem pública define uma origem permitida; não cria um listener TLS nem concede permissões. WebSockets da mesa continuam exigindo host permitido, uma única origem válida e correspondente, sessão válida e autorização na campanha. Sem origem pública configurada, a verificação WebSocket usa o esquema ASGI `ws`/`wss`; esquema ausente assume HTTP local. Portanto, TLS direto no Daphne exige a origem pública HTTPS. Apenas `DJANGO_SECURE_COOKIES=true` não a fornece.
+
+## Configuração de execução
+
+Use um checkout versionado e uma conta com escrita no banco e no armazenamento privado. Configure `DJANGO_SECRET_KEY` persistente e privada, `DJANGO_DEBUG=false`, hosts explícitos, origem pública e URL do Redis. A origem deve ser HTTP(S), sem caminho ou barra final. HTTPS ativa cookies de sessão/CSRF seguros e HSTS nas configurações.
+
+Gere a chave localmente e guarde em configuração protegida, mantendo-a entre reinicializações:
+
+```bash
+uv run --locked python -c 'import secrets; print(secrets.token_urlsafe(64))'
+```
+
+Não publique o valor gerado em issue, commit ou log compartilhado. Veja [configuração](configuration.md) para limites, caminhos e prioridade das variáveis.
+
+```bash
+uv sync --locked --no-dev
+uv run --locked --no-dev python manage.py migrate --noinput
+uv run --locked --no-dev python manage.py collectstatic --noinput
+uv run --locked --no-dev python manage.py check --deploy
+uv run --locked --no-dev daphne -b 127.0.0.1 -p 3000 config.asgi:application
+```
+
+Esses comandos pressupõem os valores de produção configurados e pastas existentes. `check --deploy` pode indicar decisões pendentes de configuração; verifique também o endereço público conforme descrito abaixo. O último comando usa HTTP em loopback atrás do proxy TLS. `main.py` usa o `runserver` de desenvolvimento; `config.wsgi` não atende WebSockets.
+
+## Proxy reverso Nginx
+
+Para Nginx e Daphne no mesmo servidor, defina estes valores na configuração protegida da aplicação, junto com sua `DJANGO_SECRET_KEY` privada:
+
+```dotenv
+DJANGO_DEBUG=false
+DJANGO_ALLOWED_HOSTS=vtt.example.com
+GRAVEWRIGHT_PUBLIC_ORIGIN=https://vtt.example.com
+TRUSTED_PROXIES=127.0.0.1/32
+GRAVEWRIGHT_REDIS_URL=redis://127.0.0.1:6379/0
+```
+
+Use o comando Daphne em loopback acima **sem `--proxy-headers`**. Essa opção substitui o endereço do par conectado antes da verificação do Gravewright e conflita com a confiança em proxies controlada pela aplicação. `TRUSTED_PROXIES` controla a resolução do IP encaminhado e o adaptador de esquema ASGI. Confie apenas nos endereços dos proxies que podem conectar ao Daphne e mantenha a porta interna privada. Em contêineres, substitua loopback pelo endereço real do proxy imediato ou por uma rede confiável de escopo restrito.
+
+O exemplo Nginx abaixo pertence ao contexto `http`. Substitua domínio, arquivos existentes de certificado/chave e caminho absoluto do checkout antes de ativá-lo. O limite de 100 MiB no corpo da requisição é um exemplo operacional; ajuste aos uploads e à capacidade do servidor. As diretivas TLS e o upgrade WebSocket seguem o [guia HTTPS do Nginx](https://nginx.org/en/docs/http/configuring_https_servers.html) e o [guia de proxy WebSocket](https://nginx.org/en/docs/http/websocket.html).
+
+```nginx
+map $http_upgrade $gravewright_connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+
+server {
+    listen 80;
+    server_name vtt.example.com;
+    return 308 https://vtt.example.com$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name vtt.example.com;
+
+    ssl_certificate /etc/letsencrypt/live/vtt.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/vtt.example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    client_max_body_size 100m;
+
+    location /static/ {
+        alias /srv/gravewright/staticfiles/;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $http_host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $gravewright_connection_upgrade;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Forwarded "";
+        proxy_set_header X-Forwarded-Host "";
+        proxy_set_header X-Forwarded-Port "";
+        proxy_buffering off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+}
+```
+
+`Host $http_host` preserva a porta usada pelo navegador; Nginx encaminha `Origin` sem alterações. O proxy substitui os valores de encaminhamento confiáveis, sem acrescentar dados enviados pelo cliente. Consulte a [configuração de cabeçalhos do proxy Nginx](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_set_header). Para uma porta pública diferente de 443, inclua-a em `GRAVEWRIGHT_PUBLIC_ORIGIN`, no listener TLS e no destino do redirecionamento. `DJANGO_ALLOWED_HOSTS` contém nomes de host sem portas.
+
+Nginx redireciona HTTP para HTTPS; este checkout não ativa o redirecionamento SSL global do Django. Instale um certificado válido e configure sua renovação, valide a configuração com `nginx -t` e recarregue Nginx pelo gerenciador de serviços. Após alterações, confira login, cookies de sessão/CSRF com Secure, HSTS em uma resposta da aplicação e conexão autenticada da mesa com status `101` por WSS. Verifique duas sessões e a rejeição de origem WebSocket externa. O teste automatizado de TLS direto e proxy está descrito em [testes](testing.md).
+
+## Arquivos estáticos e armazenamento privado
+
+Sirva `/static/` a partir de `staticfiles/`, gerado por `collectstatic`. Recursos atendidos por views próprias, inclusive módulos de frontend, continuam dependendo das rotas da aplicação. Com debug desativado, o Django não serve automaticamente os arquivos coletados pelo handler estático de desenvolvimento.
+
+Mantenha `MEDIA_ROOT` privado: mapas, PDFs, diários, áudio, cartas e pacotes de módulos são atendidos por rotas protegidas. Um alias público `/media/` ignoraria as verificações. Faça backup do armazenamento junto com o banco. Coleções opcionais em `data/vtt/compendiums/` também precisam de backup.
+
+Configure limites de upload e timeouts do servidor externo. O limite padrão de bytes de mapa é 50 GiB, enquanto pixels decodificados, dimensões e quantidade de tiles têm limites separados; aceitar muitos bytes não significa que haverá memória suficiente para processar o arquivo.
+
+### Uploads de mapas grandes
+
+A geração do mapa continua síncrona dentro da requisição de upload. Ela executa fora do loop de eventos, mas um mapa grande ou a espera por outro mapa pode ultrapassar o timeout de resposta do proxy reverso. Dimensione `proxy_read_timeout` com base nos tempos de processamento observados; os `300s` do exemplo não garantem o processamento de qualquer imagem. Um timeout do proxy pode desconectar quem enviou o arquivo enquanto o servidor continua processando; confira a lista de cenas antes de tentar novamente.
+
+Para mapas maiores, instale as dependências opcionais do libvips no ambiente que executa o servidor e aumente `GRAVEWRIGHT_MAP_MAX_PIXELS` somente conforme necessário. Nos comandos de implantação por código-fonte acima, use `uv sync --locked --no-dev --extra vips`; mantenha o extra nas sincronizações seguintes. Os instaladores nativos e a preparação de atualizações gerenciadas selecionam as dependências padrão sem esse extra. `GRAVEWRIGHT_MAP_TILER=vips` faz a falta de suporte nativo impedir a inicialização; `auto` recorre ao Pillow, cujo teto separado `GRAVEWRIGHT_MAP_PILLOW_MAX_PIXELS` tem padrão de 64 milhões de pixels. Consulte [configuração](configuration.md#geração-de-tiles-e-imagens-grandes) antes de aumentar qualquer teto.
+
+A geração é serializada por processo; vários workers ASGI ainda podem somar uso de memória e disco. Libvips processa mapas comuns em faixas, enquanto rotações e alguns codecs exigem recursos adicionais. Reserve espaço com permissão de escrita em `data/runner/tmp/` dentro da instalação para a fonte codificada, o conjunto completo de tiles preparados e os arquivos temporários nativos, além do armazenamento final de mídia. Overrides explícitos da raiz do Runner ou da pasta temporária de uploads Django mantêm a prioridade documentada. Meça formatos, transparências e orientações representativos no servidor de destino antes de elevar limites; essa mudança não acrescenta processamento em segundo plano nem uma cota global de memória.
+
+## Esperas persistentes do Blueprint
+
+A aplicação ASGI inicia automaticamente o executor de Delay quando o reactor do
+Daphne começa. Isso inclui o Runner habitual; não exige comando separado nem
+navegador conectado. Outros hosts ASGI precisam ativar lifespan de início e
+encerramento. WSGI não fornece esse ciclo de vida. Comandos comuns de
+gerenciamento do Django não iniciam o executor. O sinalizador de manutenção
+existente do atualizador conserva a fila durante a verificação de saúde do
+servidor até confirmar ou reverter a atualização.
+
+Aplique as migrações antes da inicialização. Continuações pendentes ficam no
+mesmo banco privado da cena, sobrevivem ao reinício dos processos e ficam
+disponíveis ao vencer o prazo. Automação pausada na cena as conserva pendentes
+até retomar. O executor consulta a cada 250 ms, em lotes de 20; a execução depende
+da carga e da disponibilidade. O encerramento aguarda a transação atual terminar.
+Se o processo terminar durante uma transação, a continuação não gravada permanece
+pendente para uma tentativa futura. Consulte os logs do servidor para falhas de
+banco e **Automação → Aguardando** para trabalho pendente.
+
+Cada processo ASGI pode manter seu executor; transações do banco serializam a
+tomada das tarefas e os efeitos, evitando aplicação duplicada entre executores
+concorrentes. `GRAVEWRIGHT_AUTOMATION_WORKER_ENABLED=false` desativa o executor
+daquele processo sem apagar esperas. Exportações, snapshots e clones de campanha
+omitem continuações pendentes; um backup completo do banco as inclui. Assim, um
+banco restaurado pode retomar trabalho vencido na inicialização. Use a opção de
+executor desativado ao inspecionar uma cópia de recuperação, antes de ativar sua
+automação de forma intencional. Veja
+[configuração](configuration.md#executor-de-delay-do-blueprint) e
+[Delay persistente](map-builder.md#delay-persistente).
+
+## Vários processos
+
+Todos os workers precisam compartilhar banco, arquivos, chave secreta, configuração de confiança dos módulos e camada Redis. As configurações padrão do servidor exigem `GRAVEWRIGHT_REDIS_URL` com debug desativado, mesmo em um único processo. O executor local possui um perfil separado e não pode ser usado para essa implantação. Channels em memória não entrega eventos entre workers.
+
+SQLite é o banco configurado e usa transações `IMMEDIATE`. Redis entrega eventos; não substitui o banco nem mantém um registro durável da partida. Vários processos ainda compartilham a disputa por escrita do SQLite; o código não fornece configuração PostgreSQL nem afirma suportar armazenamento distribuído horizontalmente. Dimensione com base em cargas observadas.
+
+Use um gerenciador de serviços para supervisionar ASGI e Redis, guardar logs e encerrar processos adequadamente. Após mudanças de hospedagem, teste duas sessões, visibilidade de mestre/jogador, uploads, reconexão WebSocket e reinício de workers.
+
+## Backup e restauração
+
+Exportações são pacotes portáveis de conteúdo; snapshots são pontos de recuperação da campanha. Nenhum deles é um backup completo da instância. Exportações omitem ou ajustam vínculos, proprietários e parte do histórico privado; o estado de instalação de módulos está fora do grafo exportado. Consulte [archives.py](../../gravewright/administration/archives.py).
+
+Para um backup completo consistente:
+
+1. Interrompa escritas, incluindo todos os processos ASGI e processos de manutenção.
+2. Copie o banco SQLite configurado e arquivos journal/WAL associados, se existirem, toda a mídia privada, coleções opcionais e configurações/chaves de confiança necessárias. Também é possível usar a operação de backup do SQLite, coordenada com a cópia dos arquivos.
+3. Registre a versão correspondente do código, o lock file e as licenças. Proteja segredos separadamente e restrinja acesso ao backup.
+4. Restaure primeiro em uma pasta separada, ajustando os caminhos. Verifique login, uma campanha, uploads representativos e módulos antes de direcionar usuários para ela.
+
+Não copie somente `db.sqlite3` da raiz nem restaure código antigo sobre banco já migrado para uma versão nova. Teste rollback com banco e arquivos correspondentes, sem presumir que migrações sejam reversíveis.
+
+## Atualizações e serviços opcionais
+
+Ao atualizar o pacote publicado 0.1.1 pela Administração, o supervisor antigo
+continua executando. Pare o Runner, extraia o ZIP 0.1.2 sobre a pasta original e
+execute o novo instalador usando a mesma pasta de dados pessoais. Essa troca
+única habilita apps Django e a nova substituição de arquivos. Preserve os dados
+pessoais e a pasta `updates` durante a transição.
+
+A descoberta usa `GRAVEWRIGHT_RELEASES_REPOSITORY`, com padrão `Gravewright/gravewright`; um valor vazio a desativa. Artefatos Django compatíveis exigem metadados SHA-256. Instalações iniciadas pelo Runner ou `main.py` permitem atualizar pela Administração, com substituição de arquivos, migrações, reinício e recuperação. Servidores ASGI iniciados diretamente exigem atualização pelo operador.
+
+O marketplace usa catálogo HTTPS e arquivo local de chaves públicas Ed25519 confiáveis. URL vazia deixa a descoberta online sem configuração. Revise autores e código antes de instalar módulos, pois executam na origem da aplicação. Veja [módulos](modules.md).
+
+O e-mail usa o backend de console do Django. Texto e publicação da política de privacidade são administrados pelo operador; ativar uma opção não fornece política preenchida nem serviço de e-mail. Considere também licenças das dependências, servidor Redis, navegador e imagem de contêiner efetivamente distribuídos; consulte [avisos de terceiros](../../THIRD_PARTY_NOTICES.pt-BR.md).
+
+### Atualizações pela interface: Windows, Linux e macOS
+
+O início normal por `main.py` e pelo Gravewright Runner ativa o supervisor
+por padrão. No Windows, o `Gravewright Runner.bat` mantém seu funcionamento
+habitual. No Linux e macOS, `uv run --locked python main.py` também inicia o
+fluxo de atualização; `--dev` é reservado ao desenvolvimento com autoreload.
+Não é necessário iniciar um modo especial para usar o botão de atualização.
+
+Em Administração → Atualizações, verifique a versão e clique
+em **Instalar atualização**. O download, validação SHA-256,
+preparação de dependências, backup, migrações, reinício e recuperação são
+controlados por essa tela nos três sistemas operacionais. A modal de progresso
+mostra a etapa confirmada e o tempo decorrido. A porcentagem do download usa
+os bytes recebidos; as outras etapas usam um indicador de atividade.
+Mantenha o Runner aberto durante a instalação. As conexões de mesa são
+interrompidas durante a troca; as consultas ficam mais espaçadas enquanto
+o servidor está indisponível e pausam com a página oculta ou sem conexão.
+A página recarrega após o servidor confirmar que a versão esperada está rodando.
+
+O pacote `Gravewright-VERSAO-django.zip` deve ter digest SHA-256 publicado no
+GitHub, versão superior e os arquivos do supervisor. O repositório padrão é
+`Gravewright/gravewright`; uma configuração explicitamente vazia desabilita a
+consulta. A release inicial `0.1.0-alpha.0`, anterior ao supervisor, não pode
+aplicar atualizações: é necessário distribuir este inicializador atualizado
+para habilitar o fluxo da interface nessa instalação antiga.
+
+A atualização substitui os arquivos na pasta original do projeto, incluindo `Install Windows.bat`, scripts, assets e o runner gerado. Arquivos da versão anterior que não existem na release nova são removidos. `.env`, ambientes Python, caches e diretórios de dados/extensões locais são preservados. As dependências da versão nova são preparadas isoladamente antes da substituição.
+
+A opção **Manter cópia .old para rollback** vem marcada. Após o sucesso, cria uma pasta interna, por exemplo `data/updates/retained/Gravewright-0.2.3.old`, com o código anterior e os snapshots de banco, mídia e outros dados em `.gravewright-rollback`. Se já existir uma cópia, uma nova recebe um identificador no nome; nenhuma cópia anterior é sobrescrita. Desmarcar elimina a cópia temporária após o sucesso. Durante a instalação sempre existe recuperação temporária: falhas de migração, substituição ou inicialização restauram código, inicializadores e dados. Uma transação interrompida é recuperada na próxima inicialização.
+
+Para restaurar uma cópia retida, encerre o Runner e execute com o Python da instalação (o caminho aparece no BAT gerado):
+
+```bat
+"CAMINHO_DO_PYTHON\python.exe" -X utf8 scripts\rollback_update.py "data\updates\retained\Gravewright-0.2.3.old"
+```
+
+A restauração também retorna banco e mídia ao momento do backup; alterações feitas depois dele serão perdidas. Preserve a pasta de estado e os ambientes de atualização junto da cópia `.old`, pois ela referencia o Python anterior. Checkouts Git com alterações locais continuam bloqueados contra atualização. Não execute outro servidor contra o mesmo banco durante atualização ou restauração.
+
+O Runner guarda versões, backups e `update.log` em `data/updates/` dentro da
+pasta descompactada. O inicializador por `main.py` também mantém seu estado em
+`data/updates/` dentro do projeto, no Windows, Linux e macOS. Nenhum estado padrão
+do atualizador é compartilhado em AppData, HOME ou XDG. Preserve `data/` e reserve
+espaço para os ambientes e as cópias `.old` retidas.
+
+O workflow `Automatic updates` testa Windows, Linux e macOS nativamente.
+Para reproduzir, execute `uv run python tests/e2e/automatic_updates.py` e
+`uv run python tests/e2e/automatic_updates.py --runner`; ambos usam dados
+temporários, HTTPS local e falhas deliberadas de migração e inicialização.
