@@ -307,5 +307,43 @@
     ],
     "version": "0.3.0",
     "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+  },
+  {
+    "id": "example-browser-modal",
+    "file": "assets/examples/previews/browser-summary-030.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The campaign-summary example reads one authorized actor and opens the native modal. Gravewright 0.3.0, English interface.",
+      "pt": "O exemplo de resumo lê um ator autorizado e abre o modal nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The campaign-summary example reads one authorized actor and opens the native modal. Gravewright 0.3.0, English interface.",
+      "pt": "O exemplo de resumo lê um ator autorizado e abre o modal nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "example-package-browser"
+    ],
+    "version": "0.3.0",
+    "origin": "Real documentation example packages installed on a new disposable 0.3.0 host with synthetic data."
+  },
+  {
+    "id": "example-system-sheet",
+    "file": "assets/examples/previews/system-sheet-030.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The original Example Expedition sheet has saved Stamina 17 through the scoped API. Gravewright 0.3.0, English interface.",
+      "pt": "A ficha original Example Expedition salvou Stamina 17 pela API do contexto. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The original Example Expedition sheet has saved Stamina 17 through the scoped API. Gravewright 0.3.0, English interface.",
+      "pt": "A ficha original Example Expedition salvou Stamina 17 pela API do contexto. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "example-package-system"
+    ],
+    "version": "0.3.0",
+    "origin": "Real documentation example packages installed on a new disposable 0.3.0 host with synthetic data."
   }
 ]

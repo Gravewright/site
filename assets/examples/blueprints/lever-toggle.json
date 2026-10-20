@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "kind": "lever",
+  "states": {
+    "off": {
+      "appearance": "inherit"
+    },
+    "on": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "isOff",
+          "type": "condition",
+          "x": 300,
+          "y": 80,
+          "state": "off"
+        },
+        {
+          "id": "activate",
+          "type": "state",
+          "x": 560,
+          "y": 40,
+          "targetState": "on"
+        },
+        {
+          "id": "deactivate",
+          "type": "state",
+          "x": 560,
+          "y": 220,
+          "targetState": "off"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "isOff",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "isOff",
+          "to": "activate",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "isOff",
+          "to": "deactivate",
+          "output": "false",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

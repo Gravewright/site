@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "kind": "door",
+  "states": {
+    "closed": {
+      "appearance": "inherit"
+    },
+    "open": {
+      "appearance": "inherit"
+    },
+    "locked": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "isOpen",
+          "type": "condition",
+          "x": 300,
+          "y": 80,
+          "state": "open"
+        },
+        {
+          "id": "close",
+          "type": "state",
+          "x": 560,
+          "y": 40,
+          "targetState": "closed"
+        },
+        {
+          "id": "isClosed",
+          "type": "condition",
+          "x": 560,
+          "y": 220,
+          "state": "closed"
+        },
+        {
+          "id": "open",
+          "type": "state",
+          "x": 820,
+          "y": 220,
+          "targetState": "open"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "isOpen",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "isOpen",
+          "to": "close",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "isOpen",
+          "to": "isClosed",
+          "output": "false",
+          "kind": "execution"
+        },
+        {
+          "from": "isClosed",
+          "to": "open",
+          "output": "true",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

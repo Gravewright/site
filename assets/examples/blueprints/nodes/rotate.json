@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "kind": "door",
+  "states": {
+    "closed": {
+      "appearance": "inherit"
+    },
+    "open": {
+      "appearance": "inherit"
+    },
+    "locked": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "sample",
+          "type": "rotate",
+          "x": 300,
+          "y": 80,
+          "degrees": 90
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "sample",
+          "output": "next",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

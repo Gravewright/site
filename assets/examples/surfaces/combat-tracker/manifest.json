@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-combat-tracker",
+  "name": "Current turn summary",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Show encounter activity, round and the current visible combatant, without implementing initiative rules.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "example.campaign-summary",
+  "name": "Example campaign summary",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Adds an authorized read-only summary in a native modal.",
+  "author": "Gravewright documentation examples",
+  "license": "GPL-3.0-only",
+  "entry": "main.mjs"
+}

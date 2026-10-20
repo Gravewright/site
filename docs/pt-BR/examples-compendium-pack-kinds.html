@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Packs de compêndio: 3 tipos instalados e 7 locais | Gravewright</title><meta name="description" content="JSON original completo por tipo de pack, restrições reais do manifesto e arquivos de exemplo."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/examples-compendium-pack-kinds.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/examples-compendium-pack-kinds.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/examples-compendium-pack-kinds.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/examples-compendium-pack-kinds.html"><meta property="og:type" content="article"><meta property="og:title" content="Packs de compêndio: 3 tipos instalados e 7 locais | Gravewright"><meta property="og:description" content="JSON original completo por tipo de pack, restrições reais do manifesto e arquivos de exemplo."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/examples-compendium-pack-kinds.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Packs de compêndio: 3 tipos instalados e 7 locais","description":"JSON original completo por tipo de pack, restrições reais do manifesto e arquivos de exemplo.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/examples-compendium-pack-kinds.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/examples-compendium-pack-kinds.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html" aria-current="page">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind: door — abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind: lever — interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind: torch — girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind: region — placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data — um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Packs de compêndio: 3 tipos instalados e 7 locais</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Exemplos por kind <span aria-hidden="true">/</span> 9 min de leitura</span><h1>Packs de compêndio: 3 tipos instalados e 7 locais</h1><p class="kb-lead">JSON original completo por tipo de pack, restrições reais do manifesto e arquivos de exemplo.</p></header><div class="kb-prose"><p>Um pack usa o campo <code>type</code>, chamado de “kind de pack” na documentação. Ele é diferente de <code>entry.kind</code> retornado pelo diretório e de <code>entry.type</code>, o tipo de documento do sistema. Não coloque <code>kind</code> na raiz de manifest.json.</p>
+<p>Há duas origens com limites diferentes: coleções fornecidas por um pacote de sistema instalado e catálogos locais preparados pelo operador. Todos os dados Beacon abaixo são fictícios e originais.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">type do pack</th><th scope="col" style="text-align:left">kind no diretório</th><th scope="col" style="text-align:left">Em sistema instalado</th><th scope="col" style="text-align:left">Em catálogo local</th></tr></thead><tbody><tr><td style="text-align:left">actor_pack</td><td style="text-align:left">actor</td><td style="text-align:left">Sim</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">item_pack</td><td style="text-align:left">item</td><td style="text-align:left">Sim</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">spell_pack</td><td style="text-align:left">item</td><td style="text-align:left">Sim</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">journal_pack</td><td style="text-align:left">journal</td><td style="text-align:left">Não</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">scene_pack</td><td style="text-align:left">scene</td><td style="text-align:left">Não</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">card_pack</td><td style="text-align:left">deck</td><td style="text-align:left">Não</td><td style="text-align:left">Sim</td></tr><tr><td style="text-align:left">deck_pack</td><td style="text-align:left">deck</td><td style="text-align:left">Não</td><td style="text-align:left">Sim</td></tr></tbody></table></div>
+<h2 id="preparacao-do-sistema-instalado">Preparação do sistema instalado</h2>
+<p>Use a release alvo que suporta <code>content.compendiums</code>; o recurso existe desde o VTT 0.2.1. O sistema precisa estar instalado, ativo na versão exata da campanha e não revogado. Comece com o <a href="modules.html">pacote mínimo</a> e use este manifesto. Ele registra explicitamente character, gear e spell; esses nomes pertencem apenas ao sistema de exemplo.</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-json">{
+  &quot;id&quot;: &quot;example.beacon&quot;,
+  &quot;name&quot;: &quot;Beacon Example System&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.js&quot;,
+  &quot;description&quot;: &quot;Original example document types and compendium data.&quot;,
+  &quot;author&quot;: &quot;Example author&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;system&quot;: {
+    &quot;actorTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;character&quot;,
+        &quot;label&quot;: &quot;Character&quot;
+      }
+    ],
+    &quot;itemTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;gear&quot;,
+        &quot;label&quot;: &quot;Gear&quot;
+      },
+      {
+        &quot;id&quot;: &quot;spell&quot;,
+        &quot;label&quot;: &quot;Spell&quot;
+      }
+    ]
+  },
+  &quot;content&quot;: {
+    &quot;compendiums&quot;: [
+      &quot;compendiums/beacon.json&quot;
+    ]
+  }
+}</code></pre></div>
+<p>Coloque a coleção em <code>compendiums/beacon.json</code> dentro do mesmo pacote. <a href="../../assets/examples/compendiums/system-collection.json">Baixe a coleção com os três packs</a>. O main.js mínimo abaixo apenas demonstra os tipos e os dados; adicione suas fichas pelas superfícies do SDK. Inclua a licença escolhida, adapte autor/nome e siga a instalação ZIP ou assinatura de <a href="modules.html">Sistemas e módulos</a>. Não altere arquivos depois que a release estiver instalada.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-javascript">export default {
+  start() {},
+  register() {},
+  stop() {},
+};</code></pre></div>
+<h2 id="sistema-instalado-actorpack">Sistema instalado: <code>actor_pack</code></h2>
+<p>Importa Beacon Scout como ator character, com stamina 6.</p>
+<p>Esta é uma coleção completa com um único pack; use-a sozinha ou combine packs no array packs do arquivo baixável.</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-json">{
+  &quot;name&quot;: &quot;Beacon Examples&quot;,
+  &quot;packs&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-actors&quot;,
+      &quot;label&quot;: &quot;Beacon Actors&quot;,
+      &quot;type&quot;: &quot;actor_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;beacon-scout&quot;,
+          &quot;name&quot;: &quot;Beacon Scout&quot;,
+          &quot;type&quot;: &quot;character&quot;,
+          &quot;systemId&quot;: &quot;example.beacon&quot;,
+          &quot;data&quot;: {
+            &quot;stamina&quot;: 6
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+<p><strong>Valide:</strong> confira <code>beacon-scout</code> no pack do sistema e importe como GM. O diretório mostra <code>kind: &quot;actor&quot;</code>; o documento importado usa <code>type: &quot;character&quot;</code>.</p>
+<h2 id="sistema-instalado-itempack">Sistema instalado: <code>item_pack</code></h2>
+<p>Importa Beacon Rope como item gear, com length 10.</p>
+<p>Esta é uma coleção completa com um único pack; use-a sozinha ou combine packs no array packs do arquivo baixável.</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-json">{
+  &quot;name&quot;: &quot;Beacon Examples&quot;,
+  &quot;packs&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-items&quot;,
+      &quot;label&quot;: &quot;Beacon Items&quot;,
+      &quot;type&quot;: &quot;item_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;beacon-rope&quot;,
+          &quot;name&quot;: &quot;Beacon Rope&quot;,
+          &quot;type&quot;: &quot;gear&quot;,
+          &quot;systemId&quot;: &quot;example.beacon&quot;,
+          &quot;data&quot;: {
+            &quot;length&quot;: 10
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+<p><strong>Valide:</strong> confira <code>beacon-rope</code> no pack do sistema e importe como GM. O diretório mostra <code>kind: &quot;item&quot;</code>; o documento importado usa <code>type: &quot;gear&quot;</code>.</p>
+<h2 id="sistema-instalado-spellpack">Sistema instalado: <code>spell_pack</code></h2>
+<p>Importa Beacon Glow como item spell, com color blue. spell_pack é um alias de compatibilidade para item; o core não ganha regras de magia.</p>
+<p>Esta é uma coleção completa com um único pack; use-a sozinha ou combine packs no array packs do arquivo baixável.</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-json">{
+  &quot;name&quot;: &quot;Beacon Examples&quot;,
+  &quot;packs&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-spells&quot;,
+      &quot;label&quot;: &quot;Beacon Spells&quot;,
+      &quot;type&quot;: &quot;spell_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;beacon-glow&quot;,
+          &quot;name&quot;: &quot;Beacon Glow&quot;,
+          &quot;type&quot;: &quot;spell&quot;,
+          &quot;systemId&quot;: &quot;example.beacon&quot;,
+          &quot;data&quot;: {
+            &quot;color&quot;: &quot;blue&quot;
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+<p><strong>Valide:</strong> confira <code>beacon-glow</code> no pack do sistema e importe como GM. O diretório mostra <code>kind: &quot;item&quot;</code>; o documento importado usa <code>type: &quot;spell&quot;</code>.</p>
+<h2 id="validar-o-contrato-antes-da-instalacao">Validar o contrato antes da instalação</h2>
+<p>Cada coleção é limitada a 8 MiB, 64 packs e 20.000 entradas; cada entrada a 256 KiB e a profundidade JSON a 24 níveis. O manifesto aceita até 16 caminhos de coleção. IDs precisam ser únicos dentro do seu pack/coleção, ter até 120 caracteres e usar letras ASCII, números, ponto, sublinhado, dois-pontos ou hífen; precisam começar por letra ou número. Nome/label têm até 120 caracteres. Os tipos das entradas precisam estar registrados no manifesto e systemId precisa ser example.beacon neste exemplo.</p>
+<p>Uma coleção de sistema instalado NÃO leva campanhas. O host vincula acesso à versão aprovada da campanha. Um jogador só a vê sob concessão válida; importar exige GM. As coleções declaradas não são servidas por assets.json: descubra os IDs por api.compendiums.state e leia pela API autorizada.</p>
+<p>Para rodar o validador real no checkout de desenvolvimento, salve os JSONs como manifest.json e compendiums/beacon.json numa pasta descartável. Execute o código abaixo a partir de python manage.py shell, com essa pasta no diretório de trabalho ou ajustando os dois caminhos:</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-python">import json
+from pathlib import Path
+from gravewright.compendiums.content import validate_collection
+
+manifest = json.loads(Path(&quot;manifest.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+collection = json.loads(Path(&quot;compendiums/beacon.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+validate_collection(
+    collection,
+    manifest[&quot;id&quot;],
+    {row[&quot;id&quot;] for row in manifest[&quot;system&quot;][&quot;actorTypes&quot;]},
+    {row[&quot;id&quot;] for row in manifest[&quot;system&quot;][&quot;itemTypes&quot;]},
+)
+print(&quot;Collection accepted&quot;)</code></pre></div>
+<h2 id="catalogos-locais-preparacao-do-operador">Catálogos locais: preparação do operador</h2>
+<p>Esta é uma integração de arquivos do operador do host, não uma capacidade de escrita oferecida ao módulo de navegador. No checkout de desenvolvimento, use a pasta configurada em settings.GRAVEWRIGHT_CONTENT_ROOT; não presuma um diretório global nem edite a .env para experimentar. A <a href="configuration.html">configuração</a> e o Runner determinam a raiz efetiva.</p>
+<p>O catálogo local usa uma subpasta com index.json e um array campaigns contendo UUIDs reais autorizados pelo operador. O UUID abaixo é fictício: troque-o pelo da sua campanha descartável, configurada com example.beacon. Esses catálogos são somente leitura na mesa. journal_pack/scene_pack/card_pack/deck_pack pertencem a esta origem e são rejeitados em content.compendiums de um pacote instalado.</p>
+<p><a href="../../assets/examples/compendiums/local/index.json">Baixe o index.json local completo</a> e <a href="../../assets/examples/compendiums/local/artwork/beacon.webp">a arte original beacon.webp</a>. Preserve a árvore local/index.json e local/artwork/beacon.webp. Cada bloco abaixo é um pack completo para o array packs do index. A configuração mínima da coleção é:</p>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-json">{
+  &quot;name&quot;: &quot;Beacon Local Examples&quot;,
+  &quot;systemId&quot;: &quot;example.beacon&quot;,
+  &quot;campaigns&quot;: [
+    &quot;00000000-0000-4000-8000-000000000001&quot;
+  ],
+  &quot;packs&quot;: []
+}</code></pre></div>
+<h2 id="catalogo-local-actorpack">Catálogo local: <code>actor_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-json">{
+  &quot;id&quot;: &quot;beacon-actors&quot;,
+  &quot;label&quot;: &quot;Beacon Actors&quot;,
+  &quot;type&quot;: &quot;actor_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-scout&quot;,
+      &quot;name&quot;: &quot;Beacon Scout&quot;,
+      &quot;type&quot;: &quot;character&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;stamina&quot;: 6
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria um ator character. O tipo precisa existir no sistema da campanha; este exemplo usa stamina 6. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-itempack">Catálogo local: <code>item_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-json">{
+  &quot;id&quot;: &quot;beacon-items&quot;,
+  &quot;label&quot;: &quot;Beacon Items&quot;,
+  &quot;type&quot;: &quot;item_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-rope&quot;,
+      &quot;name&quot;: &quot;Beacon Rope&quot;,
+      &quot;type&quot;: &quot;gear&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;length&quot;: 10
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria um item gear com length 10. Não use um tipo de item de outro sistema. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-spellpack">Catálogo local: <code>spell_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-json">{
+  &quot;id&quot;: &quot;beacon-spells&quot;,
+  &quot;label&quot;: &quot;Beacon Spells&quot;,
+  &quot;type&quot;: &quot;spell_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-glow&quot;,
+      &quot;name&quot;: &quot;Beacon Glow&quot;,
+      &quot;type&quot;: &quot;spell&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;color&quot;: &quot;blue&quot;
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria um item spell. Continua sendo kind item no diretório e não uma entidade nativa de magia. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-journalpack">Catálogo local: <code>journal_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-json">{
+  &quot;id&quot;: &quot;beacon-journals&quot;,
+  &quot;label&quot;: &quot;Beacon Journals&quot;,
+  &quot;type&quot;: &quot;journal_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-notes&quot;,
+      &quot;name&quot;: &quot;Beacon Notes&quot;,
+      &quot;type&quot;: &quot;diary&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {}
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria um diário vazio diary chamado Beacon Notes. Preencha conteúdo original pela interface depois de importar. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-scenepack">Catálogo local: <code>scene_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-json">{
+  &quot;id&quot;: &quot;beacon-scenes&quot;,
+  &quot;label&quot;: &quot;Beacon Scenes&quot;,
+  &quot;type&quot;: &quot;scene_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-harbor&quot;,
+      &quot;name&quot;: &quot;Beacon Harbor&quot;,
+      &quot;type&quot;: &quot;scene&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;width&quot;: 1400,
+        &quot;height&quot;: 980
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria a cena Beacon Harbor com 1400 × 980 pixels. Esta entrada mínima não inclui mapa de fundo, paredes ou objetos. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-cardpack">Catálogo local: <code>card_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-json">{
+  &quot;id&quot;: &quot;beacon-cards&quot;,
+  &quot;label&quot;: &quot;Beacon Cards&quot;,
+  &quot;type&quot;: &quot;card_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-card-deck&quot;,
+      &quot;name&quot;: &quot;Beacon Signals&quot;,
+      &quot;type&quot;: &quot;deck&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;cards&quot;: [
+          {
+            &quot;name&quot;: &quot;Beacon Signal&quot;,
+            &quot;artwork&quot;: &quot;artwork/beacon.webp&quot;,
+            &quot;quantity&quot;: 1
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria uma instância de baralho com uma carta Beacon Signal. A arte WebP precisa existir relativa à pasta do index. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="catalogo-local-deckpack">Catálogo local: <code>deck_pack</code></h2>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-json">{
+  &quot;id&quot;: &quot;beacon-decks&quot;,
+  &quot;label&quot;: &quot;Beacon Decks&quot;,
+  &quot;type&quot;: &quot;deck_pack&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;beacon-deck&quot;,
+      &quot;name&quot;: &quot;Beacon Watch&quot;,
+      &quot;type&quot;: &quot;deck&quot;,
+      &quot;systemId&quot;: &quot;example.beacon&quot;,
+      &quot;data&quot;: {
+        &quot;cards&quot;: [
+          {
+            &quot;name&quot;: &quot;Beacon Watch&quot;,
+            &quot;artwork&quot;: &quot;artwork/beacon.webp&quot;,
+            &quot;quantity&quot;: 2
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre></div>
+<p><strong>Resultado esperado e validação:</strong> Cria uma instância de baralho com duas cartas Beacon Watch. quantity expande as cópias. card_pack e deck_pack usam o mesmo importador. Recarregue os compêndios, leia a entrada pelo ID e importe como GM; confira o recurso criado na campanha descartável.</p>
+<h2 id="instalar-apenas-o-catalogo-local-de-exemplo">Instalar apenas o catálogo local de exemplo</h2>
+<p>Com os dois downloads salvos sob uma pasta local e a campanha de teste criada, execute o trecho no python manage.py shell da instalação descartável. Ajuste sample para o caminho onde os arquivos foram baixados e campaign_id para o UUID real. O script lê a raiz configurada e cria uma nova pasta beacon-examples; falha se ela já existir, preservando instalações e conteúdo anterior.</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-python">import json
+import shutil
+from pathlib import Path
+from uuid import UUID
+from django.conf import settings
+
+sample = Path(&quot;downloaded-examples/local&quot;).resolve()
+campaign_id = str(UUID(&quot;00000000-0000-4000-8000-000000000001&quot;))
+collection = json.loads((sample / &quot;index.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+artwork = sample / &quot;artwork&quot; / &quot;beacon.webp&quot;
+if not artwork.is_file():
+    raise FileNotFoundError(artwork)
+collection[&quot;campaigns&quot;] = [campaign_id]
+root = Path(settings.GRAVEWRIGHT_CONTENT_ROOT).resolve()
+destination = root / &quot;beacon-examples&quot;
+destination.mkdir(parents=True, exist_ok=False)
+(destination / &quot;artwork&quot;).mkdir()
+shutil.copy2(artwork, destination / &quot;artwork&quot; / &quot;beacon.webp&quot;)
+(destination / &quot;index.json&quot;).write_text(
+    json.dumps(collection, ensure_ascii=False, indent=2), encoding=&quot;utf-8&quot;
+)
+print(destination)</code></pre></div>
+<h2 id="erros-e-verificacoes-finais">Erros e verificações finais</h2>
+<p>Coleção de sistema com tipo não registrado, systemId errado, IDs repetidos ou um dos quatro packs exclusivos de catálogo local falha na validação antes da instalação. Na mesa, uma versão não ativa/revogada ou bytes alterados tornam o conteúdo indisponível. Não use falha de integridade como motivo para editar o pacote instalado: gere nova versão.</p>
+<p>No catálogo local, campaigns ausente ou com UUID errado faz o catálogo não aparecer. Card/deck exige de 1 a 500 cartas, quantity inteiro entre 1 e 500, total de até 500 e WebP válido de até 10 MiB dentro da pasta do catálogo; caminho externo ou arquivo faltante falha. Confira a árvore e o resultado de cada importação. A visibilidade inicial é do GM; conceda leitura pelo fluxo de permissões e confirme que o jogador pode ler, mas não importar.</p>
+<h2 id="como-usar-a-ia-para-criar-packs-de-conteudo-original">Como usar a IA para criar packs de conteúdo original</h2>
+<blockquote><p>Confira content.py, catalog.py e o manifesto da release alvo. Crie um sistema instalado com um actor_pack, um item_pack e um spell_pack usando somente descritores declarados, systemId correto e conteúdo original. Gere JSONs completos, valide com validate_collection e mostre state/read/import. Explique por que journal_pack, scene_pack, card_pack e deck_pack não podem entrar nesse ZIP; se eu pedir catálogo local, use a setting efetiva e campanhas explícitas sem sobrescrever arquivos existentes.</p></blockquote></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="examples-compendium-entry-kinds.html"><span>Anterior ←</span><strong>Entradas de compêndio: os cinco kinds</strong></a><a href="examples-blueprints.html"><span>Próximo →</span><strong>Exemplos de Blueprint para cada kind de objeto</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/content.py">gravewright/compendiums/content.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/catalog.py">gravewright/compendiums/catalog.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/schemas/manifest.json">gravewright/modules/contracts/schemas/manifest.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/test_installed_packages.py">gravewright/compendiums/test_installed_packages.py</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#preparacao-do-sistema-instalado">Preparação do sistema instalado</a></li><li><a href="#sistema-instalado-actorpack">Sistema instalado: actorpack</a></li><li><a href="#sistema-instalado-itempack">Sistema instalado: itempack</a></li><li><a href="#sistema-instalado-spellpack">Sistema instalado: spellpack</a></li><li><a href="#validar-o-contrato-antes-da-instalacao">Validar o contrato antes da instalação</a></li><li><a href="#catalogos-locais-preparacao-do-operador">Catálogos locais: preparação do operador</a></li><li><a href="#catalogo-local-actorpack">Catálogo local: actorpack</a></li><li><a href="#catalogo-local-itempack">Catálogo local: itempack</a></li><li><a href="#catalogo-local-spellpack">Catálogo local: spellpack</a></li><li><a href="#catalogo-local-journalpack">Catálogo local: journalpack</a></li><li><a href="#catalogo-local-scenepack">Catálogo local: scenepack</a></li><li><a href="#catalogo-local-cardpack">Catálogo local: cardpack</a></li><li><a href="#catalogo-local-deckpack">Catálogo local: deckpack</a></li><li><a href="#instalar-apenas-o-catalogo-local-de-exemplo">Instalar apenas o catálogo local de exemplo</a></li><li><a href="#erros-e-verificacoes-finais">Erros e verificações finais</a></li><li><a href="#como-usar-a-ia-para-criar-packs-de-conteudo-original">Como usar a IA para criar packs de conteúdo original</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

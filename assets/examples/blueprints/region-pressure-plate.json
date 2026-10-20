@@ -1,0 +1,180 @@
+{
+  "version": 2,
+  "kind": "region",
+  "states": {
+    "empty": {
+      "appearance": "inherit"
+    },
+    "occupied": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "presence:enter": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "presence:enter"
+        },
+        {
+          "id": "count",
+          "type": "eventContext",
+          "x": 300,
+          "y": 300,
+          "property": "count"
+        },
+        {
+          "id": "matches",
+          "type": "compareValue",
+          "x": 560,
+          "y": 300,
+          "valueType": "number",
+          "expected": 1,
+          "operator": "eq"
+        },
+        {
+          "id": "check",
+          "type": "condition",
+          "x": 560,
+          "y": 80,
+          "state": "empty"
+        },
+        {
+          "id": "door",
+          "type": "reference",
+          "x": 820,
+          "y": 300,
+          "targetId": "11111111-1111-4111-8111-111111111111"
+        },
+        {
+          "id": "change",
+          "type": "state",
+          "x": 820,
+          "y": 80,
+          "targetState": "open"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "check",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "check",
+          "to": "change",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "count",
+          "to": "matches",
+          "output": "value",
+          "kind": "data",
+          "input": "value"
+        },
+        {
+          "from": "matches",
+          "to": "check",
+          "output": "result",
+          "kind": "data",
+          "input": "test"
+        },
+        {
+          "from": "door",
+          "to": "change",
+          "output": "door",
+          "kind": "data",
+          "input": "target"
+        }
+      ]
+    },
+    "presence:exit": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "presence:exit"
+        },
+        {
+          "id": "count",
+          "type": "eventContext",
+          "x": 300,
+          "y": 300,
+          "property": "count"
+        },
+        {
+          "id": "matches",
+          "type": "compareValue",
+          "x": 560,
+          "y": 300,
+          "valueType": "number",
+          "expected": 0,
+          "operator": "eq"
+        },
+        {
+          "id": "check",
+          "type": "condition",
+          "x": 560,
+          "y": 80,
+          "state": "empty"
+        },
+        {
+          "id": "door",
+          "type": "reference",
+          "x": 820,
+          "y": 300,
+          "targetId": "11111111-1111-4111-8111-111111111111"
+        },
+        {
+          "id": "change",
+          "type": "state",
+          "x": 820,
+          "y": 80,
+          "targetState": "closed"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "check",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "check",
+          "to": "change",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "count",
+          "to": "matches",
+          "output": "value",
+          "kind": "data",
+          "input": "value"
+        },
+        {
+          "from": "matches",
+          "to": "check",
+          "output": "result",
+          "kind": "data",
+          "input": "test"
+        },
+        {
+          "from": "door",
+          "to": "change",
+          "output": "door",
+          "kind": "data",
+          "input": "target"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "kind": "lever",
+  "states": {
+    "off": {
+      "appearance": "inherit"
+    },
+    "on": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "read",
+          "type": "property",
+          "x": 300,
+          "y": 300,
+          "property": "state"
+        },
+        {
+          "id": "compare",
+          "type": "compare",
+          "x": 560,
+          "y": 300,
+          "state": "off"
+        },
+        {
+          "id": "branch",
+          "type": "condition",
+          "x": 560,
+          "y": 80,
+          "state": "off"
+        },
+        {
+          "id": "on",
+          "type": "state",
+          "x": 820,
+          "y": 40,
+          "targetState": "on"
+        },
+        {
+          "id": "message",
+          "type": "showMessage",
+          "x": 1080,
+          "y": 40,
+          "audience": {
+            "scope": "trigger"
+          },
+          "text": "The mechanism is active."
+        },
+        {
+          "id": "off",
+          "type": "state",
+          "x": 820,
+          "y": 220,
+          "targetState": "off"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "branch",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "branch",
+          "to": "on",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "on",
+          "to": "message",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "branch",
+          "to": "off",
+          "output": "false",
+          "kind": "execution"
+        },
+        {
+          "from": "read",
+          "to": "compare",
+          "output": "value",
+          "kind": "data",
+          "input": "value"
+        },
+        {
+          "from": "compare",
+          "to": "branch",
+          "output": "result",
+          "kind": "data",
+          "input": "test"
+        }
+      ]
+    }
+  }
+}

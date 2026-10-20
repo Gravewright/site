@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-item-directory",
+  "name": "Item counts by type",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Group readable items by their package-owned type, without assuming an RPG catalog.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "example.language-demo",
+  "name": "Example language demo",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Partial original interface catalogs for Portuguese and Spanish.",
+  "author": "Gravewright documentation examples",
+  "license": "GPL-3.0-only",
+  "entry": "main.mjs",
+  "locales": {
+    "pt-BR": {
+      "name": "Português (Brasil)",
+      "path": "locales/pt-BR.json"
+    },
+    "es": {
+      "name": "Español",
+      "path": "locales/es.json"
+    }
+  }
+}

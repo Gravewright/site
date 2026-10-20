@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "kind": "region",
+  "states": {
+    "empty": {
+      "appearance": "inherit"
+    },
+    "occupied": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "presence:enter": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "presence:enter"
+        },
+        {
+          "id": "sample",
+          "type": "teleport",
+          "x": 300,
+          "y": 80,
+          "destinationId": "66666666-6666-4666-8666-666666666666"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "sample",
+          "output": "next",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

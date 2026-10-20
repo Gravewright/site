@@ -3,6 +3,8 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, posix } from 'node:path';
 import { wikiArticles } from '../content/wiki.mjs';
 import { aiArticles } from '../content/ai-guides.mjs';
+import { exampleArticles } from '../content/examples.mjs';
+import { blueprintExampleArticles } from '../content/examples-blueprints.mjs';
 import { renderMarkdown } from './markdown.mjs';
 import { project, publicVersion, locales } from '../content/site.mjs';
 import { origin, socialImage } from './seo.mjs';
@@ -27,6 +29,8 @@ function publicationCopy(article, locale, markdown) {
   if(article.area!=='docs' || !article[locale]?.file) return markdown;
   let text=markdown.replace(/\r\n/g,'\n');
   if(article.slug==='modules') {
+    text=text.replace('There is no unsigned package upload endpoint or file-watching module development server in this repository.','For a disposable local test, the installation owner may review and install a ZIP through Install from ZIP. Catalog publication uses signed records. There is no file-watching module development server.')
+      .replace('Este repositório não possui endpoint para envio de pacotes sem assinatura nem servidor de desenvolvimento de módulos com recarga automática.','Para teste local descartável, o proprietário pode revisar e instalar um ZIP por Instalar de ZIP. Publicação em catálogo usa registros assinados. Não há servidor de desenvolvimento de módulos com recarga automática.');
     if(locale==='en') text=text.replace('installed system or its trusted companion app','installed system package')
       .replace(/A system may distribute its browser UI and server rules as\nseparate packages\./,'Each new RPG system must use one installable system package and the automation\nAPIs supported by the requested host release. This release does not allow a\nbrowser system manifest to also declare a Django app. Document unsupported\nserver-side requirements as limitations; do not create a separately installed\ncompanion or require a host upgrade to solve a system-package task. The Python\nprovider contract remains a reference for trusted server integrations.');
     else text=text.replace('sistema instalado ou ao app complementar confiável','pacote do sistema instalado')
@@ -45,7 +49,7 @@ export async function buildKnowledge(root) {
   let wikiMedia = [];
   try { wikiMedia = JSON.parse(await readFile(resolve(root, 'content/wiki-media.json'), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const articles = [...wikiArticles.map(a=>({...a,area:'wiki'})), ...catalog.articles.map(a=>({...a,area:'docs'})), ...aiArticles.map(a=>({...a,area:'docs'}))];
+  const articles = [...wikiArticles.map(a=>({...a,area:'wiki'})), ...exampleArticles.map(a=>({...a,area:'docs'})), ...catalog.articles.map(a=>({...a,area:'docs'})), ...aiArticles.map(a=>({...a,area:'docs'}))];
   const paths = new Set();
   const search = [];
   const manifest = [];
@@ -56,7 +60,7 @@ export async function buildKnowledge(root) {
     if (article.area === 'docs' && article.en.file) sourceMap.set(path, article);
   }
   const family = (area, aiOnly=false) => articles.filter(a=>a.area===area && (!aiOnly || a.group==='ai'));
-  const titleForGroup = (locale, group) => groups[locale][group] || (locale === 'pt' ? 'Guia do produto' : 'Product guide');
+  const titleForGroup = (locale, group) => group==='examples'?(locale==='pt'?'Exemplos por kind':'Examples by kind'):(groups[locale][group] || (locale === 'pt' ? 'Guia do produto' : 'Product guide'));
 
   function resolveLink(href, article, locale, current) {
     if (/^(https?:|mailto:)/.test(href)) return href;
@@ -83,8 +87,8 @@ export async function buildKnowledge(root) {
     const grouped = Map.groupBy(family(area), a=>a.group);
     return [...grouped].map(([group, entries])=>`<div class="kb-nav-group"><p>${esc(titleForGroup(locale, group))}</p><ul>${entries.map(a=>`<li>${link(relative(current, articlePath(a, locale)), a[locale].title, active === a.slug ? ' aria-current="page"' : '')}</li>`).join('')}</ul></div>`).join('');
   }
-  function cards(entries, locale, current) {
-    return `<div class="kb-cards">${entries.map((article,i)=>`<a class="kb-card" href="${relative(current, articlePath(article,locale))}"><span class="kb-card-label">${esc(titleForGroup(locale,article.group))}<span aria-hidden="true">↗</span></span><h2>${esc(article[locale].title)}</h2><p>${esc(article[locale].summary)}</p></a>`).join('')}</div>`;
+  function cards(entries, locale, current, level=2) {
+    return `<div class="kb-cards">${entries.map((article,i)=>`<a class="kb-card" href="${relative(current, articlePath(article,locale))}"><span class="kb-card-label">${esc(titleForGroup(locale,article.group))}<span aria-hidden="true">↗</span></span><h${level}>${esc(article[locale].title)}</h${level}><p>${esc(article[locale].summary)}</p></a>`).join('')}</div>`;
   }
   function shell({locale, area, current, title, description, active, body, headings=[], translated, article}) {
     const t=copy[locale], lang=localePath(locale), to=path=>relative(current,path);
@@ -125,7 +129,10 @@ export async function buildKnowledge(root) {
     const t=copy[locale];
     for(const area of ['wiki','docs']) {
       const current=hubPath(area,locale), entries=family(area), starts=entries.slice(0,3);
-      const body=`<header class="kb-intro"><span class="kb-eyebrow">GRAVEWRIGHT / ${t[area]}</span><h1>${t[area+'Title']}</h1><p class="kb-lead">${t[area+'Intro']}</p><div class="kb-stats"><span>${entries.length} ${t.topics}</span><span>${esc(catalog.version||publicVersion)}</span><span>English / Português</span></div></header><section class="kb-start"><p class="kb-eyebrow">${t.workflow}</p><ol>${starts.map((a,i)=>`<li><span>0${i+1}</span>${link(relative(current,articlePath(a,locale)),a[locale].title)}</li>`).join('')}</ol></section><section aria-label="${t.browse}">${cards(entries,locale,current)}</section>`;
+      const collections=[...Map.groupBy(entries,article=>article.group)];
+      const groupsMenu=area==='docs'?`<nav class="kb-group-links" aria-label="${t.browse}">${collections.map(([group])=>link('#collection-'+group,titleForGroup(locale,group))).join('')}</nav>`:'';
+      const content=area==='docs'?collections.map(([group,members])=>`<section class="kb-collection" id="collection-${group}"><h2>${esc(titleForGroup(locale,group))} <span>${members.length}</span></h2>${cards(members,locale,current,3)}</section>`).join(''):`<section aria-label="${t.browse}">${cards(entries,locale,current)}</section>`;
+      const body=`<header class="kb-intro"><span class="kb-eyebrow">GRAVEWRIGHT / ${t[area]}</span><h1>${t[area+'Title']}</h1><p class="kb-lead">${t[area+'Intro']}</p><div class="kb-stats"><span>${entries.length} ${t.topics}</span><span>${esc(catalog.version||publicVersion)}</span><span>English / Português</span></div></header><section class="kb-start"><p class="kb-eyebrow">${t.workflow}</p><ol>${starts.map((a,i)=>`<li><span>0${i+1}</span>${link(relative(current,articlePath(a,locale)),a[locale].title)}</li>`).join('')}</ol></section>${groupsMenu}${content}`;
       await emit(current,shell({locale,area,current,title:t[area],description:t[area+'Intro'],body}),{locale,area,hub:true});
     }
     const current=`docs/${localePath(locale)}/ai.html`;
@@ -142,9 +149,12 @@ export async function buildKnowledge(root) {
       const related=(article.related||[]).map(slug=>articles.find(a=>a.slug===slug && a.area===article.area)).filter(Boolean);
       const siblings=family(article.area), index=siblings.findIndex(a=>a.slug===article.slug);
       const screenshots=figures(article,locale,current);
+      const exampleSections={modules:['example-package-browser','example-package-system','example-package-language','example-package-django'],api:['examples-search-kinds','examples-actor-image-kinds','examples-compendium-entry-kinds'],frontend:['example-surface-scene-overlay','example-surface-actor-sheet','example-surface-preferences'],'map-builder':blueprintExampleArticles.map(a=>a.slug)};
+      const exampleLinks=article.en.file?(exampleSections[article.slug]||[]).map(slug=>articles.find(a=>a.slug===slug && a.area==='docs')).filter(Boolean):[];
+      const exampleCallout=exampleLinks.length?`<aside class="kb-example-callout"><p class="kb-eyebrow">${locale==='pt'?'Exemplos para este contrato':'Examples for this contract'}</p><ul>${exampleLinks.slice(0,4).map(a=>`<li>${link(relative(current,articlePath(a,locale)),a[locale].title)}</li>`).join('')}</ul>${link(relative(current,`docs/${localePath(locale)}/examples-index.html`),locale==='pt'?'Ver todos os exemplos por kind →':'Explore all examples by kind →')}</aside>`:'';
       const additionalScreenshots=screenshots.length>1?`<details class="kb-more-screenshots"><summary>${locale==='pt'?'Mais capturas deste guia':'More screenshots for this guide'} (${screenshots.length-1})</summary>${screenshots.slice(1).join('')}</details>`:'';
       const pager=`<nav class="kb-pagination" aria-label="${t.related}">${[siblings[index-1],siblings[index+1]].map((a,i)=>a?`<a href="${relative(current,articlePath(a,locale))}"><span>${i?t.next:t.previous} ${i?'→':'←'}</span><strong>${esc(a[locale].title)}</strong></a>`:'<span></span>').join('')}</nav>`;
-      const body=`<article><header class="kb-article-header"><span class="kb-eyebrow">${esc(titleForGroup(locale,article.group))} <span aria-hidden="true">/</span> ${minutes} ${t.reading}</span><h1>${esc(data.title)}</h1><p class="kb-lead">${esc(data.summary)}</p></header>${screenshots[0]||''}<div class="kb-prose">${rendered.html}</div>${additionalScreenshots}${related.length?`<section class="kb-related"><h2>${t.related}</h2><ul>${related.map(a=>`<li>${link(relative(current,articlePath(a,locale)),a[locale].title)}</li>`).join('')}</ul></section>`:''}</article>${pager}`;
+      const body=`<article><header class="kb-article-header"><span class="kb-eyebrow">${esc(titleForGroup(locale,article.group))} <span aria-hidden="true">/</span> ${minutes} ${t.reading}</span><h1>${esc(data.title)}</h1><p class="kb-lead">${esc(data.summary)}</p></header>${exampleCallout}${screenshots[0]||''}<div class="kb-prose">${rendered.html}</div>${additionalScreenshots}${related.length?`<section class="kb-related"><h2>${t.related}</h2><ul>${related.map(a=>`<li>${link(relative(current,articlePath(a,locale)),a[locale].title)}</li>`).join('')}</ul></section>`:''}</article>${pager}`;
       await emit(current,shell({locale,area:article.area,current,title:data.title,description:data.summary,active:article.slug,body,headings:rendered.headings,article}),{locale,area:article.area,slug:article.slug,images:(body.match(/<img /g)||[]).length});
       search.push({locale,area:article.area,title:data.title,summary:data.summary,url:current,group:titleForGroup(locale,article.group),text:clean.replace(/[`#*|>\[\]]/g,' ').replace(/\s+/g,' ').trim()});
     }

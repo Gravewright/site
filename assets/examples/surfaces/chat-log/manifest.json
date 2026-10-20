@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-chat-log",
+  "name": "Visible chat statistics",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Count only the messages returned by the authorized history and report their visible authors.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

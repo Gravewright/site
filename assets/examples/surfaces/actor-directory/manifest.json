@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-actor-directory",
+  "name": "Readable actor counter",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Count actors whose sheets the current member may open, and update after actor changes.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

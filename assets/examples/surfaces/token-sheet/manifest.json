@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-token-sheet",
+  "name": "Linked or independent token inspector",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Read the token’s own sheet context, so an independent snapshot is never replaced by actor data.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

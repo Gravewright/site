@@ -44,7 +44,23 @@ The original snapshot bytes remain intact. During rendering, `publicationCopy` a
 
 AI examples explain how to provide repository context, keep systems in one package, use public APIs, protect local data and validate the result. Prompts are plain text for a developer's assistant; the website does not send project data to an AI provider or promise that generated code works.
 
-## Run locally
+## Runnable developer examples
+
+Start at [Complete examples by kind](docs/en/examples-index.html). The cookbook has 29 bilingual articles: four complete extension package variants, all 13 SDK mounting surfaces, search/image/compendium contracts, the four Smart Object kinds, both connection kinds and a graph for each of the 42 node types. Each example provides prerequisites, complete code, expected behavior, errors, validation and a contextual AI prompt. Examples use the documented 0.3.0 contracts; they do not add a root `kind` field to manifests or confuse installed-system packs with native local catalogs.
+
+`content/examples*.mjs` are the authored sources. `scripts/build-examples.mjs` generates the four package sources, all surface sources and their ZIPs, plus the Blueprint bundle with its license. ZIPs contain the manifest directly at their root. Local **Install from ZIP** can test reviewed code on a disposable host; Marketplace publication uses signed catalog records. No private keys or credentials are included. The language example is deliberately partial. The Django example requires explicit trusted activation; it is not an RPG system companion. Native captures and provenance are in [assets/examples/previews](assets/examples/previews/README.md).
+
+`npm test` works in an independent site checkout. To run the optional surface integration tests against the real host runtime as well:
+
+```sh
+GRAVEWRIGHT_SOURCE=/path/to/gravewright node --test scripts/*.test.mjs
+```
+
+In PowerShell, set `$env:GRAVEWRIGHT_SOURCE='C:/path/to/gravewright'` before the same `node --test` command. Without an explicit source path, the 21 host integration cases are skipped with an explanation; source/syntax, package behavior and Markdown tests still run. These integration tests use the real ModuleRuntime/domain API with a simulated DOM/transport. They complement native installation and browser verification, which the individual guides describe.
+
+The Blueprint bundle includes its own checker; see the download's README and run `uv run --locked python data/blueprint-examples/check-examples.py --host .` from a disposable host checkout after extraction there. It ignores operator `.env`/apps, isolates runtime storage and rejects database queries. It validates every node type and predicts actions, while real target ownership, GM/player permissions and live effects still require the documented Test behavior/playtest flow.
+
+## Preview commands
 
 Use Node.js 22 or newer. There are **no npm dependencies to install**.
 

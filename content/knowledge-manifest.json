@@ -161,6 +161,209 @@
       "images": 0
     },
     {
+      "path": "docs/en/examples-index.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-index",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-package-browser.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-package-browser",
+      "images": 1
+    },
+    {
+      "path": "docs/en/example-package-system.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-package-system",
+      "images": 1
+    },
+    {
+      "path": "docs/en/example-package-language.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-package-language",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-package-django.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-package-django",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-actor-directory.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-actor-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-actor-sheet.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-actor-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-token-sheet.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-token-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-item-directory.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-item-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-item-sheet.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-item-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-scene-directory.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-scene-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-scene-controls.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-scene-controls",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-scene-overlay.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-scene-overlay",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-chat-log.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-chat-log",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-combat-tracker.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-combat-tracker",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-journal-sheet.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-journal-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-preferences.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-preferences",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-surface-table-interface.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-surface-table-interface",
+      "images": 0
+    },
+    {
+      "path": "docs/en/examples-search-kinds.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-search-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/en/examples-actor-image-kinds.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-actor-image-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/en/examples-compendium-entry-kinds.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-compendium-entry-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/en/examples-compendium-pack-kinds.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-compendium-pack-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/en/examples-blueprints.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "examples-blueprints",
+      "images": 1
+    },
+    {
+      "path": "docs/en/example-blueprint-door.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-door",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-blueprint-lever.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-lever",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-blueprint-torch.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-torch",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-blueprint-region.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-region",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-blueprint-connections.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-connections",
+      "images": 0
+    },
+    {
+      "path": "docs/en/example-blueprint-nodes.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "example-blueprint-nodes",
+      "images": 0
+    },
+    {
       "path": "docs/en/getting-started.html",
       "locale": "en",
       "area": "docs",
@@ -505,6 +708,209 @@
       "locale": "pt",
       "area": "wiki",
       "slug": "backups-updates",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-index.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-index",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-package-browser.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-package-browser",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/example-package-system.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-package-system",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/example-package-language.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-package-language",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-package-django.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-package-django",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-actor-directory.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-actor-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-actor-sheet.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-actor-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-token-sheet.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-token-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-item-directory.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-item-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-item-sheet.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-item-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-scene-directory.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-scene-directory",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-scene-controls.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-scene-controls",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-scene-overlay.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-scene-overlay",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-chat-log.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-chat-log",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-combat-tracker.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-combat-tracker",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-journal-sheet.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-journal-sheet",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-preferences.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-preferences",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-surface-table-interface.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-surface-table-interface",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-search-kinds.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-search-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-actor-image-kinds.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-actor-image-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-compendium-entry-kinds.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-compendium-entry-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-compendium-pack-kinds.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-compendium-pack-kinds",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/examples-blueprints.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "examples-blueprints",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-door.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-door",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-lever.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-lever",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-torch.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-torch",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-region.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-region",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-connections.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-connections",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/example-blueprint-nodes.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "example-blueprint-nodes",
       "images": 0
     },
     {

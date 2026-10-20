@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-scene-directory",
+  "name": "Scene broadcast status",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Distinguish the scene broadcast to players from the scene the GM is navigating.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

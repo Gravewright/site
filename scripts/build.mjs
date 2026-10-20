@@ -6,6 +6,7 @@ import { locales, project, release, download, commands, publicVersion, dndProjec
 import { seoHead } from './seo.mjs';
 import { buildMediaGuide } from './build-media-guide.mjs';
 import { buildKnowledge } from './build-knowledge.mjs';
+import { buildExamples } from './build-examples.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const media = JSON.parse(await readFile(resolve(root, 'content/media.json'), 'utf8'));
@@ -158,4 +159,5 @@ for (const [locale, t] of Object.entries(locales)) {
   await writeFile(resolve(root, t.file), html);
   console.log(`Generated ${t.file}`);
 }
+await buildExamples(root);
 await buildKnowledge(root);

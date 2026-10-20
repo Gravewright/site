@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-item-sheet",
+  "name": "Item data inspector",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Show the actual item name, type, version and system-owned data as safe JSON below its native editor.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

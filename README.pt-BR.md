@@ -44,7 +44,23 @@ Os bytes originais da cópia são preservados. Durante a renderização, `public
 
 Os exemplos de IA explicam como fornecer contexto do repositório, manter sistemas em um único pacote, usar APIs públicas, proteger dados locais e validar o resultado. Os prompts são textos para o assistente do desenvolvedor; o site não envia dados do projeto para um provedor de IA nem promete que código gerado funciona.
 
-## Executar localmente
+## Exemplos executáveis para desenvolvedores
+
+Comece por [Exemplos completos por kind](docs/pt-BR/examples-index.html). O catálogo tem 29 artigos bilíngues: quatro variantes completas de pacote de extensão, as 13 superfícies de montagem do SDK, contratos de busca/imagens/compêndios, os quatro kinds de Objetos Inteligentes, os dois kinds de conexão e um grafo para cada um dos 42 tipos de nó. Cada exemplo traz pré-requisitos, código completo, resultado esperado, erros, validação e um prompt contextual de IA. Os exemplos usam os contratos documentados da 0.3.0; não inventam `kind` na raiz dos manifestos nem confundem packs de sistema instalado com catálogos nativos locais.
+
+`content/examples*.mjs` contém os fontes autorais. `scripts/build-examples.mjs` gera os quatro pacotes, os fontes e ZIPs das superfícies e o pacote de Blueprints com sua licença. O manifesto fica diretamente na raiz dos ZIPs. **Instalar de ZIP** permite testar código revisado em host descartável; publicação no Marketplace usa registros assinados. Não há chaves privadas nem credenciais nos downloads. O exemplo de idioma é propositalmente parcial. O exemplo Django exige ativação confiável explícita e não é complemento de sistema de RPG. As capturas reais e sua procedência estão em [assets/examples/previews](assets/examples/previews/README.md).
+
+`npm test` funciona num checkout independente do site. Para executar também os testes opcionais de superfícies contra o runtime real do host:
+
+```sh
+GRAVEWRIGHT_SOURCE=/caminho/para/gravewright node --test scripts/*.test.mjs
+```
+
+No PowerShell, defina `$env:GRAVEWRIGHT_SOURCE='C:/caminho/para/gravewright'` antes do mesmo `node --test`. Sem caminho explícito, os 21 casos de integração são pulados com explicação; testes de fonte/sintaxe, comportamento dos pacotes e Markdown continuam. A integração usa ModuleRuntime/API de domínio reais com DOM/transporte simulados. Ela complementa a instalação nativa e a verificação em navegador descritas em cada guia.
+
+O pacote de Blueprints inclui seu próprio verificador; consulte o README baixado e execute `uv run --locked python data/blueprint-examples/check-examples.py --host .` na raiz de um host descartável após extrair ali. Ele ignora `.env`/apps do operador, isola armazenamento e proíbe consultas ao banco. Valida todos os tipos de nó e prevê ações; propriedade dos alvos, permissões de GM/jogador e efeitos ao vivo ainda exigem o fluxo documentado de Test behavior/playtest.
+
+## Comandos de preview
 
 Use Node.js 22 ou superior. **Não há dependências npm para instalar.**
 

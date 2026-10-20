@@ -1,0 +1,17 @@
+{
+  "id": "example.server-status",
+  "name": "Example server status",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Trusted owner-only read endpoint with no models or background tasks.",
+  "author": "Gravewright documentation examples",
+  "license": "GPL-3.0-only",
+  "django": {
+    "apps": [
+      "example_status.apps.ExampleStatusConfig"
+    ]
+  }
+}

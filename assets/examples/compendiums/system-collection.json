@@ -1,0 +1,53 @@
+{
+  "name": "Beacon Examples",
+  "packs": [
+    {
+      "id": "beacon-actors",
+      "label": "Beacon Actors",
+      "type": "actor_pack",
+      "entries": [
+        {
+          "id": "beacon-scout",
+          "name": "Beacon Scout",
+          "type": "character",
+          "systemId": "example.beacon",
+          "data": {
+            "stamina": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-items",
+      "label": "Beacon Items",
+      "type": "item_pack",
+      "entries": [
+        {
+          "id": "beacon-rope",
+          "name": "Beacon Rope",
+          "type": "gear",
+          "systemId": "example.beacon",
+          "data": {
+            "length": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-spells",
+      "label": "Beacon Spells",
+      "type": "spell_pack",
+      "entries": [
+        {
+          "id": "beacon-glow",
+          "name": "Beacon Glow",
+          "type": "spell",
+          "systemId": "example.beacon",
+          "data": {
+            "color": "blue"
+          }
+        }
+      ]
+    }
+  ]
+}

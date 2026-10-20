@@ -1,0 +1,4 @@
+.gw-module-root .example-panel { padding: var(--space-4, 16px); font-size: 14px; }
+.gw-module-root .example-panel label { display: block; margin-bottom: var(--space-3, 12px); }
+.gw-module-root .example-panel button { margin-right: var(--space-2, 8px); }
+.gw-module-root[data-module-id="example.campaign-summary"] .example-panel { position: fixed; left: 16px; bottom: 112px; z-index: 20; max-width: min(360px, calc(100vw - 32px)); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); pointer-events: auto; }

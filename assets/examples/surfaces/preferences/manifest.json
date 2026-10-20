@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-preferences",
+  "name": "Persistent personal density preference",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Save a personal compact/comfortable preference with compare-and-swap revisions, and make a concurrent conflict visible.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

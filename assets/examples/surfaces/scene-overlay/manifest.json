@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-scene-overlay",
+  "name": "Scene center marker",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Mark the scene center and keep its position correct under pan and zoom without capturing pointer input.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

@@ -8,6 +8,12 @@ The product wiki and AI workflow guides are original Gravewright documentation u
 
 The new `assets/wiki/` screenshots show the real Gravewright 0.3.0 interface in a disposable demonstration campaign. They use synthetic data and assets already published for the site, with no operator files, proprietary catalogs or rulebook text. Interface language, provenance and asset sources are documented in [assets/wiki/README.md](assets/wiki/README.md). These captures are separate from the historical 0.2.1 media below and retain their own version captions.
 
+## Runnable developer examples
+
+The four original package-variant examples under `assets/examples/packages/`, Blueprint fixtures/checker under `assets/examples/blueprints/`, and compendium examples under `assets/examples/compendiums/` use the site's GPL-3.0-only license. Complete GPL license text accompanies the package ZIPs and Blueprint bundle. The thirteen independently authored surface example packages under `assets/examples/surfaces/` are explicitly offered under MIT, as recorded by each manifest and complete `LICENSE.txt`; preserve those notices when copying them. The host runtime itself retains its project license and Independent Module Permission.
+
+The two new developer-example screenshots show actual installed sample packages on a disposable 0.3.0 host, using an original synthetic grid and fictional data. See [capture provenance and hashes](assets/examples/previews/README.md). No signing keys, rulebook content or operator files accompany the examples.
+
 ## Inherited template
 
 This site adapts the Gravewright `repository-site` template supplied with the legacy repository. Its dark/gold palette, grid background, header, cards, media frames and base responsive styles were retained and extended. Product copy, bilingual pages, navigation, clipboard behavior, media rendering and accessibility checks were updated for the current product.

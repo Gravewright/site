@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-actor-sheet",
+  "name": "Actor sheet revision inspector",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Read the real actor sheet and display its name, sheet revision and top-level data keys beneath the native sheet.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

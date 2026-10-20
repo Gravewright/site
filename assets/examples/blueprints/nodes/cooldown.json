@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "kind": "door",
+  "states": {
+    "closed": {
+      "appearance": "inherit"
+    },
+    "open": {
+      "appearance": "inherit"
+    },
+    "locked": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "sample",
+          "type": "cooldown",
+          "x": 300,
+          "y": 80,
+          "seconds": 10
+        },
+        {
+          "id": "open",
+          "type": "state",
+          "x": 560,
+          "y": 80,
+          "targetState": "open"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "sample",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "sample",
+          "to": "open",
+          "output": "true",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "example.expedition",
+  "name": "Example Expedition",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Original character/NPC sheets with a saved stamina field and an empty gear type.",
+  "author": "Gravewright documentation examples",
+  "license": "GPL-3.0-only",
+  "entry": "main.mjs",
+  "system": {
+    "actorTypes": [
+      {
+        "id": "character",
+        "label": "Character"
+      },
+      {
+        "id": "npc",
+        "label": "NPC"
+      }
+    ],
+    "itemTypes": [
+      {
+        "id": "gear",
+        "label": "Gear"
+      }
+    ]
+  }
+}

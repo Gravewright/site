@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "kind": "lever",
+  "states": {
+    "off": {
+      "appearance": "inherit"
+    },
+    "on": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "sample",
+          "type": "interact",
+          "x": 300,
+          "y": 80
+        },
+        {
+          "id": "target",
+          "type": "reference",
+          "x": 300,
+          "y": 300,
+          "targetId": "11111111-1111-4111-8111-111111111111"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "sample",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "target",
+          "to": "sample",
+          "output": "door",
+          "kind": "data",
+          "input": "target"
+        }
+      ]
+    }
+  }
+}

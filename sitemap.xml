@@ -25,6 +25,35 @@
   <url><loc>https://gravewright.com/wiki/en/smart-objects.html</loc></url>
   <url><loc>https://gravewright.com/wiki/en/universal-vtt.html</loc></url>
   <url><loc>https://gravewright.com/wiki/en/backups-updates.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-index.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-package-browser.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-package-system.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-package-language.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-package-django.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-actor-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-actor-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-token-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-item-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-item-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-scene-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-scene-controls.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-scene-overlay.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-chat-log.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-combat-tracker.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-journal-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-preferences.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-surface-table-interface.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-search-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-actor-image-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-compendium-entry-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-compendium-pack-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/examples-blueprints.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-door.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-lever.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-torch.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-region.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-connections.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/example-blueprint-nodes.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/getting-started.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/architecture.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/code-map.html</loc></url>
@@ -75,6 +104,35 @@
   <url><loc>https://gravewright.com/wiki/pt-BR/smart-objects.html</loc></url>
   <url><loc>https://gravewright.com/wiki/pt-BR/universal-vtt.html</loc></url>
   <url><loc>https://gravewright.com/wiki/pt-BR/backups-updates.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-index.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-package-browser.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-package-system.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-package-language.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-package-django.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-actor-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-actor-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-token-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-item-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-item-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-scene-directory.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-scene-controls.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-scene-overlay.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-chat-log.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-combat-tracker.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-journal-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-preferences.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-surface-table-interface.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-search-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-actor-image-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-compendium-entry-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-compendium-pack-kinds.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/examples-blueprints.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-door.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-lever.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-torch.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-region.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-connections.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/example-blueprint-nodes.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/getting-started.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/architecture.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/code-map.html</loc></url>

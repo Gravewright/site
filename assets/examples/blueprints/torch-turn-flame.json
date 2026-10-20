@@ -1,0 +1,92 @@
+{
+  "version": 2,
+  "kind": "torch",
+  "states": {
+    "off": {
+      "appearance": "inherit"
+    },
+    "on": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "isNormal",
+          "type": "condition",
+          "x": 300,
+          "y": 80,
+          "state": "off"
+        },
+        {
+          "id": "turn",
+          "type": "state",
+          "x": 560,
+          "y": 40,
+          "targetState": "on"
+        },
+        {
+          "id": "lightFlame",
+          "type": "flame",
+          "x": 820,
+          "y": 40,
+          "enabled": true
+        },
+        {
+          "id": "return",
+          "type": "state",
+          "x": 560,
+          "y": 220,
+          "targetState": "off"
+        },
+        {
+          "id": "extinguish",
+          "type": "flame",
+          "x": 820,
+          "y": 220,
+          "enabled": false
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "isNormal",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "isNormal",
+          "to": "turn",
+          "output": "true",
+          "kind": "execution"
+        },
+        {
+          "from": "turn",
+          "to": "lightFlame",
+          "output": "next",
+          "kind": "execution"
+        },
+        {
+          "from": "isNormal",
+          "to": "return",
+          "output": "false",
+          "kind": "execution"
+        },
+        {
+          "from": "return",
+          "to": "extinguish",
+          "output": "next",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

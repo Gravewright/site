@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-table-interface",
+  "name": "Authorized document search",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Search table documents from a workspace panel and render their names, kinds and snippets as text.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}

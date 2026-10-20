@@ -1,0 +1,132 @@
+{
+  "name": "Beacon Local Examples",
+  "systemId": "example.beacon",
+  "campaigns": [
+    "00000000-0000-4000-8000-000000000001"
+  ],
+  "packs": [
+    {
+      "id": "beacon-actors",
+      "label": "Beacon Actors",
+      "type": "actor_pack",
+      "entries": [
+        {
+          "id": "beacon-scout",
+          "name": "Beacon Scout",
+          "type": "character",
+          "systemId": "example.beacon",
+          "data": {
+            "stamina": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-items",
+      "label": "Beacon Items",
+      "type": "item_pack",
+      "entries": [
+        {
+          "id": "beacon-rope",
+          "name": "Beacon Rope",
+          "type": "gear",
+          "systemId": "example.beacon",
+          "data": {
+            "length": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-spells",
+      "label": "Beacon Spells",
+      "type": "spell_pack",
+      "entries": [
+        {
+          "id": "beacon-glow",
+          "name": "Beacon Glow",
+          "type": "spell",
+          "systemId": "example.beacon",
+          "data": {
+            "color": "blue"
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-journals",
+      "label": "Beacon Journals",
+      "type": "journal_pack",
+      "entries": [
+        {
+          "id": "beacon-notes",
+          "name": "Beacon Notes",
+          "type": "diary",
+          "systemId": "example.beacon",
+          "data": {}
+        }
+      ]
+    },
+    {
+      "id": "beacon-scenes",
+      "label": "Beacon Scenes",
+      "type": "scene_pack",
+      "entries": [
+        {
+          "id": "beacon-harbor",
+          "name": "Beacon Harbor",
+          "type": "scene",
+          "systemId": "example.beacon",
+          "data": {
+            "width": 1400,
+            "height": 980
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-cards",
+      "label": "Beacon Cards",
+      "type": "card_pack",
+      "entries": [
+        {
+          "id": "beacon-card-deck",
+          "name": "Beacon Signals",
+          "type": "deck",
+          "systemId": "example.beacon",
+          "data": {
+            "cards": [
+              {
+                "name": "Beacon Signal",
+                "artwork": "artwork/beacon.webp",
+                "quantity": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "beacon-decks",
+      "label": "Beacon Decks",
+      "type": "deck_pack",
+      "entries": [
+        {
+          "id": "beacon-deck",
+          "name": "Beacon Watch",
+          "type": "deck",
+          "systemId": "example.beacon",
+          "data": {
+            "cards": [
+              {
+                "name": "Beacon Watch",
+                "artwork": "artwork/beacon.webp",
+                "quantity": 2
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

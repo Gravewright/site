@@ -1,0 +1,13 @@
+{
+  "id": "example.surface-scene-controls",
+  "name": "Scene information control",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Add a working button that reads the mounted scene and opens its dimensions and grid in the native modal.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "entry": "main.mjs"
+}
