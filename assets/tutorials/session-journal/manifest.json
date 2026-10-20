@@ -1,0 +1,13 @@
+{
+  "id": "example.session-notebook",
+  "name": "Session notebook",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.js",
+  "description": "Create private journals and append GM-only session drafts while preserving existing journal content.",
+  "author": "Gravewright documentation examples",
+  "license": "MIT"
+}

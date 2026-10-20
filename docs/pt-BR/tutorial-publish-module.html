@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como versionar, assinar e distribuir um módulo | Gravewright</title><meta name="description" content="Prepare ZIPs imutáveis, confira registros Ed25519 e entenda instalação, ativação e revogação."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-publish-module.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-publish-module.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-publish-module.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-publish-module.html"><meta property="og:type" content="article"><meta property="og:title" content="Como versionar, assinar e distribuir um módulo | Gravewright"><meta property="og:description" content="Prepare ZIPs imutáveis, confira registros Ed25519 e entenda instalação, ativação e revogação."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-publish-module.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como versionar, assinar e distribuir um módulo","description":"Prepare ZIPs imutáveis, confira registros Ed25519 e entenda instalação, ativação e revogação.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-publish-module.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-publish-module.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html" aria-current="page">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como versionar, assinar e distribuir um módulo</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 10 min de leitura</span><h1>Como versionar, assinar e distribuir um módulo</h1><p class="kb-lead">Prepare ZIPs imutáveis, confira registros Ed25519 e entenda instalação, ativação e revogação.</p></header><div class="kb-prose"><h2 id="de-pacote-local-funcional-a-uma-release-imutavel">De pacote local funcional a uma release imutável</h2>
+<p>Este guia prepara a distribuição do próprio publicador para <strong>Gravewright 0.3.0</strong>. Não publica nada em seu nome. Comece com <a href="tutorial-first-module.html">primeiro módulo</a>, <a href="tutorial-sheet-module.html">ação de ficha</a> ou <a href="tutorial-language-package.html">pacote de idioma</a> completo e funcional e teste em host descartável. Mantenha código/recursos originais ou autorizados com suas licenças. Exclua .env, bancos, mídia de campanha, pacotes instalados, logs, chaves privadas e arquivos do operador.</p>
+<h2 id="1-prepare-uma-versao-nova-e-valide-o-zip-final">1. Prepare uma versão nova e valide o ZIP final</h2>
+<p>Para bytes diferentes, aumente a versão do manifesto, por exemplo de 1.0.0 para 1.0.1. Mantenha ID estável, entrada correta e sdk.requires/tested compatíveis com o host alvo. Um ID/versão de release não aceita bytes diferentes. Preserve arquivos e registros anteriores antes de publicar atualização. Usuários permanecem na versão escolhida na campanha até alterá-la.</p>
+<p>Monte o ZIP com manifest.json na raiz. Liste e teste CRC antes de assinar. O instalador nativo verifica limites compactados/expandidos, quantidade/tipos de arquivos, schema, SDK, entrada, caminhos, duplicatas e conteúdo executável. O assinador abaixo acrescenta verificações locais básicas; não substitui testes de instalação e ativação no host.</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-powershell">&amp; &#39;E:/Your disposable host/.venv/Scripts/python.exe&#39; -m zipfile -l ./example.sheet-name-1.0.1.zip
+&amp; &#39;E:/Your disposable host/.venv/Scripts/python.exe&#39; -m zipfile -t ./example.sheet-name-1.0.1.zip</code></pre></div>
+<h2 id="2-separe-instalacao-e-ativacao">2. Separe instalação e ativação</h2>
+<p>Teste local: o dono usa <strong>Inside → Módulos → Instalar módulo → Instalar de ZIP</strong>. Um sistema usa <strong>Sistemas → Instalar sistema</strong>. A instalação valida e armazena a release. O mestre abre <strong>Gravewright → Extensions → Table modules</strong> e usa <strong>Activate</strong> para a versão exata do módulo de navegador. Um sistema é escolhido como sistema da campanha. Idioma usa <strong>Ativar idiomas</strong> globalmente; app Django exige ativação de código confiável pelo dono e reinício gerenciado. São operações diferentes.</p>
+<h2 id="3-escolha-o-tipo-do-catalogo-assinado">3. Escolha o tipo do catálogo assinado</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Manifesto</th><th scope="col" style="text-align:left">type</th><th scope="col" style="text-align:left">Ativação</th></tr></thead><tbody><tr><td style="text-align:left">entry, sem system/django</td><td style="text-align:left">module</td><td style="text-align:left">Campanha; locales é global</td></tr><tr><td style="text-align:left">system</td><td style="text-align:left">system</td><td style="text-align:left">Sistema da campanha</td></tr><tr><td style="text-align:left">django, sem entry/system/locales</td><td style="text-align:left">django</td><td style="text-align:left">Dono, reinício do servidor</td></tr></tbody></table></div>
+<p>type participa da assinatura e deve corresponder ao manifesto do ZIP. Idioma usa type module e metadado locales, não um quarto tipo de catálogo. Distribua cada sistema de RPG como um pacote instalável único com as APIs do host pedido; não crie pacote de regras separado para contornar suporte ausente.</p>
+<h2 id="4-baixe-o-assinador-local-completo">4. Baixe o assinador local completo</h2>
+<p><a href="../../assets/tutorials/distribution/sign_catalog.py">sign_catalog.py</a></p>
+<p>Salve este utilitário original MIT fora da pasta de fontes do módulo. Execute com o ambiente virtual já preparado pelo host; cryptography já é dependência dele. O utilitário não importa API privada, não cria chave real e não sobrescreve registro de saída. Use o caminho de um PEM privado Ed25519 já administrado pelo publicador. Mantenha a chave privada fora de ZIP, site, catálogo e repositório. Para PEM cifrado, --password-env indica variável com a senha; o utilitário não a imprime.</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-python">&quot;&quot;&quot;Offline catalog signer for Gravewright 0.3.0. License: MIT.
+
+Uses cryptography already installed in the host virtual environment. It imports
+no host internals, executes no archive code, generates no production key and
+overwrites no output. Native installation remains the authoritative ZIP check.
+&quot;&quot;&quot;
+from __future__ import annotations
+import argparse
+import base64
+import hashlib
+import hmac
+import io
+import json
+import os
+from pathlib import Path, PurePosixPath
+import re
+import stat
+import sys
+from urllib.parse import urlsplit
+import zipfile
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey, Ed25519PublicKey
+
+
+def canonical(record):
+    # Exact wire representation used by packages.canonical in the target host.
+    return json.dumps(
+        {k: v for k, v in record.items() if k != &quot;signature&quot;},
+        sort_keys=True, separators=(&quot;,&quot;, &quot;:&quot;), ensure_ascii=True, allow_nan=False,
+    ).encode(&quot;ascii&quot;)
+
+
+def archive_info(path):
+    path = Path(path)
+    if path.stat().st_size &gt; 64 * 1024 * 1024:
+        raise ValueError(&quot;Archive exceeds 64 MiB: &quot; + str(path))
+    data = path.read_bytes()
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        entries = archive.infolist()
+        if len(entries) &gt; 4096 or sum(item.file_size for item in entries) &gt; 256 * 1024 * 1024:
+            raise ValueError(&quot;Archive quota exceeded&quot;)
+        seen = set()
+        for item in entries:
+            name = item.filename.rstrip(&quot;/&quot;) if item.is_dir() else item.filename
+            parts = name.split(&quot;/&quot;)
+            mode = item.external_attr &gt;&gt; 16
+            if (not name or PurePosixPath(name).is_absolute()
+                    or any(part in (&quot;&quot;, &quot;.&quot;, &quot;..&quot;) for part in parts)
+                    or any(char in name for char in (&quot;\\&quot;, &quot;\x00&quot;, &quot;:&quot;, &quot;%&quot;, &quot;?&quot;, &quot;#&quot;))
+                    or stat.S_ISLNK(mode) or stat.S_IFMT(mode) not in (0, stat.S_IFREG, stat.S_IFDIR)
+                    or item.flag_bits &amp; 1 or name.casefold() in seen):
+                raise ValueError(&quot;Unsupported archive path or entry: &quot; + name)
+            seen.add(name.casefold())
+        info = archive.getinfo(&quot;manifest.json&quot;)
+        if info.file_size &gt; 1024 * 1024:
+            raise ValueError(&quot;Manifest exceeds 1 MiB&quot;)
+        manifest = json.loads(archive.read(info))
+        if not isinstance(manifest, dict) or not isinstance(manifest.get(&quot;sdk&quot;), dict):
+            raise ValueError(&quot;Manifest and sdk must be objects&quot;)
+        bad_crc = archive.testzip()
+        if bad_crc:
+            raise ValueError(&quot;Archive CRC failure: &quot; + bad_crc)
+        if &quot;entry&quot; in manifest and manifest[&quot;entry&quot;] not in archive.namelist():
+            raise ValueError(&quot;Manifest entry is missing from the ZIP&quot;)
+    if not re.fullmatch(r&quot;[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+&quot;, manifest.get(&quot;id&quot;, &quot;&quot;)):
+        raise ValueError(&quot;Invalid manifest ID&quot;)
+    if not re.fullmatch(r&quot;(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)&quot;, manifest.get(&quot;version&quot;, &quot;&quot;)):
+        raise ValueError(&quot;Invalid manifest version&quot;)
+    if not isinstance(manifest.get(&quot;sdk&quot;, {}).get(&quot;requires&quot;), str):
+        raise ValueError(&quot;Missing sdk.requires&quot;)
+    if &quot;system&quot; in manifest and &quot;locales&quot; in manifest:
+        raise ValueError(&quot;A system cannot also declare locales&quot;)
+    if &quot;django&quot; in manifest and any(key in manifest for key in (&quot;entry&quot;, &quot;system&quot;, &quot;locales&quot;)):
+        raise ValueError(&quot;A Django package cannot also declare entry, system or locales&quot;)
+    kind = &quot;django&quot; if &quot;django&quot; in manifest else &quot;system&quot; if &quot;system&quot; in manifest else &quot;module&quot;
+    return data, manifest, kind
+
+
+def valid_download(value):
+    parsed = urlsplit(value)
+    if parsed.scheme != &quot;https&quot; or not parsed.hostname or parsed.username or parsed.password or parsed.fragment:
+        raise ValueError(&quot;Use an HTTPS download URL without credentials or a fragment&quot;)
+    parsed.port
+
+
+def record_shape(record):
+    required = {&quot;id&quot;, &quot;version&quot;, &quot;sdk&quot;, &quot;download&quot;, &quot;sha256&quot;, &quot;keyId&quot;, &quot;signature&quot;}
+    allowed = required | {&quot;status&quot;, &quot;name&quot;, &quot;description&quot;, &quot;type&quot;, &quot;tags&quot;}
+    if not isinstance(record, dict) or not required &lt;= set(record) or not set(record) &lt;= allowed:
+        raise ValueError(&quot;Invalid catalog record fields&quot;)
+    if any(not isinstance(value, str) or not value.isascii() for key, value in record.items() if key != &quot;tags&quot;):
+        raise ValueError(&quot;Record scalar fields must be ASCII strings&quot;)
+    tags = record.get(&quot;tags&quot;, [])
+    if (not isinstance(tags, list) or len(tags) &gt; 24
+            or any(not isinstance(tag, str) or not tag.strip() or tag != tag.strip()
+                   or len(tag) &gt; 64 or any(ord(char) &lt; 32 for char in tag) for tag in tags)
+            or len({tag.casefold() for tag in tags}) != len(tags)):
+        raise ValueError(&quot;Invalid tags&quot;)
+    if record.get(&quot;type&quot;, &quot;module&quot;) not in (&quot;module&quot;, &quot;system&quot;, &quot;django&quot;):
+        raise ValueError(&quot;Invalid package type&quot;)
+    if record.get(&quot;status&quot;, &quot;active&quot;) not in (&quot;active&quot;, &quot;revoked&quot;):
+        raise ValueError(&quot;Invalid release status&quot;)
+    if not re.fullmatch(r&quot;[a-f0-9]{64}&quot;, record[&quot;sha256&quot;]):
+        raise ValueError(&quot;Invalid SHA-256&quot;)
+    valid_download(record[&quot;download&quot;])
+
+
+def sign(args):
+    data, manifest, kind = archive_info(args.archive)
+    record = {&quot;id&quot;:manifest[&quot;id&quot;], &quot;version&quot;:manifest[&quot;version&quot;],
+              &quot;sdk&quot;:manifest[&quot;sdk&quot;][&quot;requires&quot;], &quot;type&quot;:kind,
+              &quot;download&quot;:args.download, &quot;sha256&quot;:hashlib.sha256(data).hexdigest(),
+              &quot;keyId&quot;:args.key_id, &quot;status&quot;:args.status, &quot;signature&quot;:&quot;&quot;}
+    if args.tag:
+        record[&quot;tags&quot;] = args.tag
+    record_shape(record)
+    password = None
+    if args.password_env:
+        if args.password_env not in os.environ:
+            raise ValueError(&quot;The requested password environment variable is not set&quot;)
+        password = os.environ[args.password_env].encode(&quot;utf-8&quot;)
+    private = serialization.load_pem_private_key(Path(args.private_key).read_bytes(), password=password)
+    if not isinstance(private, Ed25519PrivateKey):
+        raise ValueError(&quot;The private PEM must contain an Ed25519 key&quot;)
+    record[&quot;signature&quot;] = base64.b64encode(private.sign(canonical(record))).decode(&quot;ascii&quot;)
+    # Exclusive creation protects an existing reviewed record from replacement.
+    with Path(args.output).open(&quot;x&quot;, encoding=&quot;utf-8&quot;, newline=&quot;\n&quot;) as stream:
+        json.dump(record, stream, ensure_ascii=True, indent=2)
+        stream.write(&quot;\n&quot;)
+    print(&quot;Signed &quot; + record[&quot;id&quot;] + &quot;@&quot; + record[&quot;version&quot;] + &quot; -&gt; &quot; + args.output)
+
+
+def verify(args):
+    record = json.loads(Path(args.record).read_text(encoding=&quot;utf-8&quot;))
+    record_shape(record)
+    data, manifest, kind = archive_info(args.archive)
+    if (record[&quot;id&quot;] != manifest[&quot;id&quot;] or record[&quot;version&quot;] != manifest[&quot;version&quot;]
+            or record[&quot;sdk&quot;] != manifest[&quot;sdk&quot;][&quot;requires&quot;] or record.get(&quot;type&quot;, &quot;module&quot;) != kind
+            or not hmac.compare_digest(record[&quot;sha256&quot;], hashlib.sha256(data).hexdigest())):
+        raise ValueError(&quot;The final ZIP does not match the signed identity, SDK, type or digest&quot;)
+    keys = json.loads(Path(args.keys).read_text(encoding=&quot;utf-8&quot;))
+    raw = base64.b64decode(keys[record[&quot;keyId&quot;]], validate=True)
+    Ed25519PublicKey.from_public_bytes(raw).verify(base64.b64decode(record[&quot;signature&quot;], validate=True), canonical(record))
+    print(&quot;Verified &quot; + record[&quot;id&quot;] + &quot;@&quot; + record[&quot;version&quot;] + &quot; (&quot; + record.get(&quot;status&quot;, &quot;active&quot;) + &quot;)&quot;)
+
+
+def self_test(_args):
+    # Public, deterministic test material. Never use these bytes as a publisher key.
+    private = Ed25519PrivateKey.from_private_bytes(bytes(range(32)))
+    record = {&quot;id&quot;:&quot;example.synthetic&quot;, &quot;version&quot;:&quot;1.0.0&quot;, &quot;sdk&quot;:&quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+              &quot;type&quot;:&quot;module&quot;, &quot;download&quot;:&quot;https://publisher.example/synthetic.zip&quot;,
+              &quot;sha256&quot;:&quot;0&quot; * 64, &quot;keyId&quot;:&quot;synthetic-test&quot;, &quot;status&quot;:&quot;active&quot;}
+    record[&quot;signature&quot;] = base64.b64encode(private.sign(canonical(record))).decode(&quot;ascii&quot;)
+    record_shape(record)
+    signature = base64.b64decode(record[&quot;signature&quot;])
+    private.public_key().verify(signature, canonical(record))
+    record[&quot;status&quot;] = &quot;revoked&quot;
+    try:
+        private.public_key().verify(signature, canonical(record))
+    except InvalidSignature:
+        pass
+    else:
+        raise AssertionError(&quot;Changing signed status must invalidate the signature&quot;)
+    assert canonical({&quot;z&quot;:&quot;a&quot;, &quot;signature&quot;:&quot;ignored&quot;, &quot;a&quot;:&quot;b&quot;}) == b&#39;{&quot;a&quot;:&quot;b&quot;,&quot;z&quot;:&quot;a&quot;}&#39;
+    print(&quot;Synthetic Ed25519 and canonicalization tests passed&quot;)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest=&quot;command&quot;, required=True)
+    signing = sub.add_parser(&quot;sign&quot;, help=&quot;Write one signed record, not a complete catalog&quot;)
+    signing.add_argument(&quot;--archive&quot;, required=True)
+    signing.add_argument(&quot;--download&quot;, required=True)
+    signing.add_argument(&quot;--key-id&quot;, required=True)
+    signing.add_argument(&quot;--tag&quot;, action=&quot;append&quot;, default=[], help=&quot;Optional signed catalog tag, repeat for multiple tags&quot;)
+    signing.add_argument(&quot;--private-key&quot;, required=True)
+    signing.add_argument(&quot;--password-env&quot;, help=&quot;Name of an optional PEM-password environment variable&quot;)
+    signing.add_argument(&quot;--status&quot;, choices=(&quot;active&quot;, &quot;revoked&quot;), default=&quot;active&quot;)
+    signing.add_argument(&quot;--output&quot;, required=True)
+    signing.set_defaults(run=sign)
+    verifying = sub.add_parser(&quot;verify&quot;)
+    verifying.add_argument(&quot;--archive&quot;, required=True)
+    verifying.add_argument(&quot;--record&quot;, required=True)
+    verifying.add_argument(&quot;--keys&quot;, required=True)
+    verifying.set_defaults(run=verify)
+    sub.add_parser(&quot;self-test&quot;).set_defaults(run=self_test)
+    args = parser.parse_args()
+    try:
+        args.run(args)
+    except (OSError, ValueError, TypeError, KeyError, zipfile.BadZipFile, InvalidSignature) as error:
+        parser.exit(2, &quot;Error: &quot; + (str(error) or type(error).__name__) + &quot;\n&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
+<h2 id="5-assine-os-bytes-finais-e-confira">5. Assine os bytes finais e confira</h2>
+<p>O autoteste usa material sintético determinístico público na memória, nunca uma chave real de publicação. Execute primeiro. Depois ajuste caminhos, URL e identificador para os valores do próprio publicador. Em POSIX use .venv/bin/python do host no lugar de python.exe. Não é necessário instalar dependências, registrar Python globalmente nem mudar PATH permanentemente.</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-powershell">&amp; &#39;E:/Your disposable host/.venv/Scripts/python.exe&#39; ./sign_catalog.py self-test
+&amp; &#39;E:/Your disposable host/.venv/Scripts/python.exe&#39; ./sign_catalog.py sign --archive ./example.sheet-name-1.0.1.zip --download https://publisher.example/releases/example.sheet-name-1.0.1.zip --key-id publisher-2026 --private-key &#39;E:/Publisher private material/publisher-ed25519.pem&#39; --output ./release-record-1.0.1.json
+&amp; &#39;E:/Your disposable host/.venv/Scripts/python.exe&#39; ./sign_catalog.py verify --archive ./example.sheet-name-1.0.1.zip --record ./release-record-1.0.1.json --keys ./publisher-public-keys.json</code></pre></div>
+<p>publisher-public-keys.json mapeia identificadores para chaves públicas Ed25519 de 32 bytes brutos em base64. Não contém chave privada. Exporte a pública correspondente pelo processo de gestão de chaves do publicador. Alterar keyId mantendo a assinatura não funciona: keyId também é assinado.</p>
+<p>SHA-256 cobre os bytes finais do ZIP, inclusive metadados do arquivo. A assinatura cobre todos os campos do registro exceto signature, usando packages.canonical: chaves ordenadas, separadores compactos, ensure_ascii verdadeiro e allow_nan falso. Valores escalares são strings ASCII; tags suportadas são a exceção explícita e continuam assinadas. Use --tag Exploration --tag Original ao assinar se quiser categorias no catálogo; são até 24 tags únicas não vazias de até 64 caracteres. Recompactar, alterar URL, adicionar type/status/tag ou mudar qualquer campo assinado exige assinar novamente. Não assine uma pasta para depois refazer o ZIP.</p>
+<h2 id="6-monte-e-hospede-o-catalogo">6. Monte e hospede o catálogo</h2>
+<p>O utilitário grava um objeto de registro. O feed do Marketplace é um array. Para criar um catálogo novo de uma release sem sobrescrever um feed existente, salve e execute o script abaixo ao lado do registro revisado. Em catálogo com vários pacotes, mescle no feed revisado do publicador, preserve os demais registros e coordene publicações concorrentes.</p>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-python">import json
+from pathlib import Path
+
+record = json.loads(Path(&quot;release-record-1.0.1.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+with Path(&quot;catalog-draft.json&quot;).open(&quot;x&quot;, encoding=&quot;utf-8&quot;) as output:
+    json.dump([record], output, ensure_ascii=True, indent=2)
+    output.write(&quot;\n&quot;)</code></pre></div>
+<p>Hospede o ZIP imutável na URL HTTPS assinada e o array revisado em URL HTTPS de catálogo. Distribua a chave pública por canal confiável separado; chave recebida apenas de catálogo não confiável não estabelece confiança. Baixe novamente e confirme o digest exato antes de disponibilizar o catálogo. Preserve cópias e não substitua ID/versão distribuído. Este guia não fornece credenciais nem faz envio.</p>
+<h2 id="7-configure-consumidor-descartavel-e-diagnostique">7. Configure consumidor descartável e diagnostique</h2>
+<p>Somente em consumidor descartável, configure explicitamente GRAVEWRIGHT_MARKETPLACE_URL com a URL HTTPS do catálogo e GRAVEWRIGHT_MARKETPLACE_KEYS_FILE com o JSON público confiável. Use caminhos relativos à instalação para manter esse material nela. Reinicie após alterar configuração de ambiente. Não edite .env real do operador para executar o tutorial. O dono pode consultar GET /api/marketplace/status sem contatar o publicador remoto.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Diagnóstico</th><th scope="col" style="text-align:left">O que conferir</th></tr></thead><tbody><tr><td style="text-align:left">marketplace_catalog_missing / invalid</td><td style="text-align:left">URL do catálogo, HTTPS, credenciais e fragmento</td></tr><tr><td style="text-align:left">marketplace_keys_missing / unreadable / invalid / empty</td><td style="text-align:left">Caminho confiável, JSON e tamanho da chave pública bruta</td></tr><tr><td style="text-align:left">permission_denied</td><td style="text-align:left">Identificador desconhecido, assinatura, revogação ou autorização</td></tr><tr><td style="text-align:left">invalid_data</td><td style="text-align:left">Formato, digest, tipo, caminhos e limites</td></tr><tr><td style="text-align:left">unavailable</td><td style="text-align:left">Compatibilidade SDK, transporte HTTPS e disponibilidade</td></tr><tr><td style="text-align:left">conflict</td><td style="text-align:left">Recarregue ativação e revise sua nova revisão</td></tr></tbody></table></div>
+<p>Abra o modal de instalação de Módulos ou Sistemas para buscar o catálogo. Escolher uma release instala seu arquivo verificado; ative separadamente. Falha de configuração não pode desativar assinatura. Teste ZIP alterado, campo assinado modificado, chave ausente e tipo incompatível no consumidor descartável e confirme as rejeições.</p>
+<h2 id="8-revogue-ou-volte-codigo-sem-prometer-voltar-dados">8. Revogue ou volte código sem prometer voltar dados</h2>
+<p>Para revogar, assine novo registro do mesmo ID/versão com status revoked, preservando a identidade do arquivo imutável. Use sign com --status revoked e outro nome de saída; mudar status sem assinar invalida a assinatura. Substitua o registro dessa versão no catálogo pelo registro revogado assinado e preserve as demais releases. Ao buscar esse catálogo, consumidores marcam instalações como revogadas, desativam a ativação global, removem módulos afetados, limpam preferências de substituição e alteram revisões das mesas. Isso depende da busca do catálogo; não é envio imediato a usuários offline.</p>
+<p>Selecionar release anterior muda somente a seleção de código. Storage e documentos da campanha não voltam automaticamente; desativar app Django normalmente não desfaz migrações. Versione e migre o storage explicitamente e preserve cópias compatíveis de código/dados para recuperação. Reative somente uma versão compatível revisada.</p>
+<h2 id="como-usar-a-ia-para-preparar-uma-release">Como usar a IA para preparar uma release</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-text">Prepare uma distribuição revisável deste pacote funcional no Gravewright 0.3.0. Confira manifesto e packages.py antes de escolher tipo e SDK. Preserve dados privados e trabalho anterior. Entregue versão nova, árvore de arquivos, checksum do ZIP final, assinatura Ed25519 canônica com chave existente fora do repositório, configuração de confiança pública, catálogo HTTPS de rascunho e validação em host descartável. Não gere nem publique chave real, envie arquivos ou altere ambiente do operador sem autorização. Explique instalar/ativar, revogação assinada, imutabilidade e limites da volta de storage/dados.</code></pre></div>
+<p><a href="modules.html">SDK</a> · <a href="tutorial-index.html">Todos os tutoriais</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-language-package.html"><span>Anterior ←</span><strong>Como criar e ativar um pacote de idioma da instalação</strong></a><a href="examples-index.html"><span>Próximo →</span><strong>Exemplos completos por kind</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/modules.md">docs/en/modules.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/modules.md">docs/pt-BR/modules.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/packages.py">gravewright/modules/packages.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/localization.py">gravewright/modules/localization.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/views.py">gravewright/modules/views.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/web/static/gravewright_web/inside/management.js">gravewright/web/static/gravewright_web/inside/management.js</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/jinja2/gravewright_table/house.html">gravewright/table/jinja2/gravewright_table/house.html</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#de-pacote-local-funcional-a-uma-release-imutavel">De pacote local funcional a uma release imutável</a></li><li><a href="#1-prepare-uma-versao-nova-e-valide-o-zip-final">1. Prepare uma versão nova e valide o ZIP final</a></li><li><a href="#2-separe-instalacao-e-ativacao">2. Separe instalação e ativação</a></li><li><a href="#3-escolha-o-tipo-do-catalogo-assinado">3. Escolha o tipo do catálogo assinado</a></li><li><a href="#4-baixe-o-assinador-local-completo">4. Baixe o assinador local completo</a></li><li><a href="#5-assine-os-bytes-finais-e-confira">5. Assine os bytes finais e confira</a></li><li><a href="#6-monte-e-hospede-o-catalogo">6. Monte e hospede o catálogo</a></li><li><a href="#7-configure-consumidor-descartavel-e-diagnostique">7. Configure consumidor descartável e diagnostique</a></li><li><a href="#8-revogue-ou-volte-codigo-sem-prometer-voltar-dados">8. Revogue ou volte código sem prometer voltar dados</a></li><li><a href="#como-usar-a-ia-para-preparar-uma-release">Como usar a IA para preparar uma release</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

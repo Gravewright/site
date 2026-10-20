@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.combat-workshop",
+  "name": "Combat workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Build a working encounter laboratory covering participants, initiative, order, flags, turns, rounds and cleanup.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

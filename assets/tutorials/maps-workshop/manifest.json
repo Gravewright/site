@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.maps-workshop",
+  "name": "Scene workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Build a working module to inspect scene layers, edit metadata, manage folders, draw a native door and broadcast a test scene.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

@@ -44,6 +44,9 @@ export default {
     const button = el("button", t("Scene information"));
     button.type = "button";
     panel.append(button);
+    for (const type of ["pointerdown", "mousedown", "click"]) {
+      panel.addEventListener(type, event => event.stopPropagation(), { signal });
+    }
     let modal;
     onDispose(() => modal?.close(true));
     button.addEventListener("click", async () => {

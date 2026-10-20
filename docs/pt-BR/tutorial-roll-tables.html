@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar, sortear e restaurar tabelas de rolagem | Gravewright</title><meta name="description" content="Crie uma tabela de diário original, altere um peso preservando dados e publique sorteios nativos com ou sem reposição."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-roll-tables.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-roll-tables.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-roll-tables.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-roll-tables.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar, sortear e restaurar tabelas de rolagem | Gravewright"><meta property="og:description" content="Crie uma tabela de diário original, altere um peso preservando dados e publique sorteios nativos com ou sem reposição."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-roll-tables.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar, sortear e restaurar tabelas de rolagem","description":"Crie uma tabela de diário original, altere um peso preservando dados e publique sorteios nativos com ou sem reposição.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-roll-tables.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-roll-tables.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html" aria-current="page">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar, sortear e restaurar tabelas de rolagem</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 9 min de leitura</span><h1>Como criar, sortear e restaurar tabelas de rolagem</h1><p class="kb-lead">Crie uma tabela de diário original, altere um peso preservando dados e publique sorteios nativos com ou sem reposição.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/roll-tables.png" aria-label="Abrir captura completa: Módulo Roll table tools instalado após executar a receita create-table. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/roll-tables.png" width="1440" height="1000" alt="Módulo Roll table tools instalado após executar a receita create-table. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Roll table tools instalado após executar a receita create-table. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie tabela de clima do porto com duas entradas, leia seu formato real, altere um peso, sorteie até esgotar e restaure. O tipo é journal_type roll_table, diferente de pack de compêndio ou tabela específica de sistema.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta roll-tables. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/roll-tables/roll-tables-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">roll-tables/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Use campanha descartável como mestre e uma segunda conta de jogador para conferir audiência. Use resultados originais. Informe cena autorizada apenas se o sorteio deve ter aquela cena como alvo; caso contrário, usa o contexto nativo de transmissão.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../roll-tables-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../roll-tables-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Roll table tools. Feche o menu e clique no botão Roll table tools. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="criar-uma-tabela-original-com-pesos">Criar uma tabela original com pesos</h3>
+<p>Como mestre, crie journal_type roll_table e configure duas entradas completas. Pesos 3 e 1 produzem probabilidades diferentes. Sem reposição, entradas sorteadas deixam de participar até reset.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);const created=await api.journals.create({title:v.title,journal_type:&#39;roll_table&#39;},{signal,requestId:crypto.randomUUID()});try{await api.journals.update({journal_id:created.journal_id,version:created.version,title:v.title,visibility:&#39;private&#39;,data:{withReplacement:v.replacement,resultVisibility:v.secret?&#39;gm&#39;:&#39;public&#39;,entries:[{id:&#39;clear&#39;,name:&#39;Clear sky&#39;,weight:3,result:&#39;The beacon is visible across the bay.&#39;,active:true,drawn:false,sortOrder:10},{id:&#39;fog&#39;,name:&#39;Fog&#39;,weight:1,result:&#39;The boats wait for the fog to lift.&#39;,active:true,drawn:false,sortOrder:20}]}},{signal,requestId:crypto.randomUUID()});return api.journals.get(created.journal_id,{}, {signal});}catch(error){throw new Error(&#39;Roll table &#39;+created.journal_id+&#39; exists; configuration failed: &#39;+(error.code||error.message)+&#39;. Repair this table before creating another.&#39;);}}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma tabela com totalWeight 4, IDs próprios de entradas e audiência escolhida.</p>
+<p><strong>Como conferir:</strong> Abra o diretório ou documento nativo e compare o estado do servidor. Compare mestre e jogador; apenas conteúdo autorizado pode aparecer.</p>
+<h3 id="ler-pesos-resultados-e-marcadores-de-sorteio">Ler pesos, resultados e marcadores de sorteio</h3>
+<p>Use o UUID da tabela. roll_table contém entradas e totalWeight; texto exclusivo do mestre é removido para os demais membros.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,signal},v)=&gt;{const row=await api.journals.get(v.id,{}, {signal});if(row.type!==&#39;roll_table&#39;)throw new Error(&#39;Choose a roll_table journal.&#39;);return row;}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Entradas autorizadas com weight, active, drawn e sortOrder.</p>
+<p><strong>Como conferir:</strong> Dê leitura ao jogador e compare uma tabela secreta. Ele deve receber result vazio e não pode rolá-la.</p>
+<h3 id="alterar-um-peso-preservando-as-demais-entradas">Alterar um peso preservando as demais entradas</h3>
+<p>Como mestre, use o ID exato da entrada. Copie a tabela completa e altere um peso; totalWeight é calculado e não entra nos dados enviados.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required to preserve complete results.&#39;);if(!Number.isInteger(v.weight)||v.weight&lt;1||v.weight&gt;1000000)throw new Error(&#39;Invalid weight.&#39;);const row=await api.journals.get(v.id,{}, {signal});if(row.type!==&#39;roll_table&#39;)throw new Error(&#39;Choose a roll_table.&#39;);const data=structuredClone(row.roll_table);if(!data.entries.some(entry=&gt;entry.id===v.entryId))throw new Error(&#39;Entry not found.&#39;);data.entries=data.entries.map(entry=&gt;entry.id===v.entryId?{...entry,weight:v.weight}:entry);delete data.totalWeight;await api.journals.update({journal_id:row.id,version:row.version,title:row.title,visibility:row.visibility,data},{signal,requestId:crypto.randomUUID()});return api.journals.get(row.id,{}, {signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> O peso escolhido muda e totalWeight é recalculado.</p>
+<p><strong>Como conferir:</strong> Abra o diretório ou documento nativo e compare o estado do servidor. Compare mestre e jogador; apenas conteúdo autorizado pode aparecer.</p>
+<h3 id="sortear-e-publicar-um-resultado-da-tabela">Sortear e publicar um resultado da tabela</h3>
+<p>Execute como mestre. O comando nativo sorteia com pesos, persiste drawn quando necessário e publica no chat. O payload usa mapId para cena explícita.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);return api.journals.roll({journal_id:v.id,...(v.sceneId.trim()?{mapId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A entrada escolhida e message_id; o chat nativo mostra o resultado autorizado.</p>
+<p><strong>Como conferir:</strong> Sem reposição, role duas vezes e confira entradas distintas; a terceira deve falhar até reset. Não repita o mesmo sorteio com UUID novo após perder a resposta.</p>
+<h3 id="restaurar-marcadores-sem-alterar-resultados">Restaurar marcadores sem alterar resultados</h3>
+<p>Use o UUID da tabela esgotada. Reset define drawn falso em cada entrada; não limpa o chat nem substitui o texto da tabela.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);await api.journals.reset({journal_id:v.id},{signal,requestId:crypto.randomUUID()});return api.journals.get(v.id,{}, {signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> As entradas ativas participam novamente e totalWeight é restaurado.</p>
+<p><strong>Como conferir:</strong> Abra o diretório ou documento nativo e compare o estado do servidor. Compare mestre e jogador; apenas conteúdo autorizado pode aparecer.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.roll-tables&quot;,
+  &quot;name&quot;: &quot;Roll table tools&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Build an original journal roll table, edit a weight without losing data and publish native draws with or without replacement.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Roll table tools&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-roll-tables&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">export const recipes=[
+{
+  id:&quot;create-table&quot;,
+  label:&quot;Create a weighted original roll table&quot;,
+  description:&quot;As GM, create journal_type roll_table and configure its two complete entries. Weights 3 and 1 give different probabilities. Without replacement, drawn entries stop being eligible until reset.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;title&quot;,
+    &quot;label&quot;: &quot;Roll table title&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Harbor weather&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;secret&quot;,
+    &quot;label&quot;: &quot;GM-only results&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: false
+  },
+  {
+    &quot;name&quot;: &quot;replacement&quot;,
+    &quot;label&quot;: &quot;Allow replacement&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: false
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);const created=await api.journals.create({title:v.title,journal_type:&#39;roll_table&#39;},{signal,requestId:crypto.randomUUID()});try{await api.journals.update({journal_id:created.journal_id,version:created.version,title:v.title,visibility:&#39;private&#39;,data:{withReplacement:v.replacement,resultVisibility:v.secret?&#39;gm&#39;:&#39;public&#39;,entries:[{id:&#39;clear&#39;,name:&#39;Clear sky&#39;,weight:3,result:&#39;The beacon is visible across the bay.&#39;,active:true,drawn:false,sortOrder:10},{id:&#39;fog&#39;,name:&#39;Fog&#39;,weight:1,result:&#39;The boats wait for the fog to lift.&#39;,active:true,drawn:false,sortOrder:20}]}},{signal,requestId:crypto.randomUUID()});return api.journals.get(created.journal_id,{}, {signal});}catch(error){throw new Error(&#39;Roll table &#39;+created.journal_id+&#39; exists; configuration failed: &#39;+(error.code||error.message)+&#39;. Repair this table before creating another.&#39;);}}
+},
+{
+  id:&quot;read-table&quot;,
+  label:&quot;Read weights, results and draw flags&quot;,
+  description:&quot;Use the table UUID. The projected roll_table contains entries and totalWeight; GM-only result text is removed for other members.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;{const row=await api.journals.get(v.id,{}, {signal});if(row.type!==&#39;roll_table&#39;)throw new Error(&#39;Choose a roll_table journal.&#39;);return row;}
+},
+{
+  id:&quot;set-weight&quot;,
+  label:&quot;Change one weight while preserving every other entry&quot;,
+  description:&quot;As GM, use the exact entry ID. Copy the complete projected table and alter one weight; totalWeight is derived and omitted from the submitted data.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;entryId&quot;,
+    &quot;label&quot;: &quot;Entry ID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;fog&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;weight&quot;,
+    &quot;label&quot;: &quot;Weight, integer 1 to 1000000&quot;,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;value&quot;: 2,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required to preserve complete results.&#39;);if(!Number.isInteger(v.weight)||v.weight&lt;1||v.weight&gt;1000000)throw new Error(&#39;Invalid weight.&#39;);const row=await api.journals.get(v.id,{}, {signal});if(row.type!==&#39;roll_table&#39;)throw new Error(&#39;Choose a roll_table.&#39;);const data=structuredClone(row.roll_table);if(!data.entries.some(entry=&gt;entry.id===v.entryId))throw new Error(&#39;Entry not found.&#39;);data.entries=data.entries.map(entry=&gt;entry.id===v.entryId?{...entry,weight:v.weight}:entry);delete data.totalWeight;await api.journals.update({journal_id:row.id,version:row.version,title:row.title,visibility:row.visibility,data},{signal,requestId:crypto.randomUUID()});return api.journals.get(row.id,{}, {signal});}
+},
+{
+  id:&quot;roll&quot;,
+  label:&quot;Draw and publish one table result&quot;,
+  description:&quot;Run as GM. The native command uses a secure weighted draw, persists drawn when needed and publishes a chat result. Its payload uses mapId for an explicit scene.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Authorized scene UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);return api.journals.roll({journal_id:v.id,...(v.sceneId.trim()?{mapId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}
+},
+{
+  id:&quot;reset&quot;,
+  label:&quot;Reset drawn flags without changing results&quot;,
+  description:&quot;Use the exhausted table UUID. Reset changes drawn to false for every entry; it does not clear native chat or replace table text.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);await api.journals.reset({journal_id:v.id},{signal,requestId:crypto.randomUUID()});return api.journals.get(v.id,{}, {signal});}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.roll-tables&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-roll-tables { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-roll-tables label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-roll-tables input, .tutorial-workbench-roll-tables select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-roll-tables pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-roll-tables button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Somente mestres podem sortear ou restaurar. Um jogador com leitura vê metadados autorizados, mas não texto de resultado quando resultVisibility é gm. Com reposição falsa, duas entradas ativas permitem dois sorteios até esgotar. Reset restaura participação sem sortear ou limpar chat. Edições preservam todas as entradas e a versão exata; não envie projeção filtrada de jogador como tabela completa do mestre. Repare falha de configuração pelo UUID criado informado.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-text">Estenda roll-tables no Gravewright 0.3.0 com [comportamento]. Leia normalize_roll_table_data, journals.types.apply e o mapeamento público. Preserve sorteio nativo com pesos, active/drawn, withReplacement, resultVisibility, roll/reset exclusivos do mestre, versão exata e UUID de tentativa. Entregue entradas completas e teste esgotamento, restauração, resultados privados e cena ausente.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-quests.html"><span>Anterior ←</span><strong>Como criar automações de missões e ações de quadro</strong></a><a href="tutorial-journal-management.html"><span>Próximo →</span><strong>Como criar, organizar e compartilhar documentos de diário</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/data.py">gravewright/journals/data.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/types.py">gravewright/journals/types.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/services.py">gravewright/journals/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/frontend.py">gravewright/modules/frontend.py</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.tokens-workshop",
+  "name": "Token workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Place, move, duplicate, configure and remove tokens; control native vision/visibility and timed conditions.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

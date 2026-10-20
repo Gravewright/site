@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.quests",
+  "name": "Quest and board tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Create and read a real quest, advance objectives, assign actors and manage every board relationship.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

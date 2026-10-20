@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.sdk-compat",
+  "name": "Original SDK workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Concrete actor/token DTOs, opaque revisions and the remaining multipart/local operations.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

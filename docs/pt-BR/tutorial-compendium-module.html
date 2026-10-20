@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar um módulo de compêndio | Gravewright</title><meta name="description" content="Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-compendium-module.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-compendium-module.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-compendium-module.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-compendium-module.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar um módulo de compêndio | Gravewright"><meta property="og:description" content="Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-compendium-module.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar um módulo de compêndio","description":"Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-compendium-module.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-compendium-module.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html" aria-current="page">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar um módulo de compêndio</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 12 min de leitura</span><h1>Como criar um módulo de compêndio</h1><p class="kb-lead">Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/compendium-module.png" aria-label="Abrir captura completa: A biblioteca Harbor criou um pack da campanha e leu o snapshot do diário original. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/compendium-module.png" width="1440" height="1000" alt="A biblioteca Harbor criou um pack da campanha e leu o snapshot do diário original. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>A biblioteca Harbor criou um pack da campanha e leu o snapshot do diário original. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-que-voce-vai-construir">O que você vai construir</h2>
+<p>Você começa com uma pasta vazia e termina com um módulo instalável. Na mesa ele mostra <strong>Harbor library</strong>. O GM clica <strong>Prepare my library</strong> e obtém um compêndio Harbor Library com uma entrada de diário Beacon Watch. Depois lê o snapshot e importa uma cópia pela própria interface do módulo.</p>
+<p>Este é o caminho para um módulo comum que trabalha com documentos da campanha. O conteúdo nasce por ações autorizadas da API e fica salvo na campanha. Um manifesto de módulo comum não aceita content.compendiums sem system: esse outro caminho é ensinado em <a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a>.</p>
+<p>Use Gravewright 0.3.0 e uma campanha descartável. Você precisa da conta proprietária para instalar e do papel GM na campanha para preparar/importar. Não precisa de npm, acesso ao banco, biblioteca de RPG ou módulo de regras. Os textos de exemplo são originais. Os botões do pacote estão em inglês.</p>
+<h2 id="1-crie-a-pasta-e-entenda-os-arquivos">1. Crie a pasta e entenda os arquivos</h2>
+<p>Crie uma pasta chamada campaign-library. Salve em UTF-8 todos os arquivos completos da seção 4, preservando os nomes e os caminhos. Alternativamente, extraia o ZIP abaixo. manifest.json identifica o pacote; main.mjs desenha o painel; library.mjs faz a sequência de gravações; maintenance.mjs contém funções opcionais de manutenção; styles.css limita os estilos ao módulo; LICENSE.txt autoriza o uso do exemplo.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">campaign-library/
+  manifest.json
+  main.mjs
+  library.mjs
+  maintenance.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p><a href="../../assets/tutorials/campaign-library/campaign-library-source.zip">Baixar o ZIP completo</a></p>
+<ul><li><p><a href="../../assets/tutorials/campaign-library/manifest.json">manifest.json</a></p></li><li><p><a href="../../assets/tutorials/campaign-library/main.mjs">main.mjs</a></p></li><li><p><a href="../../assets/tutorials/campaign-library/library.mjs">library.mjs</a></p></li><li><p><a href="../../assets/tutorials/campaign-library/maintenance.mjs">maintenance.mjs</a></p></li><li><p><a href="../../assets/tutorials/campaign-library/styles.css">styles.css</a></p></li><li><p><a href="../../assets/tutorials/campaign-library/LICENSE.txt">LICENSE.txt</a></p></li></ul>
+<h2 id="2-empacote-e-instale">2. Empacote e instale</h2>
+<p>Use um Python já disponível no ambiente de desenvolvimento. Os comandos abaixo partem da pasta que contém campaign-library. No POSIX, use python3 se esse for o nome do seu interpretador. Eles compactam somente os arquivos listados, com manifest.json na raiz, sem incluir estado local.</p>
+<h3 id="posix">POSIX</h3>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-sh">cd campaign-library
+python -m zipfile -c ../campaign-library-source.zip &quot;manifest.json&quot; &quot;main.mjs&quot; &quot;library.mjs&quot; &quot;maintenance.mjs&quot; &quot;styles.css&quot; &quot;LICENSE.txt&quot;</code></pre></div>
+<h3 id="powershell">PowerShell</h3>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-powershell">Set-Location -LiteralPath .\campaign-library
+python -m zipfile -c ..\campaign-library-source.zip &quot;manifest.json&quot; &quot;main.mjs&quot; &quot;library.mjs&quot; &quot;maintenance.mjs&quot; &quot;styles.css&quot; &quot;LICENSE.txt&quot;</code></pre></div>
+<p>Confira o ZIP com python -m zipfile -l ../campaign-library-source.zip enquanto ainda estiver dentro da pasta. Como proprietário, abra <strong>Inside → Módulos → Instalar módulo → Instalar de ZIP</strong>. Escolha o ZIP e clique <strong>Instalar</strong>. Em inglês: <strong>Modules → Install module → Install from ZIP → Install</strong>. Não é necessário assinar este upload local; publicação via catálogo exige o fluxo de assinatura documentado.</p>
+<p>Abra sua campanha de teste como GM. No botão Gravewright da mesa, abra <strong>Extensions</strong>, encontre <strong>Harbor campaign library 1.0.0</strong> e clique <strong>Activate</strong>. Feche o menu. O painel <strong>Harbor library</strong> aparece abaixo da barra superior. Veja <a href="tutorial-first-module.html">seu primeiro módulo</a> se precisar localizar essas telas.</p>
+<h2 id="3-prepare-leia-e-importe">3. Prepare, leia e importe</h2>
+<ol><li><p>Clique <strong>Prepare my library</strong>. O controlador confirma isGM, reserva quatro UUIDs de operação em storage.user e cria o compêndio.</p></li><li><p>Ele cria um diário nativo, usa journal_id e version retornados para salvar uma página com formato gw-journal-doc-v1 e adiciona o diário ao pack usando kind journal e resourceId. O corpo não é enviado diretamente para compendiums.add.</p></li><li><p>Aguarde <strong>Library ready</strong>. Os seletores passam a mostrar Harbor Library e Beacon Watch. Clique <strong>Read snapshot</strong>: aparece o envelope com kind journal e a página original sobre a lanterna azul.</p></li><li><p>Clique <strong>Import copy</strong>. O resultado informa o ID criado. Abra <strong>Journals</strong> na mesa e confira o diário importado e a mesma página. A importação usa a campanha da montagem; nenhum campo permite apontar para outra campanha.</p></li><li><p>Clique <strong>Prepare my library</strong> novamente e depois desative/reative o módulo. O mesmo GM recupera o registro e não cria outro pack nem outra entrada. Recarregue a lista para conferir. Clicar <strong>Import copy</strong> novamente após um sucesso é uma nova ação e pode criar outra cópia.</p></li></ol>
+<p>O registro de preparação pertence ao usuário, módulo e campanha. Outro GM tem seu próprio registro e, se clicar preparar, cria sua própria biblioteca. Isso mantém os UUIDs de retry na mesma conta que executou as operações. O compêndio resultante pertence à campanha e permanece após desativar o módulo.</p>
+<h2 id="4-copie-todos-os-arquivos">4. Copie todos os arquivos</h2>
+<p>Para mudar o conteúdo distribuído pelo exemplo, edite journalData em library.mjs antes de preparar uma biblioteca nova. Cada seção tem ID estável, título, audience e um documento rico. Para mudar nomes do pack/diário, altere os literais nas chamadas create/update/add. Alterar o código não atualiza automaticamente snapshots já capturados: eles são cópias, não links vivos para o diário.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-json">{
+  &quot;id&quot;: &quot;example.harbor-library&quot;,
+  &quot;name&quot;: &quot;Harbor campaign library&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Creates an original journal and reusable campaign snapshot through the public API.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">import {createLibrary} from &quot;./library.mjs&quot;;
+
+export default {
+  start({styles}) { styles.use(&quot;styles.css&quot;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, async ({root, api, storage, signal, onDispose}) =&gt; {
+      const library = createLibrary({api, storage, signal});
+      const el = (tag, text) =&gt; {
+        const node = root.ownerDocument.createElement(tag);
+        if (text !== undefined) node.textContent = text;
+        return node;
+      };
+      const panel = el(&quot;section&quot;); panel.className = &quot;harbor-library&quot;;
+      const prepare = el(&quot;button&quot;, &quot;Prepare my library&quot;);
+      const refresh = el(&quot;button&quot;, &quot;Refresh list&quot;);
+      const read = el(&quot;button&quot;, &quot;Read snapshot&quot;);
+      const copy = el(&quot;button&quot;, &quot;Import copy&quot;);
+      for (const button of [prepare, refresh, read, copy]) button.type = &quot;button&quot;;
+      const packLabel = el(&quot;label&quot;, &quot;Compendium&quot;);
+      const packs = el(&quot;select&quot;); packLabel.append(packs);
+      const entryLabel = el(&quot;label&quot;, &quot;Entry&quot;);
+      const entries = el(&quot;select&quot;); entryLabel.append(entries);
+      const output = el(&quot;pre&quot;); output.setAttribute(&quot;role&quot;, &quot;status&quot;);
+      panel.append(el(&quot;h3&quot;, &quot;Harbor library&quot;), prepare, refresh, packLabel, entryLabel, read, copy, output);
+      root.append(panel); onDispose(() =&gt; panel.remove());
+      let state, busy = true, importAttempt;
+      const controls = () =&gt; {
+        prepare.disabled = busy || !state?.isGM;
+        refresh.disabled = busy;
+        read.disabled = busy || !entries.value;
+        copy.disabled = busy || !state?.isGM || !entries.value;
+        packs.disabled = busy; entries.disabled = busy;
+      };
+      const options = (select, rows, selected) =&gt; {
+        select.replaceChildren();
+        const empty = el(&quot;option&quot;, &quot;Choose...&quot;); empty.value = &quot;&quot;; select.append(empty);
+        for (const row of rows) { const option = el(&quot;option&quot;, row.name); option.value = row.id; select.append(option); }
+        select.value = rows.some(row =&gt; row.id === selected) ? selected : &quot;&quot;;
+      };
+      const chooseEntries = selected =&gt; {
+        options(entries, state?.packs.find(pack =&gt; pack.id === packs.value)?.entries ?? [], selected);
+        controls();
+      };
+      const load = async (packId = packs.value, entryId = entries.value) =&gt; {
+        const next = await api.compendiums.state({}, {signal});
+        if (signal.aborted) return;
+        state = next; options(packs, state.packs, packId); chooseEntries(entryId);
+      };
+      const run = async task =&gt; {
+        if (busy || signal.aborted) return;
+        busy = true; controls(); output.textContent = &quot;Working...&quot;;
+        try { await task(); }
+        catch (error) { if (!signal.aborted) output.textContent = &quot;Error: &quot; + (error.code ?? &quot;unavailable&quot;) + &quot;. Refresh and review before retrying.&quot;; }
+        finally { if (!signal.aborted) {busy = false; controls();} }
+      };
+      prepare.addEventListener(&quot;click&quot;, () =&gt; void run(async () =&gt; {
+        const saved = await library.prepare();
+        await load(saved.packId, saved.entryId);
+        if (!signal.aborted) output.textContent = &quot;Library ready. Select Read snapshot or Import copy.&quot;;
+      }), {signal});
+      refresh.addEventListener(&quot;click&quot;, () =&gt; void run(async () =&gt; {await load(); if (!signal.aborted) output.textContent = &quot;List refreshed.&quot;;}), {signal});
+      packs.addEventListener(&quot;change&quot;, () =&gt; {chooseEntries(&quot;&quot;); importAttempt = undefined;}, {signal});
+      entries.addEventListener(&quot;change&quot;, () =&gt; {importAttempt = undefined; controls();}, {signal});
+      read.addEventListener(&quot;click&quot;, () =&gt; void run(async () =&gt; {
+        const value = await library.read(packs.value, entries.value);
+        if (!signal.aborted) output.textContent = JSON.stringify(value, null, 2);
+      }), {signal});
+      copy.addEventListener(&quot;click&quot;, () =&gt; void run(async () =&gt; {
+        importAttempt ??= {packId: packs.value, entryId: entries.value, requestId: crypto.randomUUID()};
+        const created = await library.importCopy(importAttempt.packId, importAttempt.entryId, importAttempt.requestId);
+        importAttempt = undefined;
+        if (!signal.aborted) output.textContent = &quot;Imported &quot; + created.kind + &quot;: &quot; + created.id + &quot;. Open Journals to inspect it.&quot;;
+      }), {signal});
+      controls();
+      try { await load(); }
+      catch (error) { if (!signal.aborted) output.textContent = &quot;Error: &quot; + (error.code ?? &quot;unavailable&quot;); }
+      finally { if (!signal.aborted) {busy = false; controls();} }
+    });
+  },
+  stop() {},
+};</code></pre></div>
+<h3 id="librarymjs">library.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">// The source text and snapshot belong to this original example.
+export const journalData = {
+  sections: [{
+    id: &quot;harbor-notice&quot;, title: &quot;Harbor notice&quot;, kind: &quot;text&quot;, audience: &quot;public&quot;,
+    content: {
+      format: &quot;gw-journal-doc-v1&quot;, version: 1,
+      doc: {type: &quot;doc&quot;, content: [{type: &quot;paragraph&quot;, content: [
+        {type: &quot;text&quot;, text: &quot;At sunset, the harbor keeper lights a blue lantern. Bring a coil of rope to join the watch.&quot;},
+      ]}]},
+    },
+  }],
+};
+
+const key = &quot;harbor-library-workflow-v1&quot;;
+const fail = code =&gt; Object.assign(new Error(code), {code});
+
+export function createLibrary({api, storage, signal}) {
+  return {
+    async prepare() {
+      if (!(await api.compendiums.state({}, {signal})).isGM) throw fail(&quot;permission_denied&quot;);
+      let record = await storage.user.get(key);
+      if (record &amp;&amp; record.value?.schema !== 1) throw fail(&quot;invalid_data&quot;);
+      if (!record) record = await storage.user.set(key, {
+        schema: 1,
+        requests: Object.fromEntries([&quot;pack&quot;, &quot;journal&quot;, &quot;body&quot;, &quot;snapshot&quot;].map(name =&gt; [name, crypto.randomUUID()])),
+      }, {expectedRevision: null});
+      const checkpoint = async changes =&gt; {
+        record = await storage.user.set(key, {...record.value, ...changes}, {expectedRevision: record.revision});
+      };
+      // Save request identities before making writes; retries reuse exact inputs.
+      if (!record.value.packId) {
+        const created = await api.compendiums.create({name: &quot;Harbor Library&quot;}, {signal, requestId: record.value.requests.pack});
+        await checkpoint({packId: created.id});
+      }
+      if (!record.value.journalId) {
+        const created = await api.journals.create({title: &quot;Beacon Watch&quot;, journal_type: &quot;diary&quot;}, {signal, requestId: record.value.requests.journal});
+        await checkpoint({journalId: created.journal_id, journalVersion: created.version});
+      }
+      if (!record.value.bodySaved) {
+        await api.journals.update({
+          journal_id: record.value.journalId, version: record.value.journalVersion,
+          title: &quot;Beacon Watch&quot;, visibility: &quot;private&quot;, data: journalData,
+        }, {signal, requestId: record.value.requests.body});
+        await checkpoint({bodySaved: true});
+      }
+      if (!record.value.entryId) {
+        const added = await api.compendiums.add({
+          packId: record.value.packId, kind: &quot;journal&quot;, resourceId: record.value.journalId,
+          name: &quot;Beacon Watch&quot;,
+        }, {signal, requestId: record.value.requests.snapshot});
+        await checkpoint({entryId: added.id});
+      }
+      return record.value;
+    },
+    async read(packId, entryId) {
+      return api.compendiums.read({packId, id: entryId}, {signal});
+    },
+    async importCopy(packId, entryId, requestId) {
+      return api.compendiums.import({packId, id: entryId}, {signal, requestId});
+    },
+  };
+}</code></pre></div>
+<h3 id="maintenancemjs">maintenance.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">const options = signal =&gt; ({signal, requestId: crypto.randomUUID()});
+const editable = packId =&gt; {
+  if (packId.startsWith(&quot;native:&quot;)) throw Object.assign(new Error(&quot;Installed packs are read only&quot;), {code: &quot;invalid_data&quot;});
+};
+export async function shareCampaignPack(api, packId, signal) {
+  editable(packId);
+  const pack = (await api.compendiums.state({}, {signal})).packs.find(row =&gt; row.id === packId);
+  if (!pack) throw Object.assign(new Error(&quot;Pack not found&quot;), {code: &quot;not_found&quot;});
+  return api.compendiums.configure({packId, version: pack.version, name: &quot;Harbor Library revised&quot;, shared: true, locked: false}, options(signal));
+}
+export async function grantInstalledPackRead(api, packId, signal) {
+  if (!packId.startsWith(&quot;native:&quot;)) throw new Error(&quot;Use configure.shared or the native ownership editor for a table pack&quot;);
+  return api.compendiums.setPermissions({packId, level: &quot;read&quot;}, options(signal));
+}
+export async function readBatch(api, packId, entryIds, signal) {
+  return api.compendiums.read({packId, ids: entryIds}, {signal});
+}
+export async function removeSnapshot(api, packId, entryId, signal) {
+  editable(packId);
+  const entry = await api.compendiums.read({packId, id: entryId}, {signal});
+  return api.compendiums.remove({packId, id: entryId, version: entry.version}, options(signal));
+}
+export async function deleteCampaignPack(api, packId, signal) {
+  editable(packId);
+  const pack = (await api.compendiums.state({}, {signal})).packs.find(row =&gt; row.id === packId);
+  if (!pack) throw Object.assign(new Error(&quot;Pack not found&quot;), {code: &quot;not_found&quot;});
+  return api.compendiums.delete({packId, version: pack.version}, options(signal));
+}</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-css">.gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library { position: fixed; top: 64px; left: var(--space-4); z-index: 10; box-sizing: border-box; width: 400px; max-width: calc(100vw - 32px); max-height: 50vh; overflow: auto; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font: 14px/1.5 system-ui, sans-serif; }
+.gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library h3 { font-size: 16px; margin: var(--space-0) var(--space-0) var(--space-2); }
+.gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library label { display: block; margin-top: var(--space-2); }
+.gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library button, .gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library select { font: inherit; margin: var(--space-1); padding: var(--space-1); max-width: 100%; }
+.gw-module-root[data-module-id=&quot;example.harbor-library&quot;] .harbor-library pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-compartilhe-e-mantenha-a-biblioteca">5. Compartilhe e mantenha a biblioteca</h2>
+<p>O pack começa privado. Para compartilhá-lo como GM, integre a função shareCampaignPack de maintenance.mjs a uma ação explícita no seu módulo e passe o packId retornado por prepare. Ela lê a versão atual antes de configure e marca shared true, deixando o pack desbloqueado. Na interface nativa de permissões, confira se concessões explícitas não restringem a conta de teste. Como jogador com leitura, clique Refresh list, selecione o pack e use Read snapshot. Prepare e Import ficam desabilitados; o servidor também rejeita escrita/importação.</p>
+<p>maintenance.mjs também inclui readBatch para 1 a 100 IDs únicos (não misture id e ids), removeSnapshot e deleteCampaignPack. Use-as apenas em sua biblioteca de teste após conferir os IDs. Remover uma entrada usa a versão da entrada; excluir o pack usa a versão do pack lida depois das alterações. Nenhuma dessas ações remove o diário original ou os documentos que já foram importados. Um pack bloqueado precisa ser desbloqueado por configure antes de editar/excluir.</p>
+<p>setPermissions é mostrado em grantInstalledPackRead porque esse método configura packs nativos/instalados, identificados por native:. Para um pack criado na mesa, use configure.shared ou o editor nativo de propriedade. Os arquivos completos acima contêm os payloads reais de todas essas ações.</p>
+<h2 id="6-valide-repeticao-falhas-e-permissoes">6. Valide repetição, falhas e permissões</h2>
+<p>Prepare duas vezes com o mesmo GM e conte um pack e uma entrada. Edite o diário original pela interface, leia o snapshot e confira que ele preserva o conteúdo capturado. Importe, feche/reabra e compare a página. Compartilhe para um jogador, teste leitura e tente importação diretamente pela API: a negação precisa vir do servidor.</p>
+<p>Se uma resposta de escrita se perder, Prepare retoma na mesma conta usando os UUIDs persistidos e o mesmo payload. Cada checkpoint usa expectedRevision; em conflict, atualize a lista/estado antes de tentar novamente. Se o diário foi editado antes do passo de salvar corpo, a revisão antiga é rejeitada e não é substituída silenciosamente: revise o diário e a operação pendente antes de ajustar código/estado. Import copy conserva seu UUID enquanto a tentativa fica no painel; se fechar com resultado desconhecido, inspecione os diários antes de pedir outra importação. Cancelar o contexto não desfaz escrita já confirmada.</p>
+<p>Um erro de rede é erro, não lista vazia. IDs excluídos ou acesso revogado causam not_found/permission_denied; não apague o registro automaticamente nem crie substitutos para esconder o problema. Não reinicialize o workflow para atualizar conteúdo. Para novos bytes de pacote, use version 1.0.1, instale e ative a nova versão; os documentos e o workflow continuam salvos.</p>
+<h2 id="como-usar-a-ia-para-adaptar-esta-biblioteca">Como usar a IA para adaptar esta biblioteca</h2>
+<blockquote><p>Adapte tutorial-compendium-module para uma biblioteca de avisos originais. Leia frontend.json, journals/services.py e compendiums/services.py da release 0.3.0. Preserve journal_id/version, documento rico, snapshot por resourceId, UUIDs de retry e expectedRevision. Mostre todos os arquivos, cliques e testes GM/jogador. Não acrescente content ao manifesto de módulo comum nem atualize snapshots automaticamente. Inclua batch read e manutenção com versões sem excluir conteúdo da campanha.</p></blockquote>
+<p><a href="api.html">API</a> · <a href="tutorial-index.html">Todos os tutoriais</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-system-sheet.html"><span>Anterior ←</span><strong>Como criar e substituir uma ficha completa de sistema</strong></a><a href="tutorial-system-compendiums.html"><span>Próximo →</span><strong>Como incluir compêndios em um sistema</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/schemas/manifest.json">gravewright/modules/contracts/schemas/manifest.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/services.py">gravewright/compendiums/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/content.py">gravewright/compendiums/content.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/catalog.py">gravewright/compendiums/catalog.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/services.py">gravewright/journals/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/data.py">gravewright/journals/data.py</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-que-voce-vai-construir">O que você vai construir</a></li><li><a href="#1-crie-a-pasta-e-entenda-os-arquivos">1. Crie a pasta e entenda os arquivos</a></li><li><a href="#2-empacote-e-instale">2. Empacote e instale</a></li><li><a href="#3-prepare-leia-e-importe">3. Prepare, leia e importe</a></li><li><a href="#4-copie-todos-os-arquivos">4. Copie todos os arquivos</a></li><li><a href="#5-compartilhe-e-mantenha-a-biblioteca">5. Compartilhe e mantenha a biblioteca</a></li><li><a href="#6-valide-repeticao-falhas-e-permissoes">6. Valide repetição, falhas e permissões</a></li><li><a href="#como-usar-a-ia-para-adaptar-esta-biblioteca">Como usar a IA para adaptar esta biblioteca</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

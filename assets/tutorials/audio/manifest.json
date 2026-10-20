@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.audio",
+  "name": "Harbor audio tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Configure native tracks, playlists, spatial sources, scene voices and timed scores with the correct revisions.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

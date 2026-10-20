@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to build chat, dice and ready-check tools | Gravewright</title><meta name="description" content="Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/tutorial-chat-dice.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-chat-dice.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-chat-dice.html"><meta property="og:type" content="article"><meta property="og:title" content="How to build chat, dice and ready-check tools | Gravewright"><meta property="og:description" content="Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness."><meta property="og:url" content="https://gravewright.com/docs/en/tutorial-chat-dice.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to build chat, dice and ready-check tools","description":"Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness.","inLanguage":"en","url":"https://gravewright.com/docs/en/tutorial-chat-dice.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/tutorial-chat-dice.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Implementation tutorials</p><ul><li><a href="tutorial-index.html">Learn to build modules and systems</a></li><li><a href="tutorial-first-module.html">Create, install and update your first module</a></li><li><a href="tutorial-capability-map.html">All extension capabilities and where to implement them</a></li><li><a href="tutorial-complete-system.html">How to create a complete original system package</a></li><li><a href="tutorial-journal-module.html">How to create a journal module</a></li><li><a href="tutorial-create-journal.html">Create a journal from a module, from scratch</a></li><li><a href="tutorial-sheet-module.html">How to create a module that acts on a sheet</a></li><li><a href="tutorial-system-sheet.html">How to build and replace a complete system sheet</a></li><li><a href="tutorial-compendium-module.html">How to create a compendium module</a></li><li><a href="tutorial-system-compendiums.html">How to include compendiums in a system</a></li><li><a href="tutorial-maps.html">How to create a scene tools module</a></li><li><a href="tutorial-tokens.html">How to create a token tools module</a></li><li><a href="tutorial-combat.html">How to create a combat tools module</a></li><li><a href="tutorial-items.html">How to build item and inventory tools</a></li><li><a href="tutorial-cards.html">How to build deck and card tools</a></li><li><a href="tutorial-audio.html">How to build scene audio and soundtrack tools</a></li><li><a href="tutorial-chat-dice.html" aria-current="page">How to build chat, dice and ready-check tools</a></li><li><a href="tutorial-quests.html">How to create quest automation and quest-board actions</a></li><li><a href="tutorial-roll-tables.html">How to create, draw and reset weighted roll tables</a></li><li><a href="tutorial-journal-management.html">How to create, organize and share journal documents</a></li><li><a href="tutorial-actors.html">Build an actor-directory module</a></li><li><a href="tutorial-storage.html">Persist module settings safely</a></li><li><a href="tutorial-assets.html">Upload and use module and campaign files</a></li><li><a href="tutorial-localization-events.html">Translate a module and react to changes</a></li><li><a href="tutorial-sdk-operations.html">Maintain a module using the original host.call SDK</a></li><li><a href="tutorial-customize-ui.html">Build Customize forms and native module windows</a></li><li><a href="tutorial-server-integration.html">Create a trusted Django integration and server hooks</a></li><li><a href="tutorial-language-package.html">How to create and activate an installation language package</a></li><li><a href="tutorial-publish-module.html">How to version, sign and distribute a module</a></li></ul></div><div class="kb-nav-group"><p>Examples by kind</p><ul><li><a href="examples-index.html">Complete examples by kind</a></li><li><a href="example-package-browser.html">Browser module: a campaign summary</a></li><li><a href="example-package-system.html">System package: an editable character sheet</a></li><li><a href="example-package-language.html">Language package: Portuguese and Spanish catalogs</a></li><li><a href="example-package-django.html">Django package: an owner-only server endpoint</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Readable actor counter</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Actor sheet revision inspector</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Linked or independent token inspector</a></li><li><a href="example-surface-item-directory.html">item.directory: Item counts by type</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Item data inspector</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Scene broadcast status</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Scene information control</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Scene center marker</a></li><li><a href="example-surface-chat-log.html">chat.log: Visible chat statistics</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Current turn summary</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Journal outline</a></li><li><a href="example-surface-preferences.html">preferences: Persistent personal density preference</a></li><li><a href="example-surface-table-interface.html">table.interface: Authorized document search</a></li><li><a href="examples-search-kinds.html">Search: all 7 kinds and the empty filter</a></li><li><a href="examples-actor-image-kinds.html">Actor images: portrait and token</a></li><li><a href="examples-compendium-entry-kinds.html">Compendium entries: all five kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Compendium packs: 3 installed and 7 local types</a></li><li><a href="examples-blueprints.html">Blueprint examples for every object kind</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: open, close and preserve a lock</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: a two-state switch and an Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: turn the mechanism and set the flame</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: a pressure plate with first/last occupancy</a></li><li><a href="example-blueprint-connections.html">Connection kinds: execution and data, a complete graph</a></li><li><a href="example-blueprint-nodes.html">All 42 Blueprint node types, with complete examples</a></li></ul></div><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>How to build chat, dice and ready-check tools</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Implementation tutorials <span aria-hidden="true">/</span> 13 min read</span><h1>How to build chat, dice and ready-check tools</h1><p class="kb-lead">Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/chat-dice.png" aria-label="Open full screenshot: Installed Chat, dice and lobby module after running its history recipe. Gravewright 0.3.0, English interface."><img src="../../assets/tutorials/previews/chat-dice.png" width="1440" height="1000" alt="Installed Chat, dice and lobby module after running its history recipe. Gravewright 0.3.0, English interface." loading="lazy" decoding="async"></a><figcaption>Installed Chat, dice and lobby module after running its history recipe. Gravewright 0.3.0, English interface. · Open full screenshot ↗</figcaption></figure><div class="kb-prose"><h2 id="the-project-you-will-build">The project you will build</h2>
+<p>Build a native-modal workbench with twelve independent actions. Begin with Read history, send a public message, test whisper/GM/emote delivery, roll public and secret dice, then inspect and update the lobby. Moderation is intentionally explicit and restricted to a disposable campaign.</p>
+<p>Target host: <strong>Gravewright 0.3.0</strong>. Actions run only when you click Run action, using the signed-in account. The demonstration panel is English. Each recipe specifies inputs and an observable result.</p>
+<h2 id="1-create-the-files">1. Create the files</h2>
+<p>Create a folder named chat-dice. Save the complete files below as UTF-8, or <a href="../../assets/tutorials/chat-dice/chat-dice-source.zip">download the project</a>. manifest.json belongs at the root. No npm dependencies or JavaScript build is required.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copy</button></div><pre><code data-code="code-1" class="language-text">chat-dice/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Use a disposable campaign with two members and one original actor. Enable native ready checks and command search through the installation settings if you want those recipes; their APIs report permission_denied when the feature is disabled. Copy a player display name from the table and document UUIDs from native lists.</p>
+<h2 id="2-package-install-and-activate">2. Package, install and activate</h2>
+<p>From the project folder, run in PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copy</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../chat-dice-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../chat-dice-1.0.0.zip</code></pre></div>
+<p>On Linux/macOS, replace python with python3 in the same commands. The archive listing must show manifest.json at its root. As installation owner, open Inside → Modules → Install module → Install from ZIP, select the ZIP and click Install. As GM, open the campaign, select its Gravewright button → Extensions and Activate version 1.0.0 of Chat, dice and lobby. Close that menu and click Chat, dice and lobby. See <a href="tutorial-first-module.html">your first module</a> for screen-by-screen instructions.</p>
+<p>The package stays inactive until selected for the table. Test one demonstration extension at a time because their launchers share a position. For changed bytes, increment version to 1.0.1, build another ZIP, install and activate that version; do not edit installed files.</p>
+<h2 id="3-run-each-recipe">3. Run each recipe</h2>
+<h3 id="read-visible-chat-history">Read visible chat history</h3>
+<p>Leave Scene UUID empty to use the broadcast scene, or enter an authorized scene UUID. The returned array is the visible recent history, not every message ever sent.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copy</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,signal},v)=&gt;api.chat.history(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{},{signal})</code></pre></div>
+<p><strong>Expected result:</strong> Message IDs, authors, text and visibility for this account.</p>
+<p><strong>How to verify:</strong> Compare sender, whisper recipient and an unrelated player. Hidden messages must be absent.</p>
+<h3 id="send-one-public-message">Send one public message</h3>
+<p>Enter original text. This recipe rejects a leading slash so the public action cannot accidentally become a command. Optional scene selection uses sceneId.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copy</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,signal},v)=&gt;{const text=v.text.trim();if(text.startsWith(&#39;/&#39;))throw new Error(&#39;Use a dedicated command recipe.&#39;);return api.chat.send({text,...(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}</code></pre></div>
+<p><strong>Expected result:</strong> One visible chat message and its server ID.</p>
+<p><strong>How to verify:</strong> Check native chat as two table members. Run again only if you intend a second message.</p>
+<h3 id="send-a-recipient-bound-whisper">Send a recipient-bound whisper</h3>
+<p>Enter the exact display name of a member in this campaign, including spaces. Native /w parsing resolves members, not a client-supplied audience list. Identical display names can resolve multiple matching members.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copy</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/w &#39;+v.recipient.trim()+&#39; &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Expected result:</strong> The server returns a whisper visible to sender and matching recipients.</p>
+<p><strong>How to verify:</strong> Read history as recipient and nonrecipient; only the former receives the content. Use unique test names.</p>
+<h3 id="send-a-message-to-the-gms">Send a message to the GMs</h3>
+<p>The /gm native command addresses campaign GMs plus the sender. It is a chat command, not a visibility field on chat.send.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copy</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/gm &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Expected result:</strong> A recipient-filtered message in GM and sender chat.</p>
+<p><strong>How to verify:</strong> Open the native directory or document and compare its server state. Compare GM and player views; only authorized content may appear.</p>
+<h3 id="publish-an-emote">Publish an emote</h3>
+<p>Enter an action. The native /me command marks the message as an emote and retains normal public delivery.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copy</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/me &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Expected result:</strong> A chat message with metadata.emote true.</p>
+<p><strong>How to verify:</strong> Open the native directory or document and compare its server state. Compare GM and player views; only authorized content may appear.</p>
+<h3 id="roll-and-publish-public-or-gm-only-dice">Roll and publish public or GM-only dice</h3>
+<p>Enter an expression supported by the native parser, label and repeat count. GM-only result chooses visibility gm. This action persists and publishes a roll; it is not a local calculator.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copy</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,signal},v)=&gt;{if(!Number.isInteger(v.repeat)||v.repeat&lt;1||v.repeat&gt;12)throw new Error(&#39;Repeat must be 1 to 12.&#39;);return api.dice.roll(v.expression,{label:v.label,repeat:v.repeat,visibility:v.secret?&#39;gm&#39;:&#39;public&#39;},{signal,requestId:crypto.randomUUID()});}</code></pre></div>
+<p><strong>Expected result:</strong> One durable submission containing the requested roll(s), with the selected audience.</p>
+<p><strong>How to verify:</strong> Compare public and GM-only rolls in two accounts. Reject repeat 0 or 13. A retry of the same logical submission must reuse its original UUID rather than roll again.</p>
+<h3 id="moderate-one-message">Moderate one message</h3>
+<p>As GM, copy the numeric ID from history. This removes that message content and attachments while preserving retry identity.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copy</button></div><pre><code data-code="code-9" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(!/^\d+$/.test(v.messageId))throw new Error(&#39;Use the numeric chat ID from history.&#39;);return api.chat.remove(v.messageId,{signal});}</code></pre></div>
+<p><strong>Expected result:</strong> A removed count; subsequent history omits that message.</p>
+<p><strong>How to verify:</strong> Moderate only a synthetic message created for this tutorial. A player must be rejected by the server.</p>
+<h3 id="clear-the-disposable-campaign-chat">Clear the disposable campaign chat</h3>
+<p>Use only a disposable campaign. Type CLEAR CHAT. This GM moderation operation is campaign-wide, including scenes, rather than just the history currently displayed.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copy</button></div><pre><code data-code="code-10" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(v.confirmation!==&#39;CLEAR CHAT&#39;)throw new Error(&#39;Type CLEAR CHAT to clear the whole campaign chat.&#39;);return api.chat.clear({signal});}</code></pre></div>
+<p><strong>Expected result:</strong> All undeleted messages in this campaign are removed.</p>
+<p><strong>How to verify:</strong> Read history in another scene and confirm it is also cleared. Submission receipts remain.</p>
+<h3 id="inspect-the-ready-check-and-selectable-actors">Inspect the ready check and selectable actors</h3>
+<p>The installation must have its native ready check enabled. Read members, summary and the actors this account may select.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copy</button></div><pre><code data-code="code-11" class="language-javascript">async ({api,signal})=&gt;api.table.lobby({signal})</code></pre></div>
+<p><strong>Expected result:</strong> members, actors and summary.ready/total.</p>
+<p><strong>How to verify:</strong> Compare a read-only actor with an actor owned by this player; only controllable actors are selectable.</p>
+<h3 id="update-this-members-ready-state">Update this member’s ready state</h3>
+<p>Set the checkbox, a selectable actor UUID from the lobby result, and assets_state. Leave actor UUID blank to clear the selection. The API chooses the current member; no user ID can impersonate someone else.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-12">Copy</button></div><pre><code data-code="code-12" class="language-javascript">async ({api,signal},v)=&gt;{if(![&#39;unknown&#39;,&#39;loading&#39;,&#39;ready&#39;,&#39;error&#39;].includes(v.assets))throw new Error(&#39;Choose a native assets_state.&#39;);if(v.actorId.trim()){const lobby=await api.table.lobby({signal});if(!lobby.actors.some(actor=&gt;actor.id===v.actorId.trim()))throw new Error(&#39;Actor is not selectable.&#39;);}return api.table.updateLobby({is_ready:v.ready,assets_state:v.assets,selected_actor_id:v.actorId.trim()||null},{signal});}</code></pre></div>
+<p><strong>Expected result:</strong> The returned lobby has this member’s new selection and readiness.</p>
+<p><strong>How to verify:</strong> Use two accounts: only the current member’s row changes. Unknown actor or assets state must fail.</p>
+<h3 id="search-all-seven-document-kinds">Search all seven document kinds</h3>
+<p>Use at least two characters. Blank kind searches all; accepted filters are actor, item, journal, quest, quest_board, scene and compendium. A result is a search projection with title, kind, snippet and actions, not a full document.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-13">Copy</button></div><pre><code data-code="code-13" class="language-javascript">async ({api,signal},v)=&gt;{const kind=v.kind.trim();if(![&#39;&#39;,&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;quest&#39;,&#39;quest_board&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(kind))throw new Error(&#39;Unknown search kind.&#39;);return api.table.search(v.query,{...(kind?{kind}:{}),signal});}</code></pre></div>
+<p><strong>Expected result:</strong> An array of up to 20 authorized matches.</p>
+<p><strong>How to verify:</strong> Search the same private title as GM and player; it must be absent for the player. Test quest separately from journal.</p>
+<h3 id="revalidate-a-recent-document">Revalidate a recent document</h3>
+<p>Use one previously read result ID. Recent references use type journal for quests and quest boards, while search kind distinguishes those categories. Up to 12 unique references can be supplied in an array.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-14">Copy</button></div><pre><code data-code="code-14" class="language-javascript">async ({api,signal},v)=&gt;{if(![&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(v.type))throw new Error(&#39;Invalid reference type.&#39;);return api.table.search(&#39;&#39;,{recent:[{id:v.id,type:v.type}],signal});}</code></pre></div>
+<p><strong>Expected result:</strong> Only references still readable by the current member are returned.</p>
+<p><strong>How to verify:</strong> Remove the player’s read permission, then repeat the same recent reference. It must disappear.</p>
+<h2 id="4-understand-and-adapt-the-complete-files">4. Understand and adapt the complete files</h2>
+<p>main.mjs renders the launcher and form. recipes.mjs owns behavior: change the chosen recipe’s run function while keeping its signature. The form passes real number, boolean and File values, blocks overlapping requests and renders using textContent. It does not evaluate user-provided code. api, host, assets and storage belong to the mount; signal cancels work on deactivation. The modal stays open during pending work and is released when the mount aborts. Each business function remains responsible for revisions, permissions and transaction sequencing.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-15">Copy</button></div><pre><code data-code="code-15" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.chat-dice&quot;,
+  &quot;name&quot;: &quot;Chat, dice and lobby&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-16">Copy</button></div><pre><code data-code="code-16" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Chat, dice and lobby&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-chat-dice&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-17">Copy</button></div><pre><code data-code="code-17" class="language-javascript">export const recipes=[
+{
+  id:&quot;history&quot;,
+  label:&quot;Read visible chat history&quot;,
+  description:&quot;Leave Scene UUID empty to use the broadcast scene, or enter an authorized scene UUID. The returned array is the visible recent history, not every message ever sent.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.history(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{},{signal})
+},
+{
+  id:&quot;public-message&quot;,
+  label:&quot;Send one public message&quot;,
+  description:&quot;Enter original text. This recipe rejects a leading slash so the public action cannot accidentally become a command. Optional scene selection uses sceneId.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Public message&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;The harbor gates are open.&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{const text=v.text.trim();if(text.startsWith(&#39;/&#39;))throw new Error(&#39;Use a dedicated command recipe.&#39;);return api.chat.send({text,...(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}
+},
+{
+  id:&quot;whisper&quot;,
+  label:&quot;Send a recipient-bound whisper&quot;,
+  description:&quot;Enter the exact display name of a member in this campaign, including spaces. Native /w parsing resolves members, not a client-supplied audience list. Identical display names can resolve multiple matching members.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;recipient&quot;,
+    &quot;label&quot;: &quot;Exact member display name&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Private message&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Meet me at the lighthouse.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/w &#39;+v.recipient.trim()+&#39; &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;gm-message&quot;,
+  label:&quot;Send a message to the GMs&quot;,
+  description:&quot;The /gm native command addresses campaign GMs plus the sender. It is a chat command, not a visibility field on chat.send.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Message to GMs&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;A hidden passage was found.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/gm &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;emote&quot;,
+  label:&quot;Publish an emote&quot;,
+  description:&quot;Enter an action. The native /me command marks the message as an emote and retains normal public delivery.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Emote text&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;lights the harbor beacon.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/me &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;dice&quot;,
+  label:&quot;Roll and publish public or GM-only dice&quot;,
+  description:&quot;Enter an expression supported by the native parser, label and repeat count. GM-only result chooses visibility gm. This action persists and publishes a roll; it is not a local calculator.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;expression&quot;,
+    &quot;label&quot;: &quot;Dice expression&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;2d6+1&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;label&quot;,
+    &quot;label&quot;: &quot;Label, up to 48 characters&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Harbor check&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;repeat&quot;,
+    &quot;label&quot;: &quot;Repeat, integer 1 to 12&quot;,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;value&quot;: 1,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;secret&quot;,
+    &quot;label&quot;: &quot;GM-only result&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(!Number.isInteger(v.repeat)||v.repeat&lt;1||v.repeat&gt;12)throw new Error(&#39;Repeat must be 1 to 12.&#39;);return api.dice.roll(v.expression,{label:v.label,repeat:v.repeat,visibility:v.secret?&#39;gm&#39;:&#39;public&#39;},{signal,requestId:crypto.randomUUID()});}
+},
+{
+  id:&quot;remove-message&quot;,
+  label:&quot;Moderate one message&quot;,
+  description:&quot;As GM, copy the numeric ID from history. This removes that message content and attachments while preserving retry identity.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;messageId&quot;,
+    &quot;label&quot;: &quot;Numeric message ID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(!/^\d+$/.test(v.messageId))throw new Error(&#39;Use the numeric chat ID from history.&#39;);return api.chat.remove(v.messageId,{signal});}
+},
+{
+  id:&quot;clear-chat&quot;,
+  label:&quot;Clear the disposable campaign chat&quot;,
+  description:&quot;Use only a disposable campaign. Type CLEAR CHAT. This GM moderation operation is campaign-wide, including scenes, rather than just the history currently displayed.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;confirmation&quot;,
+    &quot;label&quot;: &quot;Type CLEAR CHAT&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(v.confirmation!==&#39;CLEAR CHAT&#39;)throw new Error(&#39;Type CLEAR CHAT to clear the whole campaign chat.&#39;);return api.chat.clear({signal});}
+},
+{
+  id:&quot;lobby&quot;,
+  label:&quot;Inspect the ready check and selectable actors&quot;,
+  description:&quot;The installation must have its native ready check enabled. Read members, summary and the actors this account may select.&quot;,
+  fields:[],
+  run:async ({api,signal})=&gt;api.table.lobby({signal})
+},
+{
+  id:&quot;set-ready&quot;,
+  label:&quot;Update this member’s ready state&quot;,
+  description:&quot;Set the checkbox, a selectable actor UUID from the lobby result, and assets_state. Leave actor UUID blank to clear the selection. The API chooses the current member; no user ID can impersonate someone else.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;ready&quot;,
+    &quot;label&quot;: &quot;I am ready&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;actorId&quot;,
+    &quot;label&quot;: &quot;Selected owned actor UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  },
+  {
+    &quot;name&quot;: &quot;assets&quot;,
+    &quot;label&quot;: &quot;Asset state: unknown/loading/ready/error&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;ready&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(![&#39;unknown&#39;,&#39;loading&#39;,&#39;ready&#39;,&#39;error&#39;].includes(v.assets))throw new Error(&#39;Choose a native assets_state.&#39;);if(v.actorId.trim()){const lobby=await api.table.lobby({signal});if(!lobby.actors.some(actor=&gt;actor.id===v.actorId.trim()))throw new Error(&#39;Actor is not selectable.&#39;);}return api.table.updateLobby({is_ready:v.ready,assets_state:v.assets,selected_actor_id:v.actorId.trim()||null},{signal});}
+},
+{
+  id:&quot;search&quot;,
+  label:&quot;Search all seven document kinds&quot;,
+  description:&quot;Use at least two characters. Blank kind searches all; accepted filters are actor, item, journal, quest, quest_board, scene and compendium. A result is a search projection with title, kind, snippet and actions, not a full document.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;query&quot;,
+    &quot;label&quot;: &quot;At least two search characters&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Harbor&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;kind&quot;,
+    &quot;label&quot;: &quot;Kind, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{const kind=v.kind.trim();if(![&#39;&#39;,&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;quest&#39;,&#39;quest_board&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(kind))throw new Error(&#39;Unknown search kind.&#39;);return api.table.search(v.query,{...(kind?{kind}:{}),signal});}
+},
+{
+  id:&quot;recent&quot;,
+  label:&quot;Revalidate a recent document&quot;,
+  description:&quot;Use one previously read result ID. Recent references use type journal for quests and quest boards, while search kind distinguishes those categories. Up to 12 unique references can be supplied in an array.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;type&quot;,
+    &quot;label&quot;: &quot;Reference type: actor/item/journal/scene/compendium&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;journal&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Previously seen document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(![&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(v.type))throw new Error(&#39;Invalid reference type.&#39;);return api.table.search(&#39;&#39;,{recent:[{id:v.id,type:v.type}],signal});}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-18">Copy</button></div><pre><code data-code="code-18" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.chat-dice&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-chat-dice { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-chat-dice label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-chat-dice input, .tutorial-workbench-chat-dice select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-chat-dice pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-chat-dice button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-19">Copy</button></div><pre><code data-code="code-19" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissions-failures-and-final-test">5. Permissions, failures and final test</h2>
+<p>Every action uses the supplied scoped API and a signal. Mutation submissions use a fresh UUID, except lobby/moderation whose native service signatures do not use receipts. To retry the same chat or dice submission in your own integration, retain its UUID and identical payload; clicking Run again is a new logical action. Use two accounts for private audiences and revoked document access. On conflict, read and review state before a new command. The server filters membership, scenes, messages and resource access; disabled buttons are not authorization.</p>
+<h2 id="how-to-use-ai-to-extend-this-project">How to use AI to extend this project</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-20">Copy</button></div><pre><code data-code="code-20" class="language-text">Extend this complete chat-dice project on Gravewright 0.3.0 with [one feature]. Read modules/frontend.py, chat/services.py, dice/services.py and table/services.py. Keep native chat command parsing, real lobby snake_case payloads, audience filtering, request UUIDs, permissions and cancellation. Show all files and validate with two users, private messages, stale access and disabled installation features.</code></pre></div>
+<p><a href="tutorial-index.html">All tutorials</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue reading"><a href="tutorial-audio.html"><span>Previous ←</span><strong>How to build scene audio and soundtrack tools</strong></a><a href="tutorial-quests.html"><span>Next →</span><strong>How to create quest automation and quest-board actions</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-create-system.html">How to use AI to create an RPG system</a><a href="ai-create-module.html">How to use AI to create a browser module</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/chat/services.py">gravewright/chat/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/services.py">gravewright/dice/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/services.py">gravewright/table/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/frontend.py">gravewright/modules/frontend.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/domain-api.js">gravewright/modules/static/gravewright_modules/domain-api.js</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#the-project-you-will-build">The project you will build</a></li><li><a href="#1-create-the-files">1. Create the files</a></li><li><a href="#2-package-install-and-activate">2. Package, install and activate</a></li><li><a href="#3-run-each-recipe">3. Run each recipe</a></li><li><a href="#4-understand-and-adapt-the-complete-files">4. Understand and adapt the complete files</a></li><li><a href="#5-permissions-failures-and-final-test">5. Permissions, failures and final test</a></li><li><a href="#how-to-use-ai-to-extend-this-project">How to use AI to extend this project</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

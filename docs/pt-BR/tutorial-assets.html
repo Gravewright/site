@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Enviar e usar arquivos de módulos e campanhas | Gravewright</title><meta name="description" content="Usar File/Blob, imagens de ator, cartas, provedores nativos e downloads."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-assets.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-assets.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-assets.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-assets.html"><meta property="og:type" content="article"><meta property="og:title" content="Enviar e usar arquivos de módulos e campanhas | Gravewright"><meta property="og:description" content="Usar File/Blob, imagens de ator, cartas, provedores nativos e downloads."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-assets.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Enviar e usar arquivos de módulos e campanhas","description":"Usar File/Blob, imagens de ator, cartas, provedores nativos e downloads.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-assets.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-assets.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html" aria-current="page">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Enviar e usar arquivos de módulos e campanhas</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 9 min de leitura</span><h1>Enviar e usar arquivos de módulos e campanhas</h1><p class="kb-lead">Usar File/Blob, imagens de ator, cartas, provedores nativos e downloads.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/asset-workshop.png" aria-label="Abrir captura completa: O módulo de arquivos enviou um retrato original pelo SDK multipart real. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/asset-workshop.png" width="1440" height="1000" alt="O módulo de arquivos enviou um retrato original pelo SDK multipart real. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>O módulo de arquivos enviou um retrato original pelo SDK multipart real. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie módulo que trabalha com arquivos reais. Formulários enviam objetos File ao SDK multipart público. Cada receita explica a biblioteca nativa que possui o ID retornado. Arquivos do pacote ficam no tutorial seguinte de tradução/eventos.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta asset-workshop. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/asset-workshop/asset-workshop-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">asset-workshop/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../asset-workshop-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../asset-workshop-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Upload and use module and campaign files. Feche o menu e clique no botão Upload and use module and campaign files. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="listar-arquivos-reutilizaveis-da-campanha">Listar arquivos reutilizáveis da campanha</h3>
+<p>Use campanha com arquivo nativo suportado, como PDF original no sistema PDF. A operação lista arquivos de modelo de ator sem ator associado, não todo mapa/áudio.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({host,signal}) =&gt; host.call(&#39;asset.list&#39;,{}, {signal})</code></pre></div>
+<p><strong>Resultado esperado:</strong> items com id, name, contentType e createdAt.</p>
+<p><strong>Como conferir:</strong> Compare com a biblioteca nativa de modelos/arquivos; array vazio é válido.</p>
+<h3 id="enviar-arquivo-real-suportado-por-um-provedor">Enviar arquivo real suportado por um provedor</h3>
+<p>Escolha PDF pequeno e válido de sua autoria em campanha PDF. asset.upload seleciona provedor e validador registrados; não é armazenamento de binário arbitrário.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({host,signal},v) =&gt; {
+  if(!(v.file instanceof File)) throw new Error(&#39;Choose a file&#39;);
+  return host.call(&#39;asset.upload&#39;,{file:v.file},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> DTO com ID do arquivo; conteúdo sem suporte falha com invalid_data.</p>
+<p><strong>Como conferir:</strong> Liste novamente e confira o nome. Teste arquivo de texto e confira a recusa.</p>
+<h3 id="ler-arquivo-baixavel-como-blob">Ler arquivo baixável como Blob</h3>
+<p>Cole ID retornado em Listar. O retorno contém Blob, não URL. Uma interface pode criar URL de objeto para download e deve revogá-la ao terminar.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({host,signal},v) =&gt; {
+  const result=await host.call(&#39;asset.download&#39;,{id:v.id},{signal});
+  return {name:result.name,contentType:result.contentType,size:result.size,blobBytes:result.blob.size};
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Metadados e size/blobBytes iguais, sem expor conteúdo do arquivo na página.</p>
+<p><strong>Como conferir:</strong> Compare o tamanho com o original. ID de outra campanha não deve ser legível.</p>
+<h3 id="enviar-retrato-ou-arte-de-token">Enviar retrato ou arte de token</h3>
+<p>Use portrait e depois token com ator descartável editável. Multipart exige File real. Host valida limites e faz conversão.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({host,signal},v) =&gt; {
+  if(![&#39;portrait&#39;,&#39;token&#39;].includes(v.kind))throw new Error(&#39;kind must be portrait or token&#39;);
+  if(!(v.file instanceof File))throw new Error(&#39;Choose an image&#39;);
+  return host.call(&#39;actor.image.upload&#39;,{id:v.id,kind:v.kind,file:v.file},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> URL da imagem salva. actor.version muda; releia antes de gravar novamente.</p>
+<p><strong>Como conferir:</strong> Reabra ator e confira ambas imagens. Jogador só de leitura e imagem inválida devem falhar.</p>
+<h3 id="enviar-frenteverso-para-um-baralho">Enviar frente/verso para um baralho</h3>
+<p>Como GM, escolha imagem original e finalidade. Use assetId retornado no tutorial de definição de cartas, não URL externa.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({host,signal},v) =&gt; {
+  if(![&#39;card_front&#39;,&#39;card_back&#39;].includes(v.purpose))throw new Error(&#39;Choose card_front or card_back&#39;);
+  return host.call(&#39;card.asset.upload&#39;,{purpose:v.purpose,file:v.file},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> assetId da biblioteca nativa de imagens de carta.</p>
+<p><strong>Como conferir:</strong> Defina baralho com front_asset_id/back_asset_id usando esse ID e confira em Cards.</p>
+<h3 id="apagar-apenas-arquivo-reutilizavel-de-teste">Apagar apenas arquivo reutilizável de teste</h3>
+<p>Selecione só o arquivo reutilizável sem ator que você enviou. Remoção nativa verifica provedor e referências. Não exclui caminhos arbitrários de mídia.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,signal},v) =&gt; {
+  if(!v.confirm)throw new Error(&#39;Confirm the disposable asset&#39;);
+  await api.actors.deleteAsset({id:v.id},{requestId:crypto.randomUUID(),signal});
+  return {deleted:v.id};
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Arquivo removido pelo domínio nativo de atores.</p>
+<p><strong>Como conferir:</strong> Liste novamente; deve estar ausente. IDs de imagem pertencente ao ator não são aceitos aqui.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.asset-workshop&quot;,
+  &quot;name&quot;: &quot;Upload and use module and campaign files&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Use File/Blob, actor images, card assets, native file providers and downloads.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Upload and use module and campaign files&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-asset-workshop&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">export const recipes=[
+{
+  id:&quot;list&quot;,
+  label:&quot;List reusable campaign assets&quot;,
+  description:&quot;Use a test campaign with a native-supported asset, such as an original PDF in the PDF system. This operation lists unattached actor-template assets, not every map/audio file.&quot;,
+  fields:[],
+  run:async ({host,signal}) =&gt; host.call(&#39;asset.list&#39;,{}, {signal})
+},
+{
+  id:&quot;upload&quot;,
+  label:&quot;Upload a real provider-supported file&quot;,
+  description:&quot;Choose your own small valid PDF on a PDF campaign. asset.upload selects a registered content provider and its validator; it is not an arbitrary binary file store.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;file&quot;,
+    &quot;label&quot;: &quot;Original supported file&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;file&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  if(!(v.file instanceof File)) throw new Error(&#39;Choose a file&#39;);
+  return host.call(&#39;asset.upload&#39;,{file:v.file},{signal});
+}
+},
+{
+  id:&quot;download&quot;,
+  label:&quot;Read a downloadable file as a Blob&quot;,
+  description:&quot;Paste an asset ID from List. The result contains a Blob; it is not a URL string. A UI may create an object URL for download and must revoke it afterward.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Reusable asset ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  const result=await host.call(&#39;asset.download&#39;,{id:v.id},{signal});
+  return {name:result.name,contentType:result.contentType,size:result.size,blobBytes:result.blob.size};
+}
+},
+{
+  id:&quot;actor-image&quot;,
+  label:&quot;Upload portrait or token artwork&quot;,
+  description:&quot;Use portrait, then token, with an editable disposable actor. Multipart requires a real File. Limits and conversion are enforced by the host.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Actor ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;kind&quot;,
+    &quot;label&quot;: &quot;Image kind&quot;,
+    &quot;value&quot;: &quot;portrait&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;file&quot;,
+    &quot;label&quot;: &quot;Original PNG/JPEG/WebP&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;file&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  if(![&#39;portrait&#39;,&#39;token&#39;].includes(v.kind))throw new Error(&#39;kind must be portrait or token&#39;);
+  if(!(v.file instanceof File))throw new Error(&#39;Choose an image&#39;);
+  return host.call(&#39;actor.image.upload&#39;,{id:v.id,kind:v.kind,file:v.file},{signal});
+}
+},
+{
+  id:&quot;card-image&quot;,
+  label:&quot;Upload front/back artwork for a deck&quot;,
+  description:&quot;As GM, choose an original image and purpose. Paste the returned assetId into the card-definition tutorial, not an external URL.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;purpose&quot;,
+    &quot;label&quot;: &quot;Purpose&quot;,
+    &quot;value&quot;: &quot;card_front&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;file&quot;,
+    &quot;label&quot;: &quot;Original PNG/JPEG/WebP&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;file&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  if(![&#39;card_front&#39;,&#39;card_back&#39;].includes(v.purpose))throw new Error(&#39;Choose card_front or card_back&#39;);
+  return host.call(&#39;card.asset.upload&#39;,{purpose:v.purpose,file:v.file},{signal});
+}
+},
+{
+  id:&quot;delete&quot;,
+  label:&quot;Delete only a reusable tutorial asset&quot;,
+  description:&quot;Select only the unattached reusable asset you uploaded. Native deletion checks provider support and updates references. This does not delete arbitrary media paths.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Reusable asset ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;This is my disposable asset&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v) =&gt; {
+  if(!v.confirm)throw new Error(&#39;Confirm the disposable asset&#39;);
+  await api.actors.deleteAsset({id:v.id},{requestId:crypto.randomUUID(),signal});
+  return {deleted:v.id};
+}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.asset-workshop&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-asset-workshop { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-asset-workshop label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-asset-workshop input, .tutorial-workbench-asset-workshop select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-asset-workshop pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-asset-workshop button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Execute gravações apenas em campanha nova de desenvolvimento com recursos originais. Esconder controles não substitui autorização no servidor. Teste GM, jogador só de leitura, UUID ausente, ID de outra campanha, falha de rede e desativação durante requisição. conflict exige nova leitura e decisão do usuário; não force repetição silenciosa. Cada nova ação lógica precisa de requestId novo. Reutilize um UUID apenas para repetir aquela operação quando o serviço suporta recibos. Leitura e escrita são transações separadas; confira estado salvo após falha parcial.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-text">Adapte o módulo completo asset-workshop para [objetivo] no Gravewright 0.3.0. Leia o serviço público e a receita correspondente. Preserve projeções autorizadas, revisões opacas, UUIDs, cancelamento e descarte. Entregue arquivos completos, nova versão imutável e testes explícitos de GM/jogador e falhas.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-storage.html"><span>Anterior ←</span><strong>Salvar configurações e preferências do módulo</strong></a><a href="tutorial-localization-events.html"><span>Próximo →</span><strong>Traduzir um módulo e reagir a eventos</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/operations.py">gravewright/modules/operations.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/browser-bridge.js">gravewright/modules/static/gravewright_modules/browser-bridge.js</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

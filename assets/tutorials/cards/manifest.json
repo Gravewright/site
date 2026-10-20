@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.cards",
+  "name": "Harbor card tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Create reusable deck definitions, draw, reveal, move, transfer and recover cards with real ownership.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

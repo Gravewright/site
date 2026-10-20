@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Manter módulo que usa o SDK original host.call | Gravewright</title><meta name="description" content="DTOs concretos de ator/token, revisões opacas e os demais contratos multipart/locais."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-sdk-operations.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-sdk-operations.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-sdk-operations.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-sdk-operations.html"><meta property="og:type" content="article"><meta property="og:title" content="Manter módulo que usa o SDK original host.call | Gravewright"><meta property="og:description" content="DTOs concretos de ator/token, revisões opacas e os demais contratos multipart/locais."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-sdk-operations.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Manter módulo que usa o SDK original host.call","description":"DTOs concretos de ator/token, revisões opacas e os demais contratos multipart/locais.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-sdk-operations.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-sdk-operations.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html" aria-current="page">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Manter módulo que usa o SDK original host.call</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 10 min de leitura</span><h1>Manter módulo que usa o SDK original host.call</h1><p class="kb-lead">DTOs concretos de ator/token, revisões opacas e os demais contratos multipart/locais.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/sdk-compat.png" aria-label="Abrir captura completa: Módulo Original SDK workshop instalado após executar a receita pages. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/sdk-compat.png" width="1440" height="1000" alt="Módulo Original SDK workshop instalado após executar a receita pages. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Original SDK workshop instalado após executar a receita pages. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie módulo do SDK original com botões reais para atores e tokens. Use campanha de desenvolvimento, cena ativa e sistema externo original. Essas interfaces coexistem com a API de domínio, mas usam assinaturas e formatos de revisão diferentes.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta sdk-compat. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/sdk-compat/sdk-compat-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">sdk-compat/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>As outras operações originais estão em <a href="tutorial-assets.html">arquivos</a> (asset.list/upload/download, actor.image.upload, card.asset.upload) e <a href="tutorial-localization-events.html">tradução</a> (locale.apply). Juntos, os guias cobrem todas as operações de registry.json. Para módulo novo, prefira API de domínio, usando SDK multipart quando necessário.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../sdk-compat-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../sdk-compat-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Original SDK workshop. Feche o menu e clique no botão Original SDK workshop. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="ler-todas-as-paginas-autorizadas-de-atores">Ler todas as páginas autorizadas de atores</h3>
+<p>Esta é lista de DTOs do SDK original, diferente de api.actors.list. Usa paginação e revisões opacas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({host,signal}) =&gt; {
+  const items=[];let cursor=null;
+  do {
+    const page=await host.call(&#39;actor.list&#39;,{limit:50,cursor},{signal});
+    items.push(...page.items);cursor=page.nextCursor;
+  } while(cursor&amp;&amp;!signal.aborted);
+  return items;
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Todos os atores legíveis desta campanha, reautorizados em cada página.</p>
+<p><strong>Como conferir:</strong> Compare IDs com o diretório e teste filtragem como jogador.</p>
+<h3 id="ler-dto-do-ator-e-revisao-dos-dados">Ler DTO do ator e revisão dos dados</h3>
+<p>Cole UUID de ator legível. Metadados e dados da ficha têm domínios de revisão diferentes.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({host,signal},v) =&gt; ({
+  actor:await host.call(&#39;actor.read&#39;,{id:v.id},{signal}),
+  sheet:await host.call(&#39;actor.data.read&#39;,{id:v.id},{signal})
+})</code></pre></div>
+<p><strong>Resultado esperado:</strong> actor.revision e sheet.revision, cada uma mantida com seu próprio retorno.</p>
+<p><strong>Como conferir:</strong> Não decodifique nem troque os tokens de revisão entre operações.</p>
+<h3 id="criar-ator-descartavel-por-hostcall">Criar ator descartável por host.call</h3>
+<p>API de domínio descobre o tipo do sistema selecionado. Schema antigo de criação aceita name/type, não payload arbitrário de dados.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,host,signal},v) =&gt; {
+  const type=(await api.actors.state({}, {signal})).actorTypes[0]?.id;
+  if(!type)throw new Error(&#39;Choose a system with an actor type&#39;);
+  return host.call(&#39;actor.create&#39;,{name:v.name,type},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> DTO do ator criado e sua revisão opaca.</p>
+<p><strong>Como conferir:</strong> Encontre o mesmo ID em Actors; guarde para as próximas receitas.</p>
+<h3 id="renomear-com-revisao-de-metadados-do-sdk">Renomear com revisão de metadados do SDK</h3>
+<p>Use ator descartável. changes contém apenas metadados suportados.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;actor.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;actor.update&#39;,{id:v.id,expectedRevision:before.revision,changes:{name:v.name}},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Mesmo ator com novo nome e revisão de metadados.</p>
+<p><strong>Como conferir:</strong> expectedRevision desatualizada deve gerar conflict; recarregue sem forçar.</p>
+<h3 id="preservar-json-completo-do-ator-ao-mudar-campo-proprio">Preservar JSON completo do ator ao mudar campo próprio</h3>
+<p>Use sistema externo de exemplo que aceite JSON original opaco, como Example Expedition. workshop pertence ao exemplo; não sobrescreva campo de outro pacote.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;actor.data.read&#39;,{id:v.id},{signal});
+  const data={...before.data,workshop:{note:v.note}};
+  return host.call(&#39;actor.data.update&#39;,{id:v.id,expectedRevision:before.revision,data},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Dados atualizados com todos os demais campos superiores preservados.</p>
+<p><strong>Como conferir:</strong> Releia e compare outras chaves. Validador próprio de sistema pode recusar campos sem suporte.</p>
+<h3 id="ler-centro-do-token-e-os-dados-da-propria-ficha">Ler centro do token e os dados da própria ficha</h3>
+<p>Ative uma cena existente e use token dessa cena. O pacote monta scene.controls para ter escopo de cena.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({host,signal},v) =&gt; ({
+  token:await host.call(&#39;token.read&#39;,{id:v.id},{signal}),
+  sheet:await host.call(&#39;token.data.read&#39;,{id:v.id},{signal})
+})</code></pre></div>
+<p><strong>Resultado esperado:</strong> position é centro em pixels da cena, diferente de gridX/gridY. Dados da ficha resolvem vínculo ou armazenamento independente.</p>
+<p><strong>Como conferir:</strong> Compare token vinculado e snapshot; não substitua snapshot por dados do ator.</p>
+<h3 id="mover-token-usando-sua-revisao-opaca">Mover token usando sua revisão opaca</h3>
+<p>Use token controlável e centro de destino dentro da cena. O servidor converte pixels para sua geometria de grade.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">async ({host,signal},v) =&gt; {
+  const token=await host.call(&#39;token.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;token.move&#39;,{id:v.id,expectedRevision:token.revision,position:{x:v.x,y:v.y}},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Posição atualizada; validação de movimento e permissões continuam valendo.</p>
+<p><strong>Como conferir:</strong> Tente token de outra campanha e revisão antiga; ambos devem falhar sem movimento.</p>
+<h3 id="alterar-dados-resolvidos-do-token-preservando-outros-campos">Alterar dados resolvidos do token preservando outros campos</h3>
+<p>Vinculado altera dados do ator; independente altera snapshot. Use apenas sistema original de exemplo com JSON opaco.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;token.data.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;token.data.update&#39;,{id:v.id,expectedRevision:before.revision,data:{...before.data,workshop:{note:v.note}}},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Nova revisão de dados no domínio correto.</p>
+<p><strong>Como conferir:</strong> Leia ator e ambos tokens; alteração de snapshot não pode alterar o ator de origem.</p>
+<h3 id="excluir-ator-descartavel-pelo-sdk-antigo">Excluir ator descartável pelo SDK antigo</h3>
+<p>Remova só ator sem tokens criado pelo tutorial. Integrações novas devem preferir API de domínio, cuja exclusão nativa inclui limpeza de tokens/automações.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">async ({host,signal},v) =&gt; {
+  if(!v.confirm)throw new Error(&#39;Confirm the disposable actor&#39;);
+  const actor=await host.call(&#39;actor.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;actor.delete&#39;,{id:v.id,expectedRevision:actor.revision},{signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> null do contrato original de exclusão.</p>
+<p><strong>Como conferir:</strong> Leia novamente e espere not_found. Não substitua limpeza do ciclo nativo por esse caminho.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.sdk-compat&quot;,
+  &quot;name&quot;: &quot;Original SDK workshop&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Concrete actor/token DTOs, opaque revisions and the remaining multipart/local operations.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;scene.controls&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Original SDK workshop&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-sdk-compat&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-javascript">export const recipes=[
+{
+  id:&quot;pages&quot;,
+  label:&quot;Read every authorized actor page&quot;,
+  description:&quot;This is the original SDK DTO list, not api.actors.list. It paginates and includes opaque revision strings.&quot;,
+  fields:[],
+  run:async ({host,signal}) =&gt; {
+  const items=[];let cursor=null;
+  do {
+    const page=await host.call(&#39;actor.list&#39;,{limit:50,cursor},{signal});
+    items.push(...page.items);cursor=page.nextCursor;
+  } while(cursor&amp;&amp;!signal.aborted);
+  return items;
+}
+},
+{
+  id:&quot;read&quot;,
+  label:&quot;Read one actor DTO and its data revision&quot;,
+  description:&quot;Paste a readable actor UUID. Actor metadata and sheet data have different revision domains.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Actor ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; ({
+  actor:await host.call(&#39;actor.read&#39;,{id:v.id},{signal}),
+  sheet:await host.call(&#39;actor.data.read&#39;,{id:v.id},{signal})
+})
+},
+{
+  id:&quot;create&quot;,
+  label:&quot;Create a disposable actor through host.call&quot;,
+  description:&quot;The domain API discovers the selected system type. The legacy create schema accepts name/type, not an arbitrary actor data payload.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;label&quot;: &quot;Actor name&quot;,
+    &quot;value&quot;: &quot;SDK workshop scout&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,host,signal},v) =&gt; {
+  const type=(await api.actors.state({}, {signal})).actorTypes[0]?.id;
+  if(!type)throw new Error(&#39;Choose a system with an actor type&#39;);
+  return host.call(&#39;actor.create&#39;,{name:v.name,type},{signal});
+}
+},
+{
+  id:&quot;rename&quot;,
+  label:&quot;Rename with the legacy metadata revision&quot;,
+  description:&quot;Use the disposable actor. changes contains only supported metadata changes.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Actor ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;label&quot;: &quot;New name&quot;,
+    &quot;value&quot;: &quot;SDK navigator&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;actor.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;actor.update&#39;,{id:v.id,expectedRevision:before.revision,changes:{name:v.name}},{signal});
+}
+},
+{
+  id:&quot;data&quot;,
+  label:&quot;Preserve a complete actor JSON while changing one owned field&quot;,
+  description:&quot;Use an external example system that accepts opaque original JSON, such as Example Expedition. workshop is owned by this example; do not overwrite fields belonging to another package.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Actor ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;note&quot;,
+    &quot;label&quot;: &quot;Original workshop note&quot;,
+    &quot;value&quot;: &quot;Original test note&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;actor.data.read&#39;,{id:v.id},{signal});
+  const data={...before.data,workshop:{note:v.note}};
+  return host.call(&#39;actor.data.update&#39;,{id:v.id,expectedRevision:before.revision,data},{signal});
+}
+},
+{
+  id:&quot;token-read&quot;,
+  label:&quot;Read token center coordinates and its own sheet data&quot;,
+  description:&quot;Activate an existing scene and use a token from that scene. This package mounts scene.controls so the legacy scene scope is present.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Token ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; ({
+  token:await host.call(&#39;token.read&#39;,{id:v.id},{signal}),
+  sheet:await host.call(&#39;token.data.read&#39;,{id:v.id},{signal})
+})
+},
+{
+  id:&quot;token-move&quot;,
+  label:&quot;Move a token using its own opaque revision&quot;,
+  description:&quot;Use a token you control and an in-bounds target center. The server converts scene pixels into its grid geometry.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Token ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;x&quot;,
+    &quot;label&quot;: &quot;Center X in scene pixels&quot;,
+    &quot;value&quot;: 160,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;y&quot;,
+    &quot;label&quot;: &quot;Center Y in scene pixels&quot;,
+    &quot;value&quot;: 160,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  const token=await host.call(&#39;token.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;token.move&#39;,{id:v.id,expectedRevision:token.revision,position:{x:v.x,y:v.y}},{signal});
+}
+},
+{
+  id:&quot;token-data&quot;,
+  label:&quot;Update the token’s resolved data without replacing unrelated fields&quot;,
+  description:&quot;For a linked token this edits actor data; for an independent token it edits its snapshot. Use only the original opaque-JSON example system.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Token ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;note&quot;,
+    &quot;label&quot;: &quot;Original workshop note&quot;,
+    &quot;value&quot;: &quot;Snapshot-only note&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  const before=await host.call(&#39;token.data.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;token.data.update&#39;,{id:v.id,expectedRevision:before.revision,data:{...before.data,workshop:{note:v.note}}},{signal});
+}
+},
+{
+  id:&quot;delete&quot;,
+  label:&quot;Delete the disposable legacy actor&quot;,
+  description:&quot;Remove only an unused actor created by this tutorial, with no scene tokens. New integrations should prefer the domain API, whose native deletion includes token/automation cleanup.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Disposable actor ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;I selected the disposable actor&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({host,signal},v) =&gt; {
+  if(!v.confirm)throw new Error(&#39;Confirm the disposable actor&#39;);
+  const actor=await host.call(&#39;actor.read&#39;,{id:v.id},{signal});
+  return host.call(&#39;actor.delete&#39;,{id:v.id,expectedRevision:actor.revision},{signal});
+}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.sdk-compat&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-sdk-compat { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-sdk-compat label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-sdk-compat input, .tutorial-workbench-sdk-compat select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-sdk-compat pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-sdk-compat button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-16">Copiar</button></div><pre><code data-code="code-16" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Teste acesso só de leitura, outra cena/campanha, revisões opacas antigas e cancelamento. Opções de host.call não fornecem o mesmo contrato de recibos dos comandos de domínio: requestId não torna toda operação SDK idempotente. Não troque revisão de metadados, dados, posição e snapshot. IDs precisam vir do estado autorizado da campanha.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-17">Copiar</button></div><pre><code data-code="code-17" class="language-text">Migre este módulo host.call completo para a API de domínio do Gravewright 0.3.0. Compare DTO e assinatura de cada ação, preserve snapshot/autorização e explique as mudanças de revisão e recibos. Entregue arquivos completos e testes, sem apenas renomear métodos.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-localization-events.html"><span>Anterior ←</span><strong>Traduzir um módulo e reagir a eventos</strong></a><a href="tutorial-customize-ui.html"><span>Próximo →</span><strong>Criar formulários Customize e janelas nativas do módulo</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/registry.json">gravewright/modules/contracts/registry.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/operations.py">gravewright/modules/operations.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/browser-bridge.js">gravewright/modules/static/gravewright_modules/browser-bridge.js</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

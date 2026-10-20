@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.localization-events",
+  "name": "Translate a module and react to changes",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Read package files, format translated UI and subscribe without leaking listeners.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

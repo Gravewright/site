@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como incluir compêndios em um sistema | Gravewright</title><meta name="description" content="Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-system-compendiums.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-system-compendiums.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-system-compendiums.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-system-compendiums.html"><meta property="og:type" content="article"><meta property="og:title" content="Como incluir compêndios em um sistema | Gravewright"><meta property="og:description" content="Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-system-compendiums.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como incluir compêndios em um sistema","description":"Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-system-compendiums.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-system-compendiums.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html" aria-current="page">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como incluir compêndios em um sistema</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 7 min de leitura</span><h1>Como incluir compêndios em um sistema</h1><p class="kb-lead">Monte o pacote completo a partir de pasta vazia, instale e confira seu conteúdo original.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/system-library.png" aria-label="Abrir captura completa: Três packs originais de ator/item distribuídos dentro do sistema selecionado. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/system-library.png" width="1440" height="1000" alt="Três packs originais de ator/item distribuídos dentro do sistema selecionado. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Três packs originais de ator/item distribuídos dentro do sistema selecionado. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-que-voce-vai-construir">O que você vai construir</h2>
+<p>Você vai criar um único pacote de sistema chamado <strong>Beacon Expedition Library</strong>, contendo descritores de ator/item e um arquivo físico de compêndios. Depois da instalação e seleção na campanha, a aba Compendiums mostrará três packs: Scouts, Equipment e Signals. O GM importará Harbor Scout, Signal Rope e Blue Glow.</p>
+<p>Esse é o caminho para conteúdo original distribuído junto de um sistema. Diferentemente do <a href="tutorial-compendium-module.html">módulo de biblioteca</a>, a coleção não é criada por um clique JavaScript: a instalação valida o JSON declarado e o host o oferece apenas quando aquela versão do sistema está ativa na campanha. O catálogo instalado é somente leitura; importar cria documentos da campanha que podem evoluir separadamente.</p>
+<p>Use Gravewright 0.3.0, uma instalação descartável e a conta proprietária para instalar. O GM escolhe o sistema da campanha e importa os documentos. O pacote abaixo é completo como provedor de tipos e conteúdo; seu entry não registra fichas ou regras. Se quiser editar esses campos numa ficha personalizada, amplie o mesmo pacote usando o <a href="example-package-system.html">exemplo de ficha editável</a>.</p>
+<h2 id="1-comece-em-uma-pasta-vazia">1. Comece em uma pasta vazia</h2>
+<p>Crie system-library e dentro dela compendiums. Salve todos os arquivos da seção 4. manifest.json registra system e content; main.mjs satisfaz start/register/stop sem executar ações; compendiums/beacon.json contém o conteúdo real; LICENSE.txt acompanha a distribuição. Não existe arquivo separado para instalar sob Módulos.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">system-library/
+  manifest.json
+  main.mjs
+  compendiums/beacon.json
+  LICENSE.txt</code></pre></div>
+<p><a href="../../assets/tutorials/system-library/system-library-source.zip">Baixar o ZIP completo</a></p>
+<ul><li><p><a href="../../assets/tutorials/system-library/manifest.json">manifest.json</a></p></li><li><p><a href="../../assets/tutorials/system-library/main.mjs">main.mjs</a></p></li><li><p><a href="../../assets/tutorials/system-library/compendiums/beacon.json">compendiums/beacon.json</a></p></li><li><p><a href="../../assets/tutorials/system-library/LICENSE.txt">LICENSE.txt</a></p></li></ul>
+<h2 id="2-entenda-o-vinculo-antes-de-empacotar">2. Entenda o vínculo antes de empacotar</h2>
+<p>O ID do sistema é example.beacon-library. Ele aparece no manifesto e no systemId de TODAS as entradas. actor_pack usa o tipo character de system.actorTypes. item_pack usa gear e spell_pack usa spell, ambos declarados em system.itemTypes. O core trata spell_pack como compatibilidade de item; ele não passa a implementar regras de magia.</p>
+<p>content.compendiums aponta exatamente para compendiums/beacon.json. O arquivo tem nome de coleção e array packs; cada pack possui id, label, type e entries. Cada entrada tem id, name, type, systemId e data. Não acrescente campaigns: o host faz a associação à campanha ativa. Não use journal_pack, scene_pack, card_pack ou deck_pack neste pacote: a instalação aceita somente actor_pack, item_pack e spell_pack.</p>
+<h2 id="3-empacote-instale-e-selecione">3. Empacote, instale e selecione</h2>
+<p>Partindo da pasta que contém system-library, use um dos comandos abaixo. Eles incluem o JSON aninhado com seu caminho correto, mantendo manifest.json na raiz. Use python3 em POSIX quando necessário.</p>
+<h3 id="posix">POSIX</h3>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-sh">cd system-library
+python -m zipfile -c ../system-library-source.zip &quot;manifest.json&quot; &quot;main.mjs&quot; &quot;compendiums/beacon.json&quot; &quot;LICENSE.txt&quot;</code></pre></div>
+<h3 id="powershell">PowerShell</h3>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-powershell">Set-Location -LiteralPath .\system-library
+python -m zipfile -c ..\system-library-source.zip &quot;manifest.json&quot; &quot;main.mjs&quot; &quot;compendiums/beacon.json&quot; &quot;LICENSE.txt&quot;</code></pre></div>
+<p>Confira a raiz e o caminho compendiums/beacon.json com python -m zipfile -l ../system-library-source.zip. Como proprietário, abra <strong>Inside → Sistemas → Instalar sistema → Instalar de ZIP</strong>, selecione o ZIP e clique <strong>Instalar</strong>. Em inglês: <strong>Systems → Install system → Install from ZIP → Install</strong>. Abra uma campanha de teste usando <strong>Beacon Expedition Library</strong> como sistema. Confira nas Extensions da mesa a versão exata 1.0.0 ativada; apenas instalar uma versão não troca automaticamente a versão de campanhas existentes.</p>
+<p>Abra <strong>Compendiums</strong>. Localize <strong>Beacon Expedition Library / Scouts</strong>, <strong>/ Equipment</strong> e <strong>/ Signals</strong>. Leia Harbor Scout: type é character e stamina é 8. Importe pelo controle nativo do pack. Repita para Signal Rope (gear, length 12) e Blue Glow (spell, color blue). Atores/itens importados aparecem nos seus diretórios da campanha.</p>
+<h2 id="4-copie-todos-os-arquivos">4. Copie todos os arquivos</h2>
+<p>Para acrescentar seu conteúdo original, edite as entradas do JSON, mantendo IDs estáveis. Adicione tipos ao manifesto antes de usá-los nas entradas. data pertence ao sistema; stamina, length, color e duration são exemplos originais, não campos mágicos interpretados pelo host. O entry noop não cria documentos na ativação e não cria um catálogo duplicado a cada recarga.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-json">{
+  &quot;id&quot;: &quot;example.beacon-library&quot;,
+  &quot;name&quot;: &quot;Beacon Expedition Library&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Original actor and item types with three installed read-only compendium packs.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;system&quot;: {
+    &quot;actorTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;character&quot;,
+        &quot;label&quot;: &quot;Character&quot;
+      }
+    ],
+    &quot;itemTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;gear&quot;,
+        &quot;label&quot;: &quot;Gear&quot;
+      },
+      {
+        &quot;id&quot;: &quot;spell&quot;,
+        &quot;label&quot;: &quot;Spell&quot;
+      }
+    ]
+  },
+  &quot;content&quot;: {
+    &quot;compendiums&quot;: [
+      &quot;compendiums/beacon.json&quot;
+    ]
+  }
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">export default {
+  start() {},
+  register() {},
+  stop() {},
+};</code></pre></div>
+<h3 id="compendiumsbeaconjson">compendiums/beacon.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-json">{
+  &quot;name&quot;: &quot;Beacon Expedition Library&quot;,
+  &quot;packs&quot;: [
+    {
+      &quot;id&quot;: &quot;scouts&quot;,
+      &quot;label&quot;: &quot;Scouts&quot;,
+      &quot;type&quot;: &quot;actor_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;harbor-scout&quot;,
+          &quot;name&quot;: &quot;Harbor Scout&quot;,
+          &quot;type&quot;: &quot;character&quot;,
+          &quot;systemId&quot;: &quot;example.beacon-library&quot;,
+          &quot;data&quot;: {
+            &quot;stamina&quot;: 8,
+            &quot;role&quot;: &quot;Watch keeper&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;equipment&quot;,
+      &quot;label&quot;: &quot;Equipment&quot;,
+      &quot;type&quot;: &quot;item_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;signal-rope&quot;,
+          &quot;name&quot;: &quot;Signal Rope&quot;,
+          &quot;type&quot;: &quot;gear&quot;,
+          &quot;systemId&quot;: &quot;example.beacon-library&quot;,
+          &quot;data&quot;: {
+            &quot;length&quot;: 12,
+            &quot;description&quot;: &quot;An original training rope with blue knots.&quot;
+          }
+        }
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;signals&quot;,
+      &quot;label&quot;: &quot;Signals&quot;,
+      &quot;type&quot;: &quot;spell_pack&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: &quot;blue-glow&quot;,
+          &quot;name&quot;: &quot;Blue Glow&quot;,
+          &quot;type&quot;: &quot;spell&quot;,
+          &quot;systemId&quot;: &quot;example.beacon-library&quot;,
+          &quot;data&quot;: {
+            &quot;color&quot;: &quot;blue&quot;,
+            &quot;duration&quot;: 1,
+            &quot;description&quot;: &quot;An original fictional signal, with no host automation.&quot;
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-leia-pela-api-e-conceda-leitura">5. Leia pela API e conceda leitura</h2>
+<p>No contexto de um módulo montado na mesma campanha, descubra IDs autorizados com api.compendiums.state. O pack terá ID native: gerado pelo host; não monte esse ID com o nome do arquivo. Esta função completa lê uma entrada de Scouts e retorna também os IDs para conceder leitura como GM:</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">export async function inspectScout(api, signal) {
+  const state = await api.compendiums.state({}, {signal});
+  const pack = state.packs.find(row =&gt; row.name === &quot;Beacon Expedition Library / Scouts&quot;);
+  if (!pack) throw new Error(&quot;Activate the system version and check read grants&quot;);
+  const entry = pack.entries.find(row =&gt; row.id === &quot;harbor-scout&quot;);
+  if (!entry) throw new Error(&quot;Scout entry unavailable&quot;);
+  const body = await api.compendiums.read({packId: pack.id, id: entry.id}, {signal});
+  return {packId: pack.id, entryId: entry.id, body};
+}
+export async function shareScouts(api, packId, signal) {
+  return api.compendiums.setPermissions({packId, level: &quot;read&quot;}, {signal, requestId: crypto.randomUUID()});
+}</code></pre></div>
+<p>state retorna metadados; read retorna o documento original da coleção, sem exigir o envelope kind de uma entrada criada na mesa. Para várias entradas do mesmo pack, use read({packId, ids:[...]}) com 1 a 100 IDs únicos. Como GM, use o controle nativo de permissões ou shareScouts com o packId descoberto. O jogador com leitura vê o conteúdo, mas não importa. Antes de compartilhar, confira todo o corpo: conceder leitura ao compêndio autoriza seu conteúdo.</p>
+<h2 id="6-valide-e-publique-uma-atualizacao-imutavel">6. Valide e publique uma atualização imutável</h2>
+<p>Na primeira execução, confira os três packs e importe cada entrada. Reabra a campanha: há os mesmos packs e nenhum novo documento foi importado sozinho. Teste em outra campanha com sistema diferente: essas coleções não devem aparecer como conteúdo daquele sistema. Revogue a leitura do jogador e confira que nova leitura é negada; a UI não é a fronteira de autorização.</p>
+<p>Para atualizar, mantenha id do pacote, caminhos, IDs de pack e entrada; mude version para 1.0.1 e edite o JSON original. Gere outro ZIP, instale e selecione explicitamente 1.0.1 na campanha. Não edite a pasta extraída instalada: o host verifica seus bytes aprovados e rejeita substituir a mesma versão por conteúdo diferente. Os IDs estáveis permitem preservar referências/concessões. Documentos que já foram importados continuam sendo cópias e não são reescritos pela atualização. Um novo import usa o novo conteúdo.</p>
+<p>Tipo não registrado, systemId diferente, caminho ausente, JSON inválido, IDs repetidos ou pack não permitido impedem a instalação. A coleção aceita até 8 MiB, 64 packs e 20.000 entradas; cada entrada até 256 KiB e profundidade 24. O manifesto aceita até 16 caminhos de coleção. Conteúdo aprovado ausente/alterado, pacote revogado ou versão não ativa tornam a coleção indisponível. Não contorne isso carregando o JSON por assets: coleções declaradas são lidas pela API autorizada.</p>
+<h2 id="como-usar-a-ia-para-acrescentar-um-catalogo-ao-seu-sistema">Como usar a IA para acrescentar um catálogo ao seu sistema</h2>
+<blockquote><p>Parta de tutorial-system-compendiums no Gravewright 0.3.0. Troque apenas os dados originais por [tipos/campos autorizados]. Entregue manifesto, entry, arquivo físico da coleção e licença completos. Confira todos systemId e tipos, valide com o instalador/validate_collection, mostre instalação por Sistemas e ativação da versão exata. Teste os três packs, jogador com/sem leitura, imports e atualização 1.0.1 sem modificar cópias já criadas. Mantenha tudo em um único pacote e não exija outro host.</p></blockquote>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-compendium-module.html"><span>Anterior ←</span><strong>Como criar um módulo de compêndio</strong></a><a href="tutorial-maps.html"><span>Próximo →</span><strong>Como criar um módulo de ferramentas de cena</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/schemas/manifest.json">gravewright/modules/contracts/schemas/manifest.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/services.py">gravewright/compendiums/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/content.py">gravewright/compendiums/content.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/compendiums/catalog.py">gravewright/compendiums/catalog.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/services.py">gravewright/journals/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/data.py">gravewright/journals/data.py</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-que-voce-vai-construir">O que você vai construir</a></li><li><a href="#1-comece-em-uma-pasta-vazia">1. Comece em uma pasta vazia</a></li><li><a href="#2-entenda-o-vinculo-antes-de-empacotar">2. Entenda o vínculo antes de empacotar</a></li><li><a href="#3-empacote-instale-e-selecione">3. Empacote, instale e selecione</a></li><li><a href="#4-copie-todos-os-arquivos">4. Copie todos os arquivos</a></li><li><a href="#5-leia-pela-api-e-conceda-leitura">5. Leia pela API e conceda leitura</a></li><li><a href="#6-valide-e-publique-uma-atualizacao-imutavel">6. Valide e publique uma atualização imutável</a></li><li><a href="#como-usar-a-ia-para-acrescentar-um-catalogo-ao-seu-sistema">Como usar a IA para acrescentar um catálogo ao seu sistema</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

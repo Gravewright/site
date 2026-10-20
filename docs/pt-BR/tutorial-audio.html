@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar ferramentas de áudio e trilha da cena | Gravewright</title><meta name="description" content="Configure faixas nativas, playlists, fontes espaciais, vozes da cena e trilhas temporizadas com revisões corretas."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-audio.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-audio.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-audio.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-audio.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar ferramentas de áudio e trilha da cena | Gravewright"><meta property="og:description" content="Configure faixas nativas, playlists, fontes espaciais, vozes da cena e trilhas temporizadas com revisões corretas."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-audio.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar ferramentas de áudio e trilha da cena","description":"Configure faixas nativas, playlists, fontes espaciais, vozes da cena e trilhas temporizadas com revisões corretas.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-audio.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-audio.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html" aria-current="page">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar ferramentas de áudio e trilha da cena</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 15 min de leitura</span><h1>Como criar ferramentas de áudio e trilha da cena</h1><p class="kb-lead">Configure faixas nativas, playlists, fontes espaciais, vozes da cena e trilhas temporizadas com revisões corretas.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/audio.png" aria-label="Abrir captura completa: Módulo Harbor audio tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/audio.png" width="1440" height="1000" alt="Módulo Harbor audio tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Harbor audio tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie Harbor audio tools. Prepare duas faixas originais na Library real, configure ambiente do porto, controle uma voz da cena, componha música de chegada, navegue a trilha e posicione um sinal espacial. São camadas diferentes de estado, com revisões e projeções de ouvinte próprias.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta audio. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/audio/audio-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">audio/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Use campanha descartável, cena e dois áudios curtos originais WAV/Ogg/FLAC/MP3. Como GM, abra Library na mesa e envie por Ambient audio ou Sound effect; a API de domínio não tem uploadTrack, então o pacote começa com faixas existentes. Inspect retorna UUIDs. Clique Enable audio em cada cliente e confira volume local. Toda mutação de áudio exige GM; jogadores recebem só a projeção de escuta autorizada.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../audio-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../audio-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Harbor audio tools. Feche o menu e clique no botão Harbor audio tools. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="inspecione-faixas-transporte-e-revisao-da-trilha">Inspecione faixas, transporte e revisão da trilha</h3>
+<p>Prepare áudio original pela Library. Execute sem cena para descobrir UUIDs e depois com a escolhida. GM pode indicar token existente para simular sua posição de escuta. Copie IDs de faixas, listas e fontes do resultado.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,signal},values) =&gt; {
+  const maps = await api.maps.state({}, {signal});
+  const audio = await api.audio.state({...(values.sceneId ? {sceneId:values.sceneId} : {}),...(values.previewTokenId ? {previewTokenId:values.previewTokenId} : {})}, {signal});
+  return {scenes:maps.maps.map(row=&gt;({id:row.id,name:row.name})),...audio};
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> scenes, tracks, playlists, spatialSounds, playback, score, version e serverTime. Ambiente usa version da raiz; trilha usa score.version.</p>
+<p><strong>Como conferir:</strong> Jogadores só recebem faixas relacionadas. EffectiveGain do GM sem ouvinte de preview elegível é zero; isso não significa fonte ausente.</p>
+<h3 id="configure-uma-faixa-real">Configure uma faixa real</h3>
+<p>Cole UUID de faixa enviada pela biblioteca. Defina music/ambience/effect, volume 0–1 e loop. Effect sempre desabilita repetição no servidor.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,signal},values) =&gt; {
+  const track=(await api.audio.state({}, {signal})).tracks.find(row=&gt;row.id===values.trackId);
+  if (!track) throw new Error(&quot;Upload an original track through the native Library first&quot;);
+  return api.audio.updateTrack({id:track.id,version:track.version,name:&quot;Harbor atmosphere&quot;,kind:values.kind,volume:values.volume,loop:values.loop}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Metadados mudam com versão atual; não há API de upload ou URL externa inventada.</p>
+<p><strong>Como conferir:</strong> Releia a biblioteca e toque pela próxima receita. Alterar padrões é diferente de alterar uma voz já tocando na cena.</p>
+<h3 id="controle-uma-voz-da-cena">Controle uma voz da cena</h3>
+<p>Execute play, pause, seek, play, setVolume e stop separadamente. Clique Enable audio neste dispositivo para ouvir. Seek deve respeitar a duração real da faixa.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const payload={sceneId:values.sceneId,trackId:values.trackId,version:state.version};
+  switch(values.action) {
+    case &quot;play&quot;: return api.audio.play({...payload,volume:values.volume,loop:true}, {signal});
+    case &quot;pause&quot;: return api.audio.pause(payload, {signal});
+    case &quot;stop&quot;: return api.audio.stop(payload, {signal});
+    case &quot;seek&quot;: return api.audio.seek({...payload,position:values.position}, {signal});
+    case &quot;setVolume&quot;: return api.audio.setVolume({...payload,volume:values.volume}, {signal});
+    default: throw new Error(&quot;Choose a documented scene transport action&quot;);
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A voz usa posição do relógio do servidor e revisão atual do transporte. Mute/volume local continuam independentes.</p>
+<p><strong>Como conferir:</strong> Compare dois clientes na cena. Pause conserva posição; stop zera. Uma versão antiga deve gerar conflito.</p>
+<h3 id="monte-playlist-de-chegada-ou-preset-simultaneo">Monte playlist de chegada ou preset simultâneo</h3>
+<p>Cole dois UUIDs nativos. Playlist toca sequência; preset reúne camadas simultâneas em loop. Duração deve ficar entre 1 e 86400 segundos. Execute uma vez e copie id.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,signal},values) =&gt; {
+  return api.audio.createPlaylist({name:&quot;Harbor arrival&quot;,kind:values.kind,mode:&quot;sequential&quot;,fade:2,tracks:[
+    {soundId:values.trackId,duration:values.duration,gain:0.5},
+    {soundId:values.secondTrackId,duration:values.duration,gain:0.35},
+  ]}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Definição com soundId/duration/gain e fade de dois segundos. A ação não inicia reprodução.</p>
+<p><strong>Como conferir:</strong> Confira playlists e inicie pela receita de trilha. Repetir criação produz outra definição.</p>
+<h3 id="revise-a-composicao-sem-perder-suas-faixas">Revise a composição sem perder suas faixas</h3>
+<p>Use id criado. A receita conserva lista e kind, alterando nome, modo e fade da definição.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,signal},values) =&gt; {
+  const current=(await api.audio.state({}, {signal})).playlists.find(row=&gt;row.id===values.id);
+  if (!current) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.updatePlaylist({id:current.id,version:current.version,name:&quot;Harbor arrival revised&quot;,kind:current.kind,mode:&quot;shuffle&quot;,fade:1,tracks:current.tracks}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Atualização com versão. A trilha já em execução não é reescrita sozinha.</p>
+<p><strong>Como conferir:</strong> Confira definição e inicie novamente explicitamente para usar a revisão.</p>
+<h3 id="inicie-a-composicao-como-trilha">Inicie a composição como trilha</h3>
+<p>Informe cena e UUID da composição. Kind vem da definição real; não é deduzido pelo nome.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const definition=state.playlists.find(row=&gt;row.id===values.id);
+  if (!definition) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.startScore({sceneId:values.sceneId,id:definition.id,kind:definition.kind,repeat:true,expectedVersion:state.score.version}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Trilha playing com revisão própria e vozes temporizadas. Iniciar outra composição pode fazer transição da atual.</p>
+<p><strong>Como conferir:</strong> Confira score.state/playbacks em dois clientes. Use expectedVersion da trilha, não version do ambiente.</p>
+<h3 id="pause-retome-navegue-e-pare-a-trilha">Pause, retome, navegue e pare a trilha</h3>
+<p>Inicie playlist primeiro. Execute pause, resume, next, previous e stop separadamente. Next/previous não servem a preset simultâneo. Após stop, use Start em vez de Resume.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const payload={sceneId:values.sceneId,expectedVersion:state.score.version};
+  switch(values.action) {
+    case &quot;pause&quot;: return api.audio.pauseScore(payload, {signal});
+    case &quot;resume&quot;: return api.audio.resumeScore(payload, {signal});
+    case &quot;next&quot;: return api.audio.nextScore(payload, {signal});
+    case &quot;previous&quot;: return api.audio.previousScore(payload, {signal});
+    case &quot;stop&quot;: return api.audio.stopScore(payload, {signal});
+    default: throw new Error(&quot;Choose a documented score action&quot;);
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Cada ação conserva a linha temporal do servidor e verifica revisão da trilha.</p>
+<p><strong>Como conferir:</strong> Confira posição/estado a cada ação; trilha ausente ou kind incompatível falham claramente.</p>
+<h3 id="posicione-um-sinal-sonoro-no-porto">Posicione um sinal sonoro no porto</h3>
+<p>Informe cena, faixa e centro em pixels lógicos. Raio usa a unidade de distância configurada da cena. Token/ouvinte elegível determina ganho recebido.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">async ({api,signal},values) =&gt; {
+  return api.audio.createSpatialSound({sceneId:values.sceneId,trackId:values.trackId,x:values.x,y:values.y,radius:values.radius,gain:0.7,falloff:&quot;smooth&quot;,loop:true,enabled:true,occlusion:true}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Fonte sonora espacial nativa com queda suave e oclusão por paredes, separada de voz ambiente ou composição.</p>
+<p><strong>Como conferir:</strong> Mova token controlado pelo jogador para perto/longe; GM usa previewTokenId em Inspect. Confira effectiveGain.</p>
+<h3 id="ajuste-alcance-ou-desabilite-a-fonte">Ajuste alcance ou desabilite a fonte</h3>
+<p>Use UUID da fonte em sua própria cena. A receita preserva faixa/local, alterando raio, enabled e falloff.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const source=state.spatialSounds.find(row=&gt;row.id===values.id);
+  if (!source) throw new Error(&quot;Source unavailable in this scene&quot;);
+  return api.audio.updateSpatialSound({sceneId:values.sceneId,id:source.id,version:source.version,radius:values.radius,enabled:values.enabled,falloff:&quot;linear&quot;}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Edição da fonte com versão, sem reiniciar toda a biblioteca da campanha.</p>
+<p><strong>Como conferir:</strong> Confira campos e effectiveGain; enabled false resulta em ganho efetivo zero.</p>
+<h3 id="remova-a-fonte-espacial-de-teste">Remova a fonte espacial de teste</h3>
+<p>Use somente a fonte criada neste tutorial.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-javascript">async ({api,signal},values) =&gt; {
+  const source=(await api.audio.state({sceneId:values.sceneId}, {signal})).spatialSounds.find(row=&gt;row.id===values.id);
+  if (!source) throw new Error(&quot;Source unavailable&quot;);
+  return api.audio.deleteSpatialSound({sceneId:values.sceneId,id:source.id,version:source.version}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A fonte desaparece; a faixa reutilizável continua na biblioteca.</p>
+<p><strong>Como conferir:</strong> Releia spatialSounds e confira que GM ainda vê a faixa.</p>
+<h3 id="remova-a-composicao-de-teste">Remova a composição de teste</h3>
+<p>Pare a trilha antes e exclua somente a definição de demonstração.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-javascript">async ({api,signal},values) =&gt; {
+  const current=(await api.audio.state({}, {signal})).playlists.find(row=&gt;row.id===values.id);
+  if (!current) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.deletePlaylist({id:current.id,version:current.version}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A definição é removida com sua versão; arquivos das faixas permanecem reutilizáveis.</p>
+<p><strong>Como conferir:</strong> Atualize playlists e confirme que a biblioteca nativa continua intacta.</p>
+<h3 id="exclua-somente-o-audio-descartavel-enviado">Exclua somente o áudio descartável enviado</h3>
+<p>Use faixa original enviada para o tutorial depois dos testes de reprodução/fontes/composição. A ação exclui seu arquivo e remove referências nativas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-javascript">async ({api,signal},values) =&gt; {
+  const track=(await api.audio.state({}, {signal})).tracks.find(row=&gt;row.id===values.trackId);
+  if (!track) throw new Error(&quot;Track unavailable&quot;);
+  return api.audio.deleteTrack({id:track.id,version:track.version}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Remoção com versão e limpeza nativa de referências.</p>
+<p><strong>Como conferir:</strong> Confira tracks, playlists e fontes. A ação não apenas abaixa volume ou esconde recurso.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.audio&quot;,
+  &quot;name&quot;: &quot;Harbor audio tools&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Configure native tracks, playlists, spatial sources, scene voices and timed scores with the correct revisions.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-16">Copiar</button></div><pre><code data-code="code-16" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Harbor audio tools&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-audio&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-17">Copiar</button></div><pre><code data-code="code-17" class="language-javascript">export const recipes=[
+{
+  id:&quot;inspect&quot;,
+  label:&quot;Inspect tracks, scene transport and score revisions&quot;,
+  description:&quot;Prepare original audio through the native Library. Run without a scene to discover scene UUIDs, then run again with the chosen one. A GM may specify an existing token UUID to preview its spatial listening position. Copy track, playlist and source IDs from this result.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID, optional&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  },
+  {
+    &quot;name&quot;: &quot;previewTokenId&quot;,
+    &quot;label&quot;: &quot;GM listener token UUID, optional&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const maps = await api.maps.state({}, {signal});
+  const audio = await api.audio.state({...(values.sceneId ? {sceneId:values.sceneId} : {}),...(values.previewTokenId ? {previewTokenId:values.previewTokenId} : {})}, {signal});
+  return {scenes:maps.maps.map(row=&gt;({id:row.id,name:row.name})),...audio};
+}
+},
+{
+  id:&quot;track&quot;,
+  label:&quot;Configure a real track&quot;,
+  description:&quot;Paste a native-uploaded track UUID. Set music/ambience/effect, gain 0–1 and loop. effect always disables looping on the server.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;trackId&quot;,
+    &quot;label&quot;: &quot;Track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;kind&quot;,
+    &quot;label&quot;: &quot;Kind: music, ambience or effect&quot;,
+    &quot;value&quot;: &quot;ambience&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;volume&quot;,
+    &quot;label&quot;: &quot;Default volume&quot;,
+    &quot;value&quot;: 0.5,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;loop&quot;,
+    &quot;label&quot;: &quot;Loop&quot;,
+    &quot;value&quot;: true,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const track=(await api.audio.state({}, {signal})).tracks.find(row=&gt;row.id===values.trackId);
+  if (!track) throw new Error(&quot;Upload an original track through the native Library first&quot;);
+  return api.audio.updateTrack({id:track.id,version:track.version,name:&quot;Harbor atmosphere&quot;,kind:values.kind,volume:values.volume,loop:values.loop}, {signal});
+}
+},
+{
+  id:&quot;playback&quot;,
+  label:&quot;Control one scene voice&quot;,
+  description:&quot;Run play, pause, seek, play, setVolume and stop as separate explicit actions. Click Enable audio on this device before expecting sound. Seek must stay within the actual track duration.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;trackId&quot;,
+    &quot;label&quot;: &quot;Track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;action&quot;,
+    &quot;label&quot;: &quot;Action: play, pause, stop, seek or setVolume&quot;,
+    &quot;value&quot;: &quot;play&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;volume&quot;,
+    &quot;label&quot;: &quot;Voice volume&quot;,
+    &quot;value&quot;: 0.4,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;position&quot;,
+    &quot;label&quot;: &quot;Seek seconds&quot;,
+    &quot;value&quot;: 1,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const payload={sceneId:values.sceneId,trackId:values.trackId,version:state.version};
+  switch(values.action) {
+    case &quot;play&quot;: return api.audio.play({...payload,volume:values.volume,loop:true}, {signal});
+    case &quot;pause&quot;: return api.audio.pause(payload, {signal});
+    case &quot;stop&quot;: return api.audio.stop(payload, {signal});
+    case &quot;seek&quot;: return api.audio.seek({...payload,position:values.position}, {signal});
+    case &quot;setVolume&quot;: return api.audio.setVolume({...payload,volume:values.volume}, {signal});
+    default: throw new Error(&quot;Choose a documented scene transport action&quot;);
+  }
+}
+},
+{
+  id:&quot;playlist-create&quot;,
+  label:&quot;Compose an arrival playlist or simultaneous preset&quot;,
+  description:&quot;Paste two native track UUIDs and choose playlist for sequential music or preset for simultaneous looping layers. Duration must be 1–86400 seconds. Run once and copy the returned id.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;trackId&quot;,
+    &quot;label&quot;: &quot;First track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;secondTrackId&quot;,
+    &quot;label&quot;: &quot;Second track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;kind&quot;,
+    &quot;label&quot;: &quot;Composition kind: playlist or preset&quot;,
+    &quot;value&quot;: &quot;playlist&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;duration&quot;,
+    &quot;label&quot;: &quot;Each entry duration in seconds&quot;,
+    &quot;value&quot;: 30,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  return api.audio.createPlaylist({name:&quot;Harbor arrival&quot;,kind:values.kind,mode:&quot;sequential&quot;,fade:2,tracks:[
+    {soundId:values.trackId,duration:values.duration,gain:0.5},
+    {soundId:values.secondTrackId,duration:values.duration,gain:0.35},
+  ]}, {signal});
+}
+},
+{
+  id:&quot;playlist-update&quot;,
+  label:&quot;Revise a composition without discarding its tracks&quot;,
+  description:&quot;Use the created composition id. This edits the definition, retaining its track list and kind while changing name, mode and fade.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Composition UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const current=(await api.audio.state({}, {signal})).playlists.find(row=&gt;row.id===values.id);
+  if (!current) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.updatePlaylist({id:current.id,version:current.version,name:&quot;Harbor arrival revised&quot;,kind:current.kind,mode:&quot;shuffle&quot;,fade:1,tracks:current.tracks}, {signal});
+}
+},
+{
+  id:&quot;score-start&quot;,
+  label:&quot;Start the composition as a score&quot;,
+  description:&quot;Choose the scene and the composition UUID. The kind comes from the actual definition; it is not guessed from its name.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Composition UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const definition=state.playlists.find(row=&gt;row.id===values.id);
+  if (!definition) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.startScore({sceneId:values.sceneId,id:definition.id,kind:definition.kind,repeat:true,expectedVersion:state.score.version}, {signal});
+}
+},
+{
+  id:&quot;score-control&quot;,
+  label:&quot;Pause, resume, navigate and stop the score&quot;,
+  description:&quot;Start a playlist first. Run pause, resume, next, previous, then stop one at a time. next/previous apply to playlist, not a simultaneous preset. A stopped composition needs Start rather than Resume.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;action&quot;,
+    &quot;label&quot;: &quot;Action: pause, resume, next, previous or stop&quot;,
+    &quot;value&quot;: &quot;pause&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const payload={sceneId:values.sceneId,expectedVersion:state.score.version};
+  switch(values.action) {
+    case &quot;pause&quot;: return api.audio.pauseScore(payload, {signal});
+    case &quot;resume&quot;: return api.audio.resumeScore(payload, {signal});
+    case &quot;next&quot;: return api.audio.nextScore(payload, {signal});
+    case &quot;previous&quot;: return api.audio.previousScore(payload, {signal});
+    case &quot;stop&quot;: return api.audio.stopScore(payload, {signal});
+    default: throw new Error(&quot;Choose a documented score action&quot;);
+  }
+}
+},
+{
+  id:&quot;spatial-create&quot;,
+  label:&quot;Place an audible harbor beacon&quot;,
+  description:&quot;Enter scene, track and logical scene-pixel center. Radius is in the scene&#39;s configured distance units. The eligible token/listener determines received gain.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;trackId&quot;,
+    &quot;label&quot;: &quot;Track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;x&quot;,
+    &quot;label&quot;: &quot;Scene x pixels&quot;,
+    &quot;value&quot;: 140,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;y&quot;,
+    &quot;label&quot;: &quot;Scene y pixels&quot;,
+    &quot;value&quot;: 140,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;radius&quot;,
+    &quot;label&quot;: &quot;Radius in scene distance units&quot;,
+    &quot;value&quot;: 10,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  return api.audio.createSpatialSound({sceneId:values.sceneId,trackId:values.trackId,x:values.x,y:values.y,radius:values.radius,gain:0.7,falloff:&quot;smooth&quot;,loop:true,enabled:true,occlusion:true}, {signal});
+}
+},
+{
+  id:&quot;spatial-update&quot;,
+  label:&quot;Adjust the source range or disable it&quot;,
+  description:&quot;Use the created source UUID in its own scene. This preserves the source track/location while changing radius, enabled and falloff.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Spatial source UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;radius&quot;,
+    &quot;label&quot;: &quot;New radius&quot;,
+    &quot;value&quot;: 15,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;enabled&quot;,
+    &quot;label&quot;: &quot;Enabled&quot;,
+    &quot;value&quot;: true,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const state=await api.audio.state({sceneId:values.sceneId}, {signal});
+  const source=state.spatialSounds.find(row=&gt;row.id===values.id);
+  if (!source) throw new Error(&quot;Source unavailable in this scene&quot;);
+  return api.audio.updateSpatialSound({sceneId:values.sceneId,id:source.id,version:source.version,radius:values.radius,enabled:values.enabled,falloff:&quot;linear&quot;}, {signal});
+}
+},
+{
+  id:&quot;spatial-delete&quot;,
+  label:&quot;Remove the test spatial source&quot;,
+  description:&quot;Use only the source created for this tutorial.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Disposable spatial source UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const source=(await api.audio.state({sceneId:values.sceneId}, {signal})).spatialSounds.find(row=&gt;row.id===values.id);
+  if (!source) throw new Error(&quot;Source unavailable&quot;);
+  return api.audio.deleteSpatialSound({sceneId:values.sceneId,id:source.id,version:source.version}, {signal});
+}
+},
+{
+  id:&quot;playlist-delete&quot;,
+  label:&quot;Remove the test composition&quot;,
+  description:&quot;Stop its score first, then delete only the demonstration definition.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Disposable composition UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const current=(await api.audio.state({}, {signal})).playlists.find(row=&gt;row.id===values.id);
+  if (!current) throw new Error(&quot;Composition unavailable&quot;);
+  return api.audio.deletePlaylist({id:current.id,version:current.version}, {signal});
+}
+},
+{
+  id:&quot;track-delete&quot;,
+  label:&quot;Delete only the disposable uploaded audio&quot;,
+  description:&quot;Use an original track uploaded for this tutorial after finishing playback/source/composition tests. This deletes its file and detaches native references.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;trackId&quot;,
+    &quot;label&quot;: &quot;Disposable original track UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const track=(await api.audio.state({}, {signal})).tracks.find(row=&gt;row.id===values.trackId);
+  if (!track) throw new Error(&quot;Track unavailable&quot;);
+  return api.audio.deleteTrack({id:track.id,version:track.version}, {signal});
+}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-18">Copiar</button></div><pre><code data-code="code-18" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.audio&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-audio { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-audio label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-audio input, .tutorial-workbench-audio select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-audio pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-audio button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-19">Copiar</button></div><pre><code data-code="code-19" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Teste padrões da faixa separados de vozes ativas. Confira version do ambiente versus score.version, playlist versus preset, limites de tempo/volume e versões antigas. Compare previewTokenId do GM com token controlado por jogador perto/longe da fonte. EffectiveGain zero sem ouvinte é esperado; erro de requisição não é silêncio normal. Upload nativo valida metadados e tamanho; respeite os limites da tela sem inventar endpoint. Cada Create cria definição/fonte nova. Etapas não formam transação única; após falha de rede, inspecione antes de repetir. Pare áudio antes de limpar, exclua apenas exemplos e confira que jogador não executa transporte do GM.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-20">Copiar</button></div><pre><code data-code="code-20" class="language-text">Amplie tutorial-audio para cena original de porto. Confira audio/services.py, soundtrack.py e frontend.json da 0.3.0. Use IDs reais de faixas enviadas, sceneId, preparo nativo, version de ambiente e expectedVersion de trilha corretamente. Preserve privacidade de ouvintes, relógio do servidor e cancelamento. Não invente upload nem exija host novo. Entregue fontes completos, sequência de cliques e testes espaciais/reprodução de GM/jogador.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-cards.html"><span>Anterior ←</span><strong>Como criar ferramentas de cartas e baralhos</strong></a><a href="tutorial-chat-dice.html"><span>Próximo →</span><strong>Como criar ferramentas de chat, dados e prontidão</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/audio/services.py">gravewright/audio/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/audio/soundtrack.py">gravewright/audio/soundtrack.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/audio/metadata.py">gravewright/audio/metadata.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/media.py">gravewright/table/media.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/frontend/features/table-library/ui/AssetUploadLibrary.native.js">gravewright/maps/frontend/features/table-library/ui/AssetUploadLibrary.native.js</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

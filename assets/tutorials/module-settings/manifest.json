@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.module-settings",
+  "name": "Persist module settings safely",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Implement personal, shared and browser-local JSON with revisions and cleanup.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

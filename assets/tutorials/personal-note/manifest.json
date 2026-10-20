@@ -1,0 +1,13 @@
+{
+  "id": "example.personal-note",
+  "name": "Personal note workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "A real Customize form, personal settings migration and translated live panel.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

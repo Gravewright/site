@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Create a trusted Django integration and server hooks | Gravewright</title><meta name="description" content="Complete Python app with authenticated routes, native mutations and after-commit signals."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/tutorial-server-integration.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-server-integration.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-server-integration.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-server-integration.html"><meta property="og:type" content="article"><meta property="og:title" content="Create a trusted Django integration and server hooks | Gravewright"><meta property="og:description" content="Complete Python app with authenticated routes, native mutations and after-commit signals."><meta property="og:url" content="https://gravewright.com/docs/en/tutorial-server-integration.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Create a trusted Django integration and server hooks","description":"Complete Python app with authenticated routes, native mutations and after-commit signals.","inLanguage":"en","url":"https://gravewright.com/docs/en/tutorial-server-integration.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/tutorial-server-integration.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Implementation tutorials</p><ul><li><a href="tutorial-index.html">Learn to build modules and systems</a></li><li><a href="tutorial-first-module.html">Create, install and update your first module</a></li><li><a href="tutorial-capability-map.html">All extension capabilities and where to implement them</a></li><li><a href="tutorial-complete-system.html">How to create a complete original system package</a></li><li><a href="tutorial-journal-module.html">How to create a journal module</a></li><li><a href="tutorial-create-journal.html">Create a journal from a module, from scratch</a></li><li><a href="tutorial-sheet-module.html">How to create a module that acts on a sheet</a></li><li><a href="tutorial-system-sheet.html">How to build and replace a complete system sheet</a></li><li><a href="tutorial-compendium-module.html">How to create a compendium module</a></li><li><a href="tutorial-system-compendiums.html">How to include compendiums in a system</a></li><li><a href="tutorial-maps.html">How to create a scene tools module</a></li><li><a href="tutorial-tokens.html">How to create a token tools module</a></li><li><a href="tutorial-combat.html">How to create a combat tools module</a></li><li><a href="tutorial-items.html">How to build item and inventory tools</a></li><li><a href="tutorial-cards.html">How to build deck and card tools</a></li><li><a href="tutorial-audio.html">How to build scene audio and soundtrack tools</a></li><li><a href="tutorial-chat-dice.html">How to build chat, dice and ready-check tools</a></li><li><a href="tutorial-quests.html">How to create quest automation and quest-board actions</a></li><li><a href="tutorial-roll-tables.html">How to create, draw and reset weighted roll tables</a></li><li><a href="tutorial-journal-management.html">How to create, organize and share journal documents</a></li><li><a href="tutorial-actors.html">Build an actor-directory module</a></li><li><a href="tutorial-storage.html">Persist module settings safely</a></li><li><a href="tutorial-assets.html">Upload and use module and campaign files</a></li><li><a href="tutorial-localization-events.html">Translate a module and react to changes</a></li><li><a href="tutorial-sdk-operations.html">Maintain a module using the original host.call SDK</a></li><li><a href="tutorial-customize-ui.html">Build Customize forms and native module windows</a></li><li><a href="tutorial-server-integration.html" aria-current="page">Create a trusted Django integration and server hooks</a></li><li><a href="tutorial-language-package.html">How to create and activate an installation language package</a></li><li><a href="tutorial-publish-module.html">How to version, sign and distribute a module</a></li></ul></div><div class="kb-nav-group"><p>Examples by kind</p><ul><li><a href="examples-index.html">Complete examples by kind</a></li><li><a href="example-package-browser.html">Browser module: a campaign summary</a></li><li><a href="example-package-system.html">System package: an editable character sheet</a></li><li><a href="example-package-language.html">Language package: Portuguese and Spanish catalogs</a></li><li><a href="example-package-django.html">Django package: an owner-only server endpoint</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Readable actor counter</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Actor sheet revision inspector</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Linked or independent token inspector</a></li><li><a href="example-surface-item-directory.html">item.directory: Item counts by type</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Item data inspector</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Scene broadcast status</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Scene information control</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Scene center marker</a></li><li><a href="example-surface-chat-log.html">chat.log: Visible chat statistics</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Current turn summary</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Journal outline</a></li><li><a href="example-surface-preferences.html">preferences: Persistent personal density preference</a></li><li><a href="example-surface-table-interface.html">table.interface: Authorized document search</a></li><li><a href="examples-search-kinds.html">Search: all 7 kinds and the empty filter</a></li><li><a href="examples-actor-image-kinds.html">Actor images: portrait and token</a></li><li><a href="examples-compendium-entry-kinds.html">Compendium entries: all five kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Compendium packs: 3 installed and 7 local types</a></li><li><a href="examples-blueprints.html">Blueprint examples for every object kind</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: open, close and preserve a lock</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: a two-state switch and an Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: turn the mechanism and set the flame</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: a pressure plate with first/last occupancy</a></li><li><a href="example-blueprint-connections.html">Connection kinds: execution and data, a complete graph</a></li><li><a href="example-blueprint-nodes.html">All 42 Blueprint node types, with complete examples</a></li></ul></div><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>Create a trusted Django integration and server hooks</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Implementation tutorials <span aria-hidden="true">/</span> 6 min read</span><h1>Create a trusted Django integration and server hooks</h1><p class="kb-lead">Complete Python app with authenticated routes, native mutations and after-commit signals.</p></header><div class="kb-prose"><h2 id="what-this-package-does">What this package does</h2>
+<p>Build a generic trusted server integration with authorized actor reads, native-command renaming and after-commit event observation. Python code is owner-activated for the installation, separately from campaign browser modules. It is not a separately installed RPG rules companion. A new system remains one package using the requested host contracts.</p>
+<h2 id="1-choose-browser-or-server-correctly">1. Choose browser or server correctly</h2>
+<p>Use browser code when an action fits the public domain API. Use Django only for an explicitly trusted integration requiring server routes/services. A Django manifest cannot contain entry, system or locales. Browser modules cannot ask the host to import Python or execute SQL. This example creates no models, migrations, extra dependencies or startup writes.</p>
+<h2 id="2-create-server-workshop-with-these-files">2. Create server-workshop with these files</h2>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-1">Copy</button></div><pre><code data-code="code-1" class="language-json">{
+  &quot;id&quot;: &quot;example.server-workshop&quot;,
+  &quot;name&quot;: &quot;Server integration workshop&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;description&quot;: &quot;Authenticated campaign reads, native actor commands and bounded process-local event counters.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;django&quot;: {
+    &quot;apps&quot;: [
+      &quot;example_workshop.apps.ExampleWorkshopConfig&quot;
+    ]
+  }
+}</code></pre></div>
+<h3 id="exampleworkshopinitpy">example_workshop/<strong>init</strong>.py</h3>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-2">Copy</button></div><pre><code data-code="code-2" class="language-python"></code></pre></div>
+<h3 id="exampleworkshopappspy">example_workshop/apps.py</h3>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-3">Copy</button></div><pre><code data-code="code-3" class="language-python">from django.apps import AppConfig
+
+
+class ExampleWorkshopConfig(AppConfig):
+    name = &quot;example_workshop&quot;
+    label = &quot;example_workshop&quot;
+    gravewright_urlconf = &quot;example_workshop.urls&quot;
+
+    def ready(self):
+        from api.events import resource_changed
+        from .hooks import observe
+        resource_changed.connect(observe, dispatch_uid=&quot;example.server-workshop.observe&quot;, weak=False)</code></pre></div>
+<h3 id="exampleworkshophookspy">example_workshop/hooks.py</h3>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-4">Copy</button></div><pre><code data-code="code-4" class="language-python">from collections import Counter
+from threading import Lock
+
+counts = Counter()
+lock = Lock()
+
+
+def observe(sender, change, **kwargs):
+    # Only fixed resource names are retained, never campaign/user/document IDs.
+    if change.resource not in {&quot;actors&quot;, &quot;tokens&quot;, &quot;maps&quot;, &quot;journals&quot;, &quot;items&quot;, &quot;combat&quot;, &quot;cards&quot;, &quot;audio&quot;, &quot;compendiums&quot;}:
+        return
+    with lock:
+        counts[change.resource] += 1
+
+
+def snapshot():
+    with lock:
+        return dict(counts)</code></pre></div>
+<h3 id="exampleworkshopurlspy">example_workshop/urls.py</h3>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-5">Copy</button></div><pre><code data-code="code-5" class="language-python">from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(&quot;api/tutorials/campaign/&lt;uuid:campaign_id&gt;/actors/&quot;, views.read_actors),
+    path(&quot;api/tutorials/campaign/&lt;uuid:campaign_id&gt;/rename/&quot;, views.rename_actor),
+    path(&quot;api/tutorials/event-counts/&quot;, views.event_counts),
+]</code></pre></div>
+<h3 id="exampleworkshopviewspy">example_workshop/views.py</h3>
+<div class="code-block"><div class="code-toolbar"><span>python</span><button type="button" data-copy="code-6">Copy</button></div><pre><code data-code="code-6" class="language-python">import json
+from uuid import UUID, uuid4
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET, require_POST
+from api import Context, actors
+from api.errors import AuthError, JournalError, MapError
+from .hooks import snapshot
+
+
+def failure(error):
+    code = getattr(error, &quot;code&quot;, &quot;invalid_data&quot;)
+    code = {&quot;not_a_member&quot;: &quot;permission_denied&quot;, &quot;forbidden&quot;: &quot;permission_denied&quot;, &quot;invalid_input&quot;: &quot;invalid_data&quot;}.get(code, code)
+    status = {&quot;permission_denied&quot;: 403, &quot;not_found&quot;: 404, &quot;conflict&quot;: 409}.get(code, getattr(error, &quot;status&quot;, 400))
+    return JsonResponse({&quot;error&quot;: code}, status=status)
+
+
+@login_required
+@require_GET
+def read_actors(request, campaign_id):
+    try:
+        context = Context.from_request(request, campaign_id)
+        value = actors.state(context.campaign_id, context.user_id)
+        return JsonResponse({&quot;actors&quot;: value[&quot;actors&quot;], &quot;actorTypes&quot;: value[&quot;actorTypes&quot;]})
+    except (AuthError, JournalError, MapError) as error:
+        return failure(error)
+
+
+@login_required
+@require_POST
+def rename_actor(request, campaign_id):
+    # Normal Django CSRF middleware remains active; never mark this csrf_exempt.
+    if len(request.body) &gt; 8192:
+        return JsonResponse({&quot;error&quot;: &quot;invalid_data&quot;}, status=400)
+    try:
+        body = json.loads(request.body)
+        if not isinstance(body, dict) or set(body) != {&quot;id&quot;, &quot;version&quot;, &quot;name&quot;}:
+            raise ValueError(&quot;Invalid payload&quot;)
+        identifier = str(UUID(body[&quot;id&quot;]))
+        if not str(body[&quot;version&quot;]).isdigit():
+            raise ValueError(&quot;Invalid version&quot;)
+        if not isinstance(body[&quot;name&quot;], str) or not 2 &lt;= len(body[&quot;name&quot;].strip()) &lt;= 120:
+            raise ValueError(&quot;Invalid name&quot;)
+        context = Context.from_request(request, campaign_id)
+        result = actors.command(context.campaign_id, context.user_id, &quot;actor.update&quot;, {
+            &quot;id&quot;: identifier, &quot;version&quot;: body[&quot;version&quot;], &quot;name&quot;: body[&quot;name&quot;].strip(),
+        }, uuid4())
+        return JsonResponse({&quot;result&quot;: result})
+    except (ValueError, TypeError, KeyError, AttributeError):
+        return JsonResponse({&quot;error&quot;: &quot;invalid_data&quot;}, status=400)
+    except (AuthError, JournalError, MapError) as error:
+        return failure(error)
+
+
+@login_required
+@require_GET
+def event_counts(request):
+    if request.user.role != &quot;owner&quot;:
+        return JsonResponse({&quot;error&quot;: &quot;permission_denied&quot;}, status=403)
+    return JsonResponse({&quot;processLocal&quot;: True, &quot;resources&quot;: snapshot()})</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-7">Copy</button></div><pre><code data-code="code-7" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="3-package-and-activate-on-a-development-host">3. Package and activate on a development host</h2>
+<p>Download the <a href="../../assets/tutorials/server-workshop/server-workshop-source.zip">complete ZIP</a> or save the files and archive manifest.json, LICENSE.txt and example_workshop together. From the project root:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-8">Copy</button></div><pre><code data-code="code-8" class="language-powershell">python -m zipfile -c ../server-workshop-1.0.0.zip manifest.json LICENSE.txt example_workshop</code></pre></div>
+<p>Use python3 on Linux/macOS. As owner, install through Inside → Modules → Install module → Install from ZIP. Choose installation activation rather than the table’s Activate action. The Runner stages selection and restarts through managed supervision; await completion and reload. managed_start_required on a directly launched server means activation must use the Runner. Do not bypass it through a browser module import.</p>
+<h2 id="4-test-authenticated-reads-and-writes">4. Test authenticated reads and writes</h2>
+<p>Open /api/tutorials/campaign/YOUR_UUID/actors/ in an authenticated tab with your disposable campaign UUID. The native service filters the list for that caller. As campaign GM, use a disposable actor and execute in that host’s Console:</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copy</button></div><pre><code data-code="code-9" class="language-javascript">// Run on your own development host in an authenticated browser tab.
+const campaignId = &quot;REPLACE_WITH_YOUR_TEST_CAMPAIGN_UUID&quot;;
+const state = await fetch(&#39;/api/tutorials/campaign/&#39;+campaignId+&#39;/actors/&#39;).then(r=&gt;r.json());
+const actor = state.actors.find(row=&gt;row.canOpen);
+const csrf = await fetch(&#39;/__gravewright/csrf&#39;).then(r=&gt;r.json());
+const response = await fetch(&#39;/api/tutorials/campaign/&#39;+campaignId+&#39;/rename/&#39;, {
+  method:&#39;POST&#39;,
+  headers:{&#39;Content-Type&#39;:&#39;application/json&#39;,[csrf.header]:csrf.token},
+  body:JSON.stringify({id:actor.id,version:actor.version,name:&#39;Original workshop navigator&#39;}),
+});
+console.log(response.status,await response.json());</code></pre></div>
+<p>A successful response is 200. Inspect the persisted name in Actors. An old version yields conflict; reread before deciding another change. Passing a GM UUID does not grant GM access: Context.from_request uses authenticated identity and membership. Middleware rejects POST without valid CSRF.</p>
+<h2 id="5-observe-events-without-exposing-data">5. Observe events without exposing data</h2>
+<p>AppConfig.ready connects observe once. The receiver only counts nine fixed resource names without storing user/campaign/document IDs or querying the database. As owner, open /api/tutorials/event-counts/. A completed public command may increment its counter. Counts are process-local and reset on restart; they are neither durable audit history nor multi-worker totals. Chat/dice writes do not all emit this signal.</p>
+<p>An after-commit receiver failure does not undo a committed transaction. Do not perform irreversible external work expecting rollback. Durable integrations require their own transactional queue in a trusted app; the browser SDK does not supply it.</p>
+<h2 id="6-use-the-remaining-python-facades">6. Use the remaining Python facades</h2>
+<p>Authenticate Context, invoke the public facade and let its service enforce permissions/revisions. Signatures differ; consult the <a href="api.html#python-interface">Python API table</a>: actors/tokens/maps/journals; items/combat/cards/audio/compendiums; resources as a generic dispatcher; chat/dice/table for messages, rolls and search; events for signals. Private imports and direct ORM writes do not replace native commands.</p>
+<p>Family recipes in the <a href="tutorial-index.html">implementation index</a> supply concrete action payloads. Server command(campaign_id,user_id,action,data,request_id) uses native action names declared in frontend.json, with state for reads. For example journals.update uses action update, while combat.nextTurn uses next. Do not pass JavaScript method names as native actions without checking the registry.</p>
+<h2 id="7-test-before-distribution">7. Test before distribution</h2>
+<p>Check owner, GM, player, nonmember, anonymous session, missing CSRF, malformed body, stale revision and another campaign’s actor. GET routes must not write or import operator apps. Inspect the ZIP and publish a new version for changed bytes. Owner deactivation also uses the Runner and restart; do not remove active package files forcibly.</p>
+<h2 id="how-to-use-ai-for-server-integration">How to use AI for server integration</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-10">Copy</button></div><pre><code data-code="code-10" class="language-text">Start from Server integration workshop for [generic integration] on Gravewright 0.3.0. Use Context.from_request and public api facades; preserve authentication, CSRF, permissions and revisions. No ready/import queries. Document after-commit signals, process-local limits and Runner activation. Do not introduce a system companion or require a newer host. Deliver complete files and cross-account/campaign tests.</code></pre></div></div></article><nav class="kb-pagination" aria-label="Continue reading"><a href="tutorial-customize-ui.html"><span>Previous ←</span><strong>Build Customize forms and native module windows</strong></a><a href="tutorial-language-package.html"><span>Next →</span><strong>How to create and activate an installation language package</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-create-system.html">How to use AI to create an RPG system</a><a href="ai-create-module.html">How to use AI to create a browser module</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/api/context.py">api/context.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/api/actors.py">api/actors.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/api/events.py">api/events.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/server_apps.py">gravewright/modules/server_apps.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/config/marketplace_apps.py">config/marketplace_apps.py</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#what-this-package-does">What this package does</a></li><li><a href="#1-choose-browser-or-server-correctly">1. Choose browser or server correctly</a></li><li><a href="#2-create-server-workshop-with-these-files">2. Create server-workshop with these files</a></li><li><a href="#3-package-and-activate-on-a-development-host">3. Package and activate on a development host</a></li><li><a href="#4-test-authenticated-reads-and-writes">4. Test authenticated reads and writes</a></li><li><a href="#5-observe-events-without-exposing-data">5. Observe events without exposing data</a></li><li><a href="#6-use-the-remaining-python-facades">6. Use the remaining Python facades</a></li><li><a href="#7-test-before-distribution">7. Test before distribution</a></li><li><a href="#how-to-use-ai-for-server-integration">How to use AI for server integration</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

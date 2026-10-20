@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.chat-dice",
+  "name": "Chat, dice and lobby",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

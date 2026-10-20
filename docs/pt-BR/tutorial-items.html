@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar ferramentas de itens e inventário | Gravewright</title><meta name="description" content="Crie, organize, duplique, compartilhe e edite itens originais com revisões e permissões nativas."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-items.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-items.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-items.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-items.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar ferramentas de itens e inventário | Gravewright"><meta property="og:description" content="Crie, organize, duplique, compartilhe e edite itens originais com revisões e permissões nativas."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-items.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar ferramentas de itens e inventário","description":"Crie, organize, duplique, compartilhe e edite itens originais com revisões e permissões nativas.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-items.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-items.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html" aria-current="page">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar ferramentas de itens e inventário</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 10 min de leitura</span><h1>Como criar ferramentas de itens e inventário</h1><p class="kb-lead">Crie, organize, duplique, compartilhe e edite itens originais com revisões e permissões nativas.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/items.png" aria-label="Abrir captura completa: Módulo Expedition item tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/items.png" width="1440" height="1000" alt="Módulo Expedition item tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Expedition item tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie Expedition item tools. Descubra tipos registrados na campanha, crie Survey kit e reserva, organize pastas e conceda acesso. O core não oferece transação genérica de equipar/inventário do ator: estas receitas gerenciam documentos de item da campanha; relações e regras de inventário pertencem ao sistema. Todas as mutações públicas de itens aparecem abaixo.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta items. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/items/items-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">items/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Use campanha descartável com sistema que declare tipo de item, como gear do tutorial de sistema com compêndios. Criar/duplicar/permissões/pastas/excluir exige GM; proprietário de item pode alterar dados autorizados. Cole nos campos os UUIDs retornados pelas ações autorizadas.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../items-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../items-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Expedition item tools. Feche o menu e clique no botão Expedition item tools. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="inspecione-tipos-e-pastas-reais">Inspecione tipos e pastas reais</h3>
+<p>Execute primeiro. Copie um ID de types; a criação usa gear por padrão, disponível nos sistemas dos tutoriais.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,signal}) =&gt; {
+  return {...await api.items.state({}, {signal}),readableItems:await api.items.list({}, {signal})};
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Itens autorizados, árvore de pastas, tipos registrados e isGM. Uma entrada só de listagem não tem corpo legível.</p>
+<p><strong>Como conferir:</strong> Compare GM e jogador com leitura; dados ocultos não devem aparecer.</p>
+<h3 id="crie-e-duplique-um-kit-de-expedicao">Crie e duplique um kit de expedição</h3>
+<p>Informe um tipo registrado e execute uma vez. Copie folderId, itemId e duplicateId para as próximas receitas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,signal},values) =&gt; {
+  const state = await api.items.state({}, {signal});
+  if (!state.types.some(type =&gt; type.id === values.type)) throw new Error(&quot;Choose an item type registered by this campaign system&quot;);
+  const folder = await api.items.createFolder({name:&quot;Expedition supplies&quot;,color:&quot;#6498cc&quot;,parentId:null}, {signal});
+  const created = await api.items.create({name:&quot;Survey kit&quot;,type:values.type,folderId:folder.id,data:{quantity:1,description:&quot;An original compass and a blank notebook.&quot;},permissions:{default:&quot;none&quot;}}, {signal});
+  const duplicate = await api.items.duplicate({id:created.id,version:created.item.version,name:&quot;Spare survey kit&quot;}, {signal});
+  return {folderId:folder.id,itemId:created.id,duplicateId:duplicate.id};
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma pasta e dois itens separados com JSON original pertencente ao sistema. Cada execução explícita cria outro conjunto.</p>
+<p><strong>Como conferir:</strong> Abra Itens, edite um kit e confira que a cópia permanece independente.</p>
+<h3 id="edite-e-mova-o-kit">Edite e mova o kit</h3>
+<p>Use itemId, defina nome/quantidade e cole folderId; destino vazio move para a raiz.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  return api.items.update({id:current.id,version:current.version,name:values.name,folderId:values.folderId || null,data:{...current.data,quantity:values.quantity}}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> O item muda atomicamente com a versão atual e preserva outros campos. Quantity é campo de exemplo do sistema, não regra de inventário do core.</p>
+<p><strong>Como conferir:</strong> Confira pasta e quantidade; um payload antigo em outra sessão deve receber conflict.</p>
+<h3 id="conceda-leitura-ou-edicao-conscientemente">Conceda leitura ou edição conscientemente</h3>
+<p>Como GM, use o UUID do kit. Read concede leitura padrão; um UUID real de membro cria exceção. Owner permite edição.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  const permissions = {...current.permissions,[values.userId || &quot;default&quot;]:values.level};
+  return api.items.setPermissions({id:current.id,version:current.version,permissions}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Permissões com versão. Limited permite apenas listagem; none remove a concessão selecionada.</p>
+<p><strong>Como conferir:</strong> Teste read, limited e none com jogador. Leitura não autoriza edição; esconder botão não é a barreira de segurança.</p>
+<h3 id="renomeie-ou-reorganize-a-pasta">Renomeie ou reorganize a pasta</h3>
+<p>Cole folderId. Pai vazio deixa a pasta na raiz; outro UUID da campanha muda seu pai.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,signal},values) =&gt; {
+  return api.items.updateFolder({id:values.id,name:values.name,parentId:values.parentId || null,color:&quot;#6498cc&quot;}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A pasta é renomeada/movida. O servidor rejeita ciclos e IDs de outra campanha. Este contrato de pasta não tem campo version.</p>
+<p><strong>Como conferir:</strong> Atualize Itens, confira a árvore e tente usar a própria pasta como pai.</p>
+<h3 id="exclua-o-kit-reserva">Exclua o kit reserva</h3>
+<p>Use apenas duplicateId desta demonstração. A ação exclui esse item e exige GM.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  return api.items.delete({id:current.id,version:current.version}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A reserva desaparece e o kit original permanece.</p>
+<p><strong>Como conferir:</strong> Atualize o diretório e confira que o UUID original ainda abre.</p>
+<h3 id="remova-a-pasta-de-demonstracao">Remova a pasta de demonstração</h3>
+<p>Mova os itens que deseja manter à raiz pela receita de edição antes de remover sua pasta de teste.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">async ({api,signal},values) =&gt; {
+  return api.items.deleteFolder({id:values.id}, {signal});
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A pasta selecionada é removida pelo serviço nativo.</p>
+<p><strong>Como conferir:</strong> Atualize Itens e confira os recursos restantes em vez de confiar no estado antigo do cliente.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.items&quot;,
+  &quot;name&quot;: &quot;Expedition item tools&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Create, organize, duplicate, share and edit original items with native revisions and permissions.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Expedition item tools&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-items&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-javascript">export const recipes=[
+{
+  id:&quot;inspect&quot;,
+  label:&quot;Inspect real item types and folders&quot;,
+  description:&quot;Choose this first and Run action. Copy a registered type ID from types; the creation recipe defaults to gear, supplied by the tutorial systems.&quot;,
+  fields:[],
+  run:async ({api,signal}) =&gt; {
+  return {...await api.items.state({}, {signal}),readableItems:await api.items.list({}, {signal})};
+}
+},
+{
+  id:&quot;create-kit&quot;,
+  label:&quot;Create and duplicate an expedition kit&quot;,
+  description:&quot;Enter a real registered item type, then Run action once. Copy folderId, itemId and duplicateId from the result for the next recipes.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;type&quot;,
+    &quot;label&quot;: &quot;Registered item type&quot;,
+    &quot;value&quot;: &quot;gear&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const state = await api.items.state({}, {signal});
+  if (!state.types.some(type =&gt; type.id === values.type)) throw new Error(&quot;Choose an item type registered by this campaign system&quot;);
+  const folder = await api.items.createFolder({name:&quot;Expedition supplies&quot;,color:&quot;#6498cc&quot;,parentId:null}, {signal});
+  const created = await api.items.create({name:&quot;Survey kit&quot;,type:values.type,folderId:folder.id,data:{quantity:1,description:&quot;An original compass and a blank notebook.&quot;},permissions:{default:&quot;none&quot;}}, {signal});
+  const duplicate = await api.items.duplicate({id:created.id,version:created.item.version,name:&quot;Spare survey kit&quot;}, {signal});
+  return {folderId:folder.id,itemId:created.id,duplicateId:duplicate.id};
+}
+},
+{
+  id:&quot;update-kit&quot;,
+  label:&quot;Edit and move the kit&quot;,
+  description:&quot;Use itemId, set a name/quantity and paste the created folderId, or leave the destination blank to move to root.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Item UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;label&quot;: &quot;New name&quot;,
+    &quot;value&quot;: &quot;Prepared survey kit&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;quantity&quot;,
+    &quot;label&quot;: &quot;Quantity&quot;,
+    &quot;value&quot;: 2,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;folderId&quot;,
+    &quot;label&quot;: &quot;Destination folder UUID, blank for root&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  return api.items.update({id:current.id,version:current.version,name:values.name,folderId:values.folderId || null,data:{...current.data,quantity:values.quantity}}, {signal});
+}
+},
+{
+  id:&quot;permissions&quot;,
+  label:&quot;Grant reading or editing deliberately&quot;,
+  description:&quot;As GM enter the kit UUID. Use read for the default grant or a real member UUID for a specific override; owner grants editing.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Item UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;level&quot;,
+    &quot;label&quot;: &quot;Access: none, limited, read or owner&quot;,
+    &quot;value&quot;: &quot;read&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;userId&quot;,
+    &quot;label&quot;: &quot;Member UUID, blank for default&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  const permissions = {...current.permissions,[values.userId || &quot;default&quot;]:values.level};
+  return api.items.setPermissions({id:current.id,version:current.version,permissions}, {signal});
+}
+},
+{
+  id:&quot;folder&quot;,
+  label:&quot;Rename or reparent the folder&quot;,
+  description:&quot;Paste folderId. A blank parent keeps this folder at root; another campaign folder UUID reparents it.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Folder UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;label&quot;: &quot;Folder name&quot;,
+    &quot;value&quot;: &quot;Prepared supplies&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;parentId&quot;,
+    &quot;label&quot;: &quot;Parent folder UUID, blank for root&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  return api.items.updateFolder({id:values.id,name:values.name,parentId:values.parentId || null,color:&quot;#6498cc&quot;}, {signal});
+}
+},
+{
+  id:&quot;delete-item&quot;,
+  label:&quot;Delete the spare kit&quot;,
+  description:&quot;Use only duplicateId from this demonstration. This action deletes that item and requires GM.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Disposable item UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  const current = await api.items.get(values.id, {}, {signal});
+  return api.items.delete({id:current.id,version:current.version}, {signal});
+}
+},
+{
+  id:&quot;delete-folder&quot;,
+  label:&quot;Remove the demonstration folder&quot;,
+  description:&quot;Move items you want to retain to root with the update recipe before removing your test folder.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Disposable folder UUID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},values) =&gt; {
+  return api.items.deleteFolder({id:values.id}, {signal});
+}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.items&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-items { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-items label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-items input, .tutorial-workbench-items select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-items pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-items button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Crie uma vez, edite o original, compare a cópia, reorganize pastas e teste read/limited/none com jogador. Repetir criação produz outro conjunto de propósito. O SDK gera UUID novo por ação; não repita cegamente uma criação em várias etapas após resposta perdida, pois etapas anteriores podem ter sido confirmadas. Inspecione estado e retome conscientemente. Conflict exige ler/revisar estado; o código não troca revisão em uma requisição rejeitada. Item só de listagem não abre. Teste UUID de outra campanha, cancelamento e lista vazia de tipos. Exclua só os recursos de teste ao final.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-text">Amplie tutorial-items para [campos do sistema]. Confira items/services.py e frontend.json da release alvo. Preserve tipos registrados, dados, version, permissões e contenção de pastas. Não invente endpoints de inventário/equipar/transferir de ator. Entregue arquivos completos e testes GM/jogador com edição antiga e ações repetidas.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-combat.html"><span>Anterior ←</span><strong>Como criar um módulo de ferramentas de combate</strong></a><a href="tutorial-cards.html"><span>Próximo →</span><strong>Como criar ferramentas de cartas e baralhos</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/items/services.py">gravewright/items/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/domain.py">gravewright/table/domain.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/ownership.py">gravewright/table/ownership.py</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

@@ -1,0 +1,57 @@
+{
+  "name": "Beacon Expedition Library",
+  "packs": [
+    {
+      "id": "scouts",
+      "label": "Scouts",
+      "type": "actor_pack",
+      "entries": [
+        {
+          "id": "harbor-scout",
+          "name": "Harbor Scout",
+          "type": "character",
+          "systemId": "example.beacon-library",
+          "data": {
+            "stamina": 8,
+            "role": "Watch keeper"
+          }
+        }
+      ]
+    },
+    {
+      "id": "equipment",
+      "label": "Equipment",
+      "type": "item_pack",
+      "entries": [
+        {
+          "id": "signal-rope",
+          "name": "Signal Rope",
+          "type": "gear",
+          "systemId": "example.beacon-library",
+          "data": {
+            "length": 12,
+            "description": "An original training rope with blue knots."
+          }
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "label": "Signals",
+      "type": "spell_pack",
+      "entries": [
+        {
+          "id": "blue-glow",
+          "name": "Blue Glow",
+          "type": "spell",
+          "systemId": "example.beacon-library",
+          "data": {
+            "color": "blue",
+            "duration": 1,
+            "description": "An original fictional signal, with no host automation."
+          }
+        }
+      ]
+    }
+  ]
+}

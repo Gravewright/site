@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.items",
+  "name": "Expedition item tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Create, organize, duplicate, share and edit original items with native revisions and permissions.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

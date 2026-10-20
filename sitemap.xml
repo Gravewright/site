@@ -25,6 +25,35 @@
   <url><loc>https://gravewright.com/wiki/en/smart-objects.html</loc></url>
   <url><loc>https://gravewright.com/wiki/en/universal-vtt.html</loc></url>
   <url><loc>https://gravewright.com/wiki/en/backups-updates.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-index.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-first-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-capability-map.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-complete-system.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-journal-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-create-journal.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-sheet-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-system-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-compendium-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-system-compendiums.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-maps.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-tokens.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-combat.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-items.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-cards.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-audio.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-chat-dice.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-quests.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-roll-tables.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-journal-management.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-actors.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-storage.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-assets.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-localization-events.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-sdk-operations.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-customize-ui.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-server-integration.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-language-package.html</loc></url>
+  <url><loc>https://gravewright.com/docs/en/tutorial-publish-module.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/examples-index.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/example-package-browser.html</loc></url>
   <url><loc>https://gravewright.com/docs/en/example-package-system.html</loc></url>
@@ -104,6 +133,35 @@
   <url><loc>https://gravewright.com/wiki/pt-BR/smart-objects.html</loc></url>
   <url><loc>https://gravewright.com/wiki/pt-BR/universal-vtt.html</loc></url>
   <url><loc>https://gravewright.com/wiki/pt-BR/backups-updates.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-index.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-first-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-capability-map.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-complete-system.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-journal-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-create-journal.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-sheet-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-system-sheet.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-compendium-module.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-system-compendiums.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-maps.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-tokens.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-combat.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-items.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-cards.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-audio.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-quests.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-roll-tables.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-journal-management.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-actors.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-storage.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-assets.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-localization-events.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-sdk-operations.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-customize-ui.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-server-integration.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-language-package.html</loc></url>
+  <url><loc>https://gravewright.com/docs/pt-BR/tutorial-publish-module.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/examples-index.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/example-package-browser.html</loc></url>
   <url><loc>https://gravewright.com/docs/pt-BR/example-package-system.html</loc></url>

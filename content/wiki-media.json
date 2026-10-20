@@ -322,7 +322,9 @@
       "pt": "O exemplo de resumo lê um ator autorizado e abre o modal nativo. Gravewright 0.3.0, interface em inglês."
     },
     "articleSlugs": [
-      "example-package-browser"
+      "example-package-browser",
+      "tutorial-first-module",
+      "tutorial-index"
     ],
     "version": "0.3.0",
     "origin": "Real documentation example packages installed on a new disposable 0.3.0 host with synthetic data."
@@ -341,9 +343,429 @@
       "pt": "A ficha original Example Expedition salvou Stamina 17 pela API do contexto. Gravewright 0.3.0, interface em inglês."
     },
     "articleSlugs": [
-      "example-package-system"
+      "example-package-system",
+      "tutorial-system-sheet"
     ],
     "version": "0.3.0",
     "origin": "Real documentation example packages installed on a new disposable 0.3.0 host with synthetic data."
+  },
+  {
+    "id": "tutorial-actor-workshop",
+    "file": "assets/tutorials/previews/actor-workshop.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Build an actor-directory module module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Build an actor-directory module instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Build an actor-directory module module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Build an actor-directory module instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-actors"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-module-settings",
+    "file": "assets/tutorials/previews/module-settings.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Persist module settings safely module after running its user-read recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Persist module settings safely instalado após executar a receita user-read. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Persist module settings safely module after running its user-read recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Persist module settings safely instalado após executar a receita user-read. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-storage"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-asset-workshop",
+    "file": "assets/tutorials/previews/asset-workshop.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The installed file module uploaded original portrait artwork through the real multipart SDK. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo de arquivos enviou um retrato original pelo SDK multipart real. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The installed file module uploaded original portrait artwork through the real multipart SDK. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo de arquivos enviou um retrato original pelo SDK multipart real. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-assets"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-localization-events",
+    "file": "assets/tutorials/previews/localization-events.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Translate a module and react to changes module after running its catalog recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Translate a module and react to changes instalado após executar a receita catalog. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Translate a module and react to changes module after running its catalog recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Translate a module and react to changes instalado após executar a receita catalog. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-localization-events"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-sdk-compat",
+    "file": "assets/tutorials/previews/sdk-compat.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Original SDK workshop module after running its pages recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Original SDK workshop instalado após executar a receita pages. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Original SDK workshop module after running its pages recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Original SDK workshop instalado após executar a receita pages. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-sdk-operations"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-items",
+    "file": "assets/tutorials/previews/items.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Expedition item tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Expedition item tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Expedition item tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Expedition item tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-items"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-cards",
+    "file": "assets/tutorials/previews/cards.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Harbor card tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Harbor card tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Harbor card tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Harbor card tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-cards"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-audio",
+    "file": "assets/tutorials/previews/audio.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Harbor audio tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Harbor audio tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Harbor audio tools module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Harbor audio tools instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-audio"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-maps-workshop",
+    "file": "assets/tutorials/previews/maps-workshop.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Scene workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Scene workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Scene workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Scene workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-maps"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-tokens-workshop",
+    "file": "assets/tutorials/previews/tokens-workshop.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Token workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Token workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Token workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Token workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-tokens"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-combat-workshop",
+    "file": "assets/tutorials/previews/combat-workshop.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Combat workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Combat workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Combat workshop module after running its inspect recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Combat workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-combat"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-chat-dice",
+    "file": "assets/tutorials/previews/chat-dice.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Chat, dice and lobby module after running its history recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Chat, dice and lobby instalado após executar a receita history. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Chat, dice and lobby module after running its history recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Chat, dice and lobby instalado após executar a receita history. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-chat-dice"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-quests",
+    "file": "assets/tutorials/previews/quests.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Quest and board tools module after running its create-quest recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Quest and board tools instalado após executar a receita create-quest. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Quest and board tools module after running its create-quest recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Quest and board tools instalado após executar a receita create-quest. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-quests"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-roll-tables",
+    "file": "assets/tutorials/previews/roll-tables.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Roll table tools module after running its create-table recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Roll table tools instalado após executar a receita create-table. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Roll table tools module after running its create-table recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Roll table tools instalado após executar a receita create-table. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-roll-tables"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-journal-management",
+    "file": "assets/tutorials/previews/journal-management.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Installed Journal management tools module after running its directory recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Journal management tools instalado após executar a receita directory. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Installed Journal management tools module after running its directory recipe. Gravewright 0.3.0, English interface.",
+      "pt": "Módulo Journal management tools instalado após executar a receita directory. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-journal-management"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-journal-module",
+    "file": "assets/tutorials/previews/journal-module.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The installed session notebook appended a private GM page and opened its native journal content. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo de diário acrescentou uma página privada do GM e abriu o conteúdo no diário nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The installed session notebook appended a private GM page and opened its native journal content. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo de diário acrescentou uma página privada do GM e abriu o conteúdo no diário nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-journal-module",
+      "tutorial-create-journal"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-sheet-module",
+    "file": "assets/tutorials/previews/sheet-module.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The sheet action saved the actor name while retaining existing sheet data. Gravewright 0.3.0, English interface.",
+      "pt": "A ação na ficha salvou o nome do ator e preservou os dados existentes. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The sheet action saved the actor name while retaining existing sheet data. Gravewright 0.3.0, English interface.",
+      "pt": "A ação na ficha salvou o nome do ator e preservou os dados existentes. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-sheet-module"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-snapshot-sheet-module",
+    "file": "assets/tutorials/previews/snapshot-sheet-module.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The token action saved an independent snapshot name without changing its source actor. Gravewright 0.3.0, English interface.",
+      "pt": "A ação do token salvou o nome no snapshot independente sem alterar o ator de origem. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The token action saved an independent snapshot name without changing its source actor. Gravewright 0.3.0, English interface.",
+      "pt": "A ação do token salvou o nome no snapshot independente sem alterar o ator de origem. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-sheet-module"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-compendium-module",
+    "file": "assets/tutorials/previews/compendium-module.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The installed Harbor library created a campaign pack and read its original journal snapshot. Gravewright 0.3.0, English interface.",
+      "pt": "A biblioteca Harbor criou um pack da campanha e leu o snapshot do diário original. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The installed Harbor library created a campaign pack and read its original journal snapshot. Gravewright 0.3.0, English interface.",
+      "pt": "A biblioteca Harbor criou um pack da campanha e leu o snapshot do diário original. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-compendium-module"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-customize-module",
+    "file": "assets/tutorials/previews/customize-module.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The installed module saved a personal preference through Customize and the native modal. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo salvou uma preferência pessoal por Customize no modal nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The installed module saved a personal preference through Customize and the native modal. Gravewright 0.3.0, English interface.",
+      "pt": "O módulo salvou uma preferência pessoal por Customize no modal nativo. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-customize-ui"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-system-library",
+    "file": "assets/tutorials/previews/system-library.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "Three original actor/item packs shipped inside the selected system package. Gravewright 0.3.0, English interface.",
+      "pt": "Três packs originais de ator/item distribuídos dentro do sistema selecionado. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "Three original actor/item packs shipped inside the selected system package. Gravewright 0.3.0, English interface.",
+      "pt": "Três packs originais de ator/item distribuídos dentro do sistema selecionado. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-system-compendiums"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "tutorial-language-preference",
+    "file": "assets/tutorials/previews/language-preference.png",
+    "width": 1440,
+    "height": 1000,
+    "alt": {
+      "en": "The real account language preference is inside Gravewright, Preferences, Interface language. Gravewright 0.3.0, English interface.",
+      "pt": "A preferência real de idioma da conta fica em Gravewright, Preferences, Interface language. Gravewright 0.3.0, interface em inglês."
+    },
+    "caption": {
+      "en": "The real account language preference is inside Gravewright, Preferences, Interface language. Gravewright 0.3.0, English interface.",
+      "pt": "A preferência real de idioma da conta fica em Gravewright, Preferences, Interface language. Gravewright 0.3.0, interface em inglês."
+    },
+    "articleSlugs": [
+      "tutorial-language-package"
+    ],
+    "version": "0.3.0",
+    "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
   }
 ]

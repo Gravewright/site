@@ -56,9 +56,71 @@ Comece por [Exemplos completos por kind](docs/pt-BR/examples-index.html). O cat�
 GRAVEWRIGHT_SOURCE=/caminho/para/gravewright node --test scripts/*.test.mjs
 ```
 
-No PowerShell, defina `$env:GRAVEWRIGHT_SOURCE='C:/caminho/para/gravewright'` antes do mesmo `node --test`. Sem caminho explícito, os 21 casos de integração são pulados com explicação; testes de fonte/sintaxe, comportamento dos pacotes e Markdown continuam. A integração usa ModuleRuntime/API de domínio reais com DOM/transporte simulados. Ela complementa a instalação nativa e a verificação em navegador descritas em cada guia.
+No PowerShell, defina `$env:GRAVEWRIGHT_SOURCE='C:/caminho/para/gravewright'` antes do mesmo `node --test`. Sem caminho explícito, os casos de integração com o host são pulados com explicação; testes de fonte/sintaxe, comportamento dos pacotes e Markdown continuam. A integração usa ModuleRuntime/API de domínio reais com DOM/transporte simulados. Ela complementa a instalação nativa e a verificação em navegador descritas em cada guia.
 
 O pacote de Blueprints inclui seu próprio verificador; consulte o README baixado e execute `uv run --locked python data/blueprint-examples/check-examples.py --host .` na raiz de um host descartável após extrair ali. Ele ignora `.env`/apps do operador, isola armazenamento e proíbe consultas ao banco. Valida todos os tipos de nó e prevê ações; propriedade dos alvos, permissões de GM/jogador e efeitos ao vivo ainda exigem o fluxo documentado de Test behavior/playtest.
+
+## Tutoriais de implementação e mapa de capacidades
+
+O [catálogo de implementação](docs/pt-BR/tutorial-index.html) acrescenta **29 artigos bilíngues** e **22 novos projetos-fonte em ZIP**, além dos exemplos por kind existentes. Comece por [seu primeiro módulo](docs/pt-BR/tutorial-first-module.html), uma [ação na ficha existente](docs/pt-BR/tutorial-sheet-module.html), um [módulo de diário](docs/pt-BR/tutorial-journal-module.html) ou pelo [sistema original completo](docs/pt-BR/tutorial-complete-system.html). Cada projeto traz arquivos, instalação e ativação, campos de entrada, ações executáveis, resultados observáveis, tratamento de falhas e prompt de adaptação com IA. Os guias cobrem atores, tokens, cenas, itens, combate, cartas, áudio, chat/dados, missões, tabelas de rolagem, compêndios, arquivos, armazenamento, tradução, personalização e integração confiável de servidor.
+
+O [mapa de capacidades de extensão](docs/pt-BR/tutorial-capabilities.html) liga **139 métodos públicos de domínio**, **17 operações do SDK original** e **13 superfícies de montagem** a implementações concretas. Também identifica ciclo de vida, eventos, recursos, armazenamento, modais e tradução. O Map Builder liga os **quatro kinds de Objeto Inteligente**, os dois kinds de conexão e os **42 tipos de nó** aos seus grafos completos. Essas quantidades descrevem o contrato 0.3.0 e o catálogo autoral versionados, não uma contagem de testes aprovados nem promessa de suportar combinações arbitrárias. O mapa distingue packs mutáveis da campanha, coleções de sistema instalado e catálogos locais do operador.
+
+`content/tutorials.mjs` agrega os guias e pacotes autorais de `content/tutorial-*.mjs`. `scripts/build-examples.mjs` gera os projetos em `assets/tutorials/<project-id>/`, com o manifesto final na raiz de cada ZIP. O sistema completo combina fichas funcionais de ator/token, tipos originais de item/magia, iniciativa armazenada e três packs em um único sistema instalável. Idiomas são ativados globalmente e escolhidos por conta; módulos de navegador são ativados por campanha; apps Django exigem ativação explícita pelo dono. O guia de distribuição inclui assinador local e autoteste sintético; não cria chaves reais nem publica releases. Confira [licenças e procedência](THIRD_PARTY_NOTICES.md) antes de reutilizar um projeto.
+
+O snapshot dos contratos está versionado em `content/extension-contracts.json`, fixado no **Gravewright 0.3.0**, revisão **23ea61b8efb566cad0e3359489b0dad45e214906**. `npm run build` e o `npm test` normal usam fontes locais e esse snapshot; não procuram checkout pai do host, não buscam SDK remoto nem exigem repositório vizinho. Informar `GRAVEWRIGHT_SOURCE` ativa somente as verificações opcionais dependentes do host.
+
+### Atualizar explicitamente o snapshot dos contratos
+
+Use checkout separado e escolhido explicitamente na revisão publicada desejada. Revise as mudanças de API pública e preserve a compatibilidade pedida. Em POSIX, defina:
+
+```sh
+export GRAVEWRIGHT_SOURCE=/caminho/para/gravewright
+export GRAVEWRIGHT_REVISION=23ea61b8efb566cad0e3359489b0dad45e214906
+```
+
+No PowerShell, defina as mesmas variáveis apenas no processo:
+
+```powershell
+$env:GRAVEWRIGHT_SOURCE='C:/caminho/para/gravewright'
+$env:GRAVEWRIGHT_REVISION='23ea61b8efb566cad0e3359489b0dad45e214906'
+```
+
+Salve o JavaScript abaixo como `data/site-maintenance/update-extension-contracts.mjs` no checkout do host escolhido explicitamente, fora da pasta publicada do site. Troque explicitamente a revisão ao documentar outra release. Ele lê bytes confirmados no Git, evitando atribuir edições pendentes a um commit; grava somente o snapshot do site e não altera configuração global do Git:
+
+```javascript
+import {execFileSync} from "node:child_process";
+import {writeFile} from "node:fs/promises";
+import {resolve} from "node:path";
+if (!process.env.GRAVEWRIGHT_SOURCE || !process.env.GRAVEWRIGHT_REVISION) {
+  throw new Error("Set GRAVEWRIGHT_SOURCE and GRAVEWRIGHT_REVISION explicitly.");
+}
+const source = resolve(process.env.GRAVEWRIGHT_SOURCE);
+const git = (...args) => execFileSync("git", ["-c", "safe.directory=" + source.replaceAll("\\", "/"), "-C", source, ...args], {encoding:"utf8", maxBuffer:8*1024*1024});
+const revision = git("rev-parse", "--verify", process.env.GRAVEWRIGHT_REVISION + "^{commit}").trim();
+const committed = path => git("show", revision + ":" + path);
+const hostVersion = committed("pyproject.toml").match(/^version\s*=\s*"([^"]+)"/m)?.[1];
+if (!hostVersion) throw new Error("The committed host project has no version.");
+const registry = JSON.parse(committed("gravewright/modules/contracts/registry.json"));
+const frontend = JSON.parse(committed("gravewright/modules/contracts/frontend.json"));
+const snapshot = {hostVersion, sourceRevision:revision, frontend, operations:registry.operations, surfaces:registry.domains, events:registry.events};
+await writeFile("content/extension-contracts.json", JSON.stringify(snapshot, null, 2) + "\n");
+console.log("Updated contract snapshot from " + revision + " (" + hostVersion + ")");
+```
+
+Execute o utilitário salvo a partir da **raiz do repositório do site**. Em POSIX:
+
+```sh
+node '/caminho/para/gravewright/data/site-maintenance/update-extension-contracts.mjs'
+```
+
+No PowerShell:
+
+```powershell
+node 'C:/caminho/para/gravewright/data/site-maintenance/update-extension-contracts.mjs'
+```
+
+Revise o diff do JSON e as conveniências de `domain-api.js`; atualize receitas, links de capacidades e testes quando assinaturas ou permissões mudarem. Sincronize a documentação técnica de um checkout cujo HEAD seja essa mesma revisão usando `scripts/sync-project-docs.mjs --source <caminho>`. Mantenha `content/reference/catalog.json`, procedência dos contratos e versão pública documentada alinhados. Depois rode `npm test` e execute explicitamente integração com host, testes nativos e de navegador com dados descartáveis. Build estático aprovado não comprova instalação, persistência, autorização ou aparência no VTT.
 
 ## Comandos de preview
 
@@ -90,6 +152,9 @@ Enquanto faltarem arquivos, o site mostra placeholders com o nome esperado. Não
 | `content/site.mjs` | Textos em inglês/português, versão pública, links da release e comandos |
 | `content/wiki.mjs`, `content/ai-guides.mjs` | Procedimentos do produto e guias de desenvolvimento com IA nos dois idiomas |
 | `content/reference/` | Cópia completa da referência técnica e catálogo com revisão de origem |
+| `content/tutorials.mjs`, `content/tutorial-*.mjs` | Guias bilíngues por tarefa, fontes completos dos projetos e receitas executáveis |
+| `content/extension-contracts.json`, `content/tutorial-capabilities.mjs` | Snapshot do contrato atualizado explicitamente e mapa de implementações |
+| `scripts/build-examples.mjs`, `assets/tutorials/` | Projetos gerados, fontes para revisão dos ZIPs e utilitário local de distribuição |
 | `content/wiki-media.json`, `assets/wiki/` | Associação entre capturas e artigos, imagens reais e procedência |
 | `scripts/build-knowledge.mjs`, `scripts/markdown.mjs` | Páginas estáticas de conhecimento e renderização de Markdown |
 | `knowledge.css`, `knowledge.js` | Layouts da documentação e busca local no texto completo |

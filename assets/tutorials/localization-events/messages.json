@@ -1,0 +1,11 @@
+{
+  "en": {
+    "welcome": "Welcome, {name}"
+  },
+  "pt-BR": {
+    "welcome": "Boas-vindas, {name}"
+  },
+  "es": {
+    "welcome": "Bienvenido, {name}"
+  }
+}

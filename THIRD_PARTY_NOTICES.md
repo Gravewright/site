@@ -14,6 +14,16 @@ The four original package-variant examples under `assets/examples/packages/`, Bl
 
 The two new developer-example screenshots show actual installed sample packages on a disposable 0.3.0 host, using an original synthetic grid and fictional data. See [capture provenance and hashes](assets/examples/previews/README.md). No signing keys, rulebook content or operator files accompany the examples.
 
+## Implementation tutorials and distribution tools
+
+The 29 new English/Portuguese implementation articles are original site documentation under **GPL-3.0-only**. Their 22 source projects are generated from `content/tutorial-*.mjs` into `assets/tutorials/`; the manifest and license supplied with each individual project determine that project's terms. The 21 independently authored tutorial projects declare **MIT** and include the full MIT notice. The original offline `assets/tutorials/distribution/sign_catalog.py` helper is also offered under MIT, Copyright (c) 2026 Gravewright contributors; the [complete MIT grant](assets/tutorials/example.sheet-name/LICENSE.txt) applies to that helper as well. It uses the existing host dependency `cryptography`, which is not vendored into the static website. The helper's deterministic self-test uses public synthetic key material; no production private key or publisher credentials are distributed.
+
+The integrated **Complete Example Expedition** project (`assets/tutorials/complete-expedition/`) is **GPL-3.0-only**. Its working actor/token sheet derives from the earlier GPL Example Expedition package. Its original compendium JSON derives from the MIT Beacon Expedition Library teaching example; the complete original MIT copyright/permission notice is retained separately in `MIT-COMPENDIUM.txt`, and `THIRD_PARTY_NOTICES.txt` records that provenance. The complete GPL license accompanies the system ZIP. Combining those sources does not remove their notices or change the site's older Apache, music, application or SRD attributions.
+
+The implementation and capability references target the public **Gravewright 0.3.0** source at revision [`23ea61b8efb566cad0e3359489b0dad45e214906`](https://github.com/Gravewright/gravewright/tree/23ea61b8efb566cad0e3359489b0dad45e214906), recorded in `content/extension-contracts.json` and `content/reference/catalog.json`. The locally committed contract snapshot supports the API and surface maps; the Map Builder fixtures follow the same pinned host revision. This does not vendor the host runtime or grant rights to unrelated RPG material. Tutorials use original fictional data and authorized public APIs. They include no proprietary catalogs, rulebook text, authorization messages, operator files or campaign credentials.
+
+Captures reused by the tutorials keep their application version, interface-language captions and [existing provenance](assets/examples/previews/README.md). A screenshot demonstrates its identified workflow, not every recipe or API in the surrounding guide. Any added captures must record their real source, synthetic data and hashes; do not relabel historical screenshots as validation of a newer host. Test outcomes and native/browser verification are separate from licensing and source attribution.
+
 ## Inherited template
 
 This site adapts the Gravewright `repository-site` template supplied with the legacy repository. Its dark/gold palette, grid background, header, cards, media frames and base responsive styles were retained and extended. Product copy, bilingual pages, navigation, clipboard behavior, media rendering and accessibility checks were updated for the current product.
@@ -68,6 +78,12 @@ See [demo provenance, generation prompts and SHA-256 hashes](assets/demo/README.
 ## Português
 
 O código novo, os textos e a documentação do site usam **GPL-3.0-only**. O template herdado e o ícone inalterado mantêm os termos **Apache-2.0**, com a licença e o aviso originais preservados. As dependências citadas no aviso histórico não estão incluídas neste site.
+
+Os 29 novos artigos bilíngues de implementação são documentação original do site sob **GPL-3.0-only**. Os 22 projetos-fonte em `assets/tutorials/` seguem o manifesto e a licença de cada pacote: 21 projetos autorais usam **MIT**, com o aviso completo. O assinador local original `assets/tutorials/distribution/sign_catalog.py` também usa MIT, Copyright (c) 2026 Gravewright contributors, conforme a [licença MIT completa](assets/tutorials/example.sheet-name/LICENSE.txt). A dependência `cryptography` já existente no host não foi incorporada ao site. O autoteste usa material sintético determinístico público; nenhuma chave privada real ou credencial de publicador acompanha o utilitário.
+
+O sistema integrado **Complete Example Expedition** usa **GPL-3.0-only** e deriva da ficha GPL funcional do exemplo anterior. Seu JSON original deriva da biblioteca didática Beacon Expedition Library, publicada sob MIT; `MIT-COMPENDIUM.txt` preserva o aviso completo e `THIRD_PARTY_NOTICES.txt` registra a procedência. A licença GPL completa acompanha o ZIP. Todos os avisos anteriores do site, aplicação, template, música e SRD permanecem válidos.
+
+Esses guias e mapas usam os contratos públicos do **Gravewright 0.3.0**, revisão **23ea61b8efb566cad0e3359489b0dad45e214906**, registrada nos snapshots locais. Os exemplos contêm dados fictícios originais, sem catálogos proprietários, livros, arquivos do operador, mensagens de autorização ou credenciais. Capturas reutilizadas mantêm versão, idioma, procedência e hashes; uma imagem demonstra o fluxo identificado em sua legenda, não todas as receitas do guia. A referência de fonte e a atribuição legal não substituem verificação nativa ou de navegador.
 
 `assets/images/map-builder-nodes-030.webp` é uma captura real do Map Builder e
 do editor de nodes de Objetos Inteligentes do **Gravewright VTT 0.3.0** publicado,

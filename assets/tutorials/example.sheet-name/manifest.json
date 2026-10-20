@@ -1,0 +1,13 @@
+{
+  "id": "example.sheet-name",
+  "name": "Sheet name action",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Rename an actor or its independent token from an existing sheet, preserving data and revisions.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

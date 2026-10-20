@@ -1,7 +1,7 @@
 {
   "id": "example.surface-scene-controls",
   "name": "Scene information control",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "sdk": {
     "requires": ">=1.0.0 <2.0.0",
     "tested": "1.0.0"

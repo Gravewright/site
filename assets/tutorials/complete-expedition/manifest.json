@@ -1,0 +1,45 @@
+{
+  "id": "example.complete-expedition",
+  "name": "Complete Example Expedition",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "One original system with editable actor/token sheets, initiative and three installed content packs.",
+  "author": "Gravewright documentation examples",
+  "license": "GPL-3.0-only",
+  "entry": "main.mjs",
+  "system": {
+    "actorTypes": [
+      {
+        "id": "character",
+        "label": "Character"
+      },
+      {
+        "id": "npc",
+        "label": "NPC"
+      }
+    ],
+    "itemTypes": [
+      {
+        "id": "gear",
+        "label": "Gear"
+      },
+      {
+        "id": "spell",
+        "label": "Spell"
+      }
+    ],
+    "combat": {
+      "formula": "1d20+@combat.initiative",
+      "manualInput": "number",
+      "showRoll": true
+    }
+  },
+  "content": {
+    "compendiums": [
+      "compendiums/expedition.json"
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to create a journal module | Gravewright</title><meta name="description" content="Build, install and run a normal module that creates private journals and appends saved GM session drafts."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/en/tutorial-journal-module.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-journal-module.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-journal-module.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-journal-module.html"><meta property="og:type" content="article"><meta property="og:title" content="How to create a journal module | Gravewright"><meta property="og:description" content="Build, install and run a normal module that creates private journals and appends saved GM session drafts."><meta property="og:url" content="https://gravewright.com/docs/en/tutorial-journal-module.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to create a journal module","description":"Build, install and run a normal module that creates private journals and appends saved GM session drafts.","inLanguage":"en","url":"https://gravewright.com/docs/en/tutorial-journal-module.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copy" data-copied-label="Copied" data-selected-label="Selected" data-copied-message="Copied to clipboard." data-selected-message="Text selected. Use your keyboard to copy."><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../index.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Main navigation"><a href="../../wiki/en/index.html">Product wiki</a><a href="index.html" aria-current="page">Developer docs</a><a href="ai.html">Build with AI</a><a class="language-link" data-language href="../pt-BR/tutorial-journal-module.html" lang="pt-BR" hreflang="pt-BR">Português</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="en" data-results-label="results" data-empty-label="No matches. Try another term or browse the topics below." data-loading-label="Searching…" data-error-label="Search is unavailable. Browse the navigation below."><label for="knowledge-search">Search the wiki and docs</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Try “tokens”, “API” or “AI”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Clear search" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>You can browse every guide below without JavaScript. Search requires JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Browse topics</summary><nav aria-label="Browse topics"><a href="index.html" class="kb-all-topics">All topics</a><div class="kb-nav-group"><p>Implementation tutorials</p><ul><li><a href="tutorial-index.html">Learn to build modules and systems</a></li><li><a href="tutorial-first-module.html">Create, install and update your first module</a></li><li><a href="tutorial-capability-map.html">All extension capabilities and where to implement them</a></li><li><a href="tutorial-complete-system.html">How to create a complete original system package</a></li><li><a href="tutorial-journal-module.html" aria-current="page">How to create a journal module</a></li><li><a href="tutorial-create-journal.html">Create a journal from a module, from scratch</a></li><li><a href="tutorial-sheet-module.html">How to create a module that acts on a sheet</a></li><li><a href="tutorial-system-sheet.html">How to build and replace a complete system sheet</a></li><li><a href="tutorial-compendium-module.html">How to create a compendium module</a></li><li><a href="tutorial-system-compendiums.html">How to include compendiums in a system</a></li><li><a href="tutorial-maps.html">How to create a scene tools module</a></li><li><a href="tutorial-tokens.html">How to create a token tools module</a></li><li><a href="tutorial-combat.html">How to create a combat tools module</a></li><li><a href="tutorial-items.html">How to build item and inventory tools</a></li><li><a href="tutorial-cards.html">How to build deck and card tools</a></li><li><a href="tutorial-audio.html">How to build scene audio and soundtrack tools</a></li><li><a href="tutorial-chat-dice.html">How to build chat, dice and ready-check tools</a></li><li><a href="tutorial-quests.html">How to create quest automation and quest-board actions</a></li><li><a href="tutorial-roll-tables.html">How to create, draw and reset weighted roll tables</a></li><li><a href="tutorial-journal-management.html">How to create, organize and share journal documents</a></li><li><a href="tutorial-actors.html">Build an actor-directory module</a></li><li><a href="tutorial-storage.html">Persist module settings safely</a></li><li><a href="tutorial-assets.html">Upload and use module and campaign files</a></li><li><a href="tutorial-localization-events.html">Translate a module and react to changes</a></li><li><a href="tutorial-sdk-operations.html">Maintain a module using the original host.call SDK</a></li><li><a href="tutorial-customize-ui.html">Build Customize forms and native module windows</a></li><li><a href="tutorial-server-integration.html">Create a trusted Django integration and server hooks</a></li><li><a href="tutorial-language-package.html">How to create and activate an installation language package</a></li><li><a href="tutorial-publish-module.html">How to version, sign and distribute a module</a></li></ul></div><div class="kb-nav-group"><p>Examples by kind</p><ul><li><a href="examples-index.html">Complete examples by kind</a></li><li><a href="example-package-browser.html">Browser module: a campaign summary</a></li><li><a href="example-package-system.html">System package: an editable character sheet</a></li><li><a href="example-package-language.html">Language package: Portuguese and Spanish catalogs</a></li><li><a href="example-package-django.html">Django package: an owner-only server endpoint</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Readable actor counter</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Actor sheet revision inspector</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Linked or independent token inspector</a></li><li><a href="example-surface-item-directory.html">item.directory: Item counts by type</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Item data inspector</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Scene broadcast status</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Scene information control</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Scene center marker</a></li><li><a href="example-surface-chat-log.html">chat.log: Visible chat statistics</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Current turn summary</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Journal outline</a></li><li><a href="example-surface-preferences.html">preferences: Persistent personal density preference</a></li><li><a href="example-surface-table-interface.html">table.interface: Authorized document search</a></li><li><a href="examples-search-kinds.html">Search: all 7 kinds and the empty filter</a></li><li><a href="examples-actor-image-kinds.html">Actor images: portrait and token</a></li><li><a href="examples-compendium-entry-kinds.html">Compendium entries: all five kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Compendium packs: 3 installed and 7 local types</a></li><li><a href="examples-blueprints.html">Blueprint examples for every object kind</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: open, close and preserve a lock</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: a two-state switch and an Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: turn the mechanism and set the flame</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: a pressure plate with first/last occupancy</a></li><li><a href="example-blueprint-connections.html">Connection kinds: execution and data, a complete graph</a></li><li><a href="example-blueprint-nodes.html">All 42 Blueprint node types, with complete examples</a></li></ul></div><div class="kb-nav-group"><p>Project reference</p><ul><li><a href="getting-started.html">Getting started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="code-map.html">Code map</a></li><li><a href="development.html">Development</a></li><li><a href="api.html">Public API reference</a></li><li><a href="modules.html">Systems and modules</a></li><li><a href="frontend.html">Frontend architecture</a></li><li><a href="testing.html">Testing</a></li><li><a href="configuration.html">Configuration</a></li><li><a href="deployment.html">Deployment</a></li><li><a href="windows-runner.html">Windows installer and Runner</a></li><li><a href="linux-runner.html">Linux installer and Runner</a></li><li><a href="macos-runner.html">macOS installer and Runner</a></li><li><a href="map-builder.html">Map Builder reference</a></li><li><a href="universal-vtt.html">Universal VTT import and export</a></li><li><a href="user-guide.html">Application workflow reference</a></li><li><a href="ethical-module-porting.html">Ethical module porting</a></li><li><a href="contributing.html">Contributing</a></li><li><a href="licensing.html">Licensing</a></li></ul></div><div class="kb-nav-group"><p>How to use AI</p><ul><li><a href="ai-create-system.html">How to use AI to create an RPG system</a></li><li><a href="ai-create-module.html">How to use AI to create a browser module</a></li><li><a href="ai-server-integration.html">How to use AI for a Python integration</a></li><li><a href="ai-map-blueprint.html">How to use AI to plan a Smart Object</a></li><li><a href="ai-debug-bug.html">How to use AI to investigate a bug</a></li><li><a href="ai-write-tests.html">How to use AI to write useful tests</a></li><li><a href="ai-translate-extension.html">How to use AI to translate an extension</a></li><li><a href="ai-contribute-core.html">How to use AI to contribute to the core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Developer docs</a><span aria-hidden="true">/</span><span>How to create a journal module</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Implementation tutorials <span aria-hidden="true">/</span> 16 min read</span><h1>How to create a journal module</h1><p class="kb-lead">Build, install and run a normal module that creates private journals and appends saved GM session drafts.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/journal-module.png" aria-label="Open full screenshot: The installed session notebook appended a private GM page and opened its native journal content. Gravewright 0.3.0, English interface."><img src="../../assets/tutorials/previews/journal-module.png" width="1440" height="1000" alt="The installed session notebook appended a private GM page and opened its native journal content. Gravewright 0.3.0, English interface." loading="lazy" decoding="async"></a><figcaption>The installed session notebook appended a private GM page and opened its native journal content. Gravewright 0.3.0, English interface. · Open full screenshot ↗</figcaption></figure><div class="kb-prose"><h2 id="what-you-will-build">What you will build</h2>
+<p>A normal browser module for <strong>Gravewright 0.3.0</strong> with two working actions: create a private journal from the table, then append a session draft to an existing journal. The sheet action is <strong>Add session section</strong>. It writes a <strong>Session notes</strong> page under <strong>Sessions</strong>, containing original draft text with audience <strong>gm</strong>. It preserves the existing authored text.</p>
+<p>The package uses public <code>api.journals.state</code>, <code>create</code> and <code>update</code>. It imports no private host code and requires no Django app. Both surfaces use <code>mode: augment</code>, retaining the native editor.</p>
+<h2 id="1-start-with-the-files">1. Start with the files</h2>
+<p>Use a disposable development installation of host0.3.0, an installation-owner account for installation and a GM account in a campaign. You need a text editor and the project&#39;s prepared Python environment. There are no npm dependencies or frontend build. Create a <code>session-journal</code> folder under <code>data/</code> or another explicitly chosen development directory. Save the five files as UTF-8.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copy</button></div><pre><code data-code="code-1" class="language-text">session-journal/
+  manifest.json
+  main.js
+  styles.css
+  messages.json
+  LICENSE.txt</code></pre></div>
+<p><a href="../../assets/tutorials/session-journal/session-journal-source.zip"> Download complete project </a></p>
+<ul><li><p><a href="../../assets/tutorials/session-journal/manifest.json">manifest.json</a></p></li><li><p><a href="../../assets/tutorials/session-journal/main.js">main.js</a></p></li><li><p><a href="../../assets/tutorials/session-journal/styles.css">styles.css</a></p></li><li><p><a href="../../assets/tutorials/session-journal/messages.json">messages.json</a></p></li><li><p><a href="../../assets/tutorials/session-journal/LICENSE.txt">LICENSE.txt</a></p></li></ul>
+<h2 id="2-understand-the-different-types">2. Understand the different types</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Concept</th><th scope="col" style="text-align:left">This example</th><th scope="col" style="text-align:left">Meaning</th></tr></thead><tbody><tr><td style="text-align:left">Package type</td><td style="text-align:left">browser module</td><td style="text-align:left">Manifest has entry and no system/django/locales; there is no manifest kind: journal</td></tr><tr><td style="text-align:left">Surfaces</td><td style="text-align:left">table.interface and journal.sheet</td><td style="text-align:left">Where the module mounts</td></tr><tr><td style="text-align:left">Document type</td><td style="text-align:left">diary</td><td style="text-align:left">Native Journal; the other types are quest, quest_board and roll_table</td></tr><tr><td style="text-align:left">Page kind</td><td style="text-align:left">text</td><td style="text-align:left">New section contains text; image/pdf pages have different resource needs</td></tr><tr><td style="text-align:left">Page audience</td><td style="text-align:left">gm</td><td style="text-align:left">Draft page is omitted from player projections</td></tr></tbody></table></div>
+<p>Do not change an existing document&#39;s type to fit this example. Quests and roll tables require their own data contracts. The tool explicitly refuses those types.</p>
+<h2 id="3-package-the-project">3. Package the project</h2>
+<p>From the directory containing the five files, run in PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copy</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+Compress-Archive -LiteralPath manifest.json,main.js,styles.css,messages.json,LICENSE.txt -DestinationPath ../session-journal-1.0.0.zip
+python -m zipfile -l ../session-journal-1.0.0.zip</code></pre></div>
+<p>On Linux/macOS:</p>
+<div class="code-block"><div class="code-toolbar"><span>sh</span><button type="button" data-copy="code-3">Copy</button></div><pre><code data-code="code-3" class="language-sh">python3 -m json.tool manifest.json
+python3 -m zipfile -c ../session-journal-1.0.0.zip manifest.json main.js styles.css messages.json LICENSE.txt
+python3 -m zipfile -l ../session-journal-1.0.0.zip</code></pre></div>
+<p>The archive listing must show <code>manifest.json</code> at its root beside main.js. This is an unsigned local source package. You can instead review and install the downloadable source ZIP. Do not add an extra outer directory.</p>
+<h2 id="4-install-as-owner-and-activate-as-gm">4. Install as owner and activate as GM</h2>
+<ol><li><p>As installation owner, open <strong>Inside → Modules → Install module → Install from ZIP</strong>.</p></li><li><p>Select <code>session-journal-1.0.0.zip</code> and click <strong>Install</strong>. Local installation is the owner&#39;s explicit trust decision.</p></li><li><p>Open the campaign as GM. Select the table&#39;s <strong>Gravewright</strong> button → <strong>Extensions</strong>, then <strong>Activate</strong> version <strong>1.0.0</strong> of <strong>Session notebook</strong>. Installation alone does not activate a campaign module.</p></li><li><p>Close Extensions. The bottom-left panel contains <strong>Journal title</strong> and <strong>Create session journal</strong>.</p></li><li><p>When changing the source later, increment to <strong>1.0.1</strong>, build/install a new ZIP and activate that version. Installed releases are immutable; do not edit their extracted files.</p></li></ol>
+<p><a href="tutorial-first-module.html">Your first module</a> explains each installation screen.</p>
+<h2 id="5-create-and-open-a-journal-from-scratch">5. Create and open a journal from scratch</h2>
+<ol><li><p>Keep the default title <strong>Session notebook</strong> and click <strong>Create session journal</strong> once. It sends <code>{title, journal_type: &quot;diary&quot;, folder_id: null}</code> to create with a fresh operation UUID.</p></li><li><p>Wait for confirmation. Open <strong>Journals</strong> at the table and open <strong>Session notebook</strong>. The host creates an empty private journal at the directory root.</p></li><li><p>Native creation does not consume a module data field. The next sheet action writes the session draft. Do not invent a create parameter for initial content.</p></li></ol>
+<p>If creation is not confirmed, inspect Journals before clicking again. Cancellation or a lost response cannot undo a write already committed by the server.</p>
+<h2 id="6-act-on-an-existing-journal">6. Act on an existing journal</h2>
+<ol><li><p>In the opened journal, find the added <strong>Session notebook</strong> panel. The native editor remains available.</p></li><li><p>If you were editing, wait for the native <strong>Saved</strong> indicator first. The public module API does not supply a command to flush another editor&#39;s local draft.</p></li><li><p>Click <strong>Add session section</strong>. It reads a current server projection, preserves title, visibility, introduction, cover, pages and GM documents, then appends a page.</p></li><li><p>In the native index, open <strong>Sessions → Session notes</strong>. It reads: <code>Draft: record the date, discoveries, decisions and loose ends from this session.</code></p></li><li><p>The page is GM-only. Edit it using the native editor. To share it, deliberately choose the native <strong>Make public</strong> option and suitable journal permissions. The module does not automatically publish or present content.</p></li><li><p>Close/reopen to verify persistence. A second click after the first operation finishes creates another independent page with a fresh ID. Overlapping clicks in one mount are blocked.</p></li></ol>
+<h2 id="7-understand-writes-and-conflicts">7. Understand writes and conflicts</h2>
+<p><code>journals.update</code> takes <code>journal_id</code>, <code>title</code>, <code>visibility</code>, the integer <code>version</code> read from the server and the complete <code>data</code> object. For diary, data contains <code>content</code>, <code>cover</code>, <code>sections</code> and <code>gm</code>. Do not use the entire projection as data: its field names differ, including content_doc and cover_image. Each page&#39;s can_edit is projection metadata and is removed before saving.</p>
+<p>This example writes only from a GM projection because a player&#39;s filtered projection is incomplete. The UI checks context.role, and each write separately verifies <code>state.is_gm</code>. The server still checks the authenticated member, campaign, permissions and revision. A player with journal editing rights continues to use the native editor.</p>
+<p>If another window saves between reading and writing, update returns <strong>conflict</strong>. The module rereads current state, blocks Add and requests <strong>Review latest journal</strong>. Review native content and resolve local drafts before confirming the review. It never automatically retries or silently replaces version. Each later approved click is a fresh logical operation with a new UUID.</p>
+<h2 id="8-complete-source">8. Complete source</h2>
+<p>start loads CSS and catalogs through the official translation API. register synchronously declares both surfaces. Every mount owns its state; every read/write receives signal. Closing or deactivating aborts the mount, removes its listeners and disposes its panel. Labels support en, pt-BR and es; original draft titles/text remain unchanged across locales.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-4">Copy</button></div><pre><code data-code="code-4" class="language-json">{
+  &quot;id&quot;: &quot;example.session-notebook&quot;,
+  &quot;name&quot;: &quot;Session notebook&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.js&quot;,
+  &quot;description&quot;: &quot;Create private journals and append GM-only session drafts while preserving existing journal content.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation examples&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainjs">main.js</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copy</button></div><pre><code data-code="code-5" class="language-javascript">// Original tutorial. MIT. Target host: Gravewright 0.3.0, SDK 1.x.
+const error = key =&gt; Object.assign(new Error(key), { tutorialKey: key });
+const alive = signal =&gt; !signal.aborted;
+
+function elements({ root, signal, onDispose, api }, kind) {
+  const el = (tag, text) =&gt; {
+    const node = root.ownerDocument.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+  const t = (key, params) =&gt; api.i18n.t(key, params);
+  const panel = el(&#39;section&#39;);
+  panel.className = &#39;gw-session-tools gw-session-tools--&#39; + kind;
+  const heading = el(&#39;h3&#39;, t(&#39;Session notebook&#39;));
+  const status = el(&#39;p&#39;);
+  status.setAttribute(&#39;role&#39;, &#39;status&#39;);
+  status.setAttribute(&#39;aria-live&#39;, &#39;polite&#39;);
+  panel.append(heading);
+  root.append(panel);
+  onDispose(() =&gt; panel.remove());
+  const report = problem =&gt; {
+    if (!alive(signal)) return;
+    status.textContent = problem.tutorialKey ? t(problem.tutorialKey) :
+      t(&#39;Request failed: {code}. Review the journal before trying again.&#39;, { code: problem.code || &#39;unavailable&#39; });
+  };
+  return { el, t, panel, status, report };
+}
+
+async function journalSnapshot(api, signal, journalId) {
+  const snapshot = await api.journals.state({}, { signal });
+  if (!alive(signal)) return null;
+  // Only the server&#39;s GM projection contains all pages, hidden blocks and GM docs.
+  if (snapshot.is_gm !== true) throw error(&#39;This tool requires a GM.&#39;);
+  const view = snapshot.journals.find(row =&gt; row.id === journalId);
+  if (!view || view.can_open === false) throw error(&#39;Journal is unavailable.&#39;);
+  if (view.type !== &#39;diary&#39;) throw error(&#39;This tool only edits Journal documents (diary).&#39;);
+  if (!view.can_edit) throw error(&#39;This journal is read-only.&#39;);
+  if (!Array.isArray(view.sections) || !view.content_doc || !view.cover_image ||
+      !view.diary?.gm?.notes || !view.diary?.gm?.secrets || !Number.isInteger(view.version)) {
+    throw error(&#39;The complete GM journal projection is unavailable.&#39;);
+  }
+  return view;
+}
+
+function appendPayload(view) {
+  if (view.sections.length &gt;= 64) throw error(&#39;This journal already has 64 pages.&#39;);
+  const last = Math.max(0, ...view.sections.map(page =&gt; Number(page.sortOrder) || 0));
+  if (!Number.isSafeInteger(last + 10)) throw error(&#39;Page order is outside the supported range.&#39;);
+  const page = {
+    id: &#39;section_&#39; + crypto.randomUUID().replaceAll(&#39;-&#39;, &#39;&#39;).slice(0, 12),
+    title: &#39;Session notes&#39;, category: &#39;Sessions&#39;, kind: &#39;text&#39;,
+    assetId: &#39;&#39;, src: &#39;&#39;, level: 1, audience: &#39;gm&#39;, sortOrder: last + 10,
+    content: { format: &#39;gw-journal-doc-v1&#39;, version: 1, doc: { type: &#39;doc&#39;, content: [
+      { type: &#39;paragraph&#39;, attrs: { visibility: &#39;public&#39; }, content: [
+        { type: &#39;text&#39;, text: &#39;Draft: record the date, discoveries, decisions and loose ends from this session.&#39; }
+      ] }
+    ] } }
+  };
+  const sections = view.sections.map(({ can_edit, ...section }) =&gt; structuredClone(section));
+  return {
+    journal_id: view.id, title: view.title, visibility: view.visibility, version: view.version,
+    data: {
+      content: structuredClone(view.content_doc), cover: structuredClone(view.cover_image),
+      sections: [...sections, page], gm: structuredClone(view.diary.gm)
+    }
+  };
+}
+
+async function mountCreate(block) {
+  const { context, api, signal } = block;
+  if (context.role !== &#39;gm&#39; || !alive(signal)) return;
+  const { el, t, panel, status, report } = elements(block, &#39;table&#39;);
+  const form = el(&#39;form&#39;);
+  const label = el(&#39;label&#39;, t(&#39;Journal title&#39;));
+  const input = el(&#39;input&#39;);
+  input.type = &#39;text&#39;; input.required = true; input.maxLength = 120;
+  input.value = &#39;Session notebook&#39;;
+  const create = el(&#39;button&#39;, t(&#39;Create session journal&#39;));
+  create.type = &#39;submit&#39;;
+  label.append(input); form.append(label, create); panel.append(form, status);
+  let busy = false;
+  form.addEventListener(&#39;submit&#39;, async event =&gt; {
+    event.preventDefault();
+    if (busy || !alive(signal)) return;
+    const title = input.value.trim();
+    if (!title || title.length &gt; 120) { report(error(&#39;Enter a title from 1 to 120 characters.&#39;)); return; }
+    busy = true; create.disabled = true; input.disabled = true;
+    status.textContent = t(&#39;Creating journal...&#39;);
+    try {
+      const snapshot = await api.journals.state({}, { signal });
+      if (!alive(signal)) return;
+      if (snapshot.is_gm !== true) throw error(&#39;This tool requires a GM.&#39;);
+      const result = await api.journals.create({ title, journal_type: &#39;diary&#39;, folder_id: null },
+        { requestId: crypto.randomUUID(), signal });
+      if (!alive(signal)) return;
+      status.textContent = t(&#39;Created &quot;{title}&quot;. Open it in Journals, then add a session section.&#39;, { title });
+      status.dataset.journalId = result.journal_id;
+    } catch (problem) { report(problem); }
+    finally { if (alive(signal)) { busy = false; create.disabled = false; input.disabled = false; } }
+  }, { signal });
+}
+
+async function mountAppend(block) {
+  const { context, api, signal } = block;
+  if (context.role !== &#39;gm&#39; || !alive(signal)) return;
+  const { el, t, panel, status, report } = elements(block, &#39;journal&#39;);
+  const add = el(&#39;button&#39;, t(&#39;Add session section&#39;));
+  const review = el(&#39;button&#39;, t(&#39;Review latest journal&#39;));
+  add.type = review.type = &#39;button&#39;;
+  add.disabled = review.disabled = true;
+  const hint = el(&#39;p&#39;, t(&#39;Save pending native edits first. New session drafts are GM-only.&#39;));
+  panel.append(hint, add, review, status);
+  let busy = false, ready = false, needsReview = false;
+  const controls = () =&gt; {
+    if (!alive(signal)) return;
+    add.disabled = busy || !ready || needsReview;
+    review.disabled = busy;
+  };
+  async function refresh() {
+    if (busy || !alive(signal)) return;
+    busy = true; ready = false; controls();
+    try {
+      const view = await journalSnapshot(api, signal, context.journalId);
+      if (!view || !alive(signal)) return;
+      ready = view.sections.length &lt; 64;
+      needsReview = false;
+      status.textContent = t(&#39;Latest saved version: {version}. Pages: {count}.&#39;, { version: view.version, count: view.sections.length });
+      if (!ready) report(error(&#39;This journal already has 64 pages.&#39;));
+    } catch (problem) { report(problem); }
+    finally { if (alive(signal)) { busy = false; controls(); } }
+  }
+  review.addEventListener(&#39;click&#39;, () =&gt; void refresh(), { signal });
+  add.addEventListener(&#39;click&#39;, async () =&gt; {
+    if (busy || !ready || needsReview || !alive(signal)) return;
+    busy = true; controls();
+    status.textContent = t(&#39;Saving session section...&#39;);
+    try {
+      const view = await journalSnapshot(api, signal, context.journalId);
+      if (!view || !alive(signal)) return;
+      const payload = appendPayload(view);
+      await api.journals.update(payload, { requestId: crypto.randomUUID(), signal });
+      if (!alive(signal)) return;
+      ready = payload.data.sections.length &lt; 64;
+      status.textContent = t(&#39;Added GM-only &quot;Session notes&quot;. Open it under Sessions in the native journal.&#39;);
+    } catch (problem) {
+      if (!alive(signal)) return;
+      needsReview = true;
+      if (problem.code === &#39;conflict&#39;) {
+        try {
+          const latest = await journalSnapshot(api, signal, context.journalId);
+          if (!latest || !alive(signal)) return;
+          ready = latest.sections.length &lt; 64;
+          status.textContent = t(&#39;Conflict: server version {version} loaded. Review native content, then choose Review latest journal. No automatic retry.&#39;, { version: latest.version });
+        } catch (refreshProblem) { ready = false; report(refreshProblem); }
+      } else report(problem);
+    } finally { if (alive(signal)) { busy = false; controls(); } }
+  }, { signal });
+  await refresh();
+}
+
+export default {
+  async start({ api, assets, styles, signal }) {
+    styles.use(&#39;styles.css&#39;);
+    const messages = await assets.json(&#39;messages.json&#39;);
+    if (!alive(signal)) return;
+    api.i18n.register(messages);
+  },
+  register({ register }) {
+    register(&#39;table.interface&#39;, { mode: &#39;augment&#39;, mount: mountCreate });
+    register(&#39;journal.sheet&#39;, { mode: &#39;augment&#39;, mount: mountAppend });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-6">Copy</button></div><pre><code data-code="code-6" class="language-css">.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools {
+  padding: var(--space-3, 12px); border: 1px solid var(--border);
+  border-radius: var(--radius-md); background: var(--surface); color: var(--text);
+  font-size: 14px; line-height: 1.5; pointer-events: auto;
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools--table {
+  position: fixed; left: 16px; bottom: 128px; z-index: 10;
+  width: min(320px, calc(100vw - 32px)); max-height: 40vh; overflow: auto;
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools h3 {
+  margin: 0 0 var(--space-2, 8px); font-size: 16px;
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools p {
+  margin: var(--space-2, 8px) 0 0; font-size: 14px;
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools label {
+  display: grid; gap: var(--space-1, 4px); margin-bottom: var(--space-2, 8px);
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools input,
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools button {
+  font: inherit; max-width: 100%; box-sizing: border-box;
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools button {
+  margin-right: var(--space-2, 8px); margin-top: var(--space-2, 8px);
+}
+.gw-module-root[data-module-id=&quot;example.session-notebook&quot;] .gw-session-tools input { width: 100%; }</code></pre></div>
+<h3 id="messagesjson">messages.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-7">Copy</button></div><pre><code data-code="code-7" class="language-json">{
+  &quot;en&quot;: {
+    &quot;Session notebook&quot;: &quot;Session notebook&quot;,
+    &quot;Journal title&quot;: &quot;Journal title&quot;,
+    &quot;Create session journal&quot;: &quot;Create session journal&quot;,
+    &quot;Add session section&quot;: &quot;Add session section&quot;,
+    &quot;Review latest journal&quot;: &quot;Review latest journal&quot;,
+    &quot;Save pending native edits first. New session drafts are GM-only.&quot;: &quot;Save pending native edits first. New session drafts are GM-only.&quot;,
+    &quot;This tool requires a GM.&quot;: &quot;This tool requires a GM.&quot;,
+    &quot;Journal is unavailable.&quot;: &quot;Journal is unavailable.&quot;,
+    &quot;This tool only edits Journal documents (diary).&quot;: &quot;This tool only edits Journal documents (diary).&quot;,
+    &quot;This journal is read-only.&quot;: &quot;This journal is read-only.&quot;,
+    &quot;The complete GM journal projection is unavailable.&quot;: &quot;The complete GM journal projection is unavailable.&quot;,
+    &quot;This journal already has 64 pages.&quot;: &quot;This journal already has 64 pages.&quot;,
+    &quot;Page order is outside the supported range.&quot;: &quot;Page order is outside the supported range.&quot;,
+    &quot;Enter a title from 1 to 120 characters.&quot;: &quot;Enter a title from 1 to 120 characters.&quot;,
+    &quot;Creating journal...&quot;: &quot;Creating journal...&quot;,
+    &quot;Created \&quot;{title}\&quot;. Open it in Journals, then add a session section.&quot;: &quot;Created \&quot;{title}\&quot;. Open it in Journals, then add a session section.&quot;,
+    &quot;Latest saved version: {version}. Pages: {count}.&quot;: &quot;Latest saved version: {version}. Pages: {count}.&quot;,
+    &quot;Saving session section...&quot;: &quot;Saving session section...&quot;,
+    &quot;Added GM-only \&quot;Session notes\&quot;. Open it under Sessions in the native journal.&quot;: &quot;Added GM-only \&quot;Session notes\&quot;. Open it under Sessions in the native journal.&quot;,
+    &quot;Conflict: server version {version} loaded. Review native content, then choose Review latest journal. No automatic retry.&quot;: &quot;Conflict: server version {version} loaded. Review native content, then choose Review latest journal. No automatic retry.&quot;,
+    &quot;Request failed: {code}. Review the journal before trying again.&quot;: &quot;Request failed: {code}. Review the journal before trying again.&quot;
+  },
+  &quot;pt-BR&quot;: {
+    &quot;Session notebook&quot;: &quot;Caderno de sessão&quot;,
+    &quot;Journal title&quot;: &quot;Título do diário&quot;,
+    &quot;Create session journal&quot;: &quot;Criar diário de sessão&quot;,
+    &quot;Add session section&quot;: &quot;Adicionar seção de sessão&quot;,
+    &quot;Review latest journal&quot;: &quot;Revisar diário atual&quot;,
+    &quot;Save pending native edits first. New session drafts are GM-only.&quot;: &quot;Salve as alterações pendentes do editor nativo antes. Novos rascunhos de sessão são privados do GM.&quot;,
+    &quot;This tool requires a GM.&quot;: &quot;Esta ferramenta exige GM.&quot;,
+    &quot;Journal is unavailable.&quot;: &quot;O diário está indisponível.&quot;,
+    &quot;This tool only edits Journal documents (diary).&quot;: &quot;Esta ferramenta só edita documentos do tipo Diário (diary).&quot;,
+    &quot;This journal is read-only.&quot;: &quot;Este diário permite apenas leitura.&quot;,
+    &quot;The complete GM journal projection is unavailable.&quot;: &quot;A projeção completa do diário para GM está indisponível.&quot;,
+    &quot;This journal already has 64 pages.&quot;: &quot;Este diário já tem 64 páginas.&quot;,
+    &quot;Page order is outside the supported range.&quot;: &quot;A ordem das páginas está fora do intervalo suportado.&quot;,
+    &quot;Enter a title from 1 to 120 characters.&quot;: &quot;Digite um título de 1 a 120 caracteres.&quot;,
+    &quot;Creating journal...&quot;: &quot;Criando diário...&quot;,
+    &quot;Created \&quot;{title}\&quot;. Open it in Journals, then add a session section.&quot;: &quot;Diário \&quot;{title}\&quot; criado. Abra em Diários e adicione uma seção de sessão.&quot;,
+    &quot;Latest saved version: {version}. Pages: {count}.&quot;: &quot;Versão salva atual: {version}. Páginas: {count}.&quot;,
+    &quot;Saving session section...&quot;: &quot;Salvando seção de sessão...&quot;,
+    &quot;Added GM-only \&quot;Session notes\&quot;. Open it under Sessions in the native journal.&quot;: &quot;Página privada \&quot;Session notes\&quot; adicionada. Abra em Sessions no diário nativo.&quot;,
+    &quot;Conflict: server version {version} loaded. Review native content, then choose Review latest journal. No automatic retry.&quot;: &quot;Conflito: versão {version} do servidor carregada. Revise o conteúdo nativo e escolha Revisar diário atual. Sem repetição automática.&quot;,
+    &quot;Request failed: {code}. Review the journal before trying again.&quot;: &quot;Falha na solicitação: {code}. Revise o diário antes de tentar novamente.&quot;
+  },
+  &quot;es&quot;: {
+    &quot;Session notebook&quot;: &quot;Cuaderno de sesión&quot;,
+    &quot;Journal title&quot;: &quot;Título del diario&quot;,
+    &quot;Create session journal&quot;: &quot;Crear diario de sesión&quot;,
+    &quot;Add session section&quot;: &quot;Añadir sección de sesión&quot;,
+    &quot;Review latest journal&quot;: &quot;Revisar diario actual&quot;,
+    &quot;Save pending native edits first. New session drafts are GM-only.&quot;: &quot;Guarda primero los cambios pendientes del editor nativo. Los borradores nuevos son privados del GM.&quot;,
+    &quot;This tool requires a GM.&quot;: &quot;Esta herramienta requiere GM.&quot;,
+    &quot;Journal is unavailable.&quot;: &quot;El diario no está disponible.&quot;,
+    &quot;This tool only edits Journal documents (diary).&quot;: &quot;Esta herramienta solo edita documentos Diario (diary).&quot;,
+    &quot;This journal is read-only.&quot;: &quot;Este diario es de solo lectura.&quot;,
+    &quot;The complete GM journal projection is unavailable.&quot;: &quot;La proyección completa del diario para GM no está disponible.&quot;,
+    &quot;This journal already has 64 pages.&quot;: &quot;Este diario ya tiene 64 páginas.&quot;,
+    &quot;Page order is outside the supported range.&quot;: &quot;El orden de páginas está fuera del intervalo permitido.&quot;,
+    &quot;Enter a title from 1 to 120 characters.&quot;: &quot;Escribe un título de 1 a 120 caracteres.&quot;,
+    &quot;Creating journal...&quot;: &quot;Creando diario...&quot;,
+    &quot;Created \&quot;{title}\&quot;. Open it in Journals, then add a session section.&quot;: &quot;Diario \&quot;{title}\&quot; creado. Ábrelo en Diarios y añade una sección de sesión.&quot;,
+    &quot;Latest saved version: {version}. Pages: {count}.&quot;: &quot;Versión guardada actual: {version}. Páginas: {count}.&quot;,
+    &quot;Saving session section...&quot;: &quot;Guardando sección de sesión...&quot;,
+    &quot;Added GM-only \&quot;Session notes\&quot;. Open it under Sessions in the native journal.&quot;: &quot;Página privada \&quot;Session notes\&quot; añadida. Ábrela en Sessions en el diario nativo.&quot;,
+    &quot;Conflict: server version {version} loaded. Review native content, then choose Review latest journal. No automatic retry.&quot;: &quot;Conflicto: versión {version} del servidor cargada. Revisa el contenido nativo y elige Revisar diario actual. Sin repetición automática.&quot;,
+    &quot;Request failed: {code}. Review the journal before trying again.&quot;: &quot;Solicitud fallida: {code}. Revisa el diario antes de intentar otra vez.&quot;
+  }
+}</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-8">Copy</button></div><pre><code data-code="code-8" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright documentation contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to
+do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="9-validate-before-adapting">9. Validate before adapting</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">Case</th><th scope="col" style="text-align:left">Procedure</th><th scope="col" style="text-align:left">Expected result</th></tr></thead><tbody><tr><td style="text-align:left">Basic write</td><td style="text-align:left">Create, open, add, reopen</td><td style="text-align:left">One persisted GM page containing the original draft</td></tr><tr><td style="text-align:left">Existing content</td><td style="text-align:left">Use a cover, introduction, public page, GM page and GM notes/secrets</td><td style="text-align:left">Existing fields survive unchanged; exactly one page is appended</td></tr><tr><td style="text-align:left">Player</td><td style="text-align:left">Share the journal and open another account</td><td style="text-align:left">No module write controls; GM draft and secrets absent from projection</td></tr><tr><td style="text-align:left">Read-only</td><td style="text-align:left">Open as reader; revoke editing during a mount</td><td style="text-align:left">No allowed write; server remains the authorization boundary</td></tr><tr><td style="text-align:left">Other types</td><td style="text-align:left">Open Quest, Quest board or Roll table</td><td style="text-align:left">Type warning and no update</td></tr><tr><td style="text-align:left">Limit</td><td style="text-align:left">Use a64-page diary</td><td style="text-align:left">Add blocked; no existing page discarded</td></tr><tr><td style="text-align:left">Conflict</td><td style="text-align:left">Two sessions; interleave a save between the other&#39;s read/write</td><td style="text-align:left">Reread and explicit review, without automatic retry</td></tr><tr><td style="text-align:left">Lifecycle</td><td style="text-align:left">Open/close five times; deactivate during a read</td><td style="text-align:left">One panel per window; no late DOM updates</td></tr><tr><td style="text-align:left">Submitted write</td><td style="text-align:left">Close during update</td><td style="text-align:left">Abort does not promise rollback; reopen and inspect</td></tr></tbody></table></div>
+<p>From the website source, run <code>node --test scripts/tutorial-journals.test.mjs</code>. The behavioral tests execute this package against isolated API/DOM adapters and check writes/lifecycle. They complement visual testing at the table.</p>
+<h2 id="how-to-use-ai-to-extend-this-module">How to use AI to extend this module</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-9">Copy</button></div><pre><code data-code="code-9" class="language-text">Adapt example.session-notebook for Gravewright 0.3.0 to [describe a journal action]. Read frontend.json, domain-api.js, journal.sheet.context.json and this release journal validators. Preserve introduction, cover, public/private pages, GM notes/secrets, visibility and version. Keep full-document writes restricted to the complete GM projection and the native editor augmented. Deliver the whole package, en/pt-BR/es labels, installation/activation steps and tests for writes, page limits, player access, conflict and disposal during a request. Do not invent package kind journal, call private endpoints or retry by replacing the expected version.</code></pre></div>
+<p><a href="tutorial-index.html">All tutorials</a> · <a href="tutorial-create-journal.html">Create only the journal</a> · <a href="api.html">Public API</a></p></div></article><nav class="kb-pagination" aria-label="Continue reading"><a href="tutorial-complete-system.html"><span>Previous ←</span><strong>How to create a complete original system package</strong></a><a href="tutorial-create-journal.html"><span>Next →</span><strong>Create a journal from a module, from scratch</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Build with AI</span><h2>How to use AI for this task</h2><p>Give the assistant the relevant files, a concrete goal and the validation steps. These guides include prompts you can adapt.</p><div class="kb-ai-links"><a href="ai-create-system.html">How to use AI to create an RPG system</a><a href="ai-create-module.html">How to use AI to create a browser module</a><a href="ai.html">Explore all AI guides →</a></div></aside><div class="kb-sources"><p>Source in the project</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/schemas/journal.sheet.context.json">gravewright/modules/contracts/schemas/journal.sheet.context.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/domain-api.js">gravewright/modules/static/gravewright_modules/domain-api.js</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/module-runtime.js">gravewright/modules/static/gravewright_modules/module-runtime.js</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/services.py">gravewright/journals/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/data.py">gravewright/journals/data.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/journals/documents.py">gravewright/journals/documents.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/modules.md">docs/en/modules.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/modules.md">docs/pt-BR/modules.md</a></div><footer class="kb-page-footer"><p>Based on Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Back to top ↑</a></footer></main><aside class="kb-toc"><nav aria-label="On this page"><p>On this page</p><ul><li><a href="#what-you-will-build">What you will build</a></li><li><a href="#1-start-with-the-files">1. Start with the files</a></li><li><a href="#2-understand-the-different-types">2. Understand the different types</a></li><li><a href="#3-package-the-project">3. Package the project</a></li><li><a href="#4-install-as-owner-and-activate-as-gm">4. Install as owner and activate as GM</a></li><li><a href="#5-create-and-open-a-journal-from-scratch">5. Create and open a journal from scratch</a></li><li><a href="#6-act-on-an-existing-journal">6. Act on an existing journal</a></li><li><a href="#7-understand-writes-and-conflicts">7. Understand writes and conflicts</a></li><li><a href="#8-complete-source">8. Complete source</a></li><li><a href="#9-validate-before-adapting">9. Validate before adapting</a></li><li><a href="#how-to-use-ai-to-extend-this-module">How to use AI to extend this module</a></li></ul></nav><div class="kb-reference-version"><span>Reference version</span><strong>0.3.0</strong><span>Developer docs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

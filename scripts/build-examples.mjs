@@ -2,6 +2,7 @@ import {mkdir,readFile,readdir,writeFile} from 'node:fs/promises';
 import {resolve,dirname} from 'node:path';
 import {packageExamples} from '../content/examples-packages.mjs';
 import {surfaceExamplePackages} from '../content/examples-surfaces.mjs';
+import {tutorialPackages,distributionSupportFiles} from '../content/tutorials.mjs';
 import {sourceArchive} from './example-archive.mjs';
 
 export async function buildExamples(root){
@@ -23,6 +24,20 @@ export async function buildExamples(root){
     await writeFile(resolve(base,example.directory+'-source.zip'),sourceArchive(files));
   }
   const blueprints=resolve(root,'assets/examples/blueprints');
+  for(const tutorial of tutorialPackages){
+    const base=resolve(root,'assets/tutorials',tutorial.id);
+    const files={...tutorial.files,'manifest.json':JSON.stringify(tutorial.manifest,null,2)+'\n'};
+    if(!files['LICENSE.txt']) files['LICENSE.txt']=license;
+    for(const [name,bytes] of Object.entries(files)){
+      await mkdir(dirname(resolve(base,name)),{recursive:true});
+      await writeFile(resolve(base,name),bytes);
+    }
+    await writeFile(resolve(base,tutorial.id+'-source.zip'),sourceArchive(files));
+  }
+  for(const support of distributionSupportFiles){
+    await mkdir(dirname(resolve(root,support.path)),{recursive:true});
+    await writeFile(resolve(root,support.path),support.content);
+  }
   await writeFile(resolve(blueprints,'LICENSE.txt'),license);
   async function collect(directory,prefix=''){
     const files={};
@@ -34,5 +49,5 @@ export async function buildExamples(root){
     return files;
   }
   await writeFile(resolve(blueprints,'examples.zip'),sourceArchive(await collect(blueprints)));
-  console.log('Generated '+packageExamples.length+' complete source packages, '+surfaceExamplePackages.length+' surface ZIPs and the blueprint bundle.');
+  console.log('Generated '+packageExamples.length+' example packages, '+surfaceExamplePackages.length+' surface ZIPs, '+tutorialPackages.length+' tutorial projects and the blueprint bundle.');
 }

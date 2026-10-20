@@ -161,6 +161,209 @@
       "images": 0
     },
     {
+      "path": "docs/en/tutorial-index.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-index",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-first-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-first-module",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-capability-map.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-capability-map",
+      "images": 0
+    },
+    {
+      "path": "docs/en/tutorial-complete-system.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-complete-system",
+      "images": 0
+    },
+    {
+      "path": "docs/en/tutorial-journal-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-journal-module",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-create-journal.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-create-journal",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-sheet-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-sheet-module",
+      "images": 2
+    },
+    {
+      "path": "docs/en/tutorial-system-sheet.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-system-sheet",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-compendium-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-compendium-module",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-system-compendiums.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-system-compendiums",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-maps.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-maps",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-tokens.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-tokens",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-combat.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-combat",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-items.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-items",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-cards.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-cards",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-audio.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-audio",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-chat-dice.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-chat-dice",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-quests.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-quests",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-roll-tables.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-roll-tables",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-journal-management.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-journal-management",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-actors.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-actors",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-storage.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-storage",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-assets.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-assets",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-localization-events.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-localization-events",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-sdk-operations.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-sdk-operations",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-customize-ui.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-customize-ui",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-server-integration.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-server-integration",
+      "images": 0
+    },
+    {
+      "path": "docs/en/tutorial-language-package.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-language-package",
+      "images": 1
+    },
+    {
+      "path": "docs/en/tutorial-publish-module.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "tutorial-publish-module",
+      "images": 0
+    },
+    {
       "path": "docs/en/examples-index.html",
       "locale": "en",
       "area": "docs",
@@ -708,6 +911,209 @@
       "locale": "pt",
       "area": "wiki",
       "slug": "backups-updates",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/tutorial-index.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-index",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-first-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-first-module",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-capability-map.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-capability-map",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/tutorial-complete-system.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-complete-system",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/tutorial-journal-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-journal-module",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-create-journal.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-create-journal",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-sheet-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-sheet-module",
+      "images": 2
+    },
+    {
+      "path": "docs/pt-BR/tutorial-system-sheet.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-system-sheet",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-compendium-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-compendium-module",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-system-compendiums.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-system-compendiums",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-maps.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-maps",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-tokens.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-tokens",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-combat.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-combat",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-items.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-items",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-cards.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-cards",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-audio.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-audio",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-chat-dice.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-chat-dice",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-quests.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-quests",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-roll-tables.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-roll-tables",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-journal-management.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-journal-management",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-actors.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-actors",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-storage.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-storage",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-assets.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-assets",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-localization-events.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-localization-events",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-sdk-operations.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-sdk-operations",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-customize-ui.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-customize-ui",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-server-integration.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-server-integration",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/tutorial-language-package.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-language-package",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/tutorial-publish-module.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "tutorial-publish-module",
       "images": 0
     },
     {

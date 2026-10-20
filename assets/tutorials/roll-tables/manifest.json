@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.roll-tables",
+  "name": "Roll table tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Build an original journal roll table, edit a weight without losing data and publish native draws with or without replacement.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.actor-workshop",
+  "name": "Build an actor-directory module",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Create, organize, rename and authorize actors using system-owned types.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

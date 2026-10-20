@@ -1,0 +1,6 @@
+.gw-module-root[data-module-id="example.personal-note"] .personal-note { padding: var(--space-4); font-size: 14px; }
+.gw-module-root[data-module-id="example.personal-note"] .personal-note--floating { position: fixed; left: 16px; bottom: 112px; z-index: 10; max-width: min(340px, calc(100vw - 32px)); background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-md); pointer-events: auto; }
+.personal-note-settings { width: min(520px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.personal-note-settings label { display: block; margin-bottom: var(--space-4); }
+.personal-note-settings input { width: 100%; display: block; }
+.personal-note-settings button { margin-right: var(--space-3); margin-bottom: var(--space-3); }

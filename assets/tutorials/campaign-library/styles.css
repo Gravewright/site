@@ -1,0 +1,5 @@
+.gw-module-root[data-module-id="example.harbor-library"] .harbor-library { position: fixed; top: 64px; left: var(--space-4); z-index: 10; box-sizing: border-box; width: 400px; max-width: calc(100vw - 32px); max-height: 50vh; overflow: auto; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font: 14px/1.5 system-ui, sans-serif; }
+.gw-module-root[data-module-id="example.harbor-library"] .harbor-library h3 { font-size: 16px; margin: var(--space-0) var(--space-0) var(--space-2); }
+.gw-module-root[data-module-id="example.harbor-library"] .harbor-library label { display: block; margin-top: var(--space-2); }
+.gw-module-root[data-module-id="example.harbor-library"] .harbor-library button, .gw-module-root[data-module-id="example.harbor-library"] .harbor-library select { font: inherit; margin: var(--space-1); padding: var(--space-1); max-width: 100%; }
+.gw-module-root[data-module-id="example.harbor-library"] .harbor-library pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }

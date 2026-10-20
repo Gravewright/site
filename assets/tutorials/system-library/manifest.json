@@ -1,0 +1,36 @@
+{
+  "id": "example.beacon-library",
+  "name": "Beacon Expedition Library",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Original actor and item types with three installed read-only compendium packs.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "system": {
+    "actorTypes": [
+      {
+        "id": "character",
+        "label": "Character"
+      }
+    ],
+    "itemTypes": [
+      {
+        "id": "gear",
+        "label": "Gear"
+      },
+      {
+        "id": "spell",
+        "label": "Spell"
+      }
+    ]
+  },
+  "content": {
+    "compendiums": [
+      "compendiums/beacon.json"
+    ]
+  }
+}

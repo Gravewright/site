@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar ferramentas de chat, dados e prontidão | Gravewright</title><meta name="description" content="Crie um módulo funcional para mensagens, rolagens, moderação, busca de documentos e atualização da prontidão."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-chat-dice.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-chat-dice.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar ferramentas de chat, dados e prontidão | Gravewright"><meta property="og:description" content="Crie um módulo funcional para mensagens, rolagens, moderação, busca de documentos e atualização da prontidão."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar ferramentas de chat, dados e prontidão","description":"Crie um módulo funcional para mensagens, rolagens, moderação, busca de documentos e atualização da prontidão.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-chat-dice.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-chat-dice.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html" aria-current="page">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar ferramentas de chat, dados e prontidão</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 13 min de leitura</span><h1>Como criar ferramentas de chat, dados e prontidão</h1><p class="kb-lead">Crie um módulo funcional para mensagens, rolagens, moderação, busca de documentos e atualização da prontidão.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/chat-dice.png" aria-label="Abrir captura completa: Módulo Chat, dice and lobby instalado após executar a receita history. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/chat-dice.png" width="1440" height="1000" alt="Módulo Chat, dice and lobby instalado após executar a receita history. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Chat, dice and lobby instalado após executar a receita history. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Monte um painel em modal nativo com doze ações independentes. Comece lendo o histórico, envie mensagem pública, teste sussurro/GM/ação e role dados públicos e secretos. Depois, leia e atualize o lobby. A moderação é explícita e deve usar campanha descartável.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta chat-dice. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/chat-dice/chat-dice-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">chat-dice/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Use campanha descartável com dois membros e um ator original. Ative prontidão e busca nativas nas configurações da instalação para essas receitas; as APIs informam permission_denied quando o recurso está desabilitado. Copie nome de jogador da mesa e UUIDs de documentos das listas nativas.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../chat-dice-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../chat-dice-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Chat, dice and lobby. Feche o menu e clique no botão Chat, dice and lobby. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="ler-o-historico-visivel">Ler o histórico visível</h3>
+<p>Deixe Scene UUID vazio para usar a cena transmitida ou informe uma cena autorizada. O array retornado é o histórico recente visível, não todas as mensagens já enviadas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,signal},v)=&gt;api.chat.history(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{},{signal})</code></pre></div>
+<p><strong>Resultado esperado:</strong> IDs de mensagens, autores, texto e visibilidade desta conta.</p>
+<p><strong>Como conferir:</strong> Compare remetente, destinatário de sussurro e outro jogador. Mensagens ocultas não podem aparecer.</p>
+<h3 id="enviar-uma-mensagem-publica">Enviar uma mensagem pública</h3>
+<p>Informe texto original. A receita rejeita barra inicial para que a ação pública não se torne comando sem intenção. A cena opcional usa sceneId.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,signal},v)=&gt;{const text=v.text.trim();if(text.startsWith(&#39;/&#39;))throw new Error(&#39;Use a dedicated command recipe.&#39;);return api.chat.send({text,...(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma mensagem visível e seu ID no servidor.</p>
+<p><strong>Como conferir:</strong> Confira o chat nativo com dois membros. Execute novamente apenas se quiser uma segunda mensagem.</p>
+<h3 id="enviar-um-sussurro-ao-destinatario">Enviar um sussurro ao destinatário</h3>
+<p>Informe o nome de exibição exato de um membro, incluindo espaços. O comando nativo /w resolve os membros, não uma lista de audiência inventada no cliente. Nomes de exibição iguais podem corresponder a vários membros.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/w &#39;+v.recipient.trim()+&#39; &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Resultado esperado:</strong> O servidor retorna sussurro visível ao remetente e destinatários correspondentes.</p>
+<p><strong>Como conferir:</strong> Leia o histórico como destinatário e não destinatário; só o primeiro recebe o conteúdo. Use nomes únicos no teste.</p>
+<h3 id="enviar-uma-mensagem-aos-mestres">Enviar uma mensagem aos mestres</h3>
+<p>O comando nativo /gm envia aos mestres da campanha e ao remetente. É um comando de chat, não um campo visibility em chat.send.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/gm &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma mensagem filtrada no chat de mestres e remetente.</p>
+<p><strong>Como conferir:</strong> Abra o diretório ou documento nativo e compare o estado do servidor. Compare mestre e jogador; apenas conteúdo autorizado pode aparecer.</p>
+<h3 id="publicar-uma-acao-de-personagem">Publicar uma ação de personagem</h3>
+<p>Informe uma ação. O comando nativo /me marca a mensagem como ação e mantém a entrega pública.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,signal},v)=&gt;api.chat.send({text:&#39;/me &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma mensagem com metadata.emote verdadeiro.</p>
+<p><strong>Como conferir:</strong> Abra o diretório ou documento nativo e compare o estado do servidor. Compare mestre e jogador; apenas conteúdo autorizado pode aparecer.</p>
+<h3 id="rolar-e-publicar-dados-publicos-ou-exclusivos-do-mestre">Rolar e publicar dados públicos ou exclusivos do mestre</h3>
+<p>Informe expressão aceita pelo parser, rótulo e repetições. GM-only result escolhe visibility gm. A ação persiste e publica uma rolagem; não é calculadora local.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,signal},v)=&gt;{if(!Number.isInteger(v.repeat)||v.repeat&lt;1||v.repeat&gt;12)throw new Error(&#39;Repeat must be 1 to 12.&#39;);return api.dice.roll(v.expression,{label:v.label,repeat:v.repeat,visibility:v.secret?&#39;gm&#39;:&#39;public&#39;},{signal,requestId:crypto.randomUUID()});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Uma submissão persistida com as rolagens e a audiência escolhida.</p>
+<p><strong>Como conferir:</strong> Compare rolagens públicas e de mestre em duas contas. Rejeite repetição 0 ou 13. Uma tentativa da mesma submissão deve reutilizar o UUID original em vez de rolar novamente.</p>
+<h3 id="moderar-uma-mensagem">Moderar uma mensagem</h3>
+<p>Como mestre, copie o ID numérico do histórico. A ação remove conteúdo e anexos dessa mensagem, preservando a identidade para tentativas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(!/^\d+$/.test(v.messageId))throw new Error(&#39;Use the numeric chat ID from history.&#39;);return api.chat.remove(v.messageId,{signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Quantidade removida; históricos seguintes omitem a mensagem.</p>
+<p><strong>Como conferir:</strong> Modere apenas mensagem sintética criada para o tutorial. O servidor deve rejeitar um jogador.</p>
+<h3 id="limpar-o-chat-da-campanha-descartavel">Limpar o chat da campanha descartável</h3>
+<p>Use somente campanha descartável. Digite CLEAR CHAT. A moderação do mestre abrange a campanha inteira e suas cenas, não apenas o histórico exibido.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(v.confirmation!==&#39;CLEAR CHAT&#39;)throw new Error(&#39;Type CLEAR CHAT to clear the whole campaign chat.&#39;);return api.chat.clear({signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Todas as mensagens ainda não removidas da campanha são apagadas.</p>
+<p><strong>Como conferir:</strong> Leia o histórico de outra cena e confirme a limpeza. Os recibos de submissão permanecem.</p>
+<h3 id="inspecionar-a-prontidao-e-os-atores-selecionaveis">Inspecionar a prontidão e os atores selecionáveis</h3>
+<p>A instalação deve ter a verificação nativa de prontidão habilitada. Leia membros, resumo e atores que esta conta pode selecionar.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">async ({api,signal})=&gt;api.table.lobby({signal})</code></pre></div>
+<p><strong>Resultado esperado:</strong> members, actors e summary.ready/total.</p>
+<p><strong>Como conferir:</strong> Compare um ator somente leitura com um pertencente ao jogador; apenas os controláveis são selecionáveis.</p>
+<h3 id="atualizar-a-prontidao-deste-membro">Atualizar a prontidão deste membro</h3>
+<p>Escolha a prontidão, UUID selecionável do resultado do lobby e assets_state. Deixe o ator vazio para limpar a seleção. A API usa o membro atual; não recebe ID de usuário para imitar outra pessoa.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-javascript">async ({api,signal},v)=&gt;{if(![&#39;unknown&#39;,&#39;loading&#39;,&#39;ready&#39;,&#39;error&#39;].includes(v.assets))throw new Error(&#39;Choose a native assets_state.&#39;);if(v.actorId.trim()){const lobby=await api.table.lobby({signal});if(!lobby.actors.some(actor=&gt;actor.id===v.actorId.trim()))throw new Error(&#39;Actor is not selectable.&#39;);}return api.table.updateLobby({is_ready:v.ready,assets_state:v.assets,selected_actor_id:v.actorId.trim()||null},{signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> O lobby retornado tem a seleção e prontidão atualizadas deste membro.</p>
+<p><strong>Como conferir:</strong> Use duas contas: apenas a linha do membro atual muda. Ator ou estado de recursos desconhecido deve falhar.</p>
+<h3 id="buscar-os-sete-kinds-de-documento">Buscar os sete kinds de documento</h3>
+<p>Use pelo menos dois caracteres. Kind vazio busca tudo; filtros: actor, item, journal, quest, quest_board, scene e compendium. O resultado contém title, kind, snippet e actions, não o documento completo.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-javascript">async ({api,signal},v)=&gt;{const kind=v.kind.trim();if(![&#39;&#39;,&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;quest&#39;,&#39;quest_board&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(kind))throw new Error(&#39;Unknown search kind.&#39;);return api.table.search(v.query,{...(kind?{kind}:{}),signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Um array com até 20 resultados autorizados.</p>
+<p><strong>Como conferir:</strong> Busque o mesmo título privado como mestre e jogador; ele deve estar ausente para o jogador. Teste quest separado de journal.</p>
+<h3 id="revalidar-um-documento-recente">Revalidar um documento recente</h3>
+<p>Use o ID de um resultado já lido. Referências recentes usam type journal para missões e quadros; o kind da busca distingue as categorias. O array aceita até 12 referências únicas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-javascript">async ({api,signal},v)=&gt;{if(![&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(v.type))throw new Error(&#39;Invalid reference type.&#39;);return api.table.search(&#39;&#39;,{recent:[{id:v.id,type:v.type}],signal});}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Retorna apenas referências ainda legíveis para o membro atual.</p>
+<p><strong>Como conferir:</strong> Retire a leitura do jogador e repita a mesma referência recente. Ela deve desaparecer.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.chat-dice&quot;,
+  &quot;name&quot;: &quot;Chat, dice and lobby&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Create a working module that sends messages, publishes rolls, moderates chat, searches documents and updates readiness.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-16">Copiar</button></div><pre><code data-code="code-16" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Chat, dice and lobby&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-chat-dice&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-17">Copiar</button></div><pre><code data-code="code-17" class="language-javascript">export const recipes=[
+{
+  id:&quot;history&quot;,
+  label:&quot;Read visible chat history&quot;,
+  description:&quot;Leave Scene UUID empty to use the broadcast scene, or enter an authorized scene UUID. The returned array is the visible recent history, not every message ever sent.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.history(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{},{signal})
+},
+{
+  id:&quot;public-message&quot;,
+  label:&quot;Send one public message&quot;,
+  description:&quot;Enter original text. This recipe rejects a leading slash so the public action cannot accidentally become a command. Optional scene selection uses sceneId.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Public message&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;The harbor gates are open.&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;sceneId&quot;,
+    &quot;label&quot;: &quot;Scene UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{const text=v.text.trim();if(text.startsWith(&#39;/&#39;))throw new Error(&#39;Use a dedicated command recipe.&#39;);return api.chat.send({text,...(v.sceneId.trim()?{sceneId:v.sceneId.trim()}:{})},{signal,requestId:crypto.randomUUID()});}
+},
+{
+  id:&quot;whisper&quot;,
+  label:&quot;Send a recipient-bound whisper&quot;,
+  description:&quot;Enter the exact display name of a member in this campaign, including spaces. Native /w parsing resolves members, not a client-supplied audience list. Identical display names can resolve multiple matching members.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;recipient&quot;,
+    &quot;label&quot;: &quot;Exact member display name&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Private message&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Meet me at the lighthouse.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/w &#39;+v.recipient.trim()+&#39; &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;gm-message&quot;,
+  label:&quot;Send a message to the GMs&quot;,
+  description:&quot;The /gm native command addresses campaign GMs plus the sender. It is a chat command, not a visibility field on chat.send.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Message to GMs&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;A hidden passage was found.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/gm &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;emote&quot;,
+  label:&quot;Publish an emote&quot;,
+  description:&quot;Enter an action. The native /me command marks the message as an emote and retains normal public delivery.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;text&quot;,
+    &quot;label&quot;: &quot;Emote text&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;lights the harbor beacon.&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;api.chat.send({text:&#39;/me &#39;+v.text.trim()},{signal,requestId:crypto.randomUUID()})
+},
+{
+  id:&quot;dice&quot;,
+  label:&quot;Roll and publish public or GM-only dice&quot;,
+  description:&quot;Enter an expression supported by the native parser, label and repeat count. GM-only result chooses visibility gm. This action persists and publishes a roll; it is not a local calculator.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;expression&quot;,
+    &quot;label&quot;: &quot;Dice expression&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;2d6+1&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;label&quot;,
+    &quot;label&quot;: &quot;Label, up to 48 characters&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Harbor check&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;repeat&quot;,
+    &quot;label&quot;: &quot;Repeat, integer 1 to 12&quot;,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;value&quot;: 1,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;secret&quot;,
+    &quot;label&quot;: &quot;GM-only result&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(!Number.isInteger(v.repeat)||v.repeat&lt;1||v.repeat&gt;12)throw new Error(&#39;Repeat must be 1 to 12.&#39;);return api.dice.roll(v.expression,{label:v.label,repeat:v.repeat,visibility:v.secret?&#39;gm&#39;:&#39;public&#39;},{signal,requestId:crypto.randomUUID()});}
+},
+{
+  id:&quot;remove-message&quot;,
+  label:&quot;Moderate one message&quot;,
+  description:&quot;As GM, copy the numeric ID from history. This removes that message content and attachments while preserving retry identity.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;messageId&quot;,
+    &quot;label&quot;: &quot;Numeric message ID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(!/^\d+$/.test(v.messageId))throw new Error(&#39;Use the numeric chat ID from history.&#39;);return api.chat.remove(v.messageId,{signal});}
+},
+{
+  id:&quot;clear-chat&quot;,
+  label:&quot;Clear the disposable campaign chat&quot;,
+  description:&quot;Use only a disposable campaign. Type CLEAR CHAT. This GM moderation operation is campaign-wide, including scenes, rather than just the history currently displayed.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;confirmation&quot;,
+    &quot;label&quot;: &quot;Type CLEAR CHAT&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v)=&gt;{if(context.role!==&#39;gm&#39;)throw new Error(&#39;GM required.&#39;);if(v.confirmation!==&#39;CLEAR CHAT&#39;)throw new Error(&#39;Type CLEAR CHAT to clear the whole campaign chat.&#39;);return api.chat.clear({signal});}
+},
+{
+  id:&quot;lobby&quot;,
+  label:&quot;Inspect the ready check and selectable actors&quot;,
+  description:&quot;The installation must have its native ready check enabled. Read members, summary and the actors this account may select.&quot;,
+  fields:[],
+  run:async ({api,signal})=&gt;api.table.lobby({signal})
+},
+{
+  id:&quot;set-ready&quot;,
+  label:&quot;Update this member’s ready state&quot;,
+  description:&quot;Set the checkbox, a selectable actor UUID from the lobby result, and assets_state. Leave actor UUID blank to clear the selection. The API chooses the current member; no user ID can impersonate someone else.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;ready&quot;,
+    &quot;label&quot;: &quot;I am ready&quot;,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;value&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;actorId&quot;,
+    &quot;label&quot;: &quot;Selected owned actor UUID, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  },
+  {
+    &quot;name&quot;: &quot;assets&quot;,
+    &quot;label&quot;: &quot;Asset state: unknown/loading/ready/error&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;ready&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(![&#39;unknown&#39;,&#39;loading&#39;,&#39;ready&#39;,&#39;error&#39;].includes(v.assets))throw new Error(&#39;Choose a native assets_state.&#39;);if(v.actorId.trim()){const lobby=await api.table.lobby({signal});if(!lobby.actors.some(actor=&gt;actor.id===v.actorId.trim()))throw new Error(&#39;Actor is not selectable.&#39;);}return api.table.updateLobby({is_ready:v.ready,assets_state:v.assets,selected_actor_id:v.actorId.trim()||null},{signal});}
+},
+{
+  id:&quot;search&quot;,
+  label:&quot;Search all seven document kinds&quot;,
+  description:&quot;Use at least two characters. Blank kind searches all; accepted filters are actor, item, journal, quest, quest_board, scene and compendium. A result is a search projection with title, kind, snippet and actions, not a full document.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;query&quot;,
+    &quot;label&quot;: &quot;At least two search characters&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;Harbor&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;kind&quot;,
+    &quot;label&quot;: &quot;Kind, optional&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,signal},v)=&gt;{const kind=v.kind.trim();if(![&#39;&#39;,&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;quest&#39;,&#39;quest_board&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(kind))throw new Error(&#39;Unknown search kind.&#39;);return api.table.search(v.query,{...(kind?{kind}:{}),signal});}
+},
+{
+  id:&quot;recent&quot;,
+  label:&quot;Revalidate a recent document&quot;,
+  description:&quot;Use one previously read result ID. Recent references use type journal for quests and quest boards, while search kind distinguishes those categories. Up to 12 unique references can be supplied in an array.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;type&quot;,
+    &quot;label&quot;: &quot;Reference type: actor/item/journal/scene/compendium&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;journal&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;id&quot;,
+    &quot;label&quot;: &quot;Previously seen document UUID&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,signal},v)=&gt;{if(![&#39;actor&#39;,&#39;item&#39;,&#39;journal&#39;,&#39;scene&#39;,&#39;compendium&#39;].includes(v.type))throw new Error(&#39;Invalid reference type.&#39;);return api.table.search(&#39;&#39;,{recent:[{id:v.id,type:v.type}],signal});}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-18">Copiar</button></div><pre><code data-code="code-18" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.chat-dice&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-chat-dice { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-chat-dice label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-chat-dice input, .tutorial-workbench-chat-dice select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-chat-dice pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-chat-dice button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-19">Copiar</button></div><pre><code data-code="code-19" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Cada ação usa API da montagem e signal. Submissões de alteração recebem UUID novo, exceto lobby/moderação cujos serviços nativos não usam recibos. Para tentar a mesma submissão de chat ou dados em sua integração, preserve UUID e payload idênticos; clicar Run novamente é outra ação lógica. Use duas contas para audiências privadas e acesso revogado. Em conflito, leia e revise o estado antes de novo comando. O servidor filtra membros, cenas, mensagens e documentos; desabilitar botões não autoriza operações.</p>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-20">Copiar</button></div><pre><code data-code="code-20" class="language-text">Estenda o projeto completo chat-dice no Gravewright 0.3.0 com [um recurso]. Leia modules/frontend.py, chat/services.py, dice/services.py e table/services.py. Preserve parser nativo de comandos, payloads snake_case reais do lobby, audiência, UUIDs, permissões e cancelamento. Mostre todos os arquivos e valide com duas contas, mensagens privadas, acesso revogado e recursos da instalação desabilitados.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-audio.html"><span>Anterior ←</span><strong>Como criar ferramentas de áudio e trilha da cena</strong></a><a href="tutorial-quests.html"><span>Próximo →</span><strong>Como criar automações de missões e ações de quadro</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/chat/services.py">gravewright/chat/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/dice/services.py">gravewright/dice/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/table/services.py">gravewright/table/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/frontend.py">gravewright/modules/frontend.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/domain-api.js">gravewright/modules/static/gravewright_modules/domain-api.js</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

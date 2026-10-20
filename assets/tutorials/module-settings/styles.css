@@ -1,0 +1,6 @@
+.gw-module-root[data-module-id="tutorial.module-settings"] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-module-settings { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-module-settings label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-module-settings input, .tutorial-workbench-module-settings select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-module-settings pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-module-settings button { margin-right: var(--space-3); }

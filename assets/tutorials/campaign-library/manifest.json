@@ -1,0 +1,13 @@
+{
+  "id": "example.harbor-library",
+  "name": "Harbor campaign library",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Creates an original journal and reusable campaign snapshot through the public API.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

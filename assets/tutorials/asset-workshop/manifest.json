@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.asset-workshop",
+  "name": "Upload and use module and campaign files",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Use File/Blob, actor images, card assets, native file providers and downloads.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

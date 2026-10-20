@@ -1,0 +1,17 @@
+{
+  "id": "example.server-workshop",
+  "name": "Server integration workshop",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "description": "Authenticated campaign reads, native actor commands and bounded process-local event counters.",
+  "author": "Gravewright documentation",
+  "license": "MIT",
+  "django": {
+    "apps": [
+      "example_workshop.apps.ExampleWorkshopConfig"
+    ]
+  }
+}

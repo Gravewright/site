@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Como criar um módulo de ferramentas de cena | Gravewright</title><meta name="description" content="Monte módulo que consulta camadas, edita metadados/pastas, cria uma porta nativa e transmite cena de teste."><meta name="theme-color" content="#0b0d10"><link rel="canonical" href="https://gravewright.com/docs/pt-BR/tutorial-maps.html"><link rel="alternate" hreflang="en" href="https://gravewright.com/docs/en/tutorial-maps.html"><link rel="alternate" hreflang="pt-BR" href="https://gravewright.com/docs/pt-BR/tutorial-maps.html"><link rel="alternate" hreflang="x-default" href="https://gravewright.com/docs/en/tutorial-maps.html"><meta property="og:type" content="article"><meta property="og:title" content="Como criar um módulo de ferramentas de cena | Gravewright"><meta property="og:description" content="Monte módulo que consulta camadas, edita metadados/pastas, cria uma porta nativa e transmite cena de teste."><meta property="og:url" content="https://gravewright.com/docs/pt-BR/tutorial-maps.html"><meta property="og:image" content="https://gravewright.com/assets/images/gravewright-social-v3.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../knowledge.css"><script src="../../script.js" defer></script><script src="../../knowledge.js" defer></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Como criar um módulo de ferramentas de cena","description":"Monte módulo que consulta camadas, edita metadados/pastas, cria uma porta nativa e transmite cena de teste.","inLanguage":"pt-BR","url":"https://gravewright.com/docs/pt-BR/tutorial-maps.html","isPartOf":{"@type":"WebSite","name":"Gravewright","url":"https://gravewright.com"}}</script></head>
+<body class="knowledge-page" data-copy-label="Copiar" data-copied-label="Copiado" data-selected-label="Selecionado" data-copied-message="Copiado para a área de transferência." data-selected-message="Texto selecionado. Use o teclado para copiar."><a class="skip-link" href="#main-content">Pular para o conteúdo</a><header class="site-header" data-header><div class="shell header-inner"><a class="brand" href="../../pt-br.html"><span class="brand-icon"><img src="../../assets/icon.svg" width="34" height="34" alt=""></span><span>Gravewright</span></a><button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">Menu</span></button><nav class="main-nav" id="main-nav" data-nav aria-label="Navegação principal"><a href="../../wiki/pt-BR/index.html">Wiki do produto</a><a href="index.html" aria-current="page">Docs para devs</a><a href="ai.html">Desenvolva com IA</a><a class="language-link" data-language href="../en/tutorial-maps.html" lang="en" hreflang="en">English</a><a href="https://github.com/Gravewright/gravewright" class="nav-button">GitHub ↗</a></nav></div></header>
+<div class="kb-shell"><aside class="kb-sidebar"><div class="kb-search" data-search data-index="../../knowledge-search.json" data-locale="pt" data-results-label="resultados" data-empty-label="Nenhum resultado. Tente outro termo ou navegue pelos assuntos abaixo." data-loading-label="Buscando…" data-error-label="A busca está indisponível. Use a navegação abaixo."><label for="knowledge-search">Buscar na wiki e na documentação</label><div class="kb-search-control"><span aria-hidden="true">⌕</span><input id="knowledge-search" type="search" placeholder="Tente “tokens”, “API” ou “IA”…" autocomplete="off" aria-controls="search-results"><button type="button" data-search-clear aria-label="Limpar busca" hidden>×</button></div><p class="kb-search-status" role="status" aria-live="polite"></p><ol id="search-results" class="kb-search-results" hidden></ol><noscript><p>Todos os guias abaixo funcionam sem JavaScript. A busca precisa de JavaScript.</p></noscript></div><details class="kb-topic-menu" open><summary>Explorar assuntos</summary><nav aria-label="Explorar assuntos"><a href="index.html" class="kb-all-topics">Todos os assuntos</a><div class="kb-nav-group"><p>Tutoriais de implementação</p><ul><li><a href="tutorial-index.html">Aprenda a criar módulos e sistemas</a></li><li><a href="tutorial-first-module.html">Criar, instalar e atualizar seu primeiro módulo</a></li><li><a href="tutorial-capability-map.html">Todas as capacidades de extensão e onde implementá-las</a></li><li><a href="tutorial-complete-system.html">Como criar um pacote de sistema original completo</a></li><li><a href="tutorial-journal-module.html">Como criar um módulo de diário</a></li><li><a href="tutorial-create-journal.html">Como criar um diário do zero por um módulo</a></li><li><a href="tutorial-sheet-module.html">Como criar um módulo que atua na ficha</a></li><li><a href="tutorial-system-sheet.html">Como criar e substituir uma ficha completa de sistema</a></li><li><a href="tutorial-compendium-module.html">Como criar um módulo de compêndio</a></li><li><a href="tutorial-system-compendiums.html">Como incluir compêndios em um sistema</a></li><li><a href="tutorial-maps.html" aria-current="page">Como criar um módulo de ferramentas de cena</a></li><li><a href="tutorial-tokens.html">Como criar um módulo de ferramentas de token</a></li><li><a href="tutorial-combat.html">Como criar um módulo de ferramentas de combate</a></li><li><a href="tutorial-items.html">Como criar ferramentas de itens e inventário</a></li><li><a href="tutorial-cards.html">Como criar ferramentas de cartas e baralhos</a></li><li><a href="tutorial-audio.html">Como criar ferramentas de áudio e trilha da cena</a></li><li><a href="tutorial-chat-dice.html">Como criar ferramentas de chat, dados e prontidão</a></li><li><a href="tutorial-quests.html">Como criar automações de missões e ações de quadro</a></li><li><a href="tutorial-roll-tables.html">Como criar, sortear e restaurar tabelas de rolagem</a></li><li><a href="tutorial-journal-management.html">Como criar, organizar e compartilhar documentos de diário</a></li><li><a href="tutorial-actors.html">Criar um módulo de personagens e pastas</a></li><li><a href="tutorial-storage.html">Salvar configurações e preferências do módulo</a></li><li><a href="tutorial-assets.html">Enviar e usar arquivos de módulos e campanhas</a></li><li><a href="tutorial-localization-events.html">Traduzir um módulo e reagir a eventos</a></li><li><a href="tutorial-sdk-operations.html">Manter módulo que usa o SDK original host.call</a></li><li><a href="tutorial-customize-ui.html">Criar formulários Customize e janelas nativas do módulo</a></li><li><a href="tutorial-server-integration.html">Criar integração Django confiável e hooks de servidor</a></li><li><a href="tutorial-language-package.html">Como criar e ativar um pacote de idioma da instalação</a></li><li><a href="tutorial-publish-module.html">Como versionar, assinar e distribuir um módulo</a></li></ul></div><div class="kb-nav-group"><p>Exemplos por kind</p><ul><li><a href="examples-index.html">Exemplos completos por kind</a></li><li><a href="example-package-browser.html">Módulo de navegador: resumo da campanha</a></li><li><a href="example-package-system.html">Pacote de sistema: ficha de personagem editável</a></li><li><a href="example-package-language.html">Pacote de idioma: catálogos em português e espanhol</a></li><li><a href="example-package-django.html">Pacote Django: endpoint exclusivo do proprietário</a></li><li><a href="example-surface-actor-directory.html">actor.directory: Contador de atores legíveis</a></li><li><a href="example-surface-actor-sheet.html">actor.sheet: Inspetor de revisão da ficha</a></li><li><a href="example-surface-token-sheet.html">token.sheet: Inspetor de token vinculado ou independente</a></li><li><a href="example-surface-item-directory.html">item.directory: Contagem de itens por tipo</a></li><li><a href="example-surface-item-sheet.html">item.sheet: Inspetor de dados do item</a></li><li><a href="example-surface-scene-directory.html">scene.directory: Estado de transmissão das cenas</a></li><li><a href="example-surface-scene-controls.html">scene.controls: Controle de informações da cena</a></li><li><a href="example-surface-scene-overlay.html">scene.overlay: Marcador do centro da cena</a></li><li><a href="example-surface-chat-log.html">chat.log: Estatísticas do chat visível</a></li><li><a href="example-surface-combat-tracker.html">combat.tracker: Resumo do turno atual</a></li><li><a href="example-surface-journal-sheet.html">journal.sheet: Estrutura do diário</a></li><li><a href="example-surface-preferences.html">preferences: Preferência pessoal persistente de densidade</a></li><li><a href="example-surface-table-interface.html">table.interface: Busca de documentos autorizados</a></li><li><a href="examples-search-kinds.html">Busca: os 7 kinds e o filtro vazio</a></li><li><a href="examples-actor-image-kinds.html">Imagens de ator: portrait e token</a></li><li><a href="examples-compendium-entry-kinds.html">Entradas de compêndio: os cinco kinds</a></li><li><a href="examples-compendium-pack-kinds.html">Packs de compêndio: 3 tipos instalados e 7 locais</a></li><li><a href="examples-blueprints.html">Exemplos de Blueprint para cada kind de objeto</a></li><li><a href="example-blueprint-door.html">Blueprint kind door: abrir, fechar e preservar a trava</a></li><li><a href="example-blueprint-lever.html">Blueprint kind lever: interruptor de dois estados e Empty Object</a></li><li><a href="example-blueprint-torch.html">Blueprint kind torch: girar o mecanismo e controlar a chama</a></li><li><a href="example-blueprint-region.html">Blueprint kind region: placa de pressão com primeiro/último ocupante</a></li><li><a href="example-blueprint-connections.html">Kinds de conexão: execution e data, um grafo completo</a></li><li><a href="example-blueprint-nodes.html">Os 42 tipos de nó de Blueprint, com exemplos completos</a></li></ul></div><div class="kb-nav-group"><p>Referência do projeto</p><ul><li><a href="getting-started.html">Primeiros passos</a></li><li><a href="architecture.html">Arquitetura</a></li><li><a href="code-map.html">Mapa do código</a></li><li><a href="development.html">Desenvolvimento</a></li><li><a href="api.html">Referência da API pública</a></li><li><a href="modules.html">Sistemas e módulos</a></li><li><a href="frontend.html">Arquitetura do frontend</a></li><li><a href="testing.html">Testes</a></li><li><a href="configuration.html">Configuração</a></li><li><a href="deployment.html">Implantação</a></li><li><a href="windows-runner.html">Instalador e Runner no Windows</a></li><li><a href="linux-runner.html">Instalador e Runner no Linux</a></li><li><a href="macos-runner.html">Instalador e Runner no macOS</a></li><li><a href="map-builder.html">Referência do Map Builder</a></li><li><a href="universal-vtt.html">Importação e exportação Universal VTT</a></li><li><a href="user-guide.html">Referência dos fluxos da aplicação</a></li><li><a href="ethical-module-porting.html">Portabilidade ética de módulos</a></li><li><a href="contributing.html">Contribuição</a></li><li><a href="licensing.html">Licenciamento</a></li></ul></div><div class="kb-nav-group"><p>Como usar a IA</p><ul><li><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a></li><li><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a></li><li><a href="ai-server-integration.html">Como usar a IA para criar uma integração Python</a></li><li><a href="ai-map-blueprint.html">Como usar a IA para planejar um Objeto Inteligente</a></li><li><a href="ai-debug-bug.html">Como usar a IA para investigar um bug</a></li><li><a href="ai-write-tests.html">Como usar a IA para escrever testes úteis</a></li><li><a href="ai-translate-extension.html">Como usar a IA para traduzir uma extensão</a></li><li><a href="ai-contribute-core.html">Como usar a IA para contribuir com o core</a></li></ul></div></nav></details></aside><main id="main-content" class="kb-main"><div class="kb-breadcrumb"><a href="../../pt-br.html">Início</a><span aria-hidden="true">/</span><a href="index.html">Docs para devs</a><span aria-hidden="true">/</span><span>Como criar um módulo de ferramentas de cena</span></div><article><header class="kb-article-header"><span class="kb-eyebrow">Tutoriais de implementação <span aria-hidden="true">/</span> 18 min de leitura</span><h1>Como criar um módulo de ferramentas de cena</h1><p class="kb-lead">Monte módulo que consulta camadas, edita metadados/pastas, cria uma porta nativa e transmite cena de teste.</p></header><figure class="kb-screenshot"><a href="../../assets/tutorials/previews/maps-workshop.png" aria-label="Abrir captura completa: Módulo Scene workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês."><img src="../../assets/tutorials/previews/maps-workshop.png" width="1440" height="1000" alt="Módulo Scene workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês." loading="lazy" decoding="async"></a><figcaption>Módulo Scene workshop instalado após executar a receita inspect. Gravewright 0.3.0, interface em inglês. · Abrir captura completa ↗</figcaption></figure><div class="kb-prose"><h2 id="o-projeto-que-voce-vai-criar">O projeto que você vai criar</h2>
+<p>Crie Scene workshop, módulo de navegador com laboratório em modal nativo. Siga uma sequência concreta: consultar cena descartável, renomear, organizar pasta, criar/editar/operar porta e transmitir conscientemente. Exclua os dados só depois dos tutoriais de tokens e combate.</p>
+<p>Host alvo: <strong>Gravewright 0.3.0</strong>. As ações rodam somente quando você clica Run action; leituras e escritas usam a conta conectada. O painel de demonstração está em inglês. Cada receita abaixo informa os dados de entrada e o resultado concreto.</p>
+<h2 id="1-crie-os-arquivos">1. Crie os arquivos</h2>
+<p>Crie uma pasta maps-workshop. Salve os arquivos mostrados abaixo em UTF-8, ou <a href="../../assets/tutorials/maps-workshop/maps-workshop-source.zip">baixe o projeto completo</a>. manifest.json fica na raiz. Não há dependências npm nem build de JavaScript.</p>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-1">Copiar</button></div><pre><code data-code="code-1" class="language-text">maps-workshop/
+  manifest.json
+  main.mjs
+  recipes.mjs
+  styles.css
+  LICENSE.txt</code></pre></div>
+<p>Em campanha descartável, crie uma cena vazia de pelo menos8×8 células pelo fluxo nativo <strong>Scenes → New scene → Map Builder</strong>, depois <strong>Generate scene</strong>. Comece sem conteúdo valioso. A API de domínio do navegador não tem maps.create para raster/projeto Builder. Use o <a href="map-builder.html">Map Builder</a> para autoria; geração do projeto é separada dos comandos abaixo.</p>
+<h2 id="2-empacote-instale-e-ative">2. Empacote, instale e ative</h2>
+<p>Partindo da pasta do projeto, execute no PowerShell:</p>
+<div class="code-block"><div class="code-toolbar"><span>powershell</span><button type="button" data-copy="code-2">Copiar</button></div><pre><code data-code="code-2" class="language-powershell">python -m json.tool manifest.json
+python -m zipfile -c ../maps-workshop-1.0.0.zip manifest.json main.mjs recipes.mjs styles.css LICENSE.txt
+python -m zipfile -l ../maps-workshop-1.0.0.zip</code></pre></div>
+<p>No Linux/macOS, substitua python por python3 no mesmo comando. A listagem precisa mostrar manifest.json na raiz. Como proprietário, abra Inside → Módulos → Instalar módulo → Instalar de ZIP, selecione o ZIP e clique Instalar. Como GM, abra a campanha, use o botão Gravewright da mesa → Extensions e clique Activate na versão 1.0.0 de Scene workshop. Feche o menu e clique no botão Scene workshop. Se precisar de detalhes de cada tela, veja <a href="tutorial-first-module.html">seu primeiro módulo</a>.</p>
+<p>O projeto fica inativo até a seleção na mesa. Teste uma extensão de demonstração por vez, pois seus botões usam a mesma posição. Para novos bytes, mude version para 1.0.1, gere outro ZIP, instale e ative essa versão; não edite o pacote instalado.</p>
+<h2 id="3-execute-cada-receita">3. Execute cada receita</h2>
+<h3 id="consultar-cenas-pastas-e-camadas-nativas">Consultar cenas, pastas e camadas nativas</h3>
+<p>Execute primeiro sem Scene ID. Copie o ID da cena de teste, preencha e repita para consultar paredes, imagens, luzes, neblina, iluminação e suas versões.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-3">Copiar</button></div><pre><code data-code="code-3" class="language-javascript">async ({api,context,signal},v) =&gt; {
+
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const directory=await api.maps.state({},read);
+    const layers=v.mapId.trim()?await api.maps.layers({mapId:v.mapId.trim()},read):null;
+    return {directory,layers};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> IDs autorizados, activeMapId e navigatingMapId; camadas nativas da cena quando informada.</p>
+<p><strong>Como conferir:</strong> Compare o diretório de GM com a conta de jogador. O estado de jogador omite cenas privadas, regiões e grafos privados.</p>
+<h3 id="renomear-cena-de-teste-e-definir-a-grade">Renomear cena de teste e definir a grade</h3>
+<p>Use cena descartável. Name e gridVisible são os ajustes enviados; os demais são preservados. Não envie toda a projeção como settings.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-4">Copiar</button></div><pre><code data-code="code-4" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const before=await api.maps.get(v.mapId,{},read);
+    await api.maps.update({mapId:before.id,version:before.version,settings:{name:v.name,gridVisible:v.gridVisible}},write());
+    return await api.maps.get(before.id,{},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Mesmo ID, novo nome, visibilidade da grade escolhida e nova versão inteira.</p>
+<p><strong>Como conferir:</strong> Abra os ajustes nativos e confira nome/grade; imageScale, gridSize e unidades continuam iguais.</p>
+<h3 id="criar-pasta-de-cenas">Criar pasta de cenas</h3>
+<p>Informe nome original de pasta. Copie created.folderId para as próximas duas receitas.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-5">Copiar</button></div><pre><code data-code="code-5" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const created=await api.maps.createFolder({label:v.label,color:&#39;#b49a5a&#39;,parentId:null},write());
+    return {created,folders:(await api.maps.state({},read)).folders};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> UUID da pasta e lista de pastas atualizada.</p>
+<p><strong>Como conferir:</strong> Encontre Workshop scenes no diretório nativo de Cenas.</p>
+<h3 id="renomear-ou-mover-pasta-de-cenas">Renomear ou mover pasta de cenas</h3>
+<p>Use a pasta criada acima. Parent vazio coloca na raiz. O servidor rejeita ciclos, pastas de outra campanha e profundidade excedida.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-6">Copiar</button></div><pre><code data-code="code-6" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.updateFolder({folderId:v.folderId,label:v.label,color:&#39;#b49a5a&#39;,parentId:v.parentId.trim()||null},write());
+    return (await api.maps.state({},read)).folders;
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> ID preservado com novo nome/pai.</p>
+<p><strong>Como conferir:</strong> Expanda a árvore e confira a posição. Tente usar a própria pasta como pai e confira a recusa.</p>
+<h3 id="mover-cena-para-a-pasta-do-tutorial">Mover cena para a pasta do tutorial</h3>
+<p>Cole os IDs da cena e pasta. Este comando usa groupId, não o folder_id dos diários.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-7">Copiar</button></div><pre><code data-code="code-7" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.move({mapId:v.mapId,groupId:v.folderId.trim()||null},write());
+    return await api.maps.get(v.mapId,{},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> groupId da cena referencia a pasta ou null na raiz.</p>
+<p><strong>Como conferir:</strong> Localize a mesma cena em Workshop rooms. ID e objetos nativos permanecem.</p>
+<h3 id="criar-porta-nativa-por-updateobjects">Criar porta nativa por updateObjects</h3>
+<p>Use cena de pelo menos 8 células de largura. As coordenadas são pixels da cena, diferentes das células de token.move. Os pontos precisam diferir. Cria porta nativa simples, sem blueprint ou imagem.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-8">Copiar</button></div><pre><code data-code="code-8" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.get(v.mapId,{},read);
+    const result=await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;create&#39;,data:{x1:v.x1,y1:v.y1,x2:v.x2,y2:v.y2,kind:&#39;door&#39;,door_state:&#39;closed&#39;}},write());
+    return {created:result.wall,layers:await api.maps.layers({mapId:v.mapId},read)};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Registro de parede com kind door, ID e versão. Copie seu ID.</p>
+<p><strong>Como conferir:</strong> Abra Walls na cena nativa e localize a porta horizontal. Confira os pontos na projeção.</p>
+<h3 id="ajustar-ponto-da-porta-com-sua-versao">Ajustar ponto da porta com sua versão</h3>
+<p>Use a porta criada acima. Só x2 muda; o validador nativo preserva os demais campos. Versão da cena e versão do objeto são diferentes.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-9">Copiar</button></div><pre><code data-code="code-9" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door) throw new Error(&#39;Choose a door from this scene&#39;);
+    await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;update&#39;,data:{wall_id:door.id,version:door.version,x2:v.x2}},write());
+    return (await api.maps.layers({mapId:v.mapId},read)).walls.find(row=&gt;row.id===door.id);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Porta maior/menor, mesmo ID e versão de objeto incrementada.</p>
+<p><strong>Como conferir:</strong> Confira preservação de x1/y1/y2, apresentação e canais de barreira. Edição nativa intercalada deve causar conflict.</p>
+<h3 id="abrir-ou-fechar-a-porta-simples-de-teste">Abrir ou fechar a porta simples de teste</h3>
+<p>Informe open e execute; depois closed e repita. A receita usa porta simples. Em Objeto Inteligente, a interação pode executar grafos em vez de uma alternância simples.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-10">Copiar</button></div><pre><code data-code="code-10" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(![&#39;open&#39;,&#39;closed&#39;,&#39;locked&#39;].includes(v.state)) throw new Error(&#39;Use open, closed or locked&#39;);
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door||door.blueprint) throw new Error(&#39;Choose the plain tutorial door without a blueprint&#39;);
+    return await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;door&#39;,data:{wall_id:door.id,door_state:v.state}},write());
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A porta simples abre/fecha na cena nativa.</p>
+<p><strong>Como conferir:</strong> Observe geometria e bloqueio. Teste interação de jogador pelos controles nativos, incluindo recusa de porta trancada.</p>
+<h3 id="transmitir-a-cena-de-teste-preparada">Transmitir a cena de teste preparada</h3>
+<p>Escolha a cena descartável preparada e marque a transmissão. Activate torna a cena visível e altera a transmissão da campanha.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-11">Copiar</button></div><pre><code data-code="code-11" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the test scene broadcast&#39;);
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.activate({mapId:v.mapId},write());
+    return await api.maps.state({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> activeMapId corresponde à cena; jogadores conectados mudam para ela.</p>
+<p><strong>Como conferir:</strong> Use segunda conta de jogador. Confira que a transmissão muda só depois de Run action com a opção marcada.</p>
+<h3 id="excluir-somente-a-porta-do-tutorial">Excluir somente a porta do tutorial</h3>
+<p>Use somente a porta criada no tutorial e confirme. Apagar Objeto Inteligente pode executar destruição configurada; a porta simples do tutorial não tem grafo.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-12">Copiar</button></div><pre><code data-code="code-12" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable door&#39;);
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door) throw new Error(&#39;Door not found&#39;);
+    await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;delete&#39;,data:{wall_id:door.id,expected_version:door.version}},write());
+    return await api.maps.layers({mapId:v.mapId},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> A porta selecionada desaparece e as demais paredes permanecem.</p>
+<p><strong>Como conferir:</strong> Compare paredes antes/depois e confirme remoção só do ID copiado.</p>
+<h3 id="remover-pasta-de-teste-preservando-cenas">Remover pasta de teste preservando cenas</h3>
+<p>Use a pasta criada aqui. Recursive:false move cenas/subpastas ao pai, em vez de apagar a árvore.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-13">Copiar</button></div><pre><code data-code="code-13" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable folder&#39;);
+    await api.maps.deleteFolder({folderId:v.folderId,recursive:false},write());
+    return await api.maps.state({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Pasta ausente e cenas preservadas.</p>
+<p><strong>Como conferir:</strong> Encontre Workshop chamber na pasta pai.</p>
+<h3 id="excluir-a-cena-descartavel-por-ultimo">Excluir a cena descartável por último</h3>
+<p>Execute por último e só na cena descartável, depois dos tutoriais de tokens/combate. Excluir cena também remove seu conteúdo.</p>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-14">Copiar</button></div><pre><code data-code="code-14" class="language-javascript">async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable scene&#39;);
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.delete({mapId:v.mapId},write());
+    return await api.maps.list({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}</code></pre></div>
+<p><strong>Resultado esperado:</strong> Cena selecionada ausente da lista autorizada.</p>
+<p><strong>Como conferir:</strong> Confira que as outras cenas/campanhas permanecem. Não use em mapa de campanha existente.</p>
+<h2 id="4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</h2>
+<p>main.mjs desenha apenas o lançador e o formulário. recipes.mjs contém as ações: para adaptar o comportamento, altere a função run da receita desejada, mantendo sua assinatura. O formulário passa tipos reais (number, boolean e File), bloqueia requisições simultâneas e desenha resultados com textContent. Não há avaliação de código fornecido pelo usuário. api, host, assets e storage pertencem à montagem; signal cancela trabalho ao desativar. O modal não fecha durante uma operação pendente e é liberado ao abortar a montagem. A função de negócio continua responsável por revisões, permissões e sequência transacional.</p>
+<h3 id="manifestjson">manifest.json</h3>
+<div class="code-block"><div class="code-toolbar"><span>json</span><button type="button" data-copy="code-15">Copiar</button></div><pre><code data-code="code-15" class="language-json">{
+  &quot;id&quot;: &quot;tutorial.maps-workshop&quot;,
+  &quot;name&quot;: &quot;Scene workshop&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;sdk&quot;: {
+    &quot;requires&quot;: &quot;&gt;=1.0.0 &lt;2.0.0&quot;,
+    &quot;tested&quot;: &quot;1.0.0&quot;
+  },
+  &quot;entry&quot;: &quot;main.mjs&quot;,
+  &quot;description&quot;: &quot;Build a working module to inspect scene layers, edit metadata, manage folders, draw a native door and broadcast a test scene.&quot;,
+  &quot;author&quot;: &quot;Gravewright documentation&quot;,
+  &quot;license&quot;: &quot;MIT&quot;
+}</code></pre></div>
+<h3 id="mainmjs">main.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-16">Copiar</button></div><pre><code data-code="code-16" class="language-javascript">import {recipes} from &#39;./recipes.mjs&#39;;
+export default {
+  start({styles}) { styles.use(&#39;styles.css&#39;); },
+  register({register}) {
+    register(&quot;table.interface&quot;, ({root,api,host,assets,storage,context,events,viewport,signal,onDispose}) =&gt; {
+      const doc=root.ownerDocument;
+      const button=doc.createElement(&#39;button&#39;);
+      button.type=&#39;button&#39;;button.className=&#39;tutorial-launcher&#39;;
+      button.textContent=&quot;Scene workshop&quot;;
+      root.append(button);
+      for(const type of [&#39;pointerdown&#39;,&#39;mousedown&#39;])button.addEventListener(type,event=&gt;event.stopPropagation(),{signal});
+      let modal,pending=false;
+      button.addEventListener(&#39;click&#39;,event=&gt;{
+        event.stopPropagation();
+        if(modal?.isConnected) { modal.focus();return; }
+        const panel=doc.createElement(&#39;section&#39;);
+        panel.className=&quot;tutorial-workbench-maps-workshop&quot;;
+        panel.setAttribute(&#39;role&#39;,&#39;dialog&#39;);panel.setAttribute(&#39;aria-modal&#39;,&#39;true&#39;);
+        panel.setAttribute(&#39;aria-label&#39;,button.textContent);panel.tabIndex=-1;
+        const title=doc.createElement(&#39;h2&#39;);title.textContent=button.textContent;panel.append(title);
+        const choose=doc.createElement(&#39;select&#39;);choose.setAttribute(&#39;aria-label&#39;,&#39;Action&#39;);
+        for(const recipe of recipes) {
+          const option=doc.createElement(&#39;option&#39;);option.value=recipe.id;option.textContent=recipe.label;choose.append(option);
+        }
+        const form=doc.createElement(&#39;form&#39;),fields=doc.createElement(&#39;div&#39;);
+        const description=doc.createElement(&#39;p&#39;);
+        const run=doc.createElement(&#39;button&#39;);run.type=&#39;submit&#39;;run.textContent=&#39;Run action&#39;;
+        const close=doc.createElement(&#39;button&#39;);close.type=&#39;button&#39;;close.textContent=&#39;Close&#39;;
+        const output=doc.createElement(&#39;pre&#39;);output.setAttribute(&#39;role&#39;,&#39;status&#39;);output.setAttribute(&#39;aria-live&#39;,&#39;polite&#39;);
+        form.append(description,fields,run,close,output);panel.append(choose,form);
+        function renderFields(){
+          const recipe=recipes.find(item=&gt;item.id===choose.value);fields.replaceChildren();
+          description.textContent=recipe.description;
+          for(const field of recipe.fields||[]) {
+            const label=doc.createElement(&#39;label&#39;);label.textContent=field.label;
+            const input=doc.createElement(&#39;input&#39;);input.name=field.name;input.type=field.type||&#39;text&#39;;
+            if(field.type===&#39;number&#39;)input.step=String(field.step??&#39;any&#39;);
+            if(field.type===&#39;checkbox&#39;)input.checked=!!field.value;
+            else if(field.type!==&#39;file&#39;)input.value=String(field.value??&#39;&#39;);
+            input.required=!!field.required;
+            if(field.accept)input.accept=field.accept;
+            label.append(input);fields.append(label);
+          }
+          output.textContent=&#39;&#39;;
+        }
+        choose.addEventListener(&#39;change&#39;,renderFields,{signal});renderFields();
+        form.addEventListener(&#39;submit&#39;,async event=&gt;{
+          event.preventDefault();if(pending)return;
+          const recipe=recipes.find(item=&gt;item.id===choose.value),values={};
+          for(const input of fields.querySelectorAll(&#39;input&#39;)) {
+            values[input.name]=input.type===&#39;file&#39;?input.files[0]:input.type===&#39;checkbox&#39;?input.checked:input.type===&#39;number&#39;?Number(input.value):input.value;
+          }
+          pending=true;choose.disabled=true;run.disabled=true;close.disabled=true;
+          for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=true;
+          output.textContent=&#39;Running…&#39;;
+          try {
+            const value=await recipe.run({api,host,assets,storage,context,events,viewport,signal,onDispose},values);
+            if(!signal.aborted)output.textContent=typeof value===&#39;string&#39;?value:JSON.stringify(value??null,null,2);
+          } catch(error) {
+            if(!signal.aborted)output.textContent=String(error.code||error.message||&#39;unavailable&#39;);
+          } finally {
+            pending=false;
+            if(!signal.aborted){choose.disabled=false;run.disabled=false;close.disabled=false;for(const input of fields.querySelectorAll(&#39;input&#39;))input.disabled=false;}
+          }
+        },{signal});
+        close.addEventListener(&#39;click&#39;,()=&gt;void modal.close(),{signal});
+        modal=api.ui.openModal(panel,{canClose:()=&gt;!pending||signal.aborted});
+      },{signal});
+      onDispose(()=&gt;{button.remove();if(modal)void modal.close();});
+    });
+  },
+  stop() {}
+};</code></pre></div>
+<h3 id="recipesmjs">recipes.mjs</h3>
+<div class="code-block"><div class="code-toolbar"><span>javascript</span><button type="button" data-copy="code-17">Copiar</button></div><pre><code data-code="code-17" class="language-javascript">export const recipes=[
+{
+  id:&quot;inspect&quot;,
+  label:&quot;Inspect scenes, folders and native layers&quot;,
+  description:&quot;Run with the Scene ID blank first. Copy the test scene ID, enter it and run again to inspect walls, images, lights, fog, lighting and their returned versions.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Optional scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const directory=await api.maps.state({},read);
+    const layers=v.mapId.trim()?await api.maps.layers({mapId:v.mapId.trim()},read):null;
+    return {directory,layers};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;metadata&quot;,
+  label:&quot;Rename the test scene and set grid visibility&quot;,
+  description:&quot;Use a disposable scene. Name and gridVisible are supplied settings; other scene settings remain unchanged. Do not send the entire projected scene as settings.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;label&quot;: &quot;Scene name&quot;,
+    &quot;value&quot;: &quot;Workshop chamber&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;gridVisible&quot;,
+    &quot;label&quot;: &quot;Show grid&quot;,
+    &quot;value&quot;: true,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const before=await api.maps.get(v.mapId,{},read);
+    await api.maps.update({mapId:before.id,version:before.version,settings:{name:v.name,gridVisible:v.gridVisible}},write());
+    return await api.maps.get(before.id,{},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;folder-create&quot;,
+  label:&quot;Create a scene folder&quot;,
+  description:&quot;Enter an original folder label. Copy created.folderId for the next two recipes.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;label&quot;,
+    &quot;label&quot;: &quot;Folder label&quot;,
+    &quot;value&quot;: &quot;Workshop scenes&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const created=await api.maps.createFolder({label:v.label,color:&#39;#b49a5a&#39;,parentId:null},write());
+    return {created,folders:(await api.maps.state({},read)).folders};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;folder-update&quot;,
+  label:&quot;Rename or reparent a scene folder&quot;,
+  description:&quot;Use the folder created above. Blank Parent puts it at the root. The server rejects cycles, foreign folders and nesting deeper than its supported limit.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;folderId&quot;,
+    &quot;label&quot;: &quot;Folder ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;label&quot;,
+    &quot;label&quot;: &quot;New label&quot;,
+    &quot;value&quot;: &quot;Workshop rooms&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;parentId&quot;,
+    &quot;label&quot;: &quot;Parent folder ID, blank for root&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.updateFolder({folderId:v.folderId,label:v.label,color:&#39;#b49a5a&#39;,parentId:v.parentId.trim()||null},write());
+    return (await api.maps.state({},read)).folders;
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;move&quot;,
+  label:&quot;Move the scene into the tutorial folder&quot;,
+  description:&quot;Paste the test scene and folder IDs. This command uses groupId; it is not the journal folder_id contract.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;folderId&quot;,
+    &quot;label&quot;: &quot;Folder ID, blank for root&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.move({mapId:v.mapId,groupId:v.folderId.trim()||null},write());
+    return await api.maps.get(v.mapId,{},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;door-create&quot;,
+  label:&quot;Draw a native test door through updateObjects&quot;,
+  description:&quot;Use a scene at least 8 cells wide. Coordinates are scene pixels, not the cell coordinates used by token.move. The endpoints must differ. This creates a plain native door with no blueprint or image dependency.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;x1&quot;,
+    &quot;label&quot;: &quot;Start x in scene pixels&quot;,
+    &quot;value&quot;: 70,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;y1&quot;,
+    &quot;label&quot;: &quot;Start y in scene pixels&quot;,
+    &quot;value&quot;: 70,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;x2&quot;,
+    &quot;label&quot;: &quot;End x in scene pixels&quot;,
+    &quot;value&quot;: 210,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;y2&quot;,
+    &quot;label&quot;: &quot;End y in scene pixels&quot;,
+    &quot;value&quot;: 70,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    await api.maps.get(v.mapId,{},read);
+    const result=await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;create&#39;,data:{x1:v.x1,y1:v.y1,x2:v.x2,y2:v.y2,kind:&#39;door&#39;,door_state:&#39;closed&#39;}},write());
+    return {created:result.wall,layers:await api.maps.layers({mapId:v.mapId},read)};
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;door-update&quot;,
+  label:&quot;Adjust a door endpoint with its object version&quot;,
+  description:&quot;Use the door created above. Only x2 changes; the native validator retains its other fields. Scene version and object version are different.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;doorId&quot;,
+    &quot;label&quot;: &quot;Door ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;x2&quot;,
+    &quot;label&quot;: &quot;New end x in scene pixels&quot;,
+    &quot;value&quot;: 280,
+    &quot;type&quot;: &quot;number&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door) throw new Error(&#39;Choose a door from this scene&#39;);
+    await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;update&#39;,data:{wall_id:door.id,version:door.version,x2:v.x2}},write());
+    return (await api.maps.layers({mapId:v.mapId},read)).walls.find(row=&gt;row.id===door.id);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;door-operate&quot;,
+  label:&quot;Open or close the plain test door&quot;,
+  description:&quot;Enter open, run, then enter closed and run again. This recipe deliberately uses a plain door. On a Smart Object the same interaction may execute authored graphs instead of applying a simple toggle.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;doorId&quot;,
+    &quot;label&quot;: &quot;Door ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;state&quot;,
+    &quot;label&quot;: &quot;Door state: open, closed or locked&quot;,
+    &quot;value&quot;: &quot;open&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(![&#39;open&#39;,&#39;closed&#39;,&#39;locked&#39;].includes(v.state)) throw new Error(&#39;Use open, closed or locked&#39;);
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door||door.blueprint) throw new Error(&#39;Choose the plain tutorial door without a blueprint&#39;);
+    return await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;door&#39;,data:{wall_id:door.id,door_state:v.state}},write());
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;activate&quot;,
+  label:&quot;Broadcast the prepared test scene&quot;,
+  description:&quot;Choose the disposable prepared scene and explicitly check the broadcast box. activate makes the scene player-visible and changes the campaign broadcast.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;I intend to broadcast this test scene to players&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the test scene broadcast&#39;);
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.activate({mapId:v.mapId},write());
+    return await api.maps.state({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;door-delete&quot;,
+  label:&quot;Delete only the tutorial door&quot;,
+  description:&quot;Use only the door created in this tutorial and confirm. A Smart Object deletion can have authored destruction effects; the tutorial plain door has none.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;doorId&quot;,
+    &quot;label&quot;: &quot;Door ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;I selected disposable tutorial data&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable door&#39;);
+    const layers=await api.maps.layers({mapId:v.mapId},read);
+    const door=layers.walls.find(row=&gt;row.id===v.doorId&amp;&amp;row.kind===&#39;door&#39;);
+    if(!door) throw new Error(&#39;Door not found&#39;);
+    await api.maps.updateObjects({mapId:v.mapId,area:&#39;walls&#39;,action:&#39;delete&#39;,data:{wall_id:door.id,expected_version:door.version}},write());
+    return await api.maps.layers({mapId:v.mapId},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;folder-delete&quot;,
+  label:&quot;Remove the test folder while keeping scenes&quot;,
+  description:&quot;Use the folder created here. recursive:false moves contained scenes/child folders to the parent instead of deleting the scene tree.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;folderId&quot;,
+    &quot;label&quot;: &quot;Folder ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;I selected disposable tutorial data&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable folder&#39;);
+    await api.maps.deleteFolder({folderId:v.folderId,recursive:false},write());
+    return await api.maps.state({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+},
+{
+  id:&quot;delete&quot;,
+  label:&quot;Delete the disposable scene last&quot;,
+  description:&quot;Run last on the disposable scene only, after the token/combat tutorials. Scene deletion also removes its scene-owned content.&quot;,
+  fields:[
+  {
+    &quot;name&quot;: &quot;mapId&quot;,
+    &quot;label&quot;: &quot;Scene ID&quot;,
+    &quot;value&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;text&quot;,
+    &quot;required&quot;: true
+  },
+  {
+    &quot;name&quot;: &quot;confirm&quot;,
+    &quot;label&quot;: &quot;I selected the disposable scene and its test contents&quot;,
+    &quot;value&quot;: false,
+    &quot;type&quot;: &quot;checkbox&quot;,
+    &quot;required&quot;: false
+  }
+],
+  run:async ({api,context,signal},v) =&gt; {
+  if(context.role!==&#39;gm&#39;) throw new Error(&#39;GM required&#39;);
+  const read={signal};
+  const write=()=&gt;{
+    if(signal?.aborted) throw Object.assign(new Error(&#39;Mount closed&#39;),{code:&#39;cancelled&#39;});
+    return {signal,requestId:crypto.randomUUID()};
+  };
+  try {
+    if(!v.confirm) throw new Error(&#39;Confirm the disposable scene&#39;);
+    await api.maps.get(v.mapId,{},read);
+    await api.maps.delete({mapId:v.mapId},write());
+    return await api.maps.list({},read);
+  } catch(problem) {
+    if(problem.code===&#39;conflict&#39;&amp;&amp;!signal?.aborted) await api.maps.state({},read);
+    throw problem;
+  }
+}
+}
+];</code></pre></div>
+<h3 id="stylescss">styles.css</h3>
+<div class="code-block"><div class="code-toolbar"><span>css</span><button type="button" data-copy="code-18">Copiar</button></div><pre><code data-code="code-18" class="language-css">.gw-module-root[data-module-id=&quot;tutorial.maps-workshop&quot;] .tutorial-launcher { position: fixed; left: 16px; bottom: 112px; z-index: 10; padding: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); font-size: 14px; pointer-events: auto; max-width: min(440px, calc(100vw - 32px)); white-space: normal; }
+.tutorial-workbench-maps-workshop { width: min(640px, calc(100vw - 48px)); padding: var(--space-5); font-size: 14px; }
+.tutorial-workbench-maps-workshop label { display: block; margin: var(--space-3) 0; }
+.tutorial-workbench-maps-workshop input, .tutorial-workbench-maps-workshop select { display: block; width: 100%; margin-top: var(--space-2); }
+.tutorial-workbench-maps-workshop pre { max-height: 360px; max-width: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.tutorial-workbench-maps-workshop button { margin-right: var(--space-3); }</code></pre></div>
+<h3 id="licensetxt">LICENSE.txt</h3>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-19">Copiar</button></div><pre><code data-code="code-19" class="language-text">MIT License
+
+Copyright (c) 2026 Gravewright contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></div>
+<h2 id="5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</h2>
+<p>Cada gravação exige Run action explícito. Leituras usam projeções autorizadas; escritas mantêm permissões nativas e UUID novo por operação. Update de cena/objeto, movimento/configuração de token e combate usam seus campos reais de revisão. Alguns comandos nativos de seleção não aceitam revisão esperada nesta versão; os exemplos não inventam esse parâmetro. Em conflito, a receita relê o estado e para. Revise e execute conscientemente nova operação. Chamadas diferentes são transações distintas: uma já concluída não é revertida se uma leitura posterior falhar. Desativar aborta trabalho da montagem, sem desfazer commit.</p>
+<p>Teste filtragem GM/jogador, revisão antiga de cena e de porta, ciclo de pasta negado e desativação durante leitura. Activate transmite explicitamente aos jogadores. <strong>Limite do Map Builder:</strong> este pacote não cria JSON de Blueprint nem usa rotas privadas. Use o editor real, <strong>Simulate</strong> e <strong>Test behavior</strong> para criar automação; depois Generate/Update scene. <a href="examples-blueprints.html">Quatro kinds de Blueprint</a>, <a href="example-blueprint-nodes.html">42 nós completos</a> e <a href="example-blueprint-connections.html">conexões execution/data</a> trazem receitas completas.</p>
+<h3 id="operacoes-publicas-cobertas-por-receita">Operações públicas cobertas por receita</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col" style="text-align:left">API</th><th scope="col" style="text-align:left">Receita no painel</th></tr></thead><tbody><tr><td style="text-align:left">api.maps.update</td><td style="text-align:left">metadata</td></tr><tr><td style="text-align:left">api.maps.move</td><td style="text-align:left">move</td></tr><tr><td style="text-align:left">api.maps.delete</td><td style="text-align:left">delete</td></tr><tr><td style="text-align:left">api.maps.activate</td><td style="text-align:left">activate</td></tr><tr><td style="text-align:left">api.maps.updateObjects</td><td style="text-align:left">door-create, door-update, door-operate, door-delete</td></tr><tr><td style="text-align:left">api.maps.createFolder</td><td style="text-align:left">folder-create</td></tr><tr><td style="text-align:left">api.maps.updateFolder</td><td style="text-align:left">folder-update</td></tr><tr><td style="text-align:left">api.maps.deleteFolder</td><td style="text-align:left">folder-delete</td></tr></tbody></table></div>
+<h2 id="como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</h2>
+<div class="code-block"><div class="code-toolbar"><span>text</span><button type="button" data-copy="code-20">Copiar</button></div><pre><code data-code="code-20" class="language-text">Estenda Scene workshop no Gravewright0.3.0 para [tarefa concreta]. Confira frontend.json, maps/services.py e maps/objects.py para payloads/revisões exatos. Preserve ajustes e campos sem relação. No módulo use só api.maps pública. Para editar fonte Builder/Blueprint, dê passos reais no editor, sem rotas privadas. Entregue código completo, cenário descartável, entradas e testes GM/jogador/conflito/abort.</code></pre></div>
+<p><a href="tutorial-index.html">Todos os tutoriais</a> · <a href="api.html">API</a></p></div></article><nav class="kb-pagination" aria-label="Continue a leitura"><a href="tutorial-system-compendiums.html"><span>Anterior ←</span><strong>Como incluir compêndios em um sistema</strong></a><a href="tutorial-tokens.html"><span>Próximo →</span><strong>Como criar um módulo de ferramentas de token</strong></a></nav><aside class="kb-ai-callout"><span class="kb-eyebrow">Desenvolva com IA</span><h2>Como usar a IA para esta tarefa</h2><p>Forneça os arquivos relevantes, um objetivo concreto e os passos de validação. Estes guias trazem prompts adaptáveis.</p><div class="kb-ai-links"><a href="ai-create-system.html">Como usar a IA para criar um sistema de RPG</a><a href="ai-create-module.html">Como usar a IA para criar um módulo de interface</a><a href="ai.html">Ver todos os guias de IA →</a></div></aside><div class="kb-sources"><p>Fonte no projeto</p><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/contracts/frontend.json">gravewright/modules/contracts/frontend.json</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/modules/static/gravewright_modules/domain-api.js">gravewright/modules/static/gravewright_modules/domain-api.js</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/services.py">gravewright/maps/services.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/gravewright/maps/objects.py">gravewright/maps/objects.py</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/en/map-builder.md">docs/en/map-builder.md</a><a href="https://github.com/Gravewright/gravewright/blob/23ea61b8efb566cad0e3359489b0dad45e214906/docs/pt-BR/map-builder.md">docs/pt-BR/map-builder.md</a></div><footer class="kb-page-footer"><p>Baseado no Gravewright <strong>0.3.0</strong> · <a href="https://github.com/Gravewright/gravewright/commit/23ea61b8efb566cad0e3359489b0dad45e214906">23ea61b</a></p><a href="#main-content">Voltar ao topo ↑</a></footer></main><aside class="kb-toc"><nav aria-label="Nesta página"><p>Nesta página</p><ul><li><a href="#o-projeto-que-voce-vai-criar">O projeto que você vai criar</a></li><li><a href="#1-crie-os-arquivos">1. Crie os arquivos</a></li><li><a href="#2-empacote-instale-e-ative">2. Empacote, instale e ative</a></li><li><a href="#3-execute-cada-receita">3. Execute cada receita</a></li><li><a href="#4-entenda-e-adapte-os-arquivos-completos">4. Entenda e adapte os arquivos completos</a></li><li><a href="#5-permissoes-falhas-e-teste-final">5. Permissões, falhas e teste final</a></li><li><a href="#como-usar-a-ia-para-estender-este-projeto">Como usar a IA para estender este projeto</a></li></ul></nav><div class="kb-reference-version"><span>Versão de referência</span><strong>0.3.0</strong><span>Docs para devs</span></div></aside></div><div class="toast" role="status" aria-live="polite" data-toast></div></body></html>

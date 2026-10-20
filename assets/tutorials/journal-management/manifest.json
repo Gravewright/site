@@ -1,0 +1,13 @@
+{
+  "id": "tutorial.journal-management",
+  "name": "Journal management tools",
+  "version": "1.0.0",
+  "sdk": {
+    "requires": ">=1.0.0 <2.0.0",
+    "tested": "1.0.0"
+  },
+  "entry": "main.mjs",
+  "description": "Build native rich diaries, preserve pages when editing, organize folder trees and control access and presentations.",
+  "author": "Gravewright documentation",
+  "license": "MIT"
+}

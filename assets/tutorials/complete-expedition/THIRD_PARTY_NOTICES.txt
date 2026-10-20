@@ -1,0 +1,15 @@
+Complete Example Expedition notices
+
+main.mjs derives from the Gravewright documentation Example Expedition sheet.
+The system package and this derivative sheet are GPL-3.0-only. The complete GPL
+license is in LICENSE.txt. Preserve source availability and applicable notices.
+
+compendiums/expedition.json derives from the original Beacon Expedition Library
+example in tutorial-compendiums.mjs. Its original content was published under
+the MIT License, Copyright (c) 2026 Gravewright contributors. The full original
+MIT notice is preserved in MIT-COMPENDIUM.txt. Changes here update systemId and
+the collection name and add the original numeric combat.initiative example.
+
+No rulebook, proprietary catalog, licensed game branding or external artwork is
+included. Gear and spell entries are original fictional data, without automated
+game rules. English interface labels remain those of the demonstrated sheet.
