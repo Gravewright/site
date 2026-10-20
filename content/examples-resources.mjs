@@ -99,7 +99,7 @@ As GM, create synthetic documents with the names below in a disposable campaign.
     const result = example.kind
       ? (pt ? `Documentos legíveis com \`kind: "${example.kind}"\` que correspondam a **${example.query}**.` : `Readable documents with \`kind: "${example.kind}"\` matching **${example.query}**.`)
       : (pt ? 'Até 20 documentos legíveis de qualquer categoria que correspondam a **Beacon**, ordenados por título.' : 'Up to 20 readable documents of any category matching **Beacon**, sorted by title.');
-    return `## \`kind: ${JSON.stringify(example.kind)}\` — ${example[lang]}\n\n` +
+    return `## \`kind: ${JSON.stringify(example.kind)}\`: ${example[lang]}\n\n` +
       (pt ? `Pré-requisito: ${example.kind ? `crie **${example.query}** na categoria ${category}.` : 'crie ao menos dois documentos Beacon em categorias diferentes.'}` : `Prerequisite: ${example.kind ? `create **${example.query}** in the ${category} category.` : 'create at least two Beacon documents in different categories.'}`) +
       fence('javascript', searchExampleCode(example)) +
       (pt ? `**Resultado esperado:** ${result}\n\n**Valide:** execute \`${example.fn}(api, signal)\` como GM e jogador; remova a leitura de um documento e repita. A ausência de resultados é um array vazio, não um erro.` : `**Expected result:** ${result}\n\n**Validate:** run \`${example.fn}(api, signal)\` as GM and player; revoke access to one document and repeat. No matches returns an empty array, not an error.`);
@@ -184,7 +184,7 @@ Both examples use \`host.call("actor.image.upload", payload)\`, a block SDK oper
 Prepare the [minimal package](modules.html#minimal-browser-package), a synthetic actor and an original PNG/JPEG/WebP. Register each function on \`actor.sheet\`: \`register("actor.sheet", mountPortraitUpload)\` or \`register("actor.sheet", mountTokenUpload)\`. The context must provide \`actorId\` and \`canEdit\`; the user must be GM or have actor editing permission. The control is disabled unless \`canEdit\` is true; the server remains the authority.
 
 Copy one complete function into \`main.js\`. Do not pass the JSON Schema file descriptor as \`file\`: browser code passes the real \`File\` from the picker. The bridge creates multipart data and metadata. Do not encode images as base64.`;
-  const cases = resourceImageExamples.map(example => `## \`kind: "${example.kind}"\` — ${example[lang]}\n\n` +
+  const cases = resourceImageExamples.map(example => `## \`kind: "${example.kind}"\`: ${example[lang]}\n\n` +
     (pt ? `**Uso:** ${example.kind === 'portrait' ? 'trocar o retrato do ator exibido na ficha.' : 'trocar a imagem de token associada ao ator; isto não altera posição, escala ou tipo de vínculo de tokens já colocados.'}` : `**Use:** ${example.kind === 'portrait' ? 'change the actor portrait displayed by its sheet.' : 'change the actor token artwork; this does not set position, scale or linking of existing placed tokens.'}`) +
     fence('javascript', imageExampleCode(example, lang)) +
     (pt ? `**Resultado esperado:** o preview usa a URL autorizada retornada e o ator conserva a nova imagem \`${example.kind}\` após reabrir a ficha.\n\n**Valide:** envie uma imagem pequena, reabra a ficha e confira a imagem. Repita com jogador autorizado e somente leitura. Feche durante o envio e verifique que a interface encerrada não recebe atualizações.` : `**Expected result:** the preview uses the returned authorized URL and the actor retains its new \`${example.kind}\` image after reopening.\n\n**Validate:** upload a small image, reopen the sheet and check the image. Repeat as an authorized player and a read-only user. Close during upload and verify that the disposed UI receives no updates.`)
@@ -251,7 +251,7 @@ Run these examples in a module mounted in a disposable campaign using its \`api\
     scene: 'Use the UUID of the campaign scene **Beacon Harbor**. The read body may show only its name; the portable bundle retains the exported resource and dependencies.',
     deck: 'Use the UUID of the existing **Beacon Signals** deck from api.cards.state().decks. Do not use a deck_definition_id: add expects a deck instance.',
   };
-  const cases = resourceCompendiumKinds.map(example => `## \`kind: "${example.kind}"\` — ${example[lang]}\n\n${specific[example.kind]}` +
+  const cases = resourceCompendiumKinds.map(example => `## \`kind: "${example.kind}"\`: ${example[lang]}\n\n${specific[example.kind]}` +
     fence('javascript', compendiumEntryExampleCode(example)) +
     (pt ? `**Resultado esperado:** \`${example.fn}(api, packId, resourceId, signal)\` retorna a entrada com \`kind: "${example.kind}"\`, \`id\`, \`name\`, \`data\` e \`version\`. O documento original permanece na campanha.\n\n**Valide:** confira a entrada no compêndio; importe uma cópia numa campanha de teste compatível e abra ${example.kind === 'deck' ? 'o baralho para conferir as cartas' : 'o documento criado'}.` : `**Expected result:** \`${example.fn}(api, packId, resourceId, signal)\` returns an entry with \`kind: "${example.kind}"\`, \`id\`, \`name\`, \`data\` and \`version\`. The source remains in the campaign.\n\n**Validate:** inspect the compendium entry; import a copy in a compatible test campaign and open ${example.kind === 'deck' ? 'the deck to check its cards' : 'the created document'}.`)
   ).join('\n\n');
