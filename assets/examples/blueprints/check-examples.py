@@ -6,14 +6,17 @@ Run from the host root:
 Contributor fixture checker; not a public module SDK or gameplay entry point.
 """
 import argparse
+from copy import deepcopy
 import json
 import os
 from pathlib import Path
 import sys
 from uuid import uuid4
+from unittest.mock import patch
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--host", required=True, type=Path, help="Disposable Gravewright source root")
+parser.add_argument("--workdir", type=Path, help="Isolated workspace inside the host's data directory")
 args = parser.parse_args()
 host = args.host.resolve()
 if not (host / "manage.py").is_file() or not (host / "gravewright/maps/blueprints.py").is_file():
@@ -21,7 +24,8 @@ if not (host / "manage.py").is_file() or not (host / "gravewright/maps/blueprint
 fixtures = Path(__file__).resolve().parent
 sys.path.insert(0, str(host))
 sys.dont_write_bytecode = True
-workspace = (host / "data/blueprint-example-check" / uuid4().hex).resolve()
+selected = args.workdir or Path("data/blueprint-example-check") / uuid4().hex
+workspace = (selected if selected.is_absolute() else host / selected).resolve()
 if not workspace.is_relative_to(host / "data"):
     parser.error("Fixture workspace must remain inside the installation data folder")
 from scripts.runtime_storage import configure_runtime_storage
@@ -73,6 +77,14 @@ def require(condition, message):
         raise AssertionError(message)
 
 
+def require_invalid(document, message):
+    try:
+        clean_blueprint(document)
+    except MapError:
+        return
+    raise AssertionError(message)
+
+
 resources = read("resources.json")
 require(settings.DATABASES["default"]["NAME"] == ":memory:", "isolated database")
 require(not settings.GRAVEWRIGHT_SERVER_APPS, "operator applications must not be imported")
@@ -80,7 +92,9 @@ require(settings.GRAVEWRIGHT_MODULES_ROOT == directories["modules"], "isolated m
 require(settings.GRAVEWRIGHT_CONTENT_ROOT == directories["content"], "isolated content")
 recipe_names = ("door-toggle", "lever-toggle", "torch-turn-flame", "region-pressure-plate", "execution-data")
 evaluations = 0
-with connection.execute_wrapper(refuse_database):
+with connection.execute_wrapper(refuse_database), patch(
+    "gravewright.dice.engine.evaluate", side_effect=AssertionError("Predicted prompts must not roll dice")
+):
     documents = {}
     for name in recipe_names:
         raw = read(name + ".json")
@@ -113,14 +127,18 @@ with connection.execute_wrapper(refuse_database):
         evaluations += 1
 
     catalog = read("node-catalog.json")
+    require(len(catalog) == len(NODE_TYPES), "node catalog must contain each type once")
     require({item["type"] for item in catalog} == set(NODE_TYPES), "node catalog must cover the host's NODE_TYPES exactly")
     for item in catalog:
         raw = read(item["file"])
         normalized = clean_blueprint(raw, asset_ids=[resources["asset"]], light_ids=[resources["light"]], track_ids=[resources["sound"]])
         require(raw == normalized, item["type"] + ": normalization")
         event = next(iter(normalized["graphs"]))
+        require(item["node"] in normalized["graphs"][event]["nodes"], item["type"] + ": central node metadata")
         state = KIND_STATES[normalized["kind"]][0]
+        before = deepcopy(normalized)
         result = evaluate_graph(normalized, event, state, event_context={"count": 1})
+        require(normalized == before, item["type"] + ": evaluator must preserve authored source")
         require(("start" if item["type"] == "event" else "sample") in result["trace"], item["type"] + ": sample must execute or be read")
         if item["type"] == "delay":
             result = evaluate_graph(normalized, event, state, continuation=result["delay"]["continuation"], now=3000)
@@ -137,6 +155,38 @@ with connection.execute_wrapper(refuse_database):
             receiver = evaluate_graph(normalized, "signal:ready", state)
             require(receiver["actions"][0]["targetState"] == "open", "signal receiver")
 
+        if item["type"] in ("requestRoll", "setQuestStatus"):
+            require(result["actions"] == [item["node"]], item["type"] + ": exact predicted action")
+            if item["type"] == "requestRoll":
+                require(item["node"]["expression"] == "1d20+2", "roll expression")
+                require(item["node"]["label"] == "Inspect the chest", "authored roll label")
+                require(item["node"]["audience"] == {"scope": "trigger"}, "roll audience")
+                for visibility in ("public", "gm"):
+                    candidate = deepcopy(normalized)
+                    candidate["graphs"][event]["nodes"][1]["visibility"] = visibility
+                    action = evaluate_graph(clean_blueprint(candidate), event, state)["actions"][0]
+                    require(action == {**item["node"], "visibility": visibility}, "roll visibility")
+                invalid = ({"expression": "eval(1)"}, {"expression": "1d20+"},
+                           {"label": "x" * 49}, {"visibility": "private"})
+            else:
+                require(item["node"]["journalId"] == resources["quest"], "synthetic quest binding")
+                for status in ("draft", "available", "active", "completed", "failed", "archived"):
+                    candidate = deepcopy(normalized)
+                    candidate["graphs"][event]["nodes"][1]["status"] = status
+                    action = evaluate_graph(clean_blueprint(candidate), event, state)["actions"][0]
+                    require(action == {**item["node"], "status": status}, "quest status")
+                invalid = ({"status": "done"}, {"journalId": "not-a-uuid"})
+            for fields in invalid:
+                candidate = deepcopy(normalized)
+                candidate["graphs"][event]["nodes"][1].update(fields)
+                require_invalid(candidate, item["type"] + ": invalid fields must be rejected")
+            follow = deepcopy(normalized)
+            next_action = {"id": "after", "type": "state", "x": 560, "y": 80, "targetState": "open"}
+            follow["graphs"][event]["nodes"].append(next_action)
+            follow["graphs"][event]["edges"].append({"from": "sample", "to": "after", "output": "next", "kind": "execution"})
+            continued = evaluate_graph(clean_blueprint(follow), event, state)
+            require(continued["actions"] == [item["node"], next_action], item["type"] + ": execution must continue")
+
     malformed = read("execution-data.json")
     malformed["graphs"]["interact"]["edges"].append({"kind": "execution", "from": "start", "to": "read", "output": "next"})
     try:
@@ -146,4 +196,4 @@ with connection.execute_wrapper(refuse_database):
     else:
         raise AssertionError("Execution edges into pure value nodes must be rejected")
 
-print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, delayed/control/signal checks, invalid connection rejected; database queries blocked.")
+print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, delayed/control/signal and roll/quest action checks, invalid connection rejected; dice drawing and database queries blocked.")

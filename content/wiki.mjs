@@ -1,6 +1,7 @@
-// Product procedures derived from the public Gravewright 0.3.0 project.
+// Product procedures derived from the public Gravewright 0.3.1 project.
 const userGuide = ['docs/en/user-guide.md', 'docs/pt-BR/user-guide.md'];
 const builderGuide = ['docs/en/map-builder.md', 'docs/pt-BR/map-builder.md'];
+const releaseNotes = ['docs/releases/0.3.1.md'];
 const article = (slug, group, sourcePaths, en, pt, related = [], mediaIds = []) => ({
   slug, group, sourcePaths, en, pt, related, mediaIds,
 });
@@ -11,7 +12,7 @@ export const wikiArticles = [
     text('Your first session', 'Go from an installed Gravewright to a shared scene with characters, notes and dice.', `
 ## Choose your role
 
-Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.0 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
+Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.1 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
 
 If someone already hosts your game, ask for its address and invitation code. You do not need another server installation to join.
 
@@ -36,7 +37,7 @@ Check campaign membership, document permissions and the broadcast scene before r
     text('Sua primeira sessão', 'Da instalação a uma cena compartilhada com personagens, anotações e dados.', `
 ## Escolha seu papel
 
-Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.0 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
+Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.1 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
 
 Se alguém já hospeda sua mesa, peça o endereço e o código de convite. Não é necessário instalar outro servidor para participar.
 
@@ -123,13 +124,22 @@ Se o Runner informar ferramentas preparadas ausentes, execute novamente o instal
 O Runner gerado atende o computador local em loopback. Jogadores remotos precisam de hospedagem pública configurada intencionalmente com HTTPS e WebSockets; consulte a referência de implantação para devs. Um endereço local funcionando não torna a mesa acessível pela internet.
 `), ['getting-started', 'backups-updates']),
 
-  article('campaigns', 'campaign', [...userGuide, 'gravewright/campaigns/services.py', 'gravewright/campaigns/streamer.py'],
+  article('campaigns', 'campaign', [...userGuide, ...releaseNotes, 'gravewright/campaigns/services.py', 'gravewright/campaigns/streamer.py'],
     text('Campaigns, invitations and players', 'Create a campaign, invite people and distinguish player accounts from spectator links.', `
 ## Create the campaign
 
 The installation owner creates campaigns in the campaign library at **/inside**. Choose a meaningful name, cover and system appropriate to your sheets. Open the campaign to prepare its tabletop. A campaign keeps its own membership and resources; joining one does not grant access to another.
 
 The built-in **Gravewright PDF System** is a general sheet foundation. Other RPG systems are installed separately. Confirm compatibility before building a campaign around an optional package.
+
+## Choose or change the cover
+
+1. Open campaign creation or editing in the library. Fill in the campaign fields and choose the cover source: **From computer** or **By URL**. Local images support PNG, JPEG or WebP, up to 5 MB.
+2. For a local image, drag it onto the upload area or focus the file control and activate it with the keyboard. The operating system's file picker still opens when choosing a file. For a URL, use the URL field instead.
+3. Inspect the preview before saving. **Remove image** clears a newly selected image or an existing saved cover. Selecting the already active source again keeps the current image; changing the source clears that selection so you can choose its replacement.
+4. Save the form and check the campaign card. If validation fails, correct the indicated field and submit again.
+
+Campaign dialogs and the other host forms use the same themed fields, upload controls, focus and error states. On a narrow screen, scroll within the modal to reach its actions. Actor and folder creation also use application modals: **Cancel** closes without creating the resource, and controls pause while saving. Keep the form open until success or a useful error appears.
 
 ## Invite a player
 
@@ -157,6 +167,15 @@ To troubleshoot a missing actor or journal, check resource access after confirmi
 O proprietário da instalação cria campanhas na biblioteca em **/inside**. Escolha nome, capa e sistema adequados às fichas. Abra a campanha para preparar a mesa. Cada campanha possui seus membros e recursos; entrar em uma não concede acesso às outras.
 
 O **Gravewright PDF System** integrado oferece uma base genérica para fichas. Outros sistemas de RPG são instalados separadamente. Confira a compatibilidade antes de organizar sua campanha em torno de um pacote opcional.
+
+## Escolha ou troque a capa
+
+1. Abra a criação ou edição da campanha na biblioteca. Preencha os campos e escolha a origem da capa: do computador ou por URL. Imagens locais aceitam PNG, JPEG ou WebP, até 5 MB.
+2. Para uma imagem local, arraste-a até a área de upload ou foque o controle de arquivo e o acione pelo teclado. Escolher um arquivo continua abrindo o seletor do sistema operacional. Para uma URL, use o campo de endereço.
+3. Confira a prévia antes de salvar. **Remover imagem** limpa tanto uma imagem recém-selecionada quanto a capa já salva. Clicar novamente na origem ativa preserva a imagem; trocar de origem limpa a seleção para você escolher a substituta.
+4. Salve e confira o cartão da campanha. Se houver erro de validação, corrija o campo indicado e envie novamente.
+
+Os modais de campanha e os demais formulários do host compartilham campos, uploads, foco e estados de erro no tema da aplicação. Em telas estreitas, role dentro do modal até as ações. A criação de atores e pastas também usa modais da aplicação: **Cancelar** fecha sem criar o recurso, e os controles aguardam durante o salvamento. Mantenha o formulário aberto até receber sucesso ou uma mensagem de erro útil.
 
 ## Convide um jogador
 
@@ -291,7 +310,7 @@ Se as atualizações pararem, confira a rede e reconecte. Atualizar a página re
 Ao terminar, pare o áudio, confirme o salvamento de edições importantes e faça um snapshot da campanha ou backup da instalação quando adequado. O responsável pode encerrar o Runner com **Ctrl+C** depois que o grupo sair.
 `), ['scenes', 'tokens', 'chat-dice']),
 
-  article('scenes', 'table', [...userGuide, ...builderGuide, 'gravewright/maps/services.py'],
+  article('scenes', 'table', [...userGuide, ...builderGuide, ...releaseNotes, 'gravewright/maps/services.py'],
     text('Scenes, grids and the player broadcast', 'Prepare a map privately, choose an import method and put the intended scene on screen.', `
 ## Choose how to create the scene
 
@@ -316,7 +335,7 @@ Opening a scene privately as GM preserves the players' broadcast. Generating a B
 
 ## Manage generated scenes carefully
 
-Scenes linked to a Builder project have a red map icon for the GM and an **Edit with MapBuilder** action. Reopen the project there and use **Update scene** to apply changes to the same scene. Manual modifications to generated resources can cause an update conflict; resolve them rather than overwriting another revision.
+Scenes linked to a Builder project have a red map icon for the GM and an **Edit with MapBuilder** action. Reopen the project there and use **Update scene** to apply changes to the same scene. Compatible manual edits to generated resources are imported when opening the project, returning to its tab and before updating. Scene-only objects stay separate. Changes to different properties can merge; competing edits to the same property pause synchronization and preserve your local draft. Follow [Builder synchronization and recovery](wiki:map-builder) before continuing.
 
 ## Troubleshoot
 
@@ -346,7 +365,7 @@ Abrir uma cena em particular como mestre preserva a transmissão dos jogadores. 
 
 ## Cuide das cenas geradas
 
-Cenas vinculadas a projetos do Builder têm ícone de mapa vermelho para o mestre e a ação **Editar com MapBuilder**. Reabra por ela e use **Atualizar cena** para aplicar mudanças à mesma cena. Edições manuais em recursos gerados podem causar conflito; resolva-o em vez de sobrescrever outra revisão.
+Cenas vinculadas a projetos do Builder têm ícone de mapa vermelho para o mestre e a ação **Editar com MapBuilder**. Reabra por ela e use **Atualizar cena** para aplicar mudanças à mesma cena. Edições manuais compatíveis em recursos gerados são importadas ao abrir o projeto, voltar à sua aba e antes de atualizar. Objetos exclusivos da cena ficam separados. Mudanças em propriedades diferentes podem se combinar; edições concorrentes da mesma propriedade pausam a sincronização e preservam o rascunho local. Siga [sincronização e recuperação do Builder](wiki:map-builder) antes de continuar.
 
 ## Solucione problemas
 
@@ -529,7 +548,7 @@ A fonte da ficha de um token vinculado é o ator. Num token independente, é seu
 Um movimento que cruza uma área inteira de Objeto Inteligente pode iniciar entrada e saída. Alterações de configuração diferem de eventos de movimento aceito. Investigue pelo registro de automação do mestre, em vez de desativar verificações de propriedade ou paredes.
 `), ['actors', 'permissions', 'smart-objects']),
 
-  article('chat-dice', 'tools', [...userGuide, 'gravewright/dice/grammar/notation/GRAMMAR.md', 'gravewright/dice/grammar/notation/GRAMMAR.pt-BR.md', 'gravewright/chat/services.py'],
+  article('chat-dice', 'tools', [...userGuide, ...releaseNotes, 'gravewright/dice/grammar/notation/GRAMMAR.md', 'gravewright/dice/grammar/notation/GRAMMAR.pt-BR.md', 'gravewright/chat/services.py'],
     text('Chat and dice notation', 'Send table messages and learn a useful set of native dice expressions.', `
 ## Send the right message
 
@@ -557,6 +576,12 @@ Modifiers attach directly to their dice term: **4d6kh3** works; separating **kh3
 **1d6!=5** means exploding on a five. **1d6 != 5** is an expression comparison. **2d6!>=5** is conditional explosion; **2d6! >= 5** explodes normally then counts successes. Use spaces deliberately when mixing modifiers and comparisons.
 
 Supported numeric functions include **floor**, **ceil**, **round**, **abs**, **min**, **max** and **clamp** in lowercase. Unknown functions and chained comparisons are rejected.
+
+## Respond to an object's roll request
+
+A GM can configure a **Dice challenge** or **Request dice roll** action in a [Smart Object](wiki:smart-objects). An authorized recipient receives a native prompt with its expression and label. Review it and press **Roll** explicitly; receiving the prompt does not roll automatically. The server validates the expression and posts the result to the configured public or GM audience through the normal dice service.
+
+Retries and multiple tabs reuse the same logical roll for that recipient. Streamers do not receive actionable requests. The object graph continues after requesting the roll; it does not wait for the result or apply RPG-specific success, damage or rewards. Those rules belong to the chosen system package.
 
 ## Troubleshoot
 
@@ -590,11 +615,17 @@ Modificadores ficam ligados ao termo de dados: **4d6kh3** funciona; separar **kh
 
 Funções numéricas suportadas incluem **floor**, **ceil**, **round**, **abs**, **min**, **max** e **clamp**, em minúsculas. Funções desconhecidas e comparações encadeadas são recusadas.
 
+## Responda à solicitação de um objeto
+
+O mestre pode configurar um **Desafio de dados** ou a ação **Solicitar rolagem de dados** num [Objeto Inteligente](wiki:smart-objects). Um destinatário autorizado recebe a janela nativa com expressão e rótulo. Confira e pressione **Rolar** explicitamente; receber a solicitação não rola os dados sozinho. O servidor valida a expressão e publica o resultado para o público configurado, público ou mestre, pelo serviço normal de dados.
+
+Retentativas e múltiplas abas reutilizam a mesma rolagem lógica daquele destinatário. Streamers não recebem solicitações acionáveis. O grafo continua depois de solicitar a rolagem; não espera o resultado nem aplica sucesso, dano ou recompensas específicos de RPG. Essas regras pertencem ao pacote do sistema escolhido.
+
 ## Solucione problemas
 
 Se falhar, simplifique para **1d20** e acrescente um modificador por vez. Confira minúsculas e espaços. Após perder a conexão, procure o resultado confirmado no chat antes de enviar outra rolagem. Um novo envio representa uma nova rolagem lógica, mesmo com expressão idêntica. Sistemas instalados podem acrescentar controles próprios sem mudar o significado de toda expressão nativa.
-`), ['tabletop', 'combat']),
-  article('journals', 'tools', [...userGuide, 'gravewright/journals/services.py', 'gravewright/journals/types.py', 'gravewright/journals/presentations.py'],
+`), ['tabletop', 'combat', 'smart-objects']),
+  article('journals', 'tools', [...userGuide, ...releaseNotes, 'gravewright/journals/services.py', 'gravewright/journals/types.py', 'gravewright/journals/presentations.py'],
     text('Journals, quests and roll tables', 'Keep campaign knowledge, share handouts and track objectives without exposing GM notes.', `
 ## Choose a document
 
@@ -612,6 +643,8 @@ Journals include structured notes, quests, quest boards and weighted roll tables
 ## Track a quest
 
 Enter the player-facing description, status, objectives, rewards and assigned characters. Keep GM notes separate. Decide which objectives and rewards players should see. Link the quest to a board when you want a grouped view; hidden quest status, explicit denial and actor access still affect what each player sees.
+
+For an interactive quest giver, bind a fixed campaign quest in the Smart Object's **Quest giver** or **Quest completion** model. The GM-authored **Set quest status** action changes that quest through the journal service. A player interacting with the object receives only that configured action, not general permission to edit quests. **Open journal** can present a journal, quest or board to selected recipients, but does not grant read access: configure document permissions first. A behavior playtest reports the planned changes and deliveries without saving quest state or opening player windows.
 
 ## Draw from a weighted table
 
@@ -638,6 +671,8 @@ Diários incluem anotações estruturadas, missões, quadros de missões e tabel
 ## Acompanhe uma missão
 
 Preencha descrição pública, estado, objetivos, recompensas e personagens atribuídos. Separe notas do mestre. Decida quais objetivos e recompensas os jogadores devem ver. Vincule a missão a um quadro para agrupá-las; estado oculto, negação explícita e acesso aos atores ainda influenciam o que cada jogador recebe.
+
+Para um objeto que oferece uma missão, vincule uma missão fixa da campanha no modelo **Contratante** ou **Conclusão de missão** do Objeto Inteligente. A ação **Alterar status da missão**, configurada pelo mestre, altera essa missão pelo serviço de diários. Interagir como jogador permite somente a ação configurada, sem conceder edição geral de missões. **Abrir diário** pode apresentar diário, missão ou quadro aos destinatários escolhidos, mas não concede leitura: configure antes as permissões do documento. O ensaio de comportamento informa alterações e entregas previstas sem salvar o estado da missão nem abrir janelas para jogadores.
 
 ## Sorteie numa tabela ponderada
 
@@ -870,7 +905,7 @@ Se um jogador não vê o pacote, confira compartilhamento/acesso. Se o mestre n�
 Distribua somente conteúdo próprio ou autorizado. Uma estrutura reutilizável, pacote instalado ou compra de livro não autoriza incluir catálogos proprietários, livros ou arte licenciada num pacote público. Mantenha também backup da instalação: compêndios não preservam todo histórico, contas e configuração do host.
 `), ['systems-modules', 'journals', 'backups-updates']),
 
-  article('systems-modules', 'content', [...userGuide, 'docs/en/modules.md', 'docs/pt-BR/modules.md', 'LICENSING.md', 'LICENSING.pt-BR.md'],
+  article('systems-modules', 'content', [...userGuide, ...releaseNotes, 'docs/en/modules.md', 'docs/pt-BR/modules.md', 'LICENSING.md', 'LICENSING.pt-BR.md'],
     text('Systems, modules and the marketplace', 'Install trusted packages and understand the difference between host installation and table activation.', `
 ## Choose the package type
 
@@ -898,6 +933,15 @@ Installing a new version does not automatically replace the exact release active
 Browser module JavaScript executes on the application's origin. Signatures validate package provenance and integrity; they do not sandbox the code. A local ZIP installation is the owner's trust decision and still undergoes archive and compatibility validation.
 
 English is the default interface language. Available language packages/settings and system catalogs determine translations; user-authored names and notes are not translated automatically. Preserve each user's explicit language choice.
+
+## Browse and search in your language
+
+1. The owner installs and activates the compatible **Translator** language package for the installation. It is managed globally rather than enabled as a campaign extension. Reload existing pages after activation.
+2. In account **Settings**, choose English, Portuguese (Brazil) or Spanish from the available languages. This is each account's own preference; another signed-in account does not inherit it.
+3. Open **Systems** or **Modules**, then its installation browser. Marketplace category names and package tag badges follow the selected language. Categories belong to the selected package type and sort by their displayed labels.
+4. Search by an original tag or its translated label in either the installed library or the marketplace. For example, **Translation** and **Tradução** can find the same tagged package. Clear the category or use **All packages** when checking the full catalog.
+
+Translation changes presentation only. Package IDs, original tags, signed records and category-filter identities stay intact. Package and publisher names, descriptions, acronyms and custom tags without a translation stay as authored. Long tags wrap on small screens. Without an active language package, the interface uses English; disabling it returns to English on the next page load. The installed library stays available when catalog discovery is offline.
 
 ## Troubleshoot
 
@@ -931,12 +975,21 @@ O JavaScript de módulos executa na origem da aplicação. Assinaturas verificam
 
 Inglês é o idioma padrão. Pacotes/configurações de idioma disponíveis e catálogos dos sistemas determinam traduções; nomes e textos autorais não são traduzidos automaticamente. Preserve a escolha explícita de cada usuário.
 
+## Navegue e busque no seu idioma
+
+1. O proprietário instala e ativa o pacote de idioma **Translator** compatível para a instalação. Sua ativação é global, em vez de uma extensão da campanha. Recarregue páginas já abertas depois de ativá-lo.
+2. Nas **Configurações** da conta, escolha inglês, português do Brasil ou espanhol entre os idiomas disponíveis. A preferência pertence à conta; outra conta conectada não a herda.
+3. Abra **Sistemas** ou **Módulos** e depois seu navegador de instalação. Categorias e etiquetas dos pacotes no Marketplace seguem o idioma escolhido. As categorias pertencem ao tipo de pacote selecionado e são ordenadas pelo rótulo exibido.
+4. Busque pela tag original ou traduzida tanto na biblioteca instalada quanto no Marketplace. Por exemplo, **Translation** e **Tradução** podem localizar o mesmo pacote. Limpe a categoria ou use **Todos os pacotes** para conferir o catálogo completo.
+
+A tradução muda somente a apresentação. IDs dos pacotes, tags originais, registros assinados e identidades dos filtros de categoria permanecem intactos. Nomes de pacotes e publicadores, descrições, siglas e tags personalizadas sem tradução permanecem como foram escritos. Tags longas quebram linha em telas pequenas. Sem pacote de idioma ativo, a interface usa inglês; desativá-lo restaura inglês no próximo carregamento. A biblioteca instalada continua disponível quando a descoberta do catálogo está offline.
+
 ## Solucione problemas
 
 Marketplace vazio pode indicar catálogo/chaves ausentes ou falha de rede; pacotes instalados são independentes da descoberta. Não desative verificação para corrigir um arquivo recusado. Confira versão do host e requisitos do pacote. Antes de trocar de sistema, faça backup e confira atores e compêndios; a troca não converte automaticamente todo documento ao formato de outro RPG.
 `), ['character-sheets', 'compendiums', 'backups-updates']),
 
-  article('map-builder', 'builder', [...builderGuide, 'gravewright/maps/builder_services.py', 'gravewright/maps/builder.py'],
+  article('map-builder', 'builder', [...builderGuide, ...releaseNotes, 'gravewright/maps/builder_services.py', 'gravewright/maps/builder.py'],
     text('Map Builder: from project to playable scene', 'Build an editable map, manage assets and publish changes without losing the project.', `
 ## Project, preview and scene
 
@@ -965,15 +1018,35 @@ Only a current campaign GM can edit Builder projects. Open **Scenes → New scen
 
 Choose **Library → Import → Import ready-made map**, select an upload or existing campaign image and enter map dimensions in cells and cell size. This creates a background beneath your additions. It does not reconstruct the image's original objects. Changing the background preserves existing coordinates; a dimension change that would exclude objects is refused.
 
+## Edit an object's properties, appearance and behavior
+
+Select the element and right-click it, press **Shift+F10** or use the keyboard's context-menu key. On touch screens, open **Panels → Selection → Object options**. The same menu offers **Properties**, **Appearance** and **Behavior**, plus the native editor, **Edit nodes**, torch components or presence filters when that element supports them. **Duplicate**, **Rotate** and **Delete** are also available.
+
+Use Properties for the element's name and supported settings, Appearance for its artwork and visual configuration, and Behavior for its interaction. Enter or leave a name field to apply it; Escape discards that field's pending edit. Names of up to 120 characters keep the element's identity and node connections. Applied property changes save automatically and can be undone. Objects and Empty Objects also offer **Ready-made models**; follow [Smart Objects](wiki:smart-objects) for all 14 models and their editable nodes.
+
+Valid graph edits save automatically too. **Close** or **Escape** waits for pending valid changes; an invalid field stays open for correction. Saving configuration does not operate the mechanism. Use **Generate scene** or **Update scene** explicitly to publish project changes.
+
 ## Useful controls
 
 **V** selects; **F** returns to floor painting; **E** removes an entire object. Area floor erasing is a separate tool. **Ctrl+Z** undoes, **Ctrl+Shift+Z/Ctrl+Y** redoes, **Space + drag** pans, the wheel zooms and **0** fits the map. **[ / ]** adjusts the brush. With the floor brush active, **Shift + left drag** changes its size without painting; Escape cancels that adjustment.
 
-## Limits and recovery
+## Bring tabletop edits back into the project
+
+1. Edit a generated element in the game, then reopen its project, return to the Builder tab or request **Update scene**. Compatible manual changes to names, geometry, artwork, lights, effects and Blueprints are imported at those points.
+2. Inspect the imported result. Deleted generated objects disappear from the project; split wall spans remain independently editable. Manually added scene objects stay separate from the editable source.
+3. Continue editing and wait for the saved status. Changes to different properties merge with pending local work. Undoing your local edit preserves imported game changes.
+4. If both sides changed the same property differently, synchronization stops with your local draft preserved. Choose **Reload saved project** to adopt the server version or **Save a copy** to retain your work as a new project. Unsupported object-type changes or geometry also stop with a diagnostic; do not force an older revision over the scene.
+5. Review and choose **Update scene**. It requires current project and scene revisions and remains a GM operation. Synchronizing or saving does not execute behaviors or change the player broadcast.
+
+Updating preserves scene-only tokens, images, lights, effects, drawings and fog, plus the scene's name, folder, visibility, broadcast and environment. Keep map dimensions and cell size unchanged when manual scene content exists. Live door state is preserved; lights, effects and other runtime settings retain their live values when their authored defaults are unchanged. Deliberately changing an authored default applies it on update. Automated **Move/Rotate** actions leave source geometry unchanged, so an update reapplies authored positions and angles.
+
+## Save, recover and respect limits
+
+Autosave records completed edits after a short pause; the header shows waiting, saving or saved. **Ctrl+S** synchronizes immediately. Returning to the game waits for pending saves; a failure keeps the editor open for retry or explicit discard. A lost response retries the same operation rather than creating another write. A revision conflict pauses saving and keeps the draft: use the explicit reload/copy choices above. **Discard changes** removes only unacknowledged work. If the initial project or library load fails, use **Retry**; editing stays blocked so an empty replacement is not created.
 
 Projects allow 32 layers, 2,000 combined objects, 256 classified images and a 1 MB document. Dimensions are 1–200 cells and 16–256 pixels per cell, subject to a shared 16,777,216-pixel image limit or a smaller host limit. Image uploads are limited to 25 MB and 40 million decoded pixels. Maximum dimensions cannot all be used simultaneously.
 
-If save fails, keep the tab open and retry after reconnecting. For a revision conflict, **Reload saved project** adopts server state; **Save a copy** preserves the local document as a new project. A browser draft is recovery help, not a backup. If scene update detects changed/deleted generated objects, resolve the conflict explicitly. **Remove asset** deletes the campaign resource and may affect other maps; Undo cannot restore the deleted file.
+A browser draft is recovery help, not a backup. **Remove asset** deletes the campaign resource and may affect other maps; Undo cannot restore the deleted file. Players and streamers cannot edit Builder projects; test player interaction separately from GM editing.
 `),
     text('Map Builder: do projeto à cena jogável', 'Construa um mapa editável, organize assets e publique mudanças preservando o projeto.', `
 ## Projeto, prévia e cena
@@ -1003,24 +1076,69 @@ Somente um mestre atual da campanha pode editar projetos. Abra **Cenas → Nova 
 
 Escolha **Biblioteca → Importar → Importar mapa pronto**, selecione upload ou imagem da campanha e informe dimensões em células e tamanho da célula. Isso cria o fundo sob seus acréscimos. Não reconstrói objetos originais da imagem. Trocar o fundo preserva coordenadas; dimensões que excluiriam objetos são recusadas.
 
+## Edite propriedades, aparência e comportamento
+
+Selecione o elemento e clique com o botão direito, pressione **Shift+F10** ou use a tecla de menu de contexto. Em telas de toque, abra **Painéis → Seleção → Opções do objeto**. O mesmo menu oferece **Propriedades**, **Aparência** e **Comportamento**, além do editor nativo, **Editar nós**, componentes de tocha ou filtros de presença quando suportados pelo elemento. **Duplicar**, **Girar** e **Excluir** também estão disponíveis.
+
+Use Propriedades para nome e ajustes suportados, Aparência para imagens e configuração visual, e Comportamento para a interação. Pressione Enter ou saia do campo de nome para aplicar; Escape descarta a edição pendente daquele campo. Nomes de até 120 caracteres preservam identidade e conexões dos nós. Alterações aplicadas são salvas automaticamente e podem ser desfeitas. Objetos e Objetos vazios também oferecem **Modelos prontos**; veja os 14 modelos e seus nós editáveis em [Objetos Inteligentes](wiki:smart-objects).
+
+Edições válidas de grafos também são salvas automaticamente. **Fechar** ou **Escape** aguarda alterações válidas pendentes; campos inválidos permanecem abertos para correção. Salvar a configuração não aciona o mecanismo. Use **Gerar cena** ou **Atualizar cena** explicitamente para publicar mudanças do projeto.
+
 ## Controles úteis
 
 **V** seleciona; **F** retorna à pintura de chão; **E** remove um objeto inteiro. A borracha de área do chão é separada. **Ctrl+Z** desfaz, **Ctrl+Shift+Z/Ctrl+Y** refaz, **Espaço + arrastar** move a câmera, a roda ajusta zoom e **0** enquadra o mapa. **[ / ]** ajusta o pincel. Com o pincel de chão ativo, **Shift + arrastar com botão esquerdo** muda seu tamanho sem pintar; Escape cancela o ajuste.
 
-## Limites e recuperação
+## Traga edições da mesa de volta ao projeto
+
+1. Edite um elemento gerado no jogo e reabra o projeto, volte à aba do Builder ou solicite **Atualizar cena**. Mudanças manuais compatíveis de nomes, geometria, imagens, luzes, efeitos e Blueprints são importadas nesses momentos.
+2. Confira o resultado importado. Objetos gerados excluídos desaparecem do projeto; trechos de parede divididos continuam editáveis separadamente. Objetos adicionados manualmente à cena ficam separados do projeto.
+3. Continue a edição e aguarde o estado salvo. Mudanças em propriedades diferentes se combinam com trabalho local pendente. Desfazer sua edição local preserva as mudanças importadas do jogo.
+4. Se os dois lados alterarem a mesma propriedade de formas diferentes, a sincronização para e preserva seu rascunho local. Escolha **Recarregar projeto salvo** para adotar o servidor ou **Salvar uma cópia** para manter o trabalho num novo projeto. Trocas de tipo de objeto ou geometria não suportada também param com diagnóstico; não force uma revisão antiga sobre a cena.
+5. Confira e escolha **Atualizar cena**. A ação exige revisões atuais do projeto e da cena e continua exclusiva do mestre. Sincronizar ou salvar não executa comportamentos nem muda a transmissão dos jogadores.
+
+Atualizar preserva tokens, imagens, luzes, efeitos, desenhos e neblina exclusivos da cena, além de nome, pasta, visibilidade, transmissão e ambiente. Mantenha dimensões e tamanho da célula quando houver conteúdo manual na cena. O estado das portas ao vivo é preservado; luzes, efeitos e outros ajustes de execução mantêm seus valores enquanto os padrões autorais não mudarem. Alterar intencionalmente um padrão no projeto o aplica ao atualizar. Ações automatizadas de **Mover/Girar** mantêm a geometria-fonte; atualizar reaplica posições e ângulos autorais.
+
+## Salve, recupere e respeite os limites
+
+O autosave registra edições concluídas após uma pausa curta; o cabeçalho mostra alterações aguardando, salvando ou salvas. **Ctrl+S** sincroniza imediatamente. Voltar ao jogo aguarda salvamentos pendentes; uma falha mantém o editor aberto para tentar novamente ou descartar explicitamente. Perder uma resposta repete a mesma operação sem criar outra escrita. Conflitos de revisão pausam o salvamento e preservam o rascunho: use as opções explícitas de recarregar/copiar acima. **Descartar alterações** remove somente trabalho não confirmado. Se o carregamento inicial do projeto ou biblioteca falhar, use **Tentar novamente**; a edição fica bloqueada para não criar uma substituição vazia.
 
 Projetos aceitam 32 camadas, 2.000 objetos combinados, 256 imagens classificadas e documento de 1 MB. Dimensões de 1–200 células e células de 16–256 pixels compartilham o limite de 16.777.216 pixels da imagem, ou um teto menor do host. Uploads de imagem aceitam até 25 MB e 40 milhões de pixels decodificados. Não é possível usar simultaneamente todos os máximos.
 
-Se salvar falhar, mantenha a aba aberta e tente após reconectar. Em conflito, **Recarregar projeto salvo** adota o servidor; **Salvar uma cópia** preserva o documento local num novo projeto. O rascunho do navegador ajuda na recuperação, mas não é backup. Se atualizar detectar objetos gerados alterados/excluídos, resolva explicitamente. **Remover asset** exclui o recurso da campanha e pode afetar outros mapas; Desfazer não recupera o arquivo.
+O rascunho do navegador ajuda na recuperação, mas não é backup. **Remover asset** exclui o recurso da campanha e pode afetar outros mapas; Desfazer não recupera o arquivo. Jogadores e streamers não podem editar projetos; teste a interação de jogadores separadamente da edição como mestre.
 `), ['smart-objects', 'scenes', 'universal-vtt'], ['builder']),
 
-  article('smart-objects', 'builder', [...builderGuide, 'gravewright/maps/blueprint_runtime.py', 'gravewright/maps/builder.py'],
-    text('Smart Objects: nodes, logic and safe playtests', 'Connect events to actions, remember puzzle state and test behavior before applying it to the game.', `
+  article('smart-objects', 'builder', [...builderGuide, ...releaseNotes, 'gravewright/maps/blueprint_runtime.py', 'gravewright/maps/builder.py'],
+    text('Smart Objects: models, nodes and safe playtests', 'Start with an interactive model, customize its logic and test behavior before applying it to the game.', `
 ## Start with an event
 
 Doors, objects, levers, torches, Empty Objects and presence regions share a visual blueprint editor. Double-click an editable element in Map Builder to open **Smart Object**. Select a starting event, connect its output to a node and configure explicit actions. An empty authored interaction graph does nothing: no implicit toggle is added.
 
 Doors offer **On interact** and **On destroy**. Objects also support **On area enter/exit**; regions offer area entry/exit and destruction. Named signals provide **On signal**. An event starts execution; it does not compare a state or choose an image by itself. Legacy state-specific interaction/entry/exit graphs and change events are discarded rather than migrated; recreate their behavior with current events and logic nodes.
+
+## Choose one of the 14 ready-made models
+
+Select an Object or Empty Object and open **Object options → Ready-made models**, choose a model in **Behavior**, or open **Object catalog** in the node editor. These entry points share the same editable catalog.
+
+| Model | Starting behavior |
+| --- | --- |
+| Interactive switch | Toggle the object and optionally a linked door |
+| Chest | Open/close and show a message on its first opening |
+| Secret passage | Toggle a required linked door |
+| Readable book | Open an authorized journal handout for chosen recipients |
+| Altar | Show a message with a five-second cooldown |
+| Warning trap | Warn on token entry while armed; interact to arm/disarm |
+| Bell | Notify chosen recipients with a short cooldown |
+| Pressure plate | Open a linked door on entry; close when the last token leaves |
+| Dice challenge | Ask selected recipients to roll explicitly |
+| Quest giver | Set a bound quest active and open its journal entry |
+| Quest completion | Set a bound quest completed and open its journal entry |
+| Entrance sign | Show a message on first entry; interact to read it again |
+| Timed switch | Activate, optionally open a door, then reset after a delay |
+| Door button | Open a linked door when pressed |
+
+Search the catalog, choose the model and supply its required door, journal/quest, recipients, message, expression or delay. **Add a sound when activated** enables a campaign sound and volume; **Use an active image** enables another Object image for the active state. Leaving either unchecked adds no corresponding override. The inactive state keeps the original image, and Empty Objects remain image-free.
+
+Choose **Apply**, inspect the generated nodes and customize them as needed. Applying preserves the object's identity and geometry as one Undo step; closing the catalog without applying leaves it unchanged. Replacing existing authored nodes requires confirmation. The warning trap reports a warning: damage, RPG checks, item consumption and system-specific rewards belong to the RPG system package, not these generic models.
 
 ## Build a door toggle
 
@@ -1041,6 +1159,12 @@ Each event reads an initial state/variable snapshot. A later read inside that sa
 
 Area events run for eligible token crossings. A token crossing the entire area can cause entry and exit in one accepted move. Use event context and conditions when you want only the first arrival or last departure to matter. **Interact with object** explicitly runs a target's interaction behavior; **Change state** alone does not run another graph or its image/sound actions.
 
+## Request a roll or advance a quest
+
+For **Request dice roll**, choose the native expression, optional label, recipients and result visibility. The server checks membership and scene access before delivering each request. The recipient must press **Roll**; streamers cannot receive an actionable prompt. Retrying or opening another tab reuses the recipient's logical roll. The graph continues without waiting for a result. See [Chat and dice](wiki:chat-dice) for native notation.
+
+For **Open journal**, bind a campaign journal, quest or board and choose recipients who already have access. Opening it does not grant permission to read it. **Set quest status** binds one fixed campaign quest and desired status authored by the GM. A player can trigger that configured change through the object without gaining general journal editing rights. Check the quest's own visibility and permissions separately; see [Journals and quests](wiki:journals).
+
 ## Use time deliberately
 
 **Delay** persists a continuation; **Timer** is a named one-shot countdown whose expiry runs the matching named signal. They survive closed browsers/server restarts, and pausing scene automation keeps pending jobs waiting. GM **Automation → Waiting** shows the queue. Behavior changes, removed targets or lost access can cancel pending work. Exports, campaign snapshots and copies omit these jobs; a full database backup includes them.
@@ -1049,7 +1173,7 @@ Area events run for eligible token crossings. A token crossing the entire area c
 
 **Simulate** is a local graph preview. **Test behavior** runs the server engine against the unsaved Builder document or a live element, showing predicted state, variable and cross-element changes. Choose an optional test actor/token for token-dependent actions. Tests use GM permissions, so also test a real player separately.
 
-Tests roll everything back and deliver no live sounds, messages, handouts or camera changes. Delay stops at the wait; Timer scheduling is listed without advancing time or firing receivers. Verify actual timing in a controlled live scene. After successful editing, wait for autosave and choose **Generate scene/Update scene**; returning to the table alone does not apply project graphs.
+Tests roll everything back and deliver no live sounds, messages, handouts, roll prompts or camera changes. Quest changes and roll requests appear in the report without saving quest state or opening recipient windows. Delay stops at the wait; Timer scheduling is listed without advancing time or firing receivers. Verify actual timing in a controlled live scene. After successful editing, wait for autosave and choose **Generate scene/Update scene**; returning to the table alone does not apply project graphs.
 
 ## Limits and troubleshooting
 
@@ -1057,12 +1181,37 @@ Each event graph allows 32 nodes and 64 connections; a door's graphs allow 128 n
 
 If nothing happens, check the starting event, connected actions, targets, pause state and **Automation log**. A player-triggered chain cannot lock/unlock by default; the GM must explicitly allow player locking/unlocking on that state action. A missing target can be skipped with a diagnostic. Teleport is within the same scene; these tools do not promise cross-scene or group transport.
 `),
-    text('Objetos Inteligentes: nós, lógica e playtest', 'Conecte eventos a ações, memorize enigmas e teste o comportamento antes de aplicá-lo ao jogo.', `
+    text('Objetos Inteligentes: modelos, nós e playtest', 'Comece com um modelo interativo, personalize sua lógica e teste o comportamento antes de aplicá-lo ao jogo.', `
 ## Comece por um evento
 
 Portas, objetos, alavancas, tochas, Objetos vazios e regiões de presença compartilham o editor visual de blueprint. Dê dois cliques num elemento editável do Map Builder para abrir **Objeto Inteligente**. Escolha um evento inicial, conecte sua saída e configure ações explícitas. Um grafo autoral de interação vazio não faz nada: não existe alternância implícita.
 
 Portas oferecem **Ao interagir** e **Ao destruir**. Objetos também têm **Ao entrar/sair da área**; regiões oferecem entrada/saída e destruição. Sinais nomeados fornecem **Ao receber sinal**. O evento inicia execução; não compara estado nem escolhe imagem sozinho. Grafos antigos de interação/entrada/saída por estado e eventos de mudança são descartados, sem migração das ações; recrie o comportamento com eventos e lógica atuais.
+
+## Escolha um dos 14 modelos prontos
+
+Selecione um Objeto ou Objeto vazio e abra **Opções do objeto → Modelos prontos**, escolha um modelo em **Comportamento** ou abra **Catálogo de objetos** no editor de nós. Essas entradas compartilham o mesmo catálogo editável.
+
+| Modelo | Comportamento inicial |
+| --- | --- |
+| Interruptor | Alterna o objeto e, opcionalmente, uma porta vinculada |
+| Baú | Abre/fecha e mostra mensagem na primeira abertura |
+| Passagem secreta | Alterna uma porta vinculada obrigatória |
+| Livro interativo | Abre um diário autorizado para destinatários escolhidos |
+| Altar | Mostra mensagem com intervalo de cinco segundos |
+| Armadilha de aviso | Avisa na entrada de token enquanto armada; interação arma/desarma |
+| Sino | Notifica destinatários escolhidos com intervalo curto |
+| Placa de pressão | Abre uma porta na entrada; fecha quando o último token sai |
+| Desafio de dados | Solicita rolagem explícita aos destinatários escolhidos |
+| Contratante | Ativa uma missão vinculada e abre seu diário |
+| Conclusão de missão | Conclui uma missão vinculada e abre seu diário |
+| Placa de entrada | Mostra mensagem na primeira entrada; interação permite reler |
+| Interruptor temporizado | Ativa, opcionalmente abre porta e reverte após uma espera |
+| Botão de porta | Abre uma porta vinculada quando pressionado |
+
+Busque no catálogo, escolha o modelo e informe porta, diário/missão, destinatários, mensagem, expressão ou espera exigidos. **Adicionar som ao ativar** habilita um som da campanha e volume; **Usar imagem ao ativar** habilita outra imagem de Objeto para o estado ativo. Deixar uma opção desmarcada não acrescenta aquela substituição. O estado inativo mantém a imagem original, e Objetos vazios continuam sem imagem.
+
+Escolha **Aplicar**, confira os nós gerados e personalize-os quando necessário. Aplicar preserva identidade e geometria do objeto como uma etapa de Desfazer; fechar o catálogo sem aplicar mantém o objeto intacto. Substituir nós autorais existentes exige confirmação. A armadilha apenas emite um aviso: dano, testes de RPG, consumo de itens e recompensas específicas pertencem ao pacote do sistema de RPG, fora desses modelos genéricos.
 
 ## Monte uma porta que alterna
 
@@ -1083,6 +1232,12 @@ Cada evento lê um retrato inicial de estado/variáveis. Uma leitura posterior n
 
 Eventos de área respondem à travessia de tokens elegíveis. Atravessar toda a área pode causar entrada e saída no mesmo movimento aceito. Use contexto do evento e condições para responder somente à primeira chegada ou última saída. **Interagir com objeto** executa explicitamente o comportamento do alvo; **Mudar estado** sozinho não executa outro grafo nem suas ações de imagem/som.
 
+## Solicite uma rolagem ou avance uma missão
+
+Em **Solicitar rolagem de dados**, escolha expressão nativa, rótulo opcional, destinatários e visibilidade do resultado. O servidor confere vínculo e acesso à cena antes de entregar cada solicitação. O destinatário precisa pressionar **Rolar**; streamers não recebem janela acionável. Retentativas ou outra aba reutilizam a rolagem lógica daquele destinatário. O grafo continua sem aguardar resultado. Veja a notação nativa em [Chat e dados](wiki:chat-dice).
+
+Em **Abrir diário**, vincule um diário, missão ou quadro da campanha e escolha destinatários que já tenham acesso. Abrir não concede permissão de leitura. **Alterar status da missão** vincula uma missão fixa da campanha e o estado desejado, configurados pelo mestre. O jogador pode acionar essa mudança pelo objeto sem receber edição geral de diários. Confira separadamente visibilidade e permissões da missão; veja [Diários e missões](wiki:journals).
+
 ## Use o tempo intencionalmente
 
 **Delay** persiste uma continuação; **Temporizador** conta uma vez e executa o sinal nomeado correspondente ao vencer. Ambos sobrevivem a navegador fechado/reinício do servidor, e pausar a automação mantém trabalhos pendentes. **Automação → Aguardando** mostra a fila. Mudanças de comportamento, alvos removidos ou perda de acesso podem cancelar trabalhos. Exportações, snapshots e cópias de campanha os omitem; backup completo do banco os inclui.
@@ -1091,14 +1246,14 @@ Eventos de área respondem à travessia de tokens elegíveis. Atravessar toda a 
 
 **Simular** oferece prévia local do grafo. **Testar comportamento** usa o motor do servidor sobre o documento não salvo ou elemento ao vivo, mostrando mudanças previstas de estado, variáveis e outros elementos. Escolha ator/token de teste para ações que dependem dele. O ensaio usa permissões do mestre; teste também um jogador real separadamente.
 
-Os testes revertem tudo e não entregam sons, mensagens, materiais ou movimentos de câmera ao vivo. Delay para na espera; o temporizador mostra agendamento sem avançar o tempo nem executar receptores. Confira tempos reais numa cena controlada. Depois da edição, aguarde autosave e use **Gerar cena/Atualizar cena**; voltar à mesa não aplica os grafos sozinho.
+Os testes revertem tudo e não entregam sons, mensagens, materiais, solicitações de rolagem ou movimentos de câmera ao vivo. Mudanças de missão e solicitações aparecem no relatório sem salvar o estado da missão nem abrir janelas dos destinatários. Delay para na espera; o temporizador mostra agendamento sem avançar o tempo nem executar receptores. Confira tempos reais numa cena controlada. Depois da edição, aguarde autosave e use **Gerar cena/Atualizar cena**; voltar à mesa não aplica os grafos sozinho.
 
 ## Limites e solução de problemas
 
 Cada grafo aceita 32 nós e 64 conexões; os grafos de uma porta somam até 128 nós. Um escopo guarda até 64 variáveis. Delay/Temporizador compartilham 64 trabalhos pendentes por cena e 256 por campanha. Ciclos, conexões tipadas inválidas e cadeias excessivas são recusados.
 
 Se nada acontecer, confira evento inicial, ações conectadas, alvos, pausa e **Registro de automação**. Uma cadeia iniciada por jogador não tranca/destranca por padrão; o mestre precisa permitir isso explicitamente naquela ação de estado. Alvo ausente pode ser ignorado com diagnóstico. Teleporte ocorre na mesma cena; as ferramentas não prometem transporte entre cenas ou em grupo.
-`), ['map-builder', 'tokens', 'audio'], ['builder']),
+`), ['map-builder', 'tokens', 'audio', 'chat-dice', 'journals'], ['builder']),
 
   article('universal-vtt', 'builder', ['docs/en/universal-vtt.md', 'docs/pt-BR/universal-vtt.md', 'gravewright/maps/universal_vtt.py'],
     text('Import and export Universal VTT', 'Bring in a prepared map or transfer a native scene while understanding the format limits.', `
@@ -1164,7 +1319,7 @@ Fundo e imagens/superfícies visíveis suportadas são achatados num PNG. Parede
 O formato utiliza versão numérica **0.2**, separada da versão do aplicativo. O limite de JSON é 64 MiB; a imagem comprimida incorporada aceita 48 MiB; o raster tem até 16.777.216 pixels ou teto menor do host. A geometria aceita 5.000 objetos nativos e 20.000 vértices de visão. São aceitos PNG/WebP incorporados de quadro único, em vez de URLs remotas. Geometria excessiva ou tiles ausentes na exportação impedem a operação, sem gerar download parcial. Preserve projeto original e backup da instalação.
 `), ['scenes', 'map-builder', 'backups-updates']),
 
-  article('backups-updates', 'hosting', ['docs/en/deployment.md', 'docs/pt-BR/deployment.md', ...userGuide, 'docs/releases/0.3.0.md', 'gravewright/administration/archives.py'],
+  article('backups-updates', 'hosting', ['docs/en/deployment.md', 'docs/pt-BR/deployment.md', ...userGuide, ...releaseNotes, 'gravewright/administration/archives.py'],
     text('Backups, recovery and updates', 'Protect the installation, distinguish portable exports from backups and apply releases deliberately.', `
 ## Choose the right protection
 

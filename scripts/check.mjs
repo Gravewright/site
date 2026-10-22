@@ -113,6 +113,9 @@ const knowledge = JSON.parse(await readFile(resolve(root, 'content/knowledge-man
 const searchIndex = JSON.parse(await readFile(resolve(root, 'knowledge-search.json'), 'utf8'));
 assert.equal(knowledge.version, publicVersion, 'Project reference and public version differ');
 assert(/^[a-f0-9]{40}$/.test(knowledge.sourceRevision), 'Missing pinned project revision');
+const contracts = JSON.parse(await readFile(resolve(root, 'content/extension-contracts.json'), 'utf8'));
+assert.equal(contracts.hostVersion, knowledge.version, 'SDK snapshot and project reference versions differ');
+assert.equal(contracts.sourceRevision, knowledge.sourceRevision, 'SDK snapshot and project reference revisions differ');
 assert(knowledge.pages.length > 60, 'Missing wiki/docs articles');
 for (const entry of knowledge.pages) {
   const html = await readFile(resolve(root, entry.path), 'utf8');
@@ -138,8 +141,16 @@ assert.equal(new Set(wikiMedia.map(item=>item.id)).size,wikiMedia.length,'Duplic
 for(const item of wikiMedia){
   assert(nonempty(item.file) && !item.file.includes('..') && !item.file.startsWith('/'),'Invalid wiki media path');
   assert(await exists(item.file),`Missing wiki screenshot ${item.file}`);
-  assert(item.width>0 && item.height>0 && item.version===publicVersion,'Wiki screenshot version/dimensions');
-  for(const locale of ['en','pt']) assert(nonempty(item.alt?.[locale]) && nonempty(item.caption?.[locale]),`Missing ${locale} screenshot text`);
+  assert(Number.isInteger(item.width) && item.width>0 && Number.isInteger(item.height) && item.height>0,'Wiki screenshot dimensions must be positive integers');
+  assert(/^\d+\.\d+\.\d+$/.test(item.version) && nonempty(item.origin),'Wiki screenshot needs a captured version and provenance');
+  // Captures retain their real version when the documented release advances.
+  const captured=item.version.split('.').map(Number), current=publicVersion.split('.').map(Number);
+  const difference=captured.map((part,index)=>part-current[index]).find(value=>value!==0) || 0;
+  assert(captured.every(Number.isSafeInteger) && difference<=0,'Wiki screenshot cannot claim an unreleased version');
+  for(const locale of ['en','pt']) {
+    assert(nonempty(item.alt?.[locale]) && nonempty(item.caption?.[locale]),`Missing ${locale} screenshot text`);
+    assert(item.alt[locale].includes(item.version) && item.caption[locale].includes(item.version),`Disclose the captured version in ${locale} screenshot text`);
+  }
 }
 const sitemap=await readFile(resolve(root, 'sitemap.xml'), 'utf8');
 for(const path of pages.keys()) assert(sitemap.includes(`https://gravewright.com/${path==='index.html'?'':path}</loc>`), `Missing sitemap page ${path}`);

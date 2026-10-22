@@ -441,6 +441,34 @@
     "type": "showHandout"
   },
   {
+    "file": "nodes/requestRoll.json",
+    "node": {
+      "id": "sample",
+      "type": "requestRoll",
+      "x": 300,
+      "y": 80,
+      "expression": "1d20+2",
+      "label": "Inspect the chest",
+      "visibility": "public",
+      "audience": {
+        "scope": "trigger"
+      }
+    },
+    "type": "requestRoll"
+  },
+  {
+    "file": "nodes/setQuestStatus.json",
+    "node": {
+      "id": "sample",
+      "type": "setQuestStatus",
+      "x": 300,
+      "y": 80,
+      "journalId": "88888888-8888-4888-8888-888888888888",
+      "status": "active"
+    },
+    "type": "setQuestStatus"
+  },
+  {
     "file": "nodes/cameraFocus.json",
     "node": {
       "id": "sample",

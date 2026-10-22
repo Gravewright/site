@@ -104,11 +104,19 @@ uv run --locked python tests/e2e/frontend_api.py
 uv run --locked python tests/e2e/https.py
 uv run --locked python tests/e2e/runner.py
 uv run --locked python tests/web/window_i18n_browser.py
+uv run --locked python tests/web/form_controls_browser.py
 ```
 
 O teste independente de janelas serve apenas arquivos estáticos do host e
 confere os controles em inglês, português e espanhol, incluindo liberação dos
 listeners e preservação dos textos do usuário. Não carrega campanha ou banco.
+
+O teste independente de controles de formulário verifica o tema compartilhado,
+seleção de arquivos pelo teclado, caixas de seleção, sliders, validação, campos
+desabilitados/somente leitura e layouts de 320px. Também confere se campos mapeados
+sobre PDFs mantêm suas dimensões autoradas em janelas da mesa. Serve arquivos
+estáticos com controles sintéticos e grava capturas em `test-results/form-controls/`,
+sem banco de dados.
 
 `uv run --locked python tests/e2e/board_scene_refresh.py` verifica atualizações
 da mesma cena com WebGL real, imagens sintéticas e respostas de tiles atrasadas.
@@ -172,6 +180,12 @@ Em outra fixture nova, `tests/e2e/item_directory_layout.py --seed
 itens, ordenação de itens/pastas/tipos, busca, menus pelo teclado, duplicação,
 movimentação e controles de leitura. Encerre cada servidor pertencente ao teste
 depois da execução.
+
+`tests/e2e/actor_form_layout.py --seed <fixture>/seed.json --output <diretório-de-resultados>`
+usa a mesma fixture descartável para verificar os modais de personagens/pastas
+em desktop, 390px e 320px, contenção e restauração de foco, Escape/cancelar,
+salvamentos pendentes e falha/nova tentativa com persistência real. Também aceita
+`--browser-executable`.
 
 | Alteração | Cenários pertinentes |
 | --- | --- |
@@ -278,6 +292,44 @@ campanha, banco, mídia, porta e saída do cenário compartilhado. A cobertura d
 domínio fica em `gravewright.maps.tests.test_torches`; testes puros dos modelos
 do builder e das imagens nativas verificam vínculos, transformações afins,
 referências ausentes e IDs de cópia.
+
+`uv run --locked python tests/e2e/map_builder_interactions.py` cria pedidos de
+dados, abertura de diários e mudanças de status de missões pelo editor real de
+nós, depois os executa como jogadores em uma campanha descartável. Verifica
+entrega para um ou todos os jogadores, resultados de dados pelo servidor,
+simulações e layouts traduzidos no desktop e celular. Use `--output` e
+`--browser-executable` para diagnósticos isolados e um navegador existente. A
+cobertura de domínio fica em `gravewright.maps.tests.test_blueprint_interactions`.
+
+`uv run --locked python tests/e2e/map_builder_ingame_sync.py` edita objetos gerados
+pelo jogo, reabre o Builder vinculado e atualiza a mesma cena. Verifica geometria,
+imagens e luzes importadas, exclusão, rascunhos locais independentes, conflitos,
+Desfazer, conteúdo manual e estado de jogo preservado, incluindo uma tela móvel
+em português. Usa a fixture descartável do Builder e aceita `--output` e
+`--browser-executable`. A cobertura Django fica em
+`gravewright.maps.tests.test_builder_sync`; mesclagem e histórico usam
+`node --test gravewright/maps/static/gravewright_maps/builder/scene-sync-model.test.mjs`.
+
+`uv run --locked python tests/e2e/map_builder_object_menu.py` verifica menus dos
+objetos por mouse/teclado, modais de propriedades, seleção de porta no mapa por
+região e os 14 modelos configuráveis em uma campanha isolada do Builder.
+Confere cancelamento, substituição, omissão de recursos desmarcados, Desfazer/
+Refazer, simulação e geração salva; depois mede pixels das imagens ativa/inativa
+na mesa e a reprodução real de som. Os layouts cobrem inglês, português e
+espanhol no desktop, em 390px e 320px, incluindo a ação Opções do objeto para
+toque. Use `--output` e `--browser-executable` para resultados isolados e um
+navegador existente.
+
+`uv run --locked python tests/web/automation_roll_browser.py` verifica a modal
+nativa de dados e o transporte em tempo real com respostas sintéticas do socket:
+envio explícito, identidade e cena estáveis nas tentativas, estados de espera,
+erro e sucesso, foco por teclado, tradução, conteúdo longo e descarte.
+`tests/web/interactive_object_catalog_browser.py` verifica a configuração dos
+modelos, escolha de diário/jogador, som e imagem opcionais, confirmação de
+substituição, catálogos vazios e layouts em inglês/português/espanhol até 320px.
+Ambos servem arquivos estáticos
+do host com dados sintéticos e aceitam as mesmas opções de saída/navegador,
+sem acessar dados de campanha.
 
 `uv run --locked python tests/e2e/map_builder_composite_conditions.py` constrói
 All/Any pelo editor real de Blueprint, verifica simulação sem escrita, conexões

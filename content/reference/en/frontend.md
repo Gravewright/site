@@ -94,7 +94,9 @@ boundaries:
 | `project-persistence.js` | Draft recovery/storage, HTTP/CSRF, receipt identities and the save queue |
 | `workspace-library.js` | Campaign asset catalog, brush choices and material controls |
 | `workspace-import.js` | Asset import/edit modals and their listener lifetime |
-| `inspector-controller.js` | Selection properties and region/torch configuration |
+| `inspector-controller.js` | Shared selection fields, section modals and region/torch configuration |
+| `object-menu.js` | Object context menu, keyboard navigation and model submenu |
+| `interactive-presets.js` | Configurable generic object Blueprints and their catalog modal |
 | `layer-controller.js` | Layer controls, contents, selection and drag listeners |
 | `canvas-renderer.js` | SVG artwork, selection overlays and disposable terrain/wall caches |
 
@@ -265,6 +267,39 @@ free whole-token footprint inside the destination region and queues arrival
 presence after the current object cache is persisted. A durable arrival gate
 prevents return loops until the token leaves the region; scene navigation and
 party membership are unchanged.
+
+The **Interactive object catalog** in Builder selection, **Ready-made models**
+in the object context menu and the node editor's **Object catalog** share 14
+editable generic lever Blueprints. Models cover switches, chests, secret
+passages, books, altars, warning traps, bells, pressure plates, dice requests,
+quest activation/completion, entrance signs, timed switches and door buttons.
+The configuration modal offers optional sound/volume and active-state artwork;
+unchecked options produce no sound node or image override. State artwork comes
+only from Object assets and restores the original artwork while inactive.
+Applying a model keeps object identity and geometry; replacing authored behavior
+requires confirmation in the application modal and can be undone. The trap warns
+on entry while armed; it does not apply system-specific damage. The inspector's
+Behavior choices open the same configuration modal. Property section modals
+reuse the inspector controls and save through its existing commits and history.
+
+Blueprint V2 `requestRoll` stores a validated dice `expression` (up to 512
+characters), `label` (up to 48), `visibility` (`public` or `gm`) and `audience`.
+Audience controls offer the triggering user, all players, one player or chosen
+users. One player persists as the compatible `users` scope with one UUID.
+Authorized recipients receive a native modal and explicitly choose **Roll**;
+the normal server dice service validates and posts the result to chat. The event
+UUID identifies the same logical roll per user across retries and tabs, and the
+originating scene stays fixed. Streamers cannot receive roll requests.
+The action continues immediately: it does not branch on a roll result.
+
+**Open journal** uses the existing `showHandout` contract for diaries, quests and
+quest boards, without granting reading access. `setQuestStatus` stores a quest
+`journalId` and one of `draft`, `available`, `active`, `completed`, `failed` or
+`archived`. The server validates campaign/type and applies the fixed GM-authored
+action through the journal service within the map transaction; players do not
+gain journal edit permission. Rehearsals report quest changes and roll prompts
+without persisting journals or delivering player windows. Templates, delayed
+references and archives preserve these bindings and authored roll labels.
 
 Blueprint V2 `all`/`any` are pure Boolean values with inputs `a`–`d` and `result`.
 Connected inputs evaluate in fixed order without short circuit; fewer than two
@@ -651,6 +686,23 @@ The former `--space-9` value of 34px is replaced by `--space-8` at 32px. Border 
 Host interface CSS must render text at **12px or larger**. Check effective sizes from inherited styles, relative units and font shorthands as well as explicit `font-size`. The existing `--text-3xs`, `--text-2xs` and `--text-xs` names remain available at 12px. Authored text in PDFs and drawings, and scene labels scaled by the camera, retain their authored sizes.
 
 Widths, heights and other component geometry keep their required dimensions. A value specific to one component may use a local `px` literal; reserve shared `--size-*` tokens for values reused across components. Responsive geometry can still use relative units and layout expressions such as `calc()` and `clamp()` where needed.
+
+### Form controls
+
+The shared `base.css` supplies dark, low-specificity defaults for native fields and buttons,
+file chooser buttons, checkboxes, sliders and color swatches, including forms
+mounted after page load. Use `gw-field` for a label, control and help text;
+checkboxes, radios, ranges and colors retain their own geometry rather than
+inheriting text-field dimensions. Native invalid fields and `aria-invalid="true"`
+use the field error treatment. Associate hints and errors with `aria-describedby`.
+
+Single-choice selects inherit their chevron from the base styles. Override their
+surface with `background-color`, since the `background` shorthand removes that
+image, and reserve end padding for the chevron. Multiple/visible-list selects do
+not use a chevron. Custom upload surfaces must keep the real file input reachable
+by keyboard, show its focus, and prevent window dragging from the upload target.
+Check empty, selected, disabled and error states at narrow viewport widths with
+synthetic data; operating-system file selection remains the native file picker.
 
 ## Native state and realtime
 

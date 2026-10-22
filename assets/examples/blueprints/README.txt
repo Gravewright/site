@@ -1,5 +1,5 @@
 Gravewright Blueprint examples / Exemplos de Blueprint
-Host: 0.3.0, source revision 23ea61b8efb566cad0e3359489b0dad45e214906
+Host: 0.3.1, source revision 0e91fef9d1340863c56e120bda81d5a6c30bc892
 
 These are synthetic Blueprint v2 development fixtures, not installable module
 packages, complete Builder projects or campaign archives. Recreate them in the
@@ -22,13 +22,20 @@ Main recipes:
     region-pressure-plate.json
     execution-data.json
 
-nodes/ contains a complete graph for each of the 42 validated node types.
+nodes/ contains a complete graph for each of the 44 validated node types.
 node-catalog.json records each central node. resources.json contains synthetic
 UUIDs: replace them through the actual editor selectors, not arbitrary live
 database writes. A UUID passing syntax validation does not grant ownership.
 setAppearance requires a compatible dynamic surface Target. Teleport requires
 a verified triggering token and a destination in the same scene. Self state
 and scene state are not changed by the local evaluator.
+requestRoll predicts a prompt with expression, label, visibility and audience;
+it does not roll dice or wait for a result. Eligible recipients explicitly roll
+through the native prompt; streamers do not receive it. setQuestStatus predicts
+a change to an existing campaign quest. Bind resources.quest through the editor;
+the live server requires an active GM authority and grants no general journal
+editing permission to an interacting player. The checker tries both roll
+visibilities and all six quest statuses without drawing dice or querying data.
 
 Estes arquivos sao fixtures sinteticas de desenvolvimento de Blueprint v2.
 Nao sao modulos instalaveis, projetos completos do Builder ou campanhas.
@@ -37,5 +44,12 @@ Extraia em data/blueprint-examples de um checkout descartavel e execute o
 comando acima. O verificador valida o formato e preve acoes, sem consultar banco.
 Use Test behavior e teste como GM/jogador para conferir alvos reais,
 autorizacao, componentes e cadeias completas no servidor.
+O catalogo inclui os 44 tipos de no do host 0.3.1. requestRoll preve um pedido
+de rolagem, sem rolar dados nem esperar o resultado; cada destinatario elegivel
+escolhe rolar na janela nativa, e streamers nao recebem o pedido. setQuestStatus
+preve uma mudanca em missao existente da campanha: vincule resources.quest pelo
+editor. O servidor exige autoridade de GM ativo e nao concede ao jogador
+permissao geral de editar diarios. O verificador cobre as duas visibilidades de
+rolagem e os seis status de missao, sem rolar dados nem consultar banco.
 
 All example messages and fixtures are original synthetic documentation content.

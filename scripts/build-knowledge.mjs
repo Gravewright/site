@@ -38,8 +38,8 @@ function publicationCopy(article, locale, markdown) {
       .replace(/Um sistema pode distribuir sua interface e suas regras de servidor\nem pacotes separados\./,'Cada novo sistema de RPG deve usar um único pacote de sistema instalável e as\nAPIs de automação suportadas pela versão solicitada do host. Esta release não\npermite que um manifesto de sistema de navegador também declare um app Django.\nRegistre requisitos de servidor sem suporte como limitações; não crie um\ncomplemento instalado separadamente nem exija uma atualização do host para\nresolver uma tarefa de pacote de sistema. O contrato de provedores Python\ncontinua como referência de integrações confiáveis de servidor.');
   }
   if(article.slug==='map-builder') {
-    if(locale==='en') text=text.replace(/This guide describes the current checkout being documented for the next\n\*\*0\.3\.0\*\* release; it does not announce publication\./,'This guide describes the Map Builder implementation in the documented\n**0.3.0** source revision.');
-    else text=text.replace('Este guia descreve o código atual que está sendo documentado para a próxima\nversão **0.3.0**; não anuncia sua publicação.','Este guia descreve a implementação do Map Builder na revisão documentada\nda **0.3.0**.');
+    if(locale==='en') text=text.replace(/This guide describes the current checkout being documented for the next\n\*\*0\.3\.0\*\* release; it does not announce publication\./,`This guide describes the Map Builder implementation in the documented\n**${publicVersion}** source revision.`);
+    else text=text.replace('Este guia descreve o código atual que está sendo documentado para a próxima\nversão **0.3.0**; não anuncia sua publicação.',`Este guia descreve a implementação do Map Builder na revisão documentada\nda **${publicVersion}**.`);
   }
   return text;
 }

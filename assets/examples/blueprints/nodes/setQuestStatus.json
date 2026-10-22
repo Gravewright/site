@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "kind": "door",
+  "states": {
+    "closed": {
+      "appearance": "inherit"
+    },
+    "open": {
+      "appearance": "inherit"
+    },
+    "locked": {
+      "appearance": "inherit"
+    }
+  },
+  "graphs": {
+    "interact": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "event",
+          "x": 40,
+          "y": 80,
+          "event": "interact"
+        },
+        {
+          "id": "sample",
+          "type": "setQuestStatus",
+          "x": 300,
+          "y": 80,
+          "journalId": "88888888-8888-4888-8888-888888888888",
+          "status": "active"
+        }
+      ],
+      "edges": [
+        {
+          "from": "start",
+          "to": "sample",
+          "output": "next",
+          "kind": "execution"
+        }
+      ]
+    }
+  }
+}

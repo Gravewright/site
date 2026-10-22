@@ -103,11 +103,18 @@ uv run --locked python tests/e2e/frontend_api.py
 uv run --locked python tests/e2e/https.py
 uv run --locked python tests/e2e/runner.py
 uv run --locked python tests/web/window_i18n_browser.py
+uv run --locked python tests/web/form_controls_browser.py
 ```
 
 The standalone window test serves only static host files and checks native
 controls in English, Portuguese and Spanish, including listener disposal and
 preservation of authored content. It does not load a campaign or database.
+
+The standalone form-control test exercises the shared theme, keyboard file
+selection, checkbox/range behavior, validation, disabled/read-only fields and
+320px layouts. It also checks that mapped PDF fields retain their authored
+dimensions inside table windows. It serves static files with synthetic controls
+and writes screenshots to `test-results/form-controls/` without a database.
 
 `uv run --locked python tests/e2e/board_scene_refresh.py` exercises same-scene
 updates with real WebGL, synthetic artwork and delayed tile responses. It checks
@@ -165,6 +172,11 @@ permissions, read-only access and first-pack creation. Results go to
 <results-directory> [--browser-executable <chromium>]` checks the native item
 directory's density, item/folder/type ordering, search, keyboard menus,
 duplication, moving and read-only controls. Stop each owned server afterward.
+
+`tests/e2e/actor_form_layout.py --seed <fixture>/seed.json --output <results-directory>`
+uses the same disposable fixture to verify actor/folder modal layouts at desktop,
+390px and 320px, focus trapping/restoration, Escape/cancel, pending saves and
+failure/retry with real persistence. It also accepts `--browser-executable`.
 
 | Change | Relevant scenarios |
 | --- | --- |
@@ -267,6 +279,42 @@ streamer refusal. It uses synthetic artwork and the shared disposable campaign,
 database, media, port and output isolation. Domain coverage is in
 `gravewright.maps.tests.test_torches`; pure builder and native image model tests
 cover ownership, affine transforms, missing references and duplicated IDs.
+
+`uv run --locked python tests/e2e/map_builder_interactions.py` authors dice
+requests, journal opening and quest status changes through the real node editor,
+then exercises them as players in a disposable campaign. It checks one-player
+and all-player delivery, authoritative dice results, previews and localized
+desktop/mobile layouts. Use `--output` and `--browser-executable` for isolated
+diagnostics and an existing browser. Domain coverage is in
+`gravewright.maps.tests.test_blueprint_interactions`.
+
+`uv run --locked python tests/e2e/map_builder_ingame_sync.py` edits generated
+objects through the game, reopens the linked Builder and updates the same scene.
+It checks imported geometry/artwork/light settings, deletion, independent local
+drafts, conflicts, Undo, manual content and preserved live state, including a
+Portuguese mobile viewport. It uses the disposable Builder fixture and accepts
+`--output` and `--browser-executable`. Django coverage is in
+`gravewright.maps.tests.test_builder_sync`; merge and history cases run with
+`node --test gravewright/maps/static/gravewright_maps/builder/scene-sync-model.test.mjs`.
+
+`uv run --locked python tests/e2e/map_builder_object_menu.py` checks mouse and
+keyboard object menus, property section modals, region map picking and the 14
+configurable models in an isolated Builder campaign. It verifies cancel,
+replacement, media omissions, Undo/Redo, simulation and saved generation, then
+measures native active/inactive artwork pixels and actual sound playback.
+Layouts cover English, Portuguese and Spanish at desktop, 390px and 320px widths,
+including the touch-accessible Object options action. Use `--output` and
+`--browser-executable` for isolated results and an existing browser.
+
+`uv run --locked python tests/web/automation_roll_browser.py` checks the native
+roll modal and realtime transport with synthetic socket replies: explicit submit,
+stable retry identity/scene, busy/error/success states, keyboard focus, localization,
+long content and disposal. `tests/web/interactive_object_catalog_browser.py`
+checks preset configuration, journal/player selection, optional sound and image,
+replacement confirmation, empty catalogs and English/Portuguese/Spanish layouts
+down to 320px. Both serve
+static host assets with synthetic data and accept the same output/browser options;
+they do not access campaign data.
 
 `uv run --locked python tests/e2e/map_builder_composite_conditions.py` constructs
 All/Any through the actual Blueprint editor, checks pure simulation, saved typed

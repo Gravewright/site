@@ -90,9 +90,9 @@ Os eventos de domínio incluem actors.changed, tokens.changed, maps.changed, map
 
 ## Map Builder e automação visual
 
-Os quatro donos door/lever/torch/region, as conexões execution/data e os 42 node.type têm [grafo completo, JSON e passos no editor](docs:examples-blueprints). O [catálogo de nós](docs:example-blueprint-nodes) explica recursos, alvos e efeitos. Use a ação nativa de Test behavior/playtest antes de aplicar na cena. Esses grafos são documentos de desenvolvimento, não uma API browser para importar qualquer JSON nem um campo novo do manifesto.
+Os quatro donos door/lever/torch/region, as conexões execution/data e os 44 node.type têm [grafo completo, JSON e passos no editor](docs:examples-blueprints). O [catálogo de nós](docs:example-blueprint-nodes) explica recursos, alvos e efeitos. Use a ação nativa de Test behavior/playtest antes de aplicar na cena. Esses grafos são documentos de desenvolvimento, não uma API browser para importar qualquer JSON nem um campo novo do manifesto.
 
-O tutorial de [cenas](docs:tutorial-maps) mostra a API pública de camadas/objetos. Criar novos kinds ou portas do editor exige contribuição ao core e seus testes; a release 0.3.0 não promete uma API de plugin para registrar tipos arbitrários de nó.
+O tutorial de [cenas](docs:tutorial-maps) mostra a API pública de camadas/objetos. Criar novos kinds ou portas do editor exige contribuição ao core e seus testes; a release 0.3.1 não promete uma API de plugin para registrar tipos arbitrários de nó.
 
 ## Integrações de servidor e limites da release
 
@@ -163,9 +163,9 @@ Domain events include actors.changed, tokens.changed, maps.changed, maps.layersC
 
 ## Map Builder and visual automation
 
-All four door/lever/torch/region owners, execution/data connections and 42 node.type values have [complete graphs, JSON and editor steps](docs:examples-blueprints). The [node catalog](docs:example-blueprint-nodes) explains targets, resources and effects. Use native Test behavior/playtest before live application. These graphs are development documents, not a browser API for importing arbitrary JSON or a new manifest field.
+All four door/lever/torch/region owners, execution/data connections and 44 node.type values have [complete graphs, JSON and editor steps](docs:examples-blueprints). The [node catalog](docs:example-blueprint-nodes) explains targets, resources and effects. Use native Test behavior/playtest before live application. These graphs are development documents, not a browser API for importing arbitrary JSON or a new manifest field.
 
-The [scene tutorial](docs:tutorial-maps) implements public layer/object operations. Adding new kinds or editor ports requires a core contribution and tests; 0.3.0 does not promise a plugin API for arbitrary node-type registration.
+The [scene tutorial](docs:tutorial-maps) implements public layer/object operations. Adding new kinds or editor ports requires a core contribution and tests; 0.3.1 does not promise a plugin API for arbitrary node-type registration.
 
 ## Server integrations and release boundaries
 

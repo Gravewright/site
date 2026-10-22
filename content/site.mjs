@@ -1,7 +1,7 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.3.0';
+export const publicVersion = '0.3.1';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
@@ -20,8 +20,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright 0.3.0 — Universal VTT with Map Builder",
-    "description": "Build maps, connect Smart Object nodes and play in a free, open-source universal VTT. Gravewright 0.3.0 for Windows, Linux and macOS.",
+    "title": "Gravewright 0.3.1 — Universal VTT with Map Builder",
+    "description": "Build interactive maps, choose your system and play in a free, open-source universal VTT. Gravewright 0.3.1 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -39,7 +39,7 @@ export const locales = {
     "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.3.0 Alpha · Windows, Linux and macOS installers included",
+    "downloadHint": "Available now: 0.3.1 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,24 +118,24 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Create more with 0.3.0 Alpha.",
-    "releaseCopy": "Gravewright 0.3.0 brings Map Builder, visual Smart Object behaviors and Universal VTT import/export to the universal tabletop. Prepare editable maps, generate private scenes and update them as your campaign grows.",
+    "releaseTitle": "Keep your table moving with 0.3.1 Alpha.",
+    "releaseCopy": "From campaign setup to the next map interaction, Gravewright 0.3.1 refines forms, adds editable object models and brings compatible game edits back into Map Builder. Your campaigns, systems and tools still share one universal table.",
     "releaseFeatures": [
       [
-        "Build maps in layers",
-        "Paint floors, shape walls and doors, and add objects, lights and effects in one workspace. Import a finished image when you already have a map."
+        "Prepare campaigns with consistent forms",
+        "Choose a campaign cover by keyboard or drag and drop, preview it and remove a saved image. Forms across the host follow the same visual theme, with clearer focus and narrow-screen layouts."
       ],
       [
-        "Connect Smart Objects",
-        "Use visual nodes to connect events, conditions and actions. Make doors, levers and lights respond to interactions in your scenes."
+        "Give objects something to do",
+        "Open object menus and choose from 14 editable behavior models. Ask players for dice rolls, open journals and update quest status through native scene interactions."
       ],
       [
-        "Transfer Universal VTT maps",
-        "Import .uvtt, .dd2vtt or .df2vtt as native scenes with walls, doors and lights. Export a current scene with its portable map data."
+        "Bring game edits back to the project",
+        "Import compatible edits from a generated scene into its Builder project. Continue preparing while preserving changes from play, with explicit recovery when edits conflict."
       ],
       [
-        "Keep preparing, keep your work",
-        "Projects save automatically and support Undo/Redo. Generate a GM-only scene, update it in place and activate it for players when ready."
+        "Find tools in your language",
+        "Marketplace categories and tag badges follow your selected Translator language. Search systems and modules using original or translated tags in English, Brazilian Portuguese or Spanish."
       ]
     ],
     "installLabel": "Start your campaign",
@@ -251,19 +251,19 @@ export const locales = {
       ],
       [
         "Can I use the interface in Portuguese or Spanish?",
-        "Install Translator from the Marketplace and activate its languages. Each user can choose English, Brazilian Portuguese or Spanish. Documents and text written by your group keep their original language."
+        "Install Translator from the Marketplace and activate its languages. Each user can choose English, Brazilian Portuguese or Spanish; Marketplace categories, tags and tag searches follow that choice. Documents and text written by your group keep their original language."
       ],
       [
         "Where are my campaigns stored?",
         "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.3.0 available to download?",
-        "Yes. Gravewright 0.3.0 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
+        "Is 0.3.1 available to download?",
+        "Yes. Gravewright 0.3.1 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Keep backups of important campaigns and read the release notes before upgrading."
       ],
       [
         "What can I build with Map Builder?",
-        "Paint maps, organize layers and add walls, doors, objects, lights and effects. Connect Smart Object nodes for scene interactions. Projects save automatically; generate a GM-only scene or update its linked scene. Activating it for players is a separate action."
+        "Paint maps, organize layers and add walls, doors, objects, lights and effects. Use object menus, choose from 14 editable behavior models or connect your own Smart Object nodes. Generate a GM-only scene, bring compatible scene edits back into the project and update its linked scene. Activating it for players is a separate action."
       ],
       [
         "Can I import a map I already have?",
@@ -300,21 +300,21 @@ export const locales = {
     "transcript": "Read the transcript",
     "musicCredit": "Music",
     "systemDetails": "See this optional system in action",
-    "builderLabel": "New in 0.3.0 · Map Builder",
+    "builderLabel": "Map Builder · Updated in 0.3.1",
     "builderTitle": "Build the map. Connect what happens next.",
-    "builderCopy": "Paint your map or import finished artwork, organize its layers and connect Smart Object nodes for doors, lights and scene interactions. Projects save automatically while you prepare.",
+    "builderCopy": "Paint a map or import finished artwork, open object menus and start with 14 editable Smart Object models. Configure doors, sounds, dice requests and quest interactions, then bring compatible scene edits back into the project. Your work saves automatically while you prepare.",
     "builderSteps": [
       [
         "Build your map",
         "Paint floors, draw walls and place doors, objects, lights and effects. Use your own layers or import a finished map as the background."
       ],
       [
-        "Connect the nodes",
-        "Connect events, conditions and actions in the visual Smart Object editor. Create interactions for doors, levers and scene objects, then test their behavior."
+        "Choose a model or connect the nodes",
+        "Configure a chest, door control, dice prompt or quest interaction using 14 ready-made models. Customize their nodes and optional sound or artwork, then test the behavior before play."
       ],
       [
         "Bring it to the table",
-        "Generate a GM-only scene or update the scene linked to your project. Activate it for players separately when you are ready."
+        "Generate a GM-only scene or update its linked scene. Reopen the Builder or return to its tab to import compatible scene edits; activate the scene for players separately when ready."
       ]
     ],
     "builderGuide": "Open the Map Builder guide",
@@ -342,8 +342,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright 0.3.0 — VTT universal com Map Builder",
-    "description": "Crie mapas, conecte nodes de Objetos Inteligentes e jogue em um VTT universal gratuito e open source. Gravewright 0.3.0 para Windows, Linux e macOS.",
+    "title": "Gravewright 0.3.1 — VTT universal com Map Builder",
+    "description": "Crie mapas interativos, escolha seu sistema e jogue em um VTT universal gratuito e open source. Gravewright 0.3.1 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -361,7 +361,7 @@ export const locales = {
     "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.3.0 Alpha · Instaladores Windows, Linux e macOS incluídos",
+    "downloadHint": "Disponível agora: 0.3.1 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -440,24 +440,24 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Crie mais com a 0.3.0 Alpha.",
-    "releaseCopy": "O Gravewright 0.3.0 traz o Map Builder, comportamentos visuais de Objetos Inteligentes e importação/exportação Universal VTT para a mesa universal. Prepare mapas editáveis, gere cenas privadas e atualize-as conforme a campanha cresce.",
+    "releaseTitle": "Mantenha a mesa em movimento com a 0.3.1 Alpha.",
+    "releaseCopy": "Da criação da campanha à próxima interação no mapa, o Gravewright 0.3.1 refina os formulários, acrescenta modelos editáveis de objetos e traz edições compatíveis da mesa de volta ao Map Builder. Campanhas, sistemas e ferramentas continuam na mesma mesa universal.",
     "releaseFeatures": [
       [
-        "Construa mapas em camadas",
-        "Pinte pisos, forme paredes e portas e adicione objetos, luzes e efeitos em uma área de trabalho. Importe uma imagem pronta quando já tiver um mapa."
+        "Prepare campanhas com formulários consistentes",
+        "Escolha a capa da campanha pelo teclado ou arrastando um arquivo, confira a prévia e remova uma imagem salva. Os formulários do host seguem o mesmo tema visual, com foco mais claro e ajustes para telas estreitas."
       ],
       [
-        "Conecte Objetos Inteligentes",
-        "Use nodes visuais para conectar eventos, condições e ações. Faça portas, alavancas e luzes responderem às interações das suas cenas."
+        "Dê uma função aos objetos",
+        "Abra os menus dos objetos e escolha entre 14 modelos editáveis de comportamento. Peça rolagens aos jogadores, abra diários e atualize missões por interações nativas da cena."
       ],
       [
-        "Transfira mapas Universal VTT",
-        "Importe .uvtt, .dd2vtt ou .df2vtt como cenas nativas com paredes, portas e luzes. Exporte uma cena atual com os dados portáteis do mapa."
+        "Traga edições da mesa para o projeto",
+        "Importe edições compatíveis de uma cena gerada para o projeto do Builder. Continue preparando o mapa e preserve as mudanças feitas na mesa, com recuperação explícita quando houver conflito."
       ],
       [
-        "Continue criando e preserve seu trabalho",
-        "Os projetos são salvos automaticamente e aceitam Desfazer/Refazer. Gere uma cena exclusiva do mestre, atualize-a no mesmo lugar e ative-a para os jogadores quando estiver pronto."
+        "Encontre ferramentas no seu idioma",
+        "Categorias e tags do Marketplace seguem o idioma escolhido no Translator. Busque sistemas e módulos pelas tags originais ou traduzidas em inglês, português brasileiro ou espanhol."
       ]
     ],
     "installLabel": "Comece sua campanha",
@@ -573,19 +573,19 @@ export const locales = {
       ],
       [
         "Posso usar a interface em português ou espanhol?",
-        "Instale o Translator pelo Marketplace e ative seus idiomas. Cada usuário pode escolher inglês, português brasileiro ou espanhol. Documentos e textos escritos pelo grupo mantêm o idioma original."
+        "Instale o Translator pelo Marketplace e ative seus idiomas. Cada usuário pode escolher inglês, português brasileiro ou espanhol; categorias, tags e busca por tags do Marketplace seguem essa escolha. Documentos e textos escritos pelo grupo mantêm o idioma original."
       ],
       [
         "Onde ficam minhas campanhas?",
         "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.3.0 já está disponível para baixar?",
-        "Sim. O Gravewright 0.3.0 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
+        "A 0.3.1 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.1 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Mantenha backups das campanhas importantes e leia as notas antes de atualizar."
       ],
       [
         "O que posso criar com o Map Builder?",
-        "Pinte mapas, organize camadas e adicione paredes, portas, objetos, luzes e efeitos. Conecte nodes de Objetos Inteligentes para as interações da cena. Os projetos são salvos automaticamente; gere uma cena exclusiva do mestre ou atualize a cena vinculada ao projeto. Ativá-la para os jogadores é uma ação separada."
+        "Pinte mapas, organize camadas e adicione paredes, portas, objetos, luzes e efeitos. Use os menus de objetos, escolha entre 14 modelos editáveis de comportamento ou conecte seus próprios nós de Objetos Inteligentes. Gere uma cena exclusiva do mestre, traga edições compatíveis da cena de volta ao projeto e atualize a cena vinculada. Ativá-la para os jogadores é uma ação separada."
       ],
       [
         "Posso importar um mapa que já tenho?",
@@ -622,21 +622,21 @@ export const locales = {
     "transcript": "Ler a transcrição",
     "musicCredit": "Música",
     "systemDetails": "Veja este sistema opcional em uso",
-    "builderLabel": "Novo na 0.3.0 · Map Builder",
+    "builderLabel": "Map Builder · Novidades da 0.3.1",
     "builderTitle": "Crie o mapa. Conecte o que acontece depois.",
-    "builderCopy": "Pinte seu mapa ou importe uma imagem pronta, organize as camadas e conecte nodes de Objetos Inteligentes para portas, luzes e interações da cena. Os projetos são salvos automaticamente enquanto você prepara a sessão.",
+    "builderCopy": "Pinte um mapa ou importe uma imagem pronta, abra menus de objetos e comece com 14 modelos editáveis de Objetos Inteligentes. Configure portas, sons, pedidos de rolagem e interações com missões, depois traga edições compatíveis da cena para o projeto. Seu trabalho é salvo automaticamente enquanto você prepara.",
     "builderSteps": [
       [
         "Construa seu mapa",
         "Pinte pisos, desenhe paredes e adicione portas, objetos, luzes e efeitos. Use suas próprias camadas ou importe um mapa pronto como fundo."
       ],
       [
-        "Conecte os nodes",
-        "Conecte eventos, condições e ações no editor visual de Objetos Inteligentes. Crie interações para portas, alavancas e objetos da cena e teste seus comportamentos."
+        "Escolha um modelo ou conecte os nós",
+        "Configure um baú, controle de porta, pedido de rolagem ou interação com missão usando 14 modelos prontos. Personalize seus nós e o som ou a imagem opcional e teste o comportamento antes de jogar."
       ],
       [
         "Leve para a mesa",
-        "Gere uma cena exclusiva do mestre ou atualize a cena vinculada ao projeto. Ative-a para os jogadores separadamente quando estiver pronto."
+        "Gere uma cena exclusiva do mestre ou atualize a cena vinculada. Reabra o Builder ou volte à sua aba para importar edições compatíveis da cena; ative-a para os jogadores separadamente quando estiver pronto."
       ]
     ],
     "builderGuide": "Abra o guia do Map Builder",
