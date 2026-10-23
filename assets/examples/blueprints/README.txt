@@ -1,5 +1,5 @@
 Gravewright Blueprint examples / Exemplos de Blueprint
-Host: 0.3.1, source revision 0e91fef9d1340863c56e120bda81d5a6c30bc892
+Host: 0.3.2, source revision 04f0c1ee48341f2cfd3d47418138d3380db7ea2e
 
 These are synthetic Blueprint v2 development fixtures, not installable module
 packages, complete Builder projects or campaign archives. Recreate them in the
@@ -22,7 +22,7 @@ Main recipes:
     region-pressure-plate.json
     execution-data.json
 
-nodes/ contains a complete graph for each of the 44 validated node types.
+nodes/ contains a complete graph for each of the 48 validated node types.
 node-catalog.json records each central node. resources.json contains synthetic
 UUIDs: replace them through the actual editor selectors, not arbitrary live
 database writes. A UUID passing syntax validation does not grant ownership.
@@ -44,7 +44,7 @@ Extraia em data/blueprint-examples de um checkout descartavel e execute o
 comando acima. O verificador valida o formato e preve acoes, sem consultar banco.
 Use Test behavior e teste como GM/jogador para conferir alvos reais,
 autorizacao, componentes e cadeias completas no servidor.
-O catalogo inclui os 44 tipos de no do host 0.3.1. requestRoll preve um pedido
+O catalogo inclui os 48 tipos de no do host 0.3.2. requestRoll preve um pedido
 de rolagem, sem rolar dados nem esperar o resultado; cada destinatario elegivel
 escolhe rolar na janela nativa, e streamers nao recebem o pedido. setQuestStatus
 preve uma mudanca em missao existente da campanha: vincule resources.quest pelo
@@ -53,3 +53,19 @@ permissao geral de editar diarios. O verificador cobre as duas visibilidades de
 rolagem e os seis status de missao, sem rolar dados nem consultar banco.
 
 All example messages and fixtures are original synthetic documentation content.
+
+New in 0.3.2: clockControl and clueControl change only the selected authored
+progress resource; live execution requires an active campaign GM authority.
+openMindMap opens only a permitted map and optional topic for its audience;
+it does not share the map or grant access to linked documents. mindMapNode
+marks one existing topic complete, incomplete or toggled through a specific
+GM-authored action, without granting general map editing permissions.
+Bind the synthetic clock, clue, mind map and topic UUIDs through the real editor.
+The checker predicts actions without querying or changing real resources.
+
+Novos na 0.3.2: clockControl e clueControl alteram somente o progresso escolhido
+pelo autor; a execução exige autoridade de um GM ativo da campanha. openMindMap
+abre mapa/tópico permitido para seu público, sem compartilhar o mapa ou conceder
+acesso aos documentos vinculados. mindMapNode altera a conclusão de um tópico
+por ação específica do GM, sem conceder edição geral. Escolha recursos reais
+pelos seletores do editor; o verificador só prevê ações com UUIDs sintéticos.

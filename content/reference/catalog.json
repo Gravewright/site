@@ -1,6 +1,6 @@
 {
-  "sourceRevision": "0e91fef9d1340863c56e120bda81d5a6c30bc892",
-  "version": "0.3.1",
+  "sourceRevision": "04f0c1ee48341f2cfd3d47418138d3380db7ea2e",
+  "version": "0.3.2",
   "articles": [
     {
       "slug": "getting-started",
@@ -288,6 +288,132 @@
         "title": "Referência dos fluxos da aplicação",
         "summary": "Guia completo do projeto para preparar campanhas e usar as ferramentas da mesa.",
         "file": "content/reference/pt/user-guide.md"
+      }
+    },
+    {
+      "slug": "campaign-management",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/campaign-management.md",
+        "docs/pt-BR/campaign-management.md"
+      ],
+      "en": {
+        "title": "Campaign management",
+        "summary": "Native GM preparation, seven planning tools, archives and history outside the table.",
+        "file": "content/reference/en/campaign-management.md"
+      },
+      "pt": {
+        "title": "Gestão de campanha",
+        "summary": "Preparação nativa do mestre, sete ferramentas de planejamento, arquivos e histórico fora da mesa.",
+        "file": "content/reference/pt/campaign-management.md"
+      }
+    },
+    {
+      "slug": "journals",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/journals.md",
+        "docs/pt-BR/journals.md"
+      ],
+      "en": {
+        "title": "Journals and resource links",
+        "summary": "Independent chapters, page access, campaign references and portable journal content.",
+        "file": "content/reference/en/journals.md"
+      },
+      "pt": {
+        "title": "Diários e vínculos de recursos",
+        "summary": "Capítulos independentes, acesso às páginas, referências de campanha e conteúdo portátil dos diários.",
+        "file": "content/reference/pt/journals.md"
+      }
+    },
+    {
+      "slug": "clocks",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/clocks.md",
+        "docs/pt-BR/clocks.md"
+      ],
+      "en": {
+        "title": "Progress clocks",
+        "summary": "Shared segmented goals, permissions, pinned indicators and MapBuilder controls.",
+        "file": "content/reference/en/clocks.md"
+      },
+      "pt": {
+        "title": "Relógios de progresso",
+        "summary": "Objetivos compartilhados por segmentos, permissões, indicadores fixados e controles do MapBuilder.",
+        "file": "content/reference/pt/clocks.md"
+      }
+    },
+    {
+      "slug": "clues",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/clues.md",
+        "docs/pt-BR/clues.md"
+      ],
+      "en": {
+        "title": "Staged clues",
+        "summary": "GM-authored discoveries, completed revelation and protected notes.",
+        "file": "content/reference/en/clues.md"
+      },
+      "pt": {
+        "title": "Pistas por etapas",
+        "summary": "Descobertas preparadas pelo mestre, revelação concluída e notas protegidas.",
+        "file": "content/reference/pt/clues.md"
+      }
+    },
+    {
+      "slug": "mindmaps",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/mindmaps.md",
+        "docs/pt-BR/mindmaps.md"
+      ],
+      "en": {
+        "title": "Mind maps",
+        "summary": "Collaborative topic graphs, authorized player editors and 37 typed resource links.",
+        "file": "content/reference/en/mindmaps.md"
+      },
+      "pt": {
+        "title": "Mapas mentais",
+        "summary": "Grafos colaborativos, jogadores autorizados a editar e 37 tipos de vínculos de recursos.",
+        "file": "content/reference/pt/mindmaps.md"
+      }
+    },
+    {
+      "slug": "pdf-system",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/pdf-system.md",
+        "docs/pt-BR/pdf-system.md"
+      ],
+      "en": {
+        "title": "PDF System",
+        "summary": "Manual PDF fields, token bars, roll actions, calculations, mapping libraries and export.",
+        "file": "content/reference/en/pdf-system.md"
+      },
+      "pt": {
+        "title": "PDF System",
+        "summary": "Campos manuais no PDF, barras do token, ações de rolagem, cálculos, biblioteca de modelos e exportação.",
+        "file": "content/reference/pt/pdf-system.md"
+      }
+    },
+    {
+      "slug": "upgrading",
+      "group": "reference",
+      "sourcePaths": [
+        "docs/en/upgrading.md",
+        "docs/pt-BR/upgrading.md"
+      ],
+      "en": {
+        "title": "Upgrade and recovery",
+        "summary": "Seven migrations for 0.3.2, compatible backups, manual replacement and recovery.",
+        "file": "content/reference/en/upgrading.md"
+      },
+      "pt": {
+        "title": "Atualização e recuperação",
+        "summary": "Sete migrações para a 0.3.2, backups compatíveis, substituição manual e recuperação.",
+        "file": "content/reference/pt/upgrading.md"
       }
     },
     {

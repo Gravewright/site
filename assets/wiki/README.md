@@ -1,5 +1,15 @@
 # Product wiki screenshots / Capturas da wiki de produto
 
+This collection includes current **0.3.2** captures under `../images/*032*.webp`
+and preserves the 15 earlier **0.3.0** screenshots unchanged. Current provenance
+is recorded at the end; the historical 0.3.0 record follows here.
+
+A coleção reúne capturas atuais da **0.3.2** em `../images/*032*.webp` e preserva
+os 15 prints anteriores da **0.3.0**. A procedência atual está ao fim; abaixo
+permanece o registro histórico da 0.3.0, com suas tabelas intactas.
+
+## Historical 0.3.0 captures / Capturas históricas da 0.3.0
+
 These 15 WebP images are real browser captures of **Gravewright VTT 0.3.0**, taken
 on 20 October 2026 from source revision
 `23ea61b8efb566cad0e3359489b0dad45e214906`. Each image is 1440 × 900 pixels.
@@ -83,3 +93,23 @@ and [third-party notices](https://github.com/Gravewright/gravewright/blob/v0.3.0
 
 These new images are separate from the site's historical 0.2.1 screenshots and
 recording and from the existing `assets/images/map-builder-nodes-030.webp` image.
+
+## Current 0.3.2 captures / Capturas atuais da 0.3.2
+
+The current images live under `../images/*032*.webp`; `content/wiki-media.json`
+identifies each capture's actual version and associations. New 1920 × 1080
+English-interface captures cover the dashboard, tabletop, scene/actor directories,
+combat, chat, campaign manager, mind maps, journal chapters/references, PDF mapping
+and field actions, and Smart Object integrations. Main-gallery counterparts also
+show the real Brazilian Portuguese interface. Unreplaced 0.3.0 screenshots above
+remain historical and explicitly retain their captured version.
+
+As imagens atuais ficam em `../images/*032*.webp`. Os registros identificam a
+versão realmente capturada. As novas telas reais da 0.3.2 estão em 1920 × 1080,
+com interface em inglês; a galeria principal também tem capturas em português.
+Os prints antigos não substituídos permanecem históricos, identificados como 0.3.0.
+
+The published host commit, original artwork, isolated fixture, native UI actions,
+lossless pixel checks and licenses are documented in
+[the demonstration record](../demo/README.md#published-032-interface-captures-and-recording).
+Hashes are in [the machine-readable record](../demo/scripts/media-032-provenance.json).

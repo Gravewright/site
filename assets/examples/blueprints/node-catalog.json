@@ -525,5 +525,59 @@
       "seconds": 10
     },
     "type": "cooldown"
+  },
+  {
+    "file": "nodes/clockControl.json",
+    "node": {
+      "id": "sample",
+      "type": "clockControl",
+      "x": 300,
+      "y": 80,
+      "clockId": "99999999-9999-4999-8999-999999999999",
+      "action": "advance",
+      "amount": 1
+    },
+    "type": "clockControl"
+  },
+  {
+    "file": "nodes/clueControl.json",
+    "node": {
+      "id": "sample",
+      "type": "clueControl",
+      "x": 300,
+      "y": 80,
+      "clueId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "action": "advance",
+      "amount": 1
+    },
+    "type": "clueControl"
+  },
+  {
+    "file": "nodes/openMindMap.json",
+    "node": {
+      "id": "sample",
+      "type": "openMindMap",
+      "x": 300,
+      "y": 80,
+      "mindMapId": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "nodeId": null,
+      "audience": {
+        "scope": "trigger"
+      }
+    },
+    "type": "openMindMap"
+  },
+  {
+    "file": "nodes/mindMapNode.json",
+    "node": {
+      "id": "sample",
+      "type": "mindMapNode",
+      "x": 300,
+      "y": 80,
+      "mindMapId": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "nodeId": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+      "action": "complete"
+    },
+    "type": "mindMapNode"
   }
 ]

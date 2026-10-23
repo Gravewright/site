@@ -4,58 +4,57 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.3.1 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
+Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.3.2 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
 
 **Para substituir:** copie os arquivos com os nomes exatos, execute `npm run build` e atualize a página. Não é necessário editar HTML. O build mostra a mídia quando o arquivo existe e mantém o placeholder enquanto estiver ausente. Para trocar nomes ou textos alternativos, edite `content/media.json` e gere novamente.
 
 **Importante:** os textos alternativos precisam corresponder à mídia final. Revise-os se mudar o enquadramento ou a demonstração. Use capturas reais da versão atual, com dados fictícios. Procedência, prompts e hashes das artes estão em [assets/demo/README.md](assets/demo/README.md); créditos e licenças em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Map Builder 0.3.0 · Objetos Inteligentes e nodes conectados · Interface em inglês
+## Objetos Inteligentes conectados à campanha
 
-- Arquivo padrão / alternativa: `assets/images/map-builder-nodes-030.webp`
+- Arquivo padrão / alternativa: `assets/images/map-builder-nodes-032.webp`
+- Arquivo por idioma (English): `assets/images/map-builder-nodes-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/map-builder-nodes-032.pt-BR.webp`
 - Dimensões: **1920 × 1080**
-- Descrição / alt em inglês: Gravewright 0.3.0 Map Builder showing Moonfall gate with five connected Smart Object nodes: interaction, a Closed state check, Opened and Closed actions, and the Gate torch light. Simulation highlights the active path. English interface.
-- Descrição / alt em português: Map Builder do Gravewright 0.3.0 com Moonfall gate e cinco nodes de Objeto Inteligente conectados: interação, verificação do estado Closed, ações Opened e Closed e a luz Gate torch. A simulação destaca o caminho ativo. Interface em inglês.
+- Descrição / alt em inglês: A real Gravewright 0.3.2 Smart Object graph connects a gate interaction to Control clock, Control clue and Open mind map, at native 100% zoom.
+- Descrição / alt em português: Um grafo real de Objeto Inteligente do Gravewright 0.3.2 liga a interação no portão a Controlar relógio, Controlar pista e Abrir mapa mental, a 100% de zoom nativo.
 
 
-Uma captura real da interface em inglês do Gravewright 0.3.0 publicado, compartilhada pelos dois idiomas do site com legenda e texto alternativo traduzidos. Moonfall Workshop é um projeto fictício descartável, com imagem sintética de porta e luz nativa, sem dados reais de campanhas nem arte de terceiros. O grafo aparece a 100% após Simulate, com os cinco nodes e suas conexões visíveis. A conversão WebP sem perdas preserva os pixels do print original. Procedência e hashes estão em assets/demo/README.md.
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
 
-## Moonfall Abbey · Sua próxima cena
+## Moonfall Abbey · Sua mesa na 0.3.2
 
-- Arquivo padrão / alternativa: `assets/images/table-overview-universal-021.webp`
-- Arquivo por idioma (English): `assets/images/table-overview-universal-021.webp`
-- Arquivo por idioma (Português (Brasil)): `assets/images/table-overview-universal-021.pt-BR.webp`
+- Arquivo padrão / alternativa: `assets/images/table-overview-032.webp`
+- Arquivo por idioma (English): `assets/images/table-overview-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/table-overview-032.pt-BR.webp`
 - Dimensões: **1920 × 1080**
-- Descrição / alt em inglês: Gravewright 0.2.1 showing the original Moonfall Abbey map, character tokens and the current tabletop controls.
-- Descrição / alt em português: Gravewright 0.2.1 com o mapa original Moonfall Abbey, tokens de personagens e os controles atuais da mesa.
+- Descrição / alt em inglês: Gravewright 0.3.2 shows the original Moonfall Abbey map, three character tokens, transparent clock and clue indicators, Edit Scene and the new lower-dock shortcuts.
+- Descrição / alt em português: O Gravewright 0.3.2 mostra o mapa original Moonfall Abbey, três tokens de personagens, indicadores transparentes de relógio e pista, Editar Cena e os novos atalhos no dock inferior.
 
 
-Fresh English and Brazilian Portuguese captures of published VTT 0.2.1 in an isolated fictional campaign. The abbey map and character illustration were created for this demonstration.
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
 
-## Gravewright 0.2.1 · Uma mesa universal
+## Gravewright 0.3.2 · Da campanha à mesa
 
-- Arquivo padrão / alternativa: `assets/videos/gravewright-universal-021-showcase.mp4`
+- Arquivo padrão / alternativa: `assets/videos/gravewright-032-showcase.mp4`
 - Dimensões: **1920 × 1080**
-- Descrição / alt em inglês: Gravewright universal VTT in use: maps, tokens, measuring, campaign notes, combat, dice and a brief optional system sheet example.
-- Descrição / alt em português: VTT universal Gravewright em uso: mapas, tokens, medição, anotações da campanha, combate, dados e um breve exemplo de ficha de sistema opcional.
-- Duração da edição final: **60 s**
+- Descrição / alt em inglês: A silent real-interface tour of Gravewright 0.3.2: tabletop dock, campaign manager, clocks and clues, mind maps, journal references and chapters, mapped PDF fields and Smart Object nodes. English interface with English and Portuguese captions.
+- Descrição / alt em português: Um passeio silencioso pela interface real do Gravewright 0.3.2: dock da mesa, gestor de campanha, relógios e pistas, mapas mentais, referências e capítulos dos diários, campos PDF mapeados e nodes de Objetos Inteligentes. Interface em inglês com legendas em inglês e português.
+- Duração da edição final: **68.5 s**
 
 
-Real VTT 0.2.1 recording centered on the universal tabletop: maps, measuring, campaign notes, combat and chat. DnD 5e SRD 0.1.0 appears briefly as one optional system example. Approved artwork and both original dragon images preserved.
+Real published VTT 0.3.2 recording, English interface, isolated fictional Moonfall campaign. Silent footage with no music or narration. Original approved map and portraits preserved. The first second of browser startup is trimmed; the real UI is neither replaced nor composited.
 
-- Capa do vídeo: `assets/images/table-session-cover.png`
-- Legendas em inglês: `assets/videos/gravewright-universal-021-showcase.en.vtt`
-- Legendas em português: `assets/videos/gravewright-universal-021-showcase.pt-BR.vtt`
-- Transcrição em inglês: `assets/videos/gravewright-universal-021-showcase.en.txt`
-- Transcrição em português: `assets/videos/gravewright-universal-021-showcase.pt-BR.txt`
+- Capa do vídeo: `assets/images/table-overview-032.webp`
+- Legendas em inglês: `assets/videos/gravewright-032-showcase.en.vtt`
+- Legendas em português: `assets/videos/gravewright-032-showcase.pt-BR.vtt`
+- Transcrição em inglês: `assets/videos/gravewright-032-showcase.en.txt`
+- Transcrição em português: `assets/videos/gravewright-032-showcase.pt-BR.txt`
 
 
 O vídeo usa `aria-label` e um título visível, pois `<video>` não aceita `alt` como uma imagem. Use a descrição acima para orientar a transcrição. A capa é exibida pelo player e compartilha o contexto acessível dele.
 
-
-Trilha: [Volatile Reaction — Kevin MacLeod](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Preserve os créditos no encerramento, nas transcrições e nos avisos de terceiros.
-
-## Exemplo de ficha de sistema · Seraphina Vale (DnD 5e SRD)
+## Histórico 0.2.1 · Exemplo de ficha de sistema · Seraphina Vale (DnD 5e SRD)
 
 - Arquivo padrão / alternativa: `assets/images/dnd-character-sheet-010.webp`
 - Arquivo por idioma (English): `assets/images/dnd-character-sheet-010.webp`
@@ -67,19 +66,19 @@ Trilha: [Volatile Reaction — Kevin MacLeod](https://incompetech.com/music/roya
 
 Native character window captured from the signed DnD 5e SRD 0.1.0 system in published VTT 0.2.1. Portuguese interface uses Translator 0.1.2.
 
-## Suas campanhas, reunidas
+## Suas campanhas, reunidas · 0.3.2
 
-- Arquivo padrão / alternativa: `assets/images/campaign-dashboard-universal-021.webp`
-- Arquivo por idioma (English): `assets/images/campaign-dashboard-universal-021.webp`
-- Arquivo por idioma (Português (Brasil)): `assets/images/campaign-dashboard-universal-021.pt-BR.webp`
+- Arquivo padrão / alternativa: `assets/images/campaign-dashboard-032.webp`
+- Arquivo por idioma (English): `assets/images/campaign-dashboard-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/campaign-dashboard-032.pt-BR.webp`
 - Dimensões: **1920 × 1080**
-- Descrição / alt em inglês: Gravewright dashboard with Moonfall Vigil, The Wild Paths and Beyond the Mists, original cover artwork and campaigns using independent game systems.
-- Descrição / alt em português: Painel do Gravewright com Moonfall Vigil, The Wild Paths e Beyond the Mists, capas originais e campanhas com sistemas de jogo independentes.
+- Descrição / alt em inglês: The real Gravewright 0.3.2 campaign dashboard displays Moonfall Vigil, The Wild Paths and Beyond the Mists with the original approved artwork.
+- Descrição / alt em português: O painel real de campanhas do Gravewright 0.3.2 exibe Moonfall Vigil, The Wild Paths e Beyond the Mists com as artes originais autorizadas.
 
 
-Real VTT 0.2.1 dashboard in both interface languages. Campaign names remain in English; the demonstration uses the included PDF System and an optional DnD 5e SRD system. All approved cover artwork is unchanged.
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
 
-## Exemplo de sistema opcional · Compêndio DnD 5e SRD
+## Histórico 0.2.1 · Exemplo de sistema opcional · Compêndio DnD 5e SRD
 
 - Arquivo padrão / alternativa: `assets/images/srd-compendium-universal-010.webp`
 - Arquivo por idioma (English): `assets/images/srd-compendium-universal-010.webp`
@@ -99,7 +98,67 @@ Real native compendium and system sheet. SRD entries remain in English; interfac
 - Descrição / alt em português: Captura preservada da mesa do Gravewright com uma masmorra de lava, um grande token de dragão e um grupo de aventureiros.
 
 
-Original dragon tabletop image preserved unchanged at the user’s request. It illustrates an earlier tabletop interface; the other product captures show VTT 0.2.1.
+Original dragon tabletop image preserved unchanged at the user’s request. Historical interface; the new product captures and recording show published Gravewright 0.3.2.
+
+## Prepare a campanha antes de entrar na mesa
+
+- Arquivo padrão / alternativa: `assets/images/campaign-manager-032.webp`
+- Arquivo por idioma (English): `assets/images/campaign-manager-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/campaign-manager-032.pt-BR.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: Gravewright 0.3.2 campaign management shows pinned documents, a session plan, pending preparation and a timeline event, with clocks, clues and mind maps in its sidebar.
+- Descrição / alt em português: O gestor de campanha do Gravewright 0.3.2 mostra documentos fixados, plano de sessão, preparação pendente e evento de cronologia, com relógios, pistas e mapas mentais na barra lateral.
+
+
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
+
+## Conecte o mistério em um mapa mental
+
+- Arquivo padrão / alternativa: `assets/images/mindmap-connections-032.webp`
+- Arquivo por idioma (English): `assets/images/mindmap-connections-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/mindmap-connections-032.pt-BR.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: The Gravewright 0.3.2 mind-map editor shows six movable topics, branches, a labeled connection, notes, completion and typed links to Moonfall campaign resources.
+- Descrição / alt em português: O editor de mapas mentais do Gravewright 0.3.2 mostra seis tópicos móveis, ramificações, uma conexão com legenda, notas, conclusão e vínculos tipados com recursos da campanha Moonfall.
+
+
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
+
+## Capítulos, anotações e referências da campanha
+
+- Arquivo padrão / alternativa: `assets/images/journal-chapters-references-032.webp`
+- Arquivo por idioma (English): `assets/images/journal-chapters-references-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/journal-chapters-references-032.pt-BR.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: A real Gravewright 0.3.2 journal shows nested and empty chapters, authored expedition notes and live links to a clock, mind map and character.
+- Descrição / alt em português: Um diário real do Gravewright 0.3.2 mostra capítulos aninhados e vazios, anotações autorais da expedição e vínculos ativos com relógio, mapa mental e personagem.
+
+
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
+
+## Acompanhe o progresso no gestor de campanha
+
+- Arquivo padrão / alternativa: `assets/images/progress-clocks-032.webp`
+- Arquivo por idioma (English): `assets/images/progress-clocks-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/progress-clocks-032.pt-BR.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: The Gravewright 0.3.2 campaign manager displays the Lantern Watch progress clock, its segmented face and native configuration controls.
+- Descrição / alt em português: O gestor de campanha do Gravewright 0.3.2 exibe o relógio Lantern Watch, sua face segmentada e os controles nativos de configuração.
+
+
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
+
+## Transforme um PDF plano em uma ficha jogável
+
+- Arquivo padrão / alternativa: `assets/images/pdf-manual-mapping-032.webp`
+- Arquivo por idioma (English): `assets/images/pdf-manual-mapping-032.webp`
+- Arquivo por idioma (Português (Brasil)): `assets/images/pdf-manual-mapping-032.pt-BR.webp`
+- Dimensões: **1920 × 1080**
+- Descrição / alt em inglês: Gravewright 0.3.2 maps text, numeric and checkbox rectangles onto an original noninteractive PDF for Bram Ironwood; mapping and layout controls are visible.
+- Descrição / alt em português: O Gravewright 0.3.2 mapeia retângulos de texto, número e checkbox em um PDF original não interativo de Bram Ironwood; controles de mapeamento e layout estão visíveis.
+
+
+Gravewright 0.3.2 publicado, capturado em inglês e português brasileiro numa campanha fictícia isolada com as artes originais autorizadas do site. Pixels preservados sem perdas; procedência em assets/demo/README.md.
 
 ## Formatos e acessibilidade
 

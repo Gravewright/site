@@ -1,6 +1,6 @@
 {
-  "version": "0.3.1",
-  "sourceRevision": "0e91fef9d1340863c56e120bda81d5a6c30bc892",
+  "version": "0.3.2",
+  "sourceRevision": "04f0c1ee48341f2cfd3d47418138d3380db7ea2e",
   "pages": [
     {
       "path": "wiki/en/index.html",
@@ -39,6 +39,34 @@
       "locale": "en",
       "area": "wiki",
       "slug": "campaigns",
+      "images": 2
+    },
+    {
+      "path": "wiki/en/campaign-management.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "campaign-management",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/clocks.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "clocks",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/clues.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "clues",
+      "images": 1
+    },
+    {
+      "path": "wiki/en/mindmaps.html",
+      "locale": "en",
+      "area": "wiki",
+      "slug": "mindmaps",
       "images": 1
     },
     {
@@ -95,7 +123,7 @@
       "locale": "en",
       "area": "wiki",
       "slug": "journals",
-      "images": 1
+      "images": 2
     },
     {
       "path": "wiki/en/audio.html",
@@ -679,6 +707,55 @@
       "images": 0
     },
     {
+      "path": "docs/en/campaign-management.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "campaign-management",
+      "images": 1
+    },
+    {
+      "path": "docs/en/journals.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "journals",
+      "images": 2
+    },
+    {
+      "path": "docs/en/clocks.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "clocks",
+      "images": 1
+    },
+    {
+      "path": "docs/en/clues.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "clues",
+      "images": 1
+    },
+    {
+      "path": "docs/en/mindmaps.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "mindmaps",
+      "images": 1
+    },
+    {
+      "path": "docs/en/pdf-system.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "pdf-system",
+      "images": 1
+    },
+    {
+      "path": "docs/en/upgrading.html",
+      "locale": "en",
+      "area": "docs",
+      "slug": "upgrading",
+      "images": 0
+    },
+    {
       "path": "docs/en/ethical-module-porting.html",
       "locale": "en",
       "area": "docs",
@@ -792,6 +869,34 @@
       "locale": "pt",
       "area": "wiki",
       "slug": "campaigns",
+      "images": 2
+    },
+    {
+      "path": "wiki/pt-BR/campaign-management.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "campaign-management",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/clocks.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "clocks",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/clues.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "clues",
+      "images": 1
+    },
+    {
+      "path": "wiki/pt-BR/mindmaps.html",
+      "locale": "pt",
+      "area": "wiki",
+      "slug": "mindmaps",
       "images": 1
     },
     {
@@ -848,7 +953,7 @@
       "locale": "pt",
       "area": "wiki",
       "slug": "journals",
-      "images": 1
+      "images": 2
     },
     {
       "path": "wiki/pt-BR/audio.html",
@@ -1429,6 +1534,55 @@
       "locale": "pt",
       "area": "docs",
       "slug": "user-guide",
+      "images": 0
+    },
+    {
+      "path": "docs/pt-BR/campaign-management.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "campaign-management",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/journals.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "journals",
+      "images": 2
+    },
+    {
+      "path": "docs/pt-BR/clocks.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "clocks",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/clues.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "clues",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/mindmaps.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "mindmaps",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/pdf-system.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "pdf-system",
+      "images": 1
+    },
+    {
+      "path": "docs/pt-BR/upgrading.html",
+      "locale": "pt",
+      "area": "docs",
+      "slug": "upgrading",
       "images": 0
     },
     {

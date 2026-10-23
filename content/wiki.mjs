@@ -1,7 +1,7 @@
-// Product procedures derived from the public Gravewright 0.3.1 project.
+// Product procedures derived from the public Gravewright 0.3.2 project.
 const userGuide = ['docs/en/user-guide.md', 'docs/pt-BR/user-guide.md'];
 const builderGuide = ['docs/en/map-builder.md', 'docs/pt-BR/map-builder.md'];
-const releaseNotes = ['docs/releases/0.3.1.md'];
+const releaseNotes = ['docs/releases/0.3.2.md'];
 const article = (slug, group, sourcePaths, en, pt, related = [], mediaIds = []) => ({
   slug, group, sourcePaths, en, pt, related, mediaIds,
 });
@@ -12,7 +12,7 @@ export const wikiArticles = [
     text('Your first session', 'Go from an installed Gravewright to a shared scene with characters, notes and dice.', `
 ## Choose your role
 
-Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.1 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
+Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.2 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
 
 If someone already hosts your game, ask for its address and invitation code. You do not need another server installation to join.
 
@@ -37,7 +37,7 @@ Check campaign membership, document permissions and the broadcast scene before r
     text('Sua primeira sessão', 'Da instalação a uma cena compartilhada com personagens, anotações e dados.', `
 ## Escolha seu papel
 
-Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.1 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
+Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.2 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
 
 Se alguém já hospeda sua mesa, peça o endereço e o código de convite. Não é necessário instalar outro servidor para participar.
 
@@ -153,6 +153,8 @@ Successful entry by a new member increments the code's use count. If joining fai
 
 ## Prepare for the session
 
+Choose **Manage campaign** on the campaign card to prepare its native documents, sheets and planning tools without entering the table. The [campaign manager](wiki:campaign-management) is available to campaign GMs, including co-GMs; it does not broadcast a scene or create table presence.
+
 Use folders and clear names for scenes, actors and journals. Prepare private scenes without broadcasting them; activate the intended scene when the group is ready. If lobby/readiness controls are enabled, use them to coordinate the start.
 
 ## Use spectator access deliberately
@@ -189,6 +191,8 @@ A entrada bem-sucedida de um novo membro incrementa o contador de usos. Se falha
 
 ## Prepare a sessão
 
+Escolha **Gerenciar campanha** no cartão da campanha para preparar documentos, fichas e planejamento nativos sem entrar na mesa. O [gestor de campanha](wiki:campaign-management) atende aos mestres da campanha, inclusive co-GMs; não transmite uma cena nem cria presença na mesa.
+
 Use pastas e nomes claros para cenas, atores e diários. Prepare cenas privadas sem transmiti-las; ative a cena pretendida quando o grupo estiver pronto. Se os controles de lobby/prontidão estiverem habilitados, use-os para coordenar o início.
 
 ## Use o acesso de espectador intencionalmente
@@ -197,6 +201,202 @@ Um link de transmissão oferece acesso restrito de leitura. Não substitui uma c
 
 Se faltar um ator ou diário, confira o acesso ao recurso depois de confirmar o vínculo. Se faltar um mapa, confira visibilidade da cena e transmissão atual. Veja um ensaio prático em [Permissões](wiki:permissions).
 `), ['permissions', 'actors', 'scenes']),
+
+  article('campaign-management', 'campaign', ['docs/en/campaign-management.md', 'docs/pt-BR/campaign-management.md', ...releaseNotes],
+    text('Manage a campaign before play', 'Prepare the same campaign records outside the table, with seven GM planning and recovery tools.', `
+## Open the GM workspace
+
+Choose **Manage campaign** on the campaign card or its cover preview. Every current campaign GM can enter, including a co-GM with a participant account. Being the installation owner alone does not grant management access to a campaign where that account is only a player. Players and streamers use their authorized tabletop tools instead.
+
+The manager and table share the same journals, quests, actors, sheets, items, scenes, library, audio, cards, compendiums, [clocks](wiki:clocks), [clues](wiki:clues) and [mind maps](wiki:mindmaps). Preparing here creates no table presence and changes no scene broadcast. Scene generation, scene updates and live actions retain their own explicit controls.
+
+## Use the seven preparation tools
+
+| Tool | Practical use |
+| --- | --- |
+| Personal dashboard | Pin documents and arrange panels for the next session, pending work, diagnostics and events |
+| Session planner | Order scenes, encounters, quests, characters, audio and notes; keep a checklist and finish with a summary and pending work |
+| Timeline and calendar | Record free-text world dates, optional calendar dates, upcoming events and linked documents |
+| Quest columns | Change status, inspect prerequisites and assigned characters, and mark visible objectives complete |
+| Connections | Inspect links and usages for characters, items, journals and scenes, including typed journal references |
+| View as player | Inspect the server-filtered documents of a selected player in a read-only preview |
+| History and trash | Compare journal revisions, restore a version or recover a deleted journal and its retained files |
+
+Each GM has a personal dashboard; session plans and timeline records are shared GM preparation. These records are not delivered to players. The manager refreshes authorized state automatically. A conflict requires reviewing the current version; keep the draft open instead of silently replacing another GM's revision.
+
+## Prepare and verify
+
+1. Select the intended scene context without changing the table's broadcast.
+2. Edit the native sheets and journals, prepare progress and link the session's documents.
+3. Use **View as player** to inspect the intended audience, then test interactive actions in a separate player session.
+4. Save before leaving the selected editor. Use journal history to compare a change before restoring it.
+5. Enter the table and activate a scene only when the group is ready.
+
+Campaign copies and exports include selected preparation and journal history; snapshots preserve campaign recovery state. Omitted targets do not acquire unrelated resource identities, and missing retained files prevent an incomplete restore. A campaign ZIP does not replace a consistent installation backup. See [the campaign reference](docs:campaign-management) and [backup and upgrade steps](wiki:backups-updates).
+`),
+    text('Gerenciar a campanha antes de jogar', 'Prepare os mesmos registros fora da mesa, com sete ferramentas de planejamento e recuperação do mestre.', `
+## Abra a área do mestre
+
+Escolha **Gerenciar campanha** no cartão ou na prévia da capa. Qualquer mestre atual da campanha pode entrar, inclusive um co-GM com conta de participante. Ser proprietário da instalação não concede esse acesso a uma campanha na qual a conta é apenas jogador. Jogadores e streamers utilizam suas ferramentas autorizadas na mesa.
+
+Gestor e mesa compartilham diários, missões, atores, fichas, itens, cenas, biblioteca, áudio, cartas, compêndios, [relógios](wiki:clocks), [pistas](wiki:clues) e [mapas mentais](wiki:mindmaps). Preparar por aqui não cria presença na mesa nem altera a transmissão. Gerar/atualizar cenas e executar ações ao vivo continuam sendo operações explícitas.
+
+## Use as sete ferramentas de preparação
+
+| Ferramenta | Uso prático |
+| --- | --- |
+| Painel pessoal | Fixar documentos e organizar painéis de próxima sessão, pendências, diagnósticos e eventos |
+| Planejador de sessões | Ordenar cenas, encontros, missões, personagens, áudio e notas; manter checklist e concluir com resumo e pendências |
+| Cronologia e calendário | Registrar datas livres do mundo, datas de calendário opcionais, eventos futuros e documentos vinculados |
+| Colunas de missões | Alterar status, conferir pré-requisitos/personagens atribuídos e concluir objetivos visíveis |
+| Conexões | Examinar vínculos e usos de personagens, itens, diários e cenas, incluindo referências tipadas dos diários |
+| Ver como jogador | Inspecionar os documentos filtrados pelo servidor para o jogador escolhido, em prévia somente leitura |
+| Histórico e lixeira | Comparar revisões, restaurar uma versão ou recuperar um diário excluído e seus arquivos retidos |
+
+Cada mestre possui um painel pessoal; sessões e cronologia são preparação compartilhada entre mestres. Esses registros não são entregues a jogadores. O gestor atualiza o estado autorizado automaticamente. Um conflito exige revisar a versão atual; mantenha o rascunho aberto em vez de substituir silenciosamente a revisão de outro mestre.
+
+## Prepare e confira
+
+1. Selecione o contexto de cena sem alterar a transmissão da mesa.
+2. Edite fichas e diários nativos, prepare o progresso e vincule os documentos da sessão.
+3. Use **Ver como jogador** para conferir o público e teste interações numa sessão separada de jogador.
+4. Salve antes de sair do editor selecionado. Compare uma revisão no histórico antes de restaurá-la.
+5. Entre na mesa e ative a cena quando o grupo estiver pronto.
+
+Cópias e exportações incluem a preparação e o histórico selecionados; snapshots preservam recuperação da campanha. Destinos omitidos não se vinculam a recursos não relacionados, e arquivos retidos ausentes impedem restauração incompleta. Um ZIP de campanha não substitui backup consistente da instalação. Veja a [referência do gestor](docs:campaign-management) e [backup e atualização](wiki:backups-updates).
+`), ['campaigns', 'journals', 'clocks', 'clues', 'mindmaps', 'backups-updates']),
+
+  article('clocks', 'tools', ['docs/en/clocks.md', 'docs/pt-BR/clocks.md', ...releaseNotes],
+    text('Progress clocks and pinned goals', 'Share segmented objectives between the table and campaign manager, with explicit audience and progress permissions.', `
+## Configure a clock
+
+Open **Clocks** from the lower table dock, or choose **Manage campaign → Clocks**. A GM names the clock, enters an optional description, chooses its color and sets 2–24 segments. Campaign scope follows the campaign across scenes; scene scope appears only with its associated scene. Both interfaces edit the same records.
+
+Choose **GM only** or **Players**. A public clock may optionally allow players to advance or reduce progress; this grants no configuration, reset or deletion rights. Streamers remain read-only. Pinned clocks show only a name and face on the table. Private clocks and out-of-scope records are filtered before delivery.
+
+## Advance and inspect
+
+When permitted, left-click the clock face to advance one segment or right-click to reduce one. Focus the face and use Right/Up or Left/Down for the same actions. Progress remains bounded and shared; wait for the pending action before repeating it. The full editor also offers progress buttons.
+
+Double-click the name, or focus it and press Enter/Space. A GM opens the native editor. Players and streamers open a read-only description modal after a fresh access check. Clock descriptions contain up to 4,000 authored characters and keep their original language.
+
+## Arrange your local indicators
+
+Drag each pinned clock by its title. Arrow keys move a focused title one pixel; Shift moves ten, and Escape cancels a drag. Cards and unfilled segments have transparent backgrounds. Positions are stored only in that browser for the account, campaign and indicator; wide and narrow screens keep separate layouts. A read-only viewer can arrange permitted indicators. Moving sends no position command or broadcast and changes no shared progress.
+
+Use MapBuilder's **Control clock** to bind a Smart Object to a specific GM-authored action. It respects scope and grants no general editing rights. Rehearsal rolls back its effects. Review the [clock reference](docs:clocks) for limits, APIs and retries, and [clues](wiki:clues) for staged discoveries.
+`),
+    text('Relógios de progresso e objetivos fixados', 'Compartilhe objetivos por segmentos entre mesa e gestor, com público e permissões de progresso explícitos.', `
+## Configure um relógio
+
+Abra **Relógios** no dock inferior da mesa ou **Gerenciar campanha → Relógios**. O mestre define nome, descrição opcional, cor e 2–24 segmentos. O escopo de campanha acompanha suas cenas; o escopo de cena aparece apenas na cena associada. As duas interfaces editam os mesmos registros.
+
+Escolha **Somente mestre** ou **Jogadores**. Um relógio público pode permitir que jogadores avancem ou reduzam o progresso; isso não concede configuração, reinício ou exclusão. Streamers permanecem somente leitura. Relógios fixados mostram apenas nome e mostrador na mesa. Registros privados e fora do contexto são filtrados antes da entrega.
+
+## Avance e consulte
+
+Quando autorizado, clique com o botão esquerdo no mostrador para avançar um segmento ou com o direito para recuar. Foque o mostrador e use Direita/Cima ou Esquerda/Baixo para as mesmas ações. O progresso respeita os limites e é compartilhado; aguarde a ação pendente antes de repetir. O editor completo também possui botões de progresso.
+
+Dê dois cliques no nome ou foque-o e pressione Enter/Espaço. O mestre abre o editor nativo. Jogadores e streamers abrem uma descrição somente leitura após nova conferência de acesso. A descrição do relógio aceita até 4.000 caracteres autorais, preservando seu idioma.
+
+## Organize seus indicadores locais
+
+Arraste cada relógio fixado pelo título. As setas movem o título focado um pixel; Shift move dez e Escape cancela o arrasto. Cartões e segmentos vazios possuem fundo transparente. A posição fica somente naquele navegador, por conta, campanha e indicador; telas largas e estreitas mantêm layouts separados. Um leitor pode organizar os indicadores permitidos. Mover não envia comando ou transmissão de posição nem altera o progresso compartilhado.
+
+Use **Controlar relógio** no MapBuilder para vincular um Objeto Inteligente a uma ação específica configurada pelo mestre. O nó respeita o escopo e não concede edição geral. O ensaio reverte os efeitos. Veja [relógios](docs:clocks) para limites, APIs e retentativas e [pistas](wiki:clues) para descobertas por etapas.
+`), ['campaign-management', 'clues', 'smart-objects']),
+
+  article('clues', 'tools', ['docs/en/clues.md', 'docs/pt-BR/clues.md', ...releaseNotes],
+    text('Reveal clues through discovery', 'Prepare a finding privately and reveal it only after its progress is complete and its audience permits sharing.', `
+## Prepare the discovery
+
+Open **Clues** from the lower table dock or from **Manage campaign**. As GM, enter a name, player-facing **Content**, private **GM notes**, color and 1–24 progress segments. Use one segment for a single discovery or several for an investigation. Choose campaign or scene scope and whether to pin the clue.
+
+Players and streamers receive the record only when progress is complete and visibility is **Reveal when discovered**. Until then, they receive no name, identifier, unfinished progress or undiscovered count. GM notes remain private after revelation. This is the same saved clue in the table and manager, independent of RPG system.
+
+## Advance, reveal and hide
+
+Only GMs change progress directly: left-click the progress bar to advance one step, right-click to reduce, or use its arrow keys. **Reveal** completes discovery and selects player visibility; **Hide** selects GM-only visibility without clearing progress; **Reset** clears progress without changing visibility. Reducing a completed clue hides it again until complete. Players may remember text they have already read.
+
+Pinned clues show only a name and progress bar. Double-click the name or press Enter/Space: a GM opens the native editor, while players and streamers read the discovered Content in a simple description modal. Access is checked again; GM notes never become the description.
+
+## Move and connect the indicator
+
+Drag the title to arrange a pinned clue locally; arrows move one pixel and Shift moves ten. Positions stay per account/campaign/browser and retain separate wide/narrow layouts. Transparency and dragging follow the [clock controls](wiki:clocks); moving does not broadcast or change shared progress.
+
+MapBuilder's **Control clue** delegates a configured advance, reduction, value, reset, revelation or hiding action through native permission checks. It does not give players a general clue editor. See the [clue reference](docs:clues) and [Smart Objects](wiki:smart-objects).
+`),
+    text('Revelar pistas pela descoberta', 'Prepare uma descoberta em particular e revele apenas quando o progresso estiver concluído e o público permitir.', `
+## Prepare a descoberta
+
+Abra **Pistas** no dock inferior da mesa ou em **Gerenciar campanha**. Como mestre, preencha nome, **Conteúdo** para jogadores, **Notas do mestre** privadas, cor e 1–24 segmentos. Use um segmento para uma descoberta única ou vários numa investigação. Escolha escopo de campanha ou cena e se deseja fixar a pista.
+
+Jogadores e streamers só recebem o registro quando o progresso está completo e a visibilidade permite **Revelar quando descoberta**. Antes disso não recebem nome, identificador, progresso incompleto nem contagem de pistas desconhecidas. As notas continuam privadas após revelar. Mesa e gestor compartilham a mesma pista, independentemente do sistema de RPG.
+
+## Avance, revele e oculte
+
+Somente mestres alteram progresso diretamente: botão esquerdo na barra avança uma etapa, direito recua; as setas também funcionam. **Revelar** completa a descoberta e permite visibilidade aos jogadores; **Ocultar** torna a pista exclusiva do mestre sem limpar o progresso; **Reiniciar** zera o progresso sem mudar o público. Recuar uma pista completa a oculta até concluir novamente. Jogadores podem lembrar o texto que já leram.
+
+Pistas fixadas mostram apenas nome e barra. Dê dois cliques no nome ou pressione Enter/Espaço: o mestre abre o editor nativo, enquanto jogadores e streamers leem o Conteúdo descoberto numa descrição simples. O acesso é conferido novamente; notas do mestre nunca se tornam a descrição.
+
+## Mova e conecte o indicador
+
+Arraste o título para organizar a pista localmente; setas movem um pixel e Shift move dez. As posições são por conta/campanha/navegador e guardam layouts separados para telas largas/estreitas. Transparência e arrasto seguem os [relógios](wiki:clocks); mover não transmite nem altera progresso compartilhado.
+
+O nó **Controlar pista** do MapBuilder delega uma ação configurada de avanço, recuo, valor, reinício, revelação ou ocultação com autorização nativa. Não concede editor geral de pistas aos jogadores. Veja a [referência de pistas](docs:clues) e [Objetos Inteligentes](wiki:smart-objects).
+`), ['campaign-management', 'clocks', 'journals', 'smart-objects']),
+
+  article('mindmaps', 'tools', ['docs/en/mindmaps.md', 'docs/pt-BR/mindmaps.md', ...releaseNotes],
+    text('Collaborative mind maps', 'Connect campaign topics, grant selected players editing access and link 37 native resource types.', `
+## Create a graph
+
+Open **Mind maps** in the lower table dock or campaign manager. A GM creates a named map, chooses campaign/scene scope and sets visibility and editors. New maps are GM-only. Add root, child or sibling topics, edit notes/color/completion, collapse branches and draw additional labeled connections. Drag topics to position them; drag empty canvas to pan, use zoom or **Fit map**.
+
+Undo/redo affects the local draft. **Save mind map** sends the expected saved version. A conflict keeps the draft and offers explicit reload; it does not silently overwrite another editor. Closing modified work asks whether to discard it.
+
+## Grant the intended access
+
+All campaign GMs edit maps. **Visible to players** grants reading, while selected player editors can also read and edit a private map from the table. Those editors may rename the map and edit topics, but cannot change scope, visibility, the editor list or delete the map. Streamers remain read-only. Scene-scoped maps additionally require access to their scene. The campaign manager itself remains GM-only.
+
+Topic notes belong to the whole map's audience: keep private planning in a private map. A hidden link does not make the surrounding authored text private.
+
+## Link campaign resources
+
+Use **Link campaign resource** to search the authorized catalog of 37 native types: characters and files, items, journals/pages/quests, scenes and objects, tokens, encounters, clocks, discovered clues, audio, cards, compendiums, preparation, authoring resources, visible chat messages and mind maps. The [complete reference](docs:mindmaps) lists the types and availability rules.
+
+Links keep typed identities and recheck access on opening. They neither copy documents nor grant permission. Missing and denied targets look equally unavailable, with no private identifier or title. Saving another topic preserves an existing unavailable link through an opaque placeholder; removing it deletes the connection.
+
+## Integrate and transfer
+
+MapBuilder offers **Open mind map** and **Control mind-map topic**. Opening rechecks each recipient; completion controls delegate only the configured effect. Native rehearsal rolls back effects and receipts. Campaign copies select **Mind maps**, remap included typed resources, keep local topic IDs and authored text, and clear source player-editor grants. Snapshots restore the same campaign's grants.
+
+A campaign supports 64 maps; a graph supports 500 topics, 1,000 additional connections, 16 links per topic and 2,048 links overall. See [the API and graph limits](docs:mindmaps) before building an integration.
+`),
+    text('Mapas mentais colaborativos', 'Relacione tópicos da campanha, autorize jogadores a editar e vincule 37 tipos de recursos nativos.', `
+## Crie um grafo
+
+Abra **Mapas mentais** no dock inferior da mesa ou no gestor. O mestre cria o mapa, escolhe escopo de campanha/cena, visibilidade e editores. Mapas novos são exclusivos do mestre. Adicione tópicos raiz, filhos ou irmãos, edite notas/cor/conclusão, recolha ramos e crie conexões adicionais com rótulos. Arraste tópicos; arraste o espaço vazio para mover a câmera, use zoom ou **Enquadrar mapa**.
+
+Desfazer/refazer altera o rascunho local. **Salvar mapa mental** envia a versão esperada. Um conflito preserva o rascunho e oferece recarregamento explícito, sem substituir silenciosamente outro editor. Fechar alterações pendentes pede confirmação para descartá-las.
+
+## Conceda o acesso pretendido
+
+Todos os mestres editam mapas. **Visível para jogadores** concede leitura; jogadores escolhidos como editores também podem ler e editar um mapa privado pela mesa. Eles podem renomear o mapa e editar tópicos, mas não mudar escopo, visibilidade, lista de editores nem excluí-lo. Streamers permanecem somente leitura. Mapas de cena também exigem acesso à cena. O gestor continua exclusivo dos mestres.
+
+Notas dos tópicos pertencem ao público de todo o mapa: mantenha preparação privada num mapa privado. Um vínculo oculto não torna privado o texto autoral ao redor.
+
+## Vincule recursos da campanha
+
+Use **Vincular recurso da campanha** para pesquisar 37 tipos nativos autorizados: personagens e arquivos, itens, diários/páginas/missões, cenas e objetos, tokens, encontros, relógios, pistas descobertas, áudio, cartas, compêndios, preparação, ferramentas de criação, mensagens visíveis e mapas mentais. A [referência completa](docs:mindmaps) lista os tipos e regras de disponibilidade.
+
+Os vínculos guardam identidades tipadas e conferem acesso ao abrir. Não copiam documentos nem concedem permissão. Destinos ausentes e negados aparecem igualmente indisponíveis, sem identificador ou título privado. Salvar outro tópico preserva o vínculo indisponível por marcador opaco; removê-lo exclui a conexão.
+
+## Integre e transfira
+
+O MapBuilder oferece **Abrir mapa mental** e **Controlar tópico do mapa mental**. Abrir confere cada destinatário; controles de conclusão delegam apenas o efeito configurado. O ensaio nativo reverte efeitos e recibos. Cópias de campanha selecionam **Mapas mentais**, remapeiam recursos incluídos, preservam IDs locais/texto autoral e limpam concessões de editores da origem. Snapshots restauram as concessões da mesma campanha.
+
+Uma campanha aceita 64 mapas; cada grafo aceita 500 tópicos, 1.000 conexões adicionais, 16 vínculos por tópico e 2.048 no total. Consulte [API e limites](docs:mindmaps) antes de criar uma integração.
+`), ['campaign-management', 'journals', 'smart-objects', 'permissions']),
 
   article('permissions', 'campaign', [...userGuide, 'gravewright/table/ownership.py', 'gravewright/journals/services.py', 'gravewright/campaigns/streamer.py'],
     text('Permissions and safe sharing', 'Check exactly what a player can view, edit or control before sharing your preparation.', `
@@ -426,7 +626,7 @@ Se o jogador não vê o ator, confira vínculo e permissões. Se abre sem poder 
 O núcleo não inclui catálogo universal de itens nem regras específicas de RPG. O PDF nativo não fornece tipos de itens; instale um pacote de sistema adequado quando precisar dessas capacidades.
 `), ['character-sheets', 'tokens', 'systems-modules']),
 
-  article('character-sheets', 'tools', [...userGuide, 'gravewright/pdf_system/schema.py', 'gravewright/actors/services.py'],
+  article('character-sheets', 'tools', [...userGuide, 'docs/en/pdf-system.md', 'docs/pt-BR/pdf-system.md', 'gravewright/pdf_system/schema.py', 'gravewright/actors/services.py'],
     text('Character sheets and the PDF system', 'Use an existing character PDF or the sheet supplied by an installed RPG system.', `
 ## Choose the right sheet
 
@@ -442,6 +642,26 @@ The included **Gravewright PDF System** lets a campaign use PDF character sheets
 6. If you reuse the layout, verify it on another character before investing in a larger collection.
 
 Mapping fields onto a PDF does not import a rulebook or implement all calculations from an RPG. Agree with your group on which values you maintain manually and which an installed system actually automates.
+
+## Map a PDF without editable fields
+
+As GM, choose **Map fields**, then text, number, checkbox or multiline text. Drag a rectangle onto the page or choose **Add field**, name it and adjust its bounds. Drag moves it; its lower-right handle resizes it. Arrow keys move one displayed pixel and Shift moves ten. Choose **Finish mapping** to fill values. Native PDF widgets and manual overlays use the same authorized sheet values; the source PDF is unchanged, and there is no OCR step.
+
+Double-click a native or manual field, or press F2 while it is focused, to configure **Field actions**. Bind a value to a token bar or choose a saved dice action. Six presets include d20, highest/lowest of two d20s, 2d6, exploding d6 and 4dF. **1d20 + @value** reads this field; **1d20 + @{field-key}** reads another numeric field. Use **Reference field** for exact keys. Authorized editors run saved actions with the roll button or Alt+Enter; a GM double-click opens configuration. Dice permissions and normal visibility still apply.
+
+## Use the authoring and reuse tools
+
+| Capability | What to check |
+| --- | --- |
+| Calculated fields | Arithmetic and field references recompute on save; cycles are rejected and calculated values are read-only |
+| Layout editing | Multiple selection, copy/paste, duplicate, alignment, distribution and optional snapping apply to the active layout |
+| Undo and redo | Up to 50 local layout steps preserve current character values; changing the PDF clears this history |
+| Mapping JSON | Transfer layout definitions, bindings, actions and calculations without PDF bytes or character values |
+| Mapping library | Save a reusable campaign template and apply it to the same PDF layout, with field identities preserved |
+| Batch application | Apply to selected permitted actors; all target revisions are validated before committing |
+| Diagnostics and filled PDF | Inspect missing fields/references and layout mismatches; export a separate flattened PDF with current values |
+
+These tools complement manual mapping and saved actions; they do not automatically supply RPG rules. Filled export is bounded and fails on overflow instead of silently returning an incomplete document. See the [PDF System reference](docs:pdf-system) for limits and formulas.
 
 ## Edit the intended source
 
@@ -470,6 +690,26 @@ O **Gravewright PDF System** integrado permite usar fichas PDF sem tornar o host
 6. Ao reutilizar o layout, confira-o em outro personagem antes de preparar uma coleção maior.
 
 Mapear campos sobre um PDF não importa um livro de regras nem implementa todos os cálculos de um RPG. Combine com o grupo quais valores são mantidos manualmente e quais um sistema instalado realmente automatiza.
+
+## Mapeie um PDF sem campos editáveis
+
+Como mestre, escolha **Mapear campos** e depois texto, número, checkbox ou texto multilinha. Arraste um retângulo na página ou use **Adicionar campo**, nomeie-o e ajuste seus limites. Arrastar move o campo; a alça inferior direita redimensiona. As setas movem um pixel exibido e Shift move dez. Escolha **Concluir mapeamento** para preencher valores. Widgets nativos e sobreposições manuais usam os mesmos valores autorizados; o PDF original permanece intacto e não há OCR.
+
+Dê dois cliques num campo nativo/manual ou pressione F2 com ele focado para configurar **Ações do campo**. Vincule um valor à barra do token ou escolha uma ação salva de dados. Os seis modelos incluem d20, maior/menor de dois d20, 2d6, d6 explosivo e 4dF. **1d20 + @value** lê o campo atual; **1d20 + @{field-key}** lê outro campo numérico. Use **Referenciar campo** para inserir a chave exata. Editores autorizados executam ações pelo botão de rolagem ou Alt+Enter; o duplo clique do mestre abre a configuração. Permissões e visibilidade normais de dados continuam valendo.
+
+## Use ferramentas de edição e reutilização
+
+| Recurso | O que conferir |
+| --- | --- |
+| Campos calculados | Aritmética e referências são recalculadas ao salvar; ciclos são recusados e valores calculados ficam somente leitura |
+| Edição de layout | Seleção múltipla, copiar/colar, duplicar, alinhamento, distribuição e encaixe opcional alteram o layout ativo |
+| Desfazer e refazer | Até 50 etapas locais preservam os valores atuais; trocar o PDF limpa esse histórico |
+| JSON de mapeamento | Transferir definições, vínculos, ações e cálculos sem bytes do PDF ou valores do personagem |
+| Biblioteca de modelos | Salvar um modelo reutilizável na campanha e aplicá-lo ao mesmo layout PDF, preservando identidades dos campos |
+| Aplicação em lote | Aplicar a atores permitidos selecionados; todas as revisões são verificadas antes de gravar |
+| Diagnósticos e PDF preenchido | Inspecionar campos/referências ausentes e diferenças do layout; exportar um PDF separado e achatado com os valores atuais |
+
+Essas ferramentas complementam o mapeamento manual e as ações salvas; não fornecem regras de RPG automaticamente. A exportação possui limites e falha em transbordamento, sem devolver documento incompleto em silêncio. Veja limites e fórmulas na [referência do PDF System](docs:pdf-system).
 
 ## Edite a fonte pretendida
 
@@ -625,7 +865,7 @@ Retentativas e múltiplas abas reutilizam a mesma rolagem lógica daquele destin
 
 Se falhar, simplifique para **1d20** e acrescente um modificador por vez. Confira minúsculas e espaços. Após perder a conexão, procure o resultado confirmado no chat antes de enviar outra rolagem. Um novo envio representa uma nova rolagem lógica, mesmo com expressão idêntica. Sistemas instalados podem acrescentar controles próprios sem mudar o significado de toda expressão nativa.
 `), ['tabletop', 'combat', 'smart-objects']),
-  article('journals', 'tools', [...userGuide, ...releaseNotes, 'gravewright/journals/services.py', 'gravewright/journals/types.py', 'gravewright/journals/presentations.py'],
+  article('journals', 'tools', [...userGuide, ...releaseNotes, 'docs/en/journals.md', 'docs/pt-BR/journals.md', 'gravewright/journals/services.py', 'gravewright/journals/types.py', 'gravewright/journals/presentations.py'],
     text('Journals, quests and roll tables', 'Keep campaign knowledge, share handouts and track objectives without exposing GM notes.', `
 ## Choose a document
 
@@ -639,6 +879,20 @@ Journals include structured notes, quests, quest boards and weighted roll tables
 4. Set document and page access for the intended people. Read access and editing ownership are distinct.
 5. Use the available presentation/handout controls to show the intended material.
 6. Check the result as a player; a shared document does not imply every private section becomes public.
+
+## Organize independent chapters and pages
+
+Choose **New chapter** to create an empty chapter, optionally under another chapter. A chapter can hold pages and subchapters; each page belongs to one chapter or none. Use **Move to chapter** or **No chapter** on a page. Deleting a chapter keeps its pages ungrouped and moves its direct subchapters to its parent. Page deletion is a separate action. Protected pages can prevent removal of a required chapter.
+
+While editing a page you own, click its header name or focus it and press Enter/Space. Enter or leaving the field confirms its title; Escape cancels, and an empty name keeps the previous title. Content and links remain intact. **Collapse pages** makes room on narrow screens; **Show pages** restores the index.
+
+The diary supports 128 chapters, eight chapter levels and 64 pages. Older category groupings become stable chapters. Hidden-only branches remain filtered; readable page paths and genuinely empty chapters remain visible. Existing history and campaign copies retain the hierarchy.
+
+## Insert references with @
+
+In editable rich text, type **@** at the start of a paragraph or after a space. Search the authorized campaign catalog, choose a type and select **Add link**. Confirming replaces the typed marker; cancelling keeps it as ordinary text. An @ inside an email does not open the picker, and **/** still opens the block menu.
+
+The same 37-type catalog used by [mind maps](wiki:mindmaps) includes sheets, journals/pages, quests, items, scenes, clocks, discovered clues and other native resources. Opening rechecks target access; a shared journal does not grant access to its links. Unavailable targets reveal no private name or identity. Source-bound opaque placeholders preserve existing hidden references during otherwise authorized edits; guessed private targets cannot be inserted. This works in the table and [campaign manager](wiki:campaign-management). See the [journal reference](docs:journals) for permissions and transfers.
 
 ## Track a quest
 
@@ -667,6 +921,20 @@ Diários incluem anotações estruturadas, missões, quadros de missões e tabel
 4. Configure acesso ao documento e às páginas para as pessoas pretendidas. Leitura e propriedade para editar são diferentes.
 5. Use os controles de apresentação/material disponíveis para mostrar o conteúdo pretendido.
 6. Confira como jogador; compartilhar um documento não torna automaticamente públicas todas as seções privadas.
+
+## Organize capítulos e páginas independentes
+
+Escolha **Novo capítulo** para criar um capítulo vazio, opcionalmente dentro de outro. Um capítulo pode conter páginas e subcapítulos; cada página pertence a um capítulo ou nenhum. Use **Mover para capítulo** ou **Sem capítulo** na página. Excluir um capítulo deixa suas páginas sem grupo e move os subcapítulos diretos para o pai. Excluir uma página é outra ação. Páginas protegidas podem impedir a remoção de um capítulo necessário.
+
+Ao editar uma página própria, clique no nome do cabeçalho ou foque-o e pressione Enter/Espaço. Enter ou sair do campo confirma o título; Escape cancela, e nome vazio mantém o anterior. Conteúdo e vínculos continuam intactos. **Recolher páginas** libera espaço em telas pequenas; **Mostrar páginas** restaura o índice.
+
+O diário aceita 128 capítulos, oito níveis e 64 páginas. Grupos antigos de categorias tornam-se capítulos estáveis. Ramos somente de páginas ocultas são filtrados; caminhos de páginas legíveis e capítulos realmente vazios permanecem visíveis. Histórico e cópias da campanha guardam a hierarquia.
+
+## Insira referências com @
+
+No texto editável, digite **@** no início de um parágrafo ou depois de um espaço. Busque no catálogo autorizado, escolha um tipo e selecione **Adicionar vínculo**. Confirmar substitui o marcador; cancelar o mantém como texto. @ dentro de email não abre o seletor, e **/** continua abrindo o menu de blocos.
+
+O catálogo de 37 tipos compartilhado com [mapas mentais](wiki:mindmaps) inclui fichas, diários/páginas, missões, itens, cenas, relógios, pistas descobertas e outros recursos nativos. Abrir confere o acesso ao destino; compartilhar um diário não concede acesso aos vínculos. Um destino indisponível não revela nome nem identidade privada. Marcadores opacos vinculados à origem preservam referências ocultas existentes numa edição autorizada; não permitem inserir destinos privados adivinhados. Isso funciona na mesa e no [gestor](wiki:campaign-management). Veja permissões e transferências na [referência de diários](docs:journals).
 
 ## Acompanhe uma missão
 
@@ -1003,6 +1271,10 @@ Only a current campaign GM can edit Builder projects. Open **Scenes → New scen
 | Update scene | The same linked native scene |
 | Activate for players | Scene visibility and the player broadcast |
 
+## Open an existing scene or Universal VTT map
+
+Use **Edit Scene** on the table to open the current scene's linked project or adopt its compatible native geometry. Adoption and **Import Universal VTT** share the native scene adapter. A Builder import creates a linked scene and editable project; a scene-directory import creates only the scene, which can be adopted later. A flattened background remains one image: source brushes and artwork layers cannot be reconstructed. Review import warnings and test the grid, doors and lights before player activation. See [Universal VTT](wiki:universal-vtt).
+
 ## Build your first room
 
 1. Name the project in the header. Set dimensions, cell size and background in **Panels → Settings**.
@@ -1060,6 +1332,10 @@ Somente um mestre atual da campanha pode editar projetos. Abra **Cenas → Nova 
 | Gerar cena | Nova cena nativa privada |
 | Atualizar cena | A mesma cena nativa vinculada |
 | Ativar para jogadores | Visibilidade e transmissão |
+
+## Abra uma cena existente ou mapa Universal VTT
+
+Use **Editar cena** na mesa para abrir o projeto vinculado à cena atual ou adotar sua geometria nativa compatível. A adoção e **Importar Universal VTT** compartilham o adaptador nativo de cenas. Importar pelo Builder cria cena vinculada e projeto editável; pelo diretório cria apenas a cena, adotável depois. O fundo achatado continua uma imagem: pinceladas e camadas de arte originais não podem ser reconstruídas. Confira os avisos e teste grade, portas e luzes antes de ativar para jogadores. Veja [Universal VTT](wiki:universal-vtt).
 
 ## Construa a primeira sala
 
@@ -1165,6 +1441,12 @@ For **Request dice roll**, choose the native expression, optional label, recipie
 
 For **Open journal**, bind a campaign journal, quest or board and choose recipients who already have access. Opening it does not grant permission to read it. **Set quest status** binds one fixed campaign quest and desired status authored by the GM. A player can trigger that configured change through the object without gaining general journal editing rights. Check the quest's own visibility and permissions separately; see [Journals and quests](wiki:journals).
 
+## Connect clocks, clues and mind maps
+
+The **Control clock** and **Control clue** nodes bind a fixed campaign resource and action, respecting campaign/current-scene scope. A GM authors the effect; a player interaction delegates only that configured progress action, without general configuration rights. Unfinished clues and GM notes stay protected.
+
+**Open mind map** opens a selected map, optionally focused on a topic, for the triggering user, players or selected recipients. Each recipient must already have access. **Control mind-map topic** completes, resets or toggles a bound topic through the native service. All four bindings require an active campaign GM; server rehearsal rolls back effects, receipts and notifications. Simulation describes the action, and delayed work checks targets again when it runs. See [clocks](wiki:clocks), [clues](wiki:clues) and [mind maps](wiki:mindmaps).
+
 ## Use time deliberately
 
 **Delay** persists a continuation; **Timer** is a named one-shot countdown whose expiry runs the matching named signal. They survive closed browsers/server restarts, and pausing scene automation keeps pending jobs waiting. GM **Automation → Waiting** shows the queue. Behavior changes, removed targets or lost access can cancel pending work. Exports, campaign snapshots and copies omit these jobs; a full database backup includes them.
@@ -1237,6 +1519,12 @@ Eventos de área respondem à travessia de tokens elegíveis. Atravessar toda a 
 Em **Solicitar rolagem de dados**, escolha expressão nativa, rótulo opcional, destinatários e visibilidade do resultado. O servidor confere vínculo e acesso à cena antes de entregar cada solicitação. O destinatário precisa pressionar **Rolar**; streamers não recebem janela acionável. Retentativas ou outra aba reutilizam a rolagem lógica daquele destinatário. O grafo continua sem aguardar resultado. Veja a notação nativa em [Chat e dados](wiki:chat-dice).
 
 Em **Abrir diário**, vincule um diário, missão ou quadro da campanha e escolha destinatários que já tenham acesso. Abrir não concede permissão de leitura. **Alterar status da missão** vincula uma missão fixa da campanha e o estado desejado, configurados pelo mestre. O jogador pode acionar essa mudança pelo objeto sem receber edição geral de diários. Confira separadamente visibilidade e permissões da missão; veja [Diários e missões](wiki:journals).
+
+## Conecte relógios, pistas e mapas mentais
+
+**Controlar relógio** e **Controlar pista** vinculam um recurso e uma ação fixos da campanha, respeitando o escopo de campanha/cena atual. O mestre prepara o efeito; a interação do jogador delega somente aquela ação de progresso, sem configuração geral. Pistas incompletas e notas do mestre continuam protegidas.
+
+**Abrir mapa mental** abre o mapa escolhido, opcionalmente focado num tópico, para usuário que interagiu, jogadores ou destinatários selecionados. Cada destinatário precisa ter acesso. **Controlar tópico do mapa mental** conclui, reinicia ou alterna a conclusão do tópico vinculado pelo serviço nativo. Os quatro vínculos exigem um mestre ativo na campanha; o ensaio reverte efeitos, recibos e notificações. A simulação descreve a ação e trabalhos adiados conferem os alvos novamente ao executar. Veja [relógios](wiki:clocks), [pistas](wiki:clues) e [mapas mentais](wiki:mindmaps).
 
 ## Use o tempo intencionalmente
 
@@ -1332,6 +1620,8 @@ O formato utiliza versão numérica **0.2**, separada da versão do aplicativo. 
 
 Availability depends on permissions and host options. Before restoring campaign content, preserve the current state and read the consequences shown by the interface.
 
+In 0.3.2, selected campaign exports/copies include clocks, clues, mind maps, preparation, journal history and reusable PDF mappings. Typed references remap included targets while omitted ones stay inert; local page/chapter/topic IDs and authored text stay exact. Portable copies clear source member/editor grants rather than granting new access. Snapshots are for recovery within the same campaign. See [upgrade and recovery](docs:upgrading) for the seven migrations added since 0.3.1, including the PDF mapping-template table.
+
 ## Make a full backup
 
 1. Arrange a maintenance window and stop writes, including ASGI/Runner and maintenance processes.
@@ -1367,6 +1657,8 @@ Pending Blueprint Delay/Timer jobs are excluded from exports, snapshots and copi
 | Exportar Universal VTT | Intercâmbio de cena de mapa | Omite grande parte do jogo e automação |
 
 A disponibilidade depende de permissões e opções da instalação. Antes de restaurar conteúdo, preserve o estado atual e leia as consequências exibidas na interface.
+
+Na 0.3.2, exportações/cópias selecionadas incluem relógios, pistas, mapas mentais, preparação, histórico de diários e modelos PDF reutilizáveis. Referências tipadas remapeiam destinos incluídos e deixam omitidos inertes; IDs locais de página/capítulo/tópico e texto autoral permanecem exatos. Cópias portáteis limpam concessões de membros/editores da origem, sem conceder acesso novo. Snapshots recuperam a mesma campanha. Veja as sete migrações desde a 0.3.1 em [atualização e recuperação](docs:upgrading), incluindo a tabela de modelos de mapeamento PDF.
 
 ## Faça um backup completo
 

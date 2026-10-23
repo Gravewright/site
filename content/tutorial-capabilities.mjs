@@ -1,23 +1,29 @@
 import contracts from './extension-contracts.json' with {type:'json'};
 
-const baseGuides={actors:'tutorial-actors',tokens:'tutorial-tokens',maps:'tutorial-maps',journals:'tutorial-journal-management',items:'tutorial-items',combat:'tutorial-combat',cards:'tutorial-cards',audio:'tutorial-audio',compendiums:'tutorial-compendium-module'};
+const baseGuides={actors:'tutorial-actors',tokens:'tutorial-tokens',maps:'tutorial-maps',journals:'tutorial-journal-management',items:'tutorial-items',combat:'tutorial-combat',cards:'tutorial-cards',audio:'tutorial-audio',compendiums:'tutorial-compendium-module',clocks:'clocks',clues:'clues',mindmaps:'mindmaps',mapBuilder:'map-builder',blueprints:'map-builder',library:'api',system:'api',ownership:'api'};
 function guide(domain,method){
+  if(domain==='maps'&&['navigate','exportUniversalVtt','importUniversalVtt'].includes(method))return 'universal-vtt';
   if(domain==='actors'&&method==='saveSheet')return 'tutorial-sheet-module';
   if(domain==='actors'&&method==='deleteAsset')return 'tutorial-assets';
   if(domain==='journals'){
+    if(['resources','resolve'].includes(method))return 'journals';
+    if(['setPrerequisites','restoreRevision','restoreDeleted','purgeDeleted'].includes(method))return 'campaign-management';
     if(['setStatus','setObjective','assignCharacters','createBoardQuest','addQuest','removeQuest','pinQuest','reorderQuests'].includes(method))return 'tutorial-quests';
     if(['roll','reset'].includes(method))return 'tutorial-roll-tables';
     if(['create','update'].includes(method))return 'tutorial-journal-module';
   }
-  return baseGuides[domain];
+  return baseGuides[domain]||'api';
 }
 const entries=Object.entries(contracts.frontend.domains);
-const collections=new Set(['actors','tokens','maps','journals','items']);
+const collections=new Set(['actors','tokens','maps','journals','items','clocks','clues','mindmaps']);
 export const documentedDomainMethods=entries.flatMap(([domain,methods])=>[
   ...Object.keys(methods).map(method=>({domain,method,action:methods[method],slug:guide(domain,method)})),
   {domain,method:'state',action:'state',slug:baseGuides[domain]},
   ...(collections.has(domain)?['list','get'].map(method=>({domain,method,action:'state projection',slug:baseGuides[domain]})):[]),
 ]);
+for(const [domain,methods] of Object.entries(contracts.frontend.binary||{})){
+  for(const method of Object.keys(methods))documentedDomainMethods.push({domain,method,action:'file '+methods[method],slug:guide(domain,method)});
+}
 documentedDomainMethods.push({domain:'actors',method:'sheet',action:'sheet',slug:'tutorial-sheet-module'},{domain:'maps',method:'layers',action:'layers',slug:'tutorial-maps'});
 const specialMethods=[['chat','history'],['chat','send'],['chat','remove'],['chat','clear'],['dice','roll'],['table','search'],['table','lobby'],['table','updateLobby']];
 for(const [domain,method] of specialMethods)documentedDomainMethods.push({domain,method,action:method,slug:'tutorial-chat-dice'});
@@ -27,13 +33,13 @@ function body(locale){
   const pt=locale==='pt';
   const methodTables=[...new Set(documentedDomainMethods.map(row=>row.domain))].map(domain=>{
     const rows=documentedDomainMethods.filter(row=>row.domain===domain);
-    return '### api.'+domain+'\n\n| '+(pt?'Método':'Method')+' | '+(pt?'Ação nativa':'Native action')+' | '+(pt?'Projeto com implementação':'Implementation project')+' |\n| --- | --- | --- |\n'+rows.map(row=>'| `'+domain+'.'+row.method+'` | `'+row.action+'` | ['+(pt?'Código, entradas e teste':'Code, inputs and test')+'](docs:'+row.slug+') |').join('\n');
+    return '### api.'+domain+'\n\n| '+(pt?'Método':'Method')+' | '+(pt?'Ação nativa':'Native action')+' | '+(pt?'Guia ou referência':'Guide or reference')+' |\n| --- | --- | --- |\n'+rows.map(row=>'| `'+domain+'.'+row.method+'` | `'+row.action+'` | ['+(pt?'Uso, contrato e validação':'Usage, contract and validation')+'](docs:'+row.slug+') |').join('\n');
   }).join('\n\n');
   const sdkTable='| '+(pt?'Operação original':'Original operation')+' | '+(pt?'Transporte/efeito':'Transport/effect')+' | '+(pt?'Projeto':'Project')+' |\n| --- | --- | --- |\n'+operations.map(([name,record])=>'| `'+name+'` | '+(record.transport||'json')+' / '+record.effect+' | ['+(pt?'Implementação completa':'Complete implementation')+'](docs:'+operationGuide(name)+') |').join('\n');
   const surfaceTable='| '+(pt?'Superfície':'Surface')+' | '+(pt?'Modos aceitos':'Accepted modes')+' | '+(pt?'Exemplo completo':'Complete example')+' |\n| --- | --- | --- |\n'+Object.entries(contracts.surfaces).map(([name,record])=>'| `'+name+'` | '+record.modes.map(mode=>'`'+mode+'`').join(', ')+' | [`'+name+'`](docs:example-surface-'+name.replaceAll('.','-')+') |').join('\n');
   const summary=pt?`## Como usar este mapa
 
-Este índice cruza os contratos públicos da revisão ${contracts.sourceRevision.slice(0,7)} do host ${contracts.hostVersion} com os projetos de implementação. Ele cobre **${documentedDomainMethods.length} métodos da API de domínio**, **${operations.length} operações do SDK original**, **${Object.keys(contracts.surfaces).length} superfícies** e os helpers de ciclo de vida. O link de cada método leva a código executável, entradas e teste; não é uma promessa de que qualquer combinação arbitrária de ideias é suportada.
+Este índice cruza os contratos públicos da revisão ${contracts.sourceRevision.slice(0,7)} do host ${contracts.hostVersion} com os projetos de implementação. Ele cobre **${documentedDomainMethods.length} métodos da API de domínio**, **${operations.length} operações do SDK original**, **${Object.keys(contracts.surfaces).length} superfícies** e os helpers de ciclo de vida. Cada método aponta para um tutorial executável ou para o guia canônico com contrato, permissões e exemplos. Os projetos antigos mantêm sua versão de host declarada; métodos adicionados na 0.3.2 são identificados pela referência atual, sem atribuí-los retroativamente aos projetos antigos.
 
 Comece pelo [resultado que quer construir](docs:tutorial-index), e use a tabela para localizar uma capacidade específica. Uma receita pode reunir várias chamadas porque criar, configurar, consultar e apagar fazem parte do mesmo recurso. As receitas executam apenas por clique e identificam ações destrutivas. Use uma instalação/campanha descartável.
 
@@ -86,19 +92,19 @@ ${surfaceTable}
 | Coordenadas e pan/zoom | viewport.sceneToViewport / viewportToScene; scene.viewport.changed | [Overlay executável](docs:example-surface-scene-overlay) |
 | Cancelar e liberar | signal e onDispose em cada montagem; start / register / stop | [Projeto básico](docs:tutorial-first-module) |
 
-Os eventos de domínio incluem actors.changed, tokens.changed, maps.changed, maps.layersChanged, journals.changed, items.changed, combat.changed, cards.changed, audio.changed, compendiums.changed, chat.changed, chat.message, table.presence e table.lobbyChanged. Podem agrupar invalidações e fazer leituras iniciais/reconexão; não disparam uma automação uma única vez garantida. Cada assinatura precisa ser liberada.
+Os eventos de domínio incluem actors.changed, tokens.changed, maps.changed, maps.layersChanged, journals.changed, items.changed, combat.changed, cards.changed, audio.changed, compendiums.changed, clocks.changed, clues.changed, mindmaps.changed, chat.changed, chat.message, table.presence e table.lobbyChanged. Podem agrupar invalidações e fazer leituras iniciais/reconexão; não disparam uma automação uma única vez garantida. Cada assinatura precisa ser liberada.
 
 ## Map Builder e automação visual
 
-Os quatro donos door/lever/torch/region, as conexões execution/data e os 44 node.type têm [grafo completo, JSON e passos no editor](docs:examples-blueprints). O [catálogo de nós](docs:example-blueprint-nodes) explica recursos, alvos e efeitos. Use a ação nativa de Test behavior/playtest antes de aplicar na cena. Esses grafos são documentos de desenvolvimento, não uma API browser para importar qualquer JSON nem um campo novo do manifesto.
+Os quatro donos door/lever/torch/region, as conexões execution/data e os 48 node.type têm [grafo completo, JSON e passos no editor](docs:examples-blueprints). O [catálogo de nós](docs:example-blueprint-nodes) explica recursos, alvos e efeitos. Use a ação nativa de Test behavior/playtest antes de aplicar na cena. Esses grafos são documentos de desenvolvimento, não uma API browser para importar qualquer JSON nem um campo novo do manifesto.
 
-O tutorial de [cenas](docs:tutorial-maps) mostra a API pública de camadas/objetos. Criar novos kinds ou portas do editor exige contribuição ao core e seus testes; a release 0.3.1 não promete uma API de plugin para registrar tipos arbitrários de nó.
+O tutorial de [cenas](docs:tutorial-maps) mostra a API pública de camadas/objetos. Criar novos kinds ou portas do editor exige contribuição ao core e seus testes; a release 0.3.2 não promete uma API de plugin para registrar tipos arbitrários de nó.
 
 ## Integrações de servidor e limites da release
 
-A [integração Django](docs:tutorial-server-integration) mostra Context.from_request, comandos públicos, rotas autenticadas/CSRF e sinais depois do commit. As fachadas Python api.actors/tokens/maps/journals/items/combat/cards/audio/compendiums/resources/chat/dice/table/events têm assinaturas na [referência](docs:api#interface-python). O contexto carrega IDs, sem congelar permissões; cada serviço revalida acesso. Contas, administração, instalação e campanhas são adaptadores globais da aplicação, não métodos do api entregue a uma montagem: consulte [a referência de adaptadores](docs:api#adaptadores-de-conta-campanha-proprietario-e-modulos) para ferramentas do operador.
+A [integração Django](docs:tutorial-server-integration) mostra Context.from_request, comandos públicos, rotas autenticadas/CSRF e sinais depois do commit. As fachadas Python api.actors/tokens/maps/journals/items/combat/cards/audio/compendiums/clocks/clues/mindmaps/resources/chat/dice/table/events têm assinaturas na [referência](docs:api#interface-python). O contexto carrega IDs, sem congelar permissões; cada serviço revalida acesso. Contas, administração, instalação e campanhas são adaptadores globais da aplicação, não métodos do api entregue a uma montagem: consulte [a referência de adaptadores](docs:api#adaptadores-de-conta-campanha-proprietario-e-modulos) para ferramentas do operador.
 
-Não há maps.create ou audio.upload no SDK de domínio: os tutoriais preparam cena/arquivos pela interface nativa e usam as operações públicas disponíveis depois. Não há SQL/Python arbitrário por chamada de módulo browser, permissão de GM implícita, mudança de campanha por UUID nem bypass de conteúdo privado. system.combat aceita iniciativa declarativa. Provedores Python existentes são código confiável de servidor; não justificam distribuir um novo RPG como sistema mais Server Rules separado. Uma necessidade sem contrato deve ser apresentada como limitação, preservando a versão solicitada.
+Não há maps.create. A API 0.3.2 acrescenta adaptadores de arquivos, incluindo audio.upload e maps.upload/importUniversalVtt; passe um File real pela API documentada. Tutoriais antigos podem preparar cenas e arquivos pela interface nativa para manter sua compatibilidade declarada. Não há SQL/Python arbitrário por chamada de módulo browser, permissão de GM implícita, mudança de campanha por UUID nem bypass de conteúdo privado. system.combat aceita iniciativa declarativa. Provedores Python existentes são código confiável de servidor; não justificam distribuir um novo RPG como sistema mais Server Rules separado. Uma necessidade sem contrato deve ser apresentada como limitação, preservando a versão solicitada.
 
 ## Como conferir a cobertura ao evoluir o host
 
@@ -106,7 +112,7 @@ Este mapa usa uma cópia versionada de frontend.json e registry.json em extensio
 `:
 `## How to use this map
 
-This index crosses public contracts from host ${contracts.hostVersion}, revision ${contracts.sourceRevision.slice(0,7)}, with implementation projects. It covers **${documentedDomainMethods.length} domain API methods**, **${operations.length} original SDK operations**, **${Object.keys(contracts.surfaces).length} surfaces** and lifecycle helpers. Each method links to runnable code, inputs and a test, rather than promising arbitrary unsupported combinations.
+This index crosses public contracts from host ${contracts.hostVersion}, revision ${contracts.sourceRevision.slice(0,7)}, with implementation projects. It covers **${documentedDomainMethods.length} domain API methods**, **${operations.length} original SDK operations**, **${Object.keys(contracts.surfaces).length} surfaces** and lifecycle helpers. Each method links to an executable tutorial or the canonical guide covering its contract, permissions and examples. Older projects retain their declared host version; APIs added in 0.3.2 use the current reference rather than being attributed retroactively to older projects.
 
 Begin with the [outcome you want to build](docs:tutorial-index). Use this table to locate a specific capability. A recipe can combine create/configure/read/remove because they are parts of one feature. Actions execute on click and destructive operations are identified. Use a disposable installation/campaign.
 
@@ -159,19 +165,19 @@ ${surfaceTable}
 | Coordinates/pan/zoom | viewport.sceneToViewport / viewportToScene; scene.viewport.changed | [Working overlay](docs:example-surface-scene-overlay) |
 | Cancellation/disposal | signal and onDispose per mount; start / register / stop | [First module](docs:tutorial-first-module) |
 
-Domain events include actors.changed, tokens.changed, maps.changed, maps.layersChanged, journals.changed, items.changed, combat.changed, cards.changed, audio.changed, compendiums.changed, chat.changed, chat.message, table.presence and table.lobbyChanged. They may coalesce invalidations and perform initial/reconnect reads. They are not exactly-once automation triggers. Dispose each subscription.
+Domain events include actors.changed, tokens.changed, maps.changed, maps.layersChanged, journals.changed, items.changed, combat.changed, cards.changed, audio.changed, compendiums.changed, clocks.changed, clues.changed, mindmaps.changed, chat.changed, chat.message, table.presence and table.lobbyChanged. They may coalesce invalidations and perform initial/reconnect reads. They are not exactly-once automation triggers. Dispose each subscription.
 
 ## Map Builder and visual automation
 
-All four door/lever/torch/region owners, execution/data connections and 44 node.type values have [complete graphs, JSON and editor steps](docs:examples-blueprints). The [node catalog](docs:example-blueprint-nodes) explains targets, resources and effects. Use native Test behavior/playtest before live application. These graphs are development documents, not a browser API for importing arbitrary JSON or a new manifest field.
+All four door/lever/torch/region owners, execution/data connections and 48 node.type values have [complete graphs, JSON and editor steps](docs:examples-blueprints). The [node catalog](docs:example-blueprint-nodes) explains targets, resources and effects. Use native Test behavior/playtest before live application. These graphs are development documents, not a browser API for importing arbitrary JSON or a new manifest field.
 
-The [scene tutorial](docs:tutorial-maps) implements public layer/object operations. Adding new kinds or editor ports requires a core contribution and tests; 0.3.1 does not promise a plugin API for arbitrary node-type registration.
+The [scene tutorial](docs:tutorial-maps) implements public layer/object operations. Adding new kinds or editor ports requires a core contribution and tests; 0.3.2 does not promise a plugin API for arbitrary node-type registration.
 
 ## Server integrations and release boundaries
 
-The [Django integration](docs:tutorial-server-integration) implements Context.from_request, public commands, authenticated/CSRF routes and after-commit hooks. Python facades api.actors/tokens/maps/journals/items/combat/cards/audio/compendiums/resources/chat/dice/table/events have signatures in the [reference](docs:api#python-interface). Context retains IDs rather than cached authority, and each service checks access. Account/admin/package/campaign management are global application adapters rather than methods on a mount’s api; see [adapter reference](docs:api#account-campaign-owner-and-module-adapters) for operator tools.
+The [Django integration](docs:tutorial-server-integration) implements Context.from_request, public commands, authenticated/CSRF routes and after-commit hooks. Python facades api.actors/tokens/maps/journals/items/combat/cards/audio/compendiums/clocks/clues/mindmaps/resources/chat/dice/table/events have signatures in the [reference](docs:api#python-interface). Context retains IDs rather than cached authority, and each service checks access. Account/admin/package/campaign management are global application adapters rather than methods on a mount’s api; see [adapter reference](docs:api#account-campaign-owner-and-module-adapters) for operator tools.
 
-There is no maps.create or audio.upload domain SDK method: tutorials prepare scenes/files through native UI and then use supported public operations. Browser modules do not receive arbitrary SQL/Python execution, implicit GM powers, campaign switching through foreign UUIDs or hidden-data bypasses. system.combat supports declarative initiative. Existing Python providers are trusted server code, not permission to distribute a new RPG as a system plus separate Server Rules companion. Explain unsupported requirements while preserving the requested host version.
+There is no maps.create domain method. The 0.3.2 API adds native file adapters, including audio.upload and maps.upload/importUniversalVtt; pass a real File through the documented file API. Older tutorials may prepare scenes and files through the native interface to retain their declared compatibility. Browser modules do not receive arbitrary SQL/Python execution, implicit GM powers, campaign switching through foreign UUIDs or hidden-data bypasses. system.combat supports declarative initiative. Existing Python providers are trusted server code, not permission to distribute a new RPG as a system plus separate Server Rules companion. Explain unsupported requirements while preserving the requested host version.
 
 ## Maintain coverage when the host changes
 

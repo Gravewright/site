@@ -139,6 +139,48 @@ const guides = [
   }
 ];
 
+// Add current native workflows without changing the target-host requirement of
+// the original prompts or turning examples into executable installation steps.
+const nativeWorkflows = [
+  {
+    slug: 'ai-server-integration',
+    sources: ['docs/en/journals.md', 'docs/pt-BR/journals.md', 'docs/en/mindmaps.md', 'docs/pt-BR/mindmaps.md'],
+    en: {
+      context: 'For a 0.3.2 target, the journal/mind-map guides describe the shared 37-type resource catalog, live permission projections and opaque unavailable references.',
+      request: 'If the requested report needs campaign links on 0.3.2, inspect api.journals.resources/resolve or api.mindmaps.resources/resolve and use current authorized results. Never recover hidden IDs or labels from opaque placeholders, and never treat a link as an access grant.',
+      validation: 'Revoke target access after linking it and confirm the next report omits its private identity/title; keep local journal page/chapter IDs separate from host resource IDs during portable transfers.',
+    },
+    pt: {
+      context: 'Para a release alvo 0.3.2, os guias de diários/mapas mentais descrevem o catálogo compartilhado de 37 tipos, projeções de acesso atuais e marcadores opacos de destinos indisponíveis.',
+      request: 'Se o relatório pedido precisar de vínculos na 0.3.2, examine api.journals.resources/resolve ou api.mindmaps.resources/resolve e utilize resultados autorizados atuais. Não tente recuperar IDs ou nomes ocultos dos marcadores opacos nem trate um vínculo como concessão de acesso.',
+      validation: 'Revogue o acesso ao destino depois de vinculá-lo e confira que o próximo relatório omite identidade/título privados; mantenha IDs locais de página/capítulo separados de IDs de recursos ao transferir conteúdo.',
+    },
+  },
+  {
+    slug: 'ai-map-blueprint',
+    sources: ['docs/en/clocks.md', 'docs/pt-BR/clocks.md', 'docs/en/clues.md', 'docs/pt-BR/clues.md', 'docs/en/mindmaps.md', 'docs/pt-BR/mindmaps.md'],
+    en: {
+      context: 'On host 0.3.2, Control clock, Control clue, Open mind map and Control mind-map topic bind native campaign resources; confirm their supported actions in the exact target reference.',
+      request: 'If the requested mechanism tracks progress or reveals a graph on 0.3.2, select an existing authorized clock/clue/map with the native target picker. Delegate only a configured GM-authored effect, retain scene scope, and do not grant general editing or expose unfinished clues. On older hosts, report an unsupported capability instead of requiring an unrequested upgrade.',
+      validation: 'Rehearse the configured effect without persisting changes, test a permitted real player, then revoke access or remove the target and confirm hidden clues/private graphs do not become readable.',
+    },
+    pt: {
+      context: 'No host 0.3.2, Controlar relógio, Controlar pista, Abrir mapa mental e Controlar tópico do mapa mental vinculam recursos nativos; confira as ações suportadas na referência exata da release alvo.',
+      request: 'Se o mecanismo pedido acompanhar progresso ou abrir um grafo na 0.3.2, escolha relógio/pista/mapa autorizado existente no seletor nativo. Delegue somente o efeito configurado pelo mestre, preserve o escopo e não conceda edição geral nem exponha pistas incompletas. Em hosts antigos, informe a capacidade ausente sem exigir atualização não solicitada.',
+      validation: 'Ensaie o efeito sem persistir mudanças, teste um jogador real autorizado e depois revogue acesso ou remova o alvo; pistas ocultas e grafos privados não devem se tornar legíveis.',
+    },
+  },
+];
+for (const extension of nativeWorkflows) {
+  const guide = guides.find(item => item.slug === extension.slug);
+  guide.sources.push(...extension.sources);
+  for (const locale of ['en', 'pt']) {
+    guide[locale].context.push(extension[locale].context);
+    guide[locale].request.push(extension[locale].request);
+    guide[locale].validation.push(extension[locale].validation);
+  }
+}
+
 const list=items=>items.map(item=>`- ${item}`).join('\n');
 const steps=items=>items.map((item,i)=>`${i+1}. ${item}`).join('\n');
 const common={

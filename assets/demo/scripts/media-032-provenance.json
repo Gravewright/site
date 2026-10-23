@@ -1,0 +1,314 @@
+{
+  "hostVersion": "0.3.2",
+  "hostCommit": "04f0c1ee48341f2cfd3d47418138d3380db7ea2e",
+  "capturedAt": "2026-10-23T20:36:42.855869+00:00",
+  "browser": "Chromium 151.0.7922.34",
+  "viewports": "1920 × 1080; device scale 1",
+  "locales": [
+    "en",
+    "pt-BR"
+  ],
+  "recordingInterface": "en",
+  "audio": "none; no soundtrack or narration",
+  "video": {
+    "file": "assets/videos/gravewright-032-showcase.mp4",
+    "durationSeconds": 68.5,
+    "codec": "H.264 High, yuv420p, 30fps, faststart",
+    "trim": "First 1.0 seconds of browser startup only"
+  },
+  "presentation": "Unmodified real application UI. Only native clicks, keyboard, navigation and window resizing. No injected styles, changed DOM or composed screenshots.",
+  "assets": [
+    {
+      "file": "assets/images/campaign-dashboard-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "46a275b72d3a88528dee6adaab3b822a6c6b07a432a9e7b970a780987b8ba323",
+      "sourcePngSha256": "e3e61e2dd0e8484990a30537567bebb7d9d144370768ca5ac881c4871b0e28d2",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/table-overview-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "9d38c7cf624a4213a1d5956a4bb9a3645b5f48335dce7f6bb49dafe6daa50603",
+      "sourcePngSha256": "a2dfc3fa1ab15a4e49c2ac83d933598fbcadcc17428897a6b3868c9d17290c39",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/campaign-manager-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "47badf23e77f1eb5127a5b512471a900236f5ade318b8ef804cb9e1f533ab359",
+      "sourcePngSha256": "3f6ece611c3fce3d7c4c82006d59a9de360c151ac0bdf257d3a60a6a82304d84",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/progress-clocks-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "311d69be4a60ed9092044c90074ed1b95c504ab71241361be160e435711cd1c8",
+      "sourcePngSha256": "06600754b37eb6e3ce0d976eb0e3664b17e9e6c4221f88d8598d50716c6c2c36",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/mindmap-connections-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "40d1ed4a9fde3e3ee5eaf38400656d4fb70e0ed762edb5b0ec5b2d7168349a23",
+      "sourcePngSha256": "91d85703ec938173fd94aa1a9ab9515a534794fdfb81a6fc45fcb4abcb24685b",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/journal-chapters-references-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "02a1c86c0536d5d10669382f4d41d3d36e93090a929092349ee050a96ec6f5a5",
+      "sourcePngSha256": "4fe33194da80b7c1ca5a37e3653196f43dede9343dab7c406cf045869f20e856",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/pdf-manual-mapping-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "44f5ff3b8e7c9fa025c96f3489f5ce33dcdbf7bb09d154db282d1c3fe0efdbd5",
+      "sourcePngSha256": "b252479773ec67a376db6fcab0de98a8cbaba4451d0fba5c7ab1ac713ea0f6a5",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/pdf-field-actions-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "72cd6afbc19d31e13ca9568b69bdc2b1f8d1b5e26ff00ba7f4d200bcc832ec6a",
+      "sourcePngSha256": "b9058722c11b72879b0294676902b30d583a8f946e264921f3f7e1df94b5db91",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/map-builder-nodes-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "69a58f7c6aa27a5d73aa1c5265116e6c5704862b246558c2253136a4cecb50f5",
+      "sourcePngSha256": "0878595cefbcc504b8e5d27e93c3d90ae0c79f2dbbe4a8e5094011471468437e",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/campaign-dashboard-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b2c711a327d6b602ce0c7b1666e481469e07290919fc0a5f6723d615bc43f1a1",
+      "sourcePngSha256": "e072f0a04e6394783bfdac1de5bef840a9e62a48ad5d1ac506ac1a824bc1ce62",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/table-overview-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f2e6896f98612016dacd1eecb7a10e1cc9e32fb983028379eab920ca82b8ef4f",
+      "sourcePngSha256": "b04bfd05d5060cb2cc003a8e107d3ecd0416de1726c48f4870fe1e99ef22fa18",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/campaign-manager-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e4e49af6699b29c0bc345dfb0c77a813a6d2de32536109521b48364d4b369d13",
+      "sourcePngSha256": "5b6d6883bd46fd900c26ed4952bc41b979bc9ab17f8b0b8671e567f44d075ccb",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/progress-clocks-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "05d82cafb5111f3306874f9c6d2a519312ed81b639ad2720cf3d33d581202cb9",
+      "sourcePngSha256": "c24f871420e7cce10f90904317cb9c8e16a958051dda89d29b72bbaca94d740d",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/mindmap-connections-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "023a8bfb098f7334a45c822e13ef751b6a3398fe775eb686c602ad9f25ffb0b0",
+      "sourcePngSha256": "b3bdb484f264c31e8c42b23831c922e5c5d5bbb1cc8725b0d0d1c1c24b9870db",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/journal-chapters-references-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "81d7363b95c92cb95220d28fc488d54560e4e2c6b0aa441cfff51accc3db2c94",
+      "sourcePngSha256": "1299191c78383c086a0b5218f49ef358c12c32a990dc6dca88f110fdb89b2a81",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/pdf-manual-mapping-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "8f2c68b22009dbea019f9d8490df50105c05dd29855357260862cc974e231f3e",
+      "sourcePngSha256": "2930a1689206c3949a6af8faf38312d1849cace76a2987a2337dce9a8f9d6e42",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/pdf-field-actions-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "adb11caca6760604ea1ce783eaa0d29898edb983e59ba5e7a98e30995a75d8cd",
+      "sourcePngSha256": "9e0d86f17eb154e4e6300319ff5fb0ed5f8e9530d9bdc9d3590d06bd55a043b7",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/map-builder-nodes-032.pt-BR.webp",
+      "locale": "pt-BR",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "216291f92a13b1484b5739235dcc951aac54b41f6eaf60747f19629182555d3b",
+      "sourcePngSha256": "69199532f7710a9266ac271912ec49dd4df77349271b031ba6fe69ff219fc073",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/wiki-scenes-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "a25219b99d7f03f56db50264c19ffd39fc0704987b864abd46948d9f349979c3",
+      "sourcePngSha256": "4d74f019281f3b9cc76077fa47279a5306d2f25a33ff47d7716ad2c00c49d6a6",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/wiki-actors-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "820b1f8892d5864e858abe7b103780b2a196f3cdbd5dd78c55b7560e8b7731c7",
+      "sourcePngSha256": "9ceebb69ee98efba296ea3f5fd1c324899652088f06c6da79313735a310ac70f",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/wiki-combat-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f9a9dcb20bc0164509fea001c28421c7ddfe54a311806bb2f155643e8f03ed82",
+      "sourcePngSha256": "fe0d81b030521cf8c1680f97f5e00b858dc3b1ea6c508eabb2d6f572fecaf19e",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/images/wiki-chat-dice-032.webp",
+      "locale": "en",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "7b1ba6b67f0da3f64f1a486664e526b78dd1955ad53812af825b6b655eab1ca2",
+      "sourcePngSha256": "7ee3d01d7db095f61bde60320fb14c971107f2916edb5bd29087b960be87042a",
+      "encoding": "lossless WebP; decoded pixels verified identical"
+    },
+    {
+      "file": "assets/videos/gravewright-032-showcase.mp4",
+      "bytes": 12669506,
+      "sha256": "78a37af2cfdadcb7ddc18265615272410efe7ef7482f80242f190183372213c8"
+    },
+    {
+      "file": "assets/videos/gravewright-032-showcase.en.vtt",
+      "bytes": 1095,
+      "sha256": "80682ff3f553e9273c0bfd369b9c48562e1dcc52b0fc65b487d05ca1ce8ed8ea",
+      "textEncoding": "UTF-8 with LF line endings"
+    },
+    {
+      "file": "assets/videos/gravewright-032-showcase.pt-BR.vtt",
+      "bytes": 1158,
+      "sha256": "337f41441ed91ad17874f7e710c2b8df82137478e1e328745137d538faa6e00c",
+      "textEncoding": "UTF-8 with LF line endings"
+    },
+    {
+      "file": "assets/videos/gravewright-032-showcase.en.txt",
+      "bytes": 1559,
+      "sha256": "c029b05df9393683510baa466d90e00787e588036a50e7424259068c4364e3c2",
+      "textEncoding": "UTF-8 with LF line endings"
+    },
+    {
+      "file": "assets/videos/gravewright-032-showcase.pt-BR.txt",
+      "bytes": 1687,
+      "sha256": "f1383989d5300f1c1f4080bc65a4bb5029e309c3302a0258b3eaf2a973b25968",
+      "textEncoding": "UTF-8 with LF line endings"
+    },
+    {
+      "file": "assets/images/gravewright-social-032.jpg",
+      "bytes": 277604,
+      "sha256": "62ecda2792a0905eae6c5716361aa5616eda9a1e9779ecb0f2d2197eeb4d73d4"
+    }
+  ],
+  "sourceArtwork": [
+    {
+      "file": "assets/demo/moonfall-abbey-map.png",
+      "sha256": "8b9a78f02772e4214605bbec66f946b48f09cb23a80973d1e910744bfb23ce24"
+    },
+    {
+      "file": "assets/demo/seraphina-vale.png",
+      "sha256": "2a0dc382b5a87913ba9655f687821400869c285787d82e3b29c0b60d48633a52"
+    },
+    {
+      "file": "assets/demo/bram-ironwood.png",
+      "sha256": "de160cca6c99ba9b857c84ea199b5eed2ea467351a2b5fe6996eb4a1d01e7b82"
+    },
+    {
+      "file": "assets/demo/abbey-sentinel.png",
+      "sha256": "e2599199d82a43a537f5c5dd7567d288978803cc5684307f73499090d4ca79cd"
+    },
+    {
+      "file": "assets/demo/Seren-Ashford.pdf",
+      "sha256": "fc41dd50558505570530865cf51cf4655f33f872f917987f6d340062c3525d34"
+    }
+  ],
+  "originalFlatPdfSha256": "c62ab7a95f9b2358451c70d7efcff1fddf5c8108556f4a4fbd1e9c2d1345caa6",
+  "isolation": "Fresh synthetic SQLite, media, modules, caches and temporary storage; disposable accounts; localhost ephemeral port; dotenv disabled; server terminated after capture.",
+  "licensing": "Original screenshot contributions, example writing and the vector PDF follow GPL-3.0-only. Host UI: GPL-3.0-only with Gravewright Independent Module Permission; existing third-party notices remain applicable.",
+  "validation": {
+    "pageErrors": 0,
+    "nativeDialogs": 0,
+    "unexpectedFailedRequests": 0,
+    "webpPixels": "lossless decoded pixel equality checked for every screenshot",
+    "videoBrowser": {
+      "duration": 68.5,
+      "width": 1920,
+      "height": 1080,
+      "codec": "probably"
+    },
+    "captionTracks": [
+      {
+        "language": "en",
+        "cues": 10,
+        "first": "Explore Moonfall Abbey with tokens, transparent progress indicators and the new lower dock.",
+        "lastEnd": 68.5
+      },
+      {
+        "language": "pt-BR",
+        "cues": 10,
+        "first": "Explore Moonfall Abbey com tokens, indicadores transparentes e o novo dock inferior.",
+        "lastEnd": 68.5
+      }
+    ],
+    "playbackAndSeeking": true,
+    "captionTranscriptLineEndings": "UTF-8 LF verified; no CR bytes",
+    "vectorPdfSourceReproducesHash": true
+  },
+  "translationAdapter": {
+    "id": "gravewright.translator",
+    "fixtureVersion": "0.1.0",
+    "publishedPackage": false,
+    "purpose": "Isolated synthetic adapter activates the public core 0.3.2 locale catalogs through the normal package mechanism. It is not a claim that published Translator 0.1.2 was installed. No visible DOM text or styles were replaced."
+  }
+}

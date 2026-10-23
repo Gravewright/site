@@ -1,121 +1,121 @@
 [
   {
     "id": "campaigns",
-    "file": "assets/wiki/campaigns-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/campaign-dashboard-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "The campaign dashboard with three original example campaigns. Gravewright 0.3.0, English interface.",
-      "pt": "O painel de campanhas com três campanhas originais de exemplo. Gravewright 0.3.0, interface em inglês."
+      "en": "The real Gravewright 0.3.2 campaign dashboard displays Moonfall Vigil, The Wild Paths and Beyond the Mists with the original approved artwork. English interface.",
+      "pt": "O painel real de campanhas do Gravewright 0.3.2 exibe Moonfall Vigil, The Wild Paths e Beyond the Mists com as artes originais autorizadas. Interface em inglês."
     },
     "caption": {
-      "en": "The campaign dashboard with three original example campaigns. Gravewright 0.3.0, English interface.",
-      "pt": "O painel de campanhas com três campanhas originais de exemplo. Gravewright 0.3.0, interface em inglês."
+      "en": "The real Gravewright 0.3.2 campaign dashboard displays Moonfall Vigil, The Wild Paths and Beyond the Mists with the original approved artwork. English interface.",
+      "pt": "O painel real de campanhas do Gravewright 0.3.2 exibe Moonfall Vigil, The Wild Paths e Beyond the Mists com as artes originais autorizadas. Interface em inglês."
     },
     "articleSlugs": [
       "getting-started",
       "campaigns",
       "installation"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "tabletop",
-    "file": "assets/wiki/tabletop-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/table-overview-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "A real tabletop with the Moonfall Abbey map and three actor tokens. Gravewright 0.3.0, English interface.",
-      "pt": "Mesa real com o mapa da Abadia de Moonfall e três tokens de atores. Gravewright 0.3.0, interface em inglês."
+      "en": "Gravewright 0.3.2 shows the original Moonfall Abbey map, three character tokens, transparent clock and clue indicators, Edit Scene and the new lower-dock shortcuts. English interface.",
+      "pt": "O Gravewright 0.3.2 mostra o mapa original Moonfall Abbey, três tokens de personagens, indicadores transparentes de relógio e pista, Editar Cena e os novos atalhos no dock inferior. Interface em inglês."
     },
     "caption": {
-      "en": "A real tabletop with the Moonfall Abbey map and three actor tokens. Gravewright 0.3.0, English interface.",
-      "pt": "Mesa real com o mapa da Abadia de Moonfall e três tokens de atores. Gravewright 0.3.0, interface em inglês."
+      "en": "Gravewright 0.3.2 shows the original Moonfall Abbey map, three character tokens, transparent clock and clue indicators, Edit Scene and the new lower-dock shortcuts. English interface.",
+      "pt": "O Gravewright 0.3.2 mostra o mapa original Moonfall Abbey, três tokens de personagens, indicadores transparentes de relógio e pista, Editar Cena e os novos atalhos no dock inferior. Interface em inglês."
     },
     "articleSlugs": [
       "tabletop",
       "tokens",
       "universal-vtt"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "scenes",
-    "file": "assets/wiki/scenes-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/wiki-scenes-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "The scene directory groups the broadcast scene and private scenes in a folder. Gravewright 0.3.0, English interface.",
-      "pt": "O diretório de cenas organiza a cena transmitida e cenas privadas em uma pasta. Gravewright 0.3.0, interface em inglês."
+      "en": "The scene directory shows the shared Moonfall Abbey and private scenes in Gravewright 0.3.2. English interface.",
+      "pt": "O diretório de cenas mostra Moonfall Abbey compartilhada e cenas privadas no Gravewright 0.3.2. Interface em inglês."
     },
     "caption": {
-      "en": "The scene directory groups the broadcast scene and private scenes in a folder. Gravewright 0.3.0, English interface.",
-      "pt": "O diretório de cenas organiza a cena transmitida e cenas privadas em uma pasta. Gravewright 0.3.0, interface em inglês."
+      "en": "The scene directory shows the shared Moonfall Abbey and private scenes in Gravewright 0.3.2. English interface.",
+      "pt": "O diretório de cenas mostra Moonfall Abbey compartilhada e cenas privadas no Gravewright 0.3.2. Interface em inglês."
     },
     "articleSlugs": [
       "scenes",
       "tabletop",
       "permissions"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "actors",
-    "file": "assets/wiki/actors-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/wiki-actors-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "The actor directory contains an original company, portraits and reusable PDF templates. Gravewright 0.3.0, English interface.",
-      "pt": "O diretório de atores reúne um grupo original, retratos e modelos de PDF reutilizáveis. Gravewright 0.3.0, interface em inglês."
+      "en": "The original Moonfall company and reusable PDF templates appear in the real Gravewright 0.3.2 actor directory. English interface.",
+      "pt": "O grupo original Moonfall e modelos de PDF reutilizáveis aparecem no diretório real de atores do Gravewright 0.3.2. Interface em inglês."
     },
     "caption": {
-      "en": "The actor directory contains an original company, portraits and reusable PDF templates. Gravewright 0.3.0, English interface.",
-      "pt": "O diretório de atores reúne um grupo original, retratos e modelos de PDF reutilizáveis. Gravewright 0.3.0, interface em inglês."
+      "en": "The original Moonfall company and reusable PDF templates appear in the real Gravewright 0.3.2 actor directory. English interface.",
+      "pt": "O grupo original Moonfall e modelos de PDF reutilizáveis aparecem no diretório real de atores do Gravewright 0.3.2. Interface em inglês."
     },
     "articleSlugs": [
       "actors",
       "character-sheets",
       "tokens"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "pdf-sheet",
-    "file": "assets/wiki/pdf-sheet-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/pdf-manual-mapping-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "The bundled PDF system displays an original character sheet. Gravewright 0.3.0, English interface.",
-      "pt": "O sistema PDF integrado exibe uma ficha de personagem original. Gravewright 0.3.0, interface em inglês."
+      "en": "Gravewright 0.3.2 maps text, numeric and checkbox rectangles onto an original noninteractive PDF for Bram Ironwood; mapping and layout controls are visible. English interface.",
+      "pt": "O Gravewright 0.3.2 mapeia retângulos de texto, número e checkbox em um PDF original não interativo de Bram Ironwood; controles de mapeamento e layout estão visíveis. Interface em inglês."
     },
     "caption": {
-      "en": "The bundled PDF system displays an original character sheet. Gravewright 0.3.0, English interface.",
-      "pt": "O sistema PDF integrado exibe uma ficha de personagem original. Gravewright 0.3.0, interface em inglês."
+      "en": "Gravewright 0.3.2 maps text, numeric and checkbox rectangles onto an original noninteractive PDF for Bram Ironwood; mapping and layout controls are visible. English interface.",
+      "pt": "O Gravewright 0.3.2 mapeia retângulos de texto, número e checkbox em um PDF original não interativo de Bram Ironwood; controles de mapeamento e layout estão visíveis. Interface em inglês."
     },
     "articleSlugs": [
       "character-sheets",
       "actors",
       "pdf-system"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "journals",
-    "file": "assets/wiki/journals-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/journal-chapters-references-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "An original journal entry with chapter navigation and sharing controls. Gravewright 0.3.0, English interface.",
-      "pt": "Uma anotação original com navegação por capítulos e controles de compartilhamento. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 journal shows nested and empty chapters, authored expedition notes and live links to a clock, mind map and character. English interface.",
+      "pt": "Um diário real do Gravewright 0.3.2 mostra capítulos aninhados e vazios, anotações autorais da expedição e vínculos ativos com relógio, mapa mental e personagem. Interface em inglês."
     },
     "caption": {
-      "en": "An original journal entry with chapter navigation and sharing controls. Gravewright 0.3.0, English interface.",
-      "pt": "Uma anotação original com navegação por capítulos e controles de compartilhamento. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 journal shows nested and empty chapters, authored expedition notes and live links to a clock, mind map and character. English interface.",
+      "pt": "Um diário real do Gravewright 0.3.2 mostra capítulos aninhados e vazios, anotações autorais da expedição e vínculos ativos com relógio, mapa mental e personagem. Interface em inglês."
     },
     "articleSlugs": [
       "journals",
@@ -123,50 +123,50 @@
       "roll-tables",
       "handouts"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "combat",
-    "file": "assets/wiki/combat-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/wiki-combat-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "The encounter tracker shows the current turn, initiative order and actor resources. Gravewright 0.3.0, English interface.",
-      "pt": "O rastreador de combate exibe o turno atual, a iniciativa e recursos dos atores. Gravewright 0.3.0, interface em inglês."
+      "en": "The native Gravewright 0.3.2 encounter tracker shows initiative and the current turn for the fictional Moonfall company. English interface.",
+      "pt": "O rastreador nativo de encontros do Gravewright 0.3.2 mostra iniciativa e turno atual do grupo fictício Moonfall. Interface em inglês."
     },
     "caption": {
-      "en": "The encounter tracker shows the current turn, initiative order and actor resources. Gravewright 0.3.0, English interface.",
-      "pt": "O rastreador de combate exibe o turno atual, a iniciativa e recursos dos atores. Gravewright 0.3.0, interface em inglês."
+      "en": "The native Gravewright 0.3.2 encounter tracker shows initiative and the current turn for the fictional Moonfall company. English interface.",
+      "pt": "O rastreador nativo de encontros do Gravewright 0.3.2 mostra iniciativa e turno atual do grupo fictício Moonfall. Interface em inglês."
     },
     "articleSlugs": [
       "combat",
       "tokens",
       "character-sheets"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "chat-dice",
-    "file": "assets/wiki/chat-dice-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/wiki-chat-dice-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "Chat combines table messages with a public dice result. Gravewright 0.3.0, English interface.",
-      "pt": "O chat combina mensagens da mesa com uma rolagem pública de dados. Gravewright 0.3.0, interface em inglês."
+      "en": "A real message and 2d6+3 roll appear in Gravewright 0.3.2 tabletop chat. English interface.",
+      "pt": "Uma mensagem real e uma rolagem 2d6+3 aparecem no chat da mesa do Gravewright 0.3.2. Interface em inglês."
     },
     "caption": {
-      "en": "Chat combines table messages with a public dice result. Gravewright 0.3.0, English interface.",
-      "pt": "O chat combina mensagens da mesa com uma rolagem pública de dados. Gravewright 0.3.0, interface em inglês."
+      "en": "A real message and 2d6+3 roll appear in Gravewright 0.3.2 tabletop chat. English interface.",
+      "pt": "Uma mensagem real e uma rolagem 2d6+3 aparecem no chat da mesa do Gravewright 0.3.2. Interface em inglês."
     },
     "articleSlugs": [
       "chat-dice",
       "dice",
       "chat"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "library",
@@ -250,42 +250,42 @@
   },
   {
     "id": "map-builder",
-    "file": "assets/wiki/map-builder-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/map-builder-nodes-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface.",
-      "pt": "O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 Smart Object graph connects a gate interaction to Control clock, Control clue and Open mind map, at native 100% zoom. English interface.",
+      "pt": "Um grafo real de Objeto Inteligente do Gravewright 0.3.2 liga a interação no portão a Controlar relógio, Controlar pista e Abrir mapa mental, a 100% de zoom nativo. Interface em inglês."
     },
     "caption": {
-      "en": "Map Builder edits an original courtyard using reusable stone and wood materials. Gravewright 0.3.0, English interface.",
-      "pt": "O Map Builder edita um pátio original com materiais reutilizáveis de pedra e madeira. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 Smart Object graph connects a gate interaction to Control clock, Control clue and Open mind map, at native 100% zoom. English interface.",
+      "pt": "Um grafo real de Objeto Inteligente do Gravewright 0.3.2 liga a interação no portão a Controlar relógio, Controlar pista e Abrir mapa mental, a 100% de zoom nativo. Interface em inglês."
     },
     "articleSlugs": [
       "map-builder"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "blueprints",
-    "file": "assets/wiki/blueprints-030.webp",
-    "width": 1440,
-    "height": 900,
+    "file": "assets/images/map-builder-nodes-032.webp",
+    "width": 1920,
+    "height": 1080,
     "alt": {
-      "en": "A door blueprint connects interaction, a light, a message and a state change. Gravewright 0.3.0, English interface.",
-      "pt": "Um blueprint de porta conecta interação, luz, mensagem e mudança de estado. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 Smart Object graph connects a gate interaction to Control clock, Control clue and Open mind map, at native 100% zoom. English interface.",
+      "pt": "Um grafo real de Objeto Inteligente do Gravewright 0.3.2 liga a interação no portão a Controlar relógio, Controlar pista e Abrir mapa mental, a 100% de zoom nativo. Interface em inglês."
     },
     "caption": {
-      "en": "A door blueprint connects interaction, a light, a message and a state change. Gravewright 0.3.0, English interface.",
-      "pt": "Um blueprint de porta conecta interação, luz, mensagem e mudança de estado. Gravewright 0.3.0, interface em inglês."
+      "en": "A real Gravewright 0.3.2 Smart Object graph connects a gate interaction to Control clock, Control clue and Open mind map, at native 100% zoom. English interface.",
+      "pt": "Um grafo real de Objeto Inteligente do Gravewright 0.3.2 liga a interação no portão a Controlar relógio, Controlar pista e Abrir mapa mental, a 100% de zoom nativo. Interface em inglês."
     },
     "articleSlugs": [
       "smart-objects",
       "ai-map-blueprint"
     ],
-    "version": "0.3.0",
-    "origin": "Real Gravewright interface, captured from a disposable synthetic campaign."
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition."
   },
   {
     "id": "playtest",
@@ -767,5 +767,121 @@
     ],
     "version": "0.3.0",
     "origin": "Real public tutorial ZIP installed on a new disposable 0.3.0 host with original synthetic data."
+  },
+  {
+    "id": "manager-032",
+    "file": "assets/images/campaign-manager-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "Gravewright 0.3.2 campaign management shows pinned documents, a session plan, pending preparation and a timeline event, with clocks, clues and mind maps in its sidebar. English interface.",
+      "pt": "O gestor de campanha do Gravewright 0.3.2 mostra documentos fixados, plano de sessão, preparação pendente e evento de cronologia, com relógios, pistas e mapas mentais na barra lateral. Interface em inglês."
+    },
+    "caption": {
+      "en": "Gravewright 0.3.2 campaign management shows pinned documents, a session plan, pending preparation and a timeline event, with clocks, clues and mind maps in its sidebar. English interface.",
+      "pt": "O gestor de campanha do Gravewright 0.3.2 mostra documentos fixados, plano de sessão, preparação pendente e evento de cronologia, com relógios, pistas e mapas mentais na barra lateral. Interface em inglês."
+    },
+    "articleSlugs": [
+      "campaign-management",
+      "campaigns"
+    ]
+  },
+  {
+    "id": "mindmap-032",
+    "file": "assets/images/mindmap-connections-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "The Gravewright 0.3.2 mind-map editor shows six movable topics, branches, a labeled connection, notes, completion and typed links to Moonfall campaign resources. English interface.",
+      "pt": "O editor de mapas mentais do Gravewright 0.3.2 mostra seis tópicos móveis, ramificações, uma conexão com legenda, notas, conclusão e vínculos tipados com recursos da campanha Moonfall. Interface em inglês."
+    },
+    "caption": {
+      "en": "The Gravewright 0.3.2 mind-map editor shows six movable topics, branches, a labeled connection, notes, completion and typed links to Moonfall campaign resources. English interface.",
+      "pt": "O editor de mapas mentais do Gravewright 0.3.2 mostra seis tópicos móveis, ramificações, uma conexão com legenda, notas, conclusão e vínculos tipados com recursos da campanha Moonfall. Interface em inglês."
+    },
+    "articleSlugs": [
+      "mindmaps"
+    ]
+  },
+  {
+    "id": "progress-032",
+    "file": "assets/images/progress-clocks-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "The Gravewright 0.3.2 campaign manager displays the Lantern Watch progress clock, its segmented face and native configuration controls. English interface.",
+      "pt": "O gestor de campanha do Gravewright 0.3.2 exibe o relógio Lantern Watch, sua face segmentada e os controles nativos de configuração. Interface em inglês."
+    },
+    "caption": {
+      "en": "The Gravewright 0.3.2 campaign manager displays the Lantern Watch progress clock, its segmented face and native configuration controls. English interface.",
+      "pt": "O gestor de campanha do Gravewright 0.3.2 exibe o relógio Lantern Watch, sua face segmentada e os controles nativos de configuração. Interface em inglês."
+    },
+    "articleSlugs": [
+      "clocks",
+      "clues"
+    ]
+  },
+  {
+    "id": "journal-032",
+    "file": "assets/images/journal-chapters-references-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "A real Gravewright 0.3.2 journal shows nested and empty chapters, authored expedition notes and live links to a clock, mind map and character. English interface.",
+      "pt": "Um diário real do Gravewright 0.3.2 mostra capítulos aninhados e vazios, anotações autorais da expedição e vínculos ativos com relógio, mapa mental e personagem. Interface em inglês."
+    },
+    "caption": {
+      "en": "A real Gravewright 0.3.2 journal shows nested and empty chapters, authored expedition notes and live links to a clock, mind map and character. English interface.",
+      "pt": "Um diário real do Gravewright 0.3.2 mostra capítulos aninhados e vazios, anotações autorais da expedição e vínculos ativos com relógio, mapa mental e personagem. Interface em inglês."
+    },
+    "articleSlugs": [
+      "journals"
+    ]
+  },
+  {
+    "id": "pdf-032",
+    "file": "assets/images/pdf-manual-mapping-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "Gravewright 0.3.2 maps text, numeric and checkbox rectangles onto an original noninteractive PDF for Bram Ironwood; mapping and layout controls are visible. English interface.",
+      "pt": "O Gravewright 0.3.2 mapeia retângulos de texto, número e checkbox em um PDF original não interativo de Bram Ironwood; controles de mapeamento e layout estão visíveis. Interface em inglês."
+    },
+    "caption": {
+      "en": "Gravewright 0.3.2 maps text, numeric and checkbox rectangles onto an original noninteractive PDF for Bram Ironwood; mapping and layout controls are visible. English interface.",
+      "pt": "O Gravewright 0.3.2 mapeia retângulos de texto, número e checkbox em um PDF original não interativo de Bram Ironwood; controles de mapeamento e layout estão visíveis. Interface em inglês."
+    },
+    "articleSlugs": [
+      "character-sheets"
+    ]
+  },
+  {
+    "id": "pdf-actions-032",
+    "file": "assets/images/pdf-field-actions-032.webp",
+    "width": 1920,
+    "height": 1080,
+    "version": "0.3.2",
+    "origin": "Real published Gravewright 0.3.2 interface; isolated fictional campaign; no UI composition.",
+    "alt": {
+      "en": "The native Gravewright 0.3.2 Field actions modal displays a token-value selector, the saved 1d20 + @value roll, calculated formulas, field references and roll presets. English interface.",
+      "pt": "A modal nativa Ações do campo do Gravewright 0.3.2 exibe seletor de valor do token, a rolagem salva 1d20 + @value, fórmulas calculadas, referências de campo e exemplos de rolagem. Interface em inglês."
+    },
+    "caption": {
+      "en": "The native Gravewright 0.3.2 Field actions modal displays a token-value selector, the saved 1d20 + @value roll, calculated formulas, field references and roll presets. English interface.",
+      "pt": "A modal nativa Ações do campo do Gravewright 0.3.2 exibe seletor de valor do token, a rolagem salva 1d20 + @value, fórmulas calculadas, referências de campo e exemplos de rolagem. Interface em inglês."
+    },
+    "articleSlugs": [
+      "character-sheets"
+    ]
   }
 ]

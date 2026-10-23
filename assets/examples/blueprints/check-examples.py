@@ -155,6 +155,41 @@ with connection.execute_wrapper(refuse_database), patch(
             receiver = evaluate_graph(normalized, "signal:ready", state)
             require(receiver["actions"][0]["targetState"] == "open", "signal receiver")
 
+        if item["type"] in ("clockControl", "clueControl", "openMindMap", "mindMapNode"):
+            require(result["actions"] == [item["node"]], item["type"] + ": exact predicted action")
+            if item["type"] in ("clockControl", "clueControl"):
+                identifier = "clockId" if item["type"] == "clockControl" else "clueId"
+                resource = "clock" if item["type"] == "clockControl" else "clue"
+                require(item["node"][identifier] == resources[resource], "synthetic progress binding")
+                invalid = ({identifier: "not-a-uuid"}, {"amount": -1}, {"amount": 1.5}, {"action": "delete"})
+                actions = ("advance", "reduce", "set", "reset")
+                if item["type"] == "clueControl":
+                    actions += ("reveal", "hide")
+            else:
+                require(item["node"]["mindMapId"] == resources["mindMap"], "synthetic mind-map binding")
+                invalid = ({"mindMapId": "not-a-uuid"}, {"nodeId": "not-a-uuid"})
+                actions = () if item["type"] == "openMindMap" else ("complete", "reset", "toggle")
+                if item["type"] == "openMindMap":
+                    invalid += ({"audience": {"scope": "gm"}},)
+                else:
+                    require(item["node"]["nodeId"] == resources["topic"], "synthetic topic binding")
+                    invalid += ({"action": "delete"},)
+            for action in actions:
+                candidate = deepcopy(normalized)
+                candidate["graphs"][event]["nodes"][1]["action"] = action
+                predicted = evaluate_graph(clean_blueprint(candidate), event, state)
+                require(predicted["actions"][0]["action"] == action, "progress action is preserved")
+            for fields in invalid:
+                candidate = deepcopy(normalized)
+                candidate["graphs"][event]["nodes"][1].update(fields)
+                require_invalid(candidate, item["type"] + ": invalid fields must be rejected")
+            follow = deepcopy(normalized)
+            next_action = {"id": "after", "type": "state", "x": 560, "y": 80, "targetState": "open"}
+            follow["graphs"][event]["nodes"].append(next_action)
+            follow["graphs"][event]["edges"].append({"from": "sample", "to": "after", "output": "next", "kind": "execution"})
+            continued = evaluate_graph(clean_blueprint(follow), event, state)
+            require(continued["actions"] == [item["node"], next_action], "progress action must preserve continuation")
+
         if item["type"] in ("requestRoll", "setQuestStatus"):
             require(result["actions"] == [item["node"]], item["type"] + ": exact predicted action")
             if item["type"] == "requestRoll":
@@ -196,4 +231,4 @@ with connection.execute_wrapper(refuse_database), patch(
     else:
         raise AssertionError("Execution edges into pure value nodes must be rejected")
 
-print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, delayed/control/signal and roll/quest action checks, invalid connection rejected; dice drawing and database queries blocked.")
+print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, delayed/control/signal, roll/quest and progress/mind-map checks, invalid connection rejected; dice drawing and database queries blocked.")

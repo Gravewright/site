@@ -24,6 +24,13 @@ const guides = [
   ['map-builder', 'Map Builder reference', 'Referência do Map Builder', 'Builder workflows, Smart Objects, automation, supported limits and developer contracts.', 'Fluxos do Builder, Smart Objects, automação, limites suportados e contratos de desenvolvimento.'],
   ['universal-vtt', 'Universal VTT import and export', 'Importação e exportação Universal VTT', 'Import/export workflows, coordinates, limits and authorization.', 'Fluxos de importação e exportação, coordenadas, limites e autorização.'],
   ['user-guide', 'Application workflow reference', 'Referência dos fluxos da aplicação', 'Complete project guide to campaign preparation and tabletop tools.', 'Guia completo do projeto para preparar campanhas e usar as ferramentas da mesa.'],
+  ['campaign-management', 'Campaign management', 'Gestão de campanha', 'Native GM preparation, seven planning tools, archives and history outside the table.', 'Preparação nativa do mestre, sete ferramentas de planejamento, arquivos e histórico fora da mesa.'],
+  ['journals', 'Journals and resource links', 'Diários e vínculos de recursos', 'Independent chapters, page access, campaign references and portable journal content.', 'Capítulos independentes, acesso às páginas, referências de campanha e conteúdo portátil dos diários.'],
+  ['clocks', 'Progress clocks', 'Relógios de progresso', 'Shared segmented goals, permissions, pinned indicators and MapBuilder controls.', 'Objetivos compartilhados por segmentos, permissões, indicadores fixados e controles do MapBuilder.'],
+  ['clues', 'Staged clues', 'Pistas por etapas', 'GM-authored discoveries, completed revelation and protected notes.', 'Descobertas preparadas pelo mestre, revelação concluída e notas protegidas.'],
+  ['mindmaps', 'Mind maps', 'Mapas mentais', 'Collaborative topic graphs, authorized player editors and 37 typed resource links.', 'Grafos colaborativos, jogadores autorizados a editar e 37 tipos de vínculos de recursos.'],
+  ['pdf-system', 'PDF System', 'PDF System', 'Manual PDF fields, token bars, roll actions, calculations, mapping libraries and export.', 'Campos manuais no PDF, barras do token, ações de rolagem, cálculos, biblioteca de modelos e exportação.'],
+  ['upgrading', 'Upgrade and recovery', 'Atualização e recuperação', 'Seven migrations for 0.3.2, compatible backups, manual replacement and recovery.', 'Sete migrações para a 0.3.2, backups compatíveis, substituição manual e recuperação.'],
   ['ethical-module-porting', 'Ethical module porting', 'Portabilidade ética de módulos', 'Licenses, content rights and mapping an integration to the owning domains.', 'Licenças, direitos sobre conteúdo e integração com os domínios responsáveis.'],
 ];
 const legal = [

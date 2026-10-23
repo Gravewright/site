@@ -20,6 +20,13 @@ The Updates tab highlights the full installed release name and loads its bundled
 
 ## Prepare the table
 
+Before entering play, choose **Manage campaign** on the campaign card. Its
+[GM workspace](campaign-management.md) edits the same campaign records without
+starting the table connection or joining presence. Prepare the dashboard, session
+plans, timeline/calendar, quest columns and prerequisites, connections, player
+previews and journal history/trash there. Scenes, character sheets, files and
+other native tools remain available from that workspace.
+
 1. Create a campaign and open its table.
 2. Create/import a map scene and configure its grid and initial view. **Activate for players** makes that scene player-visible and broadcasts it. Opening a scene privately does not share it.
 3. Create actors, attach PDF sheets when needed, and place their tokens in the scene. Actor data and placed token state are related but distinct; a token represents an actor on a particular map.
@@ -37,10 +44,13 @@ As the campaign GM, open **New scene**. Choose the workflow that matches your so
 | An image you want to use directly as a scene | **Upload map** | A native scene with its configured grid and visibility |
 | A map you want to build or keep editing as a project | **Map Builder** | An editable project; generating a scene is a separate action |
 | A finished image you want to add walls, objects or behaviors over | **Map Builder → Library → Import → Import ready-made map** | A project background with editable elements above it |
-| A `.uvtt`, `.dd2vtt` or `.df2vtt` file | **Import Universal VTT** | A new GM-only native scene with supported walls, doors and lights |
+| A `.uvtt`, `.dd2vtt` or `.df2vtt` file | **New scene → Import Universal VTT**, or the Builder's import action | A GM-only native scene; the Builder path also creates a linked editable project |
 
 Importing an image does not detect walls or reconstruct its original layers.
-Universal VTT imports do not create Builder projects. The
+The scene-directory importer creates only a native scene. The Builder importer
+also creates a linked project. Use **Edit Scene** in the table's
+top bar to open or adopt the selected existing scene; compatible native geometry
+remains editable over its background. The
 [importer/exporter guide](universal-vtt.md) explains supported fields and warnings.
 
 For a first Builder project:
@@ -81,11 +91,18 @@ layer operations, Smart Objects, shortcuts, limits and troubleshooting.
 
 ## During a game
 
+Open **Mind maps**, **Clues** and **Clocks** from their icons in the lower dock.
+Hover or focus an icon to read its tooltip. The campaign manager keeps these
+tools in its sidebar.
+
 | Area | Purpose |
 | --- | --- |
 | Actors and tokens | Character data, PDF field mapping, placed tokens, movement and visual state |
+| [PDF System](pdf-system.md) | Manual fields on noneditable PDFs, field actions, formulas, mapping templates and filled-PDF export |
+| [Clocks](clocks.md) and [clues](clues.md) | Campaign/scene progress and discoveries, shared with the manager and MapBuilder mechanisms |
+| [Mind maps](mindmaps.md) | Movable topic graphs, notes, completion and typed campaign links; selected player editors collaborate on the table while the GM manages access |
 | Chat and dice | Shared messages, supported private/GM projections, rolls and presets |
-| Journals | Diaries, quests, quest boards, weighted roll tables and attached images/PDFs |
+| [Journals](journals.md) | Diaries, quests, quest boards, weighted roll tables, image/PDF attachments and campaign resource references |
 | Audio | Uploaded tracks, playlists, synchronized playback and positional sound controls |
 | Cards | Deck assets, drawing, hands and table card state |
 | Combat | Encounter turns, initiative and effects |
@@ -94,11 +111,20 @@ layer operations, Smart Objects, shortcuts, limits and troubleshooting.
 
 Use the [dice notation reference](../../gravewright/dice/grammar/notation/GRAMMAR.md) for supported expressions. Journal rich text is stored as structured documents; access to GM sections and handouts is filtered by the server. An export or screenshot may have a different audience from the live table, so select what you share deliberately.
 
+Diaries support empty chapters and nested subchapters. Each page can belong to
+one chapter or none; removing a chapter keeps its pages and subchapters. Use the
+page index to organize the tree in the table or campaign manager.
+
+In editable journal text, type **/** to insert blocks or **@** to open the
+campaign reference picker. Opening a reference checks the target's current
+permissions; sharing the journal does not share a private target. See the [journal guide](journals.md)
+for page destinations, unavailable references and player editing.
+
 Browser audio may require a user interaction before playback. If the table stops updating, check connection status and reconnect; refreshing a page reloads authorized state. Module activation changes may require clients to load the new module set before issuing extension calls.
 
 ## Preserve content
 
-Campaign export/import, cloning and snapshots are available according to host feature settings and permissions. Exports are designed for portable content and can omit private history or reset ownership; they are not full instance backups. Before restoring a snapshot or replacing campaign contents, use the recovery procedures in [deployment](deployment.md).
+Campaign export/import, cloning and snapshots are available according to host feature settings and permissions. Full campaign archives include preparation, clocks, clues, mind maps, PDF mapping templates and journal history/trash with their retained files. Portable exports remove user-specific permissions and omit chat; snapshots also preserve access/chat for restoration. Resource-only compendium exports omit preparation and history. These files are not full instance backups. Before restoring a snapshot or replacing campaign contents, use the recovery procedures in [deployment](deployment.md).
 
 Maps, music, PDFs and other uploads retain their own licenses and ownership. The project license does not authorize redistribution of game books or media you do not own. Modules may use different licenses; see [licensing](../../LICENSING.md).
 

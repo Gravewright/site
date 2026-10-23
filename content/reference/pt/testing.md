@@ -96,6 +96,141 @@ paredes e configurações salvas em inglês, português e espanhol, em larguras 
 desktop e celular. Usa uma campanha isolada e aceita `--output` e
 `--browser-executable`.
 
+O [cenário de gerenciamento de campanha](../../tests/e2e/campaign_management.py)
+usa dados descartáveis para exercitar fichas PDF nativas, editores de diários e
+missões, acesso de comestres, requisições negadas e revogação do acesso de mestre.
+Confere que o gerenciamento não abre WebSocket do jogo nem presença na mesa,
+comparando snapshots anteriores e posteriores da transmissão, da navegação
+privada de cenas e da presença. Também confere inglês, português e espanhol em
+larguras de celular e depois abre a mesa real para verificar documentos
+compartilhados, filtragem para jogadores e reprodução de áudio em dois clientes.
+Essa descrição informa a cobertura do cenário, não o resultado de uma execução.
+
+```bash
+uv run --locked python tests/e2e/campaign_management.py --output data/cm-check --browser-executable "<existingChromium>"
+```
+
+Substitua `<existingChromium>` por um executável Chromium existente. Escolha uma
+pasta de saída nova ou vazia a cada execução; fixtures, logs, comparações de
+estado e capturas ficam nessa pasta dentro da instalação.
+
+O [cenário de preparação de campanha](../../tests/e2e/campaign_preparation.py)
+usa a mesma fixture descartável para exercitar o painel, o seletor de referências
+sem conexão com a mesa, o planejador de sessões, a cronologia e o calendário, as
+colunas de missões com pré-requisitos, as conexões, a prévia do jogador e a
+restauração de um diário pela lixeira, e confere layouts em largura de celular.
+Use as mesmas opções `--output` e `--browser-executable` do cenário acima.
+
+`tests/e2e/campaign_preparation_regressions.py` verifica preservação de rascunhos,
+edição durante o salvamento, erros e novas tentativas no seletor assíncrono de
+referências, comparação desatualizada durante edição por outro mestre, permissões
+de versões privadas e rejeição atômica de restauração histórica com arquivo físico
+ausente. Também verifica a mensagem nativa exata em inglês e suas traduções em
+português/espanhol em 320px. Use outra pasta de saída nova:
+`uv run --locked python tests/e2e/campaign_preparation_regressions.py --output data/prep-regressions --browser-executable "<existingChromium>"`.
+
+`gravewright.administration.test_preparation_archives` cobre exportação e retorno
+da preparação e do histórico, arquivos retidos, painel de cada mestre em snapshots,
+compatibilidade com arquivos antigos, remapeamento de referências, cronologia e
+rejeição de metadados inválidos, donos conflitantes de anexos e ciclos de missões.
+
+O [cenário dos relógios de progresso](../../tests/e2e/clocks.py) usa campanhas
+isoladas para verificar os mesmos relógios no gerenciamento e na mesa real,
+atualizações em tempo real, permissões de jogadores e espectadores, filtragem
+de relógios privados e por cena, versões concorrentes, persistência e exibição
+fixada. Também confere inglês, português e espanhol em 320px e preserva os
+limites de transmissão, navegação e presença do gerenciamento. Execute com
+`uv run --locked python tests/e2e/clocks.py --output data/clocks-check --browser-executable "<existingChromium>"`,
+usando uma pasta de saída nova. A descrição informa a cobertura, não o resultado
+de uma execução específica.
+
+`tests/e2e/map_builder_clocks.py` confere nós nativos de relógio, conexões tipadas
+de Quantidade, continuação da execução, salvar/recarregar e ensaio sem alterações
+persistidas, comparando snapshots de relógios, recibos e mídia. Exercita vínculos
+do mestre acionados por jogadores, filtragem de relógios privados, HUD fixado em
+tempo real e edição de nós ao vivo para avançar, reduzir, definir e reiniciar,
+além de inglês, português e espanhol em desktop e 320px. Use uma pasta nova,
+por exemplo
+`uv run --locked python tests/e2e/map_builder_clocks.py --output data/mbclocks-check --browser-executable "<existingChromium>"`.
+
+`tests/e2e/clues.py` cobre descobertas imediatas e progressivas no gerenciamento,
+na mesa e no editor nativo do MapBuilder. Confere a filtragem de registros
+desconhecidos e notas do mestre em JSON, eventos e DOM do jogador; revelar/ocultar,
+permissões, revisões, repetição de recibos, persistência, escopo de cena, exibição
+fixada e ensaio sem alterações persistidas. Nós de pistas exercitam entradas
+numéricas tipadas, continuação da execução e ações ao vivo de avançar, recuar,
+definir, reiniciar, revelar e ocultar. Inglês, português e espanhol são conferidos
+com conteúdo autoral longo em 320px e desktop. Execute em uma pasta local nova:
+`uv run --locked python tests/e2e/clues.py --output data/clues-check --browser-executable "<existingChromium>"`.
+
+[`tests/e2e/progress_hud.py`](../../tests/e2e/progress_hud.py) verifica cards e
+segmentos vazios transparentes de relógios/pistas, indicadores fixados mínimos,
+controles pelos botões esquerdo/direito, permissões e posições locais independentes
+com vários clientes reais. Dois cliques no nome abrem o editor nativo para mestres
+e uma descrição somente de leitura para jogadores/espectadores. Descrições longas
+ou vazias e revogação durante leituras pendentes exercitam o ciclo de vida da modal
+e a privacidade. Compara requisições, mensagens do socket e estado persistido para conferir
+que mover um indicador não publica uma alteração da campanha; depois verifica
+posições após recarregar e layouts em inglês/português/espanhol em 320px. Use uma
+saída nova:
+`uv run --locked python tests/e2e/progress_hud.py --output data/progress-hud-check --browser-executable "<existingChromium>"`.
+O texto descreve a cobertura do cenário, sem afirmar o resultado de uma execução.
+
+A validação das referências nos diários e seu remapeamento portátil usam os
+conjuntos dos domínios responsáveis e o registro compartilhado de recursos:
+
+```bash
+uv run --locked python manage.py test gravewright.journals gravewright.table.tests.test_journal_resource_api gravewright.administration.test_journal_resource_archives --noinput
+node --test tests/modules/journal-resource-links.test.mjs tests/modules/mindmaps-ui.test.mjs
+uv run --locked python tests/e2e/journal_resource_links.py --output data/journal-links-check --browser-executable "<existingChromium>"
+```
+
+O cenário de navegador insere referências tipadas com **@** no editor nativo, reabre
+vínculos salvos, exercita a mesa e o gestor, confere preservação de destinos
+privados e revogação durante leituras pendentes, e revisa layouts traduzidos em
+desktop/320px com recursos sintéticos. Use saída local nova e bancos de fixture
+independentes. Também verifica cancelamento, limites de e-mail, blocos com barra,
+substituição do trecho capturado e dicas traduzidas no editor vazio.
+Os comandos descrevem cobertura, sem afirmar validação da release.
+
+O [cenário de capítulos de diário](../../tests/e2e/journal_chapters.py) exercita
+capítulos vazios, hierarquia, movimentação de páginas, renomeação, mudança de pai,
+exclusão sem perda de páginas, categorias antigas e vínculos preservados.
+Confere o gestor e clientes da mesa, filtragem dos jogadores e salvamento por
+proprietário preservando a estrutura privada omitida; depois inspeciona inglês,
+português e espanhol em desktop e 320px, incluindo oito níveis de hierarquia.
+Use uma saída isolada nova:
+`uv run --locked python tests/e2e/journal_chapters.py --output data/journal-chapters-check --browser-executable "<existingChromium>"`.
+O texto descreve a cobertura, sem afirmar o resultado de uma execução específica.
+
+Verificações de grafos, acesso, vínculos ocultos, projeções de recursos, arquivos
+e Blueprints dos mapas mentais usam os conjuntos dos respectivos domínios:
+
+```bash
+uv run --locked python manage.py test gravewright.table.tests.test_mindmaps gravewright.table.tests.test_resource_links gravewright.table.tests.test_mindmap_review gravewright.administration.test_mindmap_archives gravewright.maps.tests.test_blueprint_mindmaps --noinput
+node --test tests/modules/mindmap-model.test.mjs tests/modules/mindmaps-ui.test.mjs
+uv run --locked python tests/e2e/map_builder_mindmaps.py --output data/mindmaps-builder-check --browser-executable "<existingChromium>"
+```
+
+O cenário isolado do Builder cria os dois nós, salva/reabre os vínculos, confere
+rollback do ensaio e conclusão persistida e verifica que pedidos de abertura
+chegam somente a destinatários autorizados. Editores traduzidos e responsivos
+usam tópicos sintéticos. Os comandos descrevem cobertura, sem afirmar validação
+da release; mantenha fixtures e saídas separadas por execução.
+
+[`tests/e2e/mindmaps.py`](../../tests/e2e/mindmaps.py) exercita o gestor e a mesa
+nativos com mestre, jogador editor, leitor comum e streamer. Cobre criação de
+grafos, entrada real por ponteiro/teclado, desfazer/refazer local, salvamento,
+revisões concorrentes e preservação dos rascunhos. Revogar um vínculo ao vivo deve
+ocultar sua identidade sem perder outras edições, inclusive recursos recém
+vinculados ainda não salvos. Modais nativas de fechamento/confirmação preservam
+foco e rascunho ao cancelar. Inglês, português e espanhol são verificados em
+320px, preservando o texto autoral. Execute em uma pasta de saída local nova:
+`uv run --locked python tests/e2e/mindmaps.py --output data/mindmaps-check --browser-executable "<existingChromium>"`.
+O conjunto independente `test_mindmap_review` verifica que texto na ficha não
+expõe metadados de arquivos privados de outro ator e que acesso negado à cena
+não impede descobrir outros recursos autorizados da campanha.
+
 ```bash
 uv run --locked playwright install chromium
 uv run --locked python tests/e2e/authentication.py

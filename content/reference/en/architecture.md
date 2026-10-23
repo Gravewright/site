@@ -85,6 +85,20 @@ user's membership and checks streamer expiration. `api.Context` holds normalized
 campaign/user UUIDs only: constructing one does not grant authority or cache roles.
 Public service entry points receive identifiers and resolve membership again.
 
+The browser domain registry is generated from `modules/contracts/frontend.json`.
+Its authenticated dispatch delegates transactions to owning services, so map
+rendering is not held inside a transport transaction. Binary domain calls use a
+separate multipart/byte route with the same campaign and module lease checks.
+`maps/library_services.py` and `table/permission_services.py` share native library
+and ownership rules with the public Python facades and browser methods.
+
+`campaigns/system_api.py` provides an explicit callback registry for the active
+campaign system. Trusted packages register descriptions and read/write handlers
+at startup; membership, JSON bounds and streamer write restrictions remain host
+checks. Resource access, revisions and receipts remain provider responsibilities.
+The PDF package registers its own mapping, template and saved-roll operations;
+the host dispatcher contains no PDF-system conditionals.
+
 WebSocket authorization also rereads the live database session, its configured auth
 backend and the user's session authentication hash. It checks membership when
 receiving commands, in delivery handlers and during heartbeats. Removing a member,
@@ -153,11 +167,36 @@ member removal. Streamer links create a dedicated guest identity with expiration
 and revocation checks. The Inside interface composes these workflows in
 `web/inside.py`.
 
+Campaign preparation opens through `campaigns/management_views.py` without a
+table socket, Pixi renderer or presence record. `management.py` authorizes current
+campaign GMs; `preparation.py` validates session plans, timeline events, each GM's
+dashboard and command receipts. Connections and player previews read native
+documents rather than copying their state. Calendar dates are optional ISO dates;
+in-world dates remain authored text. See [Campaign management](campaign-management.md).
+
 ### Actors, PDF sheets and tokens
 
 An `Actor` is the reusable character source. `pdf_system/schema.py` normalizes its
 sheet document, including PDF asset references, field values, bars, token settings
 and active effects. Actor metadata and sheet data have separate revision counters.
+The PDF system also owns optional `pdf.manualFields`: GM-authored, source-bound
+overlay definitions for PDFs without form fields. Normalized page rectangles
+survive zoom and page navigation; values use stable keys in `fields`. Only the
+GM may alter the layout, while authorized players can fill its controls. Actor
+and independent-token saves use the same schema and revision boundary.
+Optional `pdf.fieldActions` binds GM-authored roll formulas to native or manual
+fields by PDF source. The dice parser validates configuration without rolling;
+execution resolves `@value` and uses the normal dice submission and chat flow.
+The field-action modal saves an isolated candidate through the existing sheet
+revision boundary, including token-bar value transfers.
+`pdf.fieldBindings` records validated addresses for `@{field-key}` references;
+`pdf.calculatedFields` uses deterministic formulas that the server recomputes
+after validating dependencies and rejecting cycles. Layout history restores
+definitions while preserving current character values. Campaign-scoped
+`pdf_system.MappingTemplate` records hold portable mappings without PDFs or
+character values, with GM-only revisioned operations and atomic batch application.
+Campaign archives include these templates. Browser diagnostics compare mappings
+with the active document, and filled-PDF export creates a separate flattened copy.
 
 A `Token` places an actor in a scene. Linked tokens use `Actor.data`; unlinked tokens
 use their own `snapshot` and `sheet_version`. The first placement is linked. Placing
@@ -197,6 +236,54 @@ structured content and filters GM blocks; `data.py` normalizes document shapes;
 `types.py` handles behavior such as boards and quests. Player edits preserve hidden
 GM content and cannot link arbitrary assets. `presentations.py` issues and resolves
 recipient-bound handout tickets rather than making the underlying files public.
+
+`journals/history.py` stores bounded per-document `Revision` snapshots and deleted
+documents. Restores validate visibility/default access, current quest dependency
+graphs and physical attachment availability in the journal transaction. A restore
+records the state it replaces so it can be undone. File cleanup checks both live
+assets and retained revision ownership after commit. History and trash are GM-only;
+ordinary journal projections do not include them.
+
+### Progress clocks and clue discoveries
+
+`table/clocks.py` and `table/clues.py` own persistent, versioned campaign/scene
+records and command receipts. These are generic progress trackers, separate from
+system-owned combat effect clocks. Table clients use projected realtime resource
+states; campaign management reads the same records through HTTP.
+
+Clock visibility and optional player advancement are server rules. Clue projections
+omit all undiscovered records and private GM notes; only completed, player-visible
+findings reach players and streamers. MapBuilder's `blueprint_clocks.py` and
+`blueprint_clues.py` execute specific GM-authored bindings with campaign/scene
+validation. Those bindings do not give the interacting participant general write
+access or reveal private resource data. Simulation does not execute writes; server
+rehearsal executes inside a rollback boundary. See [Clocks](clocks.md) and
+[Clues](clues.md).
+
+### Collaborative mind maps and resource identities
+
+`table/mindmaps.py` owns campaign/scene graphs, selected player editors, private
+visibility, structural validation and revision checks. Table clients and the GM
+manager edit the same `MindMap` records. `table/domain.py` serializes mutations
+with dedicated `MindMapReceipt` records; retries recheck current authority and
+return fresh recipient projections. `api/mindmaps.py` and the browser `mindmaps`
+domain expose these native operations without bypassing their checks.
+
+`table/resource_links.py` registers 37 typed native resource identities and archive
+metadata. One request-scoped `Resolver` reuses the owning domains' authorized
+projections, never unrestricted resource names. Stored links contain identities;
+live reads add permitted labels. Missing and denied resources share a neutral
+opaque placeholder, allowing unrelated edits without exposing hidden targets.
+Resource revocation remains authoritative even when an editor has an unsaved
+draft. Topic text belongs to the whole map's audience. See [Mind maps](mindmaps.md)
+and the [API contract](api.md#collaborative-mind-maps-and-typed-resource-links).
+
+MapBuilder's `maps/blueprint_mindmaps.py` validates scene-bound targets and
+delegates only the authored completion effect. Opening checks each recipient's
+read permission; server rehearsal rolls back mutations and notifications.
+`administration/mindmap_archives.py` consumes the typed registry to remap copied
+resources without rewriting authored notes or local topic identities. Portable
+copies clear selected editor grants; snapshots retain same-campaign access.
 
 ### Chat and dice
 
@@ -270,6 +357,15 @@ identifiers and file paths. Restoration into the same campaign preserves resourc
 identifiers and replaces native content while retaining members, codes and snapshot
 history. These archives are not complete host backups: accounts, sessions, host
 settings and installed packages are separate operational state.
+
+`administration/preparation_archives.py` validates and remaps preparation records,
+dashboards, journal revisions and retained attachment files. Portable imports
+assign one source dashboard to the importing GM without creating memberships;
+snapshots restore each current GM's own dashboard. Legacy archives without
+preparation metadata preserve existing preparation/history on restoration.
+Resource-only compendium exports omit this private preparation and history.
+Clocks and clues retain campaign or scene scope, and Blueprint references remap
+to copied targets rather than the source campaign.
 
 Import validates paths, archive size, expanded size, model/field allowlists and
 checksums before creating content. Adding a model or file relationship requires

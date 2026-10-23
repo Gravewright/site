@@ -43,7 +43,7 @@ async function figure(id, locale, hero = false) {
   }
   const transcript = ready && item.type === 'video' && await exists(item.transcripts[locale]) ? ` ${link(item.transcripts[locale], t.transcript, 'text-link')}` : '';
   const music = ready && item.music ? `<small class="media-credit">${t.musicCredit}: ${link(item.music.url, item.music.title + ' — ' + item.music.artist)} · ${link(item.music.licenseUrl, item.music.license)}</small>` : '';
-  const fullSize = ready && id === 'builder' ? link(mediaFile, t.builderViewFull, 'text-link') : '';
+  const fullSize = ready && item.type === 'image' ? link(mediaFile, t.builderViewFull, 'text-link') : '';
   return `<figure class="media-frame${hero ? ' media-frame--hero' : ''}" data-media="${id}" data-state="${ready ? 'ready' : 'placeholder'}">${visual}<figcaption><span>${escape(item.title[locale])}</span>${fullSize}${transcript}${music}</figcaption></figure>`;
 }
 
@@ -81,7 +81,7 @@ for (const [locale, t] of Object.entries(locales)) {
   <a class="brand" href="#top" aria-label="${t.home}"><span class="brand-icon">${logo}</span><span>Gravewright</span></a>
   <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-menu-toggle><span></span><span></span><span class="sr-only">${t.menu}</span></button>
   <nav class="main-nav" id="main-nav" aria-label="${t.navigation}" data-nav>
-    ${link('#map-builder', t.nav[0])}${link('#install', t.nav[2])}${link(wiki, 'Wiki')}${link(docs, 'Docs')}
+    ${link('#map-builder', t.nav[0])}${link('#release', t.nav[1])}${link('#install', t.nav[2])}${link(wiki, 'Wiki')}${link(docs, 'Docs')}
     <a class="language-link" href="${t.otherFile}" lang="${locale === 'en' ? 'pt-BR' : 'en'}" hreflang="${locale === 'en' ? 'pt-BR' : 'en'}" data-language>${t.otherLabel}</a>
     ${link(project, 'GitHub ↗', 'nav-button')}
   </nav>
@@ -115,7 +115,10 @@ for (const [locale, t] of Object.entries(locales)) {
   <section class="section shell" id="characters">${heading(t.sheetsLabel, t.sheetsTitle)}<div class="section-copy"><p>${t.sheetsCopy}</p></div>
     <div class="sheet-options">${t.sheetOptions.map(([title, copy]) => `<article><h3>${escape(title)}</h3><p>${escape(copy)}</p></article>`).join('')}</div>
   </section>
-  <section class="section shell" id="release">${heading(t.releaseLabel, t.releaseTitle)}<div class="section-copy"><p>${t.releaseCopy}</p>${link(release, t.notes + ' ↗', 'text-link')}</div>${await figure('campaign', locale)}${cards(t.releaseFeatures)}</section>
+  <section class="section shell" id="release">${heading(t.releaseLabel, t.releaseTitle)}<div class="section-copy"><p>${t.releaseCopy}</p>${link(release, t.notes + ' ↗', 'text-link')}</div>${await figure('campaign', locale)}${cards(t.releaseFeatures, 'release-feature-grid')}
+    <div class="quick-links release-guides">${t.releaseGuides.map(([label, page]) => link(doc(page), label + ' ↗')).join('')}</div>
+    <div class="release-media" role="group" aria-label="${escape(t.releaseMediaTitle)}">${(await Promise.all(['manager-032', 'mindmap-032', 'journal-032', 'progress-032', 'pdf-032'].filter(id => media.some(item => item.id === id)).map(id => figure(id, locale)))).join('')}</div>
+  </section>
   <section class="section shell" id="install">${heading(t.installLabel, t.installTitle)}<div class="section-copy"><p>${t.installCopy}</p><p class="requirements-line">${t.requirement}</p></div>
     ${steps(t.steps)}<div class="install-actions">${link(download, t.download, 'button button-primary')}<div class="runner-guides"><span>${escape(t.runnerGuide)}</span><div class="quick-links">${t.runnerGuides.map(([name, page]) => link(doc(page.replace(/\.md$/, '')), name + ' ↗')).join('')}</div></div></div>
     <aside class="hosting-note"><h3>${t.localTitle}</h3><p>${t.localCopy}</p>${link(doc('deployment'), t.deployment + ' ↗', 'text-link')}</aside>

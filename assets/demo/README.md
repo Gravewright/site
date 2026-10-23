@@ -1,6 +1,22 @@
 # Demo media sources / Fontes das mídias de demonstração
 
-The product screenshots and video show the real **Gravewright VTT 0.2.1** interface and **Translator 0.1.2**. Gravewright is a universal VTT: the main walkthrough presents maps, tokens, measurement, journals and combat. The published **DnD 5e SRD 0.1.0** system appears briefly as an optional extension example; its sheet and compendium screenshots are preserved in a collapsed example near the bottom of the page. They were captured in a browser using an isolated local database, fictional campaigns and demonstration accounts. Original map and portrait assets were loaded into the application before recording; the interface itself was not generated.
+The current product screenshots and main video show published **Gravewright VTT
+0.3.2**. The 68.5-second silent recording covers the tabletop, campaign manager,
+progress, mind maps, journals, PDF mapping and Smart Object integrations. Main
+screenshots have real English and Brazilian Portuguese interface versions.
+See [the 0.3.2 capture record](#published-032-interface-captures-and-recording)
+and [asset hashes](scripts/media-032-provenance.json). Earlier media and original
+artwork remain below as historical records; their bytes are preserved.
+
+As capturas atuais e o vídeo principal mostram o **Gravewright VTT 0.3.2
+publicado**. A gravação silenciosa tem 68,5 segundos; os prints principais têm
+interfaces reais em inglês e português brasileiro. A procedência da 0.3.2 e os
+hashes estão nos links acima. As mídias anteriores e artes originais foram
+preservadas e permanecem identificadas abaixo como registros históricos.
+
+## Historical 0.2.1 capture record / Registro histórico da 0.2.1
+
+These historical captures and the former walkthrough show the real **Gravewright VTT 0.2.1** interface and **Translator 0.1.2**. That recording presented maps, tokens, measurement, journals and combat. The published **DnD 5e SRD 0.1.0** system appeared briefly as an optional extension example; its sheet and compendium screenshots remain historical examples. They were captured in a browser using an isolated local database, fictional campaigns and demonstration accounts. Original map and portrait assets were loaded into the application before recording; the interface itself was not generated.
 
 | Media | English file | Portuguese file |
 | --- | --- | --- |
@@ -10,11 +26,11 @@ The product screenshots and video show the real **Gravewright VTT 0.2.1** interf
 | Optional SRD compendium example | `../images/srd-compendium-universal-010.webp` | `../images/srd-compendium-universal-010.pt-BR.webp` |
 | Preserved Dragon’s Legacy scene | `../images/table-overview.webp` | Shared capture |
 
-The recorded universal walkthrough is `../videos/gravewright-universal-021-showcase.mp4`, 60 seconds at 1920 × 1080. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. Exact capture dimensions and the final video duration are recorded in `content/media.json` at the site root. The campaign names are **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the map/scene name is **Moonfall Abbey**. Proper names remain in English when interface controls are translated. The preserved illustrated poster is `../images/table-session-cover.png`; the social preview is its `../images/gravewright-social-v3.jpg` derivative.
+The historical universal walkthrough is `../videos/gravewright-universal-021-showcase.mp4`, 60 seconds at 1920 × 1080. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. The current `content/media.json` points to the new 0.3.2 media. The campaign names are **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the map/scene name is **Moonfall Abbey**. Proper names remain in English when interface controls are translated. The preserved illustrated poster is `../images/table-session-cover.png`; its `../images/gravewright-social-v3.jpg` derivative is the historical social preview, replaced for current sharing by the real 0.3.2 tabletop preview.
 
 The earlier supplied Dragon’s Legacy tabletop capture (`../images/table-overview.webp`, 1911 × 926) is also preserved, with a visible thumbnail and an expandable full image. It is distinct from the new 0.2.1 captures and the illustrated dragon poster. No current application version is inferred from that earlier image.
 
-As novas capturas e o vídeo mostram o VTT universal real, com base isolada e dados fictícios, destacando mapa, tokens, medição, diários e combate. O DnD 5e SRD é um exemplo opcional de extensão, com breve participação no vídeo e imagens da ficha e compêndio em uma seção recolhida por padrão. Há capturas de interface em inglês e português; os nomes Moonfall Vigil, The Wild Paths, Beyond the Mists e Moonfall Abbey permanecem em inglês nos dois idiomas. O mapa e os retratos foram inseridos no VTT antes da gravação. Dimensões, caminhos e duração final ficam em `content/media.json`. Foram preservadas as duas imagens do dragão: a capa ilustrada e a captura de mesa anterior, exibida em galeria secundária sem atribuí-la à versão atual.
+As capturas históricas da 0.2.1 e o vídeo anterior mostram o VTT universal real, com base isolada e dados fictícios, destacando mapa, tokens, medição, diários e combate. O DnD 5e SRD aparece naquele vídeo como exemplo opcional de extensão. Há capturas históricas em inglês e português; os nomes Moonfall Vigil, The Wild Paths, Beyond the Mists e Moonfall Abbey permanecem em inglês. O mapa e os retratos foram inseridos no VTT antes da gravação. O arquivo `content/media.json` agora aponta às mídias atuais da 0.3.2. A antiga imagem social `gravewright-social-v3.jpg` e as duas imagens do dragão foram preservadas sem atribuí-las à versão atual.
 
 ## Demo source assets
 
@@ -134,3 +150,66 @@ Simulate destaca o ramo de abertura sem alterar o projeto salvo. A interface
 foi renderizada pelo aplicativo real, sem CSS ou texto visual injetados nem
 montagem. O WebP foi convertido sem perdas e seus pixels foram comparados com
 o PNG original. Os hashes acima registram a origem e o arquivo publicado.
+
+## Published 0.3.2 interface captures and recording
+
+The new `*032*` images and `../videos/gravewright-032-showcase.mp4` were
+captured from published **Gravewright VTT 0.3.2**, commit
+`04f0c1ee48341f2cfd3d47418138d3380db7ea2e`, on 23 October 2026 using Chromium
+151.0.7922.34 and a 1920 × 1080 viewport at device scale 1. Main screenshots
+have real English and Brazilian Portuguese interface versions. Authored names,
+notes and PDF text remain in their original English wording. The synthetic fixture adapter (`gravewright.translator`, fixture version
+0.1.0, not a published Translator package release) activates the host's public locale catalogs through its
+normal package mechanism; no displayed text was replaced in the browser.
+
+The fictional Moonfall campaign reuses only this site's original abbey map,
+Seraphina, Bram and Sentinel portraits and tutorial PDF. A new flat PDF was
+drawn as an original vector document: its complete source is
+[`scripts/moonfall-record-032.py`](scripts/moonfall-record-032.py).
+Its text, numbered fields and checkbox are generic examples, with no rulebook
+or system-specific catalog. Screens demonstrate the lower dock, campaign
+manager, transparent progress HUD, mind maps, nested/empty journal chapters,
+typed references, PDF mapping and field rolls, and clock/clue/mind-map nodes.
+
+The **68.5-second silent recording** uses the real English interface and has
+English/Portuguese WebVTT captions and descriptive transcripts. It contains no
+music, narration or audio track. Only the first second of browser startup was
+trimmed. The poster is the real 0.3.2 tabletop screenshot, preserving the earlier
+dragon poster and earlier recordings as historical files. No UI was generated,
+composited, restyled, or replaced. Browser actions use native controls and window
+handles; authored data was prepared with the application's normal models and
+validated public project API in a fresh, isolated fixture.
+
+Screenshots use lossless WebP, and decoded pixels were compared with the PNG
+sources. `../images/gravewright-social-032.jpg` is the same real tabletop capture
+resized to 1200 × 676 and JPEG-encoded at quality 84 (277,604 bytes); this small
+social preview is the only lossy screenshot derivative. SHA-256 values, source
+artwork hashes, dimensions and encoding details for every new asset are in
+[`scripts/media-032-provenance.json`](scripts/media-032-provenance.json).
+No operator `.env`, campaign, account, installed private package or personal file
+was used. Database, media, caches, tools and temporary files stayed inside the
+disposable installation-local capture directory; its server was terminated.
+
+Original screenshot contributions, authored examples and the vector PDF follow
+this site's GPL-3.0-only license. The application interface remains GPL-3.0-only
+with the Gravewright Independent Module Permission, and its third-party notices
+remain applicable. These captures do not relicense those components or systems.
+Older 0.2.1/0.3.0 media and both original dragon images remain unchanged and are
+identified as historical where still displayed.
+
+### Português — capturas e gravação da 0.3.2
+
+As novas capturas reais da **0.3.2 publicada**, no commit acima, usam a interface
+em inglês e português brasileiro; os nomes e textos autorais ficam em inglês.
+A campanha Moonfall é fictícia e reutiliza somente mapa, retratos e PDF de
+tutorial originais já autorizados neste site. O novo PDF plano é vetorial,
+original e genérico, com fonte reproduzível e hash registrados acima.
+
+O vídeo tem **68,5 segundos**, interface em inglês, legendas e transcrições em
+inglês/português, sem música, narração ou faixa de áudio. Apenas o primeiro
+segundo de inicialização foi aparado. Interface, textos e estilos não foram
+substituídos; os prints não são montagens. O pôster vem da mesa real da 0.3.2.
+WebP sem perdas preserva os pixels; só a imagem social JPEG foi reduzida.
+Banco, mídia, módulos, caches e temporários eram novos e isolados na instalação,
+sem configuração nem dados reais de operador; o servidor foi encerrado.
+Os arquivos antigos e as duas imagens originais de dragão foram preservados.

@@ -7,8 +7,7 @@ Desenhe com materiais ou importe uma imagem pronta, acrescente paredes, portas,
 objetos, luzes e efeitos nativos e depois gere ou atualize uma cena. O projeto
 continua editável separadamente da cena usada na mesa.
 
-Este guia descreve o código atual que está sendo documentado para a próxima
-versão **0.3.0**; não anuncia sua publicação. A
+Este guia descreve a **0.3.2**. Veja as [notas da release](../releases/0.3.2.md). A
 [direção dos Objetos Inteligentes](smart-objects-direction.md) distingue as
 capacidades implementadas das propostas.
 
@@ -35,9 +34,35 @@ não podem editá-los. Abrir o editor não muda a transmissão dos jogadores.
 
 Para retomar, use **Painéis → Projetos** ou clique com o botão direito em uma
 cena vinculada a um projeto e escolha **Editar com MapBuilder**. Ela tem o ícone
-de mapa vermelho no diretório do mestre. Uma cena importada como imagem comum
-ou por Universal VTT não tem projeto editável do Builder, a menos que tenha sido
-criada a partir de um projeto do Builder.
+de mapa vermelho no diretório do mestre. **Editar com MapBuilder** também funciona
+em cenas comuns de imagem e Universal VTT: a primeira abertura cria um projeto
+editável vinculado.
+
+### Editar uma cena existente
+
+Como mestre, clique com o botão direito em qualquer cena e escolha **Editar com
+MapBuilder**. A imagem base vira o fundo do projeto; paredes, portas e luzes
+compatíveis viram objetos editáveis. Abrir não duplica a cena, não muda a
+transmissão e não altera a seleção de cena do mestre. As aberturas seguintes
+reutilizam o mesmo projeto. Use **Atualizar cena** para aplicar as edições à cena.
+Com uma cena aberta, o mestre também pode usar **Editar Cena**
+na barra superior, ao lado de Jogo, GM e Efeitos. O botão edita a cena que o mestre
+está vendo, incluindo uma seleção privada, e fica oculto quando não há cena aberta.
+
+Dimensões exatas da imagem, tamanhos fracionários da grade e deslocamentos são
+mantidos. Paredes de colisão importadas começam com **Mostrar a imagem da parede**
+desativado, para não pintar linhas novas sobre o mapa pronto. Elas aparecem como
+guias tracejadas na edição e ficam ocultas na Prévia. Portas têm a opção
+equivalente. A arte incorporada na imagem de origem não pode ser removida ao
+mover uma parede ou abrir uma porta.
+
+Tokens, névoa, desenhos, imagens sobrepostas, áudio e objetos nativos complexos
+continuam na cena. Objetos fora dos limites do Builder ou com propriedades
+incompatíveis continuam nativos; os avisos de importação ficam em **Revisão**.
+As atualizações os preservam, mas eles não aparecem na prévia do Builder.
+Imagem base ausente ou ilegível impede a conversão sem deixar projeto parcial.
+Para grades nativas fracionárias, desative o encaixe ao posicionar entre as
+células da área de trabalho do Builder.
 
 ### Projeto, prévia e cena do jogo
 
@@ -257,7 +282,7 @@ editor. **Voltar à edição** restaura a visibilidade anterior e retoma a ediç
 | **Tiles** | Salas em grade, materiais repetidos, formas precisas ou contornos definidos sem encaixe | Imagens/formas concretas do chão, paredes e demais objetos do projeto |
 | **Pintura** | Transições suaves de terreno e mistura gradual de materiais | Traços e suas máscaras, com os mesmos objetos e camadas do projeto |
 | **Importar mapa pronto** | PNG/JPEG/WebP/TIFF finalizado para traçar ou decorar | Uma imagem de fundo e os objetos colocados sobre ela |
-| **Importar Universal VTT** | `.uvtt`, `.dd2vtt` ou `.df2vtt` com grade/paredes/portas/luzes | Objetos nativos de cena; cria uma cena separada, não um projeto do Builder |
+| **Importar Universal VTT** | `.uvtt`, `.dd2vtt` ou `.df2vtt` com grade/paredes/portas/luzes | Uma cena nova vinculada a um projeto do Builder, com imagem de fundo e objetos compatíveis editáveis |
 
 Tiles e Pintura são modos do mesmo projeto; alterná-los preserva o trabalho
 existente. Um fundo de mapa pronto pode acompanhar qualquer um deles. Para
@@ -924,6 +949,10 @@ oferece estas ações e condições:
 | **Revelar** | Marcar uma porta secreta ou invisível como descoberta: esta porta, ou a porta conectada em **Alvo** |
 | **Definir barreira** | Fazer esta porta, ou a porta conectada em **Alvo**, bloquear ou liberar movimento, visão, luz ou som (o som também pode atenuar) |
 | **Controlar som** | Parar um som da campanha que já toca na cena ou mudar seu volume |
+| **Controlar relógio** | Avançar, reduzir, definir ou reiniciar um relógio de progresso; uma entrada numérica **Quantidade** substitui a quantidade configurada |
+| **Controlar pista** | Avançar, recuar, definir, reiniciar, revelar ou ocultar uma pista preparada; **Quantidade** numérica vale para avançar, recuar e definir |
+| **Abrir mapa mental** | Abrir um grafo autorizado, opcionalmente focado em um tópico, para quem acionou, jogadores ou usuários selecionados |
+| **Controlar tópico do mapa mental** | Concluir, reiniciar ou alternar a conclusão do tópico configurado |
 
 **Mudar estado**, **Trocar imagem**, **Interagir com objeto**, **Revelar** e **Ler propriedade** têm uma entrada **Alvo** do tipo
 **Elemento** (laranja). Sem conexão, o alvo é o elemento editado; com uma Referência de
@@ -1731,6 +1760,115 @@ outro armazenamento de grafos nem execução adicional. Um conflito exige recarr
 a operação não incorpora mudanças manuais de geometria sem relação com a regra.
 Reutilizar o UUID de requisição com outro conteúdo é rejeitado.
 
+### Controlar relógios de progresso
+
+Crie um [relógio de progresso](clocks.md) na mesa ou no gerenciamento e escolha
+**Adicionar nó → Ações → Controlar relógio** no editor de Objetos Inteligentes.
+Selecione o relógio, escolha a ação e conecte um evento ou outra ação à
+**Entrada**. Conecte **Próximo** para continuar a sequência após a operação.
+
+| Ação | Efeito |
+| --- | --- |
+| Avançar relógio | Somar a Quantidade ao progresso atual |
+| Recuar relógio | Subtrair a Quantidade do progresso atual |
+| Definir progresso do relógio | Definir o progresso como Quantidade |
+| Reiniciar relógio | Voltar o progresso a zero; ignora Quantidade |
+
+Quantidade é um inteiro de 0 a 24. O progresso permanece entre zero e o número
+de segmentos do relógio. A entrada numérica **Quantidade** substitui o valor
+salvo; por exemplo, conecte um número de **Ler variável**. O campo de valor
+salvo fica desabilitado enquanto a entrada está conectada; Reiniciar também o
+desabilita, independentemente da conexão.
+
+A ação salva na versão 2 é `clockControl`, com `clockId`, `action`
+(`advance`, `reduce`, `set` ou `reset`) e `amount` inteiro. Nomes de relógios
+permanecem texto autoral. O alvo deve pertencer à campanha e ter escopo da
+campanha ou da cena que executa a regra. Relógios existentes de outra campanha
+ou cena não podem ser vinculados. Um relógio ausente ou indisponível produz
+diagnóstico e recusa a operação sem confirmar efeitos parciais.
+
+**Gerar** cria uma cena nova. Um relógio vinculado à cena atual do projeto pode
+ser salvo, ensaiado e usado por **Atualizar cena**, mas não pode ser levado para
+outra cena recém-gerada. Use um relógio da campanha ou revise e refaça o vínculo
+para a cena de destino; a geração nunca altera o escopo do relógio.
+
+Um vínculo autorado pelo mestre delega aquela operação específica ao mecanismo.
+Um jogador autorizado a interagir com ele pode disparar a operação mesmo
+quando o relógio é privado ou sua edição direta por jogadores está desativada.
+Isso não concede controles gerais nem acesso a nomes, valores ou grafos
+privados. O motor exige um mestre ativo na campanha e mantém as regras de
+transação, revisão, repetição de requisições e notificações após confirmação
+do comando do mapa.
+
+**Simular** lista as ações planejadas sem alterar o progresso salvo.
+**Testar comportamento** usa o motor real do servidor, mostra o progresso de
+cada relógio antes e depois e reverte registros e recibos de relógios junto com
+o restante do ensaio. Durante o jogo, alterações confirmadas atualizam a mesma
+janela de relógios e o HUD fixado permitido. Abrir o editor ou executar uma
+prévia preserva o progresso salvo.
+
+### Controlar pistas
+
+Prepare uma [pista](clues.md) na mesa ou no gerenciamento e escolha
+**Adicionar nó → Ações → Controlar pista**. Selecione a pista e conecte o evento
+à **Entrada**. Conecte **Próximo** para continuar após a operação. Não há porta
+Alvo: o mestre escolhe a pista específica no nó.
+
+| Ação | Resultado |
+| --- | --- |
+| Avançar pista | Somar Quantidade ao progresso |
+| Recuar pista | Subtrair Quantidade do progresso |
+| Definir progresso da pista | Definir o progresso como Quantidade |
+| Reiniciar pista | Voltar o progresso a zero |
+| Revelar pista | Completar o progresso e definir a visibilidade para Jogadores |
+| Ocultar pista | Definir a visibilidade para apenas mestre, preservando o progresso |
+
+Quantidade é um inteiro de 0 a 24. Uma entrada numérica **Quantidade** conectada
+substitui a quantidade configurada, e o progresso fica limitado ao número de
+segmentos da pista. Reiniciar, revelar e ocultar ignoram Quantidade. O nó salvo
+na versão 2 é `clueControl`, com `clueId`, `action` (`advance`, `reduce`, `set`,
+`reset`, `reveal` ou `hide`) e `amount` inteiro.
+
+Jogadores veem uma descoberta apenas com progresso completo e visibilidade
+Jogadores. O servidor omite registros desconhecidos e todas as notas do mestre
+das projeções para jogadores e espectadores. Um jogador pode acionar a operação
+específica de um mecanismo criado pelo mestre sem receber permissão geral de
+editar pistas. A execução exige um mestre ativo na campanha e valida os escopos
+de campanha e cena da pista.
+
+Pistas da campanha podem acompanhar uma cena recém-gerada. Uma pista vinculada
+à cena atual pode ser salva, testada e usada ao atualizar essa cena, mas **Gerar**
+cria uma cena diferente. Refaça o vínculo do alvo ou use uma pista da campanha
+para a cena nova; gerar não altera o escopo da pista.
+
+**Simular** preserva o progresso salvo. **Testar comportamento** apresenta as
+alterações pelo motor real do servidor e reverte registros, recibos e
+notificações de pistas. Interações confirmadas durante o jogo atualizam o painel
+compartilhado e a exibição fixada permitida. Recuar para menos que o progresso
+completo, reiniciar ou ocultar remove a pista da visualização atual dos jogadores.
+
+### Abrir e controlar mapas mentais
+
+Prepare um [mapa mental](mindmaps.md) na mesa ou no gestor e escolha **Abrir mapa
+mental** ou **Controlar tópico do mapa mental** em **Adicionar nó → Ações**.
+Conecte o evento à **Entrada** e **Próximo** à ação seguinte. Selecione o mapa e,
+para uma ação de conclusão, seu tópico. A abertura pode focar um tópico opcional.
+
+O nó de versão 2 `openMindMap` armazena `mindMapId`, `nodeId` (ou `null`) e
+`audience`. O público usa `{scope:"trigger"}`, `{scope:"players"}` ou
+`{scope:"users", userIds:[...]}`. Cada destinatário precisa manter acesso de
+leitura ao mapa e à cena. O nó `mindMapNode` armazena `mindMapId`, `nodeId` e
+`action: "complete" | "reset" | "toggle"`; ele altera a conclusão booleana
+daquele tópico pelo serviço nativo.
+
+Vínculos usam mapas da campanha ou da cena em execução. Um controle criado pelo
+mestre delega apenas aquela operação, exige um mestre ativo e não concede edição
+geral do grafo. Destinos excluídos permanecem para reparo e falham com segurança
+ao executar. Operações adiadas verificam novamente os vínculos. **Simular**
+descreve a ação; **Testar comportamento** usa o motor do servidor e reverte
+alterações do grafo, recibos e notificações. Cenas geradas/atualizadas preservam
+os vínculos e cópias de campanha remapeiam seus destinos tipados.
+
 ### Superfícies dinâmicas
 
 Selecione um chão ou parede e ative **Superfície dinâmica** antes de gerar/atualizar
@@ -1889,6 +2027,26 @@ Paredes e portas também podem guardar os campos nativos `presentation`,
 do jogo; `bottom/top: null` significa ausência de limite de elevação. A geração
 converte comportamento e elevação nos campos nativos de parede. Objetos antigos
 que omitem esses ajustes conservam seus padrões sem reescrever a origem.
+`artwork` booleano opcional em paredes e portas tem padrão verdadeiro. Falso
+mantém a barreira sem pintar sua arte; a geometria de colisão importada usa essa
+opção. Uma parede de colisão independente conserva seu ID nativo ao ser movida.
+Documentos da versão três podem guardar `sceneGeometry: {width, height, gridSize,
+gridOffsetX, gridOffsetY, imageScale}`. Largura/altura são inteiros positivos exatos em pixels;
+a grade mantém tamanho, deslocamentos e escala da imagem (opcional, padrão 1).
+Colunas/linhas inteiras
+descrevem a área de trabalho que contém o mapa; a imagem base e a saída usam as
+dimensões exatas. Mudar dimensões ou tamanho da célula remove essa geometria.
+`POST /api/containers/{campaign}/map-builder/scenes/{scene}/adopt` recebe
+`{request_id, expected_scene_version}` e retorna `{project, scene, warnings}`.
+Confere permissão de mestre e campanha da cena, serializa a criação sob o bloqueio
+da campanha, reutiliza vínculos existentes e registra recibo para repetição.
+Arquivos criados por uma conversão que falha são removidos. O manifesto registra
+exatamente quais objetos nativos originais pertencem ao projeto; as atualizações
+preservam conteúdo externo e as verificações normais de revisão/conflito.
+A sincronização também importa a calibração nativa da grade sem mover objetos.
+Alterações simultâneas no mesmo campo de calibração geram conflito; mudanças nas
+dimensões do raster nativo também, pois exigem um fundo novo em vez de esticar
+silenciosamente a imagem salva no projeto.
 Portas e decorações podem guardar `interactionEnabled` booleano estrito;
 ausência mantém o padrão habilitado sem reescrever documentos antigos.
 `editingMode: "tiles" | "paint"` opcional escolhe a área de trabalho; a ausência
