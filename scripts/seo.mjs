@@ -1,7 +1,8 @@
 // Keep social previews and structured data aligned with the visible product copy.
 import { publicVersion } from '../content/site.mjs';
 export const origin = 'https://gravewright.com';
-export const socialImage = {file:'assets/images/gravewright-social-v3.jpg', width:1200, height:676, type:'image/jpeg'};
+// Shared links use the dragon artwork; current interface captures belong in the gallery.
+export const socialImage = {file:'assets/images/gravewright-share-dragon.jpg', width:1200, height:676, type:'image/jpeg'};
 export const pageUrl = locale => `${origin}/${locale === 'en' ? '' : 'pt-br.html'}`;
 export function seoHead(locale, t, media, project, download) {
   const url = pageUrl(locale);

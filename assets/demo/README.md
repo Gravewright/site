@@ -14,6 +14,28 @@ interfaces reais em inglês e português brasileiro. A procedência da 0.3.2 e o
 hashes estão nos links acima. As mídias anteriores e artes originais foram
 preservadas e permanecem identificadas abaixo como registros históricos.
 
+## Link-sharing artwork / Arte de compartilhamento
+
+Shared links always use the original authorized dragon artwork. The primary
+URL is [`../images/gravewright-share-dragon.jpg`](../images/gravewright-share-dragon.jpg).
+The earlier [`../images/gravewright-social-032.jpg`](../images/gravewright-social-032.jpg)
+URL now serves the same dragon bytes for compatibility with older metadata.
+Both are exact copies of the unchanged
+[`gravewright-social-v3.jpg`](../images/gravewright-social-v3.jpg) source: no
+image editing or re-encoding was performed. Real interface photographs remain
+in the product gallery. The former tabletop JPEG is archived unchanged as
+[`../images/tabletop-preview-032.jpg`](../images/tabletop-preview-032.jpg), with
+its original capture hash and former URL retained in the provenance record.
+
+Links compartilhados sempre usam a arte original autorizada do dragão. A URL
+principal é `gravewright-share-dragon.jpg`; a antiga URL
+`gravewright-social-032.jpg` agora entrega os mesmos bytes do dragão para
+compatibilidade com metadados anteriores. Ambas são cópias exatas do original
+`gravewright-social-v3.jpg`, sem edição nem recodificação. Fotos da interface
+ficam na galeria do produto. A antiga prévia JPEG da mesa está arquivada,
+inalterada, como `tabletop-preview-032.jpg`, com hash e caminho anterior
+preservados no registro de procedência.
+
 ## Historical 0.2.1 capture record / Registro histórico da 0.2.1
 
 These historical captures and the former walkthrough show the real **Gravewright VTT 0.2.1** interface and **Translator 0.1.2**. That recording presented maps, tokens, measurement, journals and combat. The published **DnD 5e SRD 0.1.0** system appeared briefly as an optional extension example; its sheet and compendium screenshots remain historical examples. They were captured in a browser using an isolated local database, fictional campaigns and demonstration accounts. Original map and portrait assets were loaded into the application before recording; the interface itself was not generated.
@@ -181,10 +203,13 @@ handles; authored data was prepared with the application's normal models and
 validated public project API in a fresh, isolated fixture.
 
 Screenshots use lossless WebP, and decoded pixels were compared with the PNG
-sources. `../images/gravewright-social-032.jpg` is the same real tabletop capture
-resized to 1200 × 676 and JPEG-encoded at quality 84 (277,604 bytes); this former
-social preview remains the only lossy screenshot derivative in this capture set.
-Current link sharing uses the original dragon image `../images/gravewright-social-v3.jpg`.
+sources. `../images/tabletop-preview-032.jpg` archives the real tabletop capture
+resized to 1200 × 676 and JPEG-encoded at quality 84 (277,604 bytes). Its original
+bytes and SHA-256 are preserved; this former social preview is the only lossy
+screenshot derivative in the capture set. Its previous URL,
+`../images/gravewright-social-032.jpg`, now serves an unchanged copy of the dragon
+artwork for compatibility. Current sharing uses `../images/gravewright-share-dragon.jpg`;
+interface photographs remain in the gallery.
 SHA-256 values, source
 artwork hashes, dimensions and encoding details for every new asset are in
 [`scripts/media-032-provenance.json`](scripts/media-032-provenance.json).
@@ -212,7 +237,9 @@ inglês/português, sem música, narração ou faixa de áudio. Apenas o primeir
 segundo de inicialização foi aparado. Interface, textos e estilos não foram
 substituídos; os prints não são montagens. O pôster vem da mesa real da 0.3.2.
 WebP sem perdas preserva os pixels; só a antiga prévia JPEG da mesa foi reduzida.
-A prévia atual de compartilhamento usa a ilustração original do dragão.
+A prévia da mesa foi arquivada como `tabletop-preview-032.jpg`. Links compartilhados
+usam sempre o dragão em `gravewright-share-dragon.jpg`; a antiga URL
+`gravewright-social-032.jpg` entrega a mesma arte para compatibilidade.
 Banco, mídia, módulos, caches e temporários eram novos e isolados na instalação,
 sem configuração nem dados reais de operador; o servidor foi encerrado.
 Os arquivos antigos e as duas imagens originais de dragão foram preservados.

@@ -246,9 +246,14 @@
       "textEncoding": "UTF-8 with LF line endings"
     },
     {
-      "file": "assets/images/gravewright-social-032.jpg",
+      "file": "assets/images/tabletop-preview-032.jpg",
       "bytes": 277604,
-      "sha256": "62ecda2792a0905eae6c5716361aa5616eda9a1e9779ecb0f2d2197eeb4d73d4"
+      "sha256": "62ecda2792a0905eae6c5716361aa5616eda9a1e9779ecb0f2d2197eeb4d73d4",
+      "originalFile": "assets/images/gravewright-social-032.jpg",
+      "width": 1200,
+      "height": 676,
+      "status": "Archived former interface preview; interface photographs belong in the gallery, not in link-sharing artwork.",
+      "preservation": "Original JPEG bytes preserved unchanged at the archived path; no new image encoding."
     }
   ],
   "sourceArtwork": [
@@ -303,12 +308,41 @@
     ],
     "playbackAndSeeking": true,
     "captionTranscriptLineEndings": "UTF-8 LF verified; no CR bytes",
-    "vectorPdfSourceReproducesHash": true
+    "vectorPdfSourceReproducesHash": true,
+    "sharingArtworkAliasesByteIdentical": true,
+    "archivedTabletopPreviewOriginalBytesPreserved": true
   },
   "translationAdapter": {
     "id": "gravewright.translator",
     "fixtureVersion": "0.1.0",
     "publishedPackage": false,
     "purpose": "Isolated synthetic adapter activates the public core 0.3.2 locale catalogs through the normal package mechanism. It is not a claim that published Translator 0.1.2 was installed. No visible DOM text or styles were replaced."
+  },
+  "sharingArtwork": {
+    "purpose": "Link sharing always uses the original authorized dragon artwork; real interface captures remain in the gallery.",
+    "source": {
+      "file": "assets/images/gravewright-social-v3.jpg",
+      "sha256": "5f0eb975c9417017d8c40d009f0d9b75fd6470a940a2820d4a766d169b0fe3f3",
+      "bytes": 257815,
+      "width": 1200,
+      "height": 676
+    },
+    "primaryFile": "assets/images/gravewright-share-dragon.jpg",
+    "aliases": [
+      {
+        "file": "assets/images/gravewright-share-dragon.jpg",
+        "role": "Primary link-sharing URL",
+        "sha256": "5f0eb975c9417017d8c40d009f0d9b75fd6470a940a2820d4a766d169b0fe3f3",
+        "bytes": 257815
+      },
+      {
+        "file": "assets/images/gravewright-social-032.jpg",
+        "role": "Compatibility for earlier metadata URLs",
+        "sha256": "5f0eb975c9417017d8c40d009f0d9b75fd6470a940a2820d4a766d169b0fe3f3",
+        "bytes": 257815
+      }
+    ],
+    "transformation": "None. Both aliases are byte-for-byte copies of the unchanged source JPEG; no crop, resize, re-encoding, lettering change or image edit.",
+    "originRecord": "assets/demo/README.md#demo-source-assets"
   }
 }
