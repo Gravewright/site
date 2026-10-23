@@ -1,7 +1,7 @@
 // Keep social previews and structured data aligned with the visible product copy.
 import { publicVersion } from '../content/site.mjs';
 export const origin = 'https://gravewright.com';
-export const socialImage = {file:'assets/images/gravewright-social-032.jpg', width:1200, height:676, type:'image/jpeg'};
+export const socialImage = {file:'assets/images/gravewright-social-v3.jpg', width:1200, height:676, type:'image/jpeg'};
 export const pageUrl = locale => `${origin}/${locale === 'en' ? '' : 'pt-br.html'}`;
 export function seoHead(locale, t, media, project, download) {
   const url = pageUrl(locale);
@@ -9,8 +9,8 @@ export function seoHead(locale, t, media, project, download) {
   const builder = media.find(item => item.id === 'builder');
   const screenshot = builder.files?.[locale] || builder.file;
   const alt = locale === 'en'
-    ? 'Gravewright 0.3.2: the real Moonfall Abbey tabletop with character tokens, a clock and a clue.'
-    : 'Gravewright 0.3.2: a mesa real Moonfall Abbey com tokens, relógio e pista.';
+    ? 'Gravewright — The Dragon’s Legacy: a red dragon above a fortress surrounded by lava.'
+    : 'Gravewright — The Dragon’s Legacy: um dragão vermelho sobre uma fortaleza cercada por lava.';
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const meta = (key, value, property = false) => `<meta ${property ? 'property' : 'name'}="${key}" content="${escape(value)}">`;
   const graph = {

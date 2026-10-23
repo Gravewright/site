@@ -26,11 +26,11 @@ These historical captures and the former walkthrough show the real **Gravewright
 | Optional SRD compendium example | `../images/srd-compendium-universal-010.webp` | `../images/srd-compendium-universal-010.pt-BR.webp` |
 | Preserved Dragon’s Legacy scene | `../images/table-overview.webp` | Shared capture |
 
-The historical universal walkthrough is `../videos/gravewright-universal-021-showcase.mp4`, 60 seconds at 1920 × 1080. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. The current `content/media.json` points to the new 0.3.2 media. The campaign names are **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the map/scene name is **Moonfall Abbey**. Proper names remain in English when interface controls are translated. The preserved illustrated poster is `../images/table-session-cover.png`; its `../images/gravewright-social-v3.jpg` derivative is the historical social preview, replaced for current sharing by the real 0.3.2 tabletop preview.
+The historical universal walkthrough is `../videos/gravewright-universal-021-showcase.mp4`, 60 seconds at 1920 × 1080. Its English/Portuguese captions and descriptive transcripts use the same basename with `.en.vtt`, `.pt-BR.vtt`, `.en.txt` and `.pt-BR.txt`. The current `content/media.json` points to the new 0.3.2 media. The campaign names are **Moonfall Vigil**, **The Wild Paths** and **Beyond the Mists** in both interfaces; the map/scene name is **Moonfall Abbey**. Proper names remain in English when interface controls are translated. The preserved illustrated poster is `../images/table-session-cover.png`; its `../images/gravewright-social-v3.jpg` derivative is the current link-sharing image. The dragon artwork retains its original lettering and is distinct from the actual 0.3.2 interface captures.
 
 The earlier supplied Dragon’s Legacy tabletop capture (`../images/table-overview.webp`, 1911 × 926) is also preserved, with a visible thumbnail and an expandable full image. It is distinct from the new 0.2.1 captures and the illustrated dragon poster. No current application version is inferred from that earlier image.
 
-As capturas históricas da 0.2.1 e o vídeo anterior mostram o VTT universal real, com base isolada e dados fictícios, destacando mapa, tokens, medição, diários e combate. O DnD 5e SRD aparece naquele vídeo como exemplo opcional de extensão. Há capturas históricas em inglês e português; os nomes Moonfall Vigil, The Wild Paths, Beyond the Mists e Moonfall Abbey permanecem em inglês. O mapa e os retratos foram inseridos no VTT antes da gravação. O arquivo `content/media.json` agora aponta às mídias atuais da 0.3.2. A antiga imagem social `gravewright-social-v3.jpg` e as duas imagens do dragão foram preservadas sem atribuí-las à versão atual.
+As capturas históricas da 0.2.1 e o vídeo anterior mostram o VTT universal real, com base isolada e dados fictícios, destacando mapa, tokens, medição, diários e combate. O DnD 5e SRD aparece naquele vídeo como exemplo opcional de extensão. Há capturas históricas em inglês e português; os nomes Moonfall Vigil, The Wild Paths, Beyond the Mists e Moonfall Abbey permanecem em inglês. O mapa e os retratos foram inseridos no VTT antes da gravação. O arquivo `content/media.json` agora aponta às mídias atuais da 0.3.2. A imagem social `gravewright-social-v3.jpg` volta a representar o site nos links compartilhados: é a ilustração original do dragão, com sua tipografia preservada, e não uma captura da interface atual.
 
 ## Demo source assets
 
@@ -182,8 +182,10 @@ validated public project API in a fresh, isolated fixture.
 
 Screenshots use lossless WebP, and decoded pixels were compared with the PNG
 sources. `../images/gravewright-social-032.jpg` is the same real tabletop capture
-resized to 1200 × 676 and JPEG-encoded at quality 84 (277,604 bytes); this small
-social preview is the only lossy screenshot derivative. SHA-256 values, source
+resized to 1200 × 676 and JPEG-encoded at quality 84 (277,604 bytes); this former
+social preview remains the only lossy screenshot derivative in this capture set.
+Current link sharing uses the original dragon image `../images/gravewright-social-v3.jpg`.
+SHA-256 values, source
 artwork hashes, dimensions and encoding details for every new asset are in
 [`scripts/media-032-provenance.json`](scripts/media-032-provenance.json).
 No operator `.env`, campaign, account, installed private package or personal file
@@ -209,7 +211,8 @@ O vídeo tem **68,5 segundos**, interface em inglês, legendas e transcrições 
 inglês/português, sem música, narração ou faixa de áudio. Apenas o primeiro
 segundo de inicialização foi aparado. Interface, textos e estilos não foram
 substituídos; os prints não são montagens. O pôster vem da mesa real da 0.3.2.
-WebP sem perdas preserva os pixels; só a imagem social JPEG foi reduzida.
+WebP sem perdas preserva os pixels; só a antiga prévia JPEG da mesa foi reduzida.
+A prévia atual de compartilhamento usa a ilustração original do dragão.
 Banco, mídia, módulos, caches e temporários eram novos e isolados na instalação,
 sem configuração nem dados reais de operador; o servidor foi encerrado.
 Os arquivos antigos e as duas imagens originais de dragão foram preservados.
