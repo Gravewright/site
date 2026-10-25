@@ -77,9 +77,9 @@ def require(condition, message):
         raise AssertionError(message)
 
 
-def require_invalid(document, message):
+def require_invalid(document, message, **options):
     try:
-        clean_blueprint(document)
+        clean_blueprint(document, **options)
     except MapError:
         return
     raise AssertionError(message)
@@ -131,7 +131,7 @@ with connection.execute_wrapper(refuse_database), patch(
     require({item["type"] for item in catalog} == set(NODE_TYPES), "node catalog must cover the host's NODE_TYPES exactly")
     for item in catalog:
         raw = read(item["file"])
-        normalized = clean_blueprint(raw, asset_ids=[resources["asset"]], light_ids=[resources["light"]], track_ids=[resources["sound"]])
+        normalized = clean_blueprint(raw, asset_ids=[resources["asset"]], light_ids=[resources["light"]], track_ids=[resources["sound"]], shader_ids=[resources["shader"]])
         require(raw == normalized, item["type"] + ": normalization")
         event = next(iter(normalized["graphs"]))
         require(item["node"] in normalized["graphs"][event]["nodes"], item["type"] + ": central node metadata")
@@ -154,6 +154,37 @@ with connection.execute_wrapper(refuse_database), patch(
         if item["type"] in ("emitEvent", "timer"):
             receiver = evaluate_graph(normalized, "signal:ready", state)
             require(receiver["actions"][0]["targetState"] == "open", "signal receiver")
+
+        if item["type"] == "shaderControl":
+            require(result["actions"] == [item["node"]], "shader exact predicted action")
+            values = {"enabled": True, "color": "#f6c26b", "intensity": .5,
+                      "opacity": .35, "speed": 2, "scale": 1.5, "radius": 140,
+                      "rotation": 90, "light_response": .5, "light_emission": 1.25}
+            for property_name, value in values.items():
+                candidate = deepcopy(raw)
+                control = candidate["graphs"][event]["nodes"][1]
+                control.update(property=property_name, value=value)
+                checked = clean_blueprint(candidate, shader_ids=[resources["shader"]])
+                require(evaluate_graph(checked, event, state)["actions"] == [control], "shader literal " + property_name)
+                value_type = "boolean" if property_name == "enabled" else "text" if property_name == "color" else "number"
+                variable = {"id": "value", "type": "getVariable", "x": 40, "y": 240,
+                            "scope": "element", "name": "shaderValue", "valueType": value_type, "default": value}
+                candidate["graphs"][event]["nodes"].append(variable)
+                candidate["graphs"][event]["edges"].append({"from": "value", "to": "sample", "output": "value", "kind": "data", "input": "value"})
+                checked = clean_blueprint(candidate, shader_ids=[resources["shader"]])
+                predicted = evaluate_graph(checked, event, state)
+                require(predicted["actions"] == [control] and "value" in predicted["trace"], "shader connected " + property_name)
+            for fields in ({"property": "opacity", "value": 1.1}, {"property": "color", "value": "red"},
+                           {"property": "source", "value": "void main() {}"}, {"targetId": resources["light"]}):
+                candidate = deepcopy(raw)
+                candidate["graphs"][event]["nodes"][1].update(fields)
+                require_invalid(candidate, "Invalid shader values or targets must be rejected", shader_ids=[resources["shader"]])
+            follow = deepcopy(raw)
+            next_action = {"id": "after", "type": "state", "x": 560, "y": 80, "targetState": "open"}
+            follow["graphs"][event]["nodes"].append(next_action)
+            follow["graphs"][event]["edges"].append({"from": "sample", "to": "after", "output": "next", "kind": "execution"})
+            continued = evaluate_graph(clean_blueprint(follow, shader_ids=[resources["shader"]]), event, state)
+            require(continued["actions"] == [item["node"], next_action], "shader execution must continue")
 
         if item["type"] in ("clockControl", "clueControl", "openMindMap", "mindMapNode"):
             require(result["actions"] == [item["node"]], item["type"] + ": exact predicted action")
@@ -231,4 +262,4 @@ with connection.execute_wrapper(refuse_database), patch(
     else:
         raise AssertionError("Execution edges into pure value nodes must be rejected")
 
-print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, delayed/control/signal, roll/quest and progress/mind-map checks, invalid connection rejected; dice drawing and database queries blocked.")
+print(f"Passed: {len(recipe_names)} recipes, {evaluations} main evaluations, {len(catalog)} node types, shader values/targets, delayed/control/signal, roll/quest and progress/mind-map checks, invalid connection rejected; dice drawing and database queries blocked.")

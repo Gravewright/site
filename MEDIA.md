@@ -4,7 +4,7 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-All paths below are relative to this repository root. This list derives from `content/media.json` and accompanies Gravewright **0.3.2 Alpha**. Dimensions, languages and duration must match the final files.
+All paths below are relative to this repository root. This list derives from `content/media.json` and accompanies Gravewright **0.3.3 Alpha**. Dimensions, languages and duration must match the final files.
 
 **To replace:** copy files using the exact names, run `npm run build` and refresh. No HTML changes are needed. The build renders existing media and retains placeholders for missing files. To change filenames or alternative text, edit `content/media.json` and rebuild.
 

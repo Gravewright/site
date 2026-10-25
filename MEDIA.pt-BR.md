@@ -4,7 +4,7 @@
 
 [English](MEDIA.md) · [Português (Brasil)](MEDIA.pt-BR.md)
 
-Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.3.2 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
+Todos os caminhos abaixo são relativos à raiz deste repositório. Esta lista deriva de `content/media.json` e acompanha o Gravewright **0.3.3 Alpha**. Dimensões, idiomas e duração devem corresponder aos arquivos finais.
 
 **Para substituir:** copie os arquivos com os nomes exatos, execute `npm run build` e atualize a página. Não é necessário editar HTML. O build mostra a mídia quando o arquivo existe e mantém o placeholder enquanto estiver ausente. Para trocar nomes ou textos alternativos, edite `content/media.json` e gere novamente.
 

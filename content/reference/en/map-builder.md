@@ -74,6 +74,38 @@ native grids, disable snapping when positioning between Builder workspace cells.
 | **Update scene** | Apply project changes to the linked scene | Clients viewing that scene receive the committed update |
 | **Activate for players** in the scene context menu | Make the scene player-visible and broadcast it | Connected players switch to it |
 
+## Builder tools
+
+Open **Builder tools** in the header. Select objects with Shift-click or a
+selection rectangle before using selection actions.
+
+- **Group selection in a layer** creates a named layer and moves the selection
+  into it. Use Project layers to hide, lock, select or move the group.
+- **Align and distribute** aligns edges or centers and distributes three or more
+  objects with equal gaps. Rotation applies to the selection as a group. Invalid
+  bounds, locked layers and overlapping doors leave the document unchanged.
+- **My objects** saves up to 100 selected objects, including linked components,
+  artwork, activation radii and Smart Object graphs. Models belong to the campaign
+  and can be placed in another project in that campaign. Choose Place, then click
+  the map; Escape cancels. Copies receive new IDs and remap internal references.
+  Keep references self-contained or bound to campaign resources. The library holds
+  128 models; deleting a model preserves instances already placed on maps.
+- **Show all object activation areas** displays named, colored circular guides
+  without selecting objects. It respects layer visibility and isolation and is
+  omitted from Preview and generated scenes. Region rectangles are included too.
+- **Object brush** stamps an imported object or image family along a drag. Choose
+  Objects in the normal library, select artwork and enable Paint multiple objects.
+  Configure spacing and size/rotation variation. Each stroke is one Undo step;
+  project limits still apply.
+- **Test as player** opens a detached map with a test pawn. Click or use arrows to
+  walk, adjust vision radius and Interact with nearby objects. It shares the table's
+  collision and visibility geometry, including open doors. Area crossings rehearse
+  enter/exit events through the server's rollback-only behavior engine. Choose a
+  campaign actor for token-dependent actions. Reset discards the rehearsal. Closing
+  preserves the draft and live scene. Timers do not advance and messages, audio and
+  camera changes are not delivered to players. This is a generic map rehearsal,
+  not a simulation of system-specific rules.
+
 ## Build the first room
 
 1. As the campaign GM, choose **New scene → Map Builder**. The selected scene
@@ -1545,6 +1577,25 @@ graph requests that change. An empty blueprint does not toggle; a mechanism
 without a blueprint retains native interaction. Streamers remain read-only. Players receive only its current
 state and active image. **Automation**
 lists doors and levers together; pausing automation stops graph execution. Scene updates preserve its live state.
+
+### Direct shader controls
+
+In a Smart Object Blueprint, add **Control shader**, choose a shader from the
+same map and select its property. The action supports enabled state, color,
+intensity, opacity, speed, scale, radius, rotation, light response and emission.
+Connect an interaction, area event, signal or another action to its execution
+input. Chain several nodes to change multiple properties. The Value input accepts
+a Boolean, Text or Number connection according to the selected property; color
+uses a six-digit hex value. Native shader limits also apply to connected values.
+
+Independent shaders and composed torch shaders are supported. A component's
+enabled setting is retained while its torch is extinguished or hidden and is
+restored when the flame becomes visible. The action can update its parameters
+while the flame is off. Existing **Set light** and **Set flame** actions remain
+available. Shader targets follow copied objects and generated scene IDs, and can
+be rebound in saved behavior templates. Rehearsals report the changed shader
+without persisting the test. Updating an unchanged Builder parameter preserves
+its live value; an explicit Builder edit replaces that parameter.
 
 ### Composed torches
 

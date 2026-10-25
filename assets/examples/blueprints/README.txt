@@ -1,5 +1,5 @@
 Gravewright Blueprint examples / Exemplos de Blueprint
-Host: 0.3.2, source revision 04f0c1ee48341f2cfd3d47418138d3380db7ea2e
+Host: 0.3.3, source revision cc4fd089e6d49d32808c45ee90fdae21d1ad17dc
 
 These are synthetic Blueprint v2 development fixtures, not installable module
 packages, complete Builder projects or campaign archives. Recreate them in the
@@ -22,7 +22,7 @@ Main recipes:
     region-pressure-plate.json
     execution-data.json
 
-nodes/ contains a complete graph for each of the 48 validated node types.
+nodes/ contains a complete graph for each of the 49 validated node types.
 node-catalog.json records each central node. resources.json contains synthetic
 UUIDs: replace them through the actual editor selectors, not arbitrary live
 database writes. A UUID passing syntax validation does not grant ownership.
@@ -44,7 +44,7 @@ Extraia em data/blueprint-examples de um checkout descartavel e execute o
 comando acima. O verificador valida o formato e preve acoes, sem consultar banco.
 Use Test behavior e teste como GM/jogador para conferir alvos reais,
 autorizacao, componentes e cadeias completas no servidor.
-O catalogo inclui os 48 tipos de no do host 0.3.2. requestRoll preve um pedido
+O catalogo inclui os 49 tipos de no do host 0.3.3. requestRoll preve um pedido
 de rolagem, sem rolar dados nem esperar o resultado; cada destinatario elegivel
 escolhe rolar na janela nativa, e streamers nao recebem o pedido. setQuestStatus
 preve uma mudanca em missao existente da campanha: vincule resources.quest pelo
@@ -69,3 +69,19 @@ abre mapa/tópico permitido para seu público, sem compartilhar o mapa ou conced
 acesso aos documentos vinculados. mindMapNode altera a conclusão de um tópico
 por ação específica do GM, sem conceder edição geral. Escolha recursos reais
 pelos seletores do editor; o verificador só prevê ações com UUIDs sintéticos.
+
+New in 0.3.3: shaderControl changes one selected native shader parameter.
+Bind resources.shader to a real shader through the editor. The opacity example
+sets 0.35; connect a Number variable to Value to use a dynamic value.
+Boolean enabled and six-digit hexadecimal color use Boolean and Text inputs.
+Torch flame/layer visibility still gates component shaders. This action cannot
+replace GLSL source. Rehearse before live execution; the checker validates
+fixed and connected values, bounds, target allowlists and execution continuation.
+
+Novo na 0.3.3: shaderControl altera um parametro do shader nativo selecionado.
+Vincule resources.shader a um shader real pelo editor. O exemplo usa opacidade
+0.35; conecte uma variavel Number a Value para usar um valor dinamico.
+Ativacao booleana e cor hexadecimal usam entradas Boolean e Text. A chama e a
+visibilidade da camada continuam controlando os shaders de tochas. A acao nao
+substitui codigo GLSL. Teste antes de executar; o verificador cobre valores
+fixos/conectados, limites, alvos permitidos e continuacao da execucao.

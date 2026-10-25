@@ -579,5 +579,18 @@
       "action": "complete"
     },
     "type": "mindMapNode"
+  },
+  {
+    "file": "nodes/shaderControl.json",
+    "node": {
+      "id": "sample",
+      "type": "shaderControl",
+      "x": 300,
+      "y": 80,
+      "targetId": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "property": "opacity",
+      "value": 0.35
+    },
+    "type": "shaderControl"
   }
 ]

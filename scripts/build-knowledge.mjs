@@ -40,6 +40,8 @@ function publicationCopy(article, locale, markdown) {
   if(article.slug==='map-builder') {
     if(locale==='en') text=text.replace(/This guide describes the current checkout being documented for the next\n\*\*0\.3\.0\*\* release; it does not announce publication\./,`This guide describes the Map Builder implementation in the documented\n**${publicVersion}** source revision.`);
     else text=text.replace('Este guia descreve o código atual que está sendo documentado para a próxima\nversão **0.3.0**; não anuncia sua publicação.',`Este guia descreve a implementação do Map Builder na revisão documentada\nda **${publicVersion}**.`);
+    if(locale==='en') text=text.replace(/^This guide describes \*\*\d+\.\d+\.\d+\*\*\. See the \[release notes\]\(\.\.\/releases\/\d+\.\d+\.\d+\.md\)\./m,`This guide describes the Map Builder implementation in the documented\n**${publicVersion}** source revision. See the [release notes](../releases/${publicVersion}.md).`);
+    else text=text.replace(/^Este guia descreve a \*\*\d+\.\d+\.\d+\*\*\. Veja as \[notas da release\]\(\.\.\/releases\/\d+\.\d+\.\d+\.md\)\./m,`Este guia descreve a implementação do Map Builder na revisão documentada\nda **${publicVersion}**. Veja as [notas da release](../releases/${publicVersion}.md).`);
   }
   return text;
 }

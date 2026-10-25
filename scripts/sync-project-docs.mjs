@@ -30,7 +30,7 @@ const guides = [
   ['clues', 'Staged clues', 'Pistas por etapas', 'GM-authored discoveries, completed revelation and protected notes.', 'Descobertas preparadas pelo mestre, revelação concluída e notas protegidas.'],
   ['mindmaps', 'Mind maps', 'Mapas mentais', 'Collaborative topic graphs, authorized player editors and 37 typed resource links.', 'Grafos colaborativos, jogadores autorizados a editar e 37 tipos de vínculos de recursos.'],
   ['pdf-system', 'PDF System', 'PDF System', 'Manual PDF fields, token bars, roll actions, calculations, mapping libraries and export.', 'Campos manuais no PDF, barras do token, ações de rolagem, cálculos, biblioteca de modelos e exportação.'],
-  ['upgrading', 'Upgrade and recovery', 'Atualização e recuperação', 'Seven migrations for 0.3.2, compatible backups, manual replacement and recovery.', 'Sete migrações para a 0.3.2, backups compatíveis, substituição manual e recuperação.'],
+  ['upgrading', 'Upgrade and recovery', 'Atualização e recuperação', 'Three migrations for 0.3.3, compatible backups, manual replacement and recovery.', 'Três migrações para a 0.3.3, backups compatíveis, substituição manual e recuperação.'],
   ['ethical-module-porting', 'Ethical module porting', 'Portabilidade ética de módulos', 'Licenses, content rights and mapping an integration to the owning domains.', 'Licenças, direitos sobre conteúdo e integração com os domínios responsáveis.'],
 ];
 const legal = [

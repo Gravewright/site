@@ -1,7 +1,7 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.3.2';
+export const publicVersion = '0.3.3';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
@@ -20,8 +20,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright 0.3.2 — Universal VTT and campaign tools",
-    "description": "Prepare campaigns, connect mind maps, map PDF sheets and build interactive scenes in a free, open-source universal VTT. Gravewright 0.3.2 for Windows, Linux and macOS.",
+    "title": "Gravewright 0.3.3 — Universal VTT and interactive maps",
+    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.3 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -39,7 +39,7 @@ export const locales = {
     "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.3.2 Alpha · Windows, Linux and macOS installers included",
+    "downloadHint": "Available now: 0.3.3 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,32 +118,32 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Prepare more. Connect the whole campaign.",
-    "releaseCopy": "Gravewright 0.3.2 Alpha brings a GM campaign manager, collaborative mind maps, shared discoveries and deeper PDF and map authoring. Preparation and play use the same campaign records, with each resource’s existing permissions.",
+    "releaseTitle": "Set the scene. Make your objects react.",
+    "releaseCopy": "Gravewright 0.3.3 Alpha adds individual scene audiences, sharper tokens and faster Map Builder authoring. Give uploaded objects activation areas, rehearse as a player and connect their behaviors to shader controls. Translator 0.1.4 supplies the corresponding Portuguese and Spanish interface text.",
     "releaseFeatures": [
       [
-        "Prepare without entering the table",
-        "Open Manage campaign for your journals, quests, characters, scenes and other native tools. Seven preparation areas add a personal dashboard, session planner, timeline/calendar, quest columns, connections, player preview, and history/trash."
+        "Choose who sees each scene",
+        "Create an empty map with a name, background color, dimensions and optional grid. Activate a scene for everyone or selected players; colored dots show their destinations and a GM badge identifies your own view."
       ],
       [
-        "Connect your ideas with mind maps",
-        "Arrange topics, notes and connections, and link 37 types of campaign resources. GMs choose the audience and authorized player editors. The same saved graphs open on the table and in the manager; linked resources keep their own access rules."
+        "Keep tokens clear and readable",
+        "Names, initials and condition text stay sharp as you zoom. Choose when names appear, set each bar’s color and audience, and enable an optional turn outline. Bar 1 sits above the token and bar 2 below it."
       ],
       [
-        "Track progress and reveal discoveries",
-        "Open clocks and clues from the lower dock. Their transparent pinned indicators move independently in each browser. Left-click editable progress to advance; right-click to reduce it. Double-click a name to edit as GM or read its description as a player. Clues reveal their content when complete."
+        "Make the table’s controls your own",
+        "Shared pointers follow each person’s ping color. Independently choose whether to share your pointer or see others, and remap supported keyboard shortcuts in the Gravewright menu. Add a title beside a measurement’s dimensions; measurements remain local to your browser session."
       ],
       [
-        "Give your journals a structure",
-        "Create empty chapters and nested subchapters, move pages or leave them outside a chapter, and reorganize without losing their text. Type @ to link sheets, quests and other campaign resources, or / to insert blocks. Readers only receive the content they can access."
+        "Build and reuse more quickly",
+        "Group objects in layers, align, distribute and rotate selections. Save reusable campaign models in My objects, or paint repeated objects with spacing and size/rotation variation. An area overview helps you inspect activation guides."
       ],
       [
-        "Turn your PDF into a working sheet",
-        "Map fields and dice actions, then use seven authoring improvements: reusable mapping templates, batch application, calculated fields, selection and alignment tools, layout undo/redo, filled PDF export, and mapping diagnostics. Your original PDF stays intact."
+        "Make your own artwork interactive",
+        "Open a Smart Object Blueprint on an uploaded object with a double-click. Add circular activation areas and react to entry or exit without a click. Test as player rehearses movement, visibility, collision and interaction without changing the live scene or sending effects to players."
       ],
       [
-        "Build on the maps you already have",
-        "Use Edit Scene to reopen or adopt a compatible scene in Map Builder. Import Universal VTT into a linked scene and editable project, with supported walls, doors, lights and grid. Connect Smart Object nodes to clocks, clues and mind-map topics, then generate or update the scene explicitly."
+        "Connect behavior to shader effects",
+        "Use Control shader to change enabled state, color, intensity, opacity, speed and other supported parameters with fixed or typed variable values. Independent shaders and torch components work alongside the existing light and flame actions. Server rehearsals roll back their changes."
       ]
     ],
     "installLabel": "Start your campaign",
@@ -224,9 +224,9 @@ export const locales = {
     "extensionCards": [
       [
         "Translator",
-        "0.1.2",
-        "Choose English, Brazilian Portuguese or Spanish for your interface. The official translation API also serves compatible systems and modules.",
-        "https://github.com/Gravewright/translator"
+        "0.1.4",
+        "Choose English, Brazilian Portuguese or Spanish for your interface. Version 0.1.4 includes the new scene, token, Builder and shader controls. The official translation API also serves compatible systems and modules.",
+        "https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.4"
       ],
       [
         "Gravewright 3D Dice",
@@ -259,19 +259,19 @@ export const locales = {
       ],
       [
         "Can I use the interface in Portuguese or Spanish?",
-        "Install Translator from the Marketplace and activate its languages. Each user can choose English, Brazilian Portuguese or Spanish; Marketplace categories, tags and tag searches follow that choice. Documents and text written by your group keep their original language."
+        "Install Translator 0.1.4 from the Marketplace and activate its languages. Each user can choose English, Brazilian Portuguese or Spanish; Marketplace categories, tags and tag searches follow that choice. Documents and text written by your group keep their original language."
       ],
       [
         "Where are my campaigns stored?",
         "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.3.2 available to download?",
-        "Yes. Gravewright 0.3.2 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
+        "Is 0.3.3 available to download?",
+        "Yes. Gravewright 0.3.3 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
       ],
       [
         "What can I build with Map Builder?",
-        "Paint maps, organize layers and add walls, doors, objects, lights and effects. Use object menus, choose from 14 editable behavior models or connect your own Smart Object nodes. Generate a GM-only scene, bring compatible scene edits back into the project and update its linked scene. Activating it for players is a separate action."
+        "Paint maps, align and group objects, save reusable models and add walls, doors, lights and effects. Give uploaded objects their own Smart Object nodes and activation areas, control shader parameters and rehearse as a player. Generate a GM-only scene or update its linked scene when ready, then activate it for players separately."
       ],
       [
         "Can I import a map I already have?",
@@ -308,17 +308,17 @@ export const locales = {
     "transcript": "Read the transcript",
     "musicCredit": "Music",
     "systemDetails": "See this optional system in action",
-    "builderLabel": "Map Builder · Updated in 0.3.2",
+    "builderLabel": "Map Builder · Updated in 0.3.3",
     "builderTitle": "Build the map. Connect what happens next.",
-    "builderCopy": "Paint a map, import finished artwork or bring in Universal VTT geometry. Adopt compatible existing scenes with Edit Scene, connect Smart Object behaviors and bring supported scene edits back into the project. Your work saves automatically while you prepare; generating or updating the scene remains your choice.",
+    "builderCopy": "Paint a map, import finished artwork or bring in Universal VTT geometry. Align and group objects, save reusable models and give your own artwork Smart Object behaviors, activation areas and shader controls. Rehearse as a player before generating or updating the linked scene; your project saves automatically as you prepare.",
     "builderSteps": [
       [
         "Build your map",
-        "Paint floors, draw walls and place doors, objects, lights and effects. Use your own layers or import a finished map as the background."
+        "Paint floors, draw walls and place doors, objects, lights and effects. Organize layers, align selections and reuse saved objects, or import a finished map as the background."
       ],
       [
         "Choose a model or connect the nodes",
-        "Start with editable behavior models, then connect doors, dice prompts, quests, clocks, clues and mind-map topics. Customize the nodes and optional sound or artwork, and test the behavior before play."
+        "Start with a behavior model or double-click uploaded artwork to edit its nodes. Connect interactions and area events to doors, lights, shaders and campaign resources, then test as a player before play."
       ],
       [
         "Bring it to the table",
@@ -344,32 +344,24 @@ export const locales = {
     ],
     "releaseGuides": [
       [
+        "Scenes, tokens and table controls",
+        "user-guide"
+      ],
+      [
+        "Map Builder and Smart Objects",
+        "map-builder"
+      ],
+      [
+        "Upgrade and recovery",
+        "upgrading"
+      ],
+      [
         "Campaign manager",
         "campaign-management"
       ],
       [
-        "Mind maps",
-        "mindmaps"
-      ],
-      [
-        "Clocks",
-        "clocks"
-      ],
-      [
-        "Clues",
-        "clues"
-      ],
-      [
-        "Journals and references",
-        "journals"
-      ],
-      [
         "PDF System",
         "pdf-system"
-      ],
-      [
-        "Map Builder",
-        "map-builder"
       ]
     ],
     "releaseMediaTitle": "Inside Gravewright 0.3.2"
@@ -381,8 +373,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright 0.3.2 — VTT universal e ferramentas de campanha",
-    "description": "Prepare campanhas, conecte mapas mentais, mapeie fichas PDF e crie cenas interativas em um VTT universal gratuito e open source. Gravewright 0.3.2 para Windows, Linux e macOS.",
+    "title": "Gravewright 0.3.3 — VTT universal e mapas interativos",
+    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.3 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -400,7 +392,7 @@ export const locales = {
     "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.3.2 Alpha · Instaladores Windows, Linux e macOS incluídos",
+    "downloadHint": "Disponível agora: 0.3.3 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -479,32 +471,32 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Prepare mais. Conecte a campanha inteira.",
-    "releaseCopy": "O Gravewright 0.3.2 Alpha traz gestor de campanhas para mestres, mapas mentais colaborativos, descobertas compartilhadas e mais recursos para fichas PDF e mapas. Preparação e jogo usam os mesmos registros da campanha, com as permissões de cada recurso.",
+    "releaseTitle": "Prepare a cena. Faça seus objetos reagirem.",
+    "releaseCopy": "O Gravewright 0.3.3 Alpha traz cenas por jogador, tokens mais nítidos e novas ferramentas de criação no Map Builder. Dê áreas de ativação às imagens enviadas, ensaie como jogador e conecte seus comportamentos ao controle de shaders. O Translator 0.1.4 fornece os textos correspondentes em português e espanhol.",
     "releaseFeatures": [
       [
-        "Prepare sem entrar na mesa",
-        "Abra Gerenciar campanha para acessar diários, missões, personagens, cenas e outras ferramentas nativas. Sete áreas de preparação acrescentam painel pessoal, planejador de sessões, linha do tempo/calendário, colunas de missões, conexões, prévia de jogador e histórico/lixeira."
+        "Escolha quem vê cada cena",
+        "Crie um mapa vazio com nome, cor de fundo, dimensões e grade opcional. Ative uma cena para todos ou para jogadores selecionados; bolinhas coloridas mostram os destinos e o indicador GM identifica sua própria visualização."
       ],
       [
-        "Conecte ideias com mapas mentais",
-        "Organize tópicos, notas e conexões e vincule 37 tipos de recursos da campanha. Os mestres escolhem quem pode ler e quais jogadores podem editar. Os mesmos mapas salvos abrem na mesa e no gestor; os recursos vinculados mantêm suas próprias permissões."
+        "Mantenha os tokens nítidos e legíveis",
+        "Nomes, iniciais e textos de condições ficam nítidos ao mudar o zoom. Escolha quando os nomes aparecem, defina a cor e quem vê cada barra e ative o contorno opcional de turno. A barra 1 fica acima do token e a barra 2 abaixo."
       ],
       [
-        "Acompanhe o progresso e revele descobertas",
-        "Abra relógios e pistas pelo dock inferior. Os indicadores fixados são transparentes e cada pessoa os posiciona no próprio navegador. Clique esquerdo avança o progresso editável; direito reduz. Dois cliques no nome abrem a edição para mestres ou a descrição para jogadores. Pistas revelam o conteúdo ao serem concluídas."
+        "Ajuste os controles da sua mesa",
+        "Os ponteiros compartilhados usam a cor de ping de cada pessoa. Escolha separadamente se quer compartilhar o seu ponteiro ou ver os demais e remapeie os atalhos disponíveis no menu Gravewright. Acrescente um título junto das dimensões de uma medição; as medições ficam locais à sessão do navegador."
       ],
       [
-        "Organize seus diários",
-        "Crie capítulos vazios e subcapítulos, mova páginas ou deixe-as sem capítulo e reorganize sem perder o texto. Digite @ para vincular fichas, missões e outros recursos da campanha, ou / para inserir blocos. Cada leitor recebe apenas o conteúdo autorizado."
+        "Crie e reutilize com mais agilidade",
+        "Agrupe objetos em camadas, alinhe, distribua e gire seleções. Salve modelos reutilizáveis da campanha em Meus objetos ou pinte objetos repetidos com espaçamento ajustável e variação de tamanho e rotação. Uma visão geral permite conferir as áreas de ativação."
       ],
       [
-        "Transforme seu PDF em uma ficha funcional",
-        "Mapeie campos e rolagens e use sete melhorias de edição: modelos reutilizáveis de mapeamento, aplicação em lote, campos calculados, seleção e alinhamento, desfazer/refazer do layout, exportação do PDF preenchido e diagnósticos de mapeamento. O PDF original é preservado."
+        "Dê interação às suas próprias imagens",
+        "Abra o Blueprint de um Objeto Inteligente sobre uma imagem enviada com dois cliques. Adicione áreas circulares e reaja à entrada ou saída sem exigir um clique. Testar como jogador ensaia movimento, visão, colisão e interação sem alterar a cena em jogo nem enviar efeitos aos jogadores."
       ],
       [
-        "Aproveite os mapas que você já tem",
-        "Use Editar Cena para reabrir ou adotar uma cena compatível no Map Builder. Importe Universal VTT para uma cena vinculada e um projeto editável, com paredes, portas, luzes e grade compatíveis. Conecte nodes de Objetos Inteligentes a relógios, pistas e tópicos de mapas mentais e gere ou atualize a cena explicitamente."
+        "Conecte comportamentos aos shaders",
+        "Use Controlar shader para alterar ativação, cor, intensidade, opacidade, velocidade e outros parâmetros disponíveis com valores fixos ou variáveis tipadas. Shaders independentes e componentes de tochas convivem com as ações existentes de luz e chama. Os testes no servidor revertem suas alterações."
       ]
     ],
     "installLabel": "Comece sua campanha",
@@ -585,9 +577,9 @@ export const locales = {
     "extensionCards": [
       [
         "Translator",
-        "0.1.2",
-        "Escolha inglês, português brasileiro ou espanhol para sua interface. A API oficial de tradução também atende sistemas e módulos compatíveis.",
-        "https://github.com/Gravewright/translator"
+        "0.1.4",
+        "Escolha inglês, português brasileiro ou espanhol para a interface. A versão 0.1.4 inclui os novos controles de cenas, tokens, Builder e shaders. A API oficial de tradução também atende sistemas e módulos compatíveis.",
+        "https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.4"
       ],
       [
         "Gravewright 3D Dice",
@@ -620,19 +612,19 @@ export const locales = {
       ],
       [
         "Posso usar a interface em português ou espanhol?",
-        "Instale o Translator pelo Marketplace e ative seus idiomas. Cada usuário pode escolher inglês, português brasileiro ou espanhol; categorias, tags e busca por tags do Marketplace seguem essa escolha. Documentos e textos escritos pelo grupo mantêm o idioma original."
+        "Instale o Translator 0.1.4 pelo Marketplace e ative seus idiomas. Cada usuário pode escolher inglês, português brasileiro ou espanhol; categorias, tags e busca por tags do Marketplace seguem essa escolha. Documentos e textos escritos pelo grupo mantêm o idioma original."
       ],
       [
         "Onde ficam minhas campanhas?",
         "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.3.2 já está disponível para baixar?",
-        "Sim. O Gravewright 0.3.2 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
+        "A 0.3.3 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.3 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
       ],
       [
         "O que posso criar com o Map Builder?",
-        "Pinte mapas, organize camadas e adicione paredes, portas, objetos, luzes e efeitos. Use os menus de objetos, escolha entre 14 modelos editáveis de comportamento ou conecte seus próprios nós de Objetos Inteligentes. Gere uma cena exclusiva do mestre, traga edições compatíveis da cena de volta ao projeto e atualize a cena vinculada. Ativá-la para os jogadores é uma ação separada."
+        "Pinte mapas, alinhe e agrupe objetos, salve modelos reutilizáveis e adicione paredes, portas, luzes e efeitos. Dê às imagens enviadas seus próprios nós e áreas de ativação, controle parâmetros de shaders e ensaie como jogador. Gere uma cena exclusiva do mestre ou atualize a cena vinculada quando estiver pronto e ative-a para os jogadores separadamente."
       ],
       [
         "Posso importar um mapa que já tenho?",
@@ -669,17 +661,17 @@ export const locales = {
     "transcript": "Ler a transcrição",
     "musicCredit": "Música",
     "systemDetails": "Veja este sistema opcional em uso",
-    "builderLabel": "Map Builder · Novidades da 0.3.2",
+    "builderLabel": "Map Builder · Novidades da 0.3.3",
     "builderTitle": "Crie o mapa. Conecte o que acontece depois.",
-    "builderCopy": "Pinte um mapa, importe uma imagem pronta ou traga a geometria de um Universal VTT. Adote cenas existentes compatíveis com Editar Cena, conecte comportamentos de Objetos Inteligentes e traga edições compatíveis da cena de volta ao projeto. Seu trabalho é salvo automaticamente durante a preparação; você escolhe quando gerar ou atualizar a cena.",
+    "builderCopy": "Pinte um mapa, importe uma imagem pronta ou traga a geometria de um Universal VTT. Alinhe e agrupe objetos, salve modelos reutilizáveis e dê às suas imagens comportamentos de Objetos Inteligentes, áreas de ativação e controle de shaders. Ensaie como jogador antes de gerar ou atualizar a cena vinculada; o projeto é salvo automaticamente durante a preparação.",
     "builderSteps": [
       [
         "Construa seu mapa",
-        "Pinte pisos, desenhe paredes e adicione portas, objetos, luzes e efeitos. Use suas próprias camadas ou importe um mapa pronto como fundo."
+        "Pinte pisos, desenhe paredes e adicione portas, objetos, luzes e efeitos. Organize camadas, alinhe seleções e reutilize objetos salvos ou importe um mapa pronto como fundo."
       ],
       [
         "Escolha um modelo ou conecte os nós",
-        "Comece com modelos editáveis e conecte portas, pedidos de rolagem, missões, relógios, pistas e tópicos de mapas mentais. Personalize os nodes e o som ou a imagem opcional e teste o comportamento antes de jogar."
+        "Comece com um modelo de comportamento ou dê dois cliques em uma imagem enviada para editar seus nós. Conecte interações e eventos de área a portas, luzes, shaders e recursos da campanha e ensaie como jogador antes de jogar."
       ],
       [
         "Leve para a mesa",
@@ -705,32 +697,24 @@ export const locales = {
     ],
     "releaseGuides": [
       [
+        "Cenas, tokens e controles da mesa",
+        "user-guide"
+      ],
+      [
+        "Map Builder e Objetos Inteligentes",
+        "map-builder"
+      ],
+      [
+        "Atualização e recuperação",
+        "upgrading"
+      ],
+      [
         "Gestor de campanhas",
         "campaign-management"
       ],
       [
-        "Mapas mentais",
-        "mindmaps"
-      ],
-      [
-        "Relógios",
-        "clocks"
-      ],
-      [
-        "Pistas",
-        "clues"
-      ],
-      [
-        "Diários e referências",
-        "journals"
-      ],
-      [
         "PDF System",
         "pdf-system"
-      ],
-      [
-        "Map Builder",
-        "map-builder"
       ]
     ],
     "releaseMediaTitle": "Por dentro do Gravewright 0.3.2"

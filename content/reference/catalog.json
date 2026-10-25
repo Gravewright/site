@@ -1,6 +1,6 @@
 {
-  "sourceRevision": "04f0c1ee48341f2cfd3d47418138d3380db7ea2e",
-  "version": "0.3.2",
+  "sourceRevision": "cc4fd089e6d49d32808c45ee90fdae21d1ad17dc",
+  "version": "0.3.3",
   "articles": [
     {
       "slug": "getting-started",
@@ -407,12 +407,12 @@
       ],
       "en": {
         "title": "Upgrade and recovery",
-        "summary": "Seven migrations for 0.3.2, compatible backups, manual replacement and recovery.",
+        "summary": "Three migrations for 0.3.3, compatible backups, manual replacement and recovery.",
         "file": "content/reference/en/upgrading.md"
       },
       "pt": {
         "title": "Atualização e recuperação",
-        "summary": "Sete migrações para a 0.3.2, backups compatíveis, substituição manual e recuperação.",
+        "summary": "Três migrações para a 0.3.3, backups compatíveis, substituição manual e recuperação.",
         "file": "content/reference/pt/upgrading.md"
       }
     },

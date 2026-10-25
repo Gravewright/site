@@ -1,7 +1,7 @@
-// Product procedures derived from the public Gravewright 0.3.2 project.
+// Product procedures derived from the public Gravewright 0.3.3 project.
 const userGuide = ['docs/en/user-guide.md', 'docs/pt-BR/user-guide.md'];
 const builderGuide = ['docs/en/map-builder.md', 'docs/pt-BR/map-builder.md'];
-const releaseNotes = ['docs/releases/0.3.2.md'];
+const releaseNotes = ['docs/releases/0.3.2.md', 'docs/releases/0.3.3.md'];
 const article = (slug, group, sourcePaths, en, pt, related = [], mediaIds = []) => ({
   slug, group, sourcePaths, en, pt, related, mediaIds,
 });
@@ -12,7 +12,7 @@ export const wikiArticles = [
     text('Your first session', 'Go from an installed Gravewright to a shared scene with characters, notes and dice.', `
 ## Choose your role
 
-Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.2 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
+Gravewright is a self-hosted virtual tabletop played in a browser. One person operates the installation; campaign game masters prepare the adventure; players join campaigns. These responsibilities are related but have different permissions. Version 0.3.3 is an alpha preview: plan a short rehearsal before relying on a new feature during play.
 
 If someone already hosts your game, ask for its address and invitation code. You do not need another server installation to join.
 
@@ -37,7 +37,7 @@ Check campaign membership, document permissions and the broadcast scene before r
     text('Sua primeira sessão', 'Da instalação a uma cena compartilhada com personagens, anotações e dados.', `
 ## Escolha seu papel
 
-Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.2 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
+Gravewright é uma mesa virtual hospedada por você e acessada pelo navegador. Uma pessoa opera a instalação; os mestres de cada campanha preparam a aventura; jogadores entram nas campanhas. Essas responsabilidades têm permissões diferentes. A versão 0.3.3 é uma prévia alpha: ensaie recursos novos antes de depender deles durante a partida.
 
 Se alguém já hospeda sua mesa, peça o endereço e o código de convite. Não é necessário instalar outro servidor para participar.
 
@@ -452,7 +452,7 @@ Universal VTT omite imagens exclusivas do mestre, mas a geometria de portas secr
 Confira conta, papel na campanha e permissão explícita do recurso ou página. Confirme que a cena pretendida está pública e transmitida. Reconecte depois de alterações para verificar o estado autorizado atual. Conceda o acesso necessário ao recurso, em vez de tornar todos os documentos públicos para diagnosticar um único item ausente.
 `), ['campaigns', 'journals', 'tokens']),
 
-  article('tabletop', 'table', [...userGuide, 'gravewright/table/dock.json'],
+  article('tabletop', 'table', [...userGuide, ...releaseNotes, 'docs/en/frontend.md', 'docs/pt-BR/frontend.md', 'gravewright/table/dock.json'],
     text('Navigate and run the tabletop', 'Find the tools for the current scene and establish a dependable session routine.', `
 ## Find your workspace
 
@@ -474,6 +474,25 @@ The main resource areas are scenes, actors, journals, chat and dice, audio, card
 Choose the tool for the operation: selection and movement, drawing, measurement, walls, fog, lighting, pings or effects. A selected token must be controlled and unlocked before it can move. Changing the active tool can explain why a click selects, measures or draws instead of moving a piece.
 
 Keep the scene's complexity appropriate for the browsers in your group. WebGL is required for map rendering. Heavy visual effects, large images and many objects can affect clients differently; simplify and compare with a small scene when diagnosing rendering problems.
+
+## Set your ping color and mouse pointers
+
+Open the **Gravewright menu → Preferences**. Under **Map ping**, choose your **Identification color**. Hold on the map to ping; the GM can hold Shift to focus the table's cameras. That saved color also identifies your shared pointer and your dot in the GM's scene list.
+
+Under **Mouse pointers**, choose **Show participants' pointers** and **Share my pointer** independently. Hiding other pointers does not stop sharing yours. Disabling sharing immediately hides your pointer for others, while map pings still work. These two preferences are saved for your profile on this device; they do not change another player's settings. Pointers appear only between authorized viewers of the same scene, and a stationary pointer remains visible. Streamers can view pointers but do not publish their own.
+
+## Map keyboard shortcuts
+
+1. Open the **Gravewright menu → Keyboard shortcuts**.
+2. Choose the field for an available tool or window and press the intended key combination. **Escape** cancels recording.
+3. If a conflict or reserved combination is reported, choose another combination. Tool bindings have their layer's scope; window bindings apply across layers.
+4. Use **Unassign** to remove one binding or **Restore defaults** to restore the defaults.
+
+Mappings stay with your profile on this device. The list covers the table's supported tools and windows; gestures inside individual tools keep their own controls. Shortcuts do not take over normal text entry or modal keyboard navigation.
+
+## Label a local measurement
+
+Open **Measurement**, choose a line or area shape and drag on the map. Enable **Title** for the selected marking and type in the field beside its displayed dimensions. For example, label an area **Dangerous ground**. The text follows that marking alongside its size. Measurements and their titles stay local to this browser session; use a shared scene object or handout when other players need a persistent label. Drawing remains available through Mini Paint; the separate Shapes tool is removed.
 
 ## Reconnect and finish
 
@@ -503,6 +522,25 @@ Escolha a ferramenta da operação: seleção e movimento, desenho, medição, p
 
 Mantenha a complexidade da cena adequada aos navegadores do grupo. A renderização do mapa exige WebGL. Efeitos pesados, imagens grandes e muitos objetos afetam cada cliente de forma diferente; simplifique e compare com uma cena pequena ao investigar problemas.
 
+## Configure a cor do ping e os ponteiros
+
+Abra **Menu Gravewright → Preferências**. Em **Sinalização no mapa**, escolha a **Cor de identificação**. Mantenha pressionado no mapa para criar um ping; o mestre pode segurar Shift para focar as câmeras da mesa. A cor salva também identifica seu ponteiro compartilhado e sua bolinha na lista de cenas do mestre.
+
+Em **Ponteiros do mouse**, escolha **Mostrar ponteiros dos participantes** e **Compartilhar meu ponteiro** de forma independente. Ocultar os outros ponteiros não interrompe o envio do seu. Desativar o compartilhamento oculta imediatamente seu ponteiro para os outros, e os pings continuam funcionando. Essas duas preferências são salvas para seu perfil neste dispositivo e não alteram as de outro jogador. Ponteiros aparecem somente entre pessoas autorizadas a ver a mesma cena e continuam visíveis quando parados. Streamers podem vê-los, mas não publicam o próprio ponteiro.
+
+## Mapeie os atalhos do teclado
+
+1. Abra **Menu Gravewright → Atalhos do teclado**.
+2. Escolha o campo de uma ferramenta ou janela disponível e pressione a combinação pretendida. **Escape** cancela a gravação.
+3. Se houver conflito ou combinação reservada, escolha outra. Atalhos de ferramentas usam o escopo da camada; atalhos de janelas se aplicam em todas as camadas.
+4. Use **Remover** para retirar um atalho ou **Restaurar padrões** para recuperar os padrões.
+
+As combinações ficam no seu perfil neste dispositivo. A lista abrange ferramentas e janelas suportadas da mesa; gestos internos de cada ferramenta mantêm seus próprios controles. Os atalhos preservam a digitação normal e a navegação por teclado nas janelas.
+
+## Dê um título à medição local
+
+Abra **Medição**, escolha uma linha ou forma de área e arraste no mapa. Habilite **Título** na marcação selecionada e escreva no campo junto das dimensões exibidas. Por exemplo, identifique uma área como **Terreno perigoso**. O texto acompanha a marcação junto do tamanho. Medições e títulos ficam somente nesta sessão do navegador; use um objeto compartilhado da cena ou material quando os outros jogadores precisarem de uma indicação persistente. O desenho continua disponível no Mini Paint; a ferramenta separada de Formas foi removida.
+
 ## Reconecte e encerre
 
 Se as atualizações pararem, confira a rede e reconecte. Atualizar a página recarrega o estado autorizado do servidor; não transforma um rascunho local em projeto salvo. Mantenha aberta uma aba interrompida do Builder até concluir a recuperação.
@@ -516,12 +554,13 @@ Ao terminar, pare o áudio, confirme o salvamento de edições importantes e fa�
 
 | Starting material | Use | Result |
 | --- | --- | --- |
+| A plain colored surface | New scene → Empty map | A native scene with your chosen dimensions and optional grid |
 | A finished map image | New scene → Upload map | A native scene |
 | An editable map you want to build | New scene → Map Builder | An editable project, then a generated scene |
 | A finished image to decorate in the Builder | Library → Import → Import ready-made map | A project background with editable additions |
 | A .uvtt, .dd2vtt or .df2vtt file | Import Universal VTT | A native scene with supported geometry and lighting |
 
-A normal image upload does not discover walls or reconstruct original layers. Universal VTT imports do not create Builder projects.
+A normal image upload does not discover walls or reconstruct original layers. Universal VTT imported through the scene directory creates a native scene; imported through Builder it creates a linked scene and editable project. The flattened background remains one image.
 
 ## Prepare and share
 
@@ -532,6 +571,19 @@ A normal image upload does not discover walls or reconstruct original layers. Un
 5. Choose **Activate for players** when the scene is ready. This makes it visible and broadcasts it in one operation.
 
 Opening a scene privately as GM preserves the players' broadcast. Generating a Builder scene also begins privately; broadcasting remains a separate action. Updating a linked scene changes what clients already viewing that scene receive.
+
+## Create an empty map
+
+Choose **Scenes → New scene → Empty map**. Enter the scene name, background color, **Width (px)** and **Height (px)**. Set **Show grid**, then choose whether **Activate after creation** should be enabled. Uncheck activation to prepare privately while the players keep their existing scene. Choose **Create map**. The new scene uses the current folder and supports the normal scene tools; no background upload is needed.
+
+## Send selected players to a scene
+
+1. As GM, open the scene's context menu and choose **Activate for selected players**.
+2. Select one or more campaign players and choose **Activate**. The selected players must have access to that scene; everyone else stays on their current destination.
+3. Inspect the identification dots in the scene list. Their colors are each player's saved ping color; hover a dot for the player's name. Offline players retain their assigned destination.
+4. To reunite the table, choose **Activate for players** on the common scene. This clears individual destinations and activates it for everyone.
+
+The **GM** badge shows the scene you are viewing, including a private preview; it does not mean that every player sees it. If one player still sees another map, check their individual destination and scene access before reactivating or uploading anything.
 
 ## Manage generated scenes carefully
 
@@ -546,12 +598,13 @@ If players see the previous map, check the broadcast and the success of scene ge
 
 | Material inicial | Use | Resultado |
 | --- | --- | --- |
+| Superfície de cor única | Nova cena → Mapa vazio | Cena nativa com dimensões escolhidas e grade opcional |
 | Imagem de mapa pronta | Nova cena → Enviar mapa | Cena nativa |
 | Mapa que você deseja construir e editar | Nova cena → Map Builder | Projeto editável e depois cena gerada |
 | Imagem pronta para complementar no Builder | Biblioteca → Importar → Importar mapa pronto | Fundo do projeto com acréscimos editáveis |
 | Arquivo .uvtt, .dd2vtt ou .df2vtt | Importar Universal VTT | Cena nativa com geometria e luzes suportadas |
 
-Enviar uma imagem comum não detecta paredes nem reconstrói camadas originais. Importações Universal VTT não criam projetos do Builder.
+Enviar uma imagem comum não detecta paredes nem reconstrói camadas originais. Universal VTT importado pela lista de cenas cria uma cena nativa; pelo Builder cria uma cena vinculada e um projeto editável. O fundo achatado continua sendo uma única imagem.
 
 ## Prepare e compartilhe
 
@@ -562,6 +615,19 @@ Enviar uma imagem comum não detecta paredes nem reconstrói camadas originais. 
 5. Escolha **Ativar para jogadores** quando estiver pronta. A ação torna a cena visível e a transmite de uma vez.
 
 Abrir uma cena em particular como mestre preserva a transmissão dos jogadores. Gerar uma cena no Builder também começa em particular; transmitir é uma ação separada. Atualizar uma cena vinculada altera o que recebem os clientes que já estão vendo essa cena.
+
+## Crie um mapa vazio
+
+Escolha **Cenas → Nova cena → Mapa vazio**. Informe o nome da cena, a cor de fundo, a **Largura (px)** e a **Altura (px)**. Configure **Mostrar grade** e escolha se deseja **Ativar ao criar**. Desmarque a ativação para preparar em particular enquanto os jogadores continuam na cena anterior. Escolha **Criar mapa**. A nova cena usa a pasta atual e as ferramentas normais da cena, sem precisar enviar uma imagem de fundo.
+
+## Envie jogadores selecionados para uma cena
+
+1. Como mestre, abra o menu de contexto da cena e escolha **Ativar para jogadores selecionados**.
+2. Marque um ou mais jogadores da campanha e escolha **Ativar**. Eles precisam ter acesso à cena; as outras pessoas continuam nos destinos atuais.
+3. Confira as bolinhas de identificação na lista de cenas. As cores são as do ping salvo de cada jogador; passe o mouse sobre uma bolinha para ver o nome. Jogadores offline mantêm o destino atribuído.
+4. Para reunir a mesa, escolha **Ativar para jogadores** na cena comum. Isso limpa os destinos individuais e ativa a cena para todos.
+
+O indicador **GM** mostra a cena que você está vendo, inclusive uma prévia privada; ele não indica que todos os jogadores a veem. Se uma pessoa continuar em outro mapa, confira seu destino individual e o acesso à cena antes de reativar ou reenviar arquivos.
 
 ## Cuide das cenas geradas
 
@@ -724,7 +790,7 @@ Se outra sessão mudou a ficha, recarregue o estado atual e reaplique a edição
 O sistema PDF nativo não inclui tipos de itens nem catálogo proprietário. PDFs e imagens mantêm suas licenças; possuir um livro não autoriza automaticamente redistribuí-lo em downloads públicos. Mantenha material pessoal licenciado no armazenamento privado da campanha e compartilhe somente dentro da sua autorização.
 `), ['actors', 'tokens', 'systems-modules']),
 
-  article('tokens', 'tools', [...userGuide, 'gravewright/tokens/services.py', 'gravewright/maps/objects.py'],
+  article('tokens', 'tools', [...userGuide, ...releaseNotes, 'gravewright/tokens/services.py', 'gravewright/maps/objects.py'],
     text('Tokens, movement and vision', 'Control a character on the map and understand linked data, collision and visibility.', `
 ## Place and configure
 
@@ -733,6 +799,14 @@ O sistema PDF nativo não inclui tipos de itens nem catálogo proprietário. PDF
 3. Configure visibility, lock and vision settings for the role it will play.
 4. Give the player the appropriate actor ownership and test selection and movement in their session.
 5. Check walls, doors and lighting from that player's view before starting play.
+
+## Choose token labels and bars
+
+As GM, right-click the token and choose **Configure**. Set **Token name display** to always visible, selected, hovered, or selected-or-hovered. Names, initials and condition text stay sharp across map zoom. The fixed decorative gold outline is removed.
+
+For **Bar 1** and **Bar 2**, choose **Bar color** and **Bar visibility** independently: **Everyone**, **Owner and GM**, or **GM only**. Bar 1 appears 5px above the token; bar 2 appears 5px below it. The system's sheet supplies the bar values. Restricted bars are filtered before delivery to other viewers; verify the result with a player who does not own that token. These presentation settings add no numerical bar labels.
+
+Set **Show turn indicator** if the current/next-turn outline should appear, then save. Appearance follows duplication without changing the actor's RPG rules or sheet schema. A display preference does not grant control of the token.
 
 ## Move during play
 
@@ -764,6 +838,14 @@ Movement through a Smart Object area can trigger both entry and exit when a path
 3. Configure visibilidade, bloqueio e visão para sua finalidade.
 4. Conceda propriedade adequada ao jogador e teste seleção e movimento pela sessão dele.
 5. Confira paredes, portas e iluminação na visão do jogador antes de começar.
+
+## Configure nomes e barras dos tokens
+
+Como mestre, clique com o botão direito no token e escolha **Configurar**. Em **Exibição do nome do token**, escolha sempre visível, selecionado, sob o mouse ou selecionado/sob o mouse. Nomes, iniciais e textos de condições permanecem nítidos com o zoom. O contorno dourado decorativo fixo foi removido.
+
+Configure **Cor da barra** e **Visibilidade da barra** separadamente para **Barra 1** e **Barra 2**: **Todos**, **Dono e mestre** ou **Somente o mestre**. A barra 1 aparece 5px acima do token; a barra 2, 5px abaixo. Os valores vêm da ficha do sistema. Barras restritas são filtradas antes de chegar aos outros participantes; confira com um jogador que não seja proprietário do token. Essas opções de apresentação não acrescentam rótulos numéricos às barras.
+
+Escolha **Mostrar indicador de turno** para exibir o contorno de turno atual/próximo e salve. A aparência acompanha duplicações sem alterar regras de RPG nem o esquema da ficha. Uma opção de exibição não concede controle do token.
 
 ## Mova durante a partida
 
@@ -1298,6 +1380,29 @@ Use Properties for the element's name and supported settings, Appearance for its
 
 Valid graph edits save automatically too. **Close** or **Escape** waits for pending valid changes; an invalid field stays open for correction. Saving configuration does not operate the mechanism. Use **Generate scene** or **Update scene** explicitly to publish project changes.
 
+## Arrange a group and save reusable objects
+
+Select objects with Shift-click or a selection rectangle, then open **Builder tools** in the header.
+
+1. Enter a **Group name** and choose **Group selection in a layer**. Use Project layers to move, hide, lock or select that group.
+2. Under **Align and distribute**, align edges or centers. Select at least three objects for equal-gap distribution. Enter an angle and choose **Rotate selection** to rotate the group together. Locked layers, invalid bounds or overlapping doors leave the selection unchanged.
+3. Under **My objects**, enter a **Preset name** and choose **Save selection to My objects**. The model includes its artwork, linked components, activation areas and Smart Object graphs.
+4. In this or another project of the same campaign, choose **Place** for the saved model, then click the map. Escape cancels placement. Copies receive new identities and remap internal connections; keep the selection's references self-contained or bound to campaign resources.
+
+Deleting a saved model preserves copies already placed on maps. The library holds up to 128 models, with up to 100 selected objects per model. It belongs to this campaign.
+
+## Paint objects and inspect activation areas
+
+Choose **Objects** in the library and select an uploaded object image or family. In **Builder tools → Object brush**, enable **Paint multiple objects**, then set spacing in cells and the size/rotation variation. Drag on the map to place repeated objects. Each completed stroke is one Undo step, and normal project limits still apply.
+
+Enable **Show all object activation areas** to compare named circular object guides and region rectangles without selecting each one. The overview respects layer visibility and isolation and is omitted from Preview and generated scenes. Configure the actual radius and enter/exit behavior in [Smart Objects](wiki:smart-objects).
+
+## Walk through the draft as a player
+
+Choose **Builder tools → Test as player**. Select a campaign **Test actor** when the behavior depends on a character, adjust **Vision radius (cells)**, then click or use arrow keys to move the test pawn. Check wall collisions and visibility, and choose **Interact** near an object. Crossing its activation area rehearses enter/exit events.
+
+The detached map applies the test results to a separate copy. **Reset test** discards those results; closing preserves the authored draft and the live scene. The server rolls back behavior changes and sends no sounds, messages or camera effects to players. Timers do not advance, and this generic rehearsal does not simulate RPG rules or replace checking a real player's permissions. Generate/update the scene and test an actual player account before activating it for the group.
+
 ## Useful controls
 
 **V** selects; **F** returns to floor painting; **E** removes an entire object. Area floor erasing is a separate tool. **Ctrl+Z** undoes, **Ctrl+Shift+Z/Ctrl+Y** redoes, **Space + drag** pans, the wheel zooms and **0** fits the map. **[ / ]** adjusts the brush. With the floor brush active, **Shift + left drag** changes its size without painting; Escape cancels that adjustment.
@@ -1360,6 +1465,29 @@ Use Propriedades para nome e ajustes suportados, Aparência para imagens e confi
 
 Edições válidas de grafos também são salvas automaticamente. **Fechar** ou **Escape** aguarda alterações válidas pendentes; campos inválidos permanecem abertos para correção. Salvar a configuração não aciona o mecanismo. Use **Gerar cena** ou **Atualizar cena** explicitamente para publicar mudanças do projeto.
 
+## Organize grupos e salve objetos reutilizáveis
+
+Selecione objetos com Shift-clique ou um retângulo de seleção e abra **Ferramentas do Builder** no cabeçalho.
+
+1. Informe um **Nome do grupo** e escolha **Agrupar seleção em uma camada**. Use as camadas do projeto para mover, ocultar, bloquear ou selecionar o grupo.
+2. Em **Alinhar e distribuir**, alinhe bordas ou centros. Selecione pelo menos três objetos para distribuir com intervalos iguais. Informe um ângulo e escolha **Girar seleção** para girar o grupo junto. Camadas bloqueadas, limites inválidos ou portas sobrepostas preservam a seleção.
+3. Em **Meus objetos**, informe um **Nome do modelo** e escolha **Salvar seleção em Meus objetos**. O modelo inclui imagens, componentes vinculados, áreas de ativação e grafos de Objetos Inteligentes.
+4. Neste ou em outro projeto da mesma campanha, escolha **Posicionar** no modelo salvo e clique no mapa. Escape cancela o posicionamento. As cópias recebem novas identidades e refazem suas conexões internas; mantenha referências dentro da seleção ou vinculadas a recursos da campanha.
+
+Excluir um modelo salvo preserva as cópias já colocadas nos mapas. A biblioteca aceita até 128 modelos, com até 100 objetos selecionados por modelo, e pertence a esta campanha.
+
+## Pinte objetos e confira as áreas de ativação
+
+Escolha **Objetos** na biblioteca e selecione uma imagem enviada ou família. Em **Ferramentas do Builder → Pincel de objetos**, habilite **Pintar vários objetos** e ajuste espaçamento em células e variações de tamanho/rotação. Arraste no mapa para colocar objetos repetidos. Cada traço concluído corresponde a uma etapa de Desfazer; os limites normais do projeto continuam valendo.
+
+Habilite **Mostrar todas as áreas de ativação dos objetos** para comparar círculos nomeados e retângulos de regiões sem selecionar cada objeto. A visão geral respeita visibilidade e isolamento de camadas e não aparece na Prévia nem nas cenas geradas. Configure o raio real e o comportamento de entrada/saída em [Objetos Inteligentes](wiki:smart-objects).
+
+## Percorra o rascunho como jogador
+
+Escolha **Ferramentas do Builder → Testar como jogador**. Selecione um **Ator de teste** da campanha quando o comportamento depender de personagem, ajuste o **Raio de visão (células)** e clique ou use as setas para mover o marcador. Confira colisões com paredes e visibilidade e escolha **Interagir** perto de um objeto. Cruzar sua área de ativação ensaia eventos de entrada/saída.
+
+O mapa separado aplica resultados a uma cópia temporária. **Reiniciar teste** descarta os resultados; fechar preserva o rascunho autoral e a cena em uso. O servidor reverte mudanças de comportamento e não envia sons, mensagens nem efeitos de câmera aos jogadores. Temporizadores não avançam, e esse ensaio genérico não simula regras de RPG nem substitui a conferência das permissões de um jogador real. Gere/atualize a cena e teste uma conta real antes de ativá-la para o grupo.
+
 ## Controles úteis
 
 **V** seleciona; **F** retorna à pintura de chão; **E** remove um objeto inteiro. A borracha de área do chão é separada. **Ctrl+Z** desfaz, **Ctrl+Shift+Z/Ctrl+Y** refaz, **Espaço + arrastar** move a câmera, a roda ajusta zoom e **0** enquadra o mapa. **[ / ]** ajusta o pincel. Com o pincel de chão ativo, **Shift + arrastar com botão esquerdo** muda seu tamanho sem pintar; Escape cancela o ajuste.
@@ -1387,9 +1515,22 @@ O rascunho do navegador ajuda na recuperação, mas não é backup. **Remover as
     text('Smart Objects: models, nodes and safe playtests', 'Start with an interactive model, customize its logic and test behavior before applying it to the game.', `
 ## Start with an event
 
-Doors, objects, levers, torches, Empty Objects and presence regions share a visual blueprint editor. Double-click an editable element in Map Builder to open **Smart Object**. Select a starting event, connect its output to a node and configure explicit actions. An empty authored interaction graph does nothing: no implicit toggle is added.
+Doors, objects, levers, torches, Empty Objects and presence regions share a visual blueprint editor. Select a starting event, connect its output to a node and configure explicit actions. An empty authored interaction graph does nothing: no implicit toggle is added.
 
 Doors offer **On interact** and **On destroy**. Objects also support **On area enter/exit**; regions offer area entry/exit and destruction. Named signals provide **On signal**. An event starts execution; it does not compare a state or choose an image by itself. Legacy state-specific interaction/entry/exit graphs and change events are discarded rather than migrated; recreate their behavior with current events and logic nodes.
+
+## Turn uploaded artwork into a Smart Object
+
+Import your image through the library, classify it as an **Object** and place it on the map. With **Selection** or **Objects** active, double-click it with the left mouse button to open its Blueprint. You can also choose **Edit nodes** in its context menu or **Smart object** in its Behavior properties. Existing artwork, geometry and any authored behavior are preserved. Build your own graph there, or use the ready-made catalog when it suits the mechanism.
+
+## Activate effects when a token crosses an area
+
+1. Select the object and open **Panels → Selection**.
+2. Enable **Circular activation area** and set **Activation radius (cells)**. The circle is centered on the object and moves with it; its radius is independent of the image dimensions.
+3. Open the Blueprint and connect **On area enter** or **On area exit** to the intended light, sound, message or other supported action. Area events need no direct click on the artwork.
+4. Test a token entering, leaving and crossing the whole area. A path across the entire circle can produce both events. Use conditions if the effect should run only for the first arrival, last departure or a matching token.
+
+The area guide is for the GM in the editor. **Builder tools → Show all object activation areas** compares several guides without selecting each object. An area defines where events may trigger; its graph defines what those events do. An empty graph performs no effect.
 
 ## Choose one of the 14 ready-made models
 
@@ -1426,6 +1567,14 @@ Choose **Apply**, inspect the generated nodes and customize them as needed. Appl
 6. Simulate both initial states, then run a server playtest before updating the scene.
 
 Value nodes supply typed data; they do not execute a chain by themselves. **Compare state/value**, **All conditions** and **Any condition** can feed the Boolean **Test** input of a decision. **Sequence** runs its branches in order; **Choose path** selects a typed case; **Random** selects a weighted branch.
+
+## Change a native shader from a behavior
+
+First add the shader to the map, either independently or as a torch component. Open the controlling object's Blueprint and choose **Add node → Control shader**. Select the shader from this map, choose a property and enter the intended value. Connect the interaction, area event, signal or preceding action to the node's execution input. Chain separate nodes when changing multiple properties.
+
+Supported properties are enabled state, color, intensity, opacity, speed, scale, radius, rotation, light response and light emission. For example, connect **On area enter → Control shader**, choose **Opacity** and set **0.35**. Use a separate exit action if leaving should restore the prior appearance. A connected **Value** input must match the property: Boolean for enabled state, Text for a six-digit hex color, Number for numeric properties. A typed variable can supply that value; the server applies the native property's limits.
+
+Torch visibility and flame state still gate the component shader. Changing its parameters while the torch is off does not ignite it; its enabled setting is retained for when the flame is visible. Rehearsal reports the shader changes without saving them. Updating a scene preserves live values for Builder parameters you left unchanged; an explicit edit to a Builder parameter applies that authored value. See the [node reference](docs:map-builder) for bounds and target behavior.
 
 ## Remember a puzzle with variables and signals
 
@@ -1466,9 +1615,22 @@ If nothing happens, check the starting event, connected actions, targets, pause 
     text('Objetos Inteligentes: modelos, nós e playtest', 'Comece com um modelo interativo, personalize sua lógica e teste o comportamento antes de aplicá-lo ao jogo.', `
 ## Comece por um evento
 
-Portas, objetos, alavancas, tochas, Objetos vazios e regiões de presença compartilham o editor visual de blueprint. Dê dois cliques num elemento editável do Map Builder para abrir **Objeto Inteligente**. Escolha um evento inicial, conecte sua saída e configure ações explícitas. Um grafo autoral de interação vazio não faz nada: não existe alternância implícita.
+Portas, objetos, alavancas, tochas, Objetos vazios e regiões de presença compartilham o editor visual de blueprint. Escolha um evento inicial, conecte sua saída e configure ações explícitas. Um grafo autoral de interação vazio não faz nada: não existe alternância implícita.
 
 Portas oferecem **Ao interagir** e **Ao destruir**. Objetos também têm **Ao entrar/sair da área**; regiões oferecem entrada/saída e destruição. Sinais nomeados fornecem **Ao receber sinal**. O evento inicia execução; não compara estado nem escolhe imagem sozinho. Grafos antigos de interação/entrada/saída por estado e eventos de mudança são descartados, sem migração das ações; recrie o comportamento com eventos e lógica atuais.
+
+## Transforme uma imagem enviada em Objeto Inteligente
+
+Importe a imagem pela biblioteca, classifique-a como **Objeto** e coloque-a no mapa. Com **Seleção** ou **Objetos** ativo, dê dois cliques com o botão esquerdo para abrir o Blueprint. Também é possível escolher **Editar nós** no menu de contexto ou **Objeto inteligente** nas propriedades de Comportamento. A imagem, a geometria e os comportamentos autorais existentes são preservados. Monte seu próprio grafo ou use o catálogo de modelos prontos quando ele servir ao mecanismo.
+
+## Ative efeitos quando um token cruzar uma área
+
+1. Selecione o objeto e abra **Painéis → Seleção**.
+2. Habilite **Área de ativação circular** e ajuste o **Raio de ativação (células)**. O círculo fica centrado no objeto e o acompanha; seu raio é independente das dimensões da imagem.
+3. Abra o Blueprint e conecte **Ao entrar na área** ou **Ao sair da área** à ação pretendida de luz, som, mensagem ou outro efeito suportado. Esses eventos não exigem clique direto na imagem.
+4. Teste a entrada, a saída e a travessia completa com um token. Um trajeto que cruza todo o círculo pode produzir os dois eventos. Use condições quando o efeito deva ocorrer somente na primeira chegada, última saída ou para um token correspondente.
+
+O guia da área é exclusivo do mestre no editor. **Ferramentas do Builder → Mostrar todas as áreas de ativação dos objetos** compara vários guias sem selecionar cada objeto. A área define onde eventos podem ocorrer; o grafo define suas ações. Um grafo vazio não produz efeito.
 
 ## Escolha um dos 14 modelos prontos
 
@@ -1505,6 +1667,14 @@ Escolha **Aplicar**, confira os nós gerados e personalize-os quando necessário
 6. Simule os dois estados iniciais e faça um ensaio pelo servidor antes de atualizar a cena.
 
 Nós de valor fornecem dados tipados; não executam sozinhos uma sequência. **Comparar estado/valor**, **Todas as condições** e **Qualquer condição** podem alimentar a entrada booleana **Teste** da decisão. **Sequência** executa ramos em ordem; **Escolher caminho** seleciona um caso tipado; **Aleatório** escolhe um ramo com peso.
+
+## Altere um shader nativo por um comportamento
+
+Primeiro adicione o shader ao mapa, independente ou como componente de uma tocha. Abra o Blueprint do objeto controlador e escolha **Adicionar nó → Controlar shader**. Selecione o shader deste mapa, escolha uma propriedade e informe o valor desejado. Conecte a interação, evento de área, sinal ou ação anterior à entrada de execução do nó. Encadeie nós separados para alterar várias propriedades.
+
+As propriedades suportadas são ativação, cor, intensidade, opacidade, velocidade, escala, raio, rotação, resposta e emissão de luz. Por exemplo, conecte **Ao entrar na área → Controlar shader**, escolha **Opacidade** e informe **0.35**. Use uma ação de saída separada se sair precisar restaurar a aparência. Uma entrada **Valor** conectada precisa ter o tipo da propriedade: Booleano para ativação, Texto para uma cor hexadecimal de seis dígitos e Número para propriedades numéricas. Uma variável tipada pode fornecer o valor; o servidor aplica os limites da propriedade nativa.
+
+A visibilidade e a chama da tocha continuam controlando a exibição do shader componente. Alterar parâmetros com a tocha apagada não a acende; a configuração de ativação fica guardada para quando a chama estiver visível. O ensaio mostra as mudanças do shader sem salvá-las. Atualizar a cena preserva valores ao vivo de parâmetros que você não alterou no Builder; uma edição explícita aplica o valor autoral. Veja a [referência de nós](docs:map-builder) para limites e comportamento dos alvos.
 
 ## Memorize um enigma com variáveis e sinais
 
@@ -1547,7 +1717,9 @@ Se nada acontecer, confira evento inicial, ações conectadas, alvos, pausa e **
     text('Import and export Universal VTT', 'Bring in a prepared map or transfer a native scene while understanding the format limits.', `
 ## Choose the right interchange
 
-Universal VTT imports **.uvtt**, **.dd2vtt** and **.df2vtt** files into a new native scene with supported image, grid, walls, doors and lights. Only a campaign GM may import/export. Imported scenes start GM-only and preserve the existing player broadcast. They do not become Map Builder projects.
+Universal VTT imports **.uvtt**, **.dd2vtt** and **.df2vtt** files with supported image, grid, walls, doors and lights. Only a campaign GM may import/export. Imported scenes start GM-only and preserve the existing player broadcast.
+
+Choose **Import Universal VTT** inside Builder to create a linked native scene and editable project. The editor saves the current draft first and opens the imported project separately. Choose **Scenes → New scene → Import Universal VTT** when you only need a native scene; later use **Edit with MapBuilder** to adopt it. Compatible geometry and lights remain editable, while the flattened artwork stays one background image.
 
 For a PNG/JPEG/WebP/TIFF image you want to decorate in the Builder, use **Import ready-made map** instead. An image cannot reconstruct original walls or layers.
 
@@ -1573,12 +1745,14 @@ The background and supported visible images/surfaces are flattened into PNG. Wal
 
 ## Limits
 
-The format uses numeric version **0.2**, separate from the app version. The JSON limit is 64 MiB; embedded compressed image limit is 48 MiB; raster area is at most 16,777,216 pixels or a smaller host limit. Geometry allows 5,000 native objects and 20,000 line-of-sight vertices. Import accepts embedded single-frame PNG/WebP rather than remote image URLs. Excessive geometry or missing export tiles fails the operation instead of producing a partial download. Keep the original project and a proper installation backup.
+Import accepts numeric format **0.2** or **0.3**; export writes **0.2**. These interchange versions are separate from the app version. The JSON limit is 64 MiB; embedded compressed image limit is 48 MiB; raster area is at most 16,777,216 pixels or a smaller host limit. Geometry allows 5,000 native objects and 20,000 line-of-sight vertices. Import accepts embedded single-frame PNG/WebP rather than remote image URLs. Excessive geometry or missing export tiles fails the operation instead of producing a partial download. Keep the original project and a proper installation backup.
 `),
     text('Importar e exportar Universal VTT', 'Traga um mapa pronto ou transfira uma cena nativa conhecendo os limites do formato.', `
 ## Escolha o intercâmbio adequado
 
-Universal VTT importa **.uvtt**, **.dd2vtt** e **.df2vtt** para uma nova cena nativa com imagem, grade, paredes, portas e luzes suportadas. Somente mestres podem importar/exportar. A cena começa exclusiva do mestre e preserva a transmissão atual. Não vira projeto do Map Builder.
+Universal VTT importa **.uvtt**, **.dd2vtt** e **.df2vtt** com imagem, grade, paredes, portas e luzes suportadas. Somente mestres podem importar/exportar. A cena começa exclusiva do mestre e preserva a transmissão atual.
+
+Escolha **Importar Universal VTT** dentro do Builder para criar uma cena nativa vinculada e um projeto editável. O editor salva o rascunho atual antes e abre o projeto importado separadamente. Escolha **Cenas → Nova cena → Importar Universal VTT** quando precisar apenas da cena nativa; depois use **Editar com MapBuilder** para adotá-la. A geometria e as luzes compatíveis continuam editáveis, e a arte achatada permanece como uma imagem de fundo.
 
 Para uma imagem PNG/JPEG/WebP/TIFF que receberá elementos no Builder, use **Importar mapa pronto**. Uma imagem não reconstrói paredes nem camadas originais.
 
@@ -1604,7 +1778,7 @@ Fundo e imagens/superfícies visíveis suportadas são achatados num PNG. Parede
 
 ## Limites
 
-O formato utiliza versão numérica **0.2**, separada da versão do aplicativo. O limite de JSON é 64 MiB; a imagem comprimida incorporada aceita 48 MiB; o raster tem até 16.777.216 pixels ou teto menor do host. A geometria aceita 5.000 objetos nativos e 20.000 vértices de visão. São aceitos PNG/WebP incorporados de quadro único, em vez de URLs remotas. Geometria excessiva ou tiles ausentes na exportação impedem a operação, sem gerar download parcial. Preserve projeto original e backup da instalação.
+A importação aceita formato numérico **0.2** ou **0.3**; a exportação escreve **0.2**. Essas versões de intercâmbio são separadas da versão do aplicativo. O limite de JSON é 64 MiB; a imagem comprimida incorporada aceita 48 MiB; o raster tem até 16.777.216 pixels ou teto menor do host. A geometria aceita 5.000 objetos nativos e 20.000 vértices de visão. São aceitos PNG/WebP incorporados de quadro único, em vez de URLs remotas. Geometria excessiva ou tiles ausentes na exportação impedem a operação, sem gerar download parcial. Preserve projeto original e backup da instalação.
 `), ['scenes', 'map-builder', 'backups-updates']),
 
   article('backups-updates', 'hosting', ['docs/en/deployment.md', 'docs/pt-BR/deployment.md', ...userGuide, ...releaseNotes, 'gravewright/administration/archives.py'],
