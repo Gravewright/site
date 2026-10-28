@@ -2,20 +2,25 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.3.3 Alpha**. It adds individual scene audiences, blank maps, shared pointers and configurable shortcuts, clearer token presentation, Builder productivity and Smart Object shader controls. Campaign preparation, clocks, clues, mind maps, PDF mapping and Universal VTT workflows remain available from earlier releases. Groups choose compatible system packages or PDF sheets; game rules belong to the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.3.4 Alpha**. It adds four themes, active-layer selection, F1–F8 shortcuts and reorganized controls, with fixes for Firefox, combat stopping and subfolders. Campaign preparation, clocks, clues, mind maps, PDF mapping and Universal VTT workflows remain available from earlier releases. Groups choose compatible system packages or PDF sheets; game rules belong to the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
 
 | Available product | Release | Details |
 | --- | --- | --- |
-| Gravewright VTT | [0.3.3 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.3) | Portable ZIP with Windows, Linux and macOS installers and source |
+| Gravewright VTT | [0.3.4 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.4) | Portable ZIP with Windows, Linux and macOS installers and source |
 | DnD 5e SRD | [0.1.2](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.2) | One optional system package: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, automatic saving and combat automation |
-| Savage Worlds Compatibility Package for Gravewright | [0.1.2](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.2) | One system package with free character/NPC sheets, empty item templates, SWADE automation and three action-deck styles; no compendiums or rulebook text |
+| Savage Worlds Compatibility Package for Gravewright | [0.1.4](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.4) | One system package with free character/NPC sheets, empty item templates, SWADE automation and three action-deck styles; no compendiums or rulebook text |
 | Translator | [0.1.4](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.4) | English, Brazilian Portuguese and Spanish interface catalogs, plus an API for extension translations |
 
 The main page leads with the universal VTT and its shared tools. The DnD sheet and compendium images remain in an optional system example, collapsed by default near the extensions section. PDF and system sheets are presented as choices; no particular ruleset is required by the platform.
 
-The [Savage Worlds compatibility package](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) appears alongside the DnD example, with repository and **0.1.2** release links in both website languages. Install the complete package from **Systems** and select it for your table. Sheets, templates, assets and automation stay together in the system package; the GM advances combat from the table. Users create their own campaign content; English is built in, and Portuguese/Spanish use the official Translator module.
+The [Savage Worlds compatibility package](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) appears alongside the DnD example, with repository and **0.1.4** release links in both website languages. Install the complete package from **Systems** and select it for your table. Sheets, templates, assets and automation stay together in the system package; the GM advances combat from the table. Users create their own campaign content; English is built in, and Portuguese/Spanish use the official Translator module.
 
-**DnD 5e SRD 0.1.2** is also one package installed from **Systems** in the [Marketplace](https://github.com/Gravewright/marketplace). Sheets, compendiums and automation stay together; the GM advances combat from the table. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections in English. The [DnD](https://github.com/Gravewright/dnd-srd-5e) and [Savage Worlds](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) system guides currently document installation on VTT **0.2.3**. Preserve that historical reference and check each package’s compatibility requirements; it is not an instruction to downgrade the current core download, **0.3.3**.
+**DnD 5e SRD 0.1.4** is also one package installed from **Systems** in the [Marketplace](https://github.com/Gravewright/marketplace). Sheets, compendiums and automation stay together; the GM advances combat from the table. Its 20 compendium packs contain 2,535 entries from selected licensed SRD collections in English. The [DnD](https://github.com/Gravewright/dnd-srd-5e) and [Savage Worlds](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) system guides currently document installation on VTT **0.2.3**. Preserve that historical reference and check each package’s compatibility requirements; it is not an instruction to downgrade the current core download, **0.3.4**.
+
+## Current release: 0.3.4
+
+Four themes, active-layer selection, F1–F8 shortcuts, organized toolbar and chat controls, improved blank maps, and fixes for Firefox, combat stopping and subfolders. Savage Worlds 0.1.4 adds compact sheets and actor types chosen by the GM at creation: Wild Card and Extra. The signed Marketplace release is linked from both home pages.
+
 
 ## What is new in 0.3.3
 

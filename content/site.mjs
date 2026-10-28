@@ -1,15 +1,15 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.3.3';
+export const publicVersion = '0.3.4';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
 export const dndRelease = `${dndProject}/releases/tag/v0.1.2`;
 export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
 export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
-export const swadeVersion = '0.1.2';
-export const swadeRelease = `${swadeProject}/releases/tag/v${swadeVersion}`;
+export const swadeVersion = '0.1.4';
+export const swadeRelease = `https://github.com/Gravewright/marketplace/releases/tag/gravewright.savage-worlds-v${swadeVersion}`;
 export const commands = "git clone https://github.com/Gravewright/gravewright.git\ncd gravewright\nuv sync --locked\ncp -n .env.example .env\nuv run --locked python manage.py migrate\nuv run --locked python main.py";
 
 export const locales = {
@@ -20,8 +20,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright 0.3.3 — Universal VTT and interactive maps",
-    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.3 for Windows, Linux and macOS.",
+    "title": "Gravewright 0.3.4 — Universal VTT and interactive maps",
+    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.4 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -39,7 +39,7 @@ export const locales = {
     "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.3.3 Alpha · Windows, Linux and macOS installers included",
+    "downloadHint": "Available now: 0.3.4 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,32 +118,32 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Set the scene. Make your objects react.",
-    "releaseCopy": "Gravewright 0.3.3 Alpha adds individual scene audiences, sharper tokens and faster Map Builder authoring. Give uploaded objects activation areas, rehearse as a player and connect their behaviors to shader controls. Translator 0.1.4 supplies the corresponding Portuguese and Spanish interface text.",
+    "releaseTitle": "Clearer controls. A table that fits you.",
+    "releaseCopy": "Gravewright 0.3.4 Alpha improves Firefox rendering and combat controls, organizes the toolbar and adds four interface themes. Select the layer you want to edit and switch tools with F1–F8.",
     "releaseFeatures": [
       [
-        "Choose who sees each scene",
-        "Create an empty map with a name, background color, dimensions and optional grid. Activate a scene for everyone or selected players; colored dots show their destinations and a GM badge identifies your own view."
+        "Stay on the right layer",
+        "Game selects game pieces. Choose Walls, Lighting or another layer to edit its objects. F1–F8 switch layers and open scene editing."
       ],
       [
-        "Keep tokens clear and readable",
-        "Names, initials and condition text stay sharp as you zoom. Choose when names appear, set each bar’s color and audience, and enable an optional turn outline. Bar 1 sits above the token and bar 2 below it."
+        "Keep combat and folders in order",
+        "Stopping combat clears its participants. Creating a subfolder reveals it immediately in Actors, Items, Journals and Scenes."
       ],
       [
-        "Make the table’s controls your own",
-        "Shared pointers follow each person’s ping color. Independently choose whether to share your pointer or see others, and remap supported keyboard shortcuts in the Gravewright menu. Add a title beside a measurement’s dimensions; measurements remain local to your browser session."
+        "Find your tools faster",
+        "Secondary toolbar actions live under Panels, chat controls follow the other windows and Extensions shows only the active game system."
       ],
       [
-        "Build and reuse more quickly",
-        "Group objects in layers, align, distribute and rotate selections. Save reusable campaign models in My objects, or paint repeated objects with spacing and size/rotation variation. An area overview helps you inspect activation guides."
+        "Choose your colors",
+        "Select Classic, Ocean, Forest or Amethyst under Theme. The browser remembers your choice across the application and table."
       ],
       [
-        "Make your own artwork interactive",
-        "Open a Smart Object Blueprint on an uploaded object with a double-click. Add circular activation areas and react to entry or exit without a click. Test as player rehearses movement, visibility, collision and interaction without changing the live scene or sending effects to players."
+        "Give blank maps the same options",
+        "Configure grid size, scale, measurement, folder and visibility when creating an empty map."
       ],
       [
-        "Connect behavior to shader effects",
-        "Use Control shader to change enabled state, color, intensity, opacity, speed and other supported parameters with fixed or typed variable values. Independent shaders and torch components work alongside the existing light and flame actions. Server rehearsals roll back their changes."
+        "Play in Firefox",
+        "Rendering recovers after WebGL context loss, with updated texture initialization and resource loading."
       ]
     ],
     "installLabel": "Start your campaign",
@@ -203,7 +203,7 @@ export const locales = {
     "systemDownload": "Get version 0.1.2",
     "swadeLabel": "Optional compatibility package · Available in the Marketplace",
     "swadeDetails": "Explore sheets, item templates and automation",
-    "swadeCopy": "One system package brings free character and NPC sheets, 13 empty item templates and SWADE automation. Create your own campaign content and customize action decks and table settings.",
+    "swadeCopy": "Version 0.1.4 makes sheets more compact and names actor types Wild Card and Extra. The GM chooses the type when creating the actor; sheet setup no longer offers a type selector. The package retains its 13 empty item templates and SWADE automation.",
     "swadeFacts": [
       [
         "13",
@@ -218,9 +218,9 @@ export const locales = {
         "Interface languages"
       ]
     ],
-    "swadeNote": "No compendiums or rulebook text are included. Install version 0.1.2 as one package from Systems and select it for your table. The GM runs its combat automation from the table. English is built in; Portuguese and Spanish use Translator. Check the package’s installation guide for host requirements; its setup currently documents VTT 0.2.3.",
+    "swadeNote": "No compendiums or rulebook text are included. Install version 0.1.4 as one package from Systems and select it for your table. The GM runs its combat automation from the table. English is built in; Portuguese and Spanish use Translator. Check the package’s installation guide for host requirements; its setup currently documents VTT 0.2.3.",
     "swadeAction": "Explore the SWADE package",
-    "swadeDownload": "Get version 0.1.2",
+    "swadeDownload": "Get version 0.1.4",
     "extensionCards": [
       [
         "Translator",
@@ -266,8 +266,8 @@ export const locales = {
         "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.3.3 available to download?",
-        "Yes. Gravewright 0.3.3 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
+        "Is 0.3.4 available to download?",
+        "Yes. Gravewright 0.3.4 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
       ],
       [
         "What can I build with Map Builder?",
@@ -373,8 +373,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright 0.3.3 — VTT universal e mapas interativos",
-    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.3 para Windows, Linux e macOS.",
+    "title": "Gravewright 0.3.4 — VTT universal e mapas interativos",
+    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.4 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -392,7 +392,7 @@ export const locales = {
     "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.3.3 Alpha · Instaladores Windows, Linux e macOS incluídos",
+    "downloadHint": "Disponível agora: 0.3.4 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -471,32 +471,32 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Prepare a cena. Faça seus objetos reagirem.",
-    "releaseCopy": "O Gravewright 0.3.3 Alpha traz cenas por jogador, tokens mais nítidos e novas ferramentas de criação no Map Builder. Dê áreas de ativação às imagens enviadas, ensaie como jogador e conecte seus comportamentos ao controle de shaders. O Translator 0.1.4 fornece os textos correspondentes em português e espanhol.",
+    "releaseTitle": "Controles mais claros. A mesa com a sua cara.",
+    "releaseCopy": "O Gravewright 0.3.4 Alpha melhora a renderização no Firefox e os controles de combate, organiza a barra de ferramentas e acrescenta quatro temas. Selecione a camada que deseja editar e alterne as ferramentas com F1–F8.",
     "releaseFeatures": [
       [
-        "Escolha quem vê cada cena",
-        "Crie um mapa vazio com nome, cor de fundo, dimensões e grade opcional. Ative uma cena para todos ou para jogadores selecionados; bolinhas coloridas mostram os destinos e o indicador GM identifica sua própria visualização."
+        "Edite a camada certa",
+        "Jogo seleciona as peças da mesa. Escolha Paredes, Iluminação ou outra camada para editar seus objetos. F1–F8 alternam as camadas e abrem a edição da cena."
       ],
       [
-        "Mantenha os tokens nítidos e legíveis",
-        "Nomes, iniciais e textos de condições ficam nítidos ao mudar o zoom. Escolha quando os nomes aparecem, defina a cor e quem vê cada barra e ative o contorno opcional de turno. A barra 1 fica acima do token e a barra 2 abaixo."
+        "Organize combate e pastas",
+        "Parar o combate limpa os participantes. Criar uma subpasta já a revela em Personagens, Itens, Diários e Cenas."
       ],
       [
-        "Ajuste os controles da sua mesa",
-        "Os ponteiros compartilhados usam a cor de ping de cada pessoa. Escolha separadamente se quer compartilhar o seu ponteiro ou ver os demais e remapeie os atalhos disponíveis no menu Gravewright. Acrescente um título junto das dimensões de uma medição; as medições ficam locais à sessão do navegador."
+        "Encontre suas ferramentas",
+        "As ações secundárias ficam em Painéis, o chat segue os controles das demais janelas e Extensões mostra apenas o sistema ativo."
       ],
       [
-        "Crie e reutilize com mais agilidade",
-        "Agrupe objetos em camadas, alinhe, distribua e gire seleções. Salve modelos reutilizáveis da campanha em Meus objetos ou pinte objetos repetidos com espaçamento ajustável e variação de tamanho e rotação. Uma visão geral permite conferir as áreas de ativação."
+        "Escolha suas cores",
+        "Em Tema, escolha Clássico, Oceano, Floresta ou Ametista. O navegador guarda a escolha para a aplicação e a mesa."
       ],
       [
-        "Dê interação às suas próprias imagens",
-        "Abra o Blueprint de um Objeto Inteligente sobre uma imagem enviada com dois cliques. Adicione áreas circulares e reaja à entrada ou saída sem exigir um clique. Testar como jogador ensaia movimento, visão, colisão e interação sem alterar a cena em jogo nem enviar efeitos aos jogadores."
+        "Configure também os mapas vazios",
+        "Defina tamanho da grade, escala, medidas, pasta e visibilidade ao criar um mapa vazio."
       ],
       [
-        "Conecte comportamentos aos shaders",
-        "Use Controlar shader para alterar ativação, cor, intensidade, opacidade, velocidade e outros parâmetros disponíveis com valores fixos ou variáveis tipadas. Shaders independentes e componentes de tochas convivem com as ações existentes de luz e chama. Os testes no servidor revertem suas alterações."
+        "Jogue pelo Firefox",
+        "A renderização se recupera após a perda do contexto WebGL, com ajustes na inicialização de texturas e no carregamento de recursos."
       ]
     ],
     "installLabel": "Comece sua campanha",
@@ -556,7 +556,7 @@ export const locales = {
     "systemDownload": "Baixar a versão 0.1.2",
     "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
     "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
-    "swadeCopy": "Um único pacote de sistema reúne fichas gratuitas de personagens e NPCs, 13 modelos vazios de itens e automações de SWADE. Crie o conteúdo da sua campanha e personalize os baralhos de ação e as opções da mesa.",
+    "swadeCopy": "A versão 0.1.4 deixa as fichas mais compactas e usa os tipos Carta Selvagem e Extra. O mestre escolhe o tipo ao criar o personagem; o setup da ficha não oferece mais esse seletor. O pacote mantém seus 13 modelos vazios de itens e as automações de SWADE.",
     "swadeFacts": [
       [
         "13",
@@ -571,9 +571,9 @@ export const locales = {
         "Idiomas da interface"
       ]
     ],
-    "swadeNote": "O pacote não inclui compêndios nem textos do livro. Instale a versão 0.1.2 como um único pacote em Sistemas e selecione-o para a mesa. O mestre conduz as automações de combate pela mesa. Inglês está disponível por padrão; português e espanhol usam o Translator. Confira os requisitos do host no guia de instalação do pacote; sua configuração ainda documenta o VTT 0.2.3.",
+    "swadeNote": "O pacote não inclui compêndios nem textos do livro. Instale a versão 0.1.4 como um único pacote em Sistemas e selecione-o para a mesa. O mestre conduz as automações de combate pela mesa. Inglês está disponível por padrão; português e espanhol usam o Translator. Confira os requisitos do host no guia de instalação do pacote; sua configuração ainda documenta o VTT 0.2.3.",
     "swadeAction": "Conheça o pacote SWADE",
-    "swadeDownload": "Baixar a versão 0.1.2",
+    "swadeDownload": "Baixar a versão 0.1.4",
     "extensionCards": [
       [
         "Translator",
@@ -619,8 +619,8 @@ export const locales = {
         "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.3.3 já está disponível para baixar?",
-        "Sim. O Gravewright 0.3.3 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
+        "A 0.3.4 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.4 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
       ],
       [
         "O que posso criar com o Map Builder?",
