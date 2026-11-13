@@ -1,6 +1,6 @@
 {
-  "hostVersion": "0.3.4",
-  "sourceRevision": "538c1c58b2bfaa0a0091c81a43ff7601a89da82e",
+  "hostVersion": "0.3.5",
+  "sourceRevision": "b91010c02023dbc3936b3eafd596d154a497172d",
   "frontend": {
     "version": "1.2.0",
     "domains": {

@@ -1,11 +1,11 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.3.4';
+export const publicVersion = '0.3.5';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
-export const dndRelease = `${dndProject}/releases/tag/v0.1.2`;
+export const dndRelease = `${dndProject}/releases/tag/v0.2.0`;
 export const swadeProject = 'https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright';
 export const swadeName = 'Savage Worlds Compatibility Package for Gravewright';
 export const swadeVersion = '0.1.4';
@@ -20,8 +20,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright 0.3.4 — Universal VTT and interactive maps",
-    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.4 for Windows, Linux and macOS.",
+    "title": "Gravewright 0.3.5 — Universal VTT and interactive maps",
+    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.5 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -39,7 +39,7 @@ export const locales = {
     "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.3.4 Alpha · Windows, Linux and macOS installers included",
+    "downloadHint": "Available now: 0.3.5 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,34 +118,22 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "Clearer controls. A table that fits you.",
-    "releaseCopy": "Gravewright 0.3.4 Alpha improves Firefox rendering and combat controls, organizes the toolbar and adds four interface themes. Select the layer you want to edit and switch tools with F1–F8.",
+    "releaseTitle": "More reliable sessions.",
+    "releaseCopy": "Gravewright 0.3.5 improves realtime delivery, recovers commands during temporary database contention and preserves scene context in module chat. Authorized players can read item and spell compendiums.",
     "releaseFeatures": [
-      [
-        "Stay on the right layer",
-        "Game selects game pieces. Choose Walls, Lighting or another layer to edit its objects. F1–F8 switch layers and open scene editing."
-      ],
-      [
-        "Keep combat and folders in order",
-        "Stopping combat clears its participants. Creating a subfolder reveals it immediately in Actors, Items, Journals and Scenes."
-      ],
-      [
-        "Find your tools faster",
-        "Secondary toolbar actions live under Panels, chat controls follow the other windows and Extensions shows only the active game system."
-      ],
-      [
-        "Choose your colors",
-        "Select Classic, Ocean, Forest or Amethyst under Theme. The browser remembers your choice across the application and table."
-      ],
-      [
-        "Give blank maps the same options",
-        "Configure grid size, scale, measurement, folder and visibility when creating an empty map."
-      ],
-      [
-        "Play in Firefox",
-        "Rendering recovers after WebGL context loss, with updated texture initialization and resource loading."
-      ]
-    ],
+  [
+    "Realtime delivery",
+    "More reliable updates and command recovery during temporary database contention."
+  ],
+  [
+    "Chat scene context",
+    "Module chat messages preserve their scene context."
+  ],
+  [
+    "Player compendiums",
+    "Authorized players can read item and spell packs; the GM controls sharing."
+  ]
+],
     "installLabel": "Start your campaign",
     "installTitle": "Your first table is a few steps away.",
     "installCopy": "Download the ZIP for Windows, Linux or macOS, run your platform’s installer and create your first table in the browser. Use the generated Runner whenever you are ready to play.",
@@ -182,7 +170,7 @@ export const locales = {
     "extensionsCopy": "Gravewright provides the tabletop. Independent systems bring game-specific sheets and rules; modules add tools such as translations and 3D dice. Use a compatible system or mapped PDFs for your group’s game, and build your own extensions through the documented API.",
     "systemLabel": "Optional system example · Available in the Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.2",
+    "systemVersion": "0.2.0",
     "systemCopy": "DnD 5e SRD is one independent system you can install in Gravewright. It adds dedicated sheets, licensed compendiums and supported automations for the 2014 and 2024 rules.",
     "systemFacts": [
       [
@@ -198,9 +186,9 @@ export const locales = {
         "Selectable rules"
       ]
     ],
-    "systemNote": "Partial SRD collections; compendium content is in English. Install DnD 5e SRD 0.1.2 as one package from Systems: sheets, compendiums and combat automation stay together. The GM advances combat from the table. Check the system’s installation guide for host requirements; its setup currently documents VTT 0.2.3.",
+    "systemNote": "DnD 5e SRD 0.2.0 includes 317 SRD 5.1 and 330 SRD 5.2.1 monsters, plus 2,535 item entries. Players can copy readable items into editable sheets. Validated with VTT 0.3.5 and 0.2.3. Download the system ZIP, install it locally and select 0.2.0 in table Extensions. Compendium content remains English; library imports remain GM-only.",
     "systemAction": "Explore DnD 5e SRD",
-    "systemDownload": "Get version 0.1.2",
+    "systemDownload": "Get version 0.2.0",
     "swadeLabel": "Optional compatibility package · Available in the Marketplace",
     "swadeDetails": "Explore sheets, item templates and automation",
     "swadeCopy": "Version 0.1.4 makes sheets more compact and names actor types Wild Card and Extra. The GM chooses the type when creating the actor; sheet setup no longer offers a type selector. The package retains its 13 empty item templates and SWADE automation.",
@@ -266,8 +254,8 @@ export const locales = {
         "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.3.4 available to download?",
-        "Yes. Gravewright 0.3.4 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
+        "Is 0.3.5 available to download?",
+        "Yes. Gravewright 0.3.5 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
       ],
       [
         "What can I build with Map Builder?",
@@ -279,7 +267,7 @@ export const locales = {
       ],
       [
         "Can I play with DnD 5e SRD?",
-        "DnD 5e SRD 0.1.2 is available as one package from Systems. It includes dedicated sheets, combat automation and partial licensed SRD collections for the 2014 and 2024 profiles. Check its installation guide for host requirements; the guide currently documents VTT 0.2.3. Other D&D books and official artwork are not included."
+        "DnD 5e SRD 0.2.0 includes 317 SRD 5.1 and 330 SRD 5.2.1 monsters, plus 2,535 item entries. Players can copy readable items into editable sheets. Validated with VTT 0.3.5 and 0.2.3. Download the system ZIP, install it locally and select 0.2.0 in table Extensions. Compendium content remains English; library imports remain GM-only."
       ],
       [
         "How do I install the Savage Worlds compatibility package?",
@@ -373,8 +361,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright 0.3.4 — VTT universal e mapas interativos",
-    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.4 para Windows, Linux e macOS.",
+    "title": "Gravewright 0.3.5 — VTT universal e mapas interativos",
+    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.5 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -392,7 +380,7 @@ export const locales = {
     "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.3.4 Alpha · Instaladores Windows, Linux e macOS incluídos",
+    "downloadHint": "Disponível agora: 0.3.5 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -471,34 +459,22 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Controles mais claros. A mesa com a sua cara.",
-    "releaseCopy": "O Gravewright 0.3.4 Alpha melhora a renderização no Firefox e os controles de combate, organiza a barra de ferramentas e acrescenta quatro temas. Selecione a camada que deseja editar e alterne as ferramentas com F1–F8.",
+    "releaseTitle": "Sessões mais confiáveis.",
+    "releaseCopy": "O Gravewright 0.3.5 melhora a entrega em tempo real, recupera comandos durante contenção temporária do banco e preserva o contexto da cena no chat de módulos. Jogadores autorizados podem ler compêndios de itens e magias.",
     "releaseFeatures": [
-      [
-        "Edite a camada certa",
-        "Jogo seleciona as peças da mesa. Escolha Paredes, Iluminação ou outra camada para editar seus objetos. F1–F8 alternam as camadas e abrem a edição da cena."
-      ],
-      [
-        "Organize combate e pastas",
-        "Parar o combate limpa os participantes. Criar uma subpasta já a revela em Personagens, Itens, Diários e Cenas."
-      ],
-      [
-        "Encontre suas ferramentas",
-        "As ações secundárias ficam em Painéis, o chat segue os controles das demais janelas e Extensões mostra apenas o sistema ativo."
-      ],
-      [
-        "Escolha suas cores",
-        "Em Tema, escolha Clássico, Oceano, Floresta ou Ametista. O navegador guarda a escolha para a aplicação e a mesa."
-      ],
-      [
-        "Configure também os mapas vazios",
-        "Defina tamanho da grade, escala, medidas, pasta e visibilidade ao criar um mapa vazio."
-      ],
-      [
-        "Jogue pelo Firefox",
-        "A renderização se recupera após a perda do contexto WebGL, com ajustes na inicialização de texturas e no carregamento de recursos."
-      ]
-    ],
+  [
+    "Atualizações em tempo real",
+    "Entrega mais confiável e recuperação de comandos durante contenção temporária do banco."
+  ],
+  [
+    "Contexto do chat",
+    "Mensagens de módulos preservam o contexto da cena."
+  ],
+  [
+    "Compêndios para jogadores",
+    "Jogadores autorizados podem ler itens e magias; o mestre controla o compartilhamento."
+  ]
+],
     "installLabel": "Comece sua campanha",
     "installTitle": "Sua primeira mesa está a poucos passos.",
     "installCopy": "Baixe o ZIP para Windows, Linux ou macOS, execute o instalador da sua plataforma e crie a primeira mesa pelo navegador. Use o Runner gerado sempre que estiver pronto para jogar.",
@@ -535,7 +511,7 @@ export const locales = {
     "extensionsCopy": "O Gravewright oferece a mesa virtual. Sistemas independentes trazem fichas e regras de cada jogo; módulos acrescentam ferramentas como traduções e dados 3D. Use um sistema compatível ou PDFs mapeados para o jogo do grupo e crie suas extensões com a API documentada.",
     "systemLabel": "Exemplo de sistema opcional · Disponível no Marketplace",
     "systemTitle": "DnD 5e SRD",
-    "systemVersion": "0.1.2",
+    "systemVersion": "0.2.0",
     "systemCopy": "DnD 5e SRD é um dos sistemas independentes que você pode instalar no Gravewright. Ele acrescenta fichas próprias, compêndios licenciados e automações compatíveis com as regras de 2014 e 2024.",
     "systemFacts": [
       [
@@ -551,9 +527,9 @@ export const locales = {
         "Regras à escolha"
       ]
     ],
-    "systemNote": "Coleções parciais do SRD; os compêndios estão em inglês. Instale DnD 5e SRD 0.1.2 como um único pacote em Sistemas: fichas, compêndios e automações de combate ficam juntos. O mestre avança o combate pela mesa. Confira os requisitos do host no guia de instalação do sistema; sua configuração ainda documenta o VTT 0.2.3.",
+    "systemNote": "DnD 5e SRD 0.2.0 inclui 317 monstros do SRD 5.1 e 330 do SRD 5.2.1, além de 2.535 entradas de itens. Jogadores podem copiar itens legíveis para fichas editáveis. Validado com VTT 0.3.5 e 0.2.3. Baixe o ZIP do sistema, instale localmente e selecione 0.2.0 nas Extensões da mesa. Os compêndios continuam em inglês; importações para a biblioteca são exclusivas do mestre.",
     "systemAction": "Conheça o DnD 5e SRD",
-    "systemDownload": "Baixar a versão 0.1.2",
+    "systemDownload": "Baixar a versão 0.2.0",
     "swadeLabel": "Pacote de compatibilidade opcional · Disponível no Marketplace",
     "swadeDetails": "Conheça as fichas, os modelos de itens e as automações",
     "swadeCopy": "A versão 0.1.4 deixa as fichas mais compactas e usa os tipos Carta Selvagem e Extra. O mestre escolhe o tipo ao criar o personagem; o setup da ficha não oferece mais esse seletor. O pacote mantém seus 13 modelos vazios de itens e as automações de SWADE.",
@@ -619,8 +595,8 @@ export const locales = {
         "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.3.4 já está disponível para baixar?",
-        "Sim. O Gravewright 0.3.4 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
+        "A 0.3.5 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.5 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
       ],
       [
         "O que posso criar com o Map Builder?",
@@ -632,7 +608,7 @@ export const locales = {
       ],
       [
         "Posso jogar com o DnD 5e SRD?",
-        "DnD 5e SRD 0.1.2 está disponível como um único pacote em Sistemas. Ele reúne fichas próprias, automações de combate e coleções parciais licenciadas do SRD para os perfis de 2014 e 2024. Confira os requisitos do host no guia de instalação; o guia ainda documenta o VTT 0.2.3. Outros livros de D&D e artes oficiais não estão incluídos."
+        "DnD 5e SRD 0.2.0 inclui 317 monstros do SRD 5.1 e 330 do SRD 5.2.1, além de 2.535 entradas de itens. Jogadores podem copiar itens legíveis para fichas editáveis. Validado com VTT 0.3.5 e 0.2.3. Baixe o ZIP do sistema, instale localmente e selecione 0.2.0 nas Extensões da mesa. Os compêndios continuam em inglês; importações para a biblioteca são exclusivas do mestre."
       ],
       [
         "Como instalo o pacote de compatibilidade Savage Worlds?",

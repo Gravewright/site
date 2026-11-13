@@ -2,12 +2,12 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Site de apresentação do Gravewright, um **VTT universal**, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.3.4 Alpha**. A versão acrescenta quatro temas, seleção por camada, atalhos F1–F8 e controles reorganizados, com correções para Firefox, encerramento do combate e subpastas. Preparação de campanha, relógios, pistas, mapas mentais, mapeamento PDF e fluxos Universal VTT continuam disponíveis das versões anteriores. O grupo escolhe pacotes de sistemas compatíveis ou fichas PDF; as regras pertencem ao sistema instalado. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
+Site de apresentação do Gravewright, um **VTT universal**, com páginas em inglês (`index.html`) e português brasileiro (`pt-br.html`). O download público é a **0.3.5 Alpha**. A versão melhora a entrega em tempo real, a recuperação de comandos e o acesso aos compêndios. Preparação de campanha, relógios, pistas, mapas mentais, mapeamento PDF e fluxos Universal VTT continuam disponíveis das versões anteriores. O grupo escolhe pacotes de sistemas compatíveis ou fichas PDF; as regras pertencem ao sistema instalado. O GitHub Pages serve os arquivos gerados em `gravewright.com`; este repositório não inclui workflow de implantação.
 
 | Produto disponível | Release | Detalhes |
 | --- | --- | --- |
-| Gravewright VTT | [0.3.4 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.4) | ZIP portátil com instaladores Windows, Linux e macOS e código-fonte |
-| DnD 5e SRD | [0.1.2](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.1.2) | Um pacote de sistema opcional: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD, salvamento automático e automações de combate |
+| Gravewright VTT | [0.3.5 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.5) | ZIP portátil com instaladores Windows, Linux e macOS e código-fonte |
+| DnD 5e SRD | [0.2.0](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.2.0) | Um pacote de sistema opcional: 2014/SRD 5.1 e 2024/SRD 5.2.1, fichas próprias, arraste do SRD, salvamento automático e automações de combate |
 | Savage Worlds Compatibility Package for Gravewright | [0.1.4](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.4) | Um pacote de sistema com fichas gratuitas de personagens/NPCs, modelos vazios de itens, automações de SWADE e três estilos de baralho de ação; sem compêndios nem textos do livro |
 | Translator | [0.1.4](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.4) | Catálogos da interface em inglês, português brasileiro e espanhol, além de API de tradução para extensões |
 
@@ -15,11 +15,13 @@ A página principal apresenta primeiro o VTT universal e suas ferramentas comuns
 
 O [pacote de compatibilidade Savage Worlds](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) aparece junto do exemplo DnD, com links do repositório e da versão **0.1.4** nos dois idiomas do site. Instale o pacote completo em **Sistemas** e selecione-o para a mesa. Fichas, modelos, arquivos e automações ficam juntos no pacote do sistema; o mestre avança o combate pela mesa. Os usuários criam o conteúdo de suas campanhas; inglês está disponível por padrão, e português/espanhol usam o módulo oficial Translator.
 
-O **DnD 5e SRD 0.1.4** também é um único pacote instalado em **Sistemas** pelo [Marketplace](https://github.com/Gravewright/marketplace). Fichas, compêndios e automações ficam juntos; o mestre avança o combate pela mesa. Seus 20 compêndios contêm 2.535 entradas de coleções selecionadas do SRD licenciado, em inglês. Os guias dos [sistemas DnD](https://github.com/Gravewright/dnd-srd-5e) e [Savage Worlds](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright) ainda documentam a instalação no VTT **0.2.3**. Preserve essa referência histórica e confira os requisitos de compatibilidade de cada pacote; ela não é uma orientação para rebaixar o download atual do core, **0.3.4**.
+DnD 5e SRD **0.2.0**: 22 compêndios, 2.535 itens e 647 monstros. Validado com VTT 0.3.5 e 0.2.3. Instale o ZIP da release localmente e selecione 0.2.0 nas Extensões da mesa.
 
-## Versão atual: 0.3.4
+## Versão atual: 0.3.5
 
-Quatro temas, seleção pela camada ativa, atalhos F1–F8, barra e controles do chat organizados, mapas vazios completos e correções para Firefox, encerramento do combate e subpastas. Savage Worlds 0.1.4 traz fichas compactas e tipos escolhidos pelo mestre na criação: Carta Selvagem e Extra. As duas páginas iniciais apontam para a release assinada do Marketplace.
+O Gravewright 0.3.5 melhora a entrega em tempo real, recupera comandos durante contenção temporária do banco e preserva o contexto da cena no chat de módulos. Jogadores autorizados podem ler compêndios de itens e magias.
+
+DnD 5e SRD 0.2.0 inclui 317 monstros do SRD 5.1 e 330 do SRD 5.2.1, além de 2.535 entradas de itens. Jogadores podem copiar itens legíveis para fichas editáveis. Validado com VTT 0.3.5 e 0.2.3. Baixe o ZIP do sistema, instale localmente e selecione 0.2.0 nas Extensões da mesa. Os compêndios continuam em inglês; importações para a biblioteca são exclusivas do mestre.
 
 
 ## Novidades da 0.3.3
@@ -91,7 +93,7 @@ O [mapa de capacidades de extensão](docs/pt-BR/tutorial-capability-map.html) in
 
 `content/tutorials.mjs` agrega os guias e pacotes autorais de `content/tutorial-*.mjs`. `scripts/build-examples.mjs` gera os projetos em `assets/tutorials/<project-id>/`, com o manifesto final na raiz de cada ZIP. O sistema completo combina fichas funcionais de ator/token, tipos originais de item/magia, iniciativa armazenada e três packs em um único sistema instalável. Idiomas são ativados globalmente e escolhidos por conta; módulos de navegador são ativados por campanha; apps Django exigem ativação explícita pelo dono. O guia de distribuição inclui assinador local e autoteste sintético; não cria chaves reais nem publica releases. Confira [licenças e procedência](THIRD_PARTY_NOTICES.md) antes de reutilizar um projeto.
 
-O snapshot dos contratos está versionado em `content/extension-contracts.json`, fixado no **Gravewright 0.3.3**, revisão **cc4fd089e6d49d32808c45ee90fdae21d1ad17dc**. O SDK **1.0.0** e o contrato frontend **1.2.0** permanecem iguais. `npm run build` e o `npm test` normal usam fontes locais e esse snapshot; não procuram checkout pai do host, não buscam SDK remoto nem exigem repositório vizinho. Informar `GRAVEWRIGHT_SOURCE` ativa somente as verificações opcionais dependentes do host.
+O snapshot dos contratos está versionado em `content/extension-contracts.json`, fixado no **Gravewright 0.3.5**, revisão **b91010c02023dbc3936b3eafd596d154a497172d**. O SDK **1.0.0** e o contrato frontend **1.2.0** permanecem iguais. `npm run build` e o `npm test` normal usam fontes locais e esse snapshot; não procuram checkout pai do host, não buscam SDK remoto nem exigem repositório vizinho. Informar `GRAVEWRIGHT_SOURCE` ativa somente as verificações opcionais dependentes do host.
 
 ### Atualizar explicitamente o snapshot dos contratos
 
