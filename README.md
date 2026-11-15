@@ -2,11 +2,11 @@
 
 [English](README.md) · [Português (Brasil)](README.pt-BR.md)
 
-Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.3.5 Alpha**. It improves realtime delivery, command recovery and compendium access. Campaign preparation, clocks, clues, mind maps, PDF mapping and Universal VTT workflows remain available from earlier releases. Groups choose compatible system packages or PDF sheets; game rules belong to the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
+Product website for Gravewright, a **universal virtual tabletop**, with English (`index.html`) and Brazilian Portuguese (`pt-br.html`) pages. The public download is **0.3.6 Alpha**. It improves realtime responsiveness, reduces repeated reads and enables concurrent database reads during saves. Campaign preparation, clocks, clues, mind maps, PDF mapping and Universal VTT workflows remain available from earlier releases. Groups choose compatible system packages or PDF sheets; game rules belong to the installed system. GitHub Pages serves the generated files at `gravewright.com`; no deployment workflow is included in this repository.
 
 | Available product | Release | Details |
 | --- | --- | --- |
-| Gravewright VTT | [0.3.5 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.5) | Portable ZIP with Windows, Linux and macOS installers and source |
+| Gravewright VTT | [0.3.6 Alpha](https://github.com/Gravewright/gravewright/releases/tag/v0.3.6) | Portable ZIP with Windows, Linux and macOS installers and source |
 | DnD 5e SRD | [0.2.0](https://github.com/Gravewright/dnd-srd-5e/releases/tag/v0.2.0) | One optional system package: 2014/SRD 5.1 and 2024/SRD 5.2.1, dedicated sheets, SRD drag and drop, automatic saving and combat automation |
 | Savage Worlds Compatibility Package for Gravewright | [0.1.4](https://github.com/Gravewright/Savage-Worlds-Compatibility-Package-for-Gravewright/releases/tag/v0.1.4) | One system package with free character/NPC sheets, empty item templates, SWADE automation and three action-deck styles; no compendiums or rulebook text |
 | Translator | [0.1.4](https://github.com/Gravewright/marketplace/releases/tag/gravewright.translator-v0.1.4) | English, Brazilian Portuguese and Spanish interface catalogs, plus an API for extension translations |
@@ -17,9 +17,9 @@ The [Savage Worlds compatibility package](https://github.com/Gravewright/Savage-
 
 DnD 5e SRD **0.2.0**: 22 compendium packs, 2,535 items and 647 monsters. Validated with VTT 0.3.5 and 0.2.3. Install the release ZIP locally and select 0.2.0 in table Extensions.
 
-## Current release: 0.3.5
+## Current release: 0.3.6
 
-Gravewright 0.3.5 improves realtime delivery, recovers commands during temporary database contention and preserves scene context in module chat. Authorized players can read item and spell compendiums.
+Gravewright 0.3.6 keeps player commands independent from background updates and reduces repeated loading of scenes, chat and mind maps. Database reads can continue during saves, and presence renewal handles database contention more accurately.
 
 DnD 5e SRD 0.2.0 includes 317 SRD 5.1 and 330 SRD 5.2.1 monsters, plus 2,535 item entries. Players can copy readable items into editable sheets. Validated with VTT 0.3.5 and 0.2.3. Download the system ZIP, install it locally and select 0.2.0 in table Extensions. Compendium content remains English; library imports remain GM-only.
 
@@ -51,7 +51,7 @@ The site includes a product wiki at [`wiki/en/index.html`](wiki/en/index.html), 
 
 Product procedures live in `content/wiki.mjs`; AI workflows live in `content/ai-guides.mjs`. `content/wiki-media.json` maps real application screenshots to relevant articles, with captions, alternative text, version and provenance. Full-size images open from their thumbnails. Screenshots can use the English interface with Portuguese captions; their captions identify the interface language. Historical images retain their original version labels. Read [screenshot provenance](assets/wiki/README.md) before replacing them.
 
-The complete technical Markdown is a checked-in snapshot of the public project guides, rather than a runtime GitHub dependency. Select a separate host checkout at the released `v0.3.3` commit, **cc4fd089e6d49d32808c45ee90fdae21d1ad17dc**. From the site root, verify that checkout and synchronize its committed guides:
+The complete technical Markdown is a checked-in snapshot of the public project guides, rather than a runtime GitHub dependency. Select a separate host checkout at the released `v0.3.6` commit, **3b756d08a4778c96c33cce382e15ea75b4747eb9**. From the site root, verify that checkout and synchronize its committed guides:
 
 ```sh
 git -C /path/to/gravewright rev-parse HEAD
@@ -63,7 +63,7 @@ The sync command reads the selected checkout's committed HEAD, not pending edits
 
 `content/reference/catalog.json` records the source revision and version. Source links point to that revision. `scripts/build-knowledge.mjs` renders the snapshot with `scripts/markdown.mjs`, resolves documentation links to local articles, and generates `knowledge-search.json`, the knowledge manifest and the complete sitemap. Edit source Markdown in the main project first, keep English and Portuguese aligned, and sync again. Review copied guides whenever the public version changes; keep the snapshot version aligned with `publicVersion`.
 
-The 0.3.3 snapshot contains **26 bilingual reference articles (52 Markdown files)**, covering all published English and Portuguese guides in the allowlist. The wiki procedures now cover blank maps, individual scene audiences, pointer preferences, shortcuts, token appearance, Builder productivity and shader controls. Design-direction proposals remain outside the public reference snapshot; no stable public guide is omitted.
+The 0.3.6 snapshot contains **26 bilingual reference articles (52 Markdown files)**, covering all published English and Portuguese guides in the allowlist. The wiki procedures now cover blank maps, individual scene audiences, pointer preferences, shortcuts, token appearance, Builder productivity and shader controls. Design-direction proposals remain outside the public reference snapshot; no stable public guide is omitted.
 
 The original snapshot bytes remain intact. During rendering, `publicationCopy` aligns historical module packaging wording with the current `AGENTS.md` decision: each new RPG system is one installable package containing its interface, rules, assets and translations. It also updates Map Builder's pre-publication introduction to describe the documented revision. Review these explicit editorial adaptations when syncing newer source guides; API signatures and exact legal notices are preserved.
 
@@ -71,7 +71,7 @@ AI examples explain how to provide repository context, keep systems in one packa
 
 ## Runnable developer examples
 
-Start at [Complete examples by kind](docs/en/examples-index.html). The cookbook has 29 bilingual articles: four complete extension package variants, all 13 SDK mounting surfaces, search/image/compendium contracts, the four Smart Object kinds, both connection kinds and a graph for each of the 49 node types. Each example provides prerequisites, complete code, expected behavior, errors, validation and a contextual AI prompt. The contract reference targets 0.3.3. Existing module/system recipes retain their declared compatible 0.3.0 target where the SDK is unchanged; the Blueprint examples for `requestRoll` and `setQuestStatus` require 0.3.1. The four clock, clue and mind-map node types require 0.3.2, and `shaderControl` requires 0.3.3. Examples do not add a root `kind` field to manifests or confuse installed-system packs with native local catalogs.
+Start at [Complete examples by kind](docs/en/examples-index.html). The cookbook has 29 bilingual articles: four complete extension package variants, all 13 SDK mounting surfaces, search/image/compendium contracts, the four Smart Object kinds, both connection kinds and a graph for each of the 49 node types. Each example provides prerequisites, complete code, expected behavior, errors, validation and a contextual AI prompt. The contract reference targets 0.3.6. Existing module/system recipes retain their declared compatible 0.3.0 target where the SDK is unchanged; the Blueprint examples for `requestRoll` and `setQuestStatus` require 0.3.1. The four clock, clue and mind-map node types require 0.3.2, and `shaderControl` requires 0.3.3. Examples do not add a root `kind` field to manifests or confuse installed-system packs with native local catalogs.
 
 `content/examples*.mjs` are the authored sources. `scripts/build-examples.mjs` generates the four package sources, all surface sources and their ZIPs, plus the Blueprint bundle with its license. ZIPs contain the manifest directly at their root. Local **Install from ZIP** can test reviewed code on a disposable host; Marketplace publication uses signed catalog records. No private keys or credentials are included. The language example is deliberately partial. The Django example requires explicit trusted activation; it is not an RPG system companion. Native captures and provenance are in [assets/examples/previews](assets/examples/previews/README.md).
 
@@ -89,11 +89,11 @@ The Blueprint bundle includes its own checker; see the download's README and run
 
 The [implementation tutorial catalog](docs/en/tutorial-index.html) adds **29 bilingual articles** and **22 new source-project ZIPs**, in addition to the existing examples by kind. Start with [your first module](docs/en/tutorial-first-module.html), an [action on an existing sheet](docs/en/tutorial-sheet-module.html), a [journal module](docs/en/tutorial-journal-module.html), or the [complete original system](docs/en/tutorial-complete-system.html). Each project supplies its files, installation and activation steps, input fields, executable actions, observable results, failure handling and an AI adaptation prompt. Guides cover actors, tokens, scenes, items, combat, cards, audio, chat/dice, quests, roll tables, compendiums, files, storage, localization, customization and trusted server integration.
 
-The [extension capability map](docs/en/tutorial-capability-map.html) indexes **213 public domain methods**, **17 original SDK operations** and **13 mounting surfaces**, together with lifecycle, event, asset, storage, modal and translation helpers. It links existing implementation projects where available and the canonical API/domain guides for capabilities introduced in 0.3.2; the earlier 22 projects do not implement every newer method. Map Builder coverage links the **four Smart Object kinds**, both connection kinds and all **49 node types**, including the 0.3.3 shader control, to their complete graph examples. These counts describe the checked-in 0.3.3 contract snapshot and authored catalog, not test results or support for arbitrary feature combinations. The map distinguishes mutable campaign packs, installed system collections and operator-managed local catalogs.
+The [extension capability map](docs/en/tutorial-capability-map.html) indexes **213 public domain methods**, **17 original SDK operations** and **13 mounting surfaces**, together with lifecycle, event, asset, storage, modal and translation helpers. It links existing implementation projects where available and the canonical API/domain guides for capabilities introduced in 0.3.2; the earlier 22 projects do not implement every newer method. Map Builder coverage links the **four Smart Object kinds**, both connection kinds and all **49 node types**, including the 0.3.3 shader control, to their complete graph examples. These counts describe the checked-in 0.3.6 contract snapshot and authored catalog, not test results or support for arbitrary feature combinations. The map distinguishes mutable campaign packs, installed system collections and operator-managed local catalogs.
 
 `content/tutorials.mjs` aggregates the authored `content/tutorial-*.mjs` guides and packages. `scripts/build-examples.mjs` materializes the projects under `assets/tutorials/<project-id>/`, with the final manifest at each ZIP root. The complete system composes the existing working actor/token sheet with original item/spell types, stored initiative and three catalog packs in one system ZIP. Language packages activate globally and are selected per account; browser modules activate per campaign; Django packages require explicit owner activation. The distribution guide includes an offline signing helper and synthetic self-test; it does not generate production keys or publish releases. See [licenses and provenance](THIRD_PARTY_NOTICES.md) before reusing a project.
 
-The host contract snapshot is committed in `content/extension-contracts.json`, pinned to **Gravewright 0.3.5**, revision **b91010c02023dbc3936b3eafd596d154a497172d**. SDK **1.0.0** and frontend contract **1.2.0** remain unchanged. `npm run build` and ordinary `npm test` consume local source and this snapshot; they do not discover a parent host checkout, fetch a remote SDK or require a neighboring repository. Providing `GRAVEWRIGHT_SOURCE` opts into host-dependent integration checks only.
+The host contract snapshot is committed in `content/extension-contracts.json`, pinned to **Gravewright 0.3.6**, revision **3b756d08a4778c96c33cce382e15ea75b4747eb9**. SDK **1.0.0** and frontend contract **1.2.0** remain unchanged. `npm run build` and ordinary `npm test` consume local source and this snapshot; they do not discover a parent host checkout, fetch a remote SDK or require a neighboring repository. Providing `GRAVEWRIGHT_SOURCE` opts into host-dependent integration checks only.
 
 ### Refresh the extension contract snapshot explicitly
 
@@ -101,14 +101,14 @@ Refresh this snapshot when changing the documented host revision or its public c
 
 ```sh
 export GRAVEWRIGHT_SOURCE=/path/to/gravewright
-export GRAVEWRIGHT_REVISION=cc4fd089e6d49d32808c45ee90fdae21d1ad17dc
+export GRAVEWRIGHT_REVISION=3b756d08a4778c96c33cce382e15ea75b4747eb9
 ```
 
 In PowerShell set the same process-local variables:
 
 ```powershell
 $env:GRAVEWRIGHT_SOURCE='C:/path/to/gravewright'
-$env:GRAVEWRIGHT_REVISION='cc4fd089e6d49d32808c45ee90fdae21d1ad17dc'
+$env:GRAVEWRIGHT_REVISION='3b756d08a4778c96c33cce382e15ea75b4747eb9'
 ```
 
 Save the following JavaScript as `data/site-maintenance/update-extension-contracts.mjs` inside the explicitly selected host checkout, outside the published site directory. Replace the revision explicitly when documenting another release. It reads committed bytes rather than attributing pending host edits to a commit, writes only the site contract snapshot and does not change global Git configuration:

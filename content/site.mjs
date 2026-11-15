@@ -1,7 +1,7 @@
 // Product copy and public download identity shared by both pages.
 // Update publicVersion only after the VTT release and its ZIP are published.
 export const project = 'https://github.com/Gravewright/gravewright';
-export const publicVersion = '0.3.5';
+export const publicVersion = '0.3.6';
 export const release = `${project}/releases/tag/v${publicVersion}`;
 export const download = `${project}/releases/download/v${publicVersion}/Gravewright-${publicVersion}-django.zip`;
 export const dndProject = 'https://github.com/Gravewright/dnd-srd-5e';
@@ -20,8 +20,8 @@ export const locales = {
     "otherLabel": "Português",
     "docs": "en",
     "suffix": "",
-    "title": "Gravewright 0.3.5 — Universal VTT and interactive maps",
-    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.5 for Windows, Linux and macOS.",
+    "title": "Gravewright 0.3.6 — Universal VTT and interactive maps",
+    "description": "Build interactive maps, choose scene audiences and prepare your campaign in a free, open-source universal VTT. Gravewright 0.3.6 for Windows, Linux and macOS.",
     "skip": "Skip to content",
     "home": "Gravewright home",
     "navigation": "Main navigation",
@@ -39,7 +39,7 @@ export const locales = {
     "explore": "Explore Map Builder",
     "notes": "Available release",
     "documentation": "Documentation",
-    "downloadHint": "Available now: 0.3.5 Alpha · Windows, Linux and macOS installers included",
+    "downloadHint": "Available now: 0.3.6 Alpha · Windows, Linux and macOS installers included",
     "systemHint": "Your game, your tools · Independent systems, modules and PDF sheets",
     "panelLabel": "Everything starts at your table",
     "panelAria": "Your campaign with Gravewright",
@@ -118,20 +118,20 @@ export const locales = {
       ]
     ],
     "releaseLabel": "The latest Alpha",
-    "releaseTitle": "More reliable sessions.",
-    "releaseCopy": "Gravewright 0.3.5 improves realtime delivery, recovers commands during temporary database contention and preserves scene context in module chat. Authorized players can read item and spell compendiums.",
+    "releaseTitle": "Keep your session moving.",
+    "releaseCopy": "Gravewright 0.3.6 keeps player commands independent from background updates and reduces repeated loading of scenes, chat and mind maps. Database reads can continue during saves, and presence renewal handles database contention more accurately.",
     "releaseFeatures": [
   [
-    "Realtime delivery",
-    "More reliable updates and command recovery during temporary database contention."
+    "Independent player commands",
+    "Background updates and shared pointer activity no longer wait in the same queue as player commands."
   ],
   [
-    "Chat scene context",
-    "Module chat messages preserve their scene context."
+    "Fewer repeated loads",
+    "Scene changes and pointer movement avoid unnecessary reloads of chat, resources and mind maps."
   ],
   [
-    "Player compendiums",
-    "Authorized players can read item and spell packs; the GM controls sharing."
+    "Smoother database access",
+    "SQLite WAL lets readers continue during saves. Presence and module contexts renew only when needed."
   ]
 ],
     "installLabel": "Start your campaign",
@@ -254,8 +254,8 @@ export const locales = {
         "Your campaigns stay on your host. The default portable installation stores the database and uploaded media in the application folder; you can configure other locations. Stop the Runner and back up the database, media, configuration and installed extensions before an upgrade."
       ],
       [
-        "Is 0.3.5 available to download?",
-        "Yes. Gravewright 0.3.5 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
+        "Is 0.3.6 available to download?",
+        "Yes. Gravewright 0.3.6 Alpha is available now. The ZIP includes installers for Windows, Linux and macOS. Systems and modules are installed separately. Back up your installation and read the release notes before upgrading, especially if your installation reports the older, incorrectly numbered 3.0.1 version."
       ],
       [
         "What can I build with Map Builder?",
@@ -361,8 +361,8 @@ export const locales = {
     "otherLabel": "English",
     "docs": "pt-BR",
     "suffix": ".pt-BR",
-    "title": "Gravewright 0.3.5 — VTT universal e mapas interativos",
-    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.5 para Windows, Linux e macOS.",
+    "title": "Gravewright 0.3.6 — VTT universal e mapas interativos",
+    "description": "Crie mapas interativos, escolha os jogadores de cada cena e prepare sua campanha em um VTT universal gratuito e open source. Gravewright 0.3.6 para Windows, Linux e macOS.",
     "skip": "Pular para o conteúdo",
     "home": "Página inicial do Gravewright",
     "navigation": "Navegação principal",
@@ -380,7 +380,7 @@ export const locales = {
     "explore": "Explore o Map Builder",
     "notes": "Versão disponível",
     "documentation": "Documentação",
-    "downloadHint": "Disponível agora: 0.3.5 Alpha · Instaladores Windows, Linux e macOS incluídos",
+    "downloadHint": "Disponível agora: 0.3.6 Alpha · Instaladores Windows, Linux e macOS incluídos",
     "systemHint": "Seu jogo, suas ferramentas · Sistemas independentes, módulos e fichas PDF",
     "panelLabel": "Tudo começa na sua mesa",
     "panelAria": "Sua campanha com o Gravewright",
@@ -459,20 +459,20 @@ export const locales = {
       ]
     ],
     "releaseLabel": "A nova Alpha",
-    "releaseTitle": "Sessões mais confiáveis.",
-    "releaseCopy": "O Gravewright 0.3.5 melhora a entrega em tempo real, recupera comandos durante contenção temporária do banco e preserva o contexto da cena no chat de módulos. Jogadores autorizados podem ler compêndios de itens e magias.",
+    "releaseTitle": "Mantenha o ritmo da sessão.",
+    "releaseCopy": "O Gravewright 0.3.6 mantém os comandos dos jogadores independentes das atualizações em segundo plano e reduz carregamentos repetidos de cenas, chat e mapas mentais. Leituras do banco podem continuar durante gravações, e a renovação de presença considera melhor a espera pelo banco.",
     "releaseFeatures": [
   [
-    "Atualizações em tempo real",
-    "Entrega mais confiável e recuperação de comandos durante contenção temporária do banco."
+    "Comandos independentes",
+    "Atualizações em segundo plano e atividade dos ponteiros compartilhados deixam de disputar a mesma fila dos comandos dos jogadores."
   ],
   [
-    "Contexto do chat",
-    "Mensagens de módulos preservam o contexto da cena."
+    "Menos carregamentos repetidos",
+    "Trocas de cena e movimentos do ponteiro evitam recarregamentos desnecessários de chat, recursos e mapas mentais."
   ],
   [
-    "Compêndios para jogadores",
-    "Jogadores autorizados podem ler itens e magias; o mestre controla o compartilhamento."
+    "Melhor acesso ao banco",
+    "O modo WAL do SQLite permite leituras durante gravações. Presença e contextos de módulos são renovados quando necessário."
   ]
 ],
     "installLabel": "Comece sua campanha",
@@ -595,8 +595,8 @@ export const locales = {
         "As campanhas ficam no seu host. A instalação portátil padrão guarda o banco de dados e a mídia enviada na pasta do aplicativo; você pode configurar outros locais. Encerre o Runner e faça backup do banco, da mídia, das configurações e das extensões instaladas antes de atualizar."
       ],
       [
-        "A 0.3.5 já está disponível para baixar?",
-        "Sim. O Gravewright 0.3.5 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
+        "A 0.3.6 já está disponível para baixar?",
+        "Sim. O Gravewright 0.3.6 Alpha já está disponível. O ZIP inclui instaladores para Windows, Linux e macOS. Sistemas e módulos são instalados separadamente. Faça backup da instalação e leia as notas antes de atualizar, especialmente se sua instalação informa a antiga numeração incorreta 3.0.1."
       ],
       [
         "O que posso criar com o Map Builder?",
